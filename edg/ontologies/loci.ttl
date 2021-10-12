@@ -1,0 +1,301 @@
+# baseURI: http://linked.data.gov.au/def/loci
+# imports: http://linked.data.gov.au/def/geox
+# imports: http://schema.org/
+# imports: http://vocab.deri.ie/void
+# prefix: loci
+
+@prefix asgs: <http://linked.data.gov.au/def/asgs#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geox: <http://linked.data.gov.au/def/geox#> .
+@prefix loci: <http://linked.data.gov.au/def/loci#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://catalogue.linked.data.gov.au/org/csiro>
+  a schema:Organization ;
+  schema:name "CSIRO Australia" ;
+  schema:subjectOf <https://csiro.au> ;
+.
+asgs:isComposedOf
+  rdfs:subPropertyOf loci:hasPart ;
+.
+asgs:within
+  rdfs:subPropertyOf loci:isPartOf ;
+.
+<http://linked.data.gov.au/def/loci>
+  a owl:Ontology ;
+  a prof:Profile ;
+  dcterms:created "2018-10-29"^^xsd:date ;
+  dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
+  dcterms:modified "2020-04-29"^^xsd:date ;
+  rdfs:comment """An ontology to govern Linked Data resources published within the [Loc-I](https://confluence.csiro.au/display/DIPAAnalyticHubs/Location+Integration+Capability+Loc-I) project.
+
+The primary focus is on (a) datasets composed of multiple geospatial features (objects); (b) recording relationships between features, with metadata attached to reified rdf:Statements. """ ;
+  rdfs:label "Loc-I Ontology" ;
+  owl:imports <http://linked.data.gov.au/def/geox> ;
+  owl:imports schema: ;
+  owl:imports <http://vocab.deri.ie/void> ;
+  owl:versionIRI <http://linked.data.gov.au/def/loci/1.1> ;
+  owl:versionInfo "Beta version"@en ;
+  prof:hasResource [
+      a prof:ResourceDescriptor ;
+      dcterms:format <https://w3id.org/mediatype/image/svg> ;
+      dcterms:title "Ontology overview diagram"@en ;
+      prof:hasArtifact <http://linked.data.gov.au/def/loci/images/loci.png> ;
+      prof:hasRole <http://www.w3.org/ns/dx/prof/role/guidance> ;
+    ] ;
+  prof:hasResource [
+      a prof:ResourceDescriptor ;
+      dcterms:format <https://w3id.org/mediatype/text/html> ;
+      dcterms:title "Guidance document"@en ;
+      prof:hasArtifact <http://linked.data.gov.au/def/loci/loci.html> ;
+      prof:hasRole <http://www.w3.org/ns/dx/prof/role/guidance> ;
+    ] ;
+  prof:hasResource [
+      a prof:ResourceDescriptor ;
+      dcterms:format <https://w3id.org/mediatype/text/turtle> ;
+      dcterms:title "Profile Specification"@en ;
+      prof:hasArtifact <http://linked.data.gov.au/def/loci/loci.ttl> ;
+      prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> ;
+    ] ;
+  prof:hasResource [
+      a prof:ResourceDescriptor ;
+      dcterms:format <https://w3id.org/mediatype/text/turtle> ;
+      dcterms:title "Validator Shapes graph"@en ;
+      prof:hasArtifact <http://linked.data.gov.au/def/loci/constraints.ttl> ;
+      prof:hasRole <http://www.w3.org/ns/dx/prof/role/constraints> ;
+    ] ;
+  prof:hasToken "loci"^^xsd:token ;
+  prof:isProfileOf <http://rdfs.org/ns/void> ;
+  prov:wasGeneratedBy [
+      a doap:Project ;
+      a prov:Activity ;
+      doap:repository <https://github.com/CSIRO-enviro-informatics/loci-ont> ;
+      rdfs:label "Loc-I project" ;
+    ] ;
+.
+loci:DataPublisher
+  a owl:Class ;
+  rdfs:comment "The set of all approved publishers of Loc-I data, all of whom are known"@en ;
+  rdfs:label "Loc-I Data Publishers" ;
+  rdfs:subClassOf foaf:Group ;
+.
+loci:Dataset
+  a owl:Class ;
+  rdfs:comment "A Loc-I Dataset is a DCAT and VOID Dataset that has been accepted by the Loc-I Registry Manager."@en ;
+  rdfs:label "Loc-I Dataset" ;
+  rdfs:subClassOf void:Dataset ;
+  rdfs:subClassOf rdf:Bag ;
+  rdfs:subClassOf dcat:Dataset ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty rdfs:member ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dcat:contactPoint ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass org:Organization ;
+      owl:onProperty dcterms:publisher ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onDataRange xsd:date ;
+      owl:onProperty dcterms:issued ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onDataRange xsd:date ;
+      owl:onProperty dcterms:modified ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty dcterms:title ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  owl:equivalentClass [
+      a owl:Restriction ;
+      owl:allValuesFrom loci:DataPublisher ;
+      owl:onProperty dcterms:publisher ;
+    ] ;
+  skos:editorialNote "Membership of a loci:Dataset is (a) geo:Feature (Loc-I conformant) (b) loci:LinkingStatement (c) related types, such as PlaceNames" ;
+.
+loci:Feature
+  a owl:Class ;
+  rdfs:comment "A Loc-I Feature is a GeoSPARQL Feature that has at least one Geometry, one persistent identifier, and is a member of a loci:Dataset" ;
+  rdfs:comment "Implemented as a SHACL shape" ;
+  rdfs:label "Loc-I Feature" ;
+  rdfs:subClassOf geo:Feature ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom geo:Feature ;
+      owl:onProperty loci:hasPart ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom geo:Feature ;
+      owl:onProperty loci:isPartOf ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dcterms:identifier ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass geo:Geometry ;
+      owl:onProperty geo:hasGeometry ;
+    ] ;
+.
+loci:LinkingStatement
+  a owl:Class ;
+  rdfs:comment "An RDF Statement (Subject, Predicate, Object + additional metadata) that links class instances in one Loc-I Dataset with class instances in another"@en ;
+  rdfs:label "Loc-I Dataset Linking Statement" ;
+  rdfs:subClassOf rdf:Statement ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty rdf:object ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty rdf:subject ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty rdf:predicate ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass loci:Linkset ;
+      owl:onProperty loci:isMemberOf ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass prov:Plan ;
+      owl:onProperty loci:hadGenerationMethod ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+.
+loci:Linkset
+  a owl:Class ;
+  rdfs:comment "A Loc-I Linkset is a specialised form of a VoID Linkset that requires the void:subjectsTarget & void:objectsTarget indicate Loc-I Datasets"@en ;
+  rdfs:label "Loc-I Linkset" ;
+  rdfs:subClassOf loci:Dataset ;
+  rdfs:subClassOf void:Linkset ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom loci:LinkingStatement ;
+      owl:onProperty rdfs:member ;
+    ] ;
+  owl:equivalentClass [
+      a owl:Restriction ;
+      owl:allValuesFrom loci:Dataset ;
+      owl:onProperty void:objectsTarget ;
+    ] ;
+  owl:equivalentClass [
+      a owl:Restriction ;
+      owl:allValuesFrom loci:Dataset ;
+      owl:onProperty void:subjectsTarget ;
+    ] ;
+.
+loci:hadGenerationMethod
+  a owl:ObjectProperty ;
+  rdfs:domain rdf:Statement ;
+  rdfs:label "had generation method" ;
+  rdfs:range prov:Plan ;
+  owl:propertyChainAxiom (
+      prov:wasGeneratedBy
+      prov:qualifiedAssociation
+      prov:hadPlan
+    ) ;
+  skos:definition "The method that was used to generate this object"@en ;
+  skos:editorialNote "This property is a property chain axiom equivalent to a chain of three properties in the PROV ontology: prov:wasGeneratedBy, prov:qualifiedAssociation and prof:hadPlan linking a prov:Entity (the thing generated) to a prov:Plan (the thin instruction generation - the method) via a prov:Activity (the generating event) and a prov:Association that the prov:Activity has linking it to the prov:Plan."@en ;
+.
+loci:hasPart
+  a owl:ObjectProperty ;
+  dcterms:description """The context resource contains the target resource, in some geospatial, logical, ownership, governance, jurisidictional or compositional sense. 
+
+This predicate provides a convenient generalized or super-property-of containment relations with more specialized semantics. It may be useful in formulating some generalized SPARQL queries where any kind of containment relationship is intended. 
+
+Note that this property is **not transitive** though some sub-properties may be. """ ;
+  rdfs:domain geo:SpatialObject ;
+  rdfs:label "has part " ;
+  rdfs:range geo:SpatialObject ;
+.
+loci:isMemberOf
+  a owl:ObjectProperty ;
+  rdfs:comment "In principle this is inverse of rdfs:member, but because it is defined in a local namespace it is made a sub-property of the inverse" ;
+  rdfs:label "is member of" ;
+  rdfs:range loci:Dataset ;
+  rdfs:subPropertyOf [
+      a owl:ObjectProperty ;
+      owl:inverseOf rdfs:member ;
+    ] ;
+.
+loci:isPartOf
+  a owl:ObjectProperty ;
+  dcterms:description """The context resource is part of the target resource, in some geospatial, logical, ownership, governance, jurisidictional or compositional sense. 
+
+This predicate provides a convenient generalized or super-property-of contained-by relations with more specializaed semantics. It may be useful in formulating some generalized SPARQL queries where any kind of containment relationship is intended. 
+
+Note that this property is **not transitive** though some sub-properties may be. """ ;
+  rdfs:domain geo:SpatialObject ;
+  rdfs:label "is part of " ;
+  rdfs:range geo:SpatialObject ;
+  owl:inverseOf loci:hasPart ;
+.
+dcterms:type
+  a owl:ObjectProperty ;
+  dcterms:description """In the context of Loc-I datasets, `dcterms:type` is used for an additional classifier, such as a place-type or meshblock-category. 
+
+The value should be taken from a controlled-vocabulary, and may be expressed as a `skos:Concept` or an `rdfs:Class` or some other kind of resource providing it is from a well-governed source. """ ;
+.
+geo:sfContains
+  rdfs:subPropertyOf loci:hasPart ;
+.
+geo:sfWithin
+  rdfs:subPropertyOf loci:isPartOf ;
+.
+<https://orcid.org/0000-0002-3884-3420>
+  a schema:Person ;
+  schema:affiliation <http://catalogue.linked.data.gov.au/org/csiro> ;
+  schema:identifier "https://orcid.org/0000-0002-3884-3420"^^xsd:anyURI ;
+  schema:name "Simon J D Cox" ;
+  schema:subjectOf <https://people.csiro.au/C/S/simon-cox> ;
+.
+<https://orcid.org/0000-0002-8742-7730>
+  a schema:Person ;
+  schema:affiliation [
+      a schema:Organization ;
+      schema:name "Surround Australia" ;
+    ] ;
+  schema:identifier "https://orcid.org/0000-0002-8742-7730"^^xsd:anyURI ;
+  schema:name "Nicholas J Car" ;
+.

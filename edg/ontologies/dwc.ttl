@@ -1,0 +1,1412 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix tdwgutility: <http://rs.tdwg.org/dwc/terms/attributes/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix dwciri: <http://rs.tdwg.org/dwc/iri/>.
+@prefix vann: <http://purl.org/vocab/vann/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dc:publisher "Biodiversity Information Standards (TDWG)"@en;
+     dcterms:publisher <https://www.grid.ac/institutes/grid.480498.9>;
+     rdfs:label "Core terms defined by Darwin Core"@en;
+     dcterms:title "Core terms defined by Darwin Core"@en;
+     rdfs:comment "This term list includes all currently valid terms that have been defined in the core Darwin Core namespace dwc:.  To comment on this schema, please create a new issue in https://github.com/tdwg/dwc/issues"@en;
+     dcterms:description "This term list includes all currently valid terms that have been defined in the core Darwin Core namespace dwc:.  To comment on this schema, please create a new issue in https://github.com/tdwg/dwc/issues"@en;
+     dcterms:created "2008-11-19"^^xsd:date;
+     vann:preferredNamespacePrefix "dwc";
+     vann:preferredNamespaceUri "http://rs.tdwg.org/dwc/terms/";
+     a tdwgutility:TermList.
+
+<http://rs.tdwg.org/dwc/version/terms/2008-11-19>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2008-11-19>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-01-18>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-01-18>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-01-21>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-01-21>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-01-23>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-01-23>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-04-24>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-04-24>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-04-29>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-04-29>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-05-18>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-05-18>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-07-06>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-07-06>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-08-24>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-08-24>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-09-11>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-09-11>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-09-17>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-09-17>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-09-21>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-09-21>.
+
+<http://rs.tdwg.org/dwc/version/terms/2009-12-07>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-12-07>.
+
+<http://rs.tdwg.org/dwc/version/terms/2011-10-16>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2011-10-16>.
+
+<http://rs.tdwg.org/dwc/version/terms/2013-03-28>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2013-03-28>.
+
+<http://rs.tdwg.org/dwc/version/terms/2013-05-25>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2013-05-25>.
+
+<http://rs.tdwg.org/dwc/version/terms/2014-10-23>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2014-10-23>.
+
+<http://rs.tdwg.org/dwc/version/terms/2014-12-23>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2014-12-23>.
+
+<http://rs.tdwg.org/dwc/version/terms/2017-10-06>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2017-10-06>.
+
+<http://rs.tdwg.org/dwc/version/terms/2018-09-06>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2018-09-06>.
+
+<http://rs.tdwg.org/dwc/version/terms/2020-08-12>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2020-08-12>.
+
+<http://rs.tdwg.org/dwc/version/terms/2020-08-20>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2020-08-20>.
+
+<http://rs.tdwg.org/dwc/version/terms/2020-10-13>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2020-10-13>.
+
+<http://rs.tdwg.org/dwc/version/terms/2020-10-28>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2020-10-28>.
+
+<http://rs.tdwg.org/dwc/version/terms/2021-03-29>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2021-03-29>.
+
+<http://rs.tdwg.org/dwc/version/terms/2021-07-15>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2021-07-15>.
+
+<http://rs.tdwg.org/dwc/terms/acceptedNameUsage>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/acceptedNameUsage>.
+
+<http://rs.tdwg.org/dwc/terms/acceptedNameUsageID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/acceptedNameUsageID>.
+
+<http://rs.tdwg.org/dwc/terms/accordingTo>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/accordingTo>.
+
+<http://rs.tdwg.org/dwc/terms/associatedMedia>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/associatedMedia>.
+
+<http://rs.tdwg.org/dwc/terms/associatedOccurrences>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/associatedOccurrences>.
+
+<http://rs.tdwg.org/dwc/terms/associatedOrganisms>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/associatedOrganisms>.
+
+<http://rs.tdwg.org/dwc/terms/associatedReferences>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/associatedReferences>.
+
+<http://rs.tdwg.org/dwc/terms/associatedSequences>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/associatedSequences>.
+
+<http://rs.tdwg.org/dwc/terms/associatedTaxa>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/associatedTaxa>.
+
+<http://rs.tdwg.org/dwc/terms/basisOfRecord>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/basisOfRecord>.
+
+<http://rs.tdwg.org/dwc/terms/bed>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/bed>.
+
+<http://rs.tdwg.org/dwc/terms/behavior>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/behavior>.
+
+<http://rs.tdwg.org/dwc/terms/catalogNumber>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/catalogNumber>.
+
+<http://rs.tdwg.org/dwc/terms/class>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/class>.
+
+<http://rs.tdwg.org/dwc/terms/collectionCode>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/collectionCode>.
+
+<http://rs.tdwg.org/dwc/terms/collectionID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/collectionID>.
+
+<http://rs.tdwg.org/dwc/terms/continent>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/continent>.
+
+<http://rs.tdwg.org/dwc/terms/coordinatePrecision>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/coordinatePrecision>.
+
+<http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters>.
+
+<http://rs.tdwg.org/dwc/terms/country>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/country>.
+
+<http://rs.tdwg.org/dwc/terms/countryCode>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/countryCode>.
+
+<http://rs.tdwg.org/dwc/terms/county>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/county>.
+
+<http://rs.tdwg.org/dwc/terms/dataGeneralizations>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/dataGeneralizations>.
+
+<http://rs.tdwg.org/dwc/terms/datasetID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/datasetID>.
+
+<http://rs.tdwg.org/dwc/terms/datasetName>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/datasetName>.
+
+<http://rs.tdwg.org/dwc/terms/dateIdentified>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/dateIdentified>.
+
+<http://rs.tdwg.org/dwc/terms/day>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/day>.
+
+<http://rs.tdwg.org/dwc/terms/decimalLatitude>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/decimalLatitude>.
+
+<http://rs.tdwg.org/dwc/terms/decimalLongitude>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/decimalLongitude>.
+
+<http://rs.tdwg.org/dwc/terms/disposition>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/disposition>.
+
+<http://rs.tdwg.org/dwc/terms/dynamicProperties>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/dynamicProperties>.
+
+<http://rs.tdwg.org/dwc/terms/earliestAgeOrLowestStage>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/earliestAgeOrLowestStage>.
+
+<http://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem>.
+
+<http://rs.tdwg.org/dwc/terms/earliestEpochOrLowestSeries>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/earliestEpochOrLowestSeries>.
+
+<http://rs.tdwg.org/dwc/terms/earliestEraOrLowestErathem>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/earliestEraOrLowestErathem>.
+
+<http://rs.tdwg.org/dwc/terms/earliestPeriodOrLowestSystem>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/earliestPeriodOrLowestSystem>.
+
+<http://rs.tdwg.org/dwc/terms/endDayOfYear>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/endDayOfYear>.
+
+<http://rs.tdwg.org/dwc/terms/establishmentMeans>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/establishmentMeans>.
+
+<http://rs.tdwg.org/dwc/terms/Event>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/Event>.
+
+<http://rs.tdwg.org/dwc/terms/eventDate>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/eventDate>.
+
+<http://rs.tdwg.org/dwc/terms/eventID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/eventID>.
+
+<http://rs.tdwg.org/dwc/terms/eventRemarks>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/eventRemarks>.
+
+<http://rs.tdwg.org/dwc/terms/eventTime>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/eventTime>.
+
+<http://rs.tdwg.org/dwc/terms/family>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/family>.
+
+<http://rs.tdwg.org/dwc/terms/fieldNotes>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/fieldNotes>.
+
+<http://rs.tdwg.org/dwc/terms/fieldNumber>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/fieldNumber>.
+
+<http://rs.tdwg.org/dwc/terms/footprintSpatialFit>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/footprintSpatialFit>.
+
+<http://rs.tdwg.org/dwc/terms/footprintSRS>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/footprintSRS>.
+
+<http://rs.tdwg.org/dwc/terms/footprintWKT>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/footprintWKT>.
+
+<http://rs.tdwg.org/dwc/terms/formation>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/formation>.
+
+<http://rs.tdwg.org/dwc/terms/FossilSpecimen>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/FossilSpecimen>.
+
+<http://rs.tdwg.org/dwc/terms/genus>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/genus>.
+
+<http://rs.tdwg.org/dwc/terms/geodeticDatum>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/geodeticDatum>.
+
+<http://rs.tdwg.org/dwc/terms/GeologicalContext>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/GeologicalContext>.
+
+<http://rs.tdwg.org/dwc/terms/geologicalContextID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/geologicalContextID>.
+
+<http://rs.tdwg.org/dwc/terms/georeferencedBy>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/georeferencedBy>.
+
+<http://rs.tdwg.org/dwc/terms/georeferencedDate>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/georeferencedDate>.
+
+<http://rs.tdwg.org/dwc/terms/georeferenceProtocol>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/georeferenceProtocol>.
+
+<http://rs.tdwg.org/dwc/terms/georeferenceRemarks>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/georeferenceRemarks>.
+
+<http://rs.tdwg.org/dwc/terms/georeferenceSources>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/georeferenceSources>.
+
+<http://rs.tdwg.org/dwc/terms/georeferenceVerificationStatus>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/georeferenceVerificationStatus>.
+
+<http://rs.tdwg.org/dwc/terms/group>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/group>.
+
+<http://rs.tdwg.org/dwc/terms/habitat>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/habitat>.
+
+<http://rs.tdwg.org/dwc/terms/higherClassification>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/higherClassification>.
+
+<http://rs.tdwg.org/dwc/terms/higherGeography>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/higherGeography>.
+
+<http://rs.tdwg.org/dwc/terms/higherGeographyID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/higherGeographyID>.
+
+<http://rs.tdwg.org/dwc/terms/highestBiostratigraphicZone>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/highestBiostratigraphicZone>.
+
+<http://rs.tdwg.org/dwc/terms/HumanObservation>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/HumanObservation>.
+
+<http://rs.tdwg.org/dwc/terms/Identification>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/Identification>.
+
+<http://rs.tdwg.org/dwc/terms/identificationID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/identificationID>.
+
+<http://rs.tdwg.org/dwc/terms/identificationQualifier>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/identificationQualifier>.
+
+<http://rs.tdwg.org/dwc/terms/identificationReferences>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/identificationReferences>.
+
+<http://rs.tdwg.org/dwc/terms/identificationRemarks>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/identificationRemarks>.
+
+<http://rs.tdwg.org/dwc/terms/identificationVerificationStatus>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/identificationVerificationStatus>.
+
+<http://rs.tdwg.org/dwc/terms/identifiedBy>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/identifiedBy>.
+
+<http://rs.tdwg.org/dwc/terms/individualCount>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/individualCount>.
+
+<http://rs.tdwg.org/dwc/terms/informationWithheld>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/informationWithheld>.
+
+<http://rs.tdwg.org/dwc/terms/infraspecificEpithet>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/infraspecificEpithet>.
+
+<http://rs.tdwg.org/dwc/terms/institutionCode>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/institutionCode>.
+
+<http://rs.tdwg.org/dwc/terms/institutionID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/institutionID>.
+
+<http://rs.tdwg.org/dwc/terms/island>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/island>.
+
+<http://rs.tdwg.org/dwc/terms/islandGroup>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/islandGroup>.
+
+<http://rs.tdwg.org/dwc/terms/kingdom>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/kingdom>.
+
+<http://rs.tdwg.org/dwc/terms/latestAgeOrHighestStage>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/latestAgeOrHighestStage>.
+
+<http://rs.tdwg.org/dwc/terms/latestEonOrHighestEonothem>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/latestEonOrHighestEonothem>.
+
+<http://rs.tdwg.org/dwc/terms/latestEpochOrHighestSeries>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/latestEpochOrHighestSeries>.
+
+<http://rs.tdwg.org/dwc/terms/latestEraOrHighestErathem>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/latestEraOrHighestErathem>.
+
+<http://rs.tdwg.org/dwc/terms/latestPeriodOrHighestSystem>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/latestPeriodOrHighestSystem>.
+
+<http://rs.tdwg.org/dwc/terms/lifeStage>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/lifeStage>.
+
+<http://rs.tdwg.org/dwc/terms/lithostratigraphicTerms>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/lithostratigraphicTerms>.
+
+<http://rs.tdwg.org/dwc/terms/LivingSpecimen>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/LivingSpecimen>.
+
+<http://rs.tdwg.org/dwc/terms/locality>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/locality>.
+
+<http://rs.tdwg.org/dwc/terms/locationAccordingTo>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/locationAccordingTo>.
+
+<http://rs.tdwg.org/dwc/terms/locationID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/locationID>.
+
+<http://rs.tdwg.org/dwc/terms/locationRemarks>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/locationRemarks>.
+
+<http://rs.tdwg.org/dwc/terms/lowestBiostratigraphicZone>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/lowestBiostratigraphicZone>.
+
+<http://rs.tdwg.org/dwc/terms/MachineObservation>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/MachineObservation>.
+
+<http://rs.tdwg.org/dwc/terms/MaterialSample>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/MaterialSample>.
+
+<http://rs.tdwg.org/dwc/terms/materialSampleID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/materialSampleID>.
+
+<http://rs.tdwg.org/dwc/terms/maximumDepthInMeters>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/maximumDepthInMeters>.
+
+<http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters>.
+
+<http://rs.tdwg.org/dwc/terms/maximumElevationInMeters>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/maximumElevationInMeters>.
+
+<http://rs.tdwg.org/dwc/terms/measurementAccuracy>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/measurementAccuracy>.
+
+<http://rs.tdwg.org/dwc/terms/measurementDeterminedBy>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/measurementDeterminedBy>.
+
+<http://rs.tdwg.org/dwc/terms/measurementDeterminedDate>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/measurementDeterminedDate>.
+
+<http://rs.tdwg.org/dwc/terms/measurementID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/measurementID>.
+
+<http://rs.tdwg.org/dwc/terms/measurementMethod>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/measurementMethod>.
+
+<http://rs.tdwg.org/dwc/terms/MeasurementOrFact>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/MeasurementOrFact>.
+
+<http://rs.tdwg.org/dwc/terms/measurementRemarks>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/measurementRemarks>.
+
+<http://rs.tdwg.org/dwc/terms/measurementType>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/measurementType>.
+
+<http://rs.tdwg.org/dwc/terms/measurementUnit>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/measurementUnit>.
+
+<http://rs.tdwg.org/dwc/terms/measurementValue>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/measurementValue>.
+
+<http://rs.tdwg.org/dwc/terms/member>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/member>.
+
+<http://rs.tdwg.org/dwc/terms/minimumDepthInMeters>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/minimumDepthInMeters>.
+
+<http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters>.
+
+<http://rs.tdwg.org/dwc/terms/minimumElevationInMeters>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/minimumElevationInMeters>.
+
+<http://rs.tdwg.org/dwc/terms/month>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/month>.
+
+<http://rs.tdwg.org/dwc/terms/municipality>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/municipality>.
+
+<http://rs.tdwg.org/dwc/terms/nameAccordingTo>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/nameAccordingTo>.
+
+<http://rs.tdwg.org/dwc/terms/nameAccordingToID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/nameAccordingToID>.
+
+<http://rs.tdwg.org/dwc/terms/namePublishedIn>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/namePublishedIn>.
+
+<http://rs.tdwg.org/dwc/terms/namePublishedInID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/namePublishedInID>.
+
+<http://rs.tdwg.org/dwc/terms/namePublishedInYear>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/namePublishedInYear>.
+
+<http://rs.tdwg.org/dwc/terms/nomenclaturalCode>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/nomenclaturalCode>.
+
+<http://rs.tdwg.org/dwc/terms/nomenclaturalStatus>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/nomenclaturalStatus>.
+
+<http://rs.tdwg.org/dwc/terms/Occurrence>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/Occurrence>.
+
+<http://rs.tdwg.org/dwc/terms/occurrenceID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/occurrenceID>.
+
+<http://rs.tdwg.org/dwc/terms/occurrenceRemarks>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/occurrenceRemarks>.
+
+<http://rs.tdwg.org/dwc/terms/occurrenceStatus>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/occurrenceStatus>.
+
+<http://rs.tdwg.org/dwc/terms/order>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/order>.
+
+<http://rs.tdwg.org/dwc/terms/Organism>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/Organism>.
+
+<http://rs.tdwg.org/dwc/terms/organismID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/organismID>.
+
+<http://rs.tdwg.org/dwc/terms/organismName>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/organismName>.
+
+<http://rs.tdwg.org/dwc/terms/organismQuantity>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/organismQuantity>.
+
+<http://rs.tdwg.org/dwc/terms/organismQuantityType>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/organismQuantityType>.
+
+<http://rs.tdwg.org/dwc/terms/organismRemarks>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/organismRemarks>.
+
+<http://rs.tdwg.org/dwc/terms/organismScope>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/organismScope>.
+
+<http://rs.tdwg.org/dwc/terms/originalNameUsage>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/originalNameUsage>.
+
+<http://rs.tdwg.org/dwc/terms/originalNameUsageID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/originalNameUsageID>.
+
+<http://rs.tdwg.org/dwc/terms/otherCatalogNumbers>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/otherCatalogNumbers>.
+
+<http://rs.tdwg.org/dwc/terms/ownerInstitutionCode>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/ownerInstitutionCode>.
+
+<http://rs.tdwg.org/dwc/terms/parentEventID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/parentEventID>.
+
+<http://rs.tdwg.org/dwc/terms/parentNameUsage>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/parentNameUsage>.
+
+<http://rs.tdwg.org/dwc/terms/parentNameUsageID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/parentNameUsageID>.
+
+<http://rs.tdwg.org/dwc/terms/phylum>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/phylum>.
+
+<http://rs.tdwg.org/dwc/terms/pointRadiusSpatialFit>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/pointRadiusSpatialFit>.
+
+<http://rs.tdwg.org/dwc/terms/preparations>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/preparations>.
+
+<http://rs.tdwg.org/dwc/terms/PreservedSpecimen>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/PreservedSpecimen>.
+
+<http://rs.tdwg.org/dwc/terms/previousIdentifications>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/previousIdentifications>.
+
+<http://rs.tdwg.org/dwc/terms/recordedBy>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/recordedBy>.
+
+<http://rs.tdwg.org/dwc/terms/recordNumber>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/recordNumber>.
+
+<http://rs.tdwg.org/dwc/terms/relatedResourceID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/relatedResourceID>.
+
+<http://rs.tdwg.org/dwc/terms/relationshipAccordingTo>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/relationshipAccordingTo>.
+
+<http://rs.tdwg.org/dwc/terms/relationshipEstablishedDate>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/relationshipEstablishedDate>.
+
+<http://rs.tdwg.org/dwc/terms/relationshipOfResource>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/relationshipOfResource>.
+
+<http://rs.tdwg.org/dwc/terms/relationshipRemarks>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/relationshipRemarks>.
+
+<http://rs.tdwg.org/dwc/terms/reproductiveCondition>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/reproductiveCondition>.
+
+<http://rs.tdwg.org/dwc/terms/resourceID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/resourceID>.
+
+<http://rs.tdwg.org/dwc/terms/ResourceRelationship>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/ResourceRelationship>.
+
+<http://rs.tdwg.org/dwc/terms/resourceRelationshipID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/resourceRelationshipID>.
+
+<http://rs.tdwg.org/dwc/terms/sampleSizeUnit>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/sampleSizeUnit>.
+
+<http://rs.tdwg.org/dwc/terms/sampleSizeValue>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/sampleSizeValue>.
+
+<http://rs.tdwg.org/dwc/terms/samplingEffort>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/samplingEffort>.
+
+<http://rs.tdwg.org/dwc/terms/samplingProtocol>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/samplingProtocol>.
+
+<http://rs.tdwg.org/dwc/terms/scientificName>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/scientificName>.
+
+<http://rs.tdwg.org/dwc/terms/scientificNameAuthorship>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/scientificNameAuthorship>.
+
+<http://rs.tdwg.org/dwc/terms/scientificNameID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/scientificNameID>.
+
+<http://rs.tdwg.org/dwc/terms/sex>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/sex>.
+
+<http://rs.tdwg.org/dwc/terms/specificEpithet>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/specificEpithet>.
+
+<http://rs.tdwg.org/dwc/terms/startDayOfYear>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/startDayOfYear>.
+
+<http://rs.tdwg.org/dwc/terms/stateProvince>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/stateProvince>.
+
+<http://rs.tdwg.org/dwc/terms/subgenus>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/subgenus>.
+
+<http://rs.tdwg.org/dwc/terms/Taxon>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/Taxon>.
+
+<http://rs.tdwg.org/dwc/terms/taxonConceptID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/taxonConceptID>.
+
+<http://rs.tdwg.org/dwc/terms/taxonID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/taxonID>.
+
+<http://rs.tdwg.org/dwc/terms/taxonomicStatus>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/taxonomicStatus>.
+
+<http://rs.tdwg.org/dwc/terms/taxonRank>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/taxonRank>.
+
+<http://rs.tdwg.org/dwc/terms/taxonRemarks>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/taxonRemarks>.
+
+<http://rs.tdwg.org/dwc/terms/typeStatus>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/typeStatus>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimCoordinates>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimCoordinates>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimCoordinateSystem>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimCoordinateSystem>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimDepth>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimDepth>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimElevation>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimElevation>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimEventDate>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimEventDate>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimLatitude>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimLatitude>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimLocality>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimLocality>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimLongitude>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimLongitude>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimSRS>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimSRS>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimTaxonRank>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimTaxonRank>.
+
+<http://rs.tdwg.org/dwc/terms/vernacularName>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/vernacularName>.
+
+<http://rs.tdwg.org/dwc/terms/waterBody>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/waterBody>.
+
+<http://rs.tdwg.org/dwc/terms/year>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/year>.
+
+<http://rs.tdwg.org/dwc/terms/pathway>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/pathway>.
+
+<http://rs.tdwg.org/dwc/terms/degreeOfEstablishment>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/degreeOfEstablishment>.
+
+<http://rs.tdwg.org/dwc/terms/recordedByID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/recordedByID>.
+
+<http://rs.tdwg.org/dwc/terms/verticalDatum>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verticalDatum>.
+
+<http://rs.tdwg.org/dwc/terms/verbatimIdentification>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/verbatimIdentification>.
+
+<http://rs.tdwg.org/dwc/terms/identifiedByID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/identifiedByID>.
+
+<http://rs.tdwg.org/dwc/terms/subfamily>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/subfamily>.
+
+<http://rs.tdwg.org/dwc/terms/genericName>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/genericName>.
+
+<http://rs.tdwg.org/dwc/terms/infragenericEpithet>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/infragenericEpithet>.
+
+<http://rs.tdwg.org/dwc/terms/cultivarEpithet>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/cultivarEpithet>.
+
+<http://rs.tdwg.org/dwc/terms/relationshipOfResourceID>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/relationshipOfResourceID>.
+
+<http://rs.tdwg.org/dwc/terms/MaterialCitation>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/MaterialCitation>.
+
+<http://rs.tdwg.org/dwc/terms.ttl>
+     dc:format "text/turtle";
+     dc:creator "Biodiversity Information Standards (TDWG)";
+     dcterms:references <http://rs.tdwg.org/dwc/terms/>;
+     dcterms:modified "2021-07-27T08:04:18-05:00"^^xsd:dateTime;
+     a foaf:document.
+

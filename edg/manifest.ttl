@@ -1,0 +1,71 @@
+# baseURI: https://data.surroundaustralia.com/manifest/ndeskg
+# imports: https://data.surroundaustralia.com/def/standards-baseline
+
+@prefix : <https://data.surroundaustralia.com/manifest/ndeskg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sop: <http://surroundaustralia.com/ns/platform/> .
+@prefix sopbl: <https://data.surroundaustralia.com/def/standards-baseline#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.surroundaustralia.com/manifest/ndeskg>
+    a owl:Ontology ;
+    owl:imports <https://data.surroundaustralia.com/def/standards-baseline> ;
+    rdfs:comment "This Manifest contains a list of all the assets within BDR National Data Exchange Standard KG, including..."@en ;
+    rdfs:label "BDR National Data Exchange Standard KG"@en ;
+    swa:defaultNamespace "https://data.surroundaustralia.com/manifest/ndeskg/"^^xsd:anyURI ;
+    teamwork:newInstancesUserCannotModifyURI false ;
+.
+
+:manifest-a
+  a sopbl:ManagedGraph ;
+  a sopbl:Manifest ;
+  rdfs:label "Example Manifest Managed Graph"@en ;
+  rdfs:comment "This is some other KG that this GK is importing"@en ;
+  sopbl:edgType sop:OntologyRegister ;
+  sopbl:preload "https://data.surroundaustralia.com/demo/rules/register"^^xsd:anyURI ;
+  sopbl:localCopyPath "/some/other/location/edg/manifest.ttl" ;
+.
+
+:dataset-x
+    a sopbl:ManagedGraph ;
+    dcterms:provenance "Where is this asset from?"@en ;
+    rdfs:comment "This is some dataset"@en ;
+    rdfs:label "Dataset X"@en ;
+    sopbl:edgType <http://teamwork.topbraidlive.org/datagraph/datagraphprojects#ProjectType> ;  # Datagraph
+    sopbl:include "https://data.surroundaustralia.com/dataset/govkg-orgs.shapes"^^xsd:anyURI ;
+    sopbl:include "https://data.surroundaustralia.com/def/crs"^^xsd:anyURI ;
+    sopbl:include "https://data.surroundaustralia.com/platform/shapes/pref2rdfslabel"^^xsd:anyURI ;
+    sopbl:include "https://data.surroundaustralia.com/platform/shapes/sdoname2rdfslabel"^^xsd:anyURI ;
+    sopbl:localCopyPath "datagraphs/crs-dataset.ttl" ;
+    sopbl:proxy "https://data.surroundaustralia.com/dataset/crs"^^xsd:anyURI ;
+    sopbl:repository "https://bitbucket.org/surroundbitbucket/sop-recipe-crs"^^xsd:anyURI ;
+    teamwork:rootClass <https://data.surroundaustralia.com/def/crs#Thing> ;
+.
+
+:ontology-y
+    a sopbl:ManagedGraph ;
+    dcterms:provenance "Where is this asset from?"@en ;
+    dcterms:source <https://github.com/CSIRO-enviro-informatics/crs-ont/blob/9832d16b6e4d4d1406bfa1d912c0183e71eae2cf/schema/crs.ttl> ;
+    rdfs:comment "This is some ontology"@en ;
+    rdfs:label "Ontology X"@en ;
+    sopbl:edgType <http://teamwork.topbraidlive.org/ontologyprojects#ProjectType> ;  # Ontology
+    sopbl:include "https://data.surroundaustralia.com/def/crs-shapes"^^xsd:anyURI ;
+    sopbl:localCopyPath "ontologies/crs.ttl" ;
+    sopbl:proxy "https://data.surroundaustralia.com/def/crs"^^xsd:anyURI ;
+    sopbl:repository "https://bitbucket.org/surroundbitbucket/sop-recipe-crs"^^xsd:anyURI ;
+.
+
+:taxonomy-z
+    a sopbl:ManagedGraph ;
+    dcterms:provenance "Where is this asset from?"@en ;
+    rdfs:label "Vocabulary Z"@en ;
+    rdfs:comment "This is some vocabulary (taxonomy)"@en ;
+    sopbl:edgType <http://evn.topbraidlive.org/evnprojects#ProjectType> ;  # Taxonomy (vocabulary)
+    sopbl:localCopyPath "taxonomies/crs-statuses.ttl" ;
+    sopbl:proxy "https://data.surroundaustralia.com/def/crs-statuses"^^xsd:anyURI ;
+.
