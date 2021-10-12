@@ -1,8 +1,10 @@
-# BDR National Data Exchange Standard KG SOP Recipe
-This repository contains a _SOP Recipe_, that is a collection of mainly RDF assets, described by a _manifest_, used to create a multi-part Knowledge Graph (KG), within the _SURROUND Ontology Platform_ (SOP).
+# BDR National Data Exchange Standard KG
+This repository contains the Biodiversity Data Repository (BDR)'s BDR National Data Exchange Standard (NDES) presented as a Knowledge Graph (KG). That is, a collection of RDF assets, described by a _manifest_, which can be loaded into an RDF multi-graph.
 
 The IRI of the manifest - as a _register_ of assets, is:
 
-* **<https://data.surroundaustralia.com/manifest/ndeskg>**
+* **<https://data.surroundaustralia.com/manifest/ndes>**
 
-The KG as a whole is assigned an IRI (a URN) by SOP on load, based on the KG's title.
+All the KG assets are within the `edg/` folder. Supplimentary materials, such as non-RDF source files, are contained within other folders.
+
+See the `edg/manifest.ttl` for the master manifest of this KG.

@@ -1,7 +1,7 @@
-# baseURI: https://data.surroundaustralia.com/manifest/ndeskg
+# baseURI: https://data.surroundaustralia.com/manifest/ndes
 # imports: https://data.surroundaustralia.com/def/standards-baseline
 
-@prefix : <https://data.surroundaustralia.com/manifest/ndeskg/> .
+@prefix : <https://data.surroundaustralia.com/manifest/ndes/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -12,12 +12,12 @@
 @prefix teamwork: <http://topbraid.org/teamwork#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.surroundaustralia.com/manifest/ndeskg>
+<https://data.surroundaustralia.com/manifest/ndes>
     a owl:Ontology ;
     owl:imports <https://data.surroundaustralia.com/def/standards-baseline> ;
-    rdfs:comment "This Manifest contains a list of all the assets within BDR National Data Exchange Standard KG, including..."@en ;
+    rdfs:comment "This Manifest contains a list of all the top-level assets within BDR National Data Exchange Standard KG"@en ;
     rdfs:label "BDR National Data Exchange Standard KG"@en ;
-    swa:defaultNamespace "https://data.surroundaustralia.com/manifest/ndeskg/"^^xsd:anyURI ;
+    swa:defaultNamespace "https://data.surroundaustralia.com/manifest/ndes/"^^xsd:anyURI ;
     teamwork:newInstancesUserCannotModifyURI false ;
 .
 
