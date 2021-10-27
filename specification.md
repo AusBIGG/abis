@@ -22,9 +22,33 @@
                      
 ## Introduction
 
-This document is a list of _requirements_ for data to meet in order to conform to the [National Data Exchange Standard](https://linked.data.gov.au/def/ndes). The following subsections define properties of the _requirements_.
+This document is a list of _requirements_ for data to meet in order to conform to the [National Data Exchange Standard](https://linked.data.gov.au/def/ndes). Each _requirement_ is defined with a table of values like this:
 
-#### Is identified
+Property | Value
+--- | ---
+Identifier | Prefixed IRI identifier
+Label | Short text
+Definition | Defining text
+Source | Notes on _requirement_ source
+Validators | Related SHACL validators
+Examples | Related RDF example data
+
+The [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web) interpretation of the relation of each of those properties are to each requirement instance are:
+
+Property | Defining RDF predicate | Object type
+--- | --- | ---
+Identifier | `dcterms:identifier` | IRI
+Label | `skos:prefLabel` | text
+Definition | `skos:definition` | text
+Source | `dcterms:source` or `dcterms:provenance` | IRI of an NDES resource or text
+Validators | ??? | IRI of a `Resource Descriptor`
+Examples | `skos:example` | IRI of a `Resource Descriptor`
+
+See the [Namespaces](#namespaces) section below to understand the prefixes in the table above.
+
+The following subsections define properties of the _requirements_ in detail.
+
+#### Identifier
 
 Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace <https://linked.data.gov.au/def/ndes/req/> and `X` is a number, the number of the _requirement_.
 
@@ -62,11 +86,13 @@ The content of the _canonical examples_, i.e. the examples' data, is contianed i
 
 ## Namespaces
 
-Prefix | Namespace
---- | ---
-`req:` | `https://linked.data.gov.au/def/ndes/req/`
-`shp:` | `https://linked.data.gov.au/def/ndes/shape/`
-`eg:` | `https://linked.data.gov.au/def/ndes/eg/`
+Prefix | Namespace | Description
+--- | --- | ---
+**`req:`** | **`https://linked.data.gov.au/def/ndes/req/`** | **NDES Requirements namespace**
+`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
+`eg:` | `https://linked.data.gov.au/def/ndes/eg/` | NDES Canonical Examples namespace
+`shp:` | `https://linked.data.gov.au/def/ndes/shape/` | NDES alidator Shapes namespace
+`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
 
 ## Requirements
 
@@ -74,46 +100,42 @@ Prefix | Namespace
 
 Property | Value
 --- | ---
-ID | `req:1`
-IRI | `https://linked.data.gov.au/def/ndes/req/1`
-Preferred Label | Text
+Identifier | `req:1`
+Label | Text
 Definition | Text
 Source | Text
-Related Validators | <https://linked.data.gov.au/def/ndes/shape/1>
-Canonical Examples | <https://linked.data.gov.au/def/ndes/eg/1><br /><https://linked.data.gov.au/def/ndes/eg/2>
+Validators | shp:1
+Examples | eg:1<br />eg:2
 
 ### req:2
 
 Property | Value
 --- | ---
-ID | `req:2`
-IRI | `https://linked.data.gov.au/def/ndes/req/2`
-Preferred Label | Text
+Identifier | `req:2`
+Label | Text
 Definition | Text
 Source | Text
-Related Validators | <https://linked.data.gov.au/def/ndes/shape/1>
-Canonical Examples | <https://linked.data.gov.au/def/ndes/eg/1><br /><https://linked.data.gov.au/def/ndes/eg/2>
+Validators | shp:2
+Examples | eg:3<br />eg:4
 
 ### req:3
 
 Property | Value
 --- | ---
-ID | `req:3`
-IRI | `https://linked.data.gov.au/def/ndes/req/3`
-Preferred Label | Text
+Identifier | `req:3`
+Label | Text
 Definition | Text
 Source | Text
-Related Validators | <https://linked.data.gov.au/def/ndes/shape/1>
-Canonical Examples | <https://linked.data.gov.au/def/ndes/eg/1><br /><https://linked.data.gov.au/def/ndes/eg/2>
+Validators | shp:3
+Examples | eg:5<br />eg:6
 
 ### req:4
 
 Property | Value
 --- | ---
-ID | `req:4`
-IRI | `https://linked.data.gov.au/def/ndes/req/4`
-Preferred Label | Text
+Identifier | `req:4`
+Label | Text
 Definition | Text
 Source | Text
-Related Validators | <https://linked.data.gov.au/def/ndes/shape/1>
-Canonical Examples | <https://linked.data.gov.au/def/ndes/eg/1><br /><https://linked.data.gov.au/def/ndes/eg/2>
+Validators | shp:4
+Examples | eg:7<br />eg:8
