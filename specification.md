@@ -100,42 +100,42 @@ Prefix | Namespace | Description
 
 Property | Value
 --- | ---
-Identifier | `req:1`
+Identifier | [`req:1`](https://linked.data.gov.au/def/ndes/req/1)
 Label | Text
 Definition | Text
 Source | Text
-Validators | shp:1
-Examples | eg:1<br />eg:2
+Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/1)
+Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/1)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/2)
 
 ### req:2
 
 Property | Value
 --- | ---
-Identifier | `req:2`
+Identifier | [`req:2`](https://linked.data.gov.au/def/ndes/req/2)
 Label | Text
 Definition | Text
 Source | Text
-Validators | shp:2
-Examples | eg:3<br />eg:4
+Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/2)
+Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/3)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/4)
 
 ### req:3
 
 Property | Value
 --- | ---
-Identifier | `req:3`
+Identifier | [`req:3`](https://linked.data.gov.au/def/ndes/req/3)
 Label | Text
 Definition | Text
 Source | Text
-Validators | shp:3
-Examples | eg:5<br />eg:6
+Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/3)
+Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/5)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/6)
 
 ### req:4
 
 Property | Value
 --- | ---
-Identifier | `req:4`
+Identifier | [`req:4`](https://linked.data.gov.au/def/ndes/req/4)
 Label | Text
 Definition | Text
 Source | Text
-Validators | shp:4
-Examples | eg:7<br />eg:8
+Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/3)
+Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/7)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/8)
