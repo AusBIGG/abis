@@ -29,6 +29,7 @@ Property | Value
 Identifier | Prefixed IRI identifier
 Label | Short text
 Definition | Defining text
+Conformance Classes | Selected Conformance Class Identifiers
 Source | Notes on _requirement_ source
 Validators | Related SHACL validators
 Examples | Related RDF example data
@@ -40,6 +41,7 @@ Property | Defining RDF predicate | Object type
 Identifier | `dcterms:identifier` | IRI
 Label | `skos:prefLabel` | text
 Definition | `skos:definition` | text
+Conformance Classes | IRIs
 Source | `dcterms:source` or `dcterms:provenance` | IRI of an NDES resource or text
 Validators | ??? | IRI of a `Resource Descriptor`
 Examples | `skos:example` | IRI of a `Resource Descriptor`
@@ -52,7 +54,7 @@ The following subsections define properties of the _requirements_ in detail.
 
 Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace <https://linked.data.gov.au/def/ndes/req/> and `X` is a number, the number of the _requirement_.
 
-The IRI namespace plus the number make the complete IRI of the _requirement_
+The IRI namespace plus the number make the complete IRI of the _requirement_.
 
 An IRI is an [Internationalized Resource Identifier](https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier) which is a globally unique web address created within a managed namespace that resolves to the element it identifies
 
@@ -65,6 +67,12 @@ Each _requirement_ is named with a short form of its definition, to assist with 
 Each _requirement_ is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the [Web Ontology Language (OWL)](https://www.w3.org/TR/owl2-overview/) since the _target models_ of the NDES are themselves OWL Ontologies.
 
 > NOTE: if there are differences between derivatives of this specification, including the NDES validator, these definitions take precendence
+
+#### Conformance Classes list
+
+Each _requirement_ is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the NDES, the Conformance Classes form modules which data may conform to individually.
+
+Each _requirement_ needs to indicate its Conformance Classes by just linking to them.
 
 #### Contains source notes 
 
@@ -103,6 +111,7 @@ Property | Value
 Identifier | [`req:1`](https://linked.data.gov.au/def/ndes/req/1)
 Label | Text
 Definition | Text
+Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndes/cc/1)
 Source | Text
 Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/1)
 Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/1)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/2)
@@ -114,6 +123,7 @@ Property | Value
 Identifier | [`req:2`](https://linked.data.gov.au/def/ndes/req/2)
 Label | Text
 Definition | Text
+Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndes/cc/1)
 Source | Text
 Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/2)
 Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/3)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/4)
@@ -125,6 +135,7 @@ Property | Value
 Identifier | [`req:3`](https://linked.data.gov.au/def/ndes/req/3)
 Label | Text
 Definition | Text
+Conformance Classes | [`cc:2`](https://linked.data.gov.au/def/ndes/cc/2)
 Source | Text
 Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/3)
 Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/5)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/6)
@@ -136,6 +147,7 @@ Property | Value
 Identifier | [`req:4`](https://linked.data.gov.au/def/ndes/req/4)
 Label | Text
 Definition | Text
+Conformance Classes | [`cc:3`](https://linked.data.gov.au/def/ndes/cc/3)
 Source | Text
 Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/3)
 Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/7)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/8)
