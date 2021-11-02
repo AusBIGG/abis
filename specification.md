@@ -41,7 +41,7 @@ Property | Defining RDF predicate | Object type
 Identifier | `dcterms:identifier` | IRI
 Label | `skos:prefLabel` | text
 Definition | `skos:definition` | text
-Conformance Classes | IRIs
+Conformance Classes | `dcterms:isPartOf` | IRIs
 Source | `dcterms:source` or `dcterms:provenance` | IRI of an NDES resource or text
 Validators | ??? | IRI of a `Resource Descriptor`
 Examples | `skos:example` | IRI of a `Resource Descriptor`
