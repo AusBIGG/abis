@@ -100,10 +100,10 @@ Prefix | Namespace | Description
 `dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
 `ex:` | `http://example.com/thing` | Generic examples namespace
 `nex:` | `https://linked.data.gov.au/def/ndes/eg/` | NDES Canonical Examples namespace
+`nsh:` | `https://linked.data.gov.au/def/ndes/shape/` | NDES Validators Shapes namespace
 `owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
 `rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 `sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
-`shp:` | `https://linked.data.gov.au/def/ndes/shape/` | NDES Validators Shapes namespace
 `skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
 `tern:` | `http://www.w3.org/ns/sosa/` | TERN Ontology namespace
 `time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
@@ -169,7 +169,7 @@ Label | Text
 Definition | Text
 Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndes/cc/1)
 Source | Text
-Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/2)
+Validators | [`nsh:1`](https://linked.data.gov.au/def/ndes/shape/2)
 Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/3)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/4)
 
 #### req:3
@@ -181,7 +181,7 @@ Label | Text
 Definition | Text
 Conformance Classes | [`cc:2`](https://linked.data.gov.au/def/ndes/cc/2)
 Source | Text
-Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/3)
+Validators | [`nsh:1`](https://linked.data.gov.au/def/ndes/shape/3)
 Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/5)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/6)
 
 ### NDES Message Conformance Class Requirements
