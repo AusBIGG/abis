@@ -1,0 +1,344 @@
+= NDES Specification
+:toc:
+
+[width=50%, frame=none, grid=none, stripes=even]
+|===
+|**IRI** | https://linked.data.gov.au/def/ndesbd/spec
+|**Title** | National Data Exchange Standard's Specifciation
+|**Definition** | This document lists the normative requirements for data aiming to conform to the link:https://linked.data.gov.au/def/ndesdb[National Data Exchange Standard]. It is to be used as the authoratitive, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.
+|**Created** | 2021-10-24
+|**Modified** | 2021-11-20
+|**Creator** | link:https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), link:https://www.gaiaresources.com.au/[Gaia Resources] and the [Department of Agriculture, Water and the Environment]
+|**Publisher** | link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
+|**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|**Further information** | This specification is part of the Australian link:https://linked.data.gov.au/def/ndes[National Data Exchange Standard]. That Standard is established as a _profile_ of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one. +
+See that profile's main document for details of the other profile parts and how this Specification related to them.
+|===         
+
+== Preamble
+
+== Abstract
+
+This Specification is the normative listing of requirements for data conformig to the National Data Exchange Standard for Biodiversity Data (NDES-BD).
+
+== Normative Status
+
+This Specification is normative for the NDES-BD and take precedence over other elements of the Standard where conflics are found.
+
+=== Standard Parts
+
+This _Specification_ document one of many resources that together make the NDES-BD _Standard_. The Standard and its parts are formally defined using terminology from the _Profiles Vocabulary_ <<PROF>>.
+
+Other parts of this _Standard_ are:
+
+* _Schema_
+** ontologies and other target data models
+** including the overarching NDES-DB Ontology and the TERN Ontology
+* _Validators_
+** machine-readable validation code to validate data claiming conformance to the NDES-DB
+* _Examples_
+** Examples of RDF data to show how to formulate BDR information
+* _Mappings_
+** Instructions on how to convert BDR data to data conformaing to other Standards
+
+The formal and linked listing of this Standards's parts is found in its _Profile Declaration_ online at link:https://linked.data.gov.au/def/ndesdb[National Data Exchange Standard].
+
+=== Namespaces
+
+[width=75%, frame=none, grid=none, stripes=even]
+|===
+|Prefix | Namespace | Description
+
+|**`req:`** | **`https://linked.data.gov.au/def/ndesbd/req/`** | **NDES-BD Requirements namespace**
+|`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
+|`ex:` | `http://example.com/thing` | Generic examples namespace
+|`nex:` | `https://linked.data.gov.au/def/ndesbd/examples/` | NDES-BD Canonical Examples namespace
+|`nsh:` | `https://linked.data.gov.au/def/ndesbd/shape/` | NDES-BD Validators Shapes namespace
+|`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
+|`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
+|`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
+|`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
+|`tern:` | `http://www.w3.org/ns/sosa/` | TERN Ontology namespace
+|`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
+|`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
+|`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
+|===
+
+== Introduction
+
+This document is a list of _requirements_ for data to meet in order to conform to the link:https://linked.data.gov.au/def/ndes[National Data Exchange Standard]. Each _requirement_ is defined with a table of values like this:
+
+[width=25%, frame=none, grid=none, stripes=even]
+|===
+|Identifier | Prefixed IRI identifier
+|Label | Short text
+|Definition | Defining text
+|Conformance Classes | Selected Conformance Class Identifiers
+|Source | Notes on _requirement_ source
+|Validators | Related SHACL validators
+|Examples | Related RDF example data
+|===
+
+The link:https://en.wikipedia.org/wiki/Semantic_Web[Semantic Web] interpretation of the relation of each of those properties are to each requirement instance are:
+
+[width=25%, frame=none, grid=none, stripes=even]
+|===
+|Property | Defining RDF predicate | Object type
+
+|Identifier | `dcterms:identifier` | IRI
+|Label | `skos:prefLabel` | text
+|Definition | `skos:definition` | text
+|Conformance Classes | `dcterms:isPartOf` | IRIs
+|Source | `dcterms:source` or `dcterms:provenance` | IRI of an NDES resource or text
+|Validators | ??? | IRI of a `Resource Descriptor`
+|Examples | `skos:example` | IRI of a `Resource Descriptor`
+|===
+
+See the link:#namespaces[Namespaces] section below to understand the prefixes in the table above.
+
+The following subsections define properties of the _requirements_ in detail.
+
+=== Identifier
+
+Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace <https://linked.data.gov.au/def/ndesbd/req/> and `X` is a number, the number of the _requirement_.
+
+The IRI namespace plus the number make the complete IRI of the _requirement_.
+
+An IRI is an link:https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier[Internationalized Resource Identifier] which is a globally unique web address created within a managed namespace that resolves to the element it identifies
+
+=== Labeled
+
+Each _requirement_ is named with a short form of its definition, to assist with human referencing.
+
+=== Definition
+
+Each _requirement_ is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the link:https://www.w3.org/TR/owl2-overview/[Web Ontology Language (OWL)] since the _target models_ of the NDES-BD are themselves OWL Ontologies.
+
+> NOTE: if there are differences between derivatives of this specification, including the NDES-BD validator, these definitions take precendence
+
+=== Conformance Classes list
+
+Each _requirement_ is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the NDES-BD, the Conformance Classes form modules which data may conform to individually.
+
+Each _requirement_ needs to indicate its Conformance Classes by linking to them.
+
+=== Contains source notes 
+
+Each _requirement_ contains source notes  what motivated the _requirement_'s definition, including references to source documents or other NDES-BD artifacts, such as ontologies.
+
+=== Related validators
+
+Each _requirement_ contains references to individual, identified, data validation _shapes_ defined in the NDES-BD Profile's _validator_ used to validate link:https://www.w3.org/RDF/[Resource Description Framework (RDF)] data - the only form of data allowed to be used for NDES-BD data exchange.
+
+The content of _validator_s is contianed in the NDES-BD' _Validator_ resource.
+
+> NOTE: the validating _shapes_ are not 1:1 with these _requirements_ and that there are _requirements_ for which there are no _shapes_ - those _requirements_ that cannot be determined to have been met by inspecting data.
+
+=== Canonical examples
+
+For each _requirement_, references are given to at least two _canonical examples_ of RDF data that do (positive example) and don't (negative example) pass validation using the validators related to the _requirement_.
+
+The content of the _canonical examples_, i.e. the examples' data, is contianed in the NDES-BD' _Canonical Examples_ resource.
+
+== Conformance Classes
+
+Conformance Classes are groupings of Requirements within the NDES-BD. Data claiming conforming to the NDES-BD may indicate conformance per-Conformance Class. Conformance  to a Conformance Class means conforming to _all_ the Requirements within it, not just some.
+
+The Conformance Classes are:
+
+* <<TERN Ontology Conformance Class>>
+* <<NDES-BD Messages Conformance Class>>
+
+=== TERN Ontology Conformance Class
+
+[width=75%, frame=none, stripes=even]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Label | TERN Ontology Conformance Class
+|Definition | The set of requirements needed to be met to ensure conformance with the TERN Ontology
+|Requirements | link:https://linked.data.gov.au/def/ndesbd/req/observation-properties[`req:observation-properties`]
+|===
+
+=== NDES-BD Messages Conformance Class
+
+[width=75%, frame=none, stripes=even]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages[`cc:ndes-messages`]
+|Label | NDES-BD Messages Conformance Class
+|Definition | The set of requirements needed to be met to ensure conformance with the NDES-BD' Gateway's message needs
+|Requirements | link:https://linked.data.gov.au/def/ndesbd/req/message-new-observations[`req:message-new-observations`]
+|===
+
+== Requirements
+
+Requirements are the individual rules that data claiming conformance to the NDES-BD must abide by. 
+
+The Requirements are:
+
+* <<TERN Ontology Conformance Class Requirements>>
+** <<TERN Observation Properties>>
+** <<req:2>>
+** <<req:3>>
+* <<NDES-BD Message Conformance Class Requirements>>
+** <<Message containing new Observations>>
+
+=== TERN Ontology Conformance Class Requirements
+
+==== TERN Observation Properties
+
+[width=75%, frame=none, stripes=even]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/observation-properties[`req:observation-properties`]
+|Label | TERN Observation Properties
+|Definition | Instances of the TERN Ontology's `Observation` class _MUST_ have: +
+* exactly 1 TERN Ontology `inDataset` predicate indicating a TERN Ontology `RDFDataset` class instance; +
+* exactly 1 SOSA Ontology `hasFeatureOfInterest` predicate indicating a TERN Ontology `FeatureOfInterest` class instance; +
+* exactly 1 SOSA Ontology `hasResult` predicate TERN Ontology `Value` class instance; +
+* exactly 1 SOSA Ontology `observedProperty` predicate indicating an IRI; +
+* exactly 1 SOSA Ontology `phenomenonTime` predicate indicating a TIME Ontology `Instant` class instance; +
+* exactly 1 SOSA Ontology `resultTime` predicate indicating a `dateTime` literal value; +
+* exactly 1 SOSA Ontology `usedProcedure` predicate indicating an IRI; +
+* a maximum of 1 Dublin Core Terms `type` predicate indicating an IRI; +
+* a maximum of 1 RDFS Ontology `comment` predicate indicating a `string` literal value; +
+* a maximum of 1 TERN Ontology `hasSiteVisit` predicate indicating a TERN Ontology `SiteVisit` class instance. + +
+If the instance has: +
+* a Dublin Core Terms `identifier` predicate it must indicate a `string` literal value; +
+* a GeoSPARQL Ontology `hasGeometry` predicate it must indicate a TERN Location Ontology `Geometry` class instance; +
+* a PROV Ontology `wasAttributedTo` predicate it must indicate a TERN Organisation Ontology `Person` class instance; +
+* a TERN Ontology `hasAttribute` predicate it must indicate an IRI; +
+* a TERN Ontology `usedInstrument` predicate it must indicate a TERN Organisation Ontology `Instrument` class instance.
+|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/1[`cc:1`]
+|Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
+|Validators | link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`]
+|Examples | link:https://linked.data.gov.au/def/ndesbd/examples/observation-valid-01[`ex:observation-valid-01`]
+|===
+
+==== req:2
+
+[width=75%, frame=none, stripes=even]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/2[`req:2`]
+|Label | Text
+|Definition | Text
+|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/1[`cc:1`]
+|Source | Text
+|Validators | link:https://linked.data.gov.au/def/ndesbd/shape/2[`nsh:1`]
+|Examples | link:https://linked.data.gov.au/def/ndesbd/examples/4[`nex:1`], link:(https://linked.data.gov.au/def/ndesbd/examples/3)[`nex:2`]
+|===
+
+==== req:3
+
+[width=75%, frame=none, stripes=even]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/3[`req:3`]
+|Label | Text
+|Definition | Text
+|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/2[`cc:2`]
+|Source | Text
+|Validators | link:https://linked.data.gov.au/def/ndesbd/shape/3[`nsh:1`]
+|Examples | link:https://linked.data.gov.au/def/ndesbd/examples/4[`nex:1`], link:(https://linked.data.gov.au/def/ndesbd/examples/3)[`nex:2`]
+|===
+
+=== NDES-BD Message Conformance Class Requirements
+
+==== Message containing new Observations
+
+[width=75%, frame=none, stripes=even]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/message-new-observations[`req:message-new-observations`]
+|Label | Message containing new Observations
+|Definition | Instances of the NDES-BD Ontology's `NewObservationsMessage` class _MUST_ contain: +
+* a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance; +
+* exactly 1 NDES-BD Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
+|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages[`cc:ndes-messages`]
+|Source | NDES-BD Gateway Messaging
+|Validators | link:https://linked.data.gov.au/def/ndesbd/shape/message-new-observations-01[`nsh:message-new-observations-01`]
+|Examples | link:https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01[`https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01`]
+|===
+
+==== Message containing Observation to be deleted
+
+[width=75%, frame=none, stripes=even]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/message-delete-observations[`req:message-delete-observations`]
+|Label | Message containing Observation to be deleted
+|Definition | Instances of the NDES-BD Ontology's `DeleteObservationsMessage` class _MUST_ contain: +
+* a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance; +
+* the SOSA Ontology `ObservationCollection` class instance must contain a minimum of 1 RDFS Ontology `member` predicate indcating an IRI of an existing TERN Ontology `Observation` class instance`.
+|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages[`cc:ndes-messages`]
+|Source | NDES-BD Gateway Messaging
+|Validators | link:https://linked.data.gov.au/def/ndesbd/shape/message-delete-observations-01[`nsh:message-delete-observations-01`]
+|Examples | link:https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01[`https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01`]
+|===
+
+== Sources
+
+The sources listed here are documents, agreements, other Standards and so on from which the Requirements in this Specification originate.
+
+=== NDES-DB Messaging 
+
+Requirements for messages to tbe Biodiversity Data Repository.
+
+[width=50%, frame=none, grid=none, stripes=even]
+|===
+|Authoratitive copy | https://linked.data.gov.au/def/ndesbd/ont
+|Local copy | `kg/ontologies/ndesbd.ttl`
+|===
+
+=== TERN Ontology
+
+Requirements for the scientific data within the Biodiversity Data Repository.
+
+[width=50%, frame=none, grid=none, stripes=even]
+|===
+|Authoratitive copy | https://w3id.org/tern/ontologies/tern/ 
+|Local copy | `kg/ontologies/tern.ttl`
+|===
+
+=== Darwin Core RDF
+
+Requirements to meet the Darwin Core international biodiversity data model.
+
+[width=50%, frame=none, grid=none, stripes=even]
+|===
+|Documentation | https://dwc.tdwg.org/terms/
+|Authoratitive copy | https://dwc.tdwg.org/rdf/
+|Local copy | `kg/ontologies/dwc.ttl`
+|===
+
+=== Audubon Core Term List
+
+Requirements to meet the Audubon Core international biodiversity data model.
+
+[width=50%, frame=none, grid=none, stripes=even]
+|===
+|Authoratitive copy | https://ac.tdwg.org/termlist/
+|===
+
+=== NDES-BD Gateway Messaging
+
+Requirements for the functioning of the NDES-DB Gateway API.
+
+[width=50%, frame=none, grid=none, stripes=even]
+|===
+|Documentation | http://ndesgateway.surroundaustralia.com/
+|===
+
+
+== References
+
+* [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>
