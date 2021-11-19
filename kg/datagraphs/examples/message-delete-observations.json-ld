@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "ndesdb": "https://linked.data.gov.au/def/ndesbd/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "tern": "https://w3id.org/tern/ontologies/tern/",
+    "time": "http://www.w3.org/2006/time#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "void": "http://rdfs.org/ns/void#"
+  },
+  "@graph": [
+    {
+      "@id": "_:b0",
+      "@type": "sosa:ObservationCollection",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Example Valid SOSA ObservationCollection 01"
+      },
+      "rdfs:member": [
+        {
+          "@id": "https://linked.data.gov.au/dataset/bdr/observation/example-valid-01"
+        },
+        {
+          "@id": "https://linked.data.gov.au/dataset/bdr/observation/example-valid-02"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01",
+      "@type": "ndesdb:DeleteObservationsMessage",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A minimally valid ndesdb:DeleteObservationsMessage instance"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Valid NDES-BD DeleteObservationsMessage 01"
+      },
+      "rdfs:member": {
+        "@id": "_:b0"
+      },
+      "ndesdb:targetDataset": {
+        "@id": "https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01"
+      }
+    }
+  ]
+}
