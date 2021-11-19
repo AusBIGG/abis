@@ -1,4 +1,4 @@
-PREFIX : <https://linked.data.gov.au/dataset/ndes/examples/>
+PREFIX : <https://linked.data.gov.au/def/ndes/examples/>
 
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex: <http://example.com/thing/> 
@@ -10,7 +10,7 @@ PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://linked.data.gov.au/dataset/ndes/examples>
+<https://linked.data.gov.au/def/ndes/examples>
     a owl:Ontology ;
     rdfs:label "NDES Examples"@en ;
     rdfs:comment "A dataset ontology of examples of NDES objects"@en ;
