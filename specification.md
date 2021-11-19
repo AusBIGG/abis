@@ -98,9 +98,17 @@ Prefix | Namespace | Description
 --- | --- | ---
 **`req:`** | **`https://linked.data.gov.au/def/ndes/req/`** | **NDES Requirements namespace**
 `dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
-`eg:` | `https://linked.data.gov.au/def/ndes/eg/` | NDES Canonical Examples namespace
-`shp:` | `https://linked.data.gov.au/def/ndes/shape/` | NDES alidator Shapes namespace
+`ex:` | `http://example.com/thing` | Generic examples namespace
+`nex:` | `https://linked.data.gov.au/def/ndes/eg/` | NDES Canonical Examples namespace
+`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
+`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
+`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
+`shp:` | `https://linked.data.gov.au/def/ndes/shape/` | NDES Validators Shapes namespace
 `skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
+`tern:` | `http://www.w3.org/ns/sosa/` | TERN Ontology namespace
+`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
+`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
+`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
 
 ## Conformance Classes
 
@@ -135,7 +143,7 @@ Definition | Text
 Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndes/cc/1)
 Source | Text
 Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/2)
-Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/3)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/4)
+Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/3)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/4)
 
 ### req:3
 
@@ -147,7 +155,7 @@ Definition | Text
 Conformance Classes | [`cc:2`](https://linked.data.gov.au/def/ndes/cc/2)
 Source | Text
 Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/3)
-Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/5)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/6)
+Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/5)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/6)
 
 ### req:4
 
@@ -159,4 +167,4 @@ Definition | Text
 Conformance Classes | [`cc:3`](https://linked.data.gov.au/def/ndes/cc/3)
 Source | Text
 Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/3)
-Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/7)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/8)
+Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/7)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/8)
