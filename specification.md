@@ -112,28 +112,55 @@ Prefix | Namespace | Description
 
 ## Conformance Classes
 
+Conformance Classes are groupings of Requirements within the NDES. Data claiming conforming to the NDES may indicate conformance per-Conformance Class. Conformance  to a Conformance Class means conforming to _all_ the Requirements within it, not just some.
+
+The Conformance Classes are:
+
+* [cc:tern-ontology](#cctern-ontology)
+* [cc:ndes-message](#ccndes-message)
+
+### cc:tern-ontology
+
 Property | Value
 --- | ---
-Identifier | [`req:2`](https://linked.data.gov.au/def/ndes/conformanceclass/tern-ontology)
+Identifier | [`cc:tern-ontology`](https://linked.data.gov.au/def/ndes/conformanceclass/tern-ontology)
 Label | TERN Ontology Conformance Class
 Definition | The set of requirements needed to be met to ensure conformance with the TERN Ontology
 Requirements | [`req:observation-properties`](https://linked.data.gov.au/def/ndes/req/observation-properties)
 
+### cc:ndes-messages
+
+Property | Value
+--- | ---
+Identifier | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndes/conformanceclass/ndes-messages)
+Label | NDES Messages Conformance Class
+Definition | The set of requirements needed to be met to ensure conformance with the NDES' Gateway's message needs
+Requirements | [`req:message-new-observations`](https://linked.data.gov.au/def/ndes/req/message-new-observations)
+
+
 ## Requirements
 
-### req:observation-properties
+Requirements are the individual rules that data claiming conformance to the NDES must abide by. 
+
+The Requirements are:
+
+* [req:observation-properties](reqobservation-properties)
+
+### TERN Ontology Conformance Class Requirements
+
+#### req:observation-properties
 
 Property | Value
 --- | ---
 Identifier | [`req:observation-properties`](https://linked.data.gov.au/def/ndes/req/observation-properties)
 Label | TERN Observation Properties
-Definition | Instances of the TERN Ontology's `Observation` class _MUST_ have: exactly 1 TERN Ontology `inDataset` predicate, indicating a TERN Ontology `RDFDataset` class instance, exactly 1 SOSA Ontology `hasFeatureOfInterest` predicate indicating a TERN Ontology `FeatureOfInterest` class instance, exactly 1 SOSA Ontology `hasResult` predicate TERN Ontology `Value` class instance, exactly 1 SOSA Ontology `observedProperty` predicate indicating an IRI, exactly 1 SOSA Ontology `phenomenonTime` predicate indicating a TIME Ontology `Instant` class instance, exactly 1 SOSA Ontology `resultTime` predicate indicating a `dateTime` literal value, exactly 1 SOSA Ontology `usedProcedure` predicate indicating an IRI, a maximum of 1 Dublin Core Terms `type` predicate indicating an IRI, a maximum of 1 RDFS Ontology `comment` predicate indicating a `string` literal value, a maximum of 1 TERN Ontology `hasSiteVisit` predicate indicating a TERN Ontology `SiteVisit` class instance. If the instance has: a Dublin Core Terms `identifier` predicate it must indicate a `string` literal value, a GeoSPARQL Ontology `hasGeometry` predicate it must indicate a TERN Location Ontology `Geometry` class instance, a PROV Ontology `wasAttributedTo` predicate it must indicate a TERN Organisation Ontology `Person` class instance, a TERN Ontology `hasAttribute` predicate it must indicate an IRI, a TERN Ontology `usedInstrument` predicate it must indicate a TERN Organisation Ontology `Instrument` class instance.
+Definition | Instances of the TERN Ontology's `Observation` class _MUST_ have:<br />* exactly 1 TERN Ontology `inDataset` predicate indicating a TERN Ontology `RDFDataset` class instance;<br />* exactly 1 SOSA Ontology `hasFeatureOfInterest` predicate indicating a TERN Ontology `FeatureOfInterest` class instance;<br />* exactly 1 SOSA Ontology `hasResult` predicate TERN Ontology `Value` class instance;<br />* exactly 1 SOSA Ontology `observedProperty` predicate indicating an IRI;<br />* exactly 1 SOSA Ontology `phenomenonTime` predicate indicating a TIME Ontology `Instant` class instance;<br />* exactly 1 SOSA Ontology `resultTime` predicate indicating a `dateTime` literal value;<br />* exactly 1 SOSA Ontology `usedProcedure` predicate indicating an IRI;<br />* a maximum of 1 Dublin Core Terms `type` predicate indicating an IRI;<br />* a maximum of 1 RDFS Ontology `comment` predicate indicating a `string` literal value;<br />* a maximum of 1 TERN Ontology `hasSiteVisit` predicate indicating a TERN Ontology `SiteVisit` class instance.<br /><br />If the instance has:<br />* a Dublin Core Terms `identifier` predicate it must indicate a `string` literal value;<br />* a GeoSPARQL Ontology `hasGeometry` predicate it must indicate a TERN Location Ontology `Geometry` class instance;<br />* a PROV Ontology `wasAttributedTo` predicate it must indicate a TERN Organisation Ontology `Person` class instance;<br />* a TERN Ontology `hasAttribute` predicate it must indicate an IRI;<br />* a TERN Ontology `usedInstrument` predicate it must indicate a TERN Organisation Ontology `Instrument` class instance.
 Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndes/cc/1)
 Source | [TERN Ontology](https://w3id.org/tern/ontologies/tern)
 Validators | [`tern:Observation`](https://w3id.org/tern/ontologies/tern/Observation)
 Examples | [`ex:observation-valid-01`](https://linked.data.gov.au/def/ndes/examples/observation-valid-01)
 
-### req:2
+#### req:2
 
 Property | Value
 --- | ---
@@ -145,7 +172,7 @@ Source | Text
 Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/2)
 Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/3)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/4)
 
-### req:3
+#### req:3
 
 Property | Value
 --- | ---
@@ -157,14 +184,16 @@ Source | Text
 Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/3)
 Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/5)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/6)
 
-### req:4
+### NDES Message Conformance Class Requirements
+
+#### req:message-new-observations
 
 Property | Value
 --- | ---
-Identifier | [`req:4`](https://linked.data.gov.au/def/ndes/req/4)
-Label | Text
-Definition | Text
-Conformance Classes | [`cc:3`](https://linked.data.gov.au/def/ndes/cc/3)
+Identifier | [`req:message-new-observations`](https://linked.data.gov.au/def/ndes/req/message-new-observations)
+Label | Message containing new Observation's properties
+Definition | Instances of the NDES Ontology's `NewObservationsMessage` class _MUST_ contain:<br />* a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;<br />* exactly 1 NDES Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
+Conformance Classes | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndes/conformanceclass/ndes-messages)
 Source | Text
-Validators | [`shp:1`](https://linked.data.gov.au/def/ndes/shape/3)
-Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/7)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/8)
+Validators | _**TODO**_
+Examples | _**TODO**_
