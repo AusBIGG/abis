@@ -1,0 +1,9 @@
+= Specification
+
+_This is just an ASCIIDOC test_
+
+== A Second-level headging
+
+* A bullet list
+** With indented 
+*** Items
