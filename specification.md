@@ -195,5 +195,5 @@ Label | Message containing new Observation's properties
 Definition | Instances of the NDES Ontology's `NewObservationsMessage` class _MUST_ contain:<br />* a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;<br />* exactly 1 NDES Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
 Conformance Classes | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndes/conformanceclass/ndes-messages)
 Source | Text
-Validators | _**TODO**_
+Validators | [`nsh:message-new-observations-01`](https://linked.data.gov.au/def/ndes/shape/message-new-observations-01)
 Examples | _**TODO**_
