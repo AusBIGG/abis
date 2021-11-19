@@ -10,3 +10,7 @@
 ### Audubon Core Term List
     NO FILE
     https://ac.tdwg.org/termlist/
+
+### NDES-BD Gateway Messaging
+    NO FILE
+    Functioning Requirements of the NDES-DB Gateway API

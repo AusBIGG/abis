@@ -194,7 +194,7 @@ Identifier | [`req:message-new-observations`](https://linked.data.gov.au/def/nde
 Label | Message containing new Observations
 Definition | Instances of the NDES Ontology's `NewObservationsMessage` class _MUST_ contain:<br />* a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;<br />* exactly 1 NDES Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
 Conformance Classes | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages)
-Source | Text
+Source | NDES-BD Gateway Messaging
 Validators | [`nsh:message-new-observations-01`](https://linked.data.gov.au/def/ndesbd/shape/message-new-observations-01)
 Examples | [`https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01`](https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01)
 
@@ -206,6 +206,6 @@ Identifier | [`req:message-delete-observations`](https://linked.data.gov.au/def/
 Label | Message containing Observation to be deleted
 Definition | Instances of the NDES Ontology's `DeleteObservationsMessage` class _MUST_ contain:<br />* a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;<br />* the SOSA Ontology `ObservationCollection` class instance must contain a minimum of 1 RDFS Ontology `member` predicate indcating an IRI of an existing TERN Ontology `Observation` class instance`.
 Conformance Classes | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages)
-Source | Text
+Source | NDES-BD Gateway Messaging
 Validators | [`nsh:message-delete-observations-01`](https://linked.data.gov.au/def/ndesbd/shape/message-delete-observations-01)
 Examples | [`https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01`](https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01)
