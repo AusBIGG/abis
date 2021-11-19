@@ -72,7 +72,7 @@ Each _requirement_ is defined in human-readable terms but with references to dat
 
 Each _requirement_ is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the NDES, the Conformance Classes form modules which data may conform to individually.
 
-Each _requirement_ needs to indicate its Conformance Classes by just linking to them.
+Each _requirement_ needs to indicate its Conformance Classes by linking to them.
 
 #### Contains source notes 
 
@@ -102,6 +102,15 @@ Prefix | Namespace | Description
 `shp:` | `https://linked.data.gov.au/def/ndes/shape/` | NDES alidator Shapes namespace
 `skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
 
+## Conformance Classes
+
+Property | Value
+--- | ---
+Identifier | [`req:2`](https://linked.data.gov.au/def/ndes/conformanceclass/tern-ontology)
+Label | TERN Ontology Conformance Class
+Definition | The set of requirements needed to be met to ensure conformance with the TERN Ontology
+Requirements | [`req:observation-properties`](https://linked.data.gov.au/def/ndes/req/observation-properties)
+
 ## Requirements
 
 ### req:observation-properties
@@ -114,7 +123,7 @@ Definition | Instances of the TERN Ontology's `Observation` class _MUST_ have: e
 Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndes/cc/1)
 Source | [TERN Ontology](https://w3id.org/tern/ontologies/tern)
 Validators | [`tern:Observation`](https://w3id.org/tern/ontologies/tern/Observation)
-Examples | [`eg:1`](https://linked.data.gov.au/def/ndes/eg/1)<br />[`eg:2`](https://linked.data.gov.au/def/ndes/eg/2)
+Examples | [`ex:observation-valid-01`](https://linked.data.gov.au/def/ndes/examples/observation-valid-01)
 
 ### req:2
 
