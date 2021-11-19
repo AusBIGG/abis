@@ -1,0 +1,32 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ndes: <https://linked.data.gov.au/def/ndes/>
+PREFIX nsh: <https://linked.data.gov.au/def/ndes/shape/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX sdo: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX tern: <http://www.w3.org/ns/sosa/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+nsh:message-new-observations-01
+    a sh:NodeShape ;
+    sh:targetClass ndes:NewObservationsMessage ;
+    sh:property [
+        sh:path rdfs:member ;
+        sh:minCount 1 ;
+        sh:class sosa:ObservationCollection ;
+        sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;
+    ] ,
+    [
+        sh:path ndes:targetsDataset ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class tern:RDFDataset ;
+        sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have exactly 1 NDES Ontology targetDataset predicate indicating a TERN Ontology RDFDataset class instance"@en ;
+    ] ;
+.
