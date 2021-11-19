@@ -1,0 +1,46 @@
+# baseURI: https://linked.data.gov.au/def/ndesbd
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <http://example.com/thing/> 
+PREFIX ndesdb: <https://linked.data.gov.au/def/ndes/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/> 
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+<https://linked.data.gov.au/def/ndesbd>
+    a owl:Ontology ;
+    rdfs:label "NDES-BD Ontology"@en ;
+    rdfs:comment "An ontology for the Australian National Data Exchange Standard for Biodiversity Data (NDES-BD)"@en ;
+.
+
+ndesdb:Message
+    a owl:Class ;
+    skos:prefLabel "Message"@en ;
+    skos:definition "An RDF graph communicating instructions to the Biodiversity Data Repository's Gateway."@en ;
+    skos:scopeNote "This is an abstract class and instances of it should not be created."@en ;
+.
+
+ndesdb:NewObservationsMessage
+    a owl:Class ;
+    skos:prefLabel "New Observations Message"@en ;
+    skos:definition "An RDF graph containing new tern:Observation instances indended to be stored in the Biodiversity Data Repository"@en ;
+.
+
+ndesdb:DeleteObservationsMessage
+    a owl:Class ;
+    skos:prefLabel "Delete Observations Message"@en ;
+    skos:definition "An RDF graph containing the identifiers of sosa:Observation instances to be deleted from the Biodiversity Data Repository"@en ;
+.
+
+ndesdb:UpdateObservationsMessage
+    a owl:Class ;
+    skos:prefLabel "Update Observations Message"@en ;
+    skos:definition "An RDF graph containing tern:Observation instances already present in the Biodiversity Data Repository that are to be updated with this content"@en ;
+    skos:scopeNote "All originally supplied properties of the tern:Observation instances within the Biodiversity Data Repository will be deleted and then these new properties will be inserted. Properties of the tern:Observation instances calculated by the BDR may be recalculated."@en ;
+.

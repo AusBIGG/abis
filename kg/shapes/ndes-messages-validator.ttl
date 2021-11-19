@@ -1,5 +1,5 @@
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX ndes: <https://linked.data.gov.au/def/ndes/>
+PREFIX ndesdb: <https://linked.data.gov.au/def/ndes/>
 PREFIX nsh: <https://linked.data.gov.au/def/ndes/shape/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
@@ -15,7 +15,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 nsh:message-new-observations-01
     a sh:NodeShape ;
-    sh:targetClass ndes:NewObservationsMessage ;
+    sh:targetClass ndesdb:NewObservationsMessage ;
     sh:property [
         sh:path rdfs:member ;
         sh:minCount 1 ;
@@ -23,10 +23,27 @@ nsh:message-new-observations-01
         sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;
     ] ,
     [
-        sh:path ndes:targetsDataset ;
+        sh:path ndesdb:targetsDataset ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:class tern:RDFDataset ;
         sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have exactly 1 NDES Ontology targetDataset predicate indicating a TERN Ontology RDFDataset class instance"@en ;
+    ] ;
+.
+
+nsh:message-delete-observations-01
+    a sh:NodeShape ;
+    sh:targetClass ndesdb:DeleteObservationsMessage ;
+    sh:property [
+        sh:path rdfs:member ;
+        sh:minCount 1 ;
+        sh:class sosa:ObservationCollection ;
+        sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;        
+        sh:property [
+            sh:path rdfs:member ;
+            sh:minCount 1 ;
+            sh:class tern:Observation ;
+            sh:message "SOSA Ontology ObservationCollection class instances within a ndesbd:DeleteObservationsMessage must contain a minimum of 1 rdfs:member predicate indcating an IRI of an existing tern:Observation class instance"@en ;
+        ] ;
     ] ;
 .

@@ -1,7 +1,8 @@
-PREFIX : <https://linked.data.gov.au/def/ndes/examples/>
+# baseURI: https://linked.data.gov.au/def/ndesbd/examples/tern-ont
 
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex: <http://example.com/thing/> 
+PREFIX ndesdb: <https://linked.data.gov.au/def/ndesbd/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/> 
@@ -10,17 +11,18 @@ PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://linked.data.gov.au/def/ndes/examples>
+
+<https://linked.data.gov.au/def/ndesbd/examples/tern-ont>
     a owl:Ontology ;
-    rdfs:label "NDES Examples"@en ;
-    rdfs:comment "A dataset ontology of examples of NDES objects"@en ;
+    rdfs:label "TERN Ontology Examples"@en ;
+    rdfs:comment "A dataset ontology of examples of TERN Ontology objects"@en ;
 .
 
-ex:observation-valid-01
+<https://linked.data.gov.au/dataset/bdr/observation/example-valid-01>
     a tern:Observation ;
     rdfs:label "Valid TERN Observation 01"@en ;
     rdfs:comment "A minimally valid tern:Observation instance"@en ;
-    void:inDataset ex:dataset-valid-01 ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01> ;
     sosa:hasFeatureOfInterest ex:foi-valid-01 ;
     sosa:hasResult ex:value-valid-01 ;
     sosa:hasSimpleResult "42" ;
@@ -30,7 +32,7 @@ ex:observation-valid-01
     sosa:usedProcedure <https://example.org/proc/1> ;
 .
 
-ex:dataset-valid-01
+<https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01>
     a tern:RDFDataset ;
     rdfs:label "Valid TERN RDFDataset 01"@en ;
     rdfs:comment "A minimally valid tern:RDFDataset instance"@en ;
@@ -61,8 +63,7 @@ ex:instant-valid-01
 
 
 
-
-ex:observation-invalid-01
+<https://linked.data.gov.au/dataset/bdr/dataset/example-invalid-01>
     a tern:Observation ;
     rdfs:label "Invalid TERN Observation 01"@en ;
     rdfs:comment "This tern:Observation instnace is invalid for many reasons; it is lacking many mandatory properties, such as void:inDataset, sosa:hasFeatureOfInterest, etc."@en ;

@@ -1,7 +1,7 @@
 # NDES Specification
 
 * **IRI**
-    * <https://linked.data.gov.au/def/ndes/spec>
+    * <https://linked.data.gov.au/def/ndesbd/spec>
 * **Title**
     * National Data Exchange Standard's Specifciation
 * **Definition**
@@ -52,7 +52,7 @@ The following subsections define properties of the _requirements_ in detail.
 
 #### Identifier
 
-Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace <https://linked.data.gov.au/def/ndes/req/> and `X` is a number, the number of the _requirement_.
+Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace <https://linked.data.gov.au/def/ndesbd/req/> and `X` is a number, the number of the _requirement_.
 
 The IRI namespace plus the number make the complete IRI of the _requirement_.
 
@@ -96,11 +96,11 @@ The content of the _canonical examples_, i.e. the examples' data, is contianed i
 
 Prefix | Namespace | Description
 --- | --- | ---
-**`req:`** | **`https://linked.data.gov.au/def/ndes/req/`** | **NDES Requirements namespace**
+**`req:`** | **`https://linked.data.gov.au/def/ndesbd/req/`** | **NDES Requirements namespace**
 `dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
 `ex:` | `http://example.com/thing` | Generic examples namespace
-`nex:` | `https://linked.data.gov.au/def/ndes/eg/` | NDES Canonical Examples namespace
-`nsh:` | `https://linked.data.gov.au/def/ndes/shape/` | NDES Validators Shapes namespace
+`nex:` | `https://linked.data.gov.au/def/ndesbd/examples/` | NDES Canonical Examples namespace
+`nsh:` | `https://linked.data.gov.au/def/ndesbd/shape/` | NDES Validators Shapes namespace
 `owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
 `rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 `sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
@@ -123,19 +123,19 @@ The Conformance Classes are:
 
 Property | Value
 --- | ---
-Identifier | [`cc:tern-ontology`](https://linked.data.gov.au/def/ndes/conformanceclass/tern-ontology)
+Identifier | [`cc:tern-ontology`](https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology)
 Label | TERN Ontology Conformance Class
 Definition | The set of requirements needed to be met to ensure conformance with the TERN Ontology
-Requirements | [`req:observation-properties`](https://linked.data.gov.au/def/ndes/req/observation-properties)
+Requirements | [`req:observation-properties`](https://linked.data.gov.au/def/ndesbd/req/observation-properties)
 
 ### cc:ndes-messages
 
 Property | Value
 --- | ---
-Identifier | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndes/conformanceclass/ndes-messages)
+Identifier | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages)
 Label | NDES Messages Conformance Class
 Definition | The set of requirements needed to be met to ensure conformance with the NDES' Gateway's message needs
-Requirements | [`req:message-new-observations`](https://linked.data.gov.au/def/ndes/req/message-new-observations)
+Requirements | [`req:message-new-observations`](https://linked.data.gov.au/def/ndesbd/req/message-new-observations)
 
 
 ## Requirements
@@ -152,37 +152,37 @@ The Requirements are:
 
 Property | Value
 --- | ---
-Identifier | [`req:observation-properties`](https://linked.data.gov.au/def/ndes/req/observation-properties)
+Identifier | [`req:observation-properties`](https://linked.data.gov.au/def/ndesbd/req/observation-properties)
 Label | TERN Observation Properties
 Definition | Instances of the TERN Ontology's `Observation` class _MUST_ have:<br />* exactly 1 TERN Ontology `inDataset` predicate indicating a TERN Ontology `RDFDataset` class instance;<br />* exactly 1 SOSA Ontology `hasFeatureOfInterest` predicate indicating a TERN Ontology `FeatureOfInterest` class instance;<br />* exactly 1 SOSA Ontology `hasResult` predicate TERN Ontology `Value` class instance;<br />* exactly 1 SOSA Ontology `observedProperty` predicate indicating an IRI;<br />* exactly 1 SOSA Ontology `phenomenonTime` predicate indicating a TIME Ontology `Instant` class instance;<br />* exactly 1 SOSA Ontology `resultTime` predicate indicating a `dateTime` literal value;<br />* exactly 1 SOSA Ontology `usedProcedure` predicate indicating an IRI;<br />* a maximum of 1 Dublin Core Terms `type` predicate indicating an IRI;<br />* a maximum of 1 RDFS Ontology `comment` predicate indicating a `string` literal value;<br />* a maximum of 1 TERN Ontology `hasSiteVisit` predicate indicating a TERN Ontology `SiteVisit` class instance.<br /><br />If the instance has:<br />* a Dublin Core Terms `identifier` predicate it must indicate a `string` literal value;<br />* a GeoSPARQL Ontology `hasGeometry` predicate it must indicate a TERN Location Ontology `Geometry` class instance;<br />* a PROV Ontology `wasAttributedTo` predicate it must indicate a TERN Organisation Ontology `Person` class instance;<br />* a TERN Ontology `hasAttribute` predicate it must indicate an IRI;<br />* a TERN Ontology `usedInstrument` predicate it must indicate a TERN Organisation Ontology `Instrument` class instance.
-Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndes/cc/1)
+Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndesbd/cc/1)
 Source | [TERN Ontology](https://w3id.org/tern/ontologies/tern)
 Validators | [`tern:Observation`](https://w3id.org/tern/ontologies/tern/Observation)
-Examples | [`ex:observation-valid-01`](https://linked.data.gov.au/def/ndes/examples/observation-valid-01)
+Examples | [`ex:observation-valid-01`](https://linked.data.gov.au/def/ndesbd/examples/observation-valid-01)
 
 #### req:2
 
 Property | Value
 --- | ---
-Identifier | [`req:2`](https://linked.data.gov.au/def/ndes/req/2)
+Identifier | [`req:2`](https://linked.data.gov.au/def/ndesbd/req/2)
 Label | Text
 Definition | Text
-Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndes/cc/1)
+Conformance Classes | [`cc:1`](https://linked.data.gov.au/def/ndesbd/cc/1)
 Source | Text
-Validators | [`nsh:1`](https://linked.data.gov.au/def/ndes/shape/2)
-Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/3)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/4)
+Validators | [`nsh:1`](https://linked.data.gov.au/def/ndesbd/shape/2)
+Examples | [`nex:1`](https://linked.data.gov.au/def/ndesbd/examples/3)<br />[`nex:2`](https://linked.data.gov.au/def/ndesbd/examples/4)
 
 #### req:3
 
 Property | Value
 --- | ---
-Identifier | [`req:3`](https://linked.data.gov.au/def/ndes/req/3)
+Identifier | [`req:3`](https://linked.data.gov.au/def/ndesbd/req/3)
 Label | Text
 Definition | Text
-Conformance Classes | [`cc:2`](https://linked.data.gov.au/def/ndes/cc/2)
+Conformance Classes | [`cc:2`](https://linked.data.gov.au/def/ndesbd/cc/2)
 Source | Text
-Validators | [`nsh:1`](https://linked.data.gov.au/def/ndes/shape/3)
-Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/5)<br />[`nex:2`](https://linked.data.gov.au/def/ndes/eg/6)
+Validators | [`nsh:1`](https://linked.data.gov.au/def/ndesbd/shape/3)
+Examples | [`nex:1`](https://linked.data.gov.au/def/ndesbd/examples/5)<br />[`nex:2`](https://linked.data.gov.au/def/ndesbd/examples/6)
 
 ### NDES Message Conformance Class Requirements
 
@@ -190,10 +190,22 @@ Examples | [`nex:1`](https://linked.data.gov.au/def/ndes/eg/5)<br />[`nex:2`](ht
 
 Property | Value
 --- | ---
-Identifier | [`req:message-new-observations`](https://linked.data.gov.au/def/ndes/req/message-new-observations)
-Label | Message containing new Observation's properties
+Identifier | [`req:message-new-observations`](https://linked.data.gov.au/def/ndesbd/req/message-new-observations)
+Label | Message containing new Observations
 Definition | Instances of the NDES Ontology's `NewObservationsMessage` class _MUST_ contain:<br />* a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;<br />* exactly 1 NDES Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
-Conformance Classes | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndes/conformanceclass/ndes-messages)
+Conformance Classes | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages)
 Source | Text
-Validators | [`nsh:message-new-observations-01`](https://linked.data.gov.au/def/ndes/shape/message-new-observations-01)
-Examples | _**TODO**_
+Validators | [`nsh:message-new-observations-01`](https://linked.data.gov.au/def/ndesbd/shape/message-new-observations-01)
+Examples | [`https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01`](https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01)
+
+#### req:message-delete-observations
+
+Property | Value
+--- | ---
+Identifier | [`req:message-delete-observations`](https://linked.data.gov.au/def/ndesbd/req/message-delete-observations)
+Label | Message containing Observation to be deleted
+Definition | Instances of the NDES Ontology's `DeleteObservationsMessage` class _MUST_ contain:<br />* a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;<br />* the SOSA Ontology `ObservationCollection` class instance must contain a minimum of 1 RDFS Ontology `member` predicate indcating an IRI of an existing TERN Ontology `Observation` class instance`.
+Conformance Classes | [`cc:ndes-messages`](https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages)
+Source | Text
+Validators | [`nsh:message-delete-observations-01`](https://linked.data.gov.au/def/ndesbd/shape/message-delete-observations-01)
+Examples | [`https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01`](https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01)
