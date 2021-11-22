@@ -1,29 +1,12 @@
-# baseURI: https://linked.data.gov.au/def/ndesbd/examples/message-delete-observations
-
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX ex: <http://example.com/thing/> 
 PREFIX ndesdb: <https://linked.data.gov.au/def/ndesbd/>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/> 
-PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
-PREFIX time: <http://www.w3.org/2006/time#>
-PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-
-<https://linked.data.gov.au/def/ndesbd/examples/message-delete-observations>
-    a owl:Ontology ;
-    rdfs:label "Example: Message Delete Observations"@en ;
-    rdfs:comment "A dataset ontology containing a ndesdb:DeleteObservationsMessage example"@en ;
-    rdfs:member <https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01> ;
-.
 
 <https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01>
     a ndesdb:DeleteObservationsMessage ;
     rdfs:label "Valid NDES-BD DeleteObservationsMessage 01"@en ;
     rdfs:comment "A minimally valid ndesdb:DeleteObservationsMessage instance"@en ;
-    ndesdb:targetDataset <https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01> ;
     rdfs:member [
         a sosa:ObservationCollection ;
         rdfs:label "Example Valid SOSA ObservationCollection 01"@en ;
