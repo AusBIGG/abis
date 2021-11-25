@@ -12,12 +12,6 @@ PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
-<https://linked.data.gov.au/def/ndesbd/examples/tern-ont>
-    a owl:Ontology ;
-    rdfs:label "TERN Ontology Examples"@en ;
-    rdfs:comment "A dataset ontology of examples of TERN Ontology objects"@en ;
-.
-
 <https://linked.data.gov.au/dataset/bdr/observation/example-valid-01>
     a tern:Observation ;
     rdfs:label "Valid TERN Observation 01"@en ;
@@ -36,7 +30,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a tern:RDFDataset ;
     rdfs:label "Valid TERN RDFDataset 01"@en ;
     rdfs:comment "A minimally valid tern:RDFDataset instance"@en ;
-    dcterms:description "A valid, demo, TERN Ontology RDFDataset class instnace"@en ;
+    dcterms:description "A minimally valid tern:RDFDataset instance"@en ;
     dcterms:issued "2021-11-18"^^xsd:date ;
     dcterms:title "Valid TERN RDFDataset 01"@en ;
 .
