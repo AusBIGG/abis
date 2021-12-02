@@ -2,7 +2,7 @@ PREFIX ndesdb: <https://linked.data.gov.au/def/ndesbd/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 <https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01>
-    a ndesdb:DeleteObservationsMessage ;
+    a ndesdb:DeleteMessage ;
     rdfs:label "Valid NDES-BD DeleteObservationsMessage 01"@en ;
     rdfs:comment "A minimally valid ndesdb:DeleteObservationsMessage instance"@en ;
     rdfs:member 
