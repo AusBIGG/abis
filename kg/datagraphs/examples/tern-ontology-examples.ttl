@@ -26,10 +26,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sosa:usedProcedure <https://example.org/proc/1> ;
 .
 
+# Valid TERN RDFDataset 01
 <https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01>
     a tern:RDFDataset ;
-    rdfs:label "Valid TERN RDFDataset 01"@en ;
-    rdfs:comment "A minimally valid tern:RDFDataset instance"@en ;
     dcterms:description "A minimally valid tern:RDFDataset instance"@en ;
     dcterms:issued "2021-11-18"^^xsd:date ;
     dcterms:title "Valid TERN RDFDataset 01"@en ;
@@ -42,16 +41,16 @@ ex:foi-valid-01
     tern:featureType <https://example.org/ft/1> ;
 .
 
+# Valid TERN Value 01
+# A minimally valid tern:Value instance
 ex:value-valid-01
     a tern:Value ;
-    rdfs:label "Valid TERN Value 01"@en ;
-    rdfs:comment "A minimally valid tern:Value instance"@en ;
 .
 
+# Valid TIME Instant 01
+# A minimally valid tern:Instant instance
 ex:instant-valid-01
     a tern:Instant ;
-    rdfs:label "Valid TIME Instant 01"@en ;
-    rdfs:comment "A minimally valid tern:Instant instance"@en ;
     time:inXSDDateTimeStamp "2021-11-18T14:35"^^xsd:dateTime ;
 .
 
