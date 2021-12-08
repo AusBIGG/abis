@@ -1,17 +1,11 @@
 PREFIX ndesdb: <https://linked.data.gov.au/def/ndesbd/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sosa: <http://www.w3.org/ns/sosa/> 
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01>
-    a ndesdb:DeleteObservationsMessage ;
+    a ndesdb:DeleteMessage ;
     rdfs:label "Valid NDES-BD DeleteObservationsMessage 01"@en ;
     rdfs:comment "A minimally valid ndesdb:DeleteObservationsMessage instance"@en ;
-    rdfs:member [
-        a sosa:ObservationCollection ;
-        rdfs:label "Example Valid SOSA ObservationCollection 01"@en ;
-        rdfs:member
-            <https://linked.data.gov.au/dataset/bdr/observation/example-valid-01> ,
-            <https://linked.data.gov.au/dataset/bdr/observation/example-valid-02> ;
-    ] ;
+    rdfs:member 
+        <https://linked.data.gov.au/dataset/bdr/observation/example-valid-01> ,
+        <https://linked.data.gov.au/dataset/bdr/observation/example-valid-02> ;
 .
