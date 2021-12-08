@@ -2,8 +2,8 @@
 # imports: http://datashapes.org/dash
 # imports: http://qudt.org/schema/qudt/
 # imports: http://rdfs.org/ns/void
-# imports: http://www.w3.org/2002/07/owl#
-# imports: http://www.w3.org/2004/02/skos/core#
+# imports: http://www.w3.org/2002/07/owl/
+# imports: http://www.w3.org/2004/02/skos/core/
 # imports: http://www.w3.org/2006/time#
 # imports: http://www.w3.org/ns/dcat#
 # imports: http://www.w3.org/ns/prov#

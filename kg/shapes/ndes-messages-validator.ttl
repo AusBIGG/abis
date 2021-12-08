@@ -1,49 +1,49 @@
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX ndesdb: <https://linked.data.gov.au/def/ndes/>
-PREFIX nsh: <https://linked.data.gov.au/def/ndes/shape/>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sosa: <http://www.w3.org/ns/sosa/>
-PREFIX sdo: <https://schema.org/>
-PREFIX sh: <http://www.w3.org/ns/shacl#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX tern: <http://www.w3.org/ns/sosa/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# baseURI: https://linked.data.gov.au/def/ndes/shape/ndes-messages-validator.ttl
 
-
-nsh:message-new-observations-01
-    a sh:NodeShape ;
-    sh:targetClass ndesdb:NewObservationsMessage ;
-    sh:property [
-        sh:path rdfs:member ;
-        sh:minCount 1 ;
-        sh:class sosa:ObservationCollection ;
-        sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;
-    ] ,
-    [
-        sh:path ndesdb:targetsDataset ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:class tern:RDFDataset ;
-        sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have exactly 1 NDES Ontology targetDataset predicate indicating a TERN Ontology RDFDataset class instance"@en ;
-    ] ;
-.
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ndesdb: <https://linked.data.gov.au/def/ndes/> .
+@prefix nsh: <https://linked.data.gov.au/def/ndes/shape/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 nsh:message-delete-observations-01
-    a sh:NodeShape ;
-    sh:targetClass ndesdb:DeleteObservationsMessage ;
-    sh:property [
-        sh:path rdfs:member ;
-        sh:minCount 1 ;
-        sh:class sosa:ObservationCollection ;
-        sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;        
-        sh:property [
-            sh:path rdfs:member ;
-            sh:minCount 1 ;
-            sh:class tern:Observation ;
-            sh:message "SOSA Ontology ObservationCollection class instances within a ndesbd:DeleteObservationsMessage must contain a minimum of 1 rdfs:member predicate indcating an IRI of an existing tern:Observation class instance"@en ;
+  a sh:NodeShape ;
+  sh:property [
+      sh:path rdfs:member ;
+      sh:class tern:ObservationCollection ;
+      sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;
+      sh:minCount 1 ;
+      sh:property [
+          sh:path rdfs:member ;
+          sh:class tern:Observation ;
+          sh:message "SOSA Ontology ObservationCollection class instances within a ndesbd:DeleteObservationsMessage must contain a minimum of 1 rdfs:member predicate indcating an IRI of an existing tern:Observation class instance"@en ;
+          sh:minCount 1 ;
         ] ;
     ] ;
+  sh:targetClass ndesdb:DeleteObservationsMessage ;
+.
+nsh:message-new-observations-01
+  a sh:NodeShape ;
+  sh:property [
+      sh:path rdfs:member ;
+      sh:class tern:ObservationCollection ;
+      sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      sh:path ndesdb:targetsDataset ;
+      sh:class tern:RDFDataset ;
+      sh:maxCount 1 ;
+      sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have exactly 1 NDES Ontology targetDataset predicate indicating a TERN Ontology RDFDataset class instance"@en ;
+      sh:minCount 1 ;
+    ] ;
+  sh:targetClass ndesdb:NewObservationsMessage ;
 .

@@ -1,0 +1,275 @@
+# baseURI: https://w3id.org/tern/ontologies/loc/
+# imports: http://datashapes.org/dash
+# imports: http://purl.org/dc/terms/
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.opengis.net/ont/sf#
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core/
+# imports: http://www.w3.org/ns/locn#
+# prefix: tern-loc
+
+@prefix : <https://w3id.org/tern/ontologies/loc/> .
+@prefix data: <http://linked.data.gov.au/def/datatype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tern-loc:
+  a owl:Ontology ;
+  dct:created "2020-05-01"^^xsd:date ;
+  dct:creator [
+      a schema:Person ;
+      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema:email "e.chuc@uq.edu.au" ;
+      schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
+      schema:name "Edmond Chuc" ;
+    ] ;
+  dct:modified "2021-08-02"^^xsd:date ;
+  dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+  vann:preferredNamespacePrefix "tern-loc" ;
+  vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
+  rdfs:comment "An alignment of a few widely used ontologies for describing locations, features and geometries." ;
+  rdfs:label "TERN Location Alignment Ontology" ;
+  rdfs:seeAlso <https://github.com/ternaustralia/ontology_tern-loc> ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports dct: ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports sf: ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports skos: ;
+  owl:imports <http://www.w3.org/ns/locn#> ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.1.0> ;
+  owl:versionInfo "0.1.0" ;
+.
+tern-loc:Geometry
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Geometry" ;
+  rdfs:subClassOf geosparql:Geometry ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom geosparql:wktLiteral ;
+      owl:onProperty geosparql:asWKT ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom [
+          a owl:Class ;
+          owl:unionOf (
+              skos:Concept
+              rdfs:Class
+              owl:Class
+            ) ;
+        ] ;
+      owl:onProperty dct:type ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geosparql:asWKT ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dct:type ;
+      sh:maxCount 1 ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path geosparql:asWKT ;
+      sh:datatype geosparql:wktLiteral ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "as WKT" ;
+      sh:nodeKind sh:Literal ;
+    ] ;
+.
+tern-loc:LineString
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Line string" ;
+  rdfs:subClassOf sf:LineString ;
+  rdfs:subClassOf tern-loc:Geometry ;
+.
+tern-loc:Location
+  a owl:Class ;
+  rdfs:label "Location" ;
+  rdfs:subClassOf dct:Location ;
+  rdfs:subClassOf geosparql:Feature ;
+  rdfs:subClassOf tern-loc:Geometry ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:isLocationOf ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass geosparql:Geometry ;
+      owl:onProperty geosparql:hasGeometry ;
+    ] ;
+.
+tern-loc:Point
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Point" ;
+  rdfs:subClassOf sf:Point ;
+  rdfs:subClassOf geo:Point ;
+  rdfs:subClassOf <http://www.w3.org/ns/locn#Geometry> ;
+  rdfs:subClassOf tern-loc:Geometry ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:double ;
+      owl:onProperty geo:alt ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:double ;
+      owl:onProperty geo:lat ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:double ;
+      owl:onProperty geo:long ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:double ;
+      owl:onProperty tern-loc:depth ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:double ;
+      owl:onProperty tern-loc:elevation ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom skos:Concept ;
+      owl:onProperty tern-loc:pointType ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geo:lat ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geo:long ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geo:alt ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:depth ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:elevation ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:pointType ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path geo:alt ;
+      sh:datatype xsd:double ;
+      sh:maxCount 1 ;
+      sh:name "alt" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path geo:lat ;
+      sh:datatype xsd:double ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "lat" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path geo:long ;
+      sh:datatype xsd:double ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "long" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern-loc:depth ;
+      sh:datatype xsd:double ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern-loc:pointType ;
+      sh:description "The type of point, e.g., south-west corner, centroid, etc." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
+tern-loc:Polygon
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Polygon" ;
+  rdfs:subClassOf sf:Polygon ;
+  rdfs:subClassOf tern-loc:Geometry ;
+.
+tern-loc:datum
+  a rdf:Property ;
+  rdfs:comment "Value should be from a controlled vocabulary with a unique identifier." ;
+  rdfs:label "datum" ;
+  skos:editorialNote "This property may not be required. This vocabulary is based on https://www.w3.org/2003/01/geo/#vocabulary which assumes WGS84." ;
+  skos:example "<http://www.opengis.net/def/datum/EPSG/0/6326>" ;
+.
+tern-loc:depth
+  a owl:DatatypeProperty ;
+  rdfs:label "depth" ;
+  skos:definition "Decimal metres below the surface of the land." ;
+.
+tern-loc:elevation
+  a owl:DatatypeProperty ;
+  rdfs:label "elevation" ;
+.
+tern-loc:isLocationOf
+  a owl:ObjectProperty ;
+  rdfs:comment "Relate a Location to a thing." ;
+  rdfs:domain tern-loc:Location ;
+  rdfs:label "is location of" ;
+  owl:inverseOf tern-loc:location ;
+.
+tern-loc:location
+  a owl:ObjectProperty ;
+  rdfs:comment "Relate a thing to a Location." ;
+  rdfs:label "location" ;
+  rdfs:range tern-loc:Location ;
+  rdfs:subPropertyOf <http://www.w3.org/ns/locn#location> ;
+  owl:inverseOf tern-loc:isLocationOf ;
+.
+tern-loc:pointType
+  a owl:ObjectProperty ;
+  rdfs:label "point type" ;
+  skos:definition "The type of point. E.g., centroid, south-west." ;
+.
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
+  schema:alternateName "TERN" ;
+  schema:name "Terrestrial Ecosystem Research Network" ;
+  schema:url <https://www.tern.org.au/> ;
+.

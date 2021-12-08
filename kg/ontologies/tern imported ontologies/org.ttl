@@ -1,0 +1,571 @@
+# baseURI: https://w3id.org/tern/ontologies/org/
+# imports: http://purl.org/dc/terms/
+# imports: http://topbraid.org/schema/
+# imports: http://www.w3.org/2004/02/skos/core/
+# imports: http://www.w3.org/ns/org#
+# imports: http://www.w3.org/ns/prov#
+# prefix: tern-org
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tern-org: <https://w3id.org/tern/ontologies/org/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/goodrelations/v1#BusinessEntity>
+  a owl:Class ;
+  rdfs:label "Business entity" ;
+  rdfs:subClassOf org:FormalOrganization ;
+.
+schema:Consortium
+  a owl:Class ;
+  rdfs:comment "A Consortium is a membership Organization whose members are typically Organizations." ;
+  rdfs:label "Consortium" ;
+  rdfs:subClassOf schema:Organization ;
+.
+schema:FundingAgency
+  a owl:Class ;
+  rdfs:comment "A FundingAgency is an organization that implements one or more FundingSchemes and manages the granting process (via Grants, typically MonetaryGrants). A funding agency is not always required for grant funding, e.g. philanthropic giving, corporate sponsorship etc." ;
+  rdfs:label "Funding Agency" ;
+  rdfs:subClassOf schema:Organization ;
+.
+schema:FundingScheme
+  a owl:Class ;
+  rdfs:comment "A FundingScheme combines organizational, project and policy aspects of grant-based funding that sets guidelines, principles and mechanisms to support other kinds of projects and activities. Funding is typically organized via Grant funding. Examples of funding schemes: Swiss Priority Programmes (SPPs); EU Framework 7 (FP7); Horizon 2020; the NIH-R01 Grant Program; Wellcome institutional strategic support fund. For large scale public sector funding, the management and administration of grant awards is often handled by other, dedicated, organizations - FundingAgencys such as ERC, REA, ..." ;
+  rdfs:label "Funding Scheme" ;
+  rdfs:subClassOf schema:Organization ;
+.
+schema:Project
+  a owl:Class ;
+  rdfs:comment "An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim." ;
+  rdfs:label "Project" ;
+  rdfs:subClassOf schema:Organization ;
+.
+tern-org:
+  a owl:Ontology ;
+  dct:created "2019-11-24"^^xsd:date ;
+  dct:creator [
+      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema:email "e.chuc@uq.edu.au" ;
+      schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
+      schema:name "Edmond Chuc" ;
+    ] ;
+  dct:modified "2020-03-20"^^xsd:date ;
+  dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+  vann:preferredNamespacePrefix "tern-org" ;
+  vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/org/" ;
+  rdfs:comment "A small profile of schema.org and the W3C Organisations ontology containing several classes to describe people and organisations with additional properties. " ;
+  rdfs:label "TERN Organisations Ontology" ;
+  rdfs:seeAlso <https://github.com/ternaustralia/ontology_tern-org> ;
+  owl:imports dct: ;
+  owl:imports <http://topbraid.org/schema/> ;
+  owl:imports skos: ;
+  owl:imports org: ;
+  owl:imports prov: ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/org/0.0.15> ;
+  owl:versionInfo "0.0.15" ;
+  prov:wasGeneratedBy [
+      a doap:Project ;
+      a prov:Activity ;
+      doap:repository <https://github.com/ternaustralia/ontology_tern-org> ;
+    ] ;
+.
+tern-org:Agent
+  a owl:Class ;
+  rdfs:label "Agent" ;
+  rdfs:subClassOf prov:Agent ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty schema:email ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty schema:telephone ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Agent ;
+      owl:onProperty schema:funder ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Organization ;
+      owl:onProperty schema:memberOf ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:OwnershipInfo ;
+      owl:onProperty schema:owns ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Role ;
+      owl:onProperty tern-org:hasRole ;
+    ] ;
+.
+tern-org:AustralianFederalGovernmentOrganization
+  a owl:Class ;
+  rdfs:comment "Federal government organizations and agencies." ;
+  rdfs:label "Federal Government Organization" ;
+  rdfs:subClassOf tern-org:AustralianGovernmentOrganization ;
+.
+tern-org:AustralianGovernmentOrganization
+  a owl:Class ;
+  rdfs:label "Australian government organization" ;
+  rdfs:subClassOf tern-org:GovernmentOrganization ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass xsd:string ;
+      owl:onProperty tern-org:agorID ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+.
+tern-org:AustralianRegionalGovernmentOrganization
+  a owl:Class ;
+  rdfs:comment "Regional and local governments." ;
+  rdfs:label "Regional Government Organization" ;
+  rdfs:subClassOf tern-org:AustralianGovernmentOrganization ;
+.
+tern-org:AustralianStateGovernmentOrganization
+  a owl:Class ;
+  rdfs:comment "State governments." ;
+  rdfs:label "State Government Organization" ;
+  rdfs:subClassOf tern-org:AustralianGovernmentOrganization ;
+.
+tern-org:ChangeEvent
+  a owl:Class ;
+  rdfs:label "Change event" ;
+  rdfs:subClassOf org:ChangeEvent ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Organization ;
+      owl:onProperty org:originalOrganization ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Organization ;
+      owl:onProperty org:resultingOrganization ;
+    ] ;
+.
+tern-org:Consortium
+  a owl:Class ;
+  rdfs:label "Consortium" ;
+  rdfs:subClassOf schema:Consortium ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:Corporation
+  a owl:Class ;
+  rdfs:label "Corporation" ;
+  rdfs:subClassOf schema:Corporation ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:EducationalOrganization
+  a owl:Class ;
+  rdfs:label "Educational organization" ;
+  rdfs:subClassOf schema:EducationalOrganization ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:FundingAgency
+  a owl:Class ;
+  rdfs:label "Funding agency" ;
+  rdfs:subClassOf schema:FundingAgency ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:FundingScheme
+  a owl:Class ;
+  rdfs:label "Funding scheme" ;
+  rdfs:subClassOf schema:FundingScheme ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:GovernmentOrganization
+  a owl:Class ;
+  rdfs:label "Government organization" ;
+  rdfs:subClassOf schema:GovernmentOrganization ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:InternationalOrganization
+  a owl:Class ;
+  rdfs:comment "International organizations." ;
+  rdfs:label "International Organization" ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:LocalBusiness
+  a owl:Class ;
+  rdfs:label "Local business" ;
+  rdfs:subClassOf schema:LocalBusiness ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:Manufacturer
+  a owl:Class ;
+  rdfs:comment "a producer or fabricator of something." ;
+  rdfs:label "Manufacturer" ;
+  rdfs:seeAlso <https://www.oed.com/view/Entry/113772?redirectedFrom=manufacturer#eid> ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:MedicalOrganization
+  a owl:Class ;
+  rdfs:label "Medical organization" ;
+  rdfs:subClassOf schema:MedicalOrganization ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:NCRISProject
+  a owl:Class ;
+  rdfs:comment "National Collaborative Research Infrastructure Strategy (NCRIS) is a national network of world-class research infrastructure projects that support high-quality research that will drive greater innovation in the Australian research sector and the economy more broadly. Projects support strategically important research through which Australian researchers and their international partners can address key national and global challenges." ;
+  rdfs:label "NCRIS Project" ;
+  rdfs:seeAlso <https://www.education.gov.au/national-collaborative-research-infrastructure-strategy-ncris> ;
+  rdfs:subClassOf tern-org:Project ;
+.
+tern-org:Organization
+  a owl:Class ;
+  rdfs:label "Organization" ;
+  rdfs:subClassOf schema:Organization ;
+  rdfs:subClassOf org:Organization ;
+  rdfs:subClassOf prov:Organization ;
+  rdfs:subClassOf tern-org:Agent ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Agent ;
+      owl:onProperty schema:member ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:ChangeEvent ;
+      owl:onProperty org:changedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:ChangeEvent ;
+      owl:onProperty org:resultedFrom ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Organization ;
+      owl:onProperty schema:parentOrganization ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Organization ;
+      owl:onProperty schema:subOrganization ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Site ;
+      owl:onProperty org:hasSite ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:date ;
+      owl:onProperty schema:dissolutionDate ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:date ;
+      owl:onProperty schema:foundingDate ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty schema:taxID ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass xsd:string ;
+      owl:onProperty schema:name ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass xsd:boolean ;
+      owl:onProperty tern-org:isDissolved ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+.
+tern-org:OwnershipInfo
+  a owl:Class ;
+  rdfs:label "Ownership info" ;
+  rdfs:subClassOf schema:OwnershipInfo ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:date ;
+      owl:onProperty schema:ownedFrom ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:date ;
+      owl:onProperty schema:ownedThrough ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Agent ;
+      owl:onProperty schema:acquiredFrom ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty schema:typeOfGood ;
+    ] ;
+.
+tern-org:PartnerOrganization
+  a owl:Class ;
+  rdfs:comment "Local partner organization." ;
+  rdfs:label "Partner Organization" ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:Person
+  a owl:Class ;
+  rdfs:label "Person" ;
+  rdfs:subClassOf schema:Person ;
+  rdfs:subClassOf prov:Person ;
+  rdfs:subClassOf tern-org:Agent ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty schema:honorificPrefix ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty schema:jobTitle ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Organization ;
+      owl:onProperty schema:affiliation ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Site ;
+      owl:onProperty org:basedAt ;
+    ] ;
+.
+tern-org:PostalAddress
+  a owl:Class ;
+  rdfs:label "Postal address" ;
+  rdfs:subClassOf schema:PostalAddress ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass xsd:string ;
+      owl:onProperty schema:addressCountry ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass xsd:string ;
+      owl:onProperty tern-org:fullAddressLine ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onDataRange xsd:positiveInteger ;
+      owl:onProperty schema:postalCode ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty schema:addressLocality ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty schema:addressRegion ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty schema:streetAddress ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+.
+tern-org:Project
+  a owl:Class ;
+  rdfs:label "Project" ;
+  rdfs:subClassOf schema:Project ;
+  rdfs:subClassOf tern-org:Organization ;
+.
+tern-org:Role
+  a owl:Class ;
+  rdfs:label "Role" ;
+  rdfs:subClassOf schema:Role ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Role ;
+      owl:onProperty tern-org:hasPredecessor ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Role ;
+      owl:onProperty tern-org:hasSuccessor ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:date ;
+      owl:onProperty schema:endDate ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass owl:Thing ;
+      owl:onProperty tern-org:appliesOn ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass skos:Concept ;
+      owl:onProperty dct:type ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass [
+          a owl:Class ;
+          owl:unionOf (
+              tern-org:Person
+              tern-org:Organization
+            ) ;
+        ] ;
+      owl:onProperty rdf:value ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onDataRange xsd:date ;
+      owl:onProperty schema:startDate ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  skos:definition "Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.\\n\\nSee also [blog post](http://blog.schema.org/2014/06/introducing-role.html)." ;
+  skos:example """@prefix tern-org: <https://w3id.org/tern/ontologies/org/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<Person1> a tern-org:Person ;
+	tern-org:hasRole <Role1> .
+
+<Role1> a tern-org:Role ;
+	dcterms:type <Investigator> ;
+	rdf:value <Person1> ;
+	schema:startDate \"2020-08-24\"^^xsd:date ;
+	tern-org:appliesOn <Site1> .
+
+<Site1> a tern:Site ;
+	tern-org:hasRef <Role1> .""" ;
+  skos:scopeNote "Use the [dcterms:type](http://purl.org/dc/terms/type) property to link the type of [Role](#Role) to a controlled vocabulary term. E.g. One of the values from [TERN's Roles](http://linked.data.gov.au/def/tern-cv/67feb077-32da-4044-8e89-bddc21ef58ed)." ;
+.
+tern-org:Site
+  a owl:Class ;
+  rdfs:label "Site" ;
+  rdfs:subClassOf org:Site ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Organization ;
+      owl:onProperty org:hasPrimarySite ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Organization ;
+      owl:onProperty org:siteOf ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:PostalAddress ;
+      owl:onProperty org:siteAddress ;
+    ] ;
+.
+tern-org:addressLine1
+  a rdf:Property ;
+  rdfs:domain tern-org:PostalAddress ;
+  rdfs:label "address Line 1" ;
+  skos:definition "First line of the non-locality/state/postcode portion of the address." ;
+.
+tern-org:addressLine2
+  a rdf:Property ;
+  rdfs:domain tern-org:PostalAddress ;
+  rdfs:label "address Line 2" ;
+  skos:definition "Second line of the non-locality/state/postcode portion of the address. This is sometimes blank." ;
+.
+tern-org:agorID
+  a rdf:Property ;
+  schema:domainIncludes schema:Organization ;
+  schema:rangeIncludes schema:Text ;
+  rdfs:domain tern-org:Organization ;
+  rdfs:label "AGOR ID" ;
+  rdfs:seeAlso <https://data.gov.au/data/dataset/australian-government-organisations-register> ;
+  rdfs:subPropertyOf schema:identifier ;
+  skos:definition "The Australian Government Organisations Register ID" ;
+.
+tern-org:appliesOn
+  a rdf:Property ;
+  rdfs:label "applies on" ;
+  owl:inverseOf tern-org:hasRef ;
+  skos:definition "The qualified individual applies on the target class. Inverse of [hasRef](#hasRef)." ;
+.
+tern-org:fullAddressLine
+  a owl:AnnotationProperty ;
+  rdfs:domain schema:PostalAddress ;
+  rdfs:label "Full Address Line" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf rdfs:label ;
+  skos:definition "The full address or canonical address of the postal address in a single line." ;
+.
+tern-org:hasPredecessor
+  a rdf:Property ;
+  rdfs:label "hasPredecessor" ;
+  skos:definition "Link to the predecessor of the current [Role](#Role)." ;
+.
+tern-org:hasRef
+  a rdf:Property ;
+  rdfs:label "has reference" ;
+  owl:inverseOf tern-org:appliesOn ;
+  skos:definition "The inverse of [appliesOn](#appliesOn)." ;
+.
+tern-org:hasRole
+  a rdf:Property ;
+  rdfs:label "has role" ;
+  skos:definition "Link an [Agent](#Agent) to a [Role](#Role)." ;
+.
+tern-org:hasSuccessor
+  a rdf:Property ;
+  rdfs:label "successor" ;
+  skos:definition "Link to the successor of the current [Role](#Role)." ;
+.
+tern-org:isDissolved
+  a rdf:Property ;
+  rdfs:domain tern-org:Organization ;
+  rdfs:label "is dissolved" ;
+  rdfs:range xsd:boolean ;
+  skos:definition "Express if an [Organization](#Organization) has been dissolved or not with a [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)." ;
+.
+tern-org:orcID
+  a rdf:Property ;
+  rdfs:domain tern-org:Person ;
+  rdfs:label "Open Researcher and Contributer ID (ORCID)" ;
+  rdfs:seeAlso <https://orcid.org/> ;
+  rdfs:subPropertyOf schema:identifier ;
+  skos:definition "The ORCID is a nonproprietary alphanumeric code to uniquely identify scientific and other academic authors and contributors." ;
+.
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
+  schema:alternateName "TERN" ;
+  schema:name "Terrestrial Ecoystem Research Network" ;
+  schema:url <https://www.tern.org.au/> ;
+.
