@@ -1,9 +1,8 @@
-# baseURI: http://rs.tdwg.org/dwc/terms
+# baseURI: http://rs.tdwg.org/dwc/terms/
 
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
-@prefix dwciri: <http://rs.tdwg.org/dwc/iri/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -13,942 +12,2396 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://rs.tdwg.org/dwc/terms.ttl>
-  a foaf:document ;
-  dc:creator "Biodiversity Information Standards (TDWG)" ;
-  dc:format "text/turtle" ;
-  dcterms:modified "2021-07-27T08:04:18-05:00"^^xsd:dateTime ;
-  dcterms:references dwc: ;
-.
-dwc:
-  a tdwgutility:TermList ;
-  dc:publisher "Biodiversity Information Standards (TDWG)"@en ;
-  dcterms:created "2008-11-19"^^xsd:date ;
-  dcterms:description "This term list includes all currently valid terms that have been defined in the core Darwin Core namespace dwc:.  To comment on this schema, please create a new issue in https://github.com/tdwg/dwc/issues"@en ;
-  dcterms:hasPart dwc:Event ;
-  dcterms:hasPart dwc:FossilSpecimen ;
-  dcterms:hasPart dwc:GeologicalContext ;
-  dcterms:hasPart dwc:HumanObservation ;
-  dcterms:hasPart dwc:Identification ;
-  dcterms:hasPart dwc:LivingSpecimen ;
-  dcterms:hasPart dwc:MachineObservation ;
-  dcterms:hasPart dwc:MaterialCitation ;
-  dcterms:hasPart dwc:MaterialSample ;
-  dcterms:hasPart dwc:MeasurementOrFact ;
-  dcterms:hasPart dwc:Occurrence ;
-  dcterms:hasPart dwc:Organism ;
-  dcterms:hasPart dwc:PreservedSpecimen ;
-  dcterms:hasPart dwc:ResourceRelationship ;
-  dcterms:hasPart dwc:Taxon ;
-  dcterms:hasPart dwc:acceptedNameUsage ;
-  dcterms:hasPart dwc:acceptedNameUsageID ;
-  dcterms:hasPart dwc:accordingTo ;
-  dcterms:hasPart dwc:associatedMedia ;
-  dcterms:hasPart dwc:associatedOccurrences ;
-  dcterms:hasPart dwc:associatedOrganisms ;
-  dcterms:hasPart dwc:associatedReferences ;
-  dcterms:hasPart dwc:associatedSequences ;
-  dcterms:hasPart dwc:associatedTaxa ;
-  dcterms:hasPart dwc:basisOfRecord ;
-  dcterms:hasPart dwc:bed ;
-  dcterms:hasPart dwc:behavior ;
-  dcterms:hasPart dwc:catalogNumber ;
-  dcterms:hasPart dwc:class ;
-  dcterms:hasPart dwc:collectionCode ;
-  dcterms:hasPart dwc:collectionID ;
-  dcterms:hasPart dwc:continent ;
-  dcterms:hasPart dwc:coordinatePrecision ;
-  dcterms:hasPart dwc:coordinateUncertaintyInMeters ;
-  dcterms:hasPart dwc:country ;
-  dcterms:hasPart dwc:countryCode ;
-  dcterms:hasPart dwc:county ;
-  dcterms:hasPart dwc:cultivarEpithet ;
-  dcterms:hasPart dwc:dataGeneralizations ;
-  dcterms:hasPart dwc:datasetID ;
-  dcterms:hasPart dwc:datasetName ;
-  dcterms:hasPart dwc:dateIdentified ;
-  dcterms:hasPart dwc:day ;
-  dcterms:hasPart dwc:decimalLatitude ;
-  dcterms:hasPart dwc:decimalLongitude ;
-  dcterms:hasPart dwc:degreeOfEstablishment ;
-  dcterms:hasPart dwc:disposition ;
-  dcterms:hasPart dwc:dynamicProperties ;
-  dcterms:hasPart dwc:earliestAgeOrLowestStage ;
-  dcterms:hasPart dwc:earliestEonOrLowestEonothem ;
-  dcterms:hasPart dwc:earliestEpochOrLowestSeries ;
-  dcterms:hasPart dwc:earliestEraOrLowestErathem ;
-  dcterms:hasPart dwc:earliestPeriodOrLowestSystem ;
-  dcterms:hasPart dwc:endDayOfYear ;
-  dcterms:hasPart dwc:establishmentMeans ;
-  dcterms:hasPart dwc:eventDate ;
-  dcterms:hasPart dwc:eventID ;
-  dcterms:hasPart dwc:eventRemarks ;
-  dcterms:hasPart dwc:eventTime ;
-  dcterms:hasPart dwc:family ;
-  dcterms:hasPart dwc:fieldNotes ;
-  dcterms:hasPart dwc:fieldNumber ;
-  dcterms:hasPart dwc:footprintSRS ;
-  dcterms:hasPart dwc:footprintSpatialFit ;
-  dcterms:hasPart dwc:footprintWKT ;
-  dcterms:hasPart dwc:formation ;
-  dcterms:hasPart dwc:genericName ;
-  dcterms:hasPart dwc:genus ;
-  dcterms:hasPart dwc:geodeticDatum ;
-  dcterms:hasPart dwc:geologicalContextID ;
-  dcterms:hasPart dwc:georeferenceProtocol ;
-  dcterms:hasPart dwc:georeferenceRemarks ;
-  dcterms:hasPart dwc:georeferenceSources ;
-  dcterms:hasPart dwc:georeferenceVerificationStatus ;
-  dcterms:hasPart dwc:georeferencedBy ;
-  dcterms:hasPart dwc:georeferencedDate ;
-  dcterms:hasPart dwc:group ;
-  dcterms:hasPart dwc:habitat ;
-  dcterms:hasPart dwc:higherClassification ;
-  dcterms:hasPart dwc:higherGeography ;
-  dcterms:hasPart dwc:higherGeographyID ;
-  dcterms:hasPart dwc:highestBiostratigraphicZone ;
-  dcterms:hasPart dwc:identificationID ;
-  dcterms:hasPart dwc:identificationQualifier ;
-  dcterms:hasPart dwc:identificationReferences ;
-  dcterms:hasPart dwc:identificationRemarks ;
-  dcterms:hasPart dwc:identificationVerificationStatus ;
-  dcterms:hasPart dwc:identifiedBy ;
-  dcterms:hasPart dwc:identifiedByID ;
-  dcterms:hasPart dwc:individualCount ;
-  dcterms:hasPart dwc:informationWithheld ;
-  dcterms:hasPart dwc:infragenericEpithet ;
-  dcterms:hasPart dwc:infraspecificEpithet ;
-  dcterms:hasPart dwc:institutionCode ;
-  dcterms:hasPart dwc:institutionID ;
-  dcterms:hasPart dwc:island ;
-  dcterms:hasPart dwc:islandGroup ;
-  dcterms:hasPart dwc:kingdom ;
-  dcterms:hasPart dwc:latestAgeOrHighestStage ;
-  dcterms:hasPart dwc:latestEonOrHighestEonothem ;
-  dcterms:hasPart dwc:latestEpochOrHighestSeries ;
-  dcterms:hasPart dwc:latestEraOrHighestErathem ;
-  dcterms:hasPart dwc:latestPeriodOrHighestSystem ;
-  dcterms:hasPart dwc:lifeStage ;
-  dcterms:hasPart dwc:lithostratigraphicTerms ;
-  dcterms:hasPart dwc:locality ;
-  dcterms:hasPart dwc:locationAccordingTo ;
-  dcterms:hasPart dwc:locationID ;
-  dcterms:hasPart dwc:locationRemarks ;
-  dcterms:hasPart dwc:lowestBiostratigraphicZone ;
-  dcterms:hasPart dwc:materialSampleID ;
-  dcterms:hasPart dwc:maximumDepthInMeters ;
-  dcterms:hasPart dwc:maximumDistanceAboveSurfaceInMeters ;
-  dcterms:hasPart dwc:maximumElevationInMeters ;
-  dcterms:hasPart dwc:measurementAccuracy ;
-  dcterms:hasPart dwc:measurementDeterminedBy ;
-  dcterms:hasPart dwc:measurementDeterminedDate ;
-  dcterms:hasPart dwc:measurementID ;
-  dcterms:hasPart dwc:measurementMethod ;
-  dcterms:hasPart dwc:measurementRemarks ;
-  dcterms:hasPart dwc:measurementType ;
-  dcterms:hasPart dwc:measurementUnit ;
-  dcterms:hasPart dwc:measurementValue ;
-  dcterms:hasPart dwc:member ;
-  dcterms:hasPart dwc:minimumDepthInMeters ;
-  dcterms:hasPart dwc:minimumDistanceAboveSurfaceInMeters ;
-  dcterms:hasPart dwc:minimumElevationInMeters ;
-  dcterms:hasPart dwc:month ;
-  dcterms:hasPart dwc:municipality ;
-  dcterms:hasPart dwc:nameAccordingTo ;
-  dcterms:hasPart dwc:nameAccordingToID ;
-  dcterms:hasPart dwc:namePublishedIn ;
-  dcterms:hasPart dwc:namePublishedInID ;
-  dcterms:hasPart dwc:namePublishedInYear ;
-  dcterms:hasPart dwc:nomenclaturalCode ;
-  dcterms:hasPart dwc:nomenclaturalStatus ;
-  dcterms:hasPart dwc:occurrenceID ;
-  dcterms:hasPart dwc:occurrenceRemarks ;
-  dcterms:hasPart dwc:occurrenceStatus ;
-  dcterms:hasPart dwc:order ;
-  dcterms:hasPart dwc:organismID ;
-  dcterms:hasPart dwc:organismName ;
-  dcterms:hasPart dwc:organismQuantity ;
-  dcterms:hasPart dwc:organismQuantityType ;
-  dcterms:hasPart dwc:organismRemarks ;
-  dcterms:hasPart dwc:organismScope ;
-  dcterms:hasPart dwc:originalNameUsage ;
-  dcterms:hasPart dwc:originalNameUsageID ;
-  dcterms:hasPart dwc:otherCatalogNumbers ;
-  dcterms:hasPart dwc:ownerInstitutionCode ;
-  dcterms:hasPart dwc:parentEventID ;
-  dcterms:hasPart dwc:parentNameUsage ;
-  dcterms:hasPart dwc:parentNameUsageID ;
-  dcterms:hasPart dwc:pathway ;
-  dcterms:hasPart dwc:phylum ;
-  dcterms:hasPart dwc:pointRadiusSpatialFit ;
-  dcterms:hasPart dwc:preparations ;
-  dcterms:hasPart dwc:previousIdentifications ;
-  dcterms:hasPart dwc:recordNumber ;
-  dcterms:hasPart dwc:recordedBy ;
-  dcterms:hasPart dwc:recordedByID ;
-  dcterms:hasPart dwc:relatedResourceID ;
-  dcterms:hasPart dwc:relationshipAccordingTo ;
-  dcterms:hasPart dwc:relationshipEstablishedDate ;
-  dcterms:hasPart dwc:relationshipOfResource ;
-  dcterms:hasPart dwc:relationshipOfResourceID ;
-  dcterms:hasPart dwc:relationshipRemarks ;
-  dcterms:hasPart dwc:reproductiveCondition ;
-  dcterms:hasPart dwc:resourceID ;
-  dcterms:hasPart dwc:resourceRelationshipID ;
-  dcterms:hasPart dwc:sampleSizeUnit ;
-  dcterms:hasPart dwc:sampleSizeValue ;
-  dcterms:hasPart dwc:samplingEffort ;
-  dcterms:hasPart dwc:samplingProtocol ;
-  dcterms:hasPart dwc:scientificName ;
-  dcterms:hasPart dwc:scientificNameAuthorship ;
-  dcterms:hasPart dwc:scientificNameID ;
-  dcterms:hasPart dwc:sex ;
-  dcterms:hasPart dwc:specificEpithet ;
-  dcterms:hasPart dwc:startDayOfYear ;
-  dcterms:hasPart dwc:stateProvince ;
-  dcterms:hasPart dwc:subfamily ;
-  dcterms:hasPart dwc:subgenus ;
-  dcterms:hasPart dwc:taxonConceptID ;
-  dcterms:hasPart dwc:taxonID ;
-  dcterms:hasPart dwc:taxonRank ;
-  dcterms:hasPart dwc:taxonRemarks ;
-  dcterms:hasPart dwc:taxonomicStatus ;
-  dcterms:hasPart dwc:typeStatus ;
-  dcterms:hasPart dwc:verbatimCoordinateSystem ;
-  dcterms:hasPart dwc:verbatimCoordinates ;
-  dcterms:hasPart dwc:verbatimDepth ;
-  dcterms:hasPart dwc:verbatimElevation ;
-  dcterms:hasPart dwc:verbatimEventDate ;
-  dcterms:hasPart dwc:verbatimIdentification ;
-  dcterms:hasPart dwc:verbatimLatitude ;
-  dcterms:hasPart dwc:verbatimLocality ;
-  dcterms:hasPart dwc:verbatimLongitude ;
-  dcterms:hasPart dwc:verbatimSRS ;
-  dcterms:hasPart dwc:verbatimTaxonRank ;
-  dcterms:hasPart dwc:vernacularName ;
-  dcterms:hasPart dwc:verticalDatum ;
-  dcterms:hasPart dwc:waterBody ;
-  dcterms:hasPart dwc:year ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2008-11-19> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-01-18> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-01-21> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-01-23> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-04-24> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-04-29> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-05-18> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-07-06> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-08-24> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-09-11> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-09-17> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-09-21> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2009-12-07> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2011-10-16> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2013-03-28> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2013-05-25> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2014-10-23> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2014-12-23> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2017-10-06> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2018-09-06> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2020-08-12> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2020-08-20> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2020-10-13> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2020-10-28> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2021-03-29> ;
-  dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2021-07-15> ;
-  dcterms:publisher <https://www.grid.ac/institutes/grid.480498.9> ;
-  dcterms:title "Core terms defined by Darwin Core"@en ;
-  vann:preferredNamespacePrefix "dwc" ;
-  vann:preferredNamespaceUri "http://rs.tdwg.org/dwc/terms/" ;
-  rdfs:comment "This term list includes all currently valid terms that have been defined in the core Darwin Core namespace dwc:.  To comment on this schema, please create a new issue in https://github.com/tdwg/dwc/issues"@en ;
-  rdfs:label "Core terms defined by Darwin Core"@en ;
-.
-dwc:Event
-  dcterms:isPartOf dwc: ;
-.
-dwc:FossilSpecimen
-  dcterms:isPartOf dwc: ;
-.
-dwc:GeologicalContext
-  dcterms:isPartOf dwc: ;
-.
-dwc:HumanObservation
-  dcterms:isPartOf dwc: ;
-.
-dwc:Identification
-  dcterms:isPartOf dwc: ;
-.
-dwc:LivingSpecimen
-  dcterms:isPartOf dwc: ;
-.
-dwc:MachineObservation
-  dcterms:isPartOf dwc: ;
-.
-dwc:MaterialCitation
-  dcterms:isPartOf dwc: ;
-.
-dwc:MaterialSample
-  dcterms:isPartOf dwc: ;
-.
-dwc:MeasurementOrFact
-  dcterms:isPartOf dwc: ;
-.
-dwc:Occurrence
-  dcterms:isPartOf dwc: ;
-.
-dwc:Organism
-  dcterms:isPartOf dwc: ;
-.
-dwc:PreservedSpecimen
-  dcterms:isPartOf dwc: ;
-.
-dwc:ResourceRelationship
-  dcterms:isPartOf dwc: ;
-.
-dwc:Taxon
-  dcterms:isPartOf dwc: ;
-.
-dwc:acceptedNameUsage
-  dcterms:isPartOf dwc: ;
-.
-dwc:acceptedNameUsageID
-  dcterms:isPartOf dwc: ;
-.
-dwc:accordingTo
-  dcterms:isPartOf dwc: ;
-.
-dwc:associatedMedia
-  dcterms:isPartOf dwc: ;
-.
-dwc:associatedOccurrences
-  dcterms:isPartOf dwc: ;
-.
-dwc:associatedOrganisms
-  dcterms:isPartOf dwc: ;
-.
-dwc:associatedReferences
-  dcterms:isPartOf dwc: ;
-.
-dwc:associatedSequences
-  dcterms:isPartOf dwc: ;
-.
-dwc:associatedTaxa
-  dcterms:isPartOf dwc: ;
-.
-dwc:basisOfRecord
-  dcterms:isPartOf dwc: ;
-.
-dwc:bed
-  dcterms:isPartOf dwc: ;
-.
-dwc:behavior
-  dcterms:isPartOf dwc: ;
-.
-dwc:catalogNumber
-  dcterms:isPartOf dwc: ;
-.
-dwc:class
-  dcterms:isPartOf dwc: ;
-.
-dwc:collectionCode
-  dcterms:isPartOf dwc: ;
-.
-dwc:collectionID
-  dcterms:isPartOf dwc: ;
-.
-dwc:continent
-  dcterms:isPartOf dwc: ;
-.
-dwc:coordinatePrecision
-  dcterms:isPartOf dwc: ;
-.
-dwc:coordinateUncertaintyInMeters
-  dcterms:isPartOf dwc: ;
-.
-dwc:country
-  dcterms:isPartOf dwc: ;
-.
-dwc:countryCode
-  dcterms:isPartOf dwc: ;
-.
-dwc:county
-  dcterms:isPartOf dwc: ;
-.
-dwc:cultivarEpithet
-  dcterms:isPartOf dwc: ;
-.
-dwc:dataGeneralizations
-  dcterms:isPartOf dwc: ;
-.
-dwc:datasetID
-  dcterms:isPartOf dwc: ;
-.
-dwc:datasetName
-  dcterms:isPartOf dwc: ;
-.
-dwc:dateIdentified
-  dcterms:isPartOf dwc: ;
-.
-dwc:day
-  dcterms:isPartOf dwc: ;
-.
-dwc:decimalLatitude
-  dcterms:isPartOf dwc: ;
-.
-dwc:decimalLongitude
-  dcterms:isPartOf dwc: ;
-.
-dwc:degreeOfEstablishment
-  dcterms:isPartOf dwc: ;
-.
-dwc:disposition
-  dcterms:isPartOf dwc: ;
-.
-dwc:dynamicProperties
-  dcterms:isPartOf dwc: ;
-.
-dwc:earliestAgeOrLowestStage
-  dcterms:isPartOf dwc: ;
-.
-dwc:earliestEonOrLowestEonothem
-  dcterms:isPartOf dwc: ;
-.
-dwc:earliestEpochOrLowestSeries
-  dcterms:isPartOf dwc: ;
-.
-dwc:earliestEraOrLowestErathem
-  dcterms:isPartOf dwc: ;
-.
-dwc:earliestPeriodOrLowestSystem
-  dcterms:isPartOf dwc: ;
-.
-dwc:endDayOfYear
-  dcterms:isPartOf dwc: ;
-.
-dwc:establishmentMeans
-  dcterms:isPartOf dwc: ;
-.
-dwc:eventDate
-  dcterms:isPartOf dwc: ;
-.
-dwc:eventID
-  dcterms:isPartOf dwc: ;
-.
-dwc:eventRemarks
-  dcterms:isPartOf dwc: ;
-.
-dwc:eventTime
-  dcterms:isPartOf dwc: ;
-.
-dwc:family
-  dcterms:isPartOf dwc: ;
-.
-dwc:fieldNotes
-  dcterms:isPartOf dwc: ;
-.
-dwc:fieldNumber
-  dcterms:isPartOf dwc: ;
-.
-dwc:footprintSRS
-  dcterms:isPartOf dwc: ;
-.
-dwc:footprintSpatialFit
-  dcterms:isPartOf dwc: ;
-.
-dwc:footprintWKT
-  dcterms:isPartOf dwc: ;
-.
-dwc:formation
-  dcterms:isPartOf dwc: ;
-.
-dwc:genericName
-  dcterms:isPartOf dwc: ;
-.
-dwc:genus
-  dcterms:isPartOf dwc: ;
-.
-dwc:geodeticDatum
-  dcterms:isPartOf dwc: ;
-.
-dwc:geologicalContextID
-  dcterms:isPartOf dwc: ;
-.
-dwc:georeferenceProtocol
-  dcterms:isPartOf dwc: ;
-.
-dwc:georeferenceRemarks
-  dcterms:isPartOf dwc: ;
-.
-dwc:georeferenceSources
-  dcterms:isPartOf dwc: ;
-.
-dwc:georeferenceVerificationStatus
-  dcterms:isPartOf dwc: ;
-.
-dwc:georeferencedBy
-  dcterms:isPartOf dwc: ;
-.
-dwc:georeferencedDate
-  dcterms:isPartOf dwc: ;
-.
-dwc:group
-  dcterms:isPartOf dwc: ;
-.
-dwc:habitat
-  dcterms:isPartOf dwc: ;
-.
-dwc:higherClassification
-  dcterms:isPartOf dwc: ;
-.
-dwc:higherGeography
-  dcterms:isPartOf dwc: ;
-.
-dwc:higherGeographyID
-  dcterms:isPartOf dwc: ;
-.
-dwc:highestBiostratigraphicZone
-  dcterms:isPartOf dwc: ;
-.
-dwc:identificationID
-  dcterms:isPartOf dwc: ;
-.
-dwc:identificationQualifier
-  dcterms:isPartOf dwc: ;
-.
-dwc:identificationReferences
-  dcterms:isPartOf dwc: ;
-.
-dwc:identificationRemarks
-  dcterms:isPartOf dwc: ;
-.
-dwc:identificationVerificationStatus
-  dcterms:isPartOf dwc: ;
-.
-dwc:identifiedBy
-  dcterms:isPartOf dwc: ;
-.
-dwc:identifiedByID
-  dcterms:isPartOf dwc: ;
-.
-dwc:individualCount
-  dcterms:isPartOf dwc: ;
-.
-dwc:informationWithheld
-  dcterms:isPartOf dwc: ;
-.
-dwc:infragenericEpithet
-  dcterms:isPartOf dwc: ;
-.
-dwc:infraspecificEpithet
-  dcterms:isPartOf dwc: ;
-.
-dwc:institutionCode
-  dcterms:isPartOf dwc: ;
-.
-dwc:institutionID
-  dcterms:isPartOf dwc: ;
-.
-dwc:island
-  dcterms:isPartOf dwc: ;
-.
-dwc:islandGroup
-  dcterms:isPartOf dwc: ;
-.
-dwc:kingdom
-  dcterms:isPartOf dwc: ;
-.
-dwc:latestAgeOrHighestStage
-  dcterms:isPartOf dwc: ;
-.
-dwc:latestEonOrHighestEonothem
-  dcterms:isPartOf dwc: ;
-.
-dwc:latestEpochOrHighestSeries
-  dcterms:isPartOf dwc: ;
-.
-dwc:latestEraOrHighestErathem
-  dcterms:isPartOf dwc: ;
-.
-dwc:latestPeriodOrHighestSystem
-  dcterms:isPartOf dwc: ;
-.
-dwc:lifeStage
-  dcterms:isPartOf dwc: ;
-.
-dwc:lithostratigraphicTerms
-  dcterms:isPartOf dwc: ;
-.
-dwc:locality
-  dcterms:isPartOf dwc: ;
-.
-dwc:locationAccordingTo
-  dcterms:isPartOf dwc: ;
-.
-dwc:locationID
-  dcterms:isPartOf dwc: ;
-.
-dwc:locationRemarks
-  dcterms:isPartOf dwc: ;
-.
-dwc:lowestBiostratigraphicZone
-  dcterms:isPartOf dwc: ;
-.
-dwc:materialSampleID
-  dcterms:isPartOf dwc: ;
-.
-dwc:maximumDepthInMeters
-  dcterms:isPartOf dwc: ;
-.
-dwc:maximumDistanceAboveSurfaceInMeters
-  dcterms:isPartOf dwc: ;
-.
-dwc:maximumElevationInMeters
-  dcterms:isPartOf dwc: ;
-.
-dwc:measurementAccuracy
-  dcterms:isPartOf dwc: ;
-.
-dwc:measurementDeterminedBy
-  dcterms:isPartOf dwc: ;
-.
-dwc:measurementDeterminedDate
-  dcterms:isPartOf dwc: ;
-.
-dwc:measurementID
-  dcterms:isPartOf dwc: ;
-.
-dwc:measurementMethod
-  dcterms:isPartOf dwc: ;
-.
-dwc:measurementRemarks
-  dcterms:isPartOf dwc: ;
-.
-dwc:measurementType
-  dcterms:isPartOf dwc: ;
-.
-dwc:measurementUnit
-  dcterms:isPartOf dwc: ;
-.
-dwc:measurementValue
-  dcterms:isPartOf dwc: ;
-.
-dwc:member
-  dcterms:isPartOf dwc: ;
-.
-dwc:minimumDepthInMeters
-  dcterms:isPartOf dwc: ;
-.
-dwc:minimumDistanceAboveSurfaceInMeters
-  dcterms:isPartOf dwc: ;
-.
-dwc:minimumElevationInMeters
-  dcterms:isPartOf dwc: ;
-.
-dwc:month
-  dcterms:isPartOf dwc: ;
-.
-dwc:municipality
-  dcterms:isPartOf dwc: ;
-.
-dwc:nameAccordingTo
-  dcterms:isPartOf dwc: ;
-.
-dwc:nameAccordingToID
-  dcterms:isPartOf dwc: ;
-.
-dwc:namePublishedIn
-  dcterms:isPartOf dwc: ;
-.
-dwc:namePublishedInID
-  dcterms:isPartOf dwc: ;
-.
-dwc:namePublishedInYear
-  dcterms:isPartOf dwc: ;
-.
-dwc:nomenclaturalCode
-  dcterms:isPartOf dwc: ;
-.
-dwc:nomenclaturalStatus
-  dcterms:isPartOf dwc: ;
-.
-dwc:occurrenceID
-  dcterms:isPartOf dwc: ;
-.
-dwc:occurrenceRemarks
-  dcterms:isPartOf dwc: ;
-.
-dwc:occurrenceStatus
-  dcterms:isPartOf dwc: ;
-.
-dwc:order
-  dcterms:isPartOf dwc: ;
-.
-dwc:organismID
-  dcterms:isPartOf dwc: ;
-.
-dwc:organismName
-  dcterms:isPartOf dwc: ;
-.
-dwc:organismQuantity
-  dcterms:isPartOf dwc: ;
-.
-dwc:organismQuantityType
-  dcterms:isPartOf dwc: ;
-.
-dwc:organismRemarks
-  dcterms:isPartOf dwc: ;
-.
-dwc:organismScope
-  dcterms:isPartOf dwc: ;
-.
-dwc:originalNameUsage
-  dcterms:isPartOf dwc: ;
-.
-dwc:originalNameUsageID
-  dcterms:isPartOf dwc: ;
-.
-dwc:otherCatalogNumbers
-  dcterms:isPartOf dwc: ;
-.
-dwc:ownerInstitutionCode
-  dcterms:isPartOf dwc: ;
-.
-dwc:parentEventID
-  dcterms:isPartOf dwc: ;
-.
-dwc:parentNameUsage
-  dcterms:isPartOf dwc: ;
-.
-dwc:parentNameUsageID
-  dcterms:isPartOf dwc: ;
-.
-dwc:pathway
-  dcterms:isPartOf dwc: ;
-.
-dwc:phylum
-  dcterms:isPartOf dwc: ;
-.
-dwc:pointRadiusSpatialFit
-  dcterms:isPartOf dwc: ;
-.
-dwc:preparations
-  dcterms:isPartOf dwc: ;
-.
-dwc:previousIdentifications
-  dcterms:isPartOf dwc: ;
-.
-dwc:recordNumber
-  dcterms:isPartOf dwc: ;
-.
-dwc:recordedBy
-  dcterms:isPartOf dwc: ;
-.
-dwc:recordedByID
-  dcterms:isPartOf dwc: ;
-.
-dwc:relatedResourceID
-  dcterms:isPartOf dwc: ;
-.
-dwc:relationshipAccordingTo
-  dcterms:isPartOf dwc: ;
-.
-dwc:relationshipEstablishedDate
-  dcterms:isPartOf dwc: ;
-.
-dwc:relationshipOfResource
-  dcterms:isPartOf dwc: ;
-.
-dwc:relationshipOfResourceID
-  dcterms:isPartOf dwc: ;
-.
-dwc:relationshipRemarks
-  dcterms:isPartOf dwc: ;
-.
-dwc:reproductiveCondition
-  dcterms:isPartOf dwc: ;
-.
-dwc:resourceID
-  dcterms:isPartOf dwc: ;
-.
-dwc:resourceRelationshipID
-  dcterms:isPartOf dwc: ;
-.
-dwc:sampleSizeUnit
-  dcterms:isPartOf dwc: ;
-.
-dwc:sampleSizeValue
-  dcterms:isPartOf dwc: ;
-.
-dwc:samplingEffort
-  dcterms:isPartOf dwc: ;
-.
-dwc:samplingProtocol
-  dcterms:isPartOf dwc: ;
-.
-dwc:scientificName
-  dcterms:isPartOf dwc: ;
-.
-dwc:scientificNameAuthorship
-  dcterms:isPartOf dwc: ;
-.
-dwc:scientificNameID
-  dcterms:isPartOf dwc: ;
-.
-dwc:sex
-  dcterms:isPartOf dwc: ;
-.
-dwc:specificEpithet
-  dcterms:isPartOf dwc: ;
-.
-dwc:startDayOfYear
-  dcterms:isPartOf dwc: ;
-.
-dwc:stateProvince
-  dcterms:isPartOf dwc: ;
-.
-dwc:subfamily
-  dcterms:isPartOf dwc: ;
-.
-dwc:subgenus
-  dcterms:isPartOf dwc: ;
-.
-dwc:taxonConceptID
-  dcterms:isPartOf dwc: ;
-.
-dwc:taxonID
-  dcterms:isPartOf dwc: ;
-.
-dwc:taxonRank
-  dcterms:isPartOf dwc: ;
-.
-dwc:taxonRemarks
-  dcterms:isPartOf dwc: ;
-.
-dwc:taxonomicStatus
-  dcterms:isPartOf dwc: ;
-.
-dwc:typeStatus
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimCoordinateSystem
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimCoordinates
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimDepth
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimElevation
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimEventDate
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimIdentification
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimLatitude
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimLocality
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimLongitude
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimSRS
-  dcterms:isPartOf dwc: ;
-.
-dwc:verbatimTaxonRank
-  dcterms:isPartOf dwc: ;
-.
-dwc:vernacularName
-  dcterms:isPartOf dwc: ;
-.
-dwc:verticalDatum
-  dcterms:isPartOf dwc: ;
-.
-dwc:waterBody
-  dcterms:isPartOf dwc: ;
-.
-dwc:year
-  dcterms:isPartOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2008-11-19>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-01-18>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-01-21>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-01-23>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-04-24>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-04-29>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-05-18>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-07-06>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-08-24>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-09-11>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-09-17>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-09-21>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2009-12-07>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2011-10-16>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2013-03-28>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2013-05-25>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2014-10-23>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2014-12-23>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2017-10-06>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2018-09-06>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2020-08-12>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2020-08-20>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2020-10-13>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2020-10-28>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2021-03-29>
-  dcterms:isVersionOf dwc: ;
-.
-<http://rs.tdwg.org/dwc/version/terms/2021-07-15>
-  dcterms:isVersionOf dwc: ;
-.
+dwc:Dataset a rdfs:Class ;
+    rdfs:label "Dataset" ;
+    dcterms:modified "2009-09-11"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/Dataset-2008-11-19> ;
+    skos:definition "The category of information pertaining to a logical set of records." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:Event a rdfs:Class ;
+    rdfs:label "Event" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/Event-2018-09-06> ;
+    skos:definition "An action that occurs at some location during some time." .
+
+dwc:EventAttribute a rdfs:Class ;
+    rdfs:label "Event Attribute" ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventAttribute-2008-11-19> ;
+    skos:definition "Container class for information about attributes related to a given sampling event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EventMeasurement a rdfs:Class ;
+    rdfs:label "Event Measurement" ;
+    dcterms:isReplacedBy dwc:MeasurementOrFact ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventMeasurement-2008-11-19> ;
+    skos:definition "The category of information pertaining to measurements associated with an event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:FossilSpecimen a rdfs:Class ;
+    rdfs:label "Fossil Specimen" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/FossilSpecimen-2018-09-06> ;
+    skos:definition "A preserved specimen that is a fossil." .
+
+dwc:GeologicalContext a rdfs:Class ;
+    rdfs:label "Geological Context" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/GeologicalContext-2018-09-06> ;
+    skos:definition "Geological information, such as stratigraphy, that qualifies a region or place." .
+
+dwc:HumanObservation a rdfs:Class ;
+    rdfs:label "Human Observation" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/HumanObservation-2018-09-06> ;
+    skos:definition "An output of a human observation process." .
+
+dwc:Identification a rdfs:Class ;
+    rdfs:label "Identification" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/Identification-2018-09-06> ;
+    skos:definition "A taxonomic determination (e.g., the assignment to a taxon)." .
+
+dwc:LivingSpecimen a rdfs:Class ;
+    rdfs:label "Living Specimen" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/LivingSpecimen-2018-09-06> ;
+    skos:definition "A specimen that is alive." .
+
+dwc:MachineObservation a rdfs:Class ;
+    rdfs:label "Machine Observation" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/MachineObservation-2018-09-06> ;
+    skos:definition "An output of a machine observation process." .
+
+dwc:MaterialCitation a rdfs:Class ;
+    rdfs:label "Material Citation" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/MaterialCitation-2021-07-15> ;
+    skos:definition "A reference to or citation of one, a part of, or multiple specimens in scholarly publications." .
+
+dwc:MaterialSample a rdfs:Class ;
+    rdfs:label "Material Sample" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/MaterialSample-2018-09-06> ;
+    skos:definition "A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed." .
+
+dwc:MeasurementOrFact a rdfs:Class ;
+    rdfs:label "Measurement or Fact" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/MeasurementOrFact-2018-09-06> ;
+    skos:definition "A measurement of or fact about an rdfs:Resource (http://www.w3.org/2000/01/rdf-schema#Resource)." .
+
+dwc:Occurrence a rdfs:Class ;
+    rdfs:label "Occurrence" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-20"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/Occurrence-2020-08-20> ;
+    skos:definition "An existence of an Organism (sensu http://rs.tdwg.org/dwc/terms/Organism) at a particular place at a particular time." .
+
+dwc:OccurrenceMeasurement a rdfs:Class ;
+    rdfs:label "Occurrence Measurement" ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/OccurrenceMeasurement-2008-11-19> ;
+    skos:definition "The category of information pertaining to measurements accociated with an occurrence." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:Organism a rdfs:Class ;
+    rdfs:label "Organism" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/Organism-2018-09-06> ;
+    skos:definition "A particular organism or defined group of organisms considered to be taxonomically homogeneous." .
+
+dwc:PreservedSpecimen a rdfs:Class ;
+    rdfs:label "Preserved Specimen" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/PreservedSpecimen-2018-09-06> ;
+    skos:definition "A specimen that has been preserved." .
+
+dwc:ResourceRelationship a rdfs:Class ;
+    rdfs:label "Resource Relationship" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/ResourceRelationship-2018-09-06> ;
+    skos:definition "A relationship of one rdfs:Resource (http://www.w3.org/2000/01/rdf-schema#Resource) to another." .
+
+dwc:Sample a rdfs:Class ;
+    rdfs:label "Sample" ;
+    dcterms:isReplacedBy dwc:Occurrence ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/Sample-2008-11-19> ;
+    skos:definition "Container class for information about the results of a sampling event (specimen, observation, etc.)" ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SampleAttribute a rdfs:Class ;
+    rdfs:label "Sample Attribute" ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SampleAttribute-2008-11-19> ;
+    skos:definition "Container class for information about attributes related to a given sample." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SamplingEvent a rdfs:Class ;
+    rdfs:label "Sampling Event" ;
+    dcterms:isReplacedBy dwc:Event ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SamplingEvent-2008-11-19> ;
+    skos:definition "Container class for information about the conditions and methods of acquisition of samples." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SamplingLocation a rdfs:Class ;
+    rdfs:label "Sampling Location" ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SamplingLocation-2008-11-19> ;
+    skos:definition "Container class for information about the location where a sampling event occurred." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:Taxon a rdfs:Class ;
+    rdfs:label "Taxon" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/Taxon-2018-09-06> ;
+    skos:definition "A group of organisms (sensu http://purl.obolibrary.org/obo/OBI_0100026) considered by taxonomists to form a homogeneous unit." .
+
+<http://rs.tdwg.org/dwc/terms.ttl> a foaf:document ;
+    dc:creator "Biodiversity Information Standards (TDWG)" ;
+    dc:format "text/turtle" ;
+    dcterms:modified "2021-07-27T08:04:18-05:00"^^xsd:dateTime ;
+    dcterms:references dwc: .
+
+dwc:AcceptedTaxon a rdf:Property ;
+    rdfs:label "Accepted Taxon" ;
+    dcterms:isReplacedBy dwc:acceptedTaxonName ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/AcceptedTaxon-2008-11-19> ;
+    skos:definition "The currently valid (zoological) or accepted (botanical) name for the ScientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:AcceptedTaxonID a rdf:Property ;
+    rdfs:label "Accepted Taxon ID" ;
+    dcterms:isReplacedBy dwc:acceptedTaxonNameID ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/AcceptedTaxonID-2009-01-21> ;
+    skos:definition "A global unique identifier for the parent to the AcceptedTaxon." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:AccessConstraints a rdf:Property ;
+    rdfs:label "Access Constraints" ;
+    dcterms:isReplacedBy dcterms:accessRights ;
+    dcterms:modified "2009-09-21"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/AccessConstraints-2008-11-19> ;
+    skos:definition "A description of constraints on the use of the data as shared or access to further data that is not shared." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:CatalogNumberNumeric a rdf:Property ;
+    rdfs:label "Catalog Number Numeric" ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/CatalogNumberNumeric-2008-11-19> ;
+    skos:definition "The numeric value of the catalogNumber, used to facilitate numerical sorting and searching by ranges." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:DwCType a <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+    rdfs:label "Darwin Core Type" ;
+    dcterms:modified "2014-10-23"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/DwCType-2008-11-19> ;
+    skos:definition "The set of classes specified by the Darwin Core Type Vocabulary, used to categorize the nature or genre of the resource." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EarliestDateCollected a rdf:Property ;
+    rdfs:label "Earliest Date Collected" ;
+    dcterms:isReplacedBy dwc:eventDate ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EarliestDateCollected-2008-11-19> ;
+    skos:definition "The earliest date-time in a period during which a event occurred. If the event is recorded as occurring at a single date-time, populate both EarliestDateCollected and LatestDateCollected with the same value. Recommended best practice is to use an encoding scheme, such as ISO 8601:2004(E)." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EndTimeOfDay a rdf:Property ;
+    rdfs:label "End Time of Day" ;
+    dcterms:isReplacedBy dwc:eventTime ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EndTimeOfDay-2008-11-19> ;
+    skos:definition "The time of day when the event ended, expressed as decimal hours from midnight, local time." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EventAttributeAccuracy a rdf:Property ;
+    rdfs:label "Event Attribute Accuracy" ;
+    dcterms:isReplacedBy dwc:eventMeasurementAccuracy ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventAttributeAccuracy-2009-01-18> ;
+    skos:definition "The description of the error associated with the EventAttributeValue." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EventAttributeDeterminedBy a rdf:Property ;
+    rdfs:label "Event Attribute Determined By" ;
+    dcterms:isReplacedBy dwc:eventMeasurementDeterminedBy ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventAttributeDeterminedBy-2009-01-23> ;
+    skos:definition "The agent responsible for having determined the value of the measurement or characteristic of the sampling event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EventAttributeDeterminedDate a rdf:Property ;
+    rdfs:label "Event Attribute Determined Date" ;
+    dcterms:isReplacedBy dwc:eventMeasurementDeterminedDate ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventAttributeDeterminedDate-2009-01-23> ;
+    skos:definition "The date on which the the measurement or characteristic of the sampling event was made." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EventAttributeID a rdf:Property ;
+    rdfs:label "Event Attribute ID" ;
+    dcterms:isReplacedBy dwc:eventMeasurementID ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventAttributeID-2008-11-19> ;
+    skos:definition "An identifier for the event attribute. May be a global unique identifier or an identifier specific to the data set." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EventAttributeRemarks a rdf:Property ;
+    rdfs:label "Event Attribute Remarks" ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventAttributeRemarks-2008-11-19> ;
+    skos:definition "Comments or notes accompanying the measurement or characteristic of the sampling event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EventAttributeType a rdf:Property ;
+    rdfs:label "Event Attribute Type" ;
+    dcterms:isReplacedBy dwc:SamplingAttributeType,
+        dwc:eventMeasurementType ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventAttributeType-2008-11-19> ;
+    skos:definition "The nature of the measurement or characteristic of the sampling event. Recommended best practice is to use a controlled vocabulary." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EventAttributeUnit a rdf:Property ;
+    rdfs:label "Event Attribute Unit" ;
+    dcterms:isReplacedBy dwc:eventMeasurementUnit ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventAttributeUnit-2008-11-19> ;
+    skos:definition "The units for the value of the measurement or characteristic of the sampling event. Recommended best practice is to use International System of Units (SI) units." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:EventAttributeValue a rdf:Property ;
+    rdfs:label "Event Attribute" ;
+    dcterms:isReplacedBy dwc:eventMeasurementValue ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/EventAttributeValue-2008-11-19> ;
+    skos:definition "The value of the measurement or characteristic of the sampling event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:Generalizations a rdf:Property ;
+    rdfs:label "Generalizations" ;
+    dcterms:isReplacedBy dwc:dataGeneralizations ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/Generalizations-2008-11-19> ;
+    skos:definition "Actions taken to make the data as shared less specific or complete than in its original form. Suggests that alternative data of highly quality may be available on request." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:HigherTaxon a rdf:Property ;
+    rdfs:label "Higher Taxon" ;
+    dcterms:modified "2009-08-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/HigherTaxon-2009-01-21> ;
+    skos:definition "A list (concatenated and separated) of the names for the taxonomic ranks less specific than the ScientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:HigherTaxonID a rdf:Property ;
+    rdfs:label "Higher Taxon ID" ;
+    dcterms:isReplacedBy dwc:higherTaxonNameID ;
+    dcterms:modified "2009-08-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/HigherTaxonID-2009-01-21> ;
+    skos:definition "A global unique identifier for the parent to the taxon." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:LatestDateCollected a rdf:Property ;
+    rdfs:label "Latest Date Collected" ;
+    dcterms:isReplacedBy dwc:eventDate ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/LatestDateCollected-2008-11-19> ;
+    skos:definition "The latest date-time in a period during which a event occurred. If the event is recorded as occurring at a single date-time, populate both EarliestDateCollected and LatestDateCollected with the same value. Recommended best practice is to use an encoding scheme, such as ISO 8601:2004(E)." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:PreviousIdentifications a rdf:Property ;
+    rdfs:label "Previous Identifications" ;
+    dcterms:isReplacedBy dwc:previousIdentifications ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/PreviousIdentifications-2008-11-19> ;
+    skos:definition "A list (concatenated and separated) of previous ScientificNames to which the sample was identified." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:RelatedBasisOfRecord a rdf:Property ;
+    rdfs:label "Related Basis of Record" ;
+    dcterms:modified "2009-01-26"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/RelatedBasisOfRecord-2008-11-19> ;
+    skos:definition "The nature of the related resource. Recommended best practice is to use the same controlled vocabulary as for basisOfRecord." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SampleAttributeAccuracy a rdf:Property ;
+    rdfs:label "Sample Attribute Accuracy" ;
+    dcterms:isReplacedBy dwc:occurrenceMeasurementAccuracy ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SampleAttributeAccuracy-2009-01-18> ;
+    skos:definition "The description of the error associated with the SampleAttributeValue." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SampleAttributeDeterminedBy a rdf:Property ;
+    rdfs:label "Sample Attribute Determined By" ;
+    dcterms:isReplacedBy dwc:occurrenceMeasurementDeterminedBy ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SampleAttributeDeterminedBy-2009-01-23> ;
+    skos:definition "The agent responsible for having determined the value of the measurement or characteristic of the sample." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SampleAttributeDeterminedDate a rdf:Property ;
+    rdfs:label "Sample Attribute Determined Date" ;
+    dcterms:isReplacedBy dwc:occurrenceMeasurementDeterminedDate ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SampleAttributeDeterminedDate-2009-01-23> ;
+    skos:definition "The date on which the the measurement or characteristic of the sample was made." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SampleAttributeRemarks a rdf:Property ;
+    rdfs:label "Sample Attribute Remarks" ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SampleAttributeRemarks-2008-11-19> ;
+    skos:definition "Comments or notes accompanying the measurement or characteristic of the sample." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SampleAttributeUnit a rdf:Property ;
+    rdfs:label "Sample Attribute Unit" ;
+    dcterms:isReplacedBy dwc:occurrenceMeasurementUnit ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SampleAttributeUnit-2008-11-19> ;
+    skos:definition "The units for the value of the measurement or characteristic of the sample. Recommended best practice is to use International System of Units (SI) units." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SampleAttributeValue a rdf:Property ;
+    rdfs:label "Sample Attribute Value" ;
+    dcterms:isReplacedBy dwc:occurrenceMeasurementValue ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SampleAttributeValue-2008-11-19> ;
+    skos:definition "The value of the measurement or characteristic of the sample." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SampleRemarks a rdf:Property ;
+    rdfs:label "Sample Remarks" ;
+    dcterms:isReplacedBy dwc:occurrenceRemarks ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SampleRemarks-2009-01-18> ;
+    skos:definition "Comments or notes about the sample or record." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SamplingAttributeID a rdf:Property ;
+    rdfs:label "Sample Attribute ID" ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SamplingAttributeID-2008-11-19> ;
+    skos:definition "An identifier for the sampling attribute. May be a global unique identifier or an identifier specific to the data set." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SamplingEventAttributes a rdf:Property ;
+    rdfs:label "Sampling Event Attributes" ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SamplingEventAttributes-2008-11-19> ;
+    skos:definition "A list (concatenated and separated) of additional measurements or characteristics of the sampling event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SamplingEventID a rdf:Property ;
+    rdfs:label "Sampling Event ID" ;
+    dcterms:isReplacedBy dwc:eventID ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SamplingEventID-2008-11-19> ;
+    skos:definition "An identifier for the sampling event. May be a global unique identifier or an identifier specific to the data set." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SamplingEventRemarks a rdf:Property ;
+    rdfs:label "Sampling Event Remarks" ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SamplingEventRemarks-2009-01-18> ;
+    skos:definition "Comments or notes about the sampling event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SamplingLocationID a rdf:Property ;
+    rdfs:label "Sampling Location ID" ;
+    dcterms:isReplacedBy dwc:locationID ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SamplingLocationID-2008-11-19> ;
+    skos:definition "An identifier for the sampling location. May be a global unique identifier or an identifier specific to the data set." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SamplingLocationRemarks a rdf:Property ;
+    rdfs:label "Sampling Location Remarks" ;
+    dcterms:isReplacedBy dwc:locationRemarks ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SamplingLocationRemarks-2009-01-18> ;
+    skos:definition "Comments or notes about the sampling location." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:StartTimeOfDay a rdf:Property ;
+    rdfs:label "Start Time of Day" ;
+    dcterms:isReplacedBy dwc:eventTime ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/StartTimeOfDay-2008-11-19> ;
+    skos:definition "The time of day when the event began, expressed as decimal hours from midnight, local time." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:TaxonID a rdf:Property ;
+    rdfs:label "Taxon ID" ;
+    dcterms:isReplacedBy dwc:taxonNameID ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/TaxonID-2008-11-19> ;
+    skos:definition "A global unique identifier for the taxon (name in a classification)." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:accuracy a rdf:Property ;
+    rdfs:label "Accuracy" ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/accuracy-2009-01-21> ;
+    skos:definition "Abstract term to capture error information about a measurement or fact." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:basionym a rdf:Property ;
+    rdfs:label "Basionym" ;
+    dcterms:isReplacedBy dwc:originalNameUsage ;
+    dcterms:modified "2009-09-21"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/basionym-2009-04-24> ;
+    skos:definition "The basionym (botany) or basonym (bacteriology) of the scientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:basionymID a rdf:Property ;
+    rdfs:label "Basionym ID" ;
+    dcterms:isReplacedBy dwc:originalNameUsageID ;
+    dcterms:modified "2009-09-21"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/basionymID-2009-04-24> ;
+    skos:definition "A unique identifier for the basionym (botany) or basonym (bacteriology) of the scientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:binomial a rdf:Property ;
+    rdfs:label "Binomial" ;
+    dcterms:modified "2009-04-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/binomial-2008-11-19> ;
+    skos:definition "The combination of genus and first (species) epithet of the scientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:eventAttributes a rdf:Property ;
+    rdfs:label "Event Attributes" ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventAttributes-2009-04-24> ;
+    skos:definition "A list (concatenated and separated) of additional measurements or characteristics of the Event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:eventMeasurementRemarks a rdf:Property ;
+    rdfs:label "Event Measurement Remarks" ;
+    dcterms:isReplacedBy dwc:measurementRemarks ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventMeasurementRemarks-2009-04-24> ;
+    skos:definition "Comments or notes accompanying the measurement or characteristic of the event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:higherTaxonName a rdf:Property ;
+    rdfs:label "Higher Taxon Name" ;
+    dcterms:isReplacedBy dwc:higherClassification ;
+    dcterms:modified "2009-08-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/higherTaxonName-2009-04-24> ;
+    skos:definition "A list (concatenated and separated) of the names for the taxonomic ranks less specific than that given in the scientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:higherTaxonconceptID a rdf:Property ;
+    rdfs:label "Higher Taxon Concept ID" ;
+    dcterms:modified "2009-08-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/higherTaxonconceptID-2009-04-24> ;
+    skos:definition "A unique identifier for the taxon concept less specific than that given in the taxonConceptID." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:identificationAttributes a rdf:Property ;
+    rdfs:label "Identification Attributes" ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/identificationAttributes-2009-04-24> ;
+    skos:definition "A list (concatenated and separated) of additional measurements, facts, characteristics, or assertions about the Identification." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:individualID a rdf:Property ;
+    rdfs:label "Individual ID" ;
+    dcterms:isReplacedBy dwc:organismID ;
+    dcterms:modified "2014-10-23"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/individualID-2009-04-24> ;
+    skos:definition "An identifier for an individual or named group of individual organisms represented in the Occurrence. Meant to accommodate resampling of the same individual or group for monitoring purposes. May be a global unique identifier or an identifier specific to a data set." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:locationAttributes a rdf:Property ;
+    rdfs:label "Location Attributes" ;
+    dcterms:modified "2014-10-23"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/locationAttributes-2009-04-24> ;
+    skos:definition "A list (concatenated and separated) of additional measurements, facts, characteristics, or assertions about the location." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:namePublicationID a rdf:Property ;
+    rdfs:label "Name Publication ID" ;
+    dcterms:isReplacedBy dwc:namePublishedInID ;
+    dcterms:modified "2009-09-21"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/namePublicationID-2009-05-18> ;
+    skos:definition "A resolvable globally unique identifier for the original publication of the scientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceAttributes a rdf:Property ;
+    rdfs:label "Occurrence Attributes" ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceAttributes-2009-04-24> ;
+    skos:definition "A list (concatenated and separated) of additional measurements, facts, characteristics, or assertions about the Occurrence." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceDetails a rdf:Property ;
+    rdfs:label "Occurrence Details" ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceDetails-2009-04-24> ;
+    skos:definition "A reference (publication, URI) to the most detailed information available about the Occurrence." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceMeasurementID a rdf:Property ;
+    rdfs:label "Occurrence Measurement ID" ;
+    dcterms:isReplacedBy dwc:measurementID ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceMeasurementID-2009-04-24> ;
+    skos:definition "An identifier for the occurrence attribute. May be a global unique identifier or an identifier specific to the data set." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceMeasurementRemarks a rdf:Property ;
+    rdfs:label "Occurrence Measurement Remarks" ;
+    dcterms:isReplacedBy dwc:measurementRemarks ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceMeasurementRemarks-2009-04-24> ;
+    skos:definition "Comments or notes accompanying the measurement or characteristic of the occurrence." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceMeasurementType a rdf:Property ;
+    rdfs:label "Occurrence Measurement Type" ;
+    dcterms:isReplacedBy dwc:measurementType ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceMeasurementType-2009-04-24> ;
+    skos:definition "The nature of the measurement or characteristic of the occurrence. Recommended best practice is to use a controlled vocabulary." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:relatedResourceType a rdf:Property ;
+    rdfs:label "Related Resource Type" ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/relatedResourceType-2009-04-24> ;
+    skos:definition "The type of the related resource. Recommended best practice is to use a controlled vocabulary." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:taxonAccordingTo a rdf:Property ;
+    rdfs:label "Taxon According To" ;
+    dcterms:isReplacedBy dwc:nameAccordingTo ;
+    dcterms:modified "2009-09-21"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/taxonAccordingTo-2009-04-24> ;
+    skos:definition "Information about the authorship of this taxon concept which uses the scientificName in their sense (secundum, sensu). Could be a publication (identification key), institution or team of individuals." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:taxonAttributes a rdf:Property ;
+    rdfs:label "Taxon Attributes" ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/taxonAttributes-2009-04-24> ;
+    skos:definition "A list (concatenated and separated) of additional measurements, facts, characteristics, or assertions about the taxon." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:verbatimScientificNameRank a rdf:Property ;
+    rdfs:label "Verbatim Scientific Name Rank" ;
+    dcterms:isReplacedBy dwc:verbatimTaxonRank ;
+    dcterms:modified "2009-09-21"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimScientificNameRank-2009-07-06> ;
+    skos:definition "The taxonomic rank of the most specific name in the scientificName as it appears in the original record." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:SamplingAttributeType a rdf:Property ;
+    rdfs:label "Sample Attribute Type" ;
+    dcterms:modified "2009-04-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/SamplingAttributeType-2008-11-19> ;
+    skos:definition "The nature of the measurement or characteristic of the sample. Recommended best practice is to use a controlled vocabulary." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:acceptedScientificName a rdf:Property ;
+    rdfs:label "Accepted Scientific Name" ;
+    dcterms:isReplacedBy dwc:acceptedNameUsage ;
+    dcterms:modified "2009-09-21"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/acceptedScientificName-2009-07-06> ;
+    skos:definition "The currently valid (zoological) or accepted (botanical) name for the scientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:acceptedScientificNameID a rdf:Property ;
+    rdfs:label "Accepted Scientific Name ID" ;
+    dcterms:isReplacedBy dwc:acceptedTaxonID ;
+    dcterms:modified "2009-08-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/acceptedScientificNameID-2009-07-06> ;
+    skos:definition "A unique identifier for the acceptedScientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:acceptedTaxonID a rdf:Property ;
+    rdfs:label "Accepted Taxon ID" ;
+    dcterms:isReplacedBy dwc:acceptedNameUsageID ;
+    dcterms:modified "2009-09-21"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/acceptedTaxonID-2009-08-24> ;
+    skos:definition "An identifier for the name of the currently valid (zoological) or accepted (botanical) taxon. See acceptedTaxon." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:acceptedTaxonName a rdf:Property ;
+    rdfs:label "Accepted Taxon Name" ;
+    dcterms:isReplacedBy dwc:acceptedScientificName ;
+    dcterms:modified "2009-07-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/acceptedTaxonName-2009-04-24> ;
+    skos:definition "The currently valid (zoological) or accepted (botanical) name for the scientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:acceptedTaxonNameID a rdf:Property ;
+    rdfs:label "Accepted Taxon Name ID" ;
+    dcterms:isReplacedBy dwc:acceptedScientificNameID ;
+    dcterms:modified "2009-07-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/acceptedTaxonNameID-2009-04-24> ;
+    skos:definition "A unique identifier for the acceptedTaxonName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:accordingTo a rdf:Property ;
+    rdfs:label "According To" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/accordingTo-2009-01-21> ;
+    skos:definition "Abstract term to attribute information to a source." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:associatedMedia a rdf:Property ;
+    rdfs:label "Associated Media" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-12"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/associatedMedia-2020-08-12> ;
+    skos:definition "A list (concatenated and separated) of identifiers (publication, global unique identifier, URI) of media associated with the Occurrence." .
+
+dwc:associatedOccurrences a rdf:Property ;
+    rdfs:label "Associated Occurrences" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/associatedOccurrences-2021-07-15> ;
+    skos:definition "A list (concatenated and separated) of identifiers of other Occurrence records and their associations to this Occurrence." .
+
+dwc:associatedOrganisms a rdf:Property ;
+    rdfs:label "Associated Organisms" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/associatedOrganisms-2021-07-15> ;
+    skos:definition "A list (concatenated and separated) of identifiers of other Organisms and the associations of this Organism to each of them." .
+
+dwc:associatedReferences a rdf:Property ;
+    rdfs:label "Associated References" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/associatedReferences-2021-07-15> ;
+    skos:definition "A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with the Occurrence." .
+
+dwc:associatedSequences a rdf:Property ;
+    rdfs:label "Associated Sequences" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/associatedSequences-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of identifiers (publication, global unique identifier, URI) of genetic sequence information associated with the Occurrence." .
+
+dwc:associatedTaxa a rdf:Property ;
+    rdfs:label "Associated Taxa" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/associatedTaxa-2021-07-15> ;
+    skos:definition "A list (concatenated and separated) of identifiers or names of taxa and the associations of this Occurrence to each of them." .
+
+dwc:basisOfRecord a rdf:Property ;
+    rdfs:label "Basis of Record" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/basisOfRecord-2021-07-15> ;
+    skos:definition "The specific nature of the data record." .
+
+dwc:bed a rdf:Property ;
+    rdfs:label "Bed" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/bed-2017-10-06> ;
+    skos:definition "The full name of the lithostratigraphic bed from which the cataloged item was collected." .
+
+dwc:behavior a rdf:Property ;
+    rdfs:label "Behavior" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/behavior-2017-10-06> ;
+    skos:definition "The behavior shown by the subject at the time the Occurrence was recorded." .
+
+dwc:catalogNumber a rdf:Property ;
+    rdfs:label "Catalog Number" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/catalogNumber-2017-10-06> ;
+    skos:definition "An identifier (preferably unique) for the record within the data set or collection." .
+
+dwc:class a rdf:Property ;
+    rdfs:label "Class" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/class-2017-10-06> ;
+    skos:definition "The full scientific name of the class in which the taxon is classified." .
+
+dwc:collectionCode a rdf:Property ;
+    rdfs:label "Collection Code" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/collectionCode-2017-10-06> ;
+    skos:definition "The name, acronym, coden, or initialism identifying the collection or data set from which the record was derived." .
+
+dwc:collectionID a rdf:Property ;
+    rdfs:label "Collection ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/collectionID-2017-10-06> ;
+    skos:definition "An identifier for the collection or dataset from which the record was derived." .
+
+dwc:continent a rdf:Property ;
+    rdfs:label "Continent" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/continent-2017-10-06> ;
+    skos:definition "The name of the continent in which the Location occurs." .
+
+dwc:coordinatePrecision a rdf:Property ;
+    rdfs:label "Coordinate Precision" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/coordinatePrecision-2017-10-06> ;
+    skos:definition "A decimal representation of the precision of the coordinates given in the decimalLatitude and decimalLongitude." .
+
+dwc:coordinateUncertaintyInMeters a rdf:Property ;
+    rdfs:label "Coordinate Uncertainty In Meters" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/coordinateUncertaintyInMeters-2021-07-15> ;
+    skos:definition "The horizontal distance (in meters) from the given decimalLatitude and decimalLongitude describing the smallest circle containing the whole of the Location. Leave the value empty if the uncertainty is unknown, cannot be estimated, or is not applicable (because there are no coordinates). Zero is not a valid value for this term." .
+
+dwc:country a rdf:Property ;
+    rdfs:label "Country" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/country-2021-07-15> ;
+    skos:definition "The name of the country or major administrative unit in which the Location occurs." .
+
+dwc:countryCode a rdf:Property ;
+    rdfs:label "Country Code" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/countryCode-2017-10-06> ;
+    skos:definition "The standard code for the country in which the Location occurs." .
+
+dwc:county a rdf:Property ;
+    rdfs:label "County" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/county-2017-10-06> ;
+    skos:definition "The full, unabbreviated name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the Location occurs." .
+
+dwc:cultivarEpithet a rdf:Property ;
+    rdfs:label "Cultivar Epithet" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/cultivarEpithet-2021-07-15> ;
+    skos:definition "Part of the name of a cultivar, cultivar group or grex that follows the scientific name." .
+
+dwc:datasetID a rdf:Property ;
+    rdfs:label "Dataset ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/datasetID-2017-10-06> ;
+    skos:definition "An identifier for the set of data. May be a global unique identifier or an identifier specific to a collection or institution." .
+
+dwc:datasetName a rdf:Property ;
+    rdfs:label "Dataset Name" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/datasetName-2017-10-06> ;
+    skos:definition "The name identifying the data set from which the record was derived." .
+
+dwc:dateIdentified a rdf:Property ;
+    rdfs:label "Date Identified" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-12"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/dateIdentified-2020-08-12> ;
+    skos:definition "The date on which the subject was determined as representing the Taxon." .
+
+dwc:day a rdf:Property ;
+    rdfs:label "Day" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/day-2017-10-06> ;
+    skos:definition "The integer day of the month on which the Event occurred." .
+
+dwc:decimalLatitude a rdf:Property ;
+    rdfs:label "Decimal Latitude" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/decimalLatitude-2017-10-06> ;
+    skos:definition "The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive." .
+
+dwc:decimalLongitude a rdf:Property ;
+    rdfs:label "Decimal Longitude" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/decimalLongitude-2017-10-06> ;
+    skos:definition "The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive." .
+
+dwc:degreeOfEstablishment a rdf:Property ;
+    rdfs:label "Degree of Establishment" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-03-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/degreeOfEstablishment-2021-03-29> ;
+    skos:definition "The degree to which an Organism survives, reproduces, and expands its range at the given place and time." .
+
+dwc:disposition a rdf:Property ;
+    rdfs:label "Disposition" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/disposition-2017-10-06> ;
+    skos:definition "The current state of a specimen with respect to the collection identified in collectionCode or collectionID." .
+
+dwc:dynamicProperties a rdf:Property ;
+    rdfs:label "Dynamic Properties" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/dynamicProperties-2017-10-06> ;
+    skos:definition "A list of additional measurements, facts, characteristics, or assertions about the record. Meant to provide a mechanism for structured content." .
+
+dwc:earliestAgeOrLowestStage a rdf:Property ;
+    rdfs:label "Earliest Age Or Lowest Stage" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/earliestAgeOrLowestStage-2017-10-06> ;
+    skos:definition "The full name of the earliest possible geochronologic age or lowest chronostratigraphic stage attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:earliestEonOrLowestEonothem a rdf:Property ;
+    rdfs:label "Earliest Eon Or Lowest Eonothem" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/earliestEonOrLowestEonothem-2017-10-06> ;
+    skos:definition "The full name of the earliest possible geochronologic eon or lowest chrono-stratigraphic eonothem or the informal name (\"Precambrian\") attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:earliestEpochOrLowestSeries a rdf:Property ;
+    rdfs:label "Earliest Epoch Or Lowest Series" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/earliestEpochOrLowestSeries-2017-10-06> ;
+    skos:definition "The full name of the earliest possible geochronologic epoch or lowest chronostratigraphic series attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:earliestEraOrLowestErathem a rdf:Property ;
+    rdfs:label "Earliest Era Or Lowest Erathem" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/earliestEraOrLowestErathem-2017-10-06> ;
+    skos:definition "The full name of the earliest possible geochronologic era or lowest chronostratigraphic erathem attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:earliestPeriodOrLowestSystem a rdf:Property ;
+    rdfs:label "Earliest Period Or Lowest System" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/earliestPeriodOrLowestSystem-2017-10-06> ;
+    skos:definition "The full name of the earliest possible geochronologic period or lowest chronostratigraphic system attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:endDayOfYear a rdf:Property ;
+    rdfs:label "End Day Of Year" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-20"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/endDayOfYear-2020-08-20> ;
+    skos:definition "The latest integer day of the year on which the Event occurred (1 for January 1, 365 for December 31, except in a leap year, in which case it is 366)." .
+
+dwc:establishmentMeans a rdf:Property ;
+    rdfs:label "Establishment Means" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-03-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/establishmentMeans-2021-03-29> ;
+    skos:definition "Statement about whether an organism or organisms have been introduced to a given place and time through the direct or indirect activity of modern humans." .
+
+dwc:eventMeasurementAccuracy a rdf:Property ;
+    rdfs:label "Event Measurement Accuracy" ;
+    dcterms:isReplacedBy dwc:measurementAccuracy ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventMeasurementAccuracy-2009-04-24> ;
+    skos:definition "The description of the error associated with the EventAttributeValue." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:eventMeasurementDeterminedBy a rdf:Property ;
+    rdfs:label "Event Measurement Determined By" ;
+    dcterms:isReplacedBy dwc:measurementDeterminedBy ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventMeasurementDeterminedBy-2009-04-24> ;
+    skos:definition "The agent responsible for having determined the value of the measurement or characteristic of the event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:eventMeasurementDeterminedDate a rdf:Property ;
+    rdfs:label "Event Measurement Determined Date" ;
+    dcterms:isReplacedBy dwc:measurementDeterminedDate ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventMeasurementDeterminedDate-2009-04-24> ;
+    skos:definition "The date on which the the measurement or characteristic of the event was made. Recommended best practice is to use an encoding scheme, such as ISO 8601:2004(E)." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:eventMeasurementID a rdf:Property ;
+    rdfs:label "Event Measurement ID" ;
+    dcterms:isReplacedBy dwc:measurementID ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventMeasurementID-2009-04-24> ;
+    skos:definition "An identifier for the event attribute. May be a global unique identifier or an identifier specific to the data set." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:eventMeasurementType a rdf:Property ;
+    rdfs:label "Event Measurement Type" ;
+    dcterms:isReplacedBy dwc:measurementType ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventMeasurementType-2009-04-24> ;
+    skos:definition "The nature of the measurement or characteristic of the event. Recommended best practice is to use a controlled vocabulary." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:eventMeasurementUnit a rdf:Property ;
+    rdfs:label "Event Measurement Unit" ;
+    dcterms:isReplacedBy dwc:measurementUnit ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventMeasurementUnit-2009-04-24> ;
+    skos:definition "The units for the value of the measurement or characteristic of the event. Recommended best practice is to use International System of Units (SI) units." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:eventMeasurementValue a rdf:Property ;
+    rdfs:label "Event Measurement Value" ;
+    dcterms:isReplacedBy dwc:measurementValue ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventMeasurementValue-2009-04-24> ;
+    skos:definition "The value of the measurement or characteristic of the event." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:eventRemarks a rdf:Property ;
+    rdfs:label "Event Remarks" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventRemarks-2017-10-06> ;
+    skos:definition "Comments or notes about the Event." .
+
+dwc:family a rdf:Property ;
+    rdfs:label "Family" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/family-2017-10-06> ;
+    skos:definition "The full scientific name of the family in which the taxon is classified." .
+
+dwc:fieldNotes a rdf:Property ;
+    rdfs:label "Field Notes" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/fieldNotes-2017-10-06> ;
+    skos:definition "One of a) an indicator of the existence of, b) a reference to (publication, URI), or c) the text of notes taken in the field about the Event." .
+
+dwc:fieldNumber a rdf:Property ;
+    rdfs:label "Field Number" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/fieldNumber-2017-10-06> ;
+    skos:definition "An identifier given to the event in the field. Often serves as a link between field notes and the Event." .
+
+dwc:footprintSRS a rdf:Property ;
+    rdfs:label "Footprint SRS" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/footprintSRS-2021-07-15> ;
+    skos:definition "The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geometry given in footprintWKT is based." .
+
+dwc:footprintSpatialFit a rdf:Property ;
+    rdfs:label "Footprint Spatial Fit" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-20"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/footprintSpatialFit-2020-08-20> ;
+    skos:definition "The ratio of the area of the footprint (footprintWKT) to the area of the true (original, or most specific) spatial representation of the Location. Legal values are 0, greater than or equal to 1, or undefined. A value of 1 is an exact match or 100% overlap. A value of 0 should be used if the given footprint does not completely contain the original representation. The footprintSpatialFit is undefined (and should be left empty) if the original representation is a point without uncertainty and the given georeference is not that same point (without uncertainty). If both the original and the given georeference are the same point, the footprintSpatialFit is 1." .
+
+dwc:footprintWKT a rdf:Property ;
+    rdfs:label "Footprint WKT" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/footprintWKT-2017-10-06> ;
+    skos:definition "A Well-Known Text (WKT) representation of the shape (footprint, geometry) that defines the Location. A Location may have both a point-radius representation (see decimalLatitude) and a footprint representation, and they may differ from each other." .
+
+dwc:formation a rdf:Property ;
+    rdfs:label "Formation" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/formation-2017-10-06> ;
+    skos:definition "The full name of the lithostratigraphic formation from which the cataloged item was collected." .
+
+dwc:genericName a rdf:Property ;
+    rdfs:label "Generic Name" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/genericName-2021-07-15> ;
+    skos:definition "The genus part of the scientificName without authorship." .
+
+dwc:genus a rdf:Property ;
+    rdfs:label "Genus" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/genus-2017-10-06> ;
+    skos:definition "The full scientific name of the genus in which the taxon is classified." .
+
+dwc:geodeticDatum a rdf:Property ;
+    rdfs:label "Geodetic Datum" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/geodeticDatum-2017-10-06> ;
+    skos:definition "The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based." .
+
+dwc:geologicalContextID a rdf:Property ;
+    rdfs:label "Geological Context ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/geologicalContextID-2017-10-06> ;
+    skos:definition "An identifier for the set of information associated with a GeologicalContext (the location within a geological context, such as stratigraphy). May be a global unique identifier or an identifier specific to the data set." .
+
+dwc:georeferenceProtocol a rdf:Property ;
+    rdfs:label "Georeference Protocol" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-20"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/georeferenceProtocol-2020-08-20> ;
+    skos:definition "A description or reference to the methods used to determine the spatial footprint, coordinates, and uncertainties." .
+
+dwc:georeferenceRemarks a rdf:Property ;
+    rdfs:label "Georeference Remarks" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/georeferenceRemarks-2017-10-06> ;
+    skos:definition "Notes or comments about the spatial description determination, explaining assumptions made in addition or opposition to the those formalized in the method referred to in georeferenceProtocol." .
+
+dwc:georeferenceSources a rdf:Property ;
+    rdfs:label "Georeference Sources" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-10-28"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/georeferenceSources-2020-10-28> ;
+    skos:definition "A list (concatenated and separated) of maps, gazetteers, or other resources used to georeference the Location, described specifically enough to allow anyone in the future to use the same resources." .
+
+dwc:georeferenceVerificationStatus a rdf:Property ;
+    rdfs:label "Georeference Verification Status" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/georeferenceVerificationStatus-2021-07-15> ;
+    skos:definition "A categorical description of the extent to which the georeference has been verified to represent the best possible spatial description for the Location of the Occurrence." .
+
+dwc:georeferencedBy a rdf:Property ;
+    rdfs:label "Georeferenced By" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/georeferencedBy-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of names of people, groups, or organizations who determined the georeference (spatial representation) for the Location." .
+
+dwc:georeferencedDate a rdf:Property ;
+    rdfs:label "Georeferenced Date" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-12"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/georeferencedDate-2020-08-12> ;
+    skos:definition "The date on which the Location was georeferenced." .
+
+dwc:group a rdf:Property ;
+    rdfs:label "Group" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/group-2017-10-06> ;
+    skos:definition "The full name of the lithostratigraphic group from which the cataloged item was collected." .
+
+dwc:habitat a rdf:Property ;
+    rdfs:label "Habitat" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/habitat-2017-10-06> ;
+    skos:definition "A category or description of the habitat in which the Event occurred." .
+
+dwc:higherGeography a rdf:Property ;
+    rdfs:label "Higher Geography" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/higherGeography-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of geographic names less specific than the information captured in the locality term." .
+
+dwc:higherGeographyID a rdf:Property ;
+    rdfs:label "Higher Geography ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/higherGeographyID-2017-10-06> ;
+    skos:definition "An identifier for the geographic region within which the Location occurred." .
+
+dwc:higherTaxonNameID a rdf:Property ;
+    rdfs:label "Higher Taxon Name ID" ;
+    dcterms:isReplacedBy dwc:parentNameUsageID ;
+    dcterms:modified "2009-08-24"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/higherTaxonNameID-2009-04-24> ;
+    skos:definition "A unique identifier for the name of the next higher rank than the scientificName in a taxonomic classification. See higherTaxonName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:highestBiostratigraphicZone a rdf:Property ;
+    rdfs:label "Highest Biostratigraphic Zone" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/highestBiostratigraphicZone-2017-10-06> ;
+    skos:definition "The full name of the highest possible geological biostratigraphic zone of the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:identificationID a rdf:Property ;
+    rdfs:label "Identification ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/identificationID-2017-10-06> ;
+    skos:definition "An identifier for the Identification (the body of information associated with the assignment of a scientific name). May be a global unique identifier or an identifier specific to the data set." .
+
+dwc:identificationQualifier a rdf:Property ;
+    rdfs:label "Identification Qualifier" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/identificationQualifier-2017-10-06> ;
+    skos:definition "A brief phrase or a standard term (\"cf.\", \"aff.\") to express the determiner's doubts about the Identification." .
+
+dwc:identificationReferences a rdf:Property ;
+    rdfs:label "Identification References" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/identificationReferences-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of references (publication, global unique identifier, URI) used in the Identification." .
+
+dwc:identificationRemarks a rdf:Property ;
+    rdfs:label "Identification Remarks" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/identificationRemarks-2017-10-06> ;
+    skos:definition "Comments or notes about the Identification." .
+
+dwc:identificationVerificationStatus a rdf:Property ;
+    rdfs:label "Identification Verification Status" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/identificationVerificationStatus-2017-10-06> ;
+    skos:definition "A categorical indicator of the extent to which the taxonomic identification has been verified to be correct." .
+
+dwc:identifiedBy a rdf:Property ;
+    rdfs:label "Identified By" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/identifiedBy-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of names of people, groups, or organizations who assigned the Taxon to the subject." .
+
+dwc:identifiedByID a rdf:Property ;
+    rdfs:label "Identified By ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/identifiedByID-2021-07-15> ;
+    skos:definition "A list (concatenated and separated) of the globally unique identifier for the person, people, groups, or organizations responsible for assigning the Taxon to the subject." .
+
+dwc:individualCount a rdf:Property ;
+    rdfs:label "Individual Count" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/individualCount-2021-07-15> ;
+    skos:definition "The number of individuals present at the time of the Occurrence." .
+
+dwc:informationWithheld a rdf:Property ;
+    rdfs:label "Information Withheld" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/informationWithheld-2017-10-06> ;
+    skos:definition "Additional information that exists, but that has not been shared in the given record." .
+
+dwc:infragenericEpithet a rdf:Property ;
+    rdfs:label "Infrageneric Epithet" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/infragenericEpithet-2021-07-15> ;
+    skos:definition "The infrageneric part of a binomial name at ranks above species but below genus." .
+
+dwc:infraspecificEpithet a rdf:Property ;
+    rdfs:label "Infraspecific Epithet" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/infraspecificEpithet-2021-07-15> ;
+    skos:definition "The name of the lowest or terminal infraspecific epithet of the scientificName, excluding any rank designation." .
+
+dwc:institutionCode a rdf:Property ;
+    rdfs:label "Institution Code" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/institutionCode-2017-10-06> ;
+    skos:definition "The name (or acronym) in use by the institution having custody of the object(s) or information referred to in the record." .
+
+dwc:institutionID a rdf:Property ;
+    rdfs:label "Institution ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/institutionID-2017-10-06> ;
+    skos:definition "An identifier for the institution having custody of the object(s) or information referred to in the record." .
+
+dwc:island a rdf:Property ;
+    rdfs:label "Island" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/island-2017-10-06> ;
+    skos:definition "The name of the island on or near which the Location occurs." .
+
+dwc:islandGroup a rdf:Property ;
+    rdfs:label "Island Group" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/islandGroup-2017-10-06> ;
+    skos:definition "The name of the island group in which the Location occurs." .
+
+dwc:kingdom a rdf:Property ;
+    rdfs:label "Kingdom" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/kingdom-2017-10-06> ;
+    skos:definition "The full scientific name of the kingdom in which the taxon is classified." .
+
+dwc:latestAgeOrHighestStage a rdf:Property ;
+    rdfs:label "Latest AgeOr Highest Stage" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/latestAgeOrHighestStage-2017-10-06> ;
+    skos:definition "The full name of the latest possible geochronologic age or highest chronostratigraphic stage attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:latestEonOrHighestEonothem a rdf:Property ;
+    rdfs:label "Latest Eon Or Highest Eonothem" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/latestEonOrHighestEonothem-2017-10-06> ;
+    skos:definition "The full name of the latest possible geochronologic eon or highest chrono-stratigraphic eonothem or the informal name (\"Precambrian\") attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:latestEpochOrHighestSeries a rdf:Property ;
+    rdfs:label "Latest Epoch Or Highest Series" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/latestEpochOrHighestSeries-2017-10-06> ;
+    skos:definition "The full name of the latest possible geochronologic epoch or highest chronostratigraphic series attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:latestEraOrHighestErathem a rdf:Property ;
+    rdfs:label "Latest Era Or Highest Erathem" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/latestEraOrHighestErathem-2017-10-06> ;
+    skos:definition "The full name of the latest possible geochronologic era or highest chronostratigraphic erathem attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:latestPeriodOrHighestSystem a rdf:Property ;
+    rdfs:label "Latest Period Or Highest System" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/latestPeriodOrHighestSystem-2017-10-06> ;
+    skos:definition "The full name of the latest possible geochronologic period or highest chronostratigraphic system attributable to the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:lifeStage a rdf:Property ;
+    rdfs:label "Life Stage" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/lifeStage-2021-07-15> ;
+    skos:definition "The age class or life stage of the Organism(s) at the time the Occurrence was recorded." .
+
+dwc:lithostratigraphicTerms a rdf:Property ;
+    rdfs:label "Lithostratigraphic Terms" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/lithostratigraphicTerms-2017-10-06> ;
+    skos:definition "The combination of all litho-stratigraphic names for the rock from which the cataloged item was collected." .
+
+dwc:locality a rdf:Property ;
+    rdfs:label "Locality" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/locality-2021-07-15> ;
+    skos:definition "The specific description of the place." .
+
+dwc:locationAccordingTo a rdf:Property ;
+    rdfs:label "Location According To" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/locationAccordingTo-2017-10-06> ;
+    skos:definition "Information about the source of this Location information. Could be a publication (gazetteer), institution, or team of individuals." .
+
+dwc:lowestBiostratigraphicZone a rdf:Property ;
+    rdfs:label "Lowest Biostratigraphic Zone" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/lowestBiostratigraphicZone-2017-10-06> ;
+    skos:definition "The full name of the lowest possible geological biostratigraphic zone of the stratigraphic horizon from which the cataloged item was collected." .
+
+dwc:materialSampleID a rdf:Property ;
+    rdfs:label "Material Sample ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-10-28"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/materialSampleID-2020-10-28> ;
+    skos:definition "An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique." .
+
+dwc:maximumDepthInMeters a rdf:Property ;
+    rdfs:label "Maximum Depth In Meters" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/maximumDepthInMeters-2017-10-06> ;
+    skos:definition "The greater depth of a range of depth below the local surface, in meters." .
+
+dwc:maximumDistanceAboveSurfaceInMeters a rdf:Property ;
+    rdfs:label "Maximum Distance Above Surface In Meters" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/maximumDistanceAboveSurfaceInMeters-2017-10-06> ;
+    skos:definition "The greater distance in a range of distance from a reference surface in the vertical direction, in meters. Use positive values for locations above the surface, negative values for locations below. If depth measures are given, the reference surface is the location given by the depth, otherwise the reference surface is the location given by the elevation." .
+
+dwc:maximumElevationInMeters a rdf:Property ;
+    rdfs:label "Maximum Elevation In Meters" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/maximumElevationInMeters-2017-10-06> ;
+    skos:definition "The upper limit of the range of elevation (altitude, usually above sea level), in meters." .
+
+dwc:measurementMethod a rdf:Property ;
+    rdfs:label "Measurement Method" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/measurementMethod-2018-09-06> ;
+    skos:definition "A description of or reference to (publication, URI) the method or protocol used to determine the measurement, fact, characteristic, or assertion." .
+
+dwc:member a rdf:Property ;
+    rdfs:label "Member" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/member-2017-10-06> ;
+    skos:definition "The full name of the lithostratigraphic member from which the cataloged item was collected." .
+
+dwc:minimumDepthInMeters a rdf:Property ;
+    rdfs:label "Minimum Depth In Meters" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/minimumDepthInMeters-2017-10-06> ;
+    skos:definition "The lesser depth of a range of depth below the local surface, in meters." .
+
+dwc:minimumDistanceAboveSurfaceInMeters a rdf:Property ;
+    rdfs:label "Minimum Distance Above Surface In Meters" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/minimumDistanceAboveSurfaceInMeters-2017-10-06> ;
+    skos:definition "The lesser distance in a range of distance from a reference surface in the vertical direction, in meters. Use positive values for locations above the surface, negative values for locations below. If depth measures are given, the reference surface is the location given by the depth, otherwise the reference surface is the location given by the elevation." .
+
+dwc:minimumElevationInMeters a rdf:Property ;
+    rdfs:label "Minimum Elevation In Meters" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/minimumElevationInMeters-2017-10-06> ;
+    skos:definition "The lower limit of the range of elevation (altitude, usually above sea level), in meters." .
+
+dwc:month a rdf:Property ;
+    rdfs:label "Month" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-12"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/month-2020-08-12> ;
+    skos:definition "The integer month in which the Event occurred." .
+
+dwc:municipality a rdf:Property ;
+    rdfs:label "Municipality" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/municipality-2017-10-06> ;
+    skos:definition "The full, unabbreviated name of the next smaller administrative region than county (city, municipality, etc.) in which the Location occurs. Do not use this term for a nearby named place that does not contain the actual location." .
+
+dwc:nameAccordingToID a rdf:Property ;
+    rdfs:label "Name According To ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/nameAccordingToID-2017-10-06> ;
+    skos:definition "An identifier for the source in which the specific taxon concept circumscription is defined or implied. See nameAccordingTo." .
+
+dwc:namePublishedIn a rdf:Property ;
+    rdfs:label "Name Published In" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/namePublishedIn-2017-10-06> ;
+    skos:definition "A reference for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode." .
+
+dwc:namePublishedInYear a rdf:Property ;
+    rdfs:label "Name Published In Year" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/namePublishedInYear-2017-10-06> ;
+    skos:definition "The four-digit year in which the scientificName was published." .
+
+dwc:nomenclaturalCode a rdf:Property ;
+    rdfs:label "Nomenclatural Code" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/nomenclaturalCode-2017-10-06> ;
+    skos:definition "The nomenclatural code (or codes in the case of an ambiregnal name) under which the scientificName is constructed." .
+
+dwc:nomenclaturalStatus a rdf:Property ;
+    rdfs:label "Nomenclatural Status" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/nomenclaturalStatus-2017-10-06> ;
+    skos:definition "The status related to the original publication of the name and its conformance to the relevant rules of nomenclature. It is based essentially on an algorithm according to the business rules of the code. It requires no taxonomic opinion." .
+
+dwc:occurrenceID a rdf:Property ;
+    rdfs:label "Occurrence ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceID-2017-10-06> ;
+    skos:definition "An identifier for the Occurrence (as opposed to a particular digital record of the occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the occurrenceID globally unique." .
+
+dwc:occurrenceMeasurementAccuracy a rdf:Property ;
+    rdfs:label "Occurrence Measurement Accuracy" ;
+    dcterms:isReplacedBy dwc:measurementAccuracy ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceMeasurementAccuracy-2009-04-24> ;
+    skos:definition "The description of the error associated with the occurrenceAttributeValue." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceMeasurementDeterminedBy a rdf:Property ;
+    rdfs:label "Occurrence Measurement Determined By" ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceMeasurementDeterminedBy-2009-04-24> ;
+    skos:definition "The agent responsible for having determined the value of the measurement or characteristic of the occurrence." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceMeasurementDeterminedDate a rdf:Property ;
+    rdfs:label "Occurrence Measurement Determined Date" ;
+    dcterms:isReplacedBy dwc:measurementDeterminedDate ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceMeasurementDeterminedDate-2009-04-24> ;
+    skos:definition "The date on which the the measurement or characteristic of the occurrence was made. Recommended best practice is to use an encoding scheme, such as ISO 8601:2004(E)." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceMeasurementUnit a rdf:Property ;
+    rdfs:label "Occurrence Measurement Unit" ;
+    dcterms:isReplacedBy dwc:measurementUnit ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceMeasurementUnit-2009-04-24> ;
+    skos:definition "The units for the value of the measurement or characteristic of the occurrence. Recommended best practice is to use International System of Units (SI) units." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceMeasurementValue a rdf:Property ;
+    rdfs:label "Occurrence Measurement Value" ;
+    dcterms:isReplacedBy dwc:measurementValue ;
+    dcterms:modified "2009-10-09"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceMeasurementValue-2009-04-24> ;
+    skos:definition "The value of the measurement or characteristic of the occurrence." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:occurrenceStatus a rdf:Property ;
+    rdfs:label "Occurrence Status" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceStatus-2021-07-15> ;
+    skos:definition "A statement about the presence or absence of a Taxon at a Location." .
+
+dwc:order a rdf:Property ;
+    rdfs:label "Order" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/order-2017-10-06> ;
+    skos:definition "The full scientific name of the order in which the taxon is classified." .
+
+dwc:organismName a rdf:Property ;
+    rdfs:label "Organism Name" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/organismName-2017-10-06> ;
+    skos:definition "A textual name or label assigned to an Organism instance." .
+
+dwc:organismQuantity a rdf:Property ;
+    rdfs:label "Organism Quantity" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/organismQuantity-2021-07-15> ;
+    skos:definition "A number or enumeration value for the quantity of organisms." .
+
+dwc:organismQuantityType a rdf:Property ;
+    rdfs:label "Organism Quantity Type" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/organismQuantityType-2017-10-06> ;
+    skos:definition "The type of quantification system used for the quantity of organisms." .
+
+dwc:organismRemarks a rdf:Property ;
+    rdfs:label "Organism Remarks" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/organismRemarks-2017-10-06> ;
+    skos:definition "Comments or notes about the Organism instance." .
+
+dwc:organismScope a rdf:Property ;
+    rdfs:label "Organism Scope" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/organismScope-2017-10-06> ;
+    skos:definition "A description of the kind of Organism instance. Can be used to indicate whether the Organism instance represents a discrete organism or if it represents a particular type of aggregation." .
+
+dwc:otherCatalogNumbers a rdf:Property ;
+    rdfs:label "Other Catalog Numbers" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/otherCatalogNumbers-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of previous or alternate fully qualified catalog numbers or other human-used identifiers for the same Occurrence, whether in the current or any other data set or collection." .
+
+dwc:ownerInstitutionCode a rdf:Property ;
+    rdfs:label "Owner Institution Code" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/ownerInstitutionCode-2017-10-06> ;
+    skos:definition "The name (or acronym) in use by the institution having ownership of the object(s) or information referred to in the record." .
+
+dwc:parentEventID a rdf:Property ;
+    rdfs:label "Parent Event ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/parentEventID-2017-10-06> ;
+    skos:definition "An identifier for the broader Event that groups this and potentially other Events." .
+
+dwc:parentNameUsage a rdf:Property ;
+    rdfs:label "Parent Name Usage" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/parentNameUsage-2017-10-06> ;
+    skos:definition "The full name, with authorship and date information if known, of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName." .
+
+dwc:pathway a rdf:Property ;
+    rdfs:label "Pathway" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-03-29"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/pathway-2021-03-29> ;
+    skos:definition "The process by which an Organism came to be in a given place at a given time." .
+
+dwc:phylum a rdf:Property ;
+    rdfs:label "Phylum" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/phylum-2017-10-06> ;
+    skos:definition "The full scientific name of the phylum or division in which the taxon is classified." .
+
+dwc:pointRadiusSpatialFit a rdf:Property ;
+    rdfs:label "Point Radius Spatial Fit" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-20"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/pointRadiusSpatialFit-2020-08-20> ;
+    skos:definition "The ratio of the area of the point-radius (decimalLatitude, decimalLongitude, coordinateUncertaintyInMeters) to the area of the true (original, or most specific) spatial representation of the Location. Legal values are 0, greater than or equal to 1, or undefined. A value of 1 is an exact match or 100% overlap. A value of 0 should be used if the given point-radius does not completely contain the original representation. The pointRadiusSpatialFit is undefined (and should be left empty) if the original representation is a point without uncertainty and the given georeference is not that same point (without uncertainty). If both the original and the given georeference are the same point, the pointRadiusSpatialFit is 1." .
+
+dwc:preparations a rdf:Property ;
+    rdfs:label "Preparations" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/preparations-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of preparations and preservation methods for a specimen." .
+
+dwc:recordNumber a rdf:Property ;
+    rdfs:label "Record Number" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/recordNumber-2017-10-06> ;
+    skos:definition "An identifier given to the Occurrence at the time it was recorded. Often serves as a link between field notes and an Occurrence record, such as a specimen collector's number." .
+
+dwc:recordedBy a rdf:Property ;
+    rdfs:label "Recorded By" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/recordedBy-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of names of people, groups, or organizations responsible for recording the original Occurrence. The primary collector or observer, especially one who applies a personal identifier (recordNumber), should be listed first." .
+
+dwc:recordedByID a rdf:Property ;
+    rdfs:label "Recorded By ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/recordedByID-2021-07-15> ;
+    skos:definition "A list (concatenated and separated) of the globally unique identifier for the person, people, groups, or organizations responsible for recording the original Occurrence." .
+
+dwc:relatedResourceID a rdf:Property ;
+    rdfs:label "Related Resource ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/relatedResourceID-2018-09-06> ;
+    skos:definition "An identifier for a related resource (the object, rather than the subject of the relationship)." .
+
+dwc:relationshipAccordingTo a rdf:Property ;
+    rdfs:label "Relationship According To" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/relationshipAccordingTo-2018-09-06> ;
+    skos:definition "The source (person, organization, publication, reference) establishing the relationship between the two resources." .
+
+dwc:relationshipEstablishedDate a rdf:Property ;
+    rdfs:label "Relationship Established Date" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-12"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/relationshipEstablishedDate-2020-08-12> ;
+    skos:definition "The date-time on which the relationship between the two resources was established." .
+
+dwc:relationshipOfResource a rdf:Property ;
+    rdfs:label "Relationship Of Resource" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/relationshipOfResource-2021-07-15> ;
+    skos:definition "The relationship of the subject (identified by resourceID) to the object (identified by relatedResourceID)." .
+
+dwc:relationshipOfResourceID a rdf:Property ;
+    rdfs:label "Relationship Of Resource ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/relationshipOfResourceID-2021-07-15> ;
+    skos:definition "An identifier for the relationship type (predicate) that connects the subject identified by resourceID to its object identified by relatedResourceID." .
+
+dwc:relationshipRemarks a rdf:Property ;
+    rdfs:label "Relationship Remarks" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/relationshipRemarks-2018-09-06> ;
+    skos:definition "Comments or notes about the relationship between the two resources." .
+
+dwc:reproductiveCondition a rdf:Property ;
+    rdfs:label "Reproductive Condition" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/reproductiveCondition-2017-10-06> ;
+    skos:definition "The reproductive condition of the biological individual(s) represented in the Occurrence." .
+
+dwc:resourceID a rdf:Property ;
+    rdfs:label "Resource ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/resourceID-2018-09-06> ;
+    skos:definition "An identifier for the resource that is the subject of the relationship." .
+
+dwc:resourceRelationshipID a rdf:Property ;
+    rdfs:label "Resource Relationship ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/resourceRelationshipID-2018-09-06> ;
+    skos:definition "An identifier for an instance of relationship between one resource (the subject) and another (relatedResource, the object)." .
+
+dwc:sampleSizeUnit a rdf:Property ;
+    rdfs:label "Sample Size Unit" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/sampleSizeUnit-2017-10-06> ;
+    skos:definition "The unit of measurement of the size (time duration, length, area, or volume) of a sample in a sampling event." .
+
+dwc:sampleSizeValue a rdf:Property ;
+    rdfs:label "Sample Size Value" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/sampleSizeValue-2017-10-06> ;
+    skos:definition "A numeric value for a measurement of the size (time duration, length, area, or volume) of a sample in a sampling event." .
+
+dwc:samplingEffort a rdf:Property ;
+    rdfs:label "Sampling Effort" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/samplingEffort-2017-10-06> ;
+    skos:definition "The amount of effort expended during an Event." .
+
+dwc:samplingProtocol a rdf:Property ;
+    rdfs:label "Sampling Protocol" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/samplingProtocol-2021-07-15> ;
+    skos:definition "The names of, references to, or descriptions of the methods or protocols used during an Event." .
+
+dwc:scientificName a rdf:Property ;
+    rdfs:label "Scientific Name" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/scientificName-2021-07-15> ;
+    skos:definition "The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term." .
+
+dwc:scientificNameAuthorship a rdf:Property ;
+    rdfs:label "Scientific Name Authorship" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/scientificNameAuthorship-2017-10-06> ;
+    skos:definition "The authorship information for the scientificName formatted according to the conventions of the applicable nomenclaturalCode." .
+
+dwc:scientificNameID a rdf:Property ;
+    rdfs:label "Scientific Name ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:isReplacedBy dwc:taxonID ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/scientificNameID-2017-10-06> ;
+    skos:definition "An identifier for the nomenclatural (not taxonomic) details of a scientific name." .
+
+dwc:scientificNameRank a rdf:Property ;
+    rdfs:label "Scientific Name Rank" ;
+    dcterms:isReplacedBy dwc:taxonRank ;
+    dcterms:modified "2009-09-21"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/scientificNameRank-2009-07-06> ;
+    skos:definition "The taxonomic rank of the most specific name in the scientificName. Recommended best practice is to use a controlled vocabulary." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:sex a rdf:Property ;
+    rdfs:label "Sex" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/sex-2017-10-06> ;
+    skos:definition "The sex of the biological individual(s) represented in the Occurrence." .
+
+dwc:specificEpithet a rdf:Property ;
+    rdfs:label "Specific Epithet" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/specificEpithet-2017-10-06> ;
+    skos:definition "The name of the first or species epithet of the scientificName." .
+
+dwc:startDayOfYear a rdf:Property ;
+    rdfs:label "Start Day Of Year" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-20"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/startDayOfYear-2020-08-20> ;
+    skos:definition "The earliest integer day of the year on which the Event occurred (1 for January 1, 365 for December 31, except in a leap year, in which case it is 366)." .
+
+dwc:stateProvince a rdf:Property ;
+    rdfs:label "State Province" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/stateProvince-2017-10-06> ;
+    skos:definition "The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the Location occurs." .
+
+dwc:subfamily a rdf:Property ;
+    rdfs:label "Subfamily" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/subfamily-2021-07-15> ;
+    skos:definition "The full scientific name of the subfamily in which the taxon is classified." .
+
+dwc:subgenus a rdf:Property ;
+    rdfs:label "Subgenus" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/subgenus-2017-10-06> ;
+    skos:definition "The full scientific name of the subgenus in which the taxon is classified. Values should include the genus to avoid homonym confusion." .
+
+dwc:taxonConceptID a rdf:Property ;
+    rdfs:label "Taxon Concept ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/taxonConceptID-2017-10-06> ;
+    skos:definition "An identifier for the taxonomic concept to which the record refers - not for the nomenclatural details of a taxon." .
+
+dwc:taxonNameID a rdf:Property ;
+    rdfs:label "Taxon Name ID" ;
+    dcterms:modified "2009-07-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/taxonNameID-2009-04-24> ;
+    skos:definition "A unique identifier for the scientificName." ;
+    skos:note "This term is no longer recommended for use." .
+
+dwc:taxonRemarks a rdf:Property ;
+    rdfs:label "Taxon Remarks" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/taxonRemarks-2017-10-06> ;
+    skos:definition "Comments or notes about the taxon or name." .
+
+dwc:taxonomicStatus a rdf:Property ;
+    rdfs:label "Taxonomic Status" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/taxonomicStatus-2017-10-06> ;
+    skos:definition "The status of the use of the scientificName as a label for a taxon. Requires taxonomic opinion to define the scope of a taxon. Rules of priority then are used to define the taxonomic status of the nomenclature contained in that scope, combined with the experts opinion. It must be linked to a specific taxonomic reference that defines the concept." .
+
+dwc:typeStatus a rdf:Property ;
+    rdfs:label "Type Status" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/typeStatus-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of nomenclatural types (type status, typified scientific name, publication) applied to the subject." .
+
+dwc:verbatimCoordinateSystem a rdf:Property ;
+    rdfs:label "Verbatim Coordinate System" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-20"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimCoordinateSystem-2020-08-20> ;
+    skos:definition "The coordinate format for the verbatimLatitude and verbatimLongitude or the verbatimCoordinates of the Location." .
+
+dwc:verbatimCoordinates a rdf:Property ;
+    rdfs:label "Verbatim Coordinates" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimCoordinates-2017-10-06> ;
+    skos:definition "The verbatim original spatial coordinates of the Location. The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates should be stored in verbatimSRS and the coordinate system should be stored in verbatimCoordinateSystem." .
+
+dwc:verbatimDepth a rdf:Property ;
+    rdfs:label "Verbatim Depth" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimDepth-2017-10-06> ;
+    skos:definition "The original description of the depth below the local surface." .
+
+dwc:verbatimElevation a rdf:Property ;
+    rdfs:label "Verbatim Elevation" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimElevation-2017-10-06> ;
+    skos:definition "The original description of the elevation (altitude, usually above sea level) of the Location." .
+
+dwc:verbatimEventDate a rdf:Property ;
+    rdfs:label "Verbatim EventDate" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimEventDate-2017-10-06> ;
+    skos:definition "The verbatim original representation of the date and time information for an Event." .
+
+dwc:verbatimIdentification a rdf:Property ;
+    rdfs:label "Verbatim Identification" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimIdentification-2021-07-15> ;
+    skos:definition "A string representing the taxonomic identification as it appeared in the original record." .
+
+dwc:verbatimLatitude a rdf:Property ;
+    rdfs:label "Verbatim Latitude" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimLatitude-2017-10-06> ;
+    skos:definition "The verbatim original latitude of the Location. The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates should be stored in verbatimSRS and the coordinate system should be stored in verbatimCoordinateSystem." .
+
+dwc:verbatimLocality a rdf:Property ;
+    rdfs:label "Verbatim Locality" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimLocality-2021-07-15> ;
+    skos:definition "The original textual description of the place." .
+
+dwc:verbatimLongitude a rdf:Property ;
+    rdfs:label "Verbatim Longitude" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimLongitude-2017-10-06> ;
+    skos:definition "The verbatim original longitude of the Location. The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates should be stored in verbatimSRS and the coordinate system should be stored in verbatimCoordinateSystem." .
+
+dwc:verbatimSRS a rdf:Property ;
+    rdfs:label "Verbatim SRS" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimSRS-2017-10-06> ;
+    skos:definition "The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which coordinates given in verbatimLatitude and verbatimLongitude, or verbatimCoordinates are based." .
+
+dwc:vernacularName a rdf:Property ;
+    rdfs:label "Vernacular Name" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/vernacularName-2017-10-06> ;
+    skos:definition "A common or vernacular name." .
+
+dwc:verticalDatum a rdf:Property ;
+    rdfs:label "Vertical Datum" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verticalDatum-2021-07-15> ;
+    skos:definition "The vertical datum used as the reference upon which the values in the elevation terms are based." .
+
+dwc:waterBody a rdf:Property ;
+    rdfs:label "Water Body" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/waterBody-2017-10-06> ;
+    skos:definition "The name of the water body in which the Location occurs." .
+
+dwc:year a rdf:Property ;
+    rdfs:label "Year" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/year-2017-10-06> ;
+    skos:definition "The four-digit year in which the Event occurred, according to the Common Era Calendar." .
+
+<http://rs.tdwg.org/dwc/version/terms/2008-11-19> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-01-18> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-01-21> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-01-23> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-04-24> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-04-29> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-05-18> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-07-06> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-08-24> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-09-11> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-09-17> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-09-21> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-12-07> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2011-10-16> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2013-03-28> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2013-05-25> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2014-10-23> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2014-12-23> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2017-10-06> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2018-09-06> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2020-08-12> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2020-08-20> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2020-10-13> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2020-10-28> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2021-03-29> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2021-07-15> dcterms:isVersionOf dwc: .
+
+dwc:acceptedNameUsage a rdf:Property ;
+    rdfs:label "Accepted Name Usage" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/acceptedNameUsage-2021-07-15> ;
+    skos:definition "The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) taxon." .
+
+dwc:acceptedNameUsageID a rdf:Property ;
+    rdfs:label "Accepted Name Usage ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/acceptedNameUsageID-2021-07-15> ;
+    skos:definition "An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon." .
+
+dwc:dataGeneralizations a rdf:Property ;
+    rdfs:label "Data Generalizations" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/dataGeneralizations-2017-10-06> ;
+    skos:definition "Actions taken to make the shared data less specific or complete than in its original form. Suggests that alternative data of higher quality may be available on request." .
+
+dwc:eventID a rdf:Property ;
+    rdfs:label "Event ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventID-2017-10-06> ;
+    skos:definition "An identifier for the set of information associated with an Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set." .
+
+dwc:higherClassification a rdf:Property ;
+    rdfs:label "Higher Classification" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/higherClassification-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of taxa names terminating at the rank immediately superior to the taxon referenced in the taxon record." .
+
+dwc:locationID a rdf:Property ;
+    rdfs:label "Location ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/locationID-2017-10-06> ;
+    skos:definition "An identifier for the set of location information (data associated with dcterms:Location). May be a global unique identifier or an identifier specific to the data set." .
+
+dwc:locationRemarks a rdf:Property ;
+    rdfs:label "Location Remarks" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/locationRemarks-2017-10-06> ;
+    skos:definition "Comments or notes about the Location." .
+
+dwc:measurementDeterminedBy a rdf:Property ;
+    rdfs:label "Measurement Determined By" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/measurementDeterminedBy-2018-09-06> ;
+    skos:definition "A list (concatenated and separated) of names of people, groups, or organizations who determined the value of the MeasurementOrFact." .
+
+dwc:nameAccordingTo a rdf:Property ;
+    rdfs:label "Name According To" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/nameAccordingTo-2021-07-15> ;
+    skos:definition "The reference to the source in which the specific taxon concept circumscription is defined or implied - traditionally signified by the Latin \"sensu\" or \"sec.\" (from secundum, meaning \"according to\"). For taxa that result from identifications, a reference to the keys, monographs, experts and other sources should be given." .
+
+dwc:namePublishedInID a rdf:Property ;
+    rdfs:label "Name Published In ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-12"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/namePublishedInID-2020-08-12> ;
+    skos:definition "An identifier for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode." .
+
+dwc:occurrenceRemarks a rdf:Property ;
+    rdfs:label "Occurrence Remarks" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/occurrenceRemarks-2017-10-06> ;
+    skos:definition "Comments or notes about the Occurrence." .
+
+dwc:organismID a rdf:Property ;
+    rdfs:label "Organism ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/organismID-2017-10-06> ;
+    skos:definition "An identifier for the Organism instance (as opposed to a particular digital record of the Organism). May be a globally unique identifier or an identifier specific to the data set." .
+
+dwc:originalNameUsage a rdf:Property ;
+    rdfs:label "Original Name Usage" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/originalNameUsage-2021-07-15> ;
+    skos:definition "The taxon name, with authorship and date information if known, as it originally appeared when first established under the rules of the associated nomenclaturalCode. The basionym (botany) or basonym (bacteriology) of the scientificName or the senior/earlier homonym for replaced names." .
+
+dwc:originalNameUsageID a rdf:Property ;
+    rdfs:label "Original Name Usage ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/originalNameUsageID-2021-07-15> ;
+    skos:definition "An identifier for the name usage (documented meaning of the name according to a source) in which the terminal element of the scientificName was originally established under the rules of the associated nomenclaturalCode." .
+
+dwc:parentNameUsageID a rdf:Property ;
+    rdfs:label "Parent Name Usage ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2021-07-15"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/parentNameUsageID-2021-07-15> ;
+    skos:definition "An identifier for the name usage (documented meaning of the name according to a source) of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName." .
+
+dwc:previousIdentifications a rdf:Property ;
+    rdfs:label "Previous Identifications" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/previousIdentifications-2017-10-06> ;
+    skos:definition "A list (concatenated and separated) of previous assignments of names to the Organism." .
+
+dwc:taxonID a rdf:Property ;
+    rdfs:label "Taxon ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/taxonID-2017-10-06> ;
+    skos:definition "An identifier for the set of taxon information (data associated with the Taxon class). May be a global unique identifier or an identifier specific to the data set." .
+
+dwc:taxonRank a rdf:Property ;
+    rdfs:label "Taxon Rank" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:isReplacedBy dwc:scientificNameRank ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/taxonRank-2017-10-06> ;
+    skos:definition "The taxonomic rank of the most specific name in the scientificName." .
+
+dwc:verbatimTaxonRank a rdf:Property ;
+    rdfs:label "Verbatim Taxon Rank" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2017-10-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/verbatimTaxonRank-2017-10-06> ;
+    skos:definition "The taxonomic rank of the most specific name in the scientificName as it appears in the original record." .
+
+dwc:eventDate a rdf:Property ;
+    rdfs:label "Event Date" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-12"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventDate-2020-08-12> ;
+    skos:definition "The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context." .
+
+dwc:eventTime a rdf:Property ;
+    rdfs:label "Event Time" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-12"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/eventTime-2020-08-12> ;
+    skos:definition "The time or interval during which an Event occurred." .
+
+dwc:measurementAccuracy a rdf:Property ;
+    rdfs:label "Measurement Accuracy" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/measurementAccuracy-2018-09-06> ;
+    skos:definition "The description of the potential error associated with the measurementValue." .
+
+dwc:measurementDeterminedDate a rdf:Property ;
+    rdfs:label "Measurement Determined Date" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2020-08-12"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/measurementDeterminedDate-2020-08-12> ;
+    skos:definition "The date on which the MeasurementOrFact was made." .
+
+dwc:measurementID a rdf:Property ;
+    rdfs:label "Measurement ID" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/measurementID-2018-09-06> ;
+    skos:definition "An identifier for the MeasurementOrFact (information pertaining to measurements, facts, characteristics, or assertions). May be a global unique identifier or an identifier specific to the data set." .
+
+dwc:measurementRemarks a rdf:Property ;
+    rdfs:label "Measurement Remarks" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/measurementRemarks-2018-09-06> ;
+    skos:definition "Comments or notes accompanying the MeasurementOrFact." .
+
+dwc:measurementType a rdf:Property ;
+    rdfs:label "Measurement Type" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/measurementType-2018-09-06> ;
+    skos:definition "The nature of the measurement, fact, characteristic, or assertion." .
+
+dwc:measurementUnit a rdf:Property ;
+    rdfs:label "Measurement Unit" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/measurementUnit-2018-09-06> ;
+    skos:definition "The units associated with the measurementValue." .
+
+dwc:measurementValue a rdf:Property ;
+    rdfs:label "Measurement Value" ;
+    dcterms:isPartOf dwc: ;
+    dcterms:modified "2018-09-06"^^xsd:date ;
+    owl:versionIRI <http://rs.tdwg.org/dwc/terms/version/measurementValue-2018-09-06> ;
+    skos:definition "The value of the measurement, fact, characteristic, or assertion." .
+
+dwc: a tdwgutility:TermList,
+        owl:Ontology ;
+    rdfs:label "Core terms defined by Darwin Core"@en ;
+    dc:publisher "Biodiversity Information Standards (TDWG)"@en ;
+    dcterms:created "2008-11-19"^^xsd:date ;
+    dcterms:description "This term list includes all currently valid terms that have been defined in the core Darwin Core namespace dwc:.  To comment on this schema, please create a new issue in https://github.com/tdwg/dwc/issues"@en ;
+    dcterms:hasPart dwc:Event,
+        dwc:FossilSpecimen,
+        dwc:GeologicalContext,
+        dwc:HumanObservation,
+        dwc:Identification,
+        dwc:LivingSpecimen,
+        dwc:MachineObservation,
+        dwc:MaterialCitation,
+        dwc:MaterialSample,
+        dwc:MeasurementOrFact,
+        dwc:Occurrence,
+        dwc:Organism,
+        dwc:PreservedSpecimen,
+        dwc:ResourceRelationship,
+        dwc:Taxon,
+        dwc:acceptedNameUsage,
+        dwc:acceptedNameUsageID,
+        dwc:accordingTo,
+        dwc:associatedMedia,
+        dwc:associatedOccurrences,
+        dwc:associatedOrganisms,
+        dwc:associatedReferences,
+        dwc:associatedSequences,
+        dwc:associatedTaxa,
+        dwc:basisOfRecord,
+        dwc:bed,
+        dwc:behavior,
+        dwc:catalogNumber,
+        dwc:class,
+        dwc:collectionCode,
+        dwc:collectionID,
+        dwc:continent,
+        dwc:coordinatePrecision,
+        dwc:coordinateUncertaintyInMeters,
+        dwc:country,
+        dwc:countryCode,
+        dwc:county,
+        dwc:cultivarEpithet,
+        dwc:dataGeneralizations,
+        dwc:datasetID,
+        dwc:datasetName,
+        dwc:dateIdentified,
+        dwc:day,
+        dwc:decimalLatitude,
+        dwc:decimalLongitude,
+        dwc:degreeOfEstablishment,
+        dwc:disposition,
+        dwc:dynamicProperties,
+        dwc:earliestAgeOrLowestStage,
+        dwc:earliestEonOrLowestEonothem,
+        dwc:earliestEpochOrLowestSeries,
+        dwc:earliestEraOrLowestErathem,
+        dwc:earliestPeriodOrLowestSystem,
+        dwc:endDayOfYear,
+        dwc:establishmentMeans,
+        dwc:eventDate,
+        dwc:eventID,
+        dwc:eventRemarks,
+        dwc:eventTime,
+        dwc:family,
+        dwc:fieldNotes,
+        dwc:fieldNumber,
+        dwc:footprintSRS,
+        dwc:footprintSpatialFit,
+        dwc:footprintWKT,
+        dwc:formation,
+        dwc:genericName,
+        dwc:genus,
+        dwc:geodeticDatum,
+        dwc:geologicalContextID,
+        dwc:georeferenceProtocol,
+        dwc:georeferenceRemarks,
+        dwc:georeferenceSources,
+        dwc:georeferenceVerificationStatus,
+        dwc:georeferencedBy,
+        dwc:georeferencedDate,
+        dwc:group,
+        dwc:habitat,
+        dwc:higherClassification,
+        dwc:higherGeography,
+        dwc:higherGeographyID,
+        dwc:highestBiostratigraphicZone,
+        dwc:identificationID,
+        dwc:identificationQualifier,
+        dwc:identificationReferences,
+        dwc:identificationRemarks,
+        dwc:identificationVerificationStatus,
+        dwc:identifiedBy,
+        dwc:identifiedByID,
+        dwc:individualCount,
+        dwc:informationWithheld,
+        dwc:infragenericEpithet,
+        dwc:infraspecificEpithet,
+        dwc:institutionCode,
+        dwc:institutionID,
+        dwc:island,
+        dwc:islandGroup,
+        dwc:kingdom,
+        dwc:latestAgeOrHighestStage,
+        dwc:latestEonOrHighestEonothem,
+        dwc:latestEpochOrHighestSeries,
+        dwc:latestEraOrHighestErathem,
+        dwc:latestPeriodOrHighestSystem,
+        dwc:lifeStage,
+        dwc:lithostratigraphicTerms,
+        dwc:locality,
+        dwc:locationAccordingTo,
+        dwc:locationID,
+        dwc:locationRemarks,
+        dwc:lowestBiostratigraphicZone,
+        dwc:materialSampleID,
+        dwc:maximumDepthInMeters,
+        dwc:maximumDistanceAboveSurfaceInMeters,
+        dwc:maximumElevationInMeters,
+        dwc:measurementAccuracy,
+        dwc:measurementDeterminedBy,
+        dwc:measurementDeterminedDate,
+        dwc:measurementID,
+        dwc:measurementMethod,
+        dwc:measurementRemarks,
+        dwc:measurementType,
+        dwc:measurementUnit,
+        dwc:measurementValue,
+        dwc:member,
+        dwc:minimumDepthInMeters,
+        dwc:minimumDistanceAboveSurfaceInMeters,
+        dwc:minimumElevationInMeters,
+        dwc:month,
+        dwc:municipality,
+        dwc:nameAccordingTo,
+        dwc:nameAccordingToID,
+        dwc:namePublishedIn,
+        dwc:namePublishedInID,
+        dwc:namePublishedInYear,
+        dwc:nomenclaturalCode,
+        dwc:nomenclaturalStatus,
+        dwc:occurrenceID,
+        dwc:occurrenceRemarks,
+        dwc:occurrenceStatus,
+        dwc:order,
+        dwc:organismID,
+        dwc:organismName,
+        dwc:organismQuantity,
+        dwc:organismQuantityType,
+        dwc:organismRemarks,
+        dwc:organismScope,
+        dwc:originalNameUsage,
+        dwc:originalNameUsageID,
+        dwc:otherCatalogNumbers,
+        dwc:ownerInstitutionCode,
+        dwc:parentEventID,
+        dwc:parentNameUsage,
+        dwc:parentNameUsageID,
+        dwc:pathway,
+        dwc:phylum,
+        dwc:pointRadiusSpatialFit,
+        dwc:preparations,
+        dwc:previousIdentifications,
+        dwc:recordNumber,
+        dwc:recordedBy,
+        dwc:recordedByID,
+        dwc:relatedResourceID,
+        dwc:relationshipAccordingTo,
+        dwc:relationshipEstablishedDate,
+        dwc:relationshipOfResource,
+        dwc:relationshipOfResourceID,
+        dwc:relationshipRemarks,
+        dwc:reproductiveCondition,
+        dwc:resourceID,
+        dwc:resourceRelationshipID,
+        dwc:sampleSizeUnit,
+        dwc:sampleSizeValue,
+        dwc:samplingEffort,
+        dwc:samplingProtocol,
+        dwc:scientificName,
+        dwc:scientificNameAuthorship,
+        dwc:scientificNameID,
+        dwc:sex,
+        dwc:specificEpithet,
+        dwc:startDayOfYear,
+        dwc:stateProvince,
+        dwc:subfamily,
+        dwc:subgenus,
+        dwc:taxonConceptID,
+        dwc:taxonID,
+        dwc:taxonRank,
+        dwc:taxonRemarks,
+        dwc:taxonomicStatus,
+        dwc:typeStatus,
+        dwc:verbatimCoordinateSystem,
+        dwc:verbatimCoordinates,
+        dwc:verbatimDepth,
+        dwc:verbatimElevation,
+        dwc:verbatimEventDate,
+        dwc:verbatimIdentification,
+        dwc:verbatimLatitude,
+        dwc:verbatimLocality,
+        dwc:verbatimLongitude,
+        dwc:verbatimSRS,
+        dwc:verbatimTaxonRank,
+        dwc:vernacularName,
+        dwc:verticalDatum,
+        dwc:waterBody,
+        dwc:year ;
+    dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2008-11-19>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-01-18>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-01-21>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-01-23>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-04-24>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-04-29>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-05-18>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-07-06>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-08-24>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-09-11>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-09-17>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-09-21>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-12-07>,
+        <http://rs.tdwg.org/dwc/version/terms/2011-10-16>,
+        <http://rs.tdwg.org/dwc/version/terms/2013-03-28>,
+        <http://rs.tdwg.org/dwc/version/terms/2013-05-25>,
+        <http://rs.tdwg.org/dwc/version/terms/2014-10-23>,
+        <http://rs.tdwg.org/dwc/version/terms/2014-12-23>,
+        <http://rs.tdwg.org/dwc/version/terms/2017-10-06>,
+        <http://rs.tdwg.org/dwc/version/terms/2018-09-06>,
+        <http://rs.tdwg.org/dwc/version/terms/2020-08-12>,
+        <http://rs.tdwg.org/dwc/version/terms/2020-08-20>,
+        <http://rs.tdwg.org/dwc/version/terms/2020-10-13>,
+        <http://rs.tdwg.org/dwc/version/terms/2020-10-28>,
+        <http://rs.tdwg.org/dwc/version/terms/2021-03-29>,
+        <http://rs.tdwg.org/dwc/version/terms/2021-07-15> ;
+    dcterms:provenance "This version of DwC Terms was generated from HTML and RDF data at http://rs.tdwg.org/dwc/terms.htm on 2021-12-09" ;
+    dcterms:publisher <https://www.grid.ac/institutes/grid.480498.9> ;
+    dcterms:title "Core terms defined by Darwin Core"@en ;
+    vann:preferredNamespacePrefix "dwc" ;
+    vann:preferredNamespaceUri "http://rs.tdwg.org/dwc/terms/" ;
+    rdfs:comment "This term list includes all currently valid terms that have been defined in the core Darwin Core namespace dwc:.  To comment on this schema, please create a new issue in https://github.com/tdwg/dwc/issues"@en .
