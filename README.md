@@ -1,13 +1,14 @@
 # National Data Exchange Standard for Biodiversity Data - Implementation
 This repository contains the National Data Exchange Standard (NDES) for biodiversity data. It contains multiple documentory and data parts, the latter of which are presented as a cohesive Knowledge Graph (KG).
 
-The logic coordinating the parts of the KG is taken from the [Profiles Vocabulary](https://w3c.github.io/dx-prof/prof/) which is a set of terminology for defining multi-part standards, their roles and relations to other things.
+See the following starting points:
 
-See the [Specification Document](specification.adoc) as a starting point.
+* [Standard Definition Document](specification.adoc) - describes the NDES DB Standard overall and its parts
+* [Specification Document](specification.adoc) - business rules, requirements and links from them to validators
 
 ## Status
 
-This implementation is in an early stage of development, as of November 2021. As parts of it are established, they will be documented here and in other ways according the the _Profiles Vocabulary_ too, such as with a formal "profile declaration".
+This implementation is in an early stage of development, as of December 2021. 
 
 ## Contact
 
