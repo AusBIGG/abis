@@ -146,18 +146,18 @@ Conformance Classes are groupings of Requirements within the NDES-BD. Data claim
 
 The Conformance Classes are:
 
-* <<TERN Ontology Conformance Class>>
+* <<Domain Model Conformance Class>>
 * <<NDES-BD Messages Conformance Class>>
 
-=== TERN Ontology Conformance Class
+=== Domain Model Conformance Class
 
 [width=75%, frame=none, stripes=even]
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
-|Label | TERN Ontology Conformance Class
-|Definition | The set of requirements needed to be met to ensure conformance with the TERN Ontology
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:domain-model`]
+|Label | Domain Model Conformance Class
+|Definition | The set of requirements needed to be met to ensure conformance with the Domain Model within this Standard which is derived from the link:https://linkeddata-dev.tern.org.au/tern-ontology[TERN Ontology]
 |Requirements | link:https://linked.data.gov.au/def/ndesbd/req/observation-properties[`req:observation-properties`]
 |===
 
@@ -179,14 +179,29 @@ Requirements are the individual rules that data claiming conformance to the NDES
 
 The Requirements are:
 
-* <<TERN Ontology Conformance Class Requirements>>
+* <<Domain Model Conformance Class Requirements>>
 ** <<TERN Observation Properties>>
 ** <<req:2>>
 ** <<req:3>>
 * <<NDES-BD Message Conformance Class Requirements>>
 ** <<Message containing new Observations>>
 
-=== TERN Ontology Conformance Class Requirements
+=== Domain Model Conformance Class Requirements
+
+==== Sampling space & time position
+
+[width=75%, frame=none, stripes=even]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/sampling-position[`req:sampling-position`]
+|Label | Sampling space & time position
+|Definition | Instances of the TERN Ontology's `Sampling` class _MUST_ be located in space and time
+|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/domain-model[cc:domain-model`]
+|Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
+|Validators | _coming_
+|Examples | RDF: link:https://linked.data.gov.au/def/ndesbd/examples/sampling-position[`ex:sampling-position`], Descriptions: 
+|===
 
 ==== TERN Observation Properties
 
@@ -213,7 +228,7 @@ If the instance has: +
 * a PROV Ontology `wasAttributedTo` predicate it must indicate a TERN Organisation Ontology `Person` class instance; +
 * a TERN Ontology `hasAttribute` predicate it must indicate an IRI; +
 * a TERN Ontology `usedInstrument` predicate it must indicate a TERN Organisation Ontology `Instrument` class instance.
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/1[`cc:1`]
+|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/domain-model[cc:domain-model`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`]
 |Examples | link:https://linked.data.gov.au/def/ndesbd/examples/observation-valid-01[`ex:observation-valid-01`]
@@ -228,7 +243,7 @@ If the instance has: +
 |Identifier | link:https://linked.data.gov.au/def/ndesbd/req/2[`req:2`]
 |Label | Text
 |Definition | Text
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/1[`cc:1`]
+|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/domain-model[`cc:domain-model`]
 |Source | Text
 |Validators | link:https://linked.data.gov.au/def/ndesbd/shape/2[`nsh:1`]
 |Examples | link:https://linked.data.gov.au/def/ndesbd/examples/4[`nex:1`], link:(https://linked.data.gov.au/def/ndesbd/examples/3)[`nex:2`]
@@ -338,6 +353,9 @@ Requirements for the functioning of the NDES-DB Gateway API.
 |Documentation | http://ndesgateway.surroundaustralia.com/
 |===
 
+== Examples
+
+include::examples.adoc[]
 
 == References
 

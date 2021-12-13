@@ -1,0 +1,59 @@
+=== Sampling Position
+
+From `req:sampling-position`:
+
+> Instances of the TERN Ontology's `Sampling` class _MUST_ be located in space and time
+
+Instances of `tern:Sampling` must have both space and time positions either indicated or they must be linked to other things for which space and time positions are indicated. 
+
+So far, all time position is done directly, i.e. with time properties assigned directly to the `tern:Sampling` instance.
+
+There are several options for spatial positioning, as shown in the 3-part Figure below.
+
+[[sampling-position]]
+.Options for the spatial positioning of `tern:Sampling` instances. Left: direct positioning; Centre: indirect positioning via linking to a `tern:Site`; Right: Indirect positioning by linking to a non-Site spatial object (a `geo:Feature`) using a _spatial relations_ property.
+image::img/sample-positioning.png[Options for the spatial positioning of `tern:Sampling` instances]
+
+RDF data matching the Left, Centre & right parts of the Figure above are given next.
+
+.Left: direct positioning
+```turtle
+<https://linked.data.gov.au/dataset/bdr/sampling/x>
+	geo:hasGeometry [
+		geo:asWKT "POINT (153, -57)"
+ 	] ;
+	sosa:resultTime "2021-12-09"^^xsd:dateTime ; 
+.
+```
+
+.Centre: indirect positioning via linking to a `tern:Site`
+```turtle
+<https://linked.data.gov.au/dataset/bdr/sampling/x>
+	sosa:resultTime "2021-12-09"^^xsd:dateTime ; 
+	tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/sitevisit/y> ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/sitevisit/y>
+	tern:hasSite <https://linked.data.gov.au/dataset/bdr/site/y> ;
+.
+<https://linked.data.gov.au/dataset/bdr/site/y>
+	geo:hasGeometry [
+		geo:asWKT "POINT (153, -57)"
+ 	] ;
+.
+```
+
+.Right: Indirect positioning by linking to a non-Site spatial object (a `geo:Feature`) using a _spatial relations_ property
+```turtle
+<https://linked.data.gov.au/dataset/bdr/sampling/x>
+	sosa:resultTime "2021-12-09"^^xsd:dateTime ; 
+	geo:sfWithin <https://linked.data.gov.au/dataset/asgs2021/lga/canning> ;
+.
+
+<https://linked.data.gov.au/dataset/asgs2021/lga/canning>
+	a asgs:LocalGovernmentArea ;
+	geo:hasGeometry [
+		geo:asWKT "POINT (153, -57)"
+ 	] ;
+.
+```

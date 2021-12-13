@@ -18,6 +18,10 @@
 See that profile's main document for details of the other profile parts and how this Specification related to them.
 |===         
 
+[#img-rdf]
+.Overview of the NDES Standard and it's parts. The Standard is a conceptual thing containing documents, data objects and so on. This document is the Standard Definition document.
+image::img/standard-overview.png[NDES Standard Overview,600,400,align="center"]
+
 == Abstract
 
 This document decribes the structure and multiple parts of the candidate Australia National Data Exchange Standard for biodiversity data (NDES-BD) as well as the formalisms used in part desription.
