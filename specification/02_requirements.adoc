@@ -756,7 +756,7 @@ If the instance has:
 
 |Identifier | link:https://linked.data.gov.au/def/ndesbd/req/message-new-observations[`req:message-new-observations`]
 |Label | Message containing new Observations
-|Definition | Instances of the NDES-BD Ontology's `NewObservationsMessage` class _MUST_ contain: 
+|Definition a| Instances of the NDES-BD Ontology's `NewObservationsMessage` class _MUST_ contain: 
 
 * a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;
 * exactly 1 NDES-BD Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
@@ -775,7 +775,7 @@ If the instance has:
 
 |Identifier | link:https://linked.data.gov.au/def/ndesbd/req/message-delete-observations[`req:message-delete-observations`]
 |Label | Message containing Observation to be deleted
-|Definition | Instances of the NDES-BD Ontology's `DeleteObservationsMessage` class _MUST_ contain:
+|Definition a| Instances of the NDES-BD Ontology's `DeleteObservationsMessage` class _MUST_ contain:
 
 * a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;
 * the SOSA Ontology `ObservationCollection` class instance must contain a minimum of 1 RDFS Ontology `member` predicate indcating an IRI of an existing TERN Ontology `Observation` class instance`.

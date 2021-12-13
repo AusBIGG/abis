@@ -14,7 +14,7 @@ There are several options for spatial positioning, as shown in the 3-part Figure
 
 [[sampling-position]]
 .Options for the spatial positioning of `tern:Sampling` instances. Left: direct positioning; Centre: indirect positioning via linking to a `tern:Site`; Right: Indirect positioning by linking to a non-Site spatial object (a `geo:Feature`) using a _spatial relations_ property.
-image::sample-positioning.png[Options for the spatial positioning of `tern:Sampling` instances]
+image::/img/sample-positioning.png[Options for the spatial positioning of `tern:Sampling` instances]
 
 RDF data matching the Left, Centre & right parts of the Figure above are given next.
 
