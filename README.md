@@ -3,8 +3,8 @@ This repository contains the National Data Exchange Standard (NDES) for biodiver
 
 See the following starting points:
 
-* [Standard Definition Document](standard/_standard.adoc) - describes the NDES DB Standard overall and its parts
-* [Specification Document](specification/_specification.adoc) - business rules, requirements and links from them to validators
+* [Standard Definition Document](standard.html) - describes the NDES DB Standard overall and its parts
+* [Specification Document](specification.html) - business rules, requirements and links from them to validators
 
 ## Status
 
