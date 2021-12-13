@@ -9,9 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Replace img links
+      working-directory: ./
       run: |
         sudo apt-get install asciidoctor ruby -y
-        asciidoctor ../../standard/_standard.adoc -o ../../standard.html
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' ../../standard.html        
-        asciidoctor ../../specification/_specification.adoc -o ../../specification.html
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' ../../specification.html
+        asciidoctor standard/_standard.adoc -o standard.html
+        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' standard.html        
+        asciidoctor specification/_specification.adoc -o specification.html
+        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' specification.html
