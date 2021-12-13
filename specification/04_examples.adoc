@@ -59,3 +59,44 @@ RDF data matching the Left, Centre & right parts of the Figure above are given n
  	] ;
 .
 ```
+
+=== Sample alternate identifiers example
+
+From <<Sample alternate identifiers, Sample alternate identifiers>>:
+
+> Alternate - non-BDR - identifiers for Sample class instances _MUST_ be indicated the property `dcterms:identifier` and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier'smanager, creator and system
+
+If a data supplier wishes to record a non-BDR identifier for a `tern:Sample` instance, such as a museum specimen, then the pattern for doing that is to use a `dcterms:identifier` property for the `term:Sample` instance like so:
+
+```turtle
+<BDR-PLACEHOLDER-IDENTIFIER>
+	a tern:Sample ;
+	dcterms:identifier "ALT-IDENTIFIER"^^CUSTOM-DATATYPE ;
+	...
+.
+```
+
+The value of `<BDR-PLACEHOLDER-IDENTIFIER>` might be something like `<http://example.org/1234-4567-890>` and the BDR will replace this with something like `<https://linked.data.gov.au/dataset/bdr/sample/abcd-efg-hij`.
+
+The value of `ALT-IDENTIFIER` can be anything, such as a URL, a number, a string, etc.: this will be determined by the identifier generator, such as a museum. In the figure below, a dummy Western Australian Museum identifier of `WAM-75` and an International GeoSample Number footnote:[See https://www.igsn.org/] of "1073/123-456" is given. The `CUSTOM-DATATYPE` is an RDF data type descriptor that must be lodged with the BDR. In the figure below, these are `bdr:WAMID` & `bdr:IGSN` indicating "Western Australian Museum ID" and "International GeoSample Number", respectively,
+
+[[sample-alternate-identifiers-fig]]
+.An example of a `tern:Sample` instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternat identifers with custom datatypes
+image::/img/sample-alternate-identifiers.png[An example of a `tern:Sample` instance]
+
+The RDF corresponding to the figure above is goven below:app-name: 
+
+```turtle
+<https://linked.data.gov.au/dataset/bdr/sample/x>
+	a tern:Sample ;
+    dcterms:identifier 
+		"WAM-75"^^bdr:WAMID ,
+		"1073/123-456"^^bdr:IGSN ;
+    ...
+.
+```
+
+Registering custom datatypes with the BDR is a controlled admininstrative task, i.e. one which cannot be accomplished by sending in a special message, so please contact BDR admin to register these.
+
+NOTE: If an instance of `term:Sample`` is a `term:MaterialSample`, then any `dcterms:identifier` property supplied for it will be considered a `dwc:materialSampleID` property too.
+ 

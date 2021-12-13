@@ -1,0 +1,11 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+
+
+<https://linked.data.gov.au/dataset/bdr/sample/x>
+	a tern:Sample ;
+    dcterms:identifier 
+		"WAM-75"^^bdr:WAMID ,
+		"1073/123-456"^^bdr:IGSN ;
+    ...
+.

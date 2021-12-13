@@ -5,7 +5,8 @@ Requirements are the individual rules that data claiming conformance to the NDES
 === Requirements Index
 
 * <<Domain Model Conformance Class Requirements, Domain Model Conformance Class Requirements>>
-* <<Sampling space & time position, Sampling space & time position>>
+** <<Sampling space & time position, Sampling space & time position>>
+** <<Sample alternate identifiers, Sample alternate identifiers>>
 ** <<TERN `Attribute` class Properties, TERN `Attribute` class Properties>>
 ** <<TERN `Boolean` class Properties, TERN `Boolean` class Properties>>
 ** <<TERN `Concept` class Properties, TERN `Concept` class Properties>>
@@ -38,6 +39,7 @@ Requirements are the individual rules that data claiming conformance to the NDES
 ** <<TERN `Transect` class Properties, TERN `Transect` class Properties>>
 * <<NDES-BD Message Conformance Class Requirements, NDES-BD Message Conformance Class Requirements>>
 ** <<Message containing new Observations, Message containing new Observations>>
+** <<Message containing Observation to be deleted, Message containing Observation to be deleted>>
 
 === Domain Model Conformance Class Requirements
 
@@ -58,6 +60,23 @@ Requirements are the individual rules that data claiming conformance to the NDES
 Descriptions: <<Sampling Position, Sampling Position>>
 |===
 
+==== Sample alternate identifiers
+
+[width=75%, frame=none, cols="1,5"]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/sample-alternate-identifiers[`req:sample-alternate-identifiers`]
+|Label | Sample alternate identifiers
+|Definition | Alternate - non-BDR - identifiers for Sample class instances _MUST_ be indicated the property `dcterms:identifier` and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier'smanager, creator and system
+|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/domain-model[`cc:domain-model`]
+|Source | BDR Project Co-design
+|Validators | _coming_
+|Examples | RDF: link:https://github.com/surroundaustralia/ndes/blob/master/kg/datagraphs/examples/sample-alternate-identifiersttl[sample-alternate-identifiers.ttl]
+
+Descriptions: <<Sample alternate identifiers example, Sample alternate identifiers example>>
+|===
+
 ==== TERN `Attribute` class Properties
 
 [width=75%, frame=none, cols="1,5"]
@@ -68,15 +87,15 @@ Descriptions: <<Sampling Position, Sampling Position>>
 |Label | TERN attribute Properties
 |Definition a| Instances of the TERN Ontology's `Attribute` class _MUST_ have:
 
-* exactly 1 TERN Ontology `attribute` predicate indicating a an IRI;
-* exactly 1 TERN Ontology `hasSimpleValue` predicate indicating a an IRI or literal value;
+* exactly 1 TERN Ontology `attribute` predicate indicating an IRI;
+* exactly 1 TERN Ontology `hasSimpleValue` predicate indicating an IRI or literal value;
 * exactly 1 TERN Ontology `hasValue` predicate indicating a TERN Ontology `Value` instance;
 
 If the instance has:
 
-* a Dublin Core Terms `type` predicate, it _must_ indicate a an IRI;
+* a Dublin Core Terms `type` predicate, it _must_ indicate an IRI;
 * a Vocabulary of Interlinked Data Ontology `inDataset` predicate, it _must_ indicate a TERN Ontology `RDFDataset` instance;
-* a TERN Ontology `isAttributeOf` predicate, it _must_ indicate a an IRI;
+* a TERN Ontology `isAttributeOf` predicate, it _must_ indicate an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -114,10 +133,10 @@ If the instance has:
 |Label | TERN concept Properties
 |Definition a| Instances of the TERN Ontology's `Concept` class _MUST_ have:
 
-* exactly 1 RDF Ontology `value` predicate indicating a an IRI;
-* a maximum of 1 TERN Ontology `localValue` predicate indicating a an IRI;
-* a maximum of 1 TERN Ontology `localVocabulary` predicate indicating a an IRI;
-* exactly 1 TERN Ontology `vocabulary` predicate indicating a an IRI;
+* exactly 1 RDF Ontology `value` predicate indicating an IRI;
+* a maximum of 1 TERN Ontology `localValue` predicate indicating an IRI;
+* a maximum of 1 TERN Ontology `localVocabulary` predicate indicating an IRI;
+* exactly 1 TERN Ontology `vocabulary` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -237,10 +256,10 @@ If the instance has:
 |Label | TERN featureofinterest Properties
 |Definition a| Instances of the TERN Ontology's `FeatureOfInterest` class _MUST_ have:
 
-* a maximum of 1 Dublin Core Terms `type` predicate indicating a an IRI;
+* a maximum of 1 Dublin Core Terms `type` predicate indicating an IRI;
 * exactly 1 Vocabulary of Interlinked Data Ontology `inDataset` predicate indicating a TERN Ontology `RDFDataset` instance;
 * a maximum of 1 RDF Schema Ontology `comment` predicate indicating a `string` literal value;
-* exactly 1 TERN Ontology `featureType` predicate indicating a an IRI;
+* exactly 1 TERN Ontology `featureType` predicate indicating an IRI;
 
 If the instance has:
 
@@ -266,7 +285,7 @@ If the instance has:
 |Label | TERN iri Properties
 |Definition a| Instances of the TERN Ontology's `IRI` class _MUST_ have:
 
-* exactly 1 RDF Ontology `value` predicate indicating a an IRI;
+* exactly 1 RDF Ontology `value` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -304,10 +323,10 @@ If the instance has:
 |Label | TERN instrument Properties
 |Definition a| Instances of the TERN Ontology's `Instrument` class _MUST_ have:
 
-* a maximum of 1 Dublin Core Terms `type` predicate indicating a an IRI;
+* a maximum of 1 Dublin Core Terms `type` predicate indicating an IRI;
 * a maximum of 1 RDF Schema Ontology `comment` predicate indicating a `string` literal value;
 * a maximum of 1 RDF Schema Ontology `label` predicate indicating a `string` literal value;
-* exactly 1 TERN Ontology `instrumentType` predicate indicating a an IRI;
+* exactly 1 TERN Ontology `instrumentType` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -346,18 +365,18 @@ If the instance has:
 |Label | TERN observation Properties
 |Definition a| Instances of the TERN Ontology's `Observation` class _MUST_ have:
 
-* a maximum of 1 Dublin Core Terms `type` predicate indicating a an IRI;
+* a maximum of 1 Dublin Core Terms `type` predicate indicating an IRI;
 * exactly 1 Vocabulary of Interlinked Data Ontology `inDataset` predicate indicating a TERN Ontology `RDFDataset` instance;
 * a maximum of 1 RDF Schema Ontology `comment` predicate indicating a `string` literal value;
 * exactly 1 SOSA Ontology `hasFeatureOfInterest` predicate indicating a TERN Ontology `FeatureOfInterest` instance;
 * exactly 1 SOSA Ontology `hasResult` predicate indicating a TERN Ontology `Value` instance;
 * a maximum of 1 SOSA Ontology `madeBySensor` predicate indicating a TERN Ontology `Sensor` instance;
-* exactly 1 SOSA Ontology `observedProperty` predicate indicating a an IRI;
+* exactly 1 SOSA Ontology `observedProperty` predicate indicating an IRI;
 * exactly 1 SOSA Ontology `phenomenonTime` predicate indicating a TERN Ontology `Instant` instance;
 * exactly 1 SOSA Ontology `resultTime` predicate indicating a `dateTime` literal value;
-* exactly 1 SOSA Ontology `usedProcedure` predicate indicating a an IRI;
+* exactly 1 SOSA Ontology `usedProcedure` predicate indicating an IRI;
 * a maximum of 1 TERN Ontology `hasSiteVisit` predicate indicating a TERN Ontology `SiteVisit` instance;
-* a maximum of 1 TERN Ontology `observationType` predicate indicating a an IRI;
+* a maximum of 1 TERN Ontology `observationType` predicate indicating an IRI;
 
 If the instance has:
 
@@ -387,10 +406,10 @@ If the instance has:
 * a minimum of 1 SOSA Ontology `hasMember` predicate indicating a TERN Ontology `Observation` instance or TERN Ontology `ObservationCollection` instance;
 * a maximum of 1 SOSA Ontology `hasUltimateFeatureOfInterest` predicate indicating a TERN Ontology `FeatureOfInterest` instance;
 * a maximum of 1 SOSA Ontology `madeBySensor` predicate indicating a TERN Ontology `Sensor` instance;
-* a maximum of 1 SOSA Ontology `observedProperty` predicate indicating a an IRI;
+* a maximum of 1 SOSA Ontology `observedProperty` predicate indicating an IRI;
 * a maximum of 1 SOSA Ontology `phenomenonTime` predicate indicating a TERN Ontology `Instant` instance;
 * a maximum of 1 SOSA Ontology `resultTime` predicate indicating a `dateTime` literal value;
-* a minimum of 1 SOSA Ontology `usedProcedure` predicate indicating a an IRI;
+* a minimum of 1 SOSA Ontology `usedProcedure` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -409,7 +428,7 @@ If the instance has:
 |Label | TERN percent Properties
 |Definition a| Instances of the TERN Ontology's `Percent` class _MUST_ have:
 
-* exactly 1 TERN Ontology `unit` predicate indicating a an IRI;
+* exactly 1 TERN Ontology `unit` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -428,7 +447,7 @@ If the instance has:
 |Label | TERN percentrange Properties
 |Definition a| Instances of the TERN Ontology's `PercentRange` class _MUST_ have:
 
-* exactly 1 TERN Ontology `unit` predicate indicating a an IRI;
+* exactly 1 TERN Ontology `unit` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -447,7 +466,7 @@ If the instance has:
 |Label | TERN plot Properties
 |Definition a| Instances of the TERN Ontology's `Plot` class _MUST_ have:
 
-* exactly 1 TERN Ontology `featureType` predicate indicating a an IRI;
+* exactly 1 TERN Ontology `featureType` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -466,7 +485,7 @@ If the instance has:
 |Label | TERN quadrat Properties
 |Definition a| Instances of the TERN Ontology's `Quadrat` class _MUST_ have:
 
-* exactly 1 TERN Ontology `featureType` predicate indicating a an IRI;
+* exactly 1 TERN Ontology `featureType` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -487,7 +506,7 @@ If the instance has:
 
 * exactly 1 RDF Ontology `value` predicate indicating a `double` literal value;
 * a maximum of 1 TERN Ontology `uncertainty` predicate indicating a `double` literal value;
-* exactly 1 TERN Ontology `unit` predicate indicating a an IRI;
+* exactly 1 TERN Ontology `unit` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -509,7 +528,7 @@ If the instance has:
 * exactly 1 Quantities, Units, Dimensions and Types Schema `maxInclusive` predicate indicating a `double` literal value;
 * exactly 1 Quantities, Units, Dimensions and Types Schema `minInclusive` predicate indicating a `double` literal value;
 * a maximum of 1 TERN Ontology `uncertainty` predicate indicating a `double` literal value;
-* a maximum of 1 TERN Ontology `unit` predicate indicating a an IRI;
+* a maximum of 1 TERN Ontology `unit` predicate indicating an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -534,11 +553,11 @@ If the instance has:
 
 If the instance has:
 
-* a Dublin Core Terms `contributor` predicate, it _must_ indicate a an IRI;
-* a Dublin Core Terms `creator` predicate, it _must_ indicate a an IRI;
-* a Dublin Core Terms `publisher` predicate, it _must_ indicate a an IRI;
-* a Dublin Core Terms `source` predicate, it _must_ indicate a an IRI;
-* a Vocabulary of Interlinked Data Ontology `vocabulary` predicate, it _must_ indicate a an IRI;
+* a Dublin Core Terms `contributor` predicate, it _must_ indicate an IRI;
+* a Dublin Core Terms `creator` predicate, it _must_ indicate an IRI;
+* a Dublin Core Terms `publisher` predicate, it _must_ indicate an IRI;
+* a Dublin Core Terms `source` predicate, it _must_ indicate an IRI;
+* a Vocabulary of Interlinked Data Ontology `vocabulary` predicate, it _must_ indicate an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -596,14 +615,14 @@ If the instance has:
 |Label | TERN sampling Properties
 |Definition a| Instances of the TERN Ontology's `Sampling` class _MUST_ have:
 
-* a maximum of 1 Dublin Core Terms `type` predicate indicating a an IRI;
+* a maximum of 1 Dublin Core Terms `type` predicate indicating an IRI;
 * a maximum of 1 RDF Schema Ontology `comment` predicate indicating a `string` literal value;
 * exactly 1 SOSA Ontology `hasFeatureOfInterest` predicate indicating a TERN Ontology `FeatureOfInterest` instance;
 * a minimum of 1 SOSA Ontology `hasResult` predicate indicating a TERN Ontology `Sample` instance;
 * exactly 1 SOSA Ontology `resultTime` predicate indicating a `dateTime` literal value;
-* exactly 1 SOSA Ontology `usedProcedure` predicate indicating a an IRI;
+* exactly 1 SOSA Ontology `usedProcedure` predicate indicating an IRI;
 * a maximum of 1 TERN Ontology `hasSiteVisit` predicate indicating a TERN Ontology `SiteVisit` instance;
-* a maximum of 1 TERN Ontology `samplingType` predicate indicating a an IRI;
+* a maximum of 1 TERN Ontology `samplingType` predicate indicating an IRI;
 
 If the instance has:
 
@@ -633,13 +652,13 @@ If the instance has:
 * a maximum of 1 RDF Schema Ontology `label` predicate indicating a `string` literal value;
 * a maximum of 1 TERN Ontology `dimension` predicate indicating a `string` literal value;
 * a maximum of 1 TERN Ontology `locationDescription` predicate indicating a `string` literal value;
-* a maximum of 1 TERN Ontology `locationProcedure` predicate indicating a an IRI;
+* a maximum of 1 TERN Ontology `locationProcedure` predicate indicating an IRI;
 * a maximum of 1 TERN Ontology `polygon` predicate indicating a TERN Location Alignment Ontology `Polygon` instance;
 * a maximum of 1 TERN Ontology `siteDescription` predicate indicating a `string` literal value;
 
 If the instance has:
 
-* a GeoSPARQL Ontology `sfWithin` predicate, it _must_ indicate a an IRI;
+* a GeoSPARQL Ontology `sfWithin` predicate, it _must_ indicate an IRI;
 * a TERN Ontology `hasSiteVisit` predicate, it _must_ indicate a TERN Ontology `SiteVisit` instance;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
@@ -659,7 +678,7 @@ If the instance has:
 |Label | TERN sitevisit Properties
 |Definition a| Instances of the TERN Ontology's `SiteVisit` class _MUST_ have:
 
-* a maximum of 1 Dublin Core Terms `type` predicate indicating a an IRI;
+* a maximum of 1 Dublin Core Terms `type` predicate indicating an IRI;
 * exactly 1 Vocabulary of Interlinked Data Ontology `inDataset` predicate indicating a TERN Ontology `RDFDataset` instance;
 * a maximum of 1 Provenance Ontology `endedAtTime` predicate indicating a `dateTime` literal value;
 * exactly 1 Provenance Ontology `startedAtTime` predicate indicating a `dateTime` literal value;
@@ -672,7 +691,7 @@ If the instance has:
 * a Dublin Core Terms `identifier` predicate, it _must_ indicate a `string` literal value;
 * a TERN Ontology `hasObservation` predicate, it _must_ indicate a TERN Ontology `Observation` instance;
 * a TERN Ontology `hasSampling` predicate, it _must_ indicate a TERN Ontology `Sampling` instance;
-* a TERN Ontology `isSiteVisitOf` predicate, it _must_ indicate a an IRI;
+* a TERN Ontology `isSiteVisitOf` predicate, it _must_ indicate an IRI;
 
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
@@ -735,8 +754,8 @@ If the instance has:
 |Definition a| Instances of the TERN Ontology's `Transect` class _MUST_ have:
 
 * a maximum of 1 GeoSPARQL Ontology `hasGeometry` predicate indicating a TERN Location Alignment Ontology `LineString` instance;
-* exactly 1 TERN Ontology `featureType` predicate indicating a an IRI;
-* a maximum of 1 TERN Ontology `transectDirection` predicate indicating a an IRI or literal value;
+* exactly 1 TERN Ontology `featureType` predicate indicating an IRI;
+* a maximum of 1 TERN Ontology `transectDirection` predicate indicating an IRI or literal value;
 * a maximum of 1 TERN Ontology `transectEndPoint` predicate indicating a TERN Location Alignment Ontology `Point` instance;
 * a maximum of 1 TERN Ontology `transectStartPoint` predicate indicating a TERN Location Alignment Ontology `Point` instance;
 

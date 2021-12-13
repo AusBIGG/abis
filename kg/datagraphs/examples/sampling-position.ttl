@@ -1,3 +1,7 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+
+
 #
 #   direct positioning
 #
