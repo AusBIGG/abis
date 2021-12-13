@@ -25,6 +25,8 @@ jobs:
         echo "Add specification to docs/"
         asciidoctor specification/_specification.adoc -o docs/specification.html
         sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes/#' docs/specification.html
+        echo "Add images to docs/"
+        cp -r img docs/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
