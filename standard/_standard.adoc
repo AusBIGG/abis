@@ -11,10 +11,11 @@ NOTE: DRAFT, incomplete
 |===
 |**IRI** | https://linked.data.gov.au/def/ndesbd
 |**Title** | National Data Exchange Standard
-|**Definition** | This document decribes the structure and multiple parts of the NDES Stanard as well as the formalisms used in part desription.
+|**Definition** | This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions.
 |**Created** | 2021-12-13
 |**Modified** | 2021-12-13
-|**Creator** | link:https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), link:https://www.gaiaresources.com.au/[Gaia Resources] and the [Department of Agriculture, Water and the Environment]
+|**Issued** | 0000-00-00
+|**Creator** | link:https://linked.data.gov.au/org/surround[SURROUND Australia Pty Ltd], link:https://www.gaiaresources.com.au/[Gaia Resources] and the link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**Publisher** | link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
 |**Further information** | This specification is part of the Australian link:https://linked.data.gov.au/def/ndes[National Data Exchange Standard]. That Standard is established as a _profile_ of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one. +
@@ -23,7 +24,7 @@ See that profile's main document for details of the other profile parts and how 
 
 [#img-rdf]
 .Overview of the NDES Standard and it's parts. The Standard is a conceptual thing containing documents, data objects and so on. This document is the Standard Definition document.
-image::img/standard-overview.png[NDES Standard Overview,600,400,align="center"]
+image::/img/standard-overview.png[NDES Standard Overview,600,400,align="center"]
 
 == Preamble
 === Abstract
@@ -71,11 +72,49 @@ The following sections describe how the Profiles Vocabulary works and what the p
 
 NOTE: The document that describes the business rules and other requirements that this Standard caters for is the link:https://linked.data.gov.au/def/ndes/spec[_Specification_], not this document.
 
-== Profiles Vocabulay overview
+=== Profiles Vocabulary overview
 
-The _Profiles Vocabulary_ <<PROF>> is a link:https://www.w3.org:[World Wide Web Consortium] standard for the formal (machine-readable, mathematically-based) description of Standards, their parts, and how they relate to other Standards.
+The _Profiles Vocabulary_ <<PROF>> is a link:https://www.w3.org:[World Wide Web Consortium] standard for the formal (machine-readable, logical data) description of Standards, their parts, and how they relate to other Standards.
 
 The use of the word 'profile' here is due to the way Standards reuse other Standards: if one extends another and remains faithful to its rules, it can be said to _profile_ it.
+
+Standards described using PROF:
+
+* **define a conceptual _profile_**
+** this is the overarching standard thing and is independent of any of the particular resources within the standard
+* **describe multiple _resources_ within the Standard**
+** each part of a Stanard is described using roles, formats, online or other locations and other metadata
+* **indicate what they are profiles of**
+** if a PROF-defined Standard profiles another Standard, perhaps a generic standard for data or a broad information domain, this is indicated in a formal way
+** data that conforms to a PROF stnadard must conform to all the other Standards that this Standard profiles
+
+The formal declaration of this Standard as a conceptual _profile_ is given here in with details in the Section <<Metadata, Metadata>> and this document's resource description in the following section.
+
+The machein-redable form of this Standard's conceptual _profile_ declaration is provided in the RDF link:https://surroundaustralia.github.io/ndes/profile.ttl[profile.ttl] resource and reproduced here for convenience:
+
+```turtle
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+
+
+<https://linked.data.gov.au/def/ndesbd>
+    a prof:Profile , dcterms:Standard ;
+    dcterms:title "NDES Standard Definition" ;
+    dcterms:description "This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions, in machine-readable form." ;
+    dcterms:created "2021-12-13"^^xsd:date ;
+    dcterms:modified "2021-12-13"^^xsd:date ;
+    # dcterms:issued "0000-00-00"^^xsd:date ;
+    dcterms:creator
+        <https://linked.data.gov.au/org/surround> ,
+        <https://www.gaiaresources.com.au> ,
+        <https://linked.data.gov.au/org/dawe> ;
+    dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
+    dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    dcterms:rights "(c) Commonwealth of Australian (Department of Agriculture, Water and the Environment), 2021" ;
+    prof:isProfileOf 
+        <https://www.w3.org/TR/vocab-ssn/> ;
+.
+```
 
 == Parts of the NDES Standard
 
@@ -110,4 +149,4 @@ Note that within the Specification Document, individual Requirements link to the
 
 == References
 
-* [[[PROF]]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>
+* [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>

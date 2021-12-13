@@ -1,0 +1,21 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+
+
+<https://linked.data.gov.au/def/ndesbd>
+    a prof:Profile , dcterms:Standard ;
+    dcterms:title "NDES Standard Definition" ;
+    dcterms:description "This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions, in machine-readable form." ;
+    dcterms:created "2021-12-13"^^xsd:date ;
+    dcterms:modified "2021-12-13"^^xsd:date ;
+    # dcterms:issued "0000-00-00"^^xsd:date ;
+    dcterms:creator
+        <https://linked.data.gov.au/org/surround> ,
+        <https://www.gaiaresources.com.au> ,
+        <https://linked.data.gov.au/org/dawe> ;
+    dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
+    dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    dcterms:rights "(c) Commonwealth of Australian (Department of Agriculture, Water and the Environment), 2021" ;
+    prof:isProfileOf 
+        <https://www.w3.org/TR/vocab-ssn/> ;
+.

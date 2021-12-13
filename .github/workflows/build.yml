@@ -22,7 +22,9 @@ jobs:
         echo "Add standard to docs/"
         asciidoctor standard/_standard.adoc -o docs/standard.html
         sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes/#' docs/standard.html        
-        echo "Add specification to docs/"
+        echo "Add standard RDF to docs/"
+        cp profile.ttl docs/             
+        echo "Add specification to docs/"   
         asciidoctor specification/_specification.adoc -o docs/specification.html
         sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes/#' docs/specification.html
         echo "Add images to docs/"
