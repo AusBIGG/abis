@@ -5,7 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="author" content="== DRAFT (incomplete)">
 <title>NDES Standard Definition</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -441,31 +440,46 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <body class="article data-line-1">
 <div id="header">
 <h1>NDES Standard Definition</h1>
-<div class="details">
-<span id="author" class="author">== DRAFT (incomplete)</span><br>
-</div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_preamble">1. Preamble</a>
+<li><a href="#_metadata">1. Metadata</a></li>
+<li><a href="#_preamble">2. Preamble</a>
 <ul class="sectlevel2">
-<li><a href="#_abstract">1.1. Abstract</a></li>
-<li><a href="#_normative_status">1.2. Normative Status</a></li>
-<li><a href="#_standard_parts">1.3. Standard Parts</a></li>
-<li><a href="#_namespaces">1.4. Namespaces</a></li>
+<li><a href="#_abstract">2.1. Abstract</a></li>
+<li><a href="#_normative_status">2.2. Normative Status</a></li>
+<li><a href="#_standard_parts">2.3. Standard Parts</a></li>
+<li><a href="#_namespaces">2.4. Namespaces</a></li>
 </ul>
 </li>
-<li><a href="#_introduction">2. Introduction</a></li>
-<li><a href="#_profiles_vocabulay_overview">3. Profiles Vocabulay overview</a></li>
-<li><a href="#_parts_of_the_ndes_standard">4. Parts of the NDES Standard</a></li>
-<li><a href="#_references">5. References</a></li>
+<li><a href="#_introduction">3. Introduction</a></li>
+<li><a href="#_profiles_vocabulay_overview">4. Profiles Vocabulay overview</a></li>
+<li><a href="#_parts_of_the_ndes_standard">5. Parts of the NDES Standard</a></li>
+<li><a href="#_references">6. References</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<table class="tableblock frame-none grid-none stripes-even data-line-8" style="width: 50%;">
+<div class="admonitionblock note data-line-6">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+DRAFT, incomplete
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-8">
+<h2 id="_metadata">1. Metadata</h2>
+<div class="sectionbody">
+<table class="tableblock frame-none grid-none stripes-even data-line-11" style="width: 50%;">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -510,104 +524,41 @@ See that profile&#8217;s main document for details of the other profile parts an
 </tr>
 </tbody>
 </table>
-<div id="img-rdf" class="imageblock text-center data-line-23">
+<div id="img-rdf" class="imageblock text-center data-line-26">
 <div class="content">
-<img src="img/standard-overview.png" alt="NDES Standard Overview" width="600" height="400">
+<img src="https://github.com/surroundaustralia/ndes/blob/master/img/standard-overview.png" alt="NDES Standard Overview" width="600" height="400">
 </div>
 <div class="title">Figure 1. Overview of the NDES Standard and it&#8217;s parts. The Standard is a conceptual thing containing documents, data objects and so on. This document is the Standard Definition document.</div>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-25">
-<h2 id="_preamble">1. Preamble</h2>
+<div class="sect1 data-line-28">
+<h2 id="_preamble">2. Preamble</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-26">
-<h3 id="_abstract">1.1. Abstract</h3>
-<div class="paragraph data-line-28">
+<div class="sect2 data-line-29">
+<h3 id="_abstract">2.1. Abstract</h3>
+<div class="paragraph data-line-31">
 <p>This document decribes the structure and multiple parts of the candidate Australia National Data Exchange Standard for biodiversity data (NDES-BD) as well as the formalisms used in part desription.</p>
 </div>
 </div>
-<div class="sect2 data-line-30">
-<h3 id="_normative_status">1.2. Normative Status</h3>
-<div class="paragraph data-line-32">
+<div class="sect2 data-line-33">
+<h3 id="_normative_status">2.2. Normative Status</h3>
+<div class="paragraph data-line-35">
 <p>This Standard description is normative for the structure of the NDES-BD and take precedence over other expressions of the Standar&#8217;s structure.</p>
 </div>
 </div>
-<div class="sect2 data-line-34">
-<h3 id="_standard_parts">1.3. Standard Parts</h3>
-<div class="paragraph data-line-36">
+<div class="sect2 data-line-37">
+<h3 id="_standard_parts">2.3. Standard Parts</h3>
+<div class="paragraph data-line-39">
 <p>This Standard definition document is one of many resources that together make the NDES-BD <em>Standard</em>. The Standard and its parts are formally defined using terminology from the <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a>.</p>
 </div>
-<div class="paragraph data-line-38">
-<p>Other parts of this <em>Standard</em> are:</p>
-</div>
-<div class="ulist data-line-40">
-<ul>
-<li class="data-line-40">
-<p><em>Specification</em></p>
-<div class="ulist data-line-41">
-<ul>
-<li class="data-line-41">
-<p>lists and defines Requirements, Conformance Classes and Validators implemented by the Standard</p>
-</li>
-<li class="data-line-42">
-<p>this is the "main document" of the Standard</p>
-</li>
-</ul>
-</div>
-</li>
-<li class="data-line-43">
-<p><em>Schema</em></p>
-<div class="ulist data-line-44">
-<ul>
-<li class="data-line-44">
-<p>ontologies and other target data models</p>
-</li>
-<li class="data-line-45">
-<p>including the overarching NDES-DB Ontology and the TERN Ontology</p>
-</li>
-</ul>
-</div>
-</li>
-<li class="data-line-46">
-<p><em>Validators</em></p>
-<div class="ulist data-line-47">
-<ul>
-<li class="data-line-47">
-<p>machine-readable validation code to validate data claiming conformance to the NDES-DB</p>
-</li>
-</ul>
-</div>
-</li>
-<li class="data-line-48">
-<p><em>Examples</em></p>
-<div class="ulist data-line-49">
-<ul>
-<li class="data-line-49">
-<p>Examples of RDF data to show how to formulate BDR information</p>
-</li>
-</ul>
-</div>
-</li>
-<li class="data-line-50">
-<p><em>Mappings</em></p>
-<div class="ulist data-line-51">
-<ul>
-<li class="data-line-51">
-<p>Instructions on how to convert BDR data to data conformaing to other Standards</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph data-line-53">
-<p>The formal and linked listing of this Standards&#8217;s parts is found in its <em>Profile Declaration</em> online at <a href="https://linked.data.gov.au/def/ndesdb" data-href="https://linked.data.gov.au/def/ndesdb">National Data Exchange Standard</a>.</p>
+<div class="paragraph data-line-41">
+<p>See <a href="#resources-table">Table 1</a> for a listing of this Standard&#8217;s parts.</p>
 </div>
 </div>
-<div class="sect2 data-line-55">
-<h3 id="_namespaces">1.4. Namespaces</h3>
-<table class="tableblock frame-none grid-none stripes-even data-line-58" style="width: 75%;">
+<div class="sect2 data-line-43">
+<h3 id="_namespaces">2.4. Namespaces</h3>
+<table class="tableblock frame-none grid-none stripes-even data-line-46" style="width: 75%;">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -691,19 +642,19 @@ See that profile&#8217;s main document for details of the other profile parts an
 </div>
 </div>
 </div>
-<div class="sect1 data-line-76">
-<h2 id="_introduction">2. Introduction</h2>
+<div class="sect1 data-line-64">
+<h2 id="_introduction">3. Introduction</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-78">
+<div class="paragraph data-line-66">
 <p>This Standard is a multi-part publication that consists of human-readable documents, such as this one and the <em>Specifciation</em>, human- and machine-readable schemas, models and mappings and also example data.</p>
 </div>
-<div class="paragraph data-line-80">
+<div class="paragraph data-line-68">
 <p>This Standard and its parts are defined in machine-readable form according to the <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a> in the RDF Standard Definition file, which is the machine-readable version of this document.</p>
 </div>
-<div class="paragraph data-line-82">
+<div class="paragraph data-line-70">
 <p>The following sections describe how the Profiles Vocabulary works and what the parst of this Standard are, described in Profiles Vocabulary terms.</p>
 </div>
-<div class="admonitionblock note data-line-84">
+<div class="admonitionblock note data-line-72">
 <table>
 <tr>
 <td class="icon">
@@ -717,28 +668,29 @@ The document that describes the business rules and other requirements that this 
 </div>
 </div>
 </div>
-<div class="sect1 data-line-86">
-<h2 id="_profiles_vocabulay_overview">3. Profiles Vocabulay overview</h2>
+<div class="sect1 data-line-74">
+<h2 id="_profiles_vocabulay_overview">4. Profiles Vocabulay overview</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-88">
+<div class="paragraph data-line-76">
 <p>The <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a> is a <a href="https://www.w3.org:" data-href="https://www.w3.org:">World Wide Web Consortium</a> standard for the formal (machine-readable, mathematically-based) description of Standards, their parts, and how they relate to other Standards.</p>
 </div>
-<div class="paragraph data-line-90">
+<div class="paragraph data-line-78">
 <p>The use of the word 'profile' here is due to the way Standards reuse other Standards: if one extends another and remains faithful to its rules, it can be said to <em>profile</em> it.</p>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-92">
-<h2 id="_parts_of_the_ndes_standard">4. Parts of the NDES Standard</h2>
+<div class="sect1 data-line-80">
+<h2 id="_parts_of_the_ndes_standard">5. Parts of the NDES Standard</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-94">
-<p>This Standard composed of the resources listed in Table X with their <em>Profile Vocabulary</em> <code>roles</code> and some explanation of their purpose.</p>
+<div class="paragraph data-line-82">
+<p>This Standard comprises the resources listed in <a href="#resources-table">Table 1</a> with their <em>Profile Vocabulary</em> <code>roles</code> and some explanation of their purpose given also.</p>
 </div>
-<table class="tableblock frame-none grid-none stripes-even data-line-97" style="width: 75%;">
+<table id="resources-table" class="tableblock frame-none grid-none stripes-even data-line-86" style="width: 75%;">
+<caption class="title">Table 1. Resources in this Standard</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>
@@ -749,13 +701,11 @@ The document that describes the business rules and other requirements that this 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/ndes/standard.html" data-href="https://surroundaustralia.github.io/ndes/standard.html">standard.html</a><br>
-<br>
-<strong>this document</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/ndes/standard.html" data-href="https://surroundaustralia.github.io/ndes/standard.html">standard.html</a></p>
+<p class="tableblock"><em>(this document)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/specification" data-href="https://surroundaustralia.github.io/prof-roles/specification">Profile Definition</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This document formally defines this Standard&#8217;s parts and relations to other Standards.<br>
-<br>
-In cases of conflice between this document and the machine-readable form, this document is normative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This document formally defines this Standard&#8217;s parts and relations to other Standards.</p>
+<p class="tableblock">In cases of conflict between this document and the machine-readable form, this document is normative</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/ndes/profile.ttl" data-href="https://surroundaustralia.github.io/ndes/profile.ttl">profile.ttl</a></p></td>
@@ -767,17 +717,36 @@ In cases of conflice between this document and the machine-readable form, this d
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/specification" data-href="https://surroundaustralia.github.io/prof-roles/specification">Specification</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The document that lists the normative requirements - business rules - for data to conform to in order to be compliant</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/mappings" data-href="https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/mappings">RDF Mappings (folder)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/mapping" data-href="https://surroundaustralia.github.io/prof-roles/mapping">Mapping</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable RDF mappings from NDES elements to elements from other Stnadars, such as Darwin Core Terms.</p>
+<p class="tableblock">See also the <em>Mappings</em> section within the <a href="https://surroundaustralia.github.io/ndes/specification.html" data-href="https://surroundaustralia.github.io/ndes/specification.html">specification.html</a> document</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/examples" data-href="https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/examples">RDF Examples (folder)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/example" data-href="https://surroundaustralia.github.io/prof-roles/example">Example</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable RDF mappings from NDES elements to elements from other Stnadars, such as Darwin Core Terms.</p>
+<p class="tableblock">See also the <em>Examples</em> section within the <a href="https://surroundaustralia.github.io/ndes/specification.html" data-href="https://surroundaustralia.github.io/ndes/specification.html">specification.html</a> document</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/surroundaustralia/ndes/tree/master/kg/validators" data-href="https://github.com/surroundaustralia/ndes/tree/master/kg/validators">Shapes validators (folder)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/validation" data-href="https://surroundaustralia.github.io/prof-roles/validation">validation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable, <a href="https://www.w3.org/TR/shacl/" data-href="https://www.w3.org/TR/shacl/">Shapes Constraint Language (SHACL)</a>, validators.</p>
+<p class="tableblock">These are used by the <a href="http://ndesgateway.surroundaustralia.com/" data-href="http://ndesgateway.surroundaustralia.com/">NDES Gateway</a> to validate NDES data bound for the Biodiversity Data Repository.</p>
+<p class="tableblock">Note that within the Specification Document, individual Requirements link to the individual validators relevant for them.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1 data-line-111">
-<h2 id="_references">5. References</h2>
+<h2 id="_references">6. References</h2>
 <div class="sectionbody">
 <div class="ulist data-line-113">
 <ul>
 <li class="data-line-113">
-<p><a id="PROF"></a> World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="undefined" data-href="https://www.w3.org/TR/dx-prof/">https://www.w3.org/TR/dx-prof/</a></p>
+<p>[<a id="PROF"></a>] World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="undefined" data-href="https://www.w3.org/TR/dx-prof/">https://www.w3.org/TR/dx-prof/</a></p>
 </li>
 </ul>
 </div>
@@ -786,7 +755,7 @@ In cases of conflice between this document and the machine-readable form, this d
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-13 15:29:43 01000
+Last updated 2021-12-13 16:12:23 01000
 </div>
 </div>
 </body>

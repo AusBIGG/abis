@@ -1,7 +1,11 @@
 = NDES Specification
+:toc:
 :table-stripes: even
 :sectnums:
 
+NOTE: DRAFT, incomplete
+
+== Metadata
 
 [width=50%, frame=none, grid=none]
 |===
@@ -16,8 +20,6 @@
 |**Further information** | This specification is part of the Australian link:https://linked.data.gov.au/def/ndes[National Data Exchange Standard]. That Standard is established as a _profile_ of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one. +
 See that profile's main document for details of the other profile parts and how this Specification related to them.
 |===
-
-:toc:
 
 == Preamble
 

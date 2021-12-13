@@ -1,8 +1,11 @@
 = NDES Standard Definition
-== DRAFT (incomplete)
 :toc:
 :table-stripes: even
 :sectnums:
+
+NOTE: DRAFT, incomplete
+
+== Metadata
 
 [width=50%, frame=none, grid=none]
 |===
@@ -35,22 +38,7 @@ This Standard description is normative for the structure of the NDES-BD and take
 
 This Standard definition document is one of many resources that together make the NDES-BD _Standard_. The Standard and its parts are formally defined using terminology from the _Profiles Vocabulary_ <<PROF>>.
 
-Other parts of this _Standard_ are:
-
-* _Specification_
-** lists and defines Requirements, Conformance Classes and Validators implemented by the Standard
-** this is the "main document" of the Standard
-* _Schema_
-** ontologies and other target data models
-** including the overarching NDES-DB Ontology and the TERN Ontology
-* _Validators_
-** machine-readable validation code to validate data claiming conformance to the NDES-DB
-* _Examples_
-** Examples of RDF data to show how to formulate BDR information
-* _Mappings_
-** Instructions on how to convert BDR data to data conformaing to other Standards
-
-The formal and linked listing of this Standards's parts is found in its _Profile Declaration_ online at link:https://linked.data.gov.au/def/ndesdb[National Data Exchange Standard].
+See <<resources-table, Table 1>> for a listing of this Standard's parts.
 
 === Namespaces
 
@@ -91,23 +79,35 @@ The use of the word 'profile' here is due to the way Standards reuse other Stand
 
 == Parts of the NDES Standard
 
-This Standard composed of the resources listed in Table X with their _Profile Vocabulary_ `roles` and some explanation of their purpose.
+This Standard comprises the resources listed in <<resources-table, Table 1>> with their _Profile Vocabulary_ `roles` and some explanation of their purpose given also.
 
-[width=75%, frame=none, grid=none]
+[id="resources-table", width=75%, frame=none, grid=none, cols="1,1,3"]
+.Resources in this Standard
 |===
 |Resource | Role | Description
 
-|link:https://surroundaustralia.github.io/ndes/standard.html[standard.html] +
- + 
-**this document** | link:https://surroundaustralia.github.io/prof-roles/specification[Profile Definition] | This document formally defines this Standard's parts and relations to other Standards. +
- +
-In cases of conflice between this document and the machine-readable form, this document is normative
+|link:https://surroundaustralia.github.io/ndes/standard.html[standard.html]
+ 
+_(this document)_ | link:https://surroundaustralia.github.io/prof-roles/specification[Profile Definition] | This document formally defines this Standard's parts and relations to other Standards.
+
+In cases of conflict between this document and the machine-readable form, this document is normative
 |link:https://surroundaustralia.github.io/ndes/profile.ttl[profile.ttl] | link:https://surroundaustralia.github.io/prof-roles/specification[Profile Definition] | The machine-readable (RDF, Turtle syntax) version of this document.
 |link:https://surroundaustralia.github.io/ndes/specification.html[specification.html] | link:https://surroundaustralia.github.io/prof-roles/specification[Specification] | The document that lists the normative requirements - business rules - for data to conform to in order to be compliant
+|link:https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/mappings[RDF Mappings (folder)] | link:https://surroundaustralia.github.io/prof-roles/mapping[Mapping] | Machine-readable RDF mappings from NDES elements to elements from other Stnadars, such as Darwin Core Terms.
+
+See also the _Mappings_ section within the link:https://surroundaustralia.github.io/ndes/specification.html[specification.html] document
+|link:https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/examples[RDF Examples (folder)] | link:https://surroundaustralia.github.io/prof-roles/example[Example] | Machine-readable RDF mappings from NDES elements to elements from other Stnadars, such as Darwin Core Terms.
+
+See also the _Examples_ section within the link:https://surroundaustralia.github.io/ndes/specification.html[specification.html] document
+|link:https://github.com/surroundaustralia/ndes/tree/master/kg/validators[Shapes validators (folder)] | link:https://surroundaustralia.github.io/prof-roles/validation[validation] | Machine-readable, link:https://www.w3.org/TR/shacl/[Shapes Constraint Language (SHACL)], validators.
+
+These are used by the link:http://ndesgateway.surroundaustralia.com/[NDES Gateway] to validate NDES data bound for the Biodiversity Data Repository.
+
+Note that within the Specification Document, individual Requirements link to the individual validators relevant for them.
 |===
 
 
 
 == References
 
-* [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>
+* [[[PROF]]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>

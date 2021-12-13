@@ -1,5 +1,3 @@
-# baseURI: https://linked.data.gov.au/def/ndesbd/examples/message-new-observations
-
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex: <http://example.com/thing/> 
 PREFIX ndesdb: <https://linked.data.gov.au/def/ndesbd/>

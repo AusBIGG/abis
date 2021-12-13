@@ -1,1 +1,46 @@
-# baseURI: https://linked.data.gov.au/def/ndesbd/examples/sampling-position
+#
+#   direct positioning
+#
+<https://linked.data.gov.au/dataset/bdr/sampling/x>
+	geo:hasGeometry [
+		geo:asWKT "POINT (153, -57)"
+ 	] ;
+	sosa:resultTime "2021-12-09"^^xsd:dateTime ; 
+.
+
+
+#
+#   indirect positioning via linking to a `tern:Site`
+#
+<https://linked.data.gov.au/dataset/bdr/sampling/x>
+	sosa:resultTime "2021-12-09"^^xsd:dateTime ; 
+	tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/sitevisit/y> ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/sitevisit/y>
+	tern:hasSite <https://linked.data.gov.au/dataset/bdr/site/y> ;
+.
+<https://linked.data.gov.au/dataset/bdr/site/y>
+	geo:hasGeometry [
+		geo:asWKT "POINT (153, -57)"
+ 	] ;
+.
+
+#
+#   Indirect positioning by linking to a non-Site spatial object (a `geo:Feature`) using a _spatial relations_ property
+#
+#   This example shows a Sampling that is indicated as bing within the Local Government Area of Moreton Bay. 
+#   Moreton Bay LGA is part of the ASGS 2016 dataset publish by the Location Index project with which the Biodiversity
+#   Data Repository's holdings are compatable
+#
+<https://linked.data.gov.au/dataset/bdr/sampling/x>
+	sosa:resultTime "2021-12-09"^^xsd:dateTime ; 
+	geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010> ;
+.
+
+<http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010>
+	a asgs:LocalGovernmentArea ;
+	geo:hasGeometry [
+		geo:asWKT "POINT (153, -57)"
+ 	] ;
+.

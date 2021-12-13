@@ -49,10 +49,10 @@ RDF data matching the Left, Centre & right parts of the Figure above are given n
 ```turtle
 <https://linked.data.gov.au/dataset/bdr/sampling/x>
 	sosa:resultTime "2021-12-09"^^xsd:dateTime ; 
-	geo:sfWithin <https://linked.data.gov.au/dataset/asgs2021/lga/canning> ;
+	geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010s> ;
 .
 
-<https://linked.data.gov.au/dataset/asgs2021/lga/canning>
+<http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010>
 	a asgs:LocalGovernmentArea ;
 	geo:hasGeometry [
 		geo:asWKT "POINT (153, -57)"

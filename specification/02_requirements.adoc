@@ -53,7 +53,9 @@ Requirements are the individual rules that data claiming conformance to the NDES
 |Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/domain-model[`cc:domain-model`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology], BDR Project Co-design
 |Validators | _coming_
-|Examples | RDF: link:https://linked.data.gov.au/def/ndesbd/examples/sampling-position[`ex:sampling-position`], Descriptions: 
+|Examples | RDF: link:https://github.com/surroundaustralia/ndes/blob/master/kg/datagraphs/examples/sample-position.ttl[sample-position.ttl]
+
+Descriptions: <<Sampling Position, Sampling Position>>
 |===
 
 ==== TERN `Attribute` class Properties
