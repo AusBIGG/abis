@@ -7,7 +7,7 @@ NOTE: DRAFT, incomplete
 
 == Metadata
 
-[width=50%, frame=none, grid=none]
+[width=75%, frame=none, grid=none, cols="1,5"]
 |===
 |**IRI** | https://linked.data.gov.au/def/ndesbd
 |**Title** | National Data Exchange Standard
