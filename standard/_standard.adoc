@@ -97,7 +97,7 @@ This Standard composed of the resources listed in Table X with their _Profile Vo
 |===
 |Resource | Role | Description
 
-|ink:https://surroundaustralia.github.io/ndes/standard.html[standard.html] +
+|link:https://surroundaustralia.github.io/ndes/standard.html[standard.html] +
  + 
 **this document** | link:https://surroundaustralia.github.io/prof-roles/specification[Profile Definition] | This document formally defines this Standard's parts and relations to other Standards. +
  +
