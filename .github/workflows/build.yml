@@ -8,12 +8,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1    
-    - name: Replace img links
+    - name: Checkout
+      uses: actions/checkout@v2.3.1
+
+    - name: Build
       working-directory: ./
       run: |
+        echo "Making deployment dir - docs/"
+        mkdir docs
+        echo "Add README to docs/"
+        cp README.md docs/        
         sudo apt-get install asciidoctor ruby -y
-        asciidoctor standard/_standard.adoc -o standard.html
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' standard.html        
-        asciidoctor specification/_specification.adoc -o specification.html
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' specification.html
+        echo "Add standard to docs/"
+        asciidoctor standard/_standard.adoc -o docs/standard.html
+        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' docs/standard.html        
+        echo "Add specification to docs/"
+        asciidoctor specification/_specification.adoc -o docs/specification.html
+        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' docs/specification.html
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+         BRANCH: gh-pages
+         FOLDER: docs
