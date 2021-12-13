@@ -1,0 +1,91 @@
+= NDES Standard Definition
+
+== DRAFT (incomplete)
+
+:toc:
+
+[width=50%, frame=none, grid=none, stripes=even]
+|===
+|**IRI** | https://linked.data.gov.au/def/ndesbd
+|**Title** | National Data Exchange Standard
+|**Definition** | This document decribes the structure and multiple parts of the NDES Stanard as well as the formalisms used in part desription.
+|**Created** | 2021-12-13
+|**Modified** | 2021-12-13
+|**Creator** | link:https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), link:https://www.gaiaresources.com.au/[Gaia Resources] and the [Department of Agriculture, Water and the Environment]
+|**Publisher** | link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
+|**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|**Further information** | This specification is part of the Australian link:https://linked.data.gov.au/def/ndes[National Data Exchange Standard]. That Standard is established as a _profile_ of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one. +
+See that profile's main document for details of the other profile parts and how this Specification related to them.
+|===         
+
+== Abstract
+
+This document decribes the structure and multiple parts of the candidate Australia National Data Exchange Standard for biodiversity data (NDES-BD) as well as the formalisms used in part desription.
+
+== Normative Status
+
+This Standard description is normative for the structure of the NDES-BD and take precedence over other expressions of the Standar's structure.
+
+=== Standard Parts
+
+This Standard definition document is one of many resources that together make the NDES-BD _Standard_. The Standard and its parts are formally defined using terminology from the _Profiles Vocabulary_ <<PROF>>.
+
+Other parts of this _Standard_ are:
+
+* _Specification_
+** lists and defines Requirements, Conformance Classes and Validators implemented by the Standard
+** this is the "main document" of the Standard
+* _Schema_
+** ontologies and other target data models
+** including the overarching NDES-DB Ontology and the TERN Ontology
+* _Validators_
+** machine-readable validation code to validate data claiming conformance to the NDES-DB
+* _Examples_
+** Examples of RDF data to show how to formulate BDR information
+* _Mappings_
+** Instructions on how to convert BDR data to data conformaing to other Standards
+
+The formal and linked listing of this Standards's parts is found in its _Profile Declaration_ online at link:https://linked.data.gov.au/def/ndesdb[National Data Exchange Standard].
+
+=== Namespaces
+
+[width=75%, frame=none, grid=none, stripes=even]
+|===
+|Prefix | Namespace | Description
+
+|**`req:`** | **`https://linked.data.gov.au/def/ndesbd/req/`** | **NDES-BD Requirements namespace**
+|`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
+|`ex:` | `http://example.com/thing` | Generic examples namespace
+|`nex:` | `https://linked.data.gov.au/def/ndesbd/examples/` | NDES-BD Canonical Examples namespace
+|`nsh:` | `https://linked.data.gov.au/def/ndesbd/shape/` | NDES-BD Validators Shapes namespace
+|`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
+|`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
+|`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
+|`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
+|`tern:` | `http://www.w3.org/ns/sosa/` | TERN Ontology namespace
+|`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
+|`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
+|`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
+|===
+
+== Introduction
+
+This Standard is a multi-part publication that consists of human-readable documents, such as this one and the _Specifciation_, human- and machine-readable schemas, models and mappings and also example data.
+
+This Standard and its parts are defined in machine-readable form according to the _Profiles Vocabulary_ <<PROF>> in the RDF Standard Definition file, which is the machine-readable version of this document.
+
+The following sections describe how the Profiles Vocabulary works and what the parst of this Standard are, described in Profiles Vocabulary terms.
+
+NOTE: The document that describes the business rules and other requirements that this Standard caters for is the link:https://linked.data.gov.au/def/ndes/spec[_Specification_], not this document.
+
+== Profiles Vocabulay overview
+
+The _Profiles Vocabulary_ <<PROF>> is a link:https:www.w3.org:[World Wide Web Consortium] standard for the formal (machine-readable, mathematically-based) description of Standards, their parts, and how they relate to other Standards.
+
+The use of the work 'profile' is due to the way Stnadards reuse other Standards: if one extends another and remains faithful to its rules, it can be said to _profile_ it.
+
+
+
+== References
+
+* [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>
