@@ -7,14 +7,14 @@ NOTE: DRAFT, incomplete
 
 == Metadata
 
-[width=50%, frame=none, grid=none]
+[width=50%, frame=none, grid=none, cols="1,5"]
 |===
 |**IRI** | https://linked.data.gov.au/def/ndesbd/spec
 |**Title** | National Data Exchange Standard's Specifciation
 |**Definition** | This document lists the normative requirements for data aiming to conform to the link:https://linked.data.gov.au/def/ndesdb[National Data Exchange Standard]. It is to be used as the authoratitive, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.
 |**Created** | 2021-10-24
 |**Modified** | 2021-11-20
-|**Creator** | link:https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), link:https://www.gaiaresources.com.au/[Gaia Resources] and the [Department of Agriculture, Water and the Environment]
+|**Creator** | link:https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), link:https://www.gaiaresources.com.au/[Gaia Resources] and the link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**Publisher** | link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
 |**Further information** | This specification is part of the Australian link:https://linked.data.gov.au/def/ndes[National Data Exchange Standard]. That Standard is established as a _profile_ of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one. +

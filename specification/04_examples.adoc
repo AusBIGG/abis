@@ -2,7 +2,7 @@
 
 === Sampling Position
 
-From `req:sampling-position`:
+From <<Sampling space & time position, Sampling space & time position>>:
 
 > Instances of the TERN Ontology's `Sampling` class _MUST_ be located in space and time
 
@@ -14,7 +14,7 @@ There are several options for spatial positioning, as shown in the 3-part Figure
 
 [[sampling-position]]
 .Options for the spatial positioning of `tern:Sampling` instances. Left: direct positioning; Centre: indirect positioning via linking to a `tern:Site`; Right: Indirect positioning by linking to a non-Site spatial object (a `geo:Feature`) using a _spatial relations_ property.
-image::examples/sample-positioning.png[Options for the spatial positioning of `tern:Sampling` instances]
+image::sample-positioning.png[Options for the spatial positioning of `tern:Sampling` instances]
 
 RDF data matching the Left, Centre & right parts of the Figure above are given next.
 
