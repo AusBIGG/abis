@@ -21,10 +21,10 @@ jobs:
         sudo apt-get install asciidoctor ruby -y
         echo "Add standard to docs/"
         asciidoctor standard/_standard.adoc -o docs/standard.html
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' docs/standard.html        
+        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes/#' docs/standard.html        
         echo "Add specification to docs/"
         asciidoctor specification/_specification.adoc -o docs/specification.html
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes#' docs/specification.html
+        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ndes/#' docs/specification.html
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
