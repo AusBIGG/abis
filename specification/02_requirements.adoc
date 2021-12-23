@@ -55,7 +55,7 @@ Requirements are the individual rules that data claiming conformance to the ABIS
 |Conformance Classes | link:https://linked.data.gov.au/def/abis/cc/domain-model[`cc:domain-model`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology], BDR Project Co-design
 |Validators | _coming_
-|Examples | RDF: link:https://github.com/surroundaustralia/ndes/blob/master/kg/datagraphs/examples/sample-position.ttl[sample-position.ttl]
+|Examples | RDF: link:https://github.com/surroundaustralia/abis/blob/master/kg/datagraphs/examples/sample-position.ttl[sample-position.ttl]
 
 Descriptions: <<Sampling Position, Sampling Position>>
 |===
@@ -72,7 +72,7 @@ Descriptions: <<Sampling Position, Sampling Position>>
 |Conformance Classes | link:https://linked.data.gov.au/def/abis/cc/domain-model[`cc:domain-model`]
 |Source | BDR Project Co-design
 |Validators | _coming_
-|Examples | RDF: link:https://github.com/surroundaustralia/ndes/blob/master/kg/datagraphs/examples/sample-alternate-identifiersttl[sample-alternate-identifiers.ttl]
+|Examples | RDF: link:https://github.com/surroundaustralia/abis/blob/master/kg/datagraphs/examples/sample-alternate-identifiersttl[sample-alternate-identifiers.ttl]
 
 Descriptions: <<Sample alternate identifiers example, Sample alternate identifiers example>>
 |===
@@ -780,7 +780,7 @@ If the instance has:
 * a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;
 * exactly 1 ABIS Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
 
-|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/ndes-messages[`cc:ndes-messages`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/abis-messages[`cc:abis-messages`]
 |Source | ABIS Gateway Messaging
 |Validators | link:https://linked.data.gov.au/def/abis/shape/message-new-observations-01[`nsh:message-new-observations-01`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01[`https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01`]
@@ -799,7 +799,7 @@ If the instance has:
 * a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;
 * the SOSA Ontology `ObservationCollection` class instance must contain a minimum of 1 RDFS Ontology `member` predicate indcating an IRI of an existing TERN Ontology `Observation` class instance`.
 
-|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/ndes-messages[`cc:ndes-messages`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/abis-messages[`cc:abis-messages`]
 |Source | ABIS Gateway Messaging
 |Validators | link:https://linked.data.gov.au/def/abis/shape/message-delete-observations-01[`nsh:message-delete-observations-01`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01[`https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01`]

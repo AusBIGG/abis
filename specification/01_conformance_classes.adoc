@@ -27,7 +27,7 @@ The Conformance Classes are:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/abis/conformanceclass/ndes-messages[`cc:ndes-messages`]
+|Identifier | link:https://linked.data.gov.au/def/abis/conformanceclass/abis-messages[`cc:abis-messages`]
 |Label | ABIS Messages Conformance Class
 |Definition | The set of requirements needed to be met to ensure conformance with the ABIS' Gateway's message needs
 |Requirements | link:https://linked.data.gov.au/def/abis/req/message-new-observations[`req:message-new-observations`]

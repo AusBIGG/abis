@@ -3,8 +3,8 @@ This repository contains the Australian Biodiversity Information Standard (ABIS)
 
 See the following starting points:
 
-* [Standard Definition Document](standard.html) - describes the ABIS overall and its parts
-* [Specification Document](specification.html) - business rules, requirements and links from them to validators
+* [Standard Definition Document](https://surroundaustralia.github.io/abis/standard.html) - describes the ABIS overall and its parts
+* [Specification Document](https://surroundaustralia.github.io/abis/specification.html) - business rules, requirements and links from them to validators
 
 ## Status
 

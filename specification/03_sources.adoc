@@ -48,5 +48,5 @@ Requirements for creating packages of ABIS data - "ABIS Messages".
 
 [width=50%, frame=none, grid=none, stripes=even]
 |===
-|Documentation | http://ndesgateway.surroundaustralia.com/
+|Documentation | http://bdrgateway.surroundaustralia.com/
 |===

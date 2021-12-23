@@ -1,4 +1,4 @@
-= NDES Standard Definition
+= ABIS Definition
 :toc:
 :table-stripes: even
 :sectnums:
@@ -11,7 +11,7 @@ NOTE: DRAFT, incomplete
 |===
 |**IRI** | https://linked.data.gov.au/def/abis
 |**Title** | Australian Biodiversity Information Standard
-|**Definition** | This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions.
+|**Definition** | This resource describes the structure and multiple parts of the ABIS Standard as well as the formalisms used in their definitions.
 |**Created** | 2021-12-13
 |**Modified** | 2021-12-13
 |**Issued** | 0000-00-00
@@ -23,8 +23,8 @@ See that profile's main document for details of the other profile parts and how 
 |===         
 
 [#img-rdf]
-.Overview of the NDES Standard and it's parts. The Standard is a conceptual thing containing documents, data objects and so on. This document is the Standard Definition document.
-image::/img/standard-overview.png[NDES Standard Overview,600,400,align="center"]
+.Overview of the ABIS and it's parts. The Standard is a conceptual thing containing documents, data objects and so on. This document is the Standard Definition document.
+image::/img/standard-overview.png[ABIS Overview,600,400,align="center"]
 
 == Preamble
 === Abstract
@@ -90,7 +90,7 @@ Standards described using PROF:
 
 The formal declaration of this Standard as a conceptual _profile_ is given here in with details in the Section <<Metadata, Metadata>> and this document's resource description in the following section.
 
-The machein-redable form of this Standard's conceptual _profile_ declaration is provided in the RDF link:https://surroundaustralia.github.io/ndes/profile.ttl[profile.ttl] resource and reproduced here for convenience:
+The machein-redable form of this Standard's conceptual _profile_ declaration is provided in the RDF link:https://surroundaustralia.github.io/abis/profile.ttl[profile.ttl] resource and reproduced here for convenience:
 
 ```turtle
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -99,8 +99,8 @@ The machein-redable form of this Standard's conceptual _profile_ declaration is 
 
 <https://linked.data.gov.au/def/abis>
     a prof:Profile , dcterms:Standard ;
-    dcterms:title "NDES Standard Definition" ;
-    dcterms:description "This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions, in machine-readable form." ;
+    dcterms:title "ABIS Definition" ;
+    dcterms:description "This resource describes the structure and multiple parts of the ABIS as well as the formalisms used in their definitions, in machine-readable form." ;
     dcterms:created "2021-12-13"^^xsd:date ;
     dcterms:modified "2021-12-13"^^xsd:date ;
     # dcterms:issued "0000-00-00"^^xsd:date ;
@@ -116,7 +116,7 @@ The machein-redable form of this Standard's conceptual _profile_ declaration is 
 .
 ```
 
-== Parts of the NDES Standard
+== Parts of the ABIS
 
 This Standard comprises the resources listed in <<resources-table, Table 1>> with their _Profile Vocabulary_ `roles` and some explanation of their purpose given also.
 
@@ -125,24 +125,24 @@ This Standard comprises the resources listed in <<resources-table, Table 1>> wit
 |===
 |Resource | Role | Description
 
-|link:https://surroundaustralia.github.io/ndes/standard.html[standard.html]
+|link:https://surroundaustralia.github.io/abis/standard.html[standard.html]
  
 _(this document)_ | link:https://surroundaustralia.github.io/prof-roles/specification[Profile Definition] | This document formally defines this Standard's parts and relations to other Standards.
 
 In cases of conflict between this document and the machine-readable form, this document is normative
-|link:https://surroundaustralia.github.io/ndes/profile.ttl[profile.ttl] | link:https://surroundaustralia.github.io/prof-roles/specification[Profile Definition] | The machine-readable (RDF, Turtle syntax) version of this document.
-|link:https://surroundaustralia.github.io/ndes/specification.html[specification.html] | link:https://surroundaustralia.github.io/prof-roles/specification[Specification] | The document that lists the normative requirements - business rules - for data to conform to in order to be compliant
+|link:https://surroundaustralia.github.io/abis/profile.ttl[profile.ttl] | link:https://surroundaustralia.github.io/prof-roles/specification[Profile Definition] | The machine-readable (RDF, Turtle syntax) version of this document.
+|link:https://surroundaustralia.github.io/abis/specification.html[specification.html] | link:https://surroundaustralia.github.io/prof-roles/specification[Specification] | The document that lists the normative requirements - business rules - for data to conform to in order to be compliant
 |link:https://linkeddata-dev.tern.org.au/tern-ontology[TERN Ontology] | link:https://surroundaustralia.github.io/prof-roles/schema[Schema] | The main domain model for this Standard, in human-readable form
 |link:https://raw.githubusercontent.com/ternaustralia/ontology_tern/master/docs/tern.ttl[TERN Ontology in RDF] | link:https://surroundaustralia.github.io/prof-roles/schema[Schema] | The main domain model for this Standard, in machine-readable form (RDF Turtle)
-|link:https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/mappings[RDF Mappings (folder)] | link:https://surroundaustralia.github.io/prof-roles/mapping[Mapping] | Machine-readable RDF mappings from NDES elements to elements from other Standards, such as Darwin Core Terms.
+|link:https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/mappings[RDF Mappings (folder)] | link:https://surroundaustralia.github.io/prof-roles/mapping[Mapping] | Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.
 
-See also the _Mappings_ section within the link:https://surroundaustralia.github.io/ndes/specification.html[specification.html] document
-|link:https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/examples[RDF Examples (folder)] | link:https://surroundaustralia.github.io/prof-roles/example[Example] | Machine-readable RDF mappings from NDES elements to elements from other Standards, such as Darwin Core Terms.
+See also the _Mappings_ section within the link:https://surroundaustralia.github.io/abis/specification.html[specification.html] document
+|link:https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/examples[RDF Examples (folder)] | link:https://surroundaustralia.github.io/prof-roles/example[Example] | Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.
 
-See also the _Examples_ section within the link:https://surroundaustralia.github.io/ndes/specification.html[specification.html] document
-|link:https://github.com/surroundaustralia/ndes/tree/master/kg/validators[Shapes validators (folder)] | link:https://surroundaustralia.github.io/prof-roles/validation[Validation] | Machine-readable, link:https://www.w3.org/TR/shacl/[Shapes Constraint Language (SHACL)], validators.
+See also the _Examples_ section within the link:https://surroundaustralia.github.io/abis/specification.html[specification.html] document
+|link:https://github.com/surroundaustralia/abis/tree/master/kg/validators[Shapes validators (folder)] | link:https://surroundaustralia.github.io/prof-roles/validation[Validation] | Machine-readable, link:https://www.w3.org/TR/shacl/[Shapes Constraint Language (SHACL)], validators.
 
-These are used to validate data claiming conformance to the NDES, for instance by the link:http://ndesgateway.surroundaustralia.com/[NDES Gateway] to validate NDES data bound for the Biodiversity Data Repository.
+These are used to validate data claiming conformance to the ABIS, for instance by the link:http://bdrgateway.surroundaustralia.com/[BDR Gateway] to validate ABIS data bound for the Biodiversity Data Repository.
 
 Note that within the Specification Document, individual Requirements link to the individual validators relevant for them.
 |`XXX Vocabulary` | link:https://surroundaustralia.github.io/prof-roles/vocabulary[Vocabulary] | Supporting vocabulary XXX (example).

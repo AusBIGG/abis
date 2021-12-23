@@ -95,7 +95,7 @@ The link:https://en.wikipedia.org/wiki/Semantic_Web[Semantic Web] interpretation
 |Label | `skos:prefLabel` | text
 |Definition | `skos:definition` | text
 |Conformance Classes | `dcterms:isPartOf` | IRIs
-|Source | `dcterms:source` or `dcterms:provenance` | IRI of an NDES resource or text
+|Source | `dcterms:source` or `dcterms:provenance` | IRI of an ABIS resource or text
 |Validators | ??? | IRI of a `Resource Descriptor`
 |Examples | `skos:example` | IRI of a `Resource Descriptor`
 |===
