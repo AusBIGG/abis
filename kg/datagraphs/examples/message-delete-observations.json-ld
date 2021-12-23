@@ -1,7 +1,7 @@
 {
   "@context": {
     "dcterms": "http://purl.org/dc/terms/",
-    "ndesdb": "https://linked.data.gov.au/def/ndesbd/",
+    "abism": "https://linked.data.gov.au/def/abis/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "sosa": "http://www.w3.org/ns/sosa/",
@@ -29,19 +29,19 @@
     },
     {
       "@id": "https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01",
-      "@type": "ndesdb:DeleteObservationsMessage",
+      "@type": "abism:DeleteObservationsMessage",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "A minimally valid ndesdb:DeleteObservationsMessage instance"
+        "@value": "A minimally valid abism:DeleteObservationsMessage instance"
       },
       "rdfs:label": {
         "@language": "en",
-        "@value": "Valid NDES-BD DeleteObservationsMessage 01"
+        "@value": "Valid ABIS DeleteObservationsMessage 01"
       },
       "rdfs:member": {
         "@id": "_:b0"
       },
-      "ndesdb:targetDataset": {
+      "abism:targetDataset": {
         "@id": "https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01"
       }
     }

@@ -1,8 +1,8 @@
-# baseURI: https://linked.data.gov.au/def/ndes/shape/ndes-messages-validator.ttl
+# baseURI: https://linked.data.gov.au/def/abis/shape/abis-messages-validator.ttl
 
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ndesdb: <https://linked.data.gov.au/def/ndes/> .
-@prefix nsh: <https://linked.data.gov.au/def/ndes/shape/> .
+@prefix abism: <https://linked.data.gov.au/def/abis-msg/> .
+@prefix nsh: <https://linked.data.gov.au/def/abis-msg/shape/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -19,31 +19,31 @@ nsh:message-delete-observations-01
   sh:property [
       sh:path rdfs:member ;
       sh:class tern:ObservationCollection ;
-      sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;
+      sh:message "Instances of the ABIS Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;
       sh:minCount 1 ;
       sh:property [
           sh:path rdfs:member ;
           sh:class tern:Observation ;
-          sh:message "SOSA Ontology ObservationCollection class instances within a ndesbd:DeleteObservationsMessage must contain a minimum of 1 rdfs:member predicate indcating an IRI of an existing tern:Observation class instance"@en ;
+          sh:message "SOSA Ontology ObservationCollection class instances within a abis:DeleteObservationsMessage must contain a minimum of 1 rdfs:member predicate indcating an IRI of an existing tern:Observation class instance"@en ;
           sh:minCount 1 ;
         ] ;
     ] ;
-  sh:targetClass ndesdb:DeleteObservationsMessage ;
+  sh:targetClass abism:DeleteObservationsMessage ;
 .
 nsh:message-new-observations-01
   a sh:NodeShape ;
   sh:property [
       sh:path rdfs:member ;
       sh:class tern:ObservationCollection ;
-      sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;
+      sh:message "Instances of the ABIS Ontology's NewObservationsMessage class MUST have a minimum of 1 RDFS Ontology member predicate indicating a SOSA Ontology ObservationCollection class instance"@en ;
       sh:minCount 1 ;
     ] ;
   sh:property [
-      sh:path ndesdb:targetsDataset ;
+      sh:path abism:targetsDataset ;
       sh:class tern:RDFDataset ;
       sh:maxCount 1 ;
-      sh:message "Instances of the NDES Ontology's NewObservationsMessage class MUST have exactly 1 NDES Ontology targetDataset predicate indicating a TERN Ontology RDFDataset class instance"@en ;
+      sh:message "Instances of the ABIS Ontology's NewObservationsMessage class MUST have exactly 1 ABIS Ontology targetDataset predicate indicating a TERN Ontology RDFDataset class instance"@en ;
       sh:minCount 1 ;
     ] ;
-  sh:targetClass ndesdb:NewObservationsMessage ;
+  sh:targetClass abism:NewObservationsMessage ;
 .

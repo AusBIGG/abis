@@ -1,10 +1,10 @@
-PREFIX ndesdb: <https://linked.data.gov.au/def/ndesbd/>
+PREFIX abism: <https://linked.data.gov.au/def/abis/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 <https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01>
-    a ndesdb:DeleteMessage ;
-    rdfs:label "Valid NDES-BD DeleteObservationsMessage 01"@en ;
-    rdfs:comment "A minimally valid ndesdb:DeleteObservationsMessage instance"@en ;
+    a abism:DeleteMessage ;
+    rdfs:label "Valid ABIS DeleteObservationsMessage 01"@en ;
+    rdfs:comment "A minimally valid abism:DeleteObservationsMessage instance"@en ;
     rdfs:member 
         <https://linked.data.gov.au/dataset/bdr/observation/example-valid-01> ,
         <https://linked.data.gov.au/dataset/bdr/observation/example-valid-02> ;

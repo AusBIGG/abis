@@ -2,14 +2,14 @@
 
 The sources listed here are documents, agreements, other Standards and so on from which the Requirements in this Specification originate.
 
-=== NDES-DB Messaging 
+=== ABIS Messaging 
 
 Requirements for messages to tbe Biodiversity Data Repository.
 
 [width=50%, frame=none, grid=none, stripes=even]
 |===
-|Authoratitive copy | https://linked.data.gov.au/def/ndesbd/ont
-|Local copy | `kg/ontologies/ndesbd.ttl`
+|Authoratitive copy | https://linked.data.gov.au/def/abis/ont
+|Local copy | `kg/ontologies/abis.ttl`
 |===
 
 === TERN Ontology
@@ -42,9 +42,9 @@ Requirements to meet the Audubon Core international biodiversity data model.
 |Authoratitive copy | https://ac.tdwg.org/termlist/
 |===
 
-=== NDES-BD Gateway Messaging
+=== ABIS Messaging
 
-Requirements for the functioning of the NDES-DB Gateway API.
+Requirements for creating packages of ABIS data - "ABIS Messages".
 
 [width=50%, frame=none, grid=none, stripes=even]
 |===

@@ -2,10 +2,10 @@
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 
 
-<https://linked.data.gov.au/def/ndesbd>
+<https://linked.data.gov.au/def/abis>
     a prof:Profile , dcterms:Standard ;
-    dcterms:title "NDES Standard Definition" ;
-    dcterms:description "This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions, in machine-readable form." ;
+    dcterms:title "ABIS Standard Definition" ;
+    dcterms:description "This resource describes the structure and multiple parts of the ABIS Standard as well as the formalisms used in their definitions, in machine-readable form." ;
     dcterms:created "2021-12-13"^^xsd:date ;
     dcterms:modified "2021-12-13"^^xsd:date ;
     # dcterms:issued "0000-00-00"^^xsd:date ;

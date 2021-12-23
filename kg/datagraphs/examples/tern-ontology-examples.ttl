@@ -1,8 +1,8 @@
-# baseURI: https://linked.data.gov.au/def/ndesbd/examples/tern-ont
+# baseURI: https://linked.data.gov.au/def/abis/examples/tern-ont
 
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex: <http://example.com/thing/> 
-PREFIX ndesdb: <https://linked.data.gov.au/def/ndesbd/>
+PREFIX abism: <https://linked.data.gov.au/def/abis/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/> 

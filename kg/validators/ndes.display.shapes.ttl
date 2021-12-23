@@ -1,9 +1,9 @@
-# baseURI: https://linked.data.gov.au/def/ndes/shape/display.shapes
+# baseURI: https://linked.data.gov.au/def/abis/shape/display.shapes
 
-@prefix : <https://linked.data.gov.au/def/ndes/shape/display.shapes/> .
+@prefix : <https://linked.data.gov.au/def/abis-msg/shape/display.shapes/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ndesdb: <https://linked.data.gov.au/def/ndes/> .
-@prefix nsh: <https://linked.data.gov.au/def/ndes/shape/> .
+@prefix abism: <https://linked.data.gov.au/def/abis-msg/> .
+@prefix nsh: <https://linked.data.gov.au/def/abis-msg/shape/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -15,52 +15,52 @@
 @prefix tern: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ndesdb:DeleteObservationsMessage
+abism:DeleteObservationsMessage
   a sh:NodeShape ;
-  sh:property ndesdb:GatewayMessage-definition ;
-  sh:property ndesdb:GatewayMessage-prefLabel ;
-  sh:property ndesdb:GatewayMessage-scopeNote ;
+  sh:property abism:GatewayMessage-definition ;
+  sh:property abism:GatewayMessage-prefLabel ;
+  sh:property abism:GatewayMessage-scopeNote ;
 .
-ndesdb:GatewayMessage
+abism:GatewayMessage
   a sh:NodeShape ;
-  sh:property ndesdb:GatewayMessage-definition ;
-  sh:property ndesdb:GatewayMessage-prefLabel ;
-  sh:property ndesdb:GatewayMessage-scopeNote ;
+  sh:property abism:GatewayMessage-definition ;
+  sh:property abism:GatewayMessage-prefLabel ;
+  sh:property abism:GatewayMessage-scopeNote ;
 .
-ndesdb:GatewayMessage-definition
+abism:GatewayMessage-definition
   a sh:PropertyShape ;
   sh:path skos:definition ;
   sh:name "definition" ;
 .
-ndesdb:GatewayMessage-prefLabel
+abism:GatewayMessage-prefLabel
   a sh:PropertyShape ;
   sh:path skos:prefLabel ;
   sh:name "prefLabel" ;
 .
-ndesdb:GatewayMessage-scopeNote
+abism:GatewayMessage-scopeNote
   a sh:PropertyShape ;
   sh:path skos:scopeNote ;
   sh:name "scope note" ;
 .
-ndesdb:Message
+abism:Message
   a sh:NodeShape ;
-  sh:property ndesdb:GatewayMessage-definition ;
-  sh:property ndesdb:GatewayMessage-prefLabel ;
-  sh:property ndesdb:GatewayMessage-scopeNote ;
+  sh:property abism:GatewayMessage-definition ;
+  sh:property abism:GatewayMessage-prefLabel ;
+  sh:property abism:GatewayMessage-scopeNote ;
 .
-ndesdb:NewObservationsMessage
+abism:NewObservationsMessage
   a sh:NodeShape ;
-  sh:property ndesdb:GatewayMessage-definition ;
-  sh:property ndesdb:GatewayMessage-prefLabel ;
-  sh:property ndesdb:GatewayMessage-scopeNote ;
+  sh:property abism:GatewayMessage-definition ;
+  sh:property abism:GatewayMessage-prefLabel ;
+  sh:property abism:GatewayMessage-scopeNote ;
 .
-ndesdb:UpdateObservationsMessage
+abism:UpdateObservationsMessage
   a sh:NodeShape ;
-  sh:property ndesdb:GatewayMessage-definition ;
-  sh:property ndesdb:GatewayMessage-prefLabel ;
-  sh:property ndesdb:GatewayMessage-scopeNote ;
+  sh:property abism:GatewayMessage-definition ;
+  sh:property abism:GatewayMessage-prefLabel ;
+  sh:property abism:GatewayMessage-scopeNote ;
 .
-<https://linked.data.gov.au/def/ndes/shape/display.shapes>
+<https://linked.data.gov.au/def/abis-msg/shape/display.shapes>
   a owl:Ontology ;
 .
 

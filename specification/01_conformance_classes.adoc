@@ -1,13 +1,13 @@
 == Conformance Classes
 
-Conformance Classes are groupings of Requirements within the NDES-BD. Data claiming conforming to the NDES-BD may indicate conformance per-Conformance Class. Conformance  to a Conformance Class means conforming to _all_ the Requirements within it, not just some.
+Conformance Classes are groupings of Requirements within the ABIS. Data claiming conforming to the ABIS may indicate conformance per-Conformance Class. Conformance  to a Conformance Class means conforming to _all_ the Requirements within it, not just some.
 
 === Conformance Class Index
 
 The Conformance Classes are:
 
 * <<Domain Model Conformance Class, Domain Model Conformance Class>>
-* <<NDES-BD Messages Conformance Class, NDES-BD Messages Conformance Class>>
+* <<ABIS Messages Conformance Class, ABIS Messages Conformance Class>>
 
 === Domain Model Conformance Class
 
@@ -15,21 +15,21 @@ The Conformance Classes are:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:domain-model`]
+|Identifier | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:domain-model`]
 |Label | Domain Model Conformance Class
 |Definition | The set of requirements needed to be met to ensure conformance with the Domain Model within this Standard which is derived from the link:https://linkeddata-dev.tern.org.au/tern-ontology[TERN Ontology]
-|Requirements | link:https://linked.data.gov.au/def/ndesbd/req/observation-properties[`req:observation-properties`]
+|Requirements | link:https://linked.data.gov.au/def/abis/req/observation-properties[`req:observation-properties`]
 |===
 
-=== NDES-BD Messages Conformance Class
+=== ABIS Messages Conformance Class
 
 [width=75%, frame=none]
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages[`cc:ndes-messages`]
-|Label | NDES-BD Messages Conformance Class
-|Definition | The set of requirements needed to be met to ensure conformance with the NDES-BD' Gateway's message needs
-|Requirements | link:https://linked.data.gov.au/def/ndesbd/req/message-new-observations[`req:message-new-observations`]
+|Identifier | link:https://linked.data.gov.au/def/abis/conformanceclass/ndes-messages[`cc:ndes-messages`]
+|Label | ABIS Messages Conformance Class
+|Definition | The set of requirements needed to be met to ensure conformance with the ABIS' Gateway's message needs
+|Requirements | link:https://linked.data.gov.au/def/abis/req/message-new-observations[`req:message-new-observations`]
 |===
 

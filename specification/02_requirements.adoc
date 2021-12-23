@@ -1,6 +1,6 @@
 == Requirements
 
-Requirements are the individual rules that data claiming conformance to the NDES-BD must abide by. 
+Requirements are the individual rules that data claiming conformance to the ABIS must abide by. 
 
 === Requirements Index
 
@@ -37,7 +37,7 @@ Requirements are the individual rules that data claiming conformance to the NDES
 ** <<TERN `System` class Properties, TERN `System` class Properties>>
 ** <<TERN `Text` class Properties, TERN `Text` class Properties>>
 ** <<TERN `Transect` class Properties, TERN `Transect` class Properties>>
-* <<NDES-BD Message Conformance Class Requirements, NDES-BD Message Conformance Class Requirements>>
+* <<ABIS Message Conformance Class Requirements, ABIS Message Conformance Class Requirements>>
 ** <<Message containing new Observations, Message containing new Observations>>
 ** <<Message containing Observation to be deleted, Message containing Observation to be deleted>>
 
@@ -49,10 +49,10 @@ Requirements are the individual rules that data claiming conformance to the NDES
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/sampling-position[`req:sampling-position`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/sampling-position[`req:sampling-position`]
 |Label | Sampling space & time position
 |Definition | Instances of the TERN Ontology's `Sampling` class _MUST_ be located in space and time
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/domain-model[`cc:domain-model`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/cc/domain-model[`cc:domain-model`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology], BDR Project Co-design
 |Validators | _coming_
 |Examples | RDF: link:https://github.com/surroundaustralia/ndes/blob/master/kg/datagraphs/examples/sample-position.ttl[sample-position.ttl]
@@ -66,10 +66,10 @@ Descriptions: <<Sampling Position, Sampling Position>>
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/sample-alternate-identifiers[`req:sample-alternate-identifiers`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/sample-alternate-identifiers[`req:sample-alternate-identifiers`]
 |Label | Sample alternate identifiers
 |Definition | Alternate - non-BDR - identifiers for Sample class instances _MUST_ be indicated the property `dcterms:identifier` and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier'smanager, creator and system
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/cc/domain-model[`cc:domain-model`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/cc/domain-model[`cc:domain-model`]
 |Source | BDR Project Co-design
 |Validators | _coming_
 |Examples | RDF: link:https://github.com/surroundaustralia/ndes/blob/master/kg/datagraphs/examples/sample-alternate-identifiersttl[sample-alternate-identifiers.ttl]
@@ -83,7 +83,7 @@ Descriptions: <<Sample alternate identifiers example, Sample alternate identifie
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/attribute-properties[`req:Attribute-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/attribute-properties[`req:Attribute-properties`]
 |Label | TERN attribute Properties
 |Definition a| Instances of the TERN Ontology's `Attribute` class _MUST_ have:
 
@@ -97,7 +97,7 @@ If the instance has:
 * a Vocabulary of Interlinked Data Ontology `inDataset` predicate, it _must_ indicate a TERN Ontology `RDFDataset` instance;
 * a TERN Ontology `isAttributeOf` predicate, it _must_ indicate an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/attribute/example-valid-01[`attribute:example-valid-01`]
@@ -110,13 +110,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/boolean-properties[`req:Boolean-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/boolean-properties[`req:Boolean-properties`]
 |Label | TERN boolean Properties
 |Definition a| Instances of the TERN Ontology's `Boolean` class _MUST_ have:
 
 * exactly 1 RDF Ontology `value` predicate indicating a `boolean` literal value;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Boolean[`tern:Boolean`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/boolean/example-valid-01[`boolean:example-valid-01`]
@@ -129,7 +129,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/concept-properties[`req:Concept-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/concept-properties[`req:Concept-properties`]
 |Label | TERN concept Properties
 |Definition a| Instances of the TERN Ontology's `Concept` class _MUST_ have:
 
@@ -138,7 +138,7 @@ If the instance has:
 * a maximum of 1 TERN Ontology `localVocabulary` predicate indicating an IRI;
 * exactly 1 TERN Ontology `vocabulary` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Concept[`tern:Concept`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/concept/example-valid-01[`concept:example-valid-01`]
@@ -151,14 +151,14 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/count-properties[`req:Count-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/count-properties[`req:Count-properties`]
 |Label | TERN count Properties
 |Definition a| Instances of the TERN Ontology's `Count` class _MUST_ have:
 
 * exactly 1 RDF Ontology `value` predicate indicating a `integer` literal value;
 * a maximum of 1 TERN Ontology `uncertainty` predicate indicating a `double` literal value;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Count[`tern:Count`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/count/example-valid-01[`count:example-valid-01`]
@@ -171,13 +171,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/dataset-properties[`req:Dataset-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/dataset-properties[`req:Dataset-properties`]
 |Label | TERN dataset Properties
 |Definition a| If the instance has:
 
 * a (FIX: No namespace binding for `http://www.w3.org/ns/dcat#distribution`), it _must_ indicate a TERN Ontology `Distribution` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01[`dataset:example-valid-01`]
@@ -190,13 +190,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/date-properties[`req:Date-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/date-properties[`req:Date-properties`]
 |Label | TERN date Properties
 |Definition a| Instances of the TERN Ontology's `Date` class _MUST_ have:
 
 * exactly 1 RDF Ontology `value` predicate indicating a `date` literal value;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Date[`tern:Date`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/date/example-valid-01[`date:example-valid-01`]
@@ -209,13 +209,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/datetime-properties[`req:DateTime-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/datetime-properties[`req:DateTime-properties`]
 |Label | TERN datetime Properties
 |Definition a| Instances of the TERN Ontology's `DateTime` class _MUST_ have:
 
 * exactly 1 RDF Ontology `value` predicate indicating a `dateTime` literal value;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/DateTime[`tern:DateTime`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/datetime/example-valid-01[`datetime:example-valid-01`]
@@ -228,7 +228,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/deployment-properties[`req:Deployment-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/deployment-properties[`req:Deployment-properties`]
 |Label | TERN deployment Properties
 |Definition a| Instances of the TERN Ontology's `Deployment` class _MUST_ have:
 
@@ -239,7 +239,7 @@ If the instance has:
 * a Semantic Sensor Network Ontology `deployedSystem` predicate, it _must_ indicate a TERN Ontology `System` instance;
 * a TERN Ontology `hasAttribute` predicate, it _must_ indicate a TERN Ontology `Attribute` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Deployment[`tern:Deployment`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/deployment/example-valid-01[`deployment:example-valid-01`]
@@ -252,7 +252,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/featureofinterest-properties[`req:FeatureOfInterest-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/featureofinterest-properties[`req:FeatureOfInterest-properties`]
 |Label | TERN featureofinterest Properties
 |Definition a| Instances of the TERN Ontology's `FeatureOfInterest` class _MUST_ have:
 
@@ -268,7 +268,7 @@ If the instance has:
 * a SOSA Ontology `hasSample` predicate, it _must_ indicate a TERN Ontology `Sample` instance;
 * a SOSA Ontology `isFeatureOfInterestOf` predicate, it _must_ indicate a TERN Ontology `Observation` instance or TERN Ontology `Sampling` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/FeatureOfInterest[`tern:FeatureOfInterest`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/featureofinterest/example-valid-01[`featureofinterest:example-valid-01`]
@@ -281,13 +281,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/iri-properties[`req:IRI-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/iri-properties[`req:IRI-properties`]
 |Label | TERN iri Properties
 |Definition a| Instances of the TERN Ontology's `IRI` class _MUST_ have:
 
 * exactly 1 RDF Ontology `value` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/IRI[`tern:IRI`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/iri/example-valid-01[`iri:example-valid-01`]
@@ -300,13 +300,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/instant-properties[`req:Instant-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/instant-properties[`req:Instant-properties`]
 |Label | TERN instant Properties
 |Definition a| Instances of the TERN Ontology's `Instant` class _MUST_ have:
 
 * exactly 1 Time Ontology `inXSDDateTimeStamp` predicate indicating a `dateTimeStamp` literal value or `dateTime` literal value;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Instant[`tern:Instant`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/instant/example-valid-01[`instant:example-valid-01`]
@@ -319,7 +319,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/instrument-properties[`req:Instrument-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/instrument-properties[`req:Instrument-properties`]
 |Label | TERN instrument Properties
 |Definition a| Instances of the TERN Ontology's `Instrument` class _MUST_ have:
 
@@ -328,7 +328,7 @@ If the instance has:
 * a maximum of 1 RDF Schema Ontology `label` predicate indicating a `string` literal value;
 * exactly 1 TERN Ontology `instrumentType` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Instrument[`tern:Instrument`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/instrument/example-valid-01[`instrument:example-valid-01`]
@@ -341,14 +341,14 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/managedfeature-properties[`req:ManagedFeature-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/managedfeature-properties[`req:ManagedFeature-properties`]
 |Label | TERN managedfeature Properties
 |Definition a| Instances of the TERN Ontology's `ManagedFeature` class _MUST_ have:
 
 * exactly 1 TERN Ontology `dateCommissioned` predicate indicating a `date` literal value;
 * a maximum of 1 TERN Ontology `dateDecommissioned` predicate indicating a `date` literal value;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/ManagedFeature[`tern:ManagedFeature`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/managedfeature/example-valid-01[`managedfeature:example-valid-01`]
@@ -361,7 +361,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/observation-properties[`req:Observation-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/observation-properties[`req:Observation-properties`]
 |Label | TERN observation Properties
 |Definition a| Instances of the TERN Ontology's `Observation` class _MUST_ have:
 
@@ -385,7 +385,7 @@ If the instance has:
 * a Provenance Ontology `wasAssociatedWith` predicate, it _must_ indicate a TERN Organisations Ontology `Person` instance, TERN Organisations Ontology `Person` instance or TERN Organisations Ontology `Organization` instance;
 * a TERN Ontology `usedInstrument` predicate, it _must_ indicate a TERN Ontology `Instrument` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/observation/example-valid-01[`observation:example-valid-01`]
@@ -398,7 +398,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/observationcollection-properties[`req:ObservationCollection-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/observationcollection-properties[`req:ObservationCollection-properties`]
 |Label | TERN observationcollection Properties
 |Definition a| Instances of the TERN Ontology's `ObservationCollection` class _MUST_ have:
 
@@ -411,7 +411,7 @@ If the instance has:
 * a maximum of 1 SOSA Ontology `resultTime` predicate indicating a `dateTime` literal value;
 * a minimum of 1 SOSA Ontology `usedProcedure` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/ObservationCollection[`tern:ObservationCollection`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/observationcollection/example-valid-01[`observationcollection:example-valid-01`]
@@ -424,13 +424,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/percent-properties[`req:Percent-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/percent-properties[`req:Percent-properties`]
 |Label | TERN percent Properties
 |Definition a| Instances of the TERN Ontology's `Percent` class _MUST_ have:
 
 * exactly 1 TERN Ontology `unit` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Percent[`tern:Percent`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/percent/example-valid-01[`percent:example-valid-01`]
@@ -443,13 +443,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/percentrange-properties[`req:PercentRange-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/percentrange-properties[`req:PercentRange-properties`]
 |Label | TERN percentrange Properties
 |Definition a| Instances of the TERN Ontology's `PercentRange` class _MUST_ have:
 
 * exactly 1 TERN Ontology `unit` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/PercentRange[`tern:PercentRange`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/percentrange/example-valid-01[`percentrange:example-valid-01`]
@@ -462,13 +462,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/plot-properties[`req:Plot-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/plot-properties[`req:Plot-properties`]
 |Label | TERN plot Properties
 |Definition a| Instances of the TERN Ontology's `Plot` class _MUST_ have:
 
 * exactly 1 TERN Ontology `featureType` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Plot[`tern:Plot`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/plot/example-valid-01[`plot:example-valid-01`]
@@ -481,13 +481,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/quadrat-properties[`req:Quadrat-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/quadrat-properties[`req:Quadrat-properties`]
 |Label | TERN quadrat Properties
 |Definition a| Instances of the TERN Ontology's `Quadrat` class _MUST_ have:
 
 * exactly 1 TERN Ontology `featureType` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Quadrat[`tern:Quadrat`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/quadrat/example-valid-01[`quadrat:example-valid-01`]
@@ -500,7 +500,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/quantitativemeasure-properties[`req:QuantitativeMeasure-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/quantitativemeasure-properties[`req:QuantitativeMeasure-properties`]
 |Label | TERN quantitativemeasure Properties
 |Definition a| Instances of the TERN Ontology's `QuantitativeMeasure` class _MUST_ have:
 
@@ -508,7 +508,7 @@ If the instance has:
 * a maximum of 1 TERN Ontology `uncertainty` predicate indicating a `double` literal value;
 * exactly 1 TERN Ontology `unit` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/QuantitativeMeasure[`tern:QuantitativeMeasure`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/quantitativemeasure/example-valid-01[`quantitativemeasure:example-valid-01`]
@@ -521,7 +521,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/quantitativerange-properties[`req:QuantitativeRange-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/quantitativerange-properties[`req:QuantitativeRange-properties`]
 |Label | TERN quantitativerange Properties
 |Definition a| Instances of the TERN Ontology's `QuantitativeRange` class _MUST_ have:
 
@@ -530,7 +530,7 @@ If the instance has:
 * a maximum of 1 TERN Ontology `uncertainty` predicate indicating a `double` literal value;
 * a maximum of 1 TERN Ontology `unit` predicate indicating an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/QuantitativeRange[`tern:QuantitativeRange`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/quantitativerange/example-valid-01[`quantitativerange:example-valid-01`]
@@ -543,7 +543,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/rdfdataset-properties[`req:RDFDataset-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/rdfdataset-properties[`req:RDFDataset-properties`]
 |Label | TERN rdfdataset Properties
 |Definition a| Instances of the TERN Ontology's `RDFDataset` class _MUST_ have:
 
@@ -559,7 +559,7 @@ If the instance has:
 * a Dublin Core Terms `source` predicate, it _must_ indicate an IRI;
 * a Vocabulary of Interlinked Data Ontology `vocabulary` predicate, it _must_ indicate an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/rdfdataset/example-valid-01[`rdfdataset:example-valid-01`]
@@ -572,13 +572,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/result-properties[`req:Result-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/result-properties[`req:Result-properties`]
 |Label | TERN result Properties
 |Definition a| Instances of the TERN Ontology's `Result` class _MUST_ have:
 
 * exactly 1 SOSA Ontology `isResultOf` predicate indicating a TERN Ontology `Observation` instance, TERN Ontology `Sampling` instance or TERN Ontology `Attribute` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Result[`tern:Result`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/result/example-valid-01[`result:example-valid-01`]
@@ -591,14 +591,14 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/sample-properties[`req:Sample-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/sample-properties[`req:Sample-properties`]
 |Label | TERN sample Properties
 |Definition a| Instances of the TERN Ontology's `Sample` class _MUST_ have:
 
 * a minimum of 1 SOSA Ontology `isResultOf` predicate indicating a TERN Ontology `Sampling` instance;
 * a minimum of 1 SOSA Ontology `isSampleOf` predicate indicating a TERN Ontology `FeatureOfInterest` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Sample[`tern:Sample`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/sample/example-valid-01[`sample:example-valid-01`]
@@ -611,7 +611,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/sampling-properties[`req:Sampling-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/sampling-properties[`req:Sampling-properties`]
 |Label | TERN sampling Properties
 |Definition a| Instances of the TERN Ontology's `Sampling` class _MUST_ have:
 
@@ -632,7 +632,7 @@ If the instance has:
 * a SOSA Ontology `madeBySampler` predicate, it _must_ indicate a TERN Ontology `Sampler` instance;
 * a TERN Ontology `usedInstrument` predicate, it _must_ indicate a TERN Ontology `Instrument` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/sampling/example-valid-01[`sampling:example-valid-01`]
@@ -645,7 +645,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/site-properties[`req:Site-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/site-properties[`req:Site-properties`]
 |Label | TERN site Properties
 |Definition a| Instances of the TERN Ontology's `Site` class _MUST_ have:
 
@@ -661,7 +661,7 @@ If the instance has:
 * a GeoSPARQL Ontology `sfWithin` predicate, it _must_ indicate an IRI;
 * a TERN Ontology `hasSiteVisit` predicate, it _must_ indicate a TERN Ontology `SiteVisit` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Site[`tern:Site`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/site/example-valid-01[`site:example-valid-01`]
@@ -674,7 +674,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/sitevisit-properties[`req:SiteVisit-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/sitevisit-properties[`req:SiteVisit-properties`]
 |Label | TERN sitevisit Properties
 |Definition a| Instances of the TERN Ontology's `SiteVisit` class _MUST_ have:
 
@@ -693,7 +693,7 @@ If the instance has:
 * a TERN Ontology `hasSampling` predicate, it _must_ indicate a TERN Ontology `Sampling` instance;
 * a TERN Ontology `isSiteVisitOf` predicate, it _must_ indicate an IRI;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/SiteVisit[`tern:SiteVisit`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/sitevisit/example-valid-01[`sitevisit:example-valid-01`]
@@ -706,7 +706,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/system-properties[`req:System-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/system-properties[`req:System-properties`]
 |Label | TERN system Properties
 |Definition a| Instances of the TERN Ontology's `System` class _MUST_ have:
 
@@ -717,7 +717,7 @@ If the instance has:
 * a Semantic Sensor Network Ontology `hasDeployment` predicate, it _must_ indicate a TERN Ontology `Deployment` instance;
 * a Semantic Sensor Network Ontology `implements` predicate, it _must_ indicate a TERN Ontology `Method` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/System[`tern:System`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/system/example-valid-01[`system:example-valid-01`]
@@ -730,13 +730,13 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/text-properties[`req:Text-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/text-properties[`req:Text-properties`]
 |Label | TERN text Properties
 |Definition a| Instances of the TERN Ontology's `Text` class _MUST_ have:
 
 * exactly 1 RDF Ontology `value` predicate indicating a `string` literal value or `langString` literal value;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Text[`tern:Text`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/text/example-valid-01[`text:example-valid-01`]
@@ -749,7 +749,7 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/transect-properties[`req:Transect-properties`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/transect-properties[`req:Transect-properties`]
 |Label | TERN transect Properties
 |Definition a| Instances of the TERN Ontology's `Transect` class _MUST_ have:
 
@@ -759,13 +759,13 @@ If the instance has:
 * a maximum of 1 TERN Ontology `transectEndPoint` predicate indicating a TERN Location Alignment Ontology `Point` instance;
 * a maximum of 1 TERN Ontology `transectStartPoint` predicate indicating a TERN Location Alignment Ontology `Point` instance;
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology[`cc:tern-ontology`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology[`cc:tern-ontology`]
 |Source | link:https://w3id.org/tern/ontologies/tern[TERN Ontology]
 |Validators | link:https://w3id.org/tern/ontologies/tern/Transect[`tern:Transect`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/transect/example-valid-01[`transect:example-valid-01`]
 |===
 
-=== NDES-BD Message Conformance Class Requirements
+=== ABIS Message Conformance Class Requirements
 
 ==== Message containing new Observations
 
@@ -773,16 +773,16 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/message-new-observations[`req:message-new-observations`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/message-new-observations[`req:message-new-observations`]
 |Label | Message containing new Observations
-|Definition a| Instances of the NDES-BD Ontology's `NewObservationsMessage` class _MUST_ contain: 
+|Definition a| Instances of the ABIS Ontology's `NewObservationsMessage` class _MUST_ contain: 
 
 * a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;
-* exactly 1 NDES-BD Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
+* exactly 1 ABIS Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages[`cc:ndes-messages`]
-|Source | NDES-BD Gateway Messaging
-|Validators | link:https://linked.data.gov.au/def/ndesbd/shape/message-new-observations-01[`nsh:message-new-observations-01`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/ndes-messages[`cc:ndes-messages`]
+|Source | ABIS Gateway Messaging
+|Validators | link:https://linked.data.gov.au/def/abis/shape/message-new-observations-01[`nsh:message-new-observations-01`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01[`https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01`]
 |===
 
@@ -792,16 +792,16 @@ If the instance has:
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/ndesbd/req/message-delete-observations[`req:message-delete-observations`]
+|Identifier | link:https://linked.data.gov.au/def/abis/req/message-delete-observations[`req:message-delete-observations`]
 |Label | Message containing Observation to be deleted
-|Definition a| Instances of the NDES-BD Ontology's `DeleteObservationsMessage` class _MUST_ contain:
+|Definition a| Instances of the ABIS Ontology's `DeleteObservationsMessage` class _MUST_ contain:
 
 * a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;
 * the SOSA Ontology `ObservationCollection` class instance must contain a minimum of 1 RDFS Ontology `member` predicate indcating an IRI of an existing TERN Ontology `Observation` class instance`.
 
-|Conformance Classes | link:https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages[`cc:ndes-messages`]
-|Source | NDES-BD Gateway Messaging
-|Validators | link:https://linked.data.gov.au/def/ndesbd/shape/message-delete-observations-01[`nsh:message-delete-observations-01`]
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/ndes-messages[`cc:ndes-messages`]
+|Source | ABIS Gateway Messaging
+|Validators | link:https://linked.data.gov.au/def/abis/shape/message-delete-observations-01[`nsh:message-delete-observations-01`]
 |Examples | link:https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01[`https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01`]
 |===
 

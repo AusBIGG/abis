@@ -1,4 +1,4 @@
-= NDES Specification
+= ABIS Specification
 :toc:
 :table-stripes: even
 :sectnums:
@@ -9,15 +9,15 @@ NOTE: DRAFT, incomplete
 
 [width=75%, frame=none, grid=none, cols="1,5"]
 |===
-|**IRI** | https://linked.data.gov.au/def/ndesbd/spec
-|**Title** | National Data Exchange Standard's Specifciation
-|**Definition** | This document lists the normative requirements for data aiming to conform to the link:https://linked.data.gov.au/def/ndesdb[National Data Exchange Standard]. It is to be used as the authoratitive, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.
+|**IRI** | https://linked.data.gov.au/def/abis/spec
+|**Title** | Australian Biodiversity Information Standard's Specifciation
+|**Definition** | This document lists the normative requirements for data aiming to conform to the link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. It is to be used as the authoratitive, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.
 |**Created** | 2021-10-24
 |**Modified** | 2021-11-20
 |**Creator** | link:https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), link:https://www.gaiaresources.com.au/[Gaia Resources] and the link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**Publisher** | link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|**Further information** | This specification is part of the Australian link:https://linked.data.gov.au/def/ndes[National Data Exchange Standard]. That Standard is established as a _profile_ of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one. +
+|**Further information** | This specification is part of the Australian link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. That Standard is established as a _profile_ of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one. +
 See that profile's main document for details of the other profile parts and how this Specification related to them.
 |===
 
@@ -25,29 +25,29 @@ See that profile's main document for details of the other profile parts and how 
 
 === Abstract
 
-This Specification is the normative listing of requirements for data conformig to the National Data Exchange Standard for Biodiversity Data (NDES-BD).
+This Specification is the normative listing of requirements for data conformig to the Australian Biodiversity Information Standard for Biodiversity Data (ABIS).
 
 === Normative Status
 
-This Specification is normative for the NDES-BD and take precedence over other elements of the Standard where conflics are found.
+This Specification is normative for the ABIS and take precedence over other elements of the Standard where conflics are found.
 
 === Standard Parts
 
-This _Specification_ document one of many resources that together make the NDES-BD _Standard_. The Standard and its parts are formally defined using terminology from the _Profiles Vocabulary_ <<PROF>>.
+This _Specification_ document one of many resources that together make the ABIS _Standard_. The Standard and its parts are formally defined using terminology from the _Profiles Vocabulary_ <<PROF>>.
 
 Other parts of this _Standard_ are:
 
 * _Schema_
 ** ontologies and other target data models
-** including the overarching NDES-DB Ontology and the TERN Ontology
+** including the overarching ABIS Ontology and the TERN Ontology
 * _Validators_
-** machine-readable validation code to validate data claiming conformance to the NDES-DB
+** machine-readable validation code to validate data claiming conformance to the ABIS
 * _Examples_
 ** Examples of RDF data to show how to formulate BDR information
 * _Mappings_
 ** Instructions on how to convert BDR data to data conformaing to other Standards
 
-The formal and linked listing of this Standards's parts is found in its _Profile Declaration_ online at link:https://linked.data.gov.au/def/ndesdb[National Data Exchange Standard].
+The formal and linked listing of this Standards's parts is found in its _Profile Declaration_ online at link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard].
 
 === Namespaces
 
@@ -55,11 +55,11 @@ The formal and linked listing of this Standards's parts is found in its _Profile
 |===
 |Prefix | Namespace | Description
 
-|**`req:`** | **`https://linked.data.gov.au/def/ndesbd/req/`** | **NDES-BD Requirements namespace**
+|**`req:`** | **`https://linked.data.gov.au/def/abis/req/`** | **ABIS Requirements namespace**
 |`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
 |`ex:` | `http://example.com/thing` | Generic examples namespace
-|`nex:` | `https://linked.data.gov.au/def/ndesbd/examples/` | NDES-BD Canonical Examples namespace
-|`nsh:` | `https://linked.data.gov.au/def/ndesbd/shape/` | NDES-BD Validators Shapes namespace
+|`nex:` | `https://linked.data.gov.au/def/abis/examples/` | ABIS Canonical Examples namespace
+|`nsh:` | `https://linked.data.gov.au/def/abis/shape/` | ABIS Validators Shapes namespace
 |`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
 |`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 |`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
@@ -72,7 +72,7 @@ The formal and linked listing of this Standards's parts is found in its _Profile
 
 == Introduction
 
-This document is a list of _requirements_ for data to meet in order to conform to the link:https://linked.data.gov.au/def/ndes[National Data Exchange Standard]. Each _requirement_ is defined with a table of values like this:
+This document is a list of _requirements_ for data to meet in order to conform to the link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. Each _requirement_ is defined with a table of values like this:
 
 [width=25%, frame=none, grid=none]
 |===
@@ -106,7 +106,7 @@ The following subsections define properties of the _requirements_ in detail.
 
 === Identifier
 
-Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace <https://linked.data.gov.au/def/ndesbd/req/> and `X` is a number, the number of the _requirement_.
+Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace <https://linked.data.gov.au/def/abis/req/> and `X` is a number, the number of the _requirement_.
 
 The IRI namespace plus the number make the complete IRI of the _requirement_.
 
@@ -118,25 +118,25 @@ Each _requirement_ is named with a short form of its definition, to assist with 
 
 === Definition
 
-Each _requirement_ is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the link:https://www.w3.org/TR/owl2-overview/[Web Ontology Language (OWL)] since the _target models_ of the NDES-BD are themselves OWL Ontologies.
+Each _requirement_ is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the link:https://www.w3.org/TR/owl2-overview/[Web Ontology Language (OWL)] since the _target models_ of the ABIS are themselves OWL Ontologies.
 
-> NOTE: if there are differences between derivatives of this specification, including the NDES-BD validator, these definitions take precendence
+> NOTE: if there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
 
 === Conformance Classes list
 
-Each _requirement_ is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the NDES-BD, the Conformance Classes form modules which data may conform to individually.
+Each _requirement_ is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the ABIS, the Conformance Classes form modules which data may conform to individually.
 
 Each _requirement_ needs to indicate its Conformance Classes by linking to them.
 
 === Contains source notes 
 
-Each _requirement_ contains source notes  what motivated the _requirement_'s definition, including references to source documents or other NDES-BD artifacts, such as ontologies.
+Each _requirement_ contains source notes  what motivated the _requirement_'s definition, including references to source documents or other ABIS artifacts, such as ontologies.
 
 === Related validators
 
-Each _requirement_ contains references to individual, identified, data validation _shapes_ defined in the NDES-BD Profile's _validator_ used to validate link:https://www.w3.org/RDF/[Resource Description Framework (RDF)] data - the only form of data allowed to be used for NDES-BD data exchange.
+Each _requirement_ contains references to individual, identified, data validation _shapes_ defined in the ABIS Profile's _validator_ used to validate link:https://www.w3.org/RDF/[Resource Description Framework (RDF)] data - the only form of data allowed to be used for ABIS data exchange.
 
-The content of _validator_s is contianed in the NDES-BD' _Validator_ resource.
+The content of _validator_s is contianed in the ABIS' _Validator_ resource.
 
 > NOTE: the validating _shapes_ are not 1:1 with these _requirements_ and that there are _requirements_ for which there are no _shapes_ - those _requirements_ that cannot be determined to have been met by inspecting data.
 
@@ -144,7 +144,7 @@ The content of _validator_s is contianed in the NDES-BD' _Validator_ resource.
 
 For each _requirement_, references are given to at least two _canonical examples_ of RDF data that do (positive example) and don't (negative example) pass validation using the validators related to the _requirement_.
 
-The content of the _canonical examples_, i.e. the examples' data, is contianed in the NDES-BD' _Canonical Examples_ resource.
+The content of the _canonical examples_, i.e. the examples' data, is contianed in the ABIS' _Canonical Examples_ resource.
 
 include::01_conformance_classes.adoc[]
 

@@ -1,7 +1,7 @@
 {
   "@context": {
     "dcterms": "http://purl.org/dc/terms/",
-    "ndesdb": "https://linked.data.gov.au/def/ndesbd/",
+    "abism": "https://linked.data.gov.au/def/abis/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "sosa": "http://www.w3.org/ns/sosa/",
@@ -79,19 +79,19 @@
     },
     {
       "@id": "https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01",
-      "@type": "ndesdb:NewObservationsMessage",
+      "@type": "abism:NewObservationsMessage",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "A minimally valid ndesdb:NewObservationsMessage instance"
+        "@value": "A minimally valid abism:NewObservationsMessage instance"
       },
       "rdfs:label": {
         "@language": "en",
-        "@value": "Valid NDES-BD NewObservationsMessage 01"
+        "@value": "Valid ABIS NewObservationsMessage 01"
       },
       "rdfs:member": {
         "@id": "https://linked.data.gov.au/dataset/bdr/observationcollection/example-valid-01"
       },
-      "ndesdb:targetDataset": {
+      "abism:targetDataset": {
         "@id": "https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01"
       }
     },

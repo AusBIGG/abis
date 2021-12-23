@@ -1,6 +1,6 @@
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex: <http://example.com/thing/> 
-PREFIX ndesdb: <https://linked.data.gov.au/def/ndesbd/>
+PREFIX abism: <https://linked.data.gov.au/def/abis/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/> 
@@ -11,10 +11,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
 <https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01>
-    a ndesdb:NewObservationsMessage ;
-    rdfs:label "Valid NDES-BD NewObservationsMessage 01"@en ;
-    rdfs:comment "A minimally valid ndesdb:NewObservationsMessage instance"@en ;
-    ndesdb:targetDataset <https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01> ;
+    a abism:NewObservationsMessage ;
+    rdfs:label "Valid ABIS NewObservationsMessage 01"@en ;
+    rdfs:comment "A minimally valid abism:NewObservationsMessage instance"@en ;
+    abism:targetDataset <https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01> ;
     rdfs:member <https://linked.data.gov.au/dataset/bdr/observationcollection/example-valid-01> ;
 .
 
