@@ -36,7 +36,7 @@ If that object exists, the BDR may respond with the following _Exists Response M
 
 <http://createme.org/exists-2022-01-03-5432>
 	owl:sameAs <message/12344> ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 <https://linked.data.gov.au/dataset/bdr/site/25> 
@@ -64,7 +64,7 @@ If the object does not exist, the BDR may respond with the following _Exists Res
 
 <http://createme.org/exists-2022-01-03-5432>
 	owl:sameAs <message/12344> ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 <https://linked.data.gov.au/dataset/bdr/site/25> 
@@ -111,7 +111,7 @@ A response message from the server, a `dbrm:DeleteResponseMessage`, could look l
 
 <http://createme.org/abcdefg>
 	owl:sameAs <message/12344> ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 <https://linked.data.gov.au/dataset/bdr/site/tbjc>
@@ -140,7 +140,7 @@ If an object that the client is not allowed to delete is requested for deletion,
 
 <http://createme.org/abcdefg>
 	owl:sameAs <message/12344> ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 <https://linked.data.gov.au/dataset/bdr/site/tbjc>
@@ -182,7 +182,8 @@ The following RDF data represents a minimalist _create_ message send to the Biod
     void:inDataset <dataset/fake> ;
     sosa:isResultOf <http://createme.org/2> ;
     sosa:isSampleOf <site/tbjc> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/ecb855ed-50e1-4299-8491-861759ef40b7> ;
+    tern:featureType 
+		<http://linked.data.gov.au/def/tern-cv/ecb855ed-50e1-4299-8491-861759ef40b7> ;
 .
 ```
 
@@ -192,7 +193,7 @@ NOTE: Placeholder IRIs can be anything starting with `http://createme.org/` so t
 
 All the required properties of both the `tern:Sampling` & `tern:Sample` instances, as specified by the _Domain Model_ requirements, are present in this data. It is presumed here that the site `<https://linked.data.gov.au/dataset/bdr/site/tbjc>` (using the short form IRI `<site/tbjc>` in the data above) and the dataset `<https://linked.data.gov.au/dataset/bdr/dataset/fake>` (`<dataset/fake>`) are present in the BDR. Their existence is not checked by message validation but by ingest procedures.
 
-Validation of this message will return a `true` response and ingestion into the BDR will return a response similar to this:
+Validation of this message will return `true` and creation of its content in the BDR will return a response similar to this:
 
 ```turtle
 @prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
@@ -201,7 +202,7 @@ Validation of this message will return a `true` response and ingestion into the 
 @base <https://linked.data.gov.au/dataset/bdr/> .
 
 <message/12347>
-    a bdrm:IngestMessage ;
+    a bdrm:CreateResponseMessage ;
     dcterms:hasPart
         <http://createme.org/create-msg-2022-01-03-968574> ,
         <http://createme.org/2> ,
@@ -239,7 +240,7 @@ If a part of the client's message was not able to be ingested, perhaps the Sampl
 @base <https://linked.data.gov.au/dataset/bdr/> .
 
 <message/12347>
-    a bdrm:IngestMessage ;
+    a bdrm:CreateResponseMessage ;
     dcterms:hasPart
         <http://createme.org/create-msg-2022-01-03-968574> ,
         <http://createme.org/2> ,
@@ -248,12 +249,12 @@ If a part of the client's message was not able to be ingested, perhaps the Sampl
 
 <http://createme.org/create-msg-2022-01-03-968574> 
 	owl:sameAs <message/12344> ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .	
 
 <http://createme.org/2> 
 	owl:sameAs <sampling/12345> ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .	
 
 <http://createme.org/3>
@@ -262,14 +263,146 @@ If a part of the client's message was not able to be ingested, perhaps the Sampl
 .
 ```
 
-In the ingestion message above, the client message `<http://createme.org/create-msg-2022-01-03-968574>` and its contained `tern:Sampling` instance, `<http://createme.org/2>`, have been indested successfully but not the `tern:Sample` instance.
+In the creation message above, the client message `<http://createme.org/create-msg-2022-01-03-968574>` and its contained `tern:Sampling` instance, `<http://createme.org/2>`, have been indested successfully but not the `tern:Sample` instance.
 
 After receiveing this message, the client _SHOULD_ send an update message to the BDR to update the `tern:Sampling` instance with corrected `tern:Sample` information, which it _MUST_ identifiy with the BDR-issued IRI `<sampling/12345>`, and _NOT_ it's original IRI for it `<http://createme.org/2>`.
 
+==== Creating non-BDR objects
+
+The following RDF data adds an externally-defined vocabulary to the BDR:
+
+```turtle
+@prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://createme.org/create-msg-2022-01-03-968574>
+    a bdrm:CreateMessage ;
+    dcterms:hasPart <http://example.com/voc/habitats-extended> ;
+.
+
+<http://example.com/voc/habitats-extended>
+    a skos:ConceptScheme ;
+    skos:prefLabel "BDR Extended Feature Types"@en ;
+    ...
+    skos:hasTopConcept 
+		<http://example.com/voc/habitats-extended/underground> ,
+		<http://example.com/voc/habitats-extended/underwater> ;
+.
+
+<http://example.com/voc/habitats-extended/underground>
+    a skos:Concept ;
+    skos:prefLabel "Underground Habitat"@en ;
+    ...
+    skos:topConceptOf <http://example.com/voc/habitats-extended> ;
+.
+
+<http://example.com/voc/habitats-extended/underwater>
+    a skos:Concept ;
+    skos:prefLabel "Underwater Habitat"@en ;
+    ...
+    skos:topConceptOf <http://example.com/voc/habitats-extended> ;
+.
+```
+
+In the message above, the `CreaeMessage` only refers to the `ConceptScheme` instance added to the BDR, not each of its contained `Concept` instances. The alead-defined IRI of the `ConceptScheme` is given - not a `http://createme.org` IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.
+
+The BDR may erspond to this sort of message with the following:
+
+```turtle
+@prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@base <https://linked.data.gov.au/dataset/bdr/> .
+
+<message/12347>
+    a bdrm:CreateResponseMessage ;
+    dcterms:hasPart
+        <http://createme.org/create-msg-2022-01-03-968574> ,
+        <http://example.com/voc/habitats-extended> ;
+.
+
+<http://createme.org/create-msg-2022-01-03-968574>
+	owl:sameAs <message/12344> ;
+	bdrm:exists true ;
+.
+
+<http://example.com/voc/habitats-extended>
+	bdrm:exists true ;
+.
+```
+
+In the response message above, the BDR confirms creation of the create message and gives it a BDR IRI, `<message/12344>`. It also confirms the existence within it of the vocabulary with `<http://example.com/voc/habitats-extended> bdrm:exists true`.
 
 === Update Messages
 
-_TODO_
+An update message sent to the BDR can update any item that the client has permission to update - BRD-managed things like Sites & Samples or other things like vocabularies. An update message might look like this:
+
+```turtle
+@prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+
+<http://createme.org/abcdefghij>
+    a bdrm:UpdateMessage ;
+    dcterms:hasPart
+        <https://linked.data.gov.au/dataset/bdr/site/asm> ,
+		<http://example.com/voc/habitats-extended> ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/site/asm>
+    tern:siteDescription """The Alice Springs Mulga flux station is located on ...""" ;
+.
+
+<http://example.com/voc/habitats-extended> 
+	skos:hasTopConcept <http://example.com/voc/habitats-extended/under-sea> ;
+.
+
+<http://example.com/voc/habitats-extended/under-sea>
+    a skos:Concept ;
+    skos:prefLabel "Under Sea Habitat"@en ;
+    ...
+    skos:topConceptOf <http://example.com/voc/habitats-extended> ;
+.
+
+```
+
+In the message above, two things in the BDR are updated: the Site `<site/asm>` - a new `tern:siteDescription` property is added - and the vocabulary `<http://example.com/voc/habitats-extended>` - a new `skos:hasTopConcept` property is added and a new `skos:Concept`, `<http://example.com/voc/habitats-extended/under-sea>`, is added.
+
+The response to the above message may be:
+
+```turtle
+@prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@base <https://linked.data.gov.au/dataset/bdr/> .
+
+<message/12347>
+    a bdrm:UpdateResponseMessage ;
+    dcterms:hasPart
+        <site/asm> ,
+		<http://example.com/voc/habitats-extended> ;
+.
+
+<http://createme.org/abcdefghij>
+	owl:sameAs <message/12344> ;
+	bdrm:exists true ;
+.
+
+<site/asm>
+	bdrm:exists true ;
+.
+
+<http://example.com/voc/habitats-extended>
+	bdrm:exists true ;
+.
+```
+
+In the response message above, the BDR confirms the creation of the client creation message `<http://createme.org/abcdefghij>` and the update of `<site/asm>` & `<http://example.com/voc/habitats-extended>` with existence conformations (`bdrm:exists true`) but does not indicate anything regarding the new `Concept`, `<http://example.com/voc/habitats-extended/under-sea>`. While the `Concept` was addedd successfully, the success is only inferred from the fact that the update to the vocabulary indicated no error.
 
 === Sampling Position
 
