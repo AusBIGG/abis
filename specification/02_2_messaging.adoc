@@ -1,0 +1,82 @@
+=== BDR Message Conformance Class Requirements
+
+The https://linked.data.gov.au/def/bdr-msg:[BDR Messages Ontology] defines a general message class object, `bdrm:Message`, and four subclasses of it that are to be used to convey _create_, _update_, _delete_ and _exists_ (existance check) messages to the BDR. The following Requirements specify the required _structure_ of BDRM messages only and not any requirements of Domain Model content with messages' payloads which is specified in the _Domain Model_ above.
+
+When ABIS content is send to the the Biodiversity Data Repository, the BDR acts both as the storage of that content and also the authoratitive identifier creator for instances of certain classes of resources in that content, namely:
+
+* `tern:Sampling` 
+* `tern:Sampling`
+* `tern:Site`
+
+and also instnaces of the BDR Message classes: `bdrm:createMessage`, `bdrm:UpdateMessage`, `bdrm:DeleteMessage` & `bdrm:ExistsMessage`.
+
+`bdrm:CreateMessage` instances, used to create new content within the BDR, must use the designated placeholder IRI namespace, `http://createme.org/`, for instances of those classes, so that the BDR can replace them with ones it issues. The client requesting new content creation will receive responses from the BDR that indicate what the BDR IRIs ultimately issued for the given placeholder IRI are. There are lots of examples of  `http://createme.org/` in use in the http://bdrgateway.surroundaustralia.com:[BDR Gateway].
+
+==== Message containing new Observations
+
+[width=75%, frame=none, cols="1,5"]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/abis/req/message-new-observations[`req:message-new-observations`]
+|Label | Message containing new Observations
+|Definition a| Instances of the ABIS Ontology's `NewObservationsMessage` class _MUST_ contain: 
+
+* a minimum of 1 RDFS Ontology `member` predicate indicating a SOSA Ontology `ObservationCollection` class instance;
+* exactly 1 ABIS Ontology `targetDataset` predicate indicating a TERN Ontology `RDFDataset` class instance.
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/abis-messages[`cc:bdr-messages`]
+|Source | ABIS Gateway Messaging
+|Validators | link:https://linked.data.gov.au/def/abis/shape/message-new-observations-01[`nsh:message-new-observations-01`]
+|Examples | link:https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01[`https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01`]
+|===
+
+==== Message Part
+
+[width=75%, frame=none, cols="1,5"]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/abis/req/bdr-messages[`req:bdr-messages`]
+|Label | BDR Message part
+|Definition a| ABIS messages must have at least one part, indicated with dcterms:hasPart
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages[`cc:bdr-messages`]
+|Source | ABIS Gateway Messaging
+|Validators | link:https://linked.data.gov.au/def/bdr-msg-shapes[`https://linked.data.gov.au/def/bdr-msg-shapes`]
+|Examples | See the http://bdrgateway.surroundaustralia.com:[BDR Gateway]
+|===
+
+
+==== CreateMessage Createme IRIs
+
+[width=75%, frame=none, cols="1,5"]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/abis/req/create-createme[`req:create-createme`]
+|Label | CreateMessage Createme IRIs
+|Definition a| BDR CreateMessages instances must indicate parts with createme.org IRIs only
+
+_All items requested to be created via a `bdrm:CreateMessage` must use the designated placeholder IRI namespace, `http://createme.org/`, for instances of classes to be created whose authoratitive namespace is managed by the BDR system. This includes the classes `tern:Sampling`, `tern:Sampling` & `tern:Site`._
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages[`cc:bdr-messages`]
+|Source | ABIS Gateway Messaging
+|Validators | link:https://linked.data.gov.au/def/bdr-msg-shapes[`https://linked.data.gov.au/def/bdr-msg-shapes`]
+|Examples | See the http://bdrgateway.surroundaustralia.com:[BDR Gateway]
+|===
+
+==== Non-Create Message BDR IRIs
+
+[width=75%, frame=none, cols="1,5"]
+|===
+|Property | Value
+
+|Identifier | link:https://linked.data.gov.au/def/abis/req/non-create-iris[`req:non-create-iris`]
+|Label | CreateMessage Createme IRIs
+|Definition a| BDR Update, Delete & Exists messages must indicate parts with BDR IRIs only.
+
+_All items requested to be Updated, Deleted or have their existance checked must be indicated with IRIs starting `https://linked.data.gov.au/dataset/bdr/`._
+|Conformance Classes | link:https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages[`cc:bdr-messages`]
+|Source | ABIS Gateway Messaging
+|Validators | link:https://linked.data.gov.au/def/bdr-msg-shapes[`https://linked.data.gov.au/def/bdr-msg-shapes`]
+|Examples | See the http://bdrgateway.surroundaustralia.com:[BDR Gateway], <<Create Messages, Create Messages>>
+|===
+

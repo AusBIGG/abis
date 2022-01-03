@@ -55,11 +55,14 @@ The formal and linked listing of this Standards's parts is found in its _Profile
 |===
 |Prefix | Namespace | Description
 
+|**`abis:`** | **`https://linked.data.gov.au/def/abis/`** | **ABIS namespace** - for the Standard as a whole
 |**`req:`** | **`https://linked.data.gov.au/def/abis/req/`** | **ABIS Requirements namespace**
+|**`cc:`** | **`https://linked.data.gov.au/def/abis/req/`** | **ABIS Conformance Class namespace**
+|**`aex:`** | **`https://linked.data.gov.au/def/abis/eg/`** | **ABIS Canonical Examples namespace**
+|**`ash:`** | **`https://linked.data.gov.au/def/abis/sh/`** | **ABIS Validators Shapes namespace**
+|`bdrm:` | `https://linked.data.gov.au/def/bdr-msg/` | BDR Messages Ontology Namespace
 |`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
 |`ex:` | `http://example.com/thing` | Generic examples namespace
-|`nex:` | `https://linked.data.gov.au/def/abis/examples/` | ABIS Canonical Examples namespace
-|`nsh:` | `https://linked.data.gov.au/def/abis/shape/` | ABIS Validators Shapes namespace
 |`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
 |`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 |`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace

@@ -21,13 +21,13 @@ The Conformance Classes are:
 |Requirements | link:https://linked.data.gov.au/def/abis/req/observation-properties[`req:observation-properties`]
 |===
 
-=== ABIS Messages Conformance Class
+=== BDR Messages Conformance Class
 
 [width=75%, frame=none]
 |===
 |Property | Value
 
-|Identifier | link:https://linked.data.gov.au/def/abis/conformanceclass/abis-messages[`cc:abis-messages`]
+|Identifier | link:https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages[`cc:bdr-messages`]
 |Label | ABIS Messages Conformance Class
 |Definition | The set of requirements needed to be met to ensure conformance with the ABIS' Gateway's message needs
 |Requirements | link:https://linked.data.gov.au/def/abis/req/message-new-observations[`req:message-new-observations`]
