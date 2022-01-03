@@ -1,4 +1,4 @@
-# Australian Biodiversity Information Standard for Biodiversity Data - Implementation
+# Australian Biodiversity Information Standard - Implementation
 This repository contains the Australian Biodiversity Information Standard (ABIS). It contains multiple documentory and data parts, the latter of which are presented as a cohesive Knowledge Graph (KG).
 
 See the following starting points:
