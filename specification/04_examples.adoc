@@ -1,6 +1,6 @@
 == Examples
 
-== Exists Messages
+=== Exists Messages
 
 The following RDF data represents a minimalist _create_ message send to the Biodiversity Data Repository to check the existance of an object, in this case, something with th IRI the `<https://linked.data.gov.au/dataset/bdr/site/25>` which can be inferred to be an instance of `tern:Site`:
 
@@ -76,7 +76,78 @@ Here the BDR has ingested the Exists client message and issued it an ID, `<messa
 
 === Delete Messages
 
-_TODO_
+The following RDF data represents a minimalist _delete_ message send to the Biodiversity Data Repository to delete an existing object:
+
+
+```turtle
+@prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://createme.org/abcdefg>
+    a bdrm:DeleteMessage ;
+    dcterms:hasPart
+        <https://linked.data.gov.au/dataset/bdr/site/tbjc> ;
+.
+```
+
+No content other than the message object, here `<http://createme.org/abcdefg>`, and the predicate `dcterms:hasPart` indicating the things to delete, here `https://linked.data.gov.au/dataset/bdr/site/tbjc>`.
+
+Multiple things may be deleted with multiple values for `dcterms:hasPart`.
+
+A response message from the server, a `dbrm:DeleteResponseMessage`, could look like this:
+
+```turtle
+@prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@base <https://linked.data.gov.au/dataset/bdr/> .
+
+<message/12347>
+    a bdrm:DeleteResponseMessage ;
+    dcterms:hasPart 
+		<http://createme.org/abcdefg> ,
+		<https://linked.data.gov.au/dataset/bdr/site/tbjc> ;
+.
+
+<http://createme.org/abcdefg>
+	owl:sameAs <message/12344> ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/site/tbjc>
+	bdrm:exists false ;
+.
+```
+
+Here the initial `bdrm:DeleteMessage` from the client has been stored by the server with IRI `<message/12344>` and the object that was requested to be deleted `<https://linked.data.gov.au/dataset/bdr/site/tbjc>`, is indicated as not existing.
+
+If a non-existent object was requested for deletion, the response message would still indicate `bdrm:exists false` since it doesn't exist. 
+
+If an object that the client is not allowed to delete is requested for deletion, an error message like the following may be sent by the BDR:
+
+```turtle
+@prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@base <https://linked.data.gov.au/dataset/bdr/> .
+
+<message/12347>
+    a bdrm:DeleteResponseMessage ;
+    dcterms:hasPart 
+		<http://createme.org/abcdefg> ,
+		<https://linked.data.gov.au/dataset/bdr/site/tbjc> ;
+.
+
+<http://createme.org/abcdefg>
+	owl:sameAs <message/12344> ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/site/tbjc>
+	bdrm:exists true ;
+	bdrm:clientMessageError "This instance of tern:Site may not be deleted by this client. The client does not have sufficient privileges" ;
+.
+```
 
 === Create Messages
 
@@ -139,17 +210,17 @@ Validation of this message will return a `true` response and ingestion into the 
 
 <http://createme.org/create-msg-2022-01-03-968574> 
 	owl:sameAs <message/12344> ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .	
 
 <http://createme.org/2> 
 	owl:sameAs <sampling/12345> ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .	
 
 <http://createme.org/3> 
 	owl:sameAs <sample/12346> ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 ```
 
@@ -157,7 +228,7 @@ In the code above, the message sent from the BDR system to the client in respons
 
 NOT: Since the BDR uses a monotonically increasing numberical identifier, in this example the BDR identifiers for the client message, the Sampling and Sample instances and the BDR's reponse message are all sequential integers, `12344`, `12345`, `12346` & `12347`. Such sequential numbering should _NOT_ be relied on as the BDR may be handing multiple requests and issuing many numerical IDs which may appear out of order to clients.
 
-In this example, the client message, Sampling and Sample instances were all ingested successfully, as indicated by the predicate `bdrm:ingestionStatus` indicating the object `bdrm:ingested` which is a term from a vocabulary of ingestion statuses within the BDR Messaging Ontology.
+In this example, the client message, Sampling and Sample instances were all ingested successfully, as indicated by the predicate `bdrm:exists` indicating the object now exists in the BDR.
 
 If a part of the client's message was not able to be ingested, perhaps the Sample instance indicated a non-existet Feature of Interest, `<site/xxx>`, the BDR response message may look like like this:app-name: 
 
@@ -186,8 +257,8 @@ If a part of the client's message was not able to be ingested, perhaps the Sampl
 .	
 
 <http://createme.org/3>
-	bdrm:ingestionStatus bdrm:not-ingested ;
-	bdrm:ingestionErrorMessage "This instance of tern:Sample cannot be ingested. The Feature of Interest indicate with sosa:isSampleOf (https://linked.data.gov.au/dataset/bdr/site/xxx) does not exist."
+	bdrm:exists false ;
+	bdrm:clientMessageError "This instance of tern:Sample cannot be ingested. The Feature of Interest indicate with sosa:isSampleOf (https://linked.data.gov.au/dataset/bdr/site/xxx) does not exist."
 .
 ```
 
