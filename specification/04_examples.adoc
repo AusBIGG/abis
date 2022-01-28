@@ -1,8 +1,19 @@
 == Examples
 
-=== Exists Messages
+=== BDR Messages
 
-The following RDF data represents a minimalist _create_ message send to the Biodiversity Data Repository to check the existance of an object, in this case, something with th IRI the `<https://linked.data.gov.au/dataset/bdr/site/25>` which can be inferred to be an instance of `tern:Site`:
+This section contains examples of the messages that may be sent to the Biodiversity Data Repository (BDR) and potentially other ABIS-conformant systems to alter their content. 
+
+[NOTE]
+====
+The BDR uses the link:https://www.linked.data.gov.au[Australian Government Linked Data Working Group]-issued persistent identifier `+https://linked.data.gov.au/dataset/bdr+` for all of the content for which it is the authoritive store. Other ABIS-conformant systems will necissarily use other PIDs, so these examples, if taken for direcion with other systems, will need to substitute that PID for others.
+
+The `+http://createme.org+` IRI used is a data placholder - a token - with no meaning other than for system identification and it may be reused by other systems.
+====
+
+==== Exists Messages
+
+The following RDF data represents a minimalist _create_ message send to the BDR to check the existance of an object, in this case, something with th IRI the `+<https://linked.data.gov.au/dataset/bdr/site/25>+` which can be inferred to be an instance of `tern:Site`:
 
 ```turtle
 @prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
@@ -15,9 +26,9 @@ The following RDF data represents a minimalist _create_ message send to the Biod
 .
 ```
 
-The IRI of the message, `<http://createme.org/exists-2022-01-03-5432>` uses the placeholder namespace `http://createme.org` and an ID part `exists-2022-01-03-5432` that presumably means something to the client.
+The IRI of the message, `+<http://createme.org/exists-2022-01-03-5432>+` uses the placeholder namespace `+http://createme.org+` and an ID part `exists-2022-01-03-5432` that presumably means something to the client.
 
-The thing checked is the IRI `<https://linked.data.gov.au/dataset/bdr/site/25>` which, as required for all existence check items, starts with the namespace of the BDR dataset, `https://linked.data.gov.au/dataset/bdr`.
+The thing checked is the IRI `+<https://linked.data.gov.au/dataset/bdr/site/25>+` which, as required for all existence check items, starts with the namespace of the BDR dataset, `+https://linked.data.gov.au/dataset/bdr+`.
 
 If that object exists, the BDR may respond with the following _Exists Response Message_:
 
@@ -45,7 +56,7 @@ If that object exists, the BDR may respond with the following _Exists Response M
 .
 ```
 
-Here the BDR has ingested the Exists client message and issued it an ID, `<message/12344>` and also confirmed that the object `<https://linked.data.gov.au/dataset/bdr/site/25>` does exist and that it is of type `tern:Plot` which is a specialised subclass of `tern:Site`. We already knew it was of type `tern:Site` by `/site/` in the IRI but the BDR will indicate the most specialised type for an object.
+Here the BDR has ingested the Exists client message and issued it an ID, `+<message/12344>+` and also confirmed that the object `+<https://linked.data.gov.au/dataset/bdr/site/25>+` does exist and that it is of type `tern:Plot` which is a specialised subclass of `tern:Site`. We already knew it was of type `tern:Site` by `/site/` in the IRI but the BDR will indicate the most specialised type for an object.
 
 If the object does not exist, the BDR may respond with the following _Exists Response Message_:
 
@@ -72,9 +83,9 @@ If the object does not exist, the BDR may respond with the following _Exists Res
 .
 ```
 
-Here the BDR has ingested the Exists client message and issued it an ID, `<message/12344>` and confoirmed that the object `<https://linked.data.gov.au/dataset/bdr/site/25>` does _not_ exist with `bdrm:exists false`. No typing information can be given for a non-existant object.
+Here the BDR has ingested the Exists client message and issued it an ID, `<message/12344>` and confoirmed that the object `+<https://linked.data.gov.au/dataset/bdr/site/25>+` does _not_ exist with `bdrm:exists false`. No typing information can be given for a non-existant object.
 
-=== Delete Messages
+==== Delete Messages
 
 The following RDF data represents a minimalist _delete_ message send to the Biodiversity Data Repository to delete an existing object:
 
@@ -90,7 +101,7 @@ The following RDF data represents a minimalist _delete_ message send to the Biod
 .
 ```
 
-No content other than the message object, here `<http://createme.org/abcdefg>`, and the predicate `dcterms:hasPart` indicating the things to delete, here `https://linked.data.gov.au/dataset/bdr/site/tbjc>`.
+No content other than the message object, here `+<http://createme.org/abcdefg>+`, and the predicate `dcterms:hasPart` indicating the things to delete, here `+https://linked.data.gov.au/dataset/bdr/site/tbjc>+`.
 
 Multiple things may be deleted with multiple values for `dcterms:hasPart`.
 
@@ -119,7 +130,7 @@ A response message from the server, a `dbrm:DeleteResponseMessage`, could look l
 .
 ```
 
-Here the initial `bdrm:DeleteMessage` from the client has been stored by the server with IRI `<message/12344>` and the object that was requested to be deleted `<https://linked.data.gov.au/dataset/bdr/site/tbjc>`, is indicated as not existing.
+Here the initial `bdrm:DeleteMessage` from the client has been stored by the server with IRI `<message/12344>` and the object that was requested to be deleted `+<https://linked.data.gov.au/dataset/bdr/site/tbjc>+`, is indicated as not existing.
 
 If a non-existent object was requested for deletion, the response message would still indicate `bdrm:exists false` since it doesn't exist. 
 
@@ -149,7 +160,7 @@ If an object that the client is not allowed to delete is requested for deletion,
 .
 ```
 
-=== Create Messages
+==== Create Messages
 
 The following RDF data represents a minimalist _create_ message send to the Biodiversity Data Repository to create a new instance of `tern:Sampling` within it. It necissarily creates an instance of `tern:Sample` too to record the outcome of the Sampling.
 
@@ -187,11 +198,11 @@ The following RDF data represents a minimalist _create_ message send to the Biod
 .
 ```
 
-In code above, the BDR client `CreateMessage` object, `<http://createme.org/create-msg-2022-01-03-968574>`, indicates the two things are to be created, the `tern:Sampling` instance, `<http://createme.org/2>` and the `tern:Sample` instance, `<http://createme.org/3>`, with the predicate `dcterms:hasPart`. 
+In code above, the BDR client `CreateMessage` object, `+<http://createme.org/create-msg-2022-01-03-968574>+`, indicates the two things are to be created, the `tern:Sampling` instance, `+<http://createme.org/2>+` and the `tern:Sample` instance, `+<http://createme.org/3>+`, with the predicate `dcterms:hasPart`. 
 
-NOTE: Placeholder IRIs can be anything starting with `http://createme.org/` so the IRI for the `CreateMessage` above `create-msg-2022-01-03-968574` means something to the client. The BDR will only use this `createme.org` ID part in its response message so that the client can know what BDR-issued IRI the BDR has allocated to that object.
+NOTE: Placeholder IRIs can be anything starting with `+http://createme.org/+` so the IRI for the `CreateMessage` above `create-msg-2022-01-03-968574` means something to the client. The BDR will only use this `createme.org` ID part in its response message so that the client can know what BDR-issued IRI the BDR has allocated to that object.
 
-All the required properties of both the `tern:Sampling` & `tern:Sample` instances, as specified by the _Domain Model_ requirements, are present in this data. It is presumed here that the site `<https://linked.data.gov.au/dataset/bdr/site/tbjc>` (using the short form IRI `<site/tbjc>` in the data above) and the dataset `<https://linked.data.gov.au/dataset/bdr/dataset/fake>` (`<dataset/fake>`) are present in the BDR. Their existence is not checked by message validation but by ingest procedures.
+All the required properties of both the `tern:Sampling` & `tern:Sample` instances, as specified by the _Domain Model_ requirements, are present in this data. It is presumed here that the site `+<https://linked.data.gov.au/dataset/bdr/site/tbjc>+` (using the short form IRI `<site/tbjc>` in the data above) and the dataset `+<https://linked.data.gov.au/dataset/bdr/dataset/fake>+` (`<dataset/fake>`) are present in the BDR. Their existence is not checked by message validation but by ingest procedures.
 
 Validation of this message will return `true` and creation of its content in the BDR will return a response similar to this:
 
@@ -225,7 +236,7 @@ Validation of this message will return `true` and creation of its content in the
 .
 ```
 
-In the code above, the message sent from the BDR system to the client in response to the client's _create_ message is identified with the IRI `<https://linked.data.gov.au/dataset/bdr/message/12347>`, given in short form above as `<message/12347>`. The original message, which the client supplied with the placeholder identifier `<http://createme.org/create-msg-2022-01-03-968574>` - the previous example - is shown to have been reidentified by the BDR as `<message/12344>`. Similarly, what the client identified as `<http://createme.org/2>`, the BDR has reidentified as `<sampling/12345>` and what the client called `<http://createme.org/2>` the BDR has reidentified as `<sample/12346>`.
+In the code above, the message sent from the BDR system to the client in response to the client's _create_ message is identified with the IRI `+<https://linked.data.gov.au/dataset/bdr/message/12347>+`, given in short form above as `<message/12347>`. The original message, which the client supplied with the placeholder identifier `+<http://createme.org/create-msg-2022-01-03-968574>+` - the previous example - is shown to have been reidentified by the BDR as `<message/12344>`. Similarly, what the client identified as `+<http://createme.org/2>+`, the BDR has reidentified as `<sampling/12345>` and what the client called `+<http://createme.org/2>+` the BDR has reidentified as `<sample/12346>`.
 
 NOT: Since the BDR uses a monotonically increasing numberical identifier, in this example the BDR identifiers for the client message, the Sampling and Sample instances and the BDR's reponse message are all sequential integers, `12344`, `12345`, `12346` & `12347`. Such sequential numbering should _NOT_ be relied on as the BDR may be handing multiple requests and issuing many numerical IDs which may appear out of order to clients.
 
@@ -263,11 +274,11 @@ If a part of the client's message was not able to be ingested, perhaps the Sampl
 .
 ```
 
-In the creation message above, the client message `<http://createme.org/create-msg-2022-01-03-968574>` and its contained `tern:Sampling` instance, `<http://createme.org/2>`, have been indested successfully but not the `tern:Sample` instance.
+In the creation message above, the client message `+<http://createme.org/create-msg-2022-01-03-968574>+` and its contained `tern:Sampling` instance, `+<http://createme.org/2>+`, have been indested successfully but not the `tern:Sample` instance.
 
-After receiveing this message, the client _SHOULD_ send an update message to the BDR to update the `tern:Sampling` instance with corrected `tern:Sample` information, which it _MUST_ identifiy with the BDR-issued IRI `<sampling/12345>`, and _NOT_ it's original IRI for it `<http://createme.org/2>`.
+After receiveing this message, the client _SHOULD_ send an update message to the BDR to update the `tern:Sampling` instance with corrected `tern:Sample` information, which it _MUST_ identifiy with the BDR-issued IRI `<sampling/12345>`, and _NOT_ it's original IRI for it `+<http://createme.org/2>+`.
 
-==== Creating non-BDR objects
+===== Creating non-BDR objects
 
 The following RDF data adds an externally-defined vocabulary to the BDR:
 
@@ -309,7 +320,7 @@ The following RDF data adds an externally-defined vocabulary to the BDR:
 .
 ```
 
-In the message above, the `CreaeMessage` only refers to the `ConceptScheme` instance added to the BDR, not each of its contained `Concept` instances. The alead-defined IRI of the `ConceptScheme` is given - not a `http://createme.org` IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.
+In the message above, the `CreaeMessage` only refers to the `ConceptScheme` instance added to the BDR, not each of its contained `Concept` instances. The alead-defined IRI of the `ConceptScheme` is given - not a `+http://createme.org+` IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.
 
 The BDR may erspond to this sort of message with the following:
 
@@ -336,9 +347,9 @@ The BDR may erspond to this sort of message with the following:
 .
 ```
 
-In the response message above, the BDR confirms creation of the create message and gives it a BDR IRI, `<message/12344>`. It also confirms the existence within it of the vocabulary with `<http://example.com/voc/habitats-extended> bdrm:exists true`.
+In the response message above, the BDR confirms creation of the create message and gives it a BDR IRI, `<message/12344>`. It also confirms the existence within it of the vocabulary with `+<http://example.com/voc/habitats-extended>+` `bdrm:exists true`.
 
-=== Update Messages
+==== Update Messages
 
 An update message sent to the BDR can update any item that the client has permission to update - BRD-managed things like Sites & Samples or other things like vocabularies. An update message might look like this:
 
@@ -404,6 +415,10 @@ The response to the above message may be:
 
 In the response message above, the BDR confirms the creation of the client creation message `<http://createme.org/abcdefghij>` and the update of `<site/asm>` & `<http://example.com/voc/habitats-extended>` with existence conformations (`bdrm:exists true`) but does not indicate anything regarding the new `Concept`, `<http://example.com/voc/habitats-extended/under-sea>`. While the `Concept` was addedd successfully, the success is only inferred from the fact that the update to the vocabulary indicated no error.
 
+=== Domain Model 
+
+These examples extend on those of the domain ontology provided in the link:https://linkeddata.tern.org.au/information-models/tern-ontology[TERN Ontology's examples]. These examples are for non-core domain model (TERN Ontology) converns whcih are nevertheless useful or required for the Biodiversity Data Repository or other ABIS-conformant datasets.
+
 === Sampling Position
 
 From <<Sampling space & time position, Sampling space & time position>>:
@@ -464,7 +479,7 @@ RDF data matching the Left, Centre & right parts of the Figure above are given n
 .
 ```
 
-=== Sample alternate identifiers example
+==== Sample alternate identifiers example
 
 From <<Sample alternate identifiers, Sample alternate identifiers>>:
 

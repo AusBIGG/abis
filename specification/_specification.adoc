@@ -67,7 +67,7 @@ The formal and linked listing of this Standards's parts is found in its _Profile
 |`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 |`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
 |`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
-|`tern:` | `http://www.w3.org/ns/sosa/` | TERN Ontology namespace
+|`tern:` | `https://w3id.org/tern/ontologies/tern/` | TERN Ontology namespace
 |`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
 |`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
 |`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
@@ -109,7 +109,7 @@ The following subsections define properties of the _requirements_ in detail.
 
 === Identifier
 
-Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace <https://linked.data.gov.au/def/abis/req/> and `X` is a number, the number of the _requirement_.
+Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace `+<https://linked.data.gov.au/def/abis/req/>+` and `X` is a number, the number of the _requirement_.
 
 The IRI namespace plus the number make the complete IRI of the _requirement_.
 
@@ -164,3 +164,7 @@ include::04_examples.adoc[]
 == References
 
 * [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>
+
+:sectnums!:
+
+include::15_annex_a_bdr_messages.adoc[]

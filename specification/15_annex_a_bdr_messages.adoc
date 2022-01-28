@@ -1,0 +1,13 @@
+== Annex A: BDR Message Interactions
+
+The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <<BDR Messages, BDR Messages>>.
+
+=== A.1 Sending messages to the BDR
+
+Messages sent to the BDR ard sent via HTTP POST to the BDR's _gateway_, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message's placeholder IRI is replaced with a persistent identifier of the form `+http://linked.data.gov.au/dataset/bdr/message<MESSAGE-ID>+` where the `<MESSAGE-ID>` is assigned by the BDR. 
+
+The message's persistent identifier is replated back to the client system sending the message to the BDR which the client can then use to check progress of the message's absorbtion into the BDR, see the next section.
+
+=== A.2 Following message absorbtion progress
+
+Using the persistent identifier of a 
