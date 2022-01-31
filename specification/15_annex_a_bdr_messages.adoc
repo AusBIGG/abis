@@ -2,12 +2,172 @@
 
 The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <<BDR Messages, BDR Messages>>.
 
+All interactions with the BDR around messages take place via the BDR Gateway, which is the API provided for this purpose. It is online at https://gateway.bdr.gov.au.
+
 === A.1 Sending messages to the BDR
 
-Messages sent to the BDR ard sent via HTTP POST to the BDR's _gateway_, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message's placeholder IRI is replaced with a persistent identifier of the form `+http://linked.data.gov.au/dataset/bdr/message<MESSAGE-ID>+` where the `<MESSAGE-ID>` is assigned by the BDR. 
+Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message's placeholder IRI is replaced with a persistent identifier of the form `+http://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` where the `<MESSAGE-ID>` is assigned by the BDR. 
 
-The message's persistent identifier is replated back to the client system sending the message to the BDR which the client can then use to check progress of the message's absorbtion into the BDR, see the next section.
+The BDR Gateway replies to a client sending a message with the message's persistent identifier. This PID can then be used to check progress of the message's absorbtion into the BDR, see the next section.
+
+[NOTE]
+====
+Persistent Identifiers created for messages by the BDR use the same namespace as other BDR objects however unlike many BDR `site`, `Sampling`, `Observation` & `Sample` instances, messages sent to the BDR are not public. This means you cannot just laod a message's PID into a web browser and be taken to a representation of that message. 
+
+I.e., IRIs of the form `+http://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` do not resolve, by design.
+====
 
 === A.2 Following message absorbtion progress
 
-Using the persistent identifier of a 
+==== A.2.1 BDR Gateway status endpoint
+
+Using the persistent identifier of a message, you can track the status of that message regarding it's absorbtion into the BDR by using the BDR Gateway's message status endpoint, `/status`, which is online at `+https://gateway.bdr.gov.au/status+`.
+
+NOTE: In the development phase of the BDR, the BDR Gateway is online at http://bdrgateway.surroundaustralia.com, thus the status endpoint is http://bdrgateway.surroundaustralia.com/status
+
+The BDR Gateway's status endpoint accepts just one parameter, "iri", which is the IRI of the item you are requesting the status of. For example, the status of a message with IRI `+http://linked.data.gov.au/dataset/bdr/message/1234+` may be requested like so:
+
+http://bdrgateway.surroundaustralia.com/status?iri=http://linked.data.gov.au/dataset/bdr/message/1234
+
+The responses that the BDR Gateway will provide are RDF messages based on the statuses in the next section.
+
+==== A.2.2 Message statuses
+
+The table below indicates the statuses of messages sent to the BDR.
+
+NOTE: Messages submitted to the BDR Gateway only have their status tracked _after_ they are calculated to be valid according to the Gateway's SHACL validators (see http://bdrgateway.surroundaustralia.com/validators). This means there is no status for "not valid" or even "valid": not valid messages are indecated as such on submission and valid messages are assigned a persistent identifier (PID) which is then used for status tracking.
+
+[frame=none, grid=none, cols="1,5"]
+.Message statuses
+|===
+|ID | Description
+
+|`submitted` | The message has been submitted to tbe BDR via the BDR Gateway and has passed validation and had a persistent IRI assigned to it, but not yet processed further
+|`duplicate` | The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an `owl:sameAs` property
+|`nonduplicate` | The message has passed duplication analysis (i.e. it is not considered a duplicate)
+|`badvalues` | The message's values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix `dbrm:doesNotConformTo`
+|`goodvalues` | The message's values - object IRIs and literal data values - are valid according to the value-based validation tests within the BDR
+|`staged` | The message is stored in the Staging BDR environment ready for synchronisation to the Live environment
+|`notlive` | The message is not able to progress from Staging to Live for reason(s) given with the prefix `bdrm:statusMessage`
+|`live` | The message is fully processed and available in the Live BDR environment
+|===
+
+Note that any object with a status of `live` will also have the property `bdrm:exists` and a boolean value of `true`.
+
+==== A.2.3 Message status state diagram
+
+The following figure shows the state diagram used to indicate allowed message transitions between statues.
+
+[[status-state-diagram]]
+.Message statuses state diagram
+image::/img/statuses-state-diagram.png[Message statuses state diagram]
+
+* The states of `duplicate` and `badvalues` are terminal: a message cannot progress from these states to any other
+* `submitted` will progress to either `duplicate` or `nonduplicate` when it passes or failes duplication testing
+* `nonduplicate` will progress to either `goodvalues` or `badvalues` when it passes or failes values testing
+* `goodvalues` will progress to either `staged` or `notstaged` when it is loaded into the BDR's Staging environment
+    * messages in state `notstaged` may progress to `staged` if system actions allow it to be staged, e.g. a system failure os overcome
+* `staged` will progress to either `live` or `notlive` when it is loaded into the BDR's Live environment
+    * messages in state `notlive` may progress to `live` if system actions allow it to be staged, e.g. a system failure os overcome
+
+
+==== A.2.4 Message status RDF
+
+Each status is formally defined within the _Message Statuses_ vocabulary which is part of the _BDR Messages Ontology_ used to characterise messages within the BDR. The vocabulary's concepts correspond to entires in the table above and identifiers for each are, as all things in the BDR, IRIs. 
+
+Message status IRIs are made with the BDR Messages Ontology Namespace, `+https://linked.data.gov.au/def/bdr-msg/+` and the IDs from the first column in table, thus the status `submitted`'s full IRI is `+https://linked.data.gov.au/def/bdr-msg/submitted+`. This may be contracted to `bdrm:submitted`, using the BDR Messages Ontology Namespace's prefix, as given in <<Namespaces, Namespaces>>.
+
+Following are a list of per-status RDF examples, all of which use the dummy message IRI of `+http://linked.data.gov.au/dataset/bdr/message/1234+` for a `CreateMessage` type of message. The IRI base of `+http://linked.data.gov.au/dataset/bdr/+` is used, thus the IRI for the message is shown as `<message/1234>`.
+
+`submitted`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:submitted ;
+.
+```
+
+`duplicate`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:duplicate ;
+    owl:sameAs <message/54321> ;
+.
+```
+
+The message `<message/1234>` has been determined to be a duplicate of `<message/54321>`.
+
+`nonduplicate`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:notduplicate ;
+.
+```
+
+`badvalues`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:badvalues ;
+    dbrm:doesNotConformTo 
+        req:ValuesReqK ,
+        req:ValuesReqM ;
+.
+```
+
+The message `<message/1234>` has failed message values tests for Requirements `req:ValuesReqK` & `req:ValuesReqM`.
+
+`goodvalues`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:goodvalues ;
+.
+```
+
+`notstaged`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:notstaged ;
+    bdrm:statusMessage "The BDR Staging environment is offline due to routine maintenance" ;
+.
+```
+
+The message `<message/1234>` is not able to be staged due to the reason given in the `bdrm:statusMessage`.
+
+`staged`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:staged ;
+```
+
+`notlive`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:notlive ;
+    bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
+.
+```
+
+The message `<message/1234>` is not able to be made live due to the reason given in the `bdrm:statusMessage`.
+
+`live`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:live ;
+```
