@@ -6,7 +6,7 @@ All interactions with the BDR around messages take place via the BDR Gateway, wh
 
 === A.1 Sending messages to the BDR
 
-Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message's placeholder IRI is replaced with a persistent identifier of the form `+http://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` where the `<MESSAGE-ID>` is assigned by the BDR. 
+Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message's placeholder IRI is replaced with a persistent identifier of the form `+https://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` where the `<MESSAGE-ID>` is assigned by the BDR. 
 
 The BDR Gateway replies to a client sending a message with the message's persistent identifier. This PID can then be used to check progress of the message's absorbtion into the BDR, see the next section.
 
@@ -14,7 +14,7 @@ The BDR Gateway replies to a client sending a message with the message's persist
 ====
 Persistent Identifiers created for messages by the BDR use the same namespace as other BDR objects however unlike many BDR `site`, `Sampling`, `Observation` & `Sample` instances, messages sent to the BDR are not public. This means you cannot just laod a message's PID into a web browser and be taken to a representation of that message. 
 
-I.e., IRIs of the form `+http://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` do not resolve, by design.
+I.e., IRIs of the form `+https://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` do not resolve, by design.
 ====
 
 === A.2 Following message absorbtion progress
@@ -25,9 +25,9 @@ Using the persistent identifier of a message, you can track the status of that m
 
 NOTE: In the development phase of the BDR, the BDR Gateway is online at http://bdrgateway.surroundaustralia.com, thus the status endpoint is http://bdrgateway.surroundaustralia.com/status
 
-The BDR Gateway's status endpoint accepts just one parameter, "iri", which is the IRI of the item you are requesting the status of. For example, the status of a message with IRI `+http://linked.data.gov.au/dataset/bdr/message/1234+` may be requested like so:
+The BDR Gateway's status endpoint accepts just one parameter, "iri", which is the IRI of the item you are requesting the status of. For example, the status of a message with IRI `+https://linked.data.gov.au/dataset/bdr/message/1234+` may be requested like so:
 
-http://bdrgateway.surroundaustralia.com/status?iri=http://linked.data.gov.au/dataset/bdr/message/1234
+http://bdrgateway.surroundaustralia.com/status?iri=https://linked.data.gov.au/dataset/bdr/message/1234
 
 The responses that the BDR Gateway will provide are RDF messages based on the statuses in the next section.
 
@@ -77,7 +77,7 @@ Each status is formally defined within the _Message Statuses_ vocabulary which i
 
 Message status IRIs are made with the BDR Messages Ontology Namespace, `+https://linked.data.gov.au/def/bdr-msg/+` and the IDs from the first column in table, thus the status `submitted`'s full IRI is `+https://linked.data.gov.au/def/bdr-msg/submitted+`. This may be contracted to `bdrm:submitted`, using the BDR Messages Ontology Namespace's prefix, as given in <<Namespaces, Namespaces>>.
 
-Following are a list of per-status RDF examples, all of which use an IRI of `+http://linked.data.gov.au/dataset/bdr/message/1234+` for a `CreateMessage` type of message. The IRI base of `+http://linked.data.gov.au/dataset/bdr/+` is used, thus the IRI for the message is shown as `<message/1234>`.
+Following are a list of per-status RDF examples, all of which use an IRI of `+https://linked.data.gov.au/dataset/bdr/message/1234+` for a `CreateMessage` type of message. The IRI base of `+https://linked.data.gov.au/dataset/bdr/+` is used, thus the IRI for the message is shown as `<message/1234>`.
 
 `submitted`:
 
