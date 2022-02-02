@@ -1,5 +1,5 @@
 = ABIS Specification
-:toc:
+:toc: left
 :table-stripes: even
 :sectnums:
 
