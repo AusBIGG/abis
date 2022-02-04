@@ -47,6 +47,8 @@ NOTE: Messages submitted to the BDR Gateway only have their status tracked _afte
 |`nonduplicate` | The message has passed duplication analysis (i.e. it is not considered a duplicate)
 |`badvalues` | The message's values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix `dbrm:doesNotConformTo`
 |`goodvalues` | The message's values - object IRIs and literal data values - are valid according to the value-based validation tests within the BDR
+|`notexpanded` | The message content has not been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to `CreateMessage` messages
+|`expanded` | The message content has been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to `CreateMessage` messages
 |`staged` | The message is stored in the Staging BDR environment ready for synchronisation to the Live environment
 |`notlive` | The message is not able to progress from Staging to Live for reason(s) given with the prefix `bdrm:statusMessage`
 |`live` | The message is fully processed and available in the Live BDR environment
@@ -129,6 +131,29 @@ The message `<message/1234>` has failed message values tests for Requirements `r
 <message/1234>
     a bdrm:CreateMessage ;
     bdrm:absorbtionStatus bdrm:goodvalues ;
+.
+```
+
+`notexpanded`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:notexpanded ;
+    bdrm:statusMessage "The message could not be expanded " ;
+.
+```
+
+The message `<message/1234>` has failed successful expansion following system and ABIS rules.
+
+NOTE: At the time of writing, "system and ABIS rules" that expand data are not defined, so references to particular rules can't be made. When rules are articulated, they will be idenified by IRI so errors in expansion will be referenced similar to the `badvalues` errors.
+
+`expanded`:
+
+```turtle
+<message/1234>
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:expanded ;
 .
 ```
 
