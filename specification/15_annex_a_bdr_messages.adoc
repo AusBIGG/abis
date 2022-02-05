@@ -43,7 +43,7 @@ NOTE: Messages submitted to the BDR Gateway only have their status tracked _afte
 |ID | Description
 
 |`submitted` | The message has been submitted to tbe BDR via the BDR Gateway and has passed validation and had a persistent IRI assigned to it, but not yet processed further
-|`duplicate` | The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an `owl:sameAs` property
+|`duplicate` | The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an `bdrm:duplicates` property
 |`nonduplicate` | The message has passed duplication analysis (i.e. it is not considered a duplicate)
 |`badvalues` | The message's values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix `dbrm:doesNotConformTo`
 |`goodvalues` | The message's values - object IRIs and literal data values - are valid according to the value-based validation tests within the BDR
@@ -97,7 +97,7 @@ Following are a list of per-status RDF examples, all of which use an IRI of `+ht
 <message/1234>
     a bdrm:CreateMessage ;
     bdrm:absorbtionStatus bdrm:duplicate ;
-    owl:sameAs <message/54321> ;
+    bdrm:duplicates <message/54321> ;
 .
 ```
 
