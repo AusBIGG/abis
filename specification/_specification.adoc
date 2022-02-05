@@ -57,6 +57,7 @@ The formal and linked listing of this Standards's parts is found in its _Profile
 
 |**`abis:`** | **`https://linked.data.gov.au/def/abis/`** | **ABIS namespace** - for the Standard as a whole
 |**`req:`** | **`https://linked.data.gov.au/def/abis/req/`** | **ABIS Requirements namespace**
+|**`rul:`** | **`https://linked.data.gov.au/def/abis/rul/`** | **ABIS Rules namespace**
 |**`cc:`** | **`https://linked.data.gov.au/def/abis/req/`** | **ABIS Conformance Class namespace**
 |**`aex:`** | **`https://linked.data.gov.au/def/abis/eg/`** | **ABIS Canonical Examples namespace**
 |**`ash:`** | **`https://linked.data.gov.au/def/abis/sh/`** | **ABIS Validators Shapes namespace**
@@ -67,6 +68,7 @@ The formal and linked listing of this Standards's parts is found in its _Profile
 |`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 |`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
 |`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
+|`status:` | `https://linked.data.gov.au/def/bdr-msg/status/` | BDR Messages Status Vocabulary**
 |`tern:` | `https://w3id.org/tern/ontologies/tern/` | TERN Ontology namespace
 |`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
 |`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace

@@ -45,7 +45,7 @@ NOTE: Messages submitted to the BDR Gateway only have their status tracked _afte
 |`submitted` | The message has been submitted to tbe BDR via the BDR Gateway and has passed validation and had a persistent IRI assigned to it, but not yet processed further
 |`duplicate` | The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an `bdrm:duplicates` property
 |`nonduplicate` | The message has passed duplication analysis (i.e. it is not considered a duplicate)
-|`badvalues` | The message's values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix `bdrm:doesNotConformTo`
+|`badvalues` | The message's values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix `bdrm:failed`
 |`goodvalues` | The message's values - object IRIs and literal data values - are valid according to the value-based validation tests within the BDR
 |`notexpanded` | The message content has not been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to `CreateMessage` messages
 |`expanded` | The message content has been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to `CreateMessage` messages
@@ -78,7 +78,7 @@ image::/img/statuses-state-diagram.png[Message statuses state diagram]
 
 Each status is formally defined within the _Message Statuses_ vocabulary which is part of the _BDR Messages Ontology_ used to characterise messages within the BDR. The vocabulary's concepts correspond to entires in the table above and identifiers for each are, as all things in the BDR, IRIs. 
 
-Message status IRIs are made with the BDR Messages Ontology Namespace, `+https://linked.data.gov.au/def/bdr-msg/+` and the IDs from the first column in table, thus the status `submitted`'s full IRI is `+https://linked.data.gov.au/def/bdr-msg/submitted+`. This may be contracted to `bdrm:submitted`, using the BDR Messages Ontology Namespace's prefix, as given in <<Namespaces, Namespaces>>.
+Message status IRIs are made with the BDR Messages Ontology Namespace, `+https://linked.data.gov.au/def/bdr-msg/+` with an assitional `status` path segment, and the IDs from the first column in table, thus the status `submitted`'s full IRI is `+https://linked.data.gov.au/def/bdr-msg/status/submitted+`. This may be contracted to `status:submitted`, using the BDR Messages Ontology Namespace's prefix, as given in <<Namespaces, Namespaces>>.
 
 Following are a list of per-status RDF examples, all of which use an IRI of `+https://linked.data.gov.au/dataset/bdr/message/1234+` for a `CreateMessage` type of message. The IRI base of `+https://linked.data.gov.au/dataset/bdr/+` is used, thus the IRI for the message is shown as `<message/1234>`.
 
@@ -87,7 +87,7 @@ Following are a list of per-status RDF examples, all of which use an IRI of `+ht
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:submitted ;
+    bdrm:absorbtionStatus status:submitted ;
 .
 ```
 
@@ -96,7 +96,7 @@ Following are a list of per-status RDF examples, all of which use an IRI of `+ht
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:duplicate ;
+    bdrm:absorbtionStatus status:duplicate ;
     bdrm:duplicates <message/54321> ;
 .
 ```
@@ -108,7 +108,7 @@ The message `<message/1234>` has been determined to be a duplicate of `<message/
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:notduplicate ;
+    bdrm:absorbtionStatus status:notduplicate ;
 .
 ```
 
@@ -117,23 +117,23 @@ The message `<message/1234>` has been determined to be a duplicate of `<message/
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:badvalues ;
-    bdrm:doesNotConformTo 
+    bdrm:absorbtionStatus status:badvalues ;
+    bdrm:failed 
         req:ValuesReqK ,
-        req:ValuesReqM ;
+        req:ValuesReqL ;
 .
 ```
 
-The message `<message/1234>` has failed message values tests for Requirements `req:ValuesReqK` & `req:ValuesReqM`.
+The message `<message/1234>` has failed message values tests for Requirements `req:ValuesReqK` & `req:ValuesReqL`.
 
-NOTE: At the time of writing, value tests for BDR messages haven't been defined so dummy test IRIs of `req:ValuesReqK` & `req:ValuesReqM` are used here. When defined, real IRIs will be referenced.
+NOTE: At the time of writing, value tests for BDR messages haven't been defined so dummy test IRIs of `req:ValuesReqK` & `req:ValuesReqL` are used here. When defined, real IRIs will be referenced.
 
 `goodvalues`:
 
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:goodvalues ;
+    bdrm:absorbtionStatus status:goodvalues ;
 .
 ```
 
@@ -142,21 +142,23 @@ NOTE: At the time of writing, value tests for BDR messages haven't been defined 
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:notexpanded ;
-    bdrm:statusMessage "The message could not be expanded " ;
+    bdrm:absorbtionStatus status:notexpanded ;
+    bdrm:failed
+        rul:ExpRuleM ,
+        rul:ExpRuleN ;        
 .
 ```
 
 The message `<message/1234>` has failed successful expansion following system and ABIS rules.
 
-NOTE: At the time of writing, "system and ABIS rules" that expand data are not defined, so references to particular rules can't be made. When rules are articulated, they will be idenified by IRI so errors in expansion will be referenced similar to the `badvalues` errors.
+NOTE: At the time of writing, expansion rules for BDR messages haven't been defined so dummy test IRIs of `rul:ExpRuleM` & `rul:ExpRuleM` are used here. When defined, real IRIs will be referenced.
 
 `expanded`:
 
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:expanded ;
+    bdrm:absorbtionStatus status:expanded ;
 .
 ```
 
@@ -165,7 +167,7 @@ NOTE: At the time of writing, "system and ABIS rules" that expand data are not d
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:notstaged ;
+    bdrm:absorbtionStatus status:notstaged ;
     bdrm:statusMessage "The BDR Staging environment is offline due to routine maintenance" ;
 .
 ```
@@ -177,7 +179,7 @@ The message `<message/1234>` is not able to be staged due to the reason given in
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:staged ;
+    bdrm:absorbtionStatus status:staged ;
 ```
 
 `notlive`:
@@ -185,8 +187,8 @@ The message `<message/1234>` is not able to be staged due to the reason given in
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:notlive ;
-    bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
+    bdrm:absorbtionStatus status:notlive ;
+    bdrm:statusMessage "The BDR Live environment is offline due to a system fault" ;
 .
 ```
 
@@ -197,7 +199,7 @@ The message `<message/1234>` is not able to be made live due to the reason given
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:live ;
+    bdrm:absorbtionStatus status:live ;
 ```
 
 For messages other than `bdrm:CreateMessage` instances, the responses are similar. For example, for a deletion message with IRI `<message/5678>` that has failed to propagate to the `live` environment, you may have a status of:
@@ -205,7 +207,7 @@ For messages other than `bdrm:CreateMessage` instances, the responses are simila
 ```turtle
 <message/5678>
     a bdrm:DeleteMessage ;
-    bdrm:absorbtionStatus bdrm:notlive ;
+    bdrm:absorbtionStatus status:notlive ;
     bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
 .
 ```
@@ -215,7 +217,7 @@ For permissions and similar violations, the absorbtion process will fail at the 
 ```turtle
 <message/5678>
     a bdrm:DeleteMessage ;
-    bdrm:absorbtionStatus bdrm:badvalues ;
+    bdrm:absorbtionStatus status:badvalues ;
     bdrm:statusMessage "You do not have permission to delete that resource"
 .
 ```

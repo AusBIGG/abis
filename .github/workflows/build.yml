@@ -23,10 +23,12 @@ jobs:
         asciidoctor standard/_standard.adoc -o docs/standard.html
         sed -i 's#img src="#img src="https://surroundaustralia.github.io/abis/#' docs/standard.html        
         echo "Add standard RDF to docs/"
-        cp profile.ttl docs/             
+        cp profile.ttl docs/
         echo "Add specification to docs/"   
         asciidoctor specification/_specification.adoc -o docs/specification.html
         sed -i 's#img src="#img src="https://surroundaustralia.github.io/abis/#' docs/specification.html
+        echo "Add JSON-LD Context to docs/"
+        cp context.json docs/
         echo "Add images to docs/"
         cp -r img docs/
     - name: Deploy 🚀

@@ -7,7 +7,7 @@
     dcterms:title "ABIS Standard Definition" ;
     dcterms:description "This resource describes the structure and multiple parts of the ABIS Standard as well as the formalisms used in their definitions, in machine-readable form." ;
     dcterms:created "2021-12-13"^^xsd:date ;
-    dcterms:modified "2021-12-13"^^xsd:date ;
+    dcterms:modified "2021-02-05"^^xsd:date ;
     # dcterms:issued "0000-00-00"^^xsd:date ;
     dcterms:creator
         <https://linked.data.gov.au/org/surround> ,
@@ -17,5 +17,21 @@
     dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
     dcterms:rights "(c) Commonwealth of Australian (Department of Agriculture, Water and the Environment), 2021" ;
     prof:isProfileOf 
-        <https://www.w3.org/TR/vocab-ssn/> ;
+        <https://linkeddata.tern.org.au/information-models/tern-ontology> ;
+.
+
+<https://linked.data.gov.au/def/abis/spec>
+    a prof:ResourceDescriptor ;
+    dcterms:title "ABIS Specification online"@en ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "https://surroundaustralia.github.io/abis/specification.html"^^xsd:anyURI ;
+    prof:hasRole role:specification
+.
+
+<https://linked.data.gov.au/def/abis/jsonldcontext>
+    a prof:ResourceDescriptor ;
+    dcterms:title "ABIS JSON-LD Context"@en ;
+    dcterms:format "application/ld+json" ;
+    prof:hasArtifact "https://surroundaustralia.github.io/abis/context.json"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary
 .
