@@ -87,7 +87,7 @@ Following are a list of per-status RDF examples, all of which use an IRI of `+ht
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:submitted ;
+    bdrm:absorptionStatus status:submitted ;
 .
 ```
 
@@ -96,7 +96,7 @@ Following are a list of per-status RDF examples, all of which use an IRI of `+ht
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:duplicate ;
+    bdrm:absorptionStatus status:duplicate ;
     bdrm:duplicates <message/54321> ;
 .
 ```
@@ -108,7 +108,7 @@ The message `<message/1234>` has been determined to be a duplicate of `<message/
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:notduplicate ;
+    bdrm:absorptionStatus status:notduplicate ;
 .
 ```
 
@@ -117,7 +117,7 @@ The message `<message/1234>` has been determined to be a duplicate of `<message/
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:badvalues ;
+    bdrm:absorptionStatus status:badvalues ;
     bdrm:failed 
         req:ValuesReqK ,
         req:ValuesReqL ;
@@ -133,7 +133,7 @@ NOTE: At the time of writing, value tests for BDR messages haven't been defined 
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:goodvalues ;
+    bdrm:absorptionStatus status:goodvalues ;
 .
 ```
 
@@ -142,7 +142,7 @@ NOTE: At the time of writing, value tests for BDR messages haven't been defined 
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:notexpanded ;
+    bdrm:absorptionStatus status:notexpanded ;
     bdrm:failed
         rul:ExpRuleM ,
         rul:ExpRuleN ;        
@@ -158,7 +158,7 @@ NOTE: At the time of writing, expansion rules for BDR messages haven't been defi
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:expanded ;
+    bdrm:absorptionStatus status:expanded ;
 .
 ```
 
@@ -167,7 +167,7 @@ NOTE: At the time of writing, expansion rules for BDR messages haven't been defi
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:notstaged ;
+    bdrm:absorptionStatus status:notstaged ;
     bdrm:statusMessage "The BDR Staging environment is offline due to routine maintenance" ;
 .
 ```
@@ -179,7 +179,7 @@ The message `<message/1234>` is not able to be staged due to the reason given in
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:staged ;
+    bdrm:absorptionStatus status:staged ;
 ```
 
 `notlive`:
@@ -187,7 +187,7 @@ The message `<message/1234>` is not able to be staged due to the reason given in
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:notlive ;
+    bdrm:absorptionStatus status:notlive ;
     bdrm:statusMessage "The BDR Live environment is offline due to a system fault" ;
 .
 ```
@@ -199,7 +199,7 @@ The message `<message/1234>` is not able to be made live due to the reason given
 ```turtle
 <message/1234>
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:live ;
+    bdrm:absorptionStatus status:live ;
 ```
 
 For messages other than `bdrm:CreateMessage` instances, the responses are similar. For example, for a deletion message with IRI `<message/5678>` that has failed to propagate to the `live` environment, you may have a status of:
@@ -207,7 +207,7 @@ For messages other than `bdrm:CreateMessage` instances, the responses are simila
 ```turtle
 <message/5678>
     a bdrm:DeleteMessage ;
-    bdrm:absorbtionStatus status:notlive ;
+    bdrm:absorptionStatus status:notlive ;
     bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
 .
 ```
@@ -217,7 +217,7 @@ For permissions and similar violations, the absorbtion process will fail at the 
 ```turtle
 <message/5678>
     a bdrm:DeleteMessage ;
-    bdrm:absorbtionStatus status:badvalues ;
+    bdrm:absorptionStatus status:badvalues ;
     bdrm:statusMessage "You do not have permission to delete that resource"
 .
 ```
