@@ -45,7 +45,7 @@ NOTE: Messages submitted to the BDR Gateway only have their status tracked _afte
 |`submitted` | The message has been submitted to tbe BDR via the BDR Gateway and has passed validation and had a persistent IRI assigned to it, but not yet processed further
 |`duplicate` | The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an `bdrm:duplicates` property
 |`nonduplicate` | The message has passed duplication analysis (i.e. it is not considered a duplicate)
-|`badvalues` | The message's values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix `dbrm:doesNotConformTo`
+|`badvalues` | The message's values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix `bdrm:doesNotConformTo`
 |`goodvalues` | The message's values - object IRIs and literal data values - are valid according to the value-based validation tests within the BDR
 |`notexpanded` | The message content has not been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to `CreateMessage` messages
 |`expanded` | The message content has been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to `CreateMessage` messages
@@ -118,13 +118,15 @@ The message `<message/1234>` has been determined to be a duplicate of `<message/
 <message/1234>
     a bdrm:CreateMessage ;
     bdrm:absorbtionStatus bdrm:badvalues ;
-    dbrm:doesNotConformTo 
+    bdrm:doesNotConformTo 
         req:ValuesReqK ,
         req:ValuesReqM ;
 .
 ```
 
 The message `<message/1234>` has failed message values tests for Requirements `req:ValuesReqK` & `req:ValuesReqM`.
+
+NOTE: At the time of writing, value tests for BDR messages haven't been defined so dummy test IRIs of `req:ValuesReqK` & `req:ValuesReqM` are used here. When defined, real IRIs will be referenced.
 
 `goodvalues`:
 
