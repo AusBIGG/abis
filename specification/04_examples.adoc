@@ -242,7 +242,7 @@ NOT: Since the BDR uses a monotonically increasing numberical identifier, in thi
 
 In this example, the client message, Sampling and Sample instances were all ingested successfully, as indicated by the predicate `bdrm:exists` indicating the object now exists in the BDR.
 
-If a part of the client's message was not able to be ingested, perhaps the Sample instance indicated a non-existet Feature of Interest, `<site/xxx>`, the BDR response message may look like like this:app-name: 
+If a part of the client's message was not able to be ingested, perhaps the Sample instance indicated a non-existet Feature of Interest, `<site/xxx>`, the BDR response message may look like like this: 
 
 ```turtle
 @prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
@@ -503,7 +503,7 @@ The value of `ALT-IDENTIFIER` can be anything, such as a URL, a number, a string
 .An example of a `tern:Sample` instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternat identifers with custom datatypes
 image::/img/sample-alternate-identifiers.png[An example of a `tern:Sample` instance]
 
-The RDF corresponding to the figure above is goven below:app-name: 
+The RDF corresponding to the figure above is goven below: 
 
 ```turtle
 <https://linked.data.gov.au/dataset/bdr/sample/x>

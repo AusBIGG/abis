@@ -75,6 +75,10 @@ The formal and linked listing of this Standards's parts is found in its _Profile
 |`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
 |===
 
+A JSON-LD _context_ built from this namespaces table is available as another resource within the ABIS specification and is online at:
+
+* https://surroundaustralia.github.io/abis/context.json
+
 == Introduction
 
 This document is a list of _requirements_ for data to meet in order to conform to the link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. Each _requirement_ is defined with a table of values like this:
