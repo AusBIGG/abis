@@ -13,7 +13,7 @@ NOTE: DRAFT, incomplete
 |**Title** | Australian Biodiversity Information Standard's Specifciation
 |**Definition** | This document lists the normative requirements for data aiming to conform to the link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. It is to be used as the authoratitive, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.
 |**Created** | 2021-10-24
-|**Modified** | 2021-11-20
+|**Modified** | 2022-02-28
 |**Creator** | link:https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), link:https://www.gaiaresources.com.au/[Gaia Resources] and the link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**Publisher** | link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
@@ -49,6 +49,8 @@ Other parts of this _Standard_ are:
 
 The formal and linked listing of this Standards's parts is found in its _Profile Declaration_ online at link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard].
 
+In addition to the "technical" parts, this Specification describes the conceptual parts of ABIS, in particular, the domain model and other non-domain models.
+
 === Namespaces
 
 [width=75%, frame=none, grid=none]
@@ -81,7 +83,13 @@ A JSON-LD _context_ built from this namespaces table is available as another res
 
 == Introduction
 
-This document is a list of _requirements_ for data to meet in order to conform to the link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. Each _requirement_ is defined with a table of values like this:
+This document contains general description of the link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard (ABIS)] and importantly a list of _requirements_ and groupings of requirements, _Conformance Classes_. Data must meet all the _requirements_ in _conformance classes_ to claim conformance to that _conformance class'_ part of the ABIS.
+
+This document also lists all the parts of the ABIS which are its various ontologies, vocabularies and others that these depend on. These parts are listed in <<Annex A: ABIS Parts, Annex A: ABIS Parts>>.
+
+=== Requirement and Conformance Class modelling
+
+Each _requirement_ is defined with a table of values like this:
 
 [width=25%, frame=none, grid=none]
 |===
@@ -113,7 +121,7 @@ See the link:#namespaces[Namespaces] section below to understand the prefixes in
 
 The following subsections define properties of the _requirements_ in detail.
 
-=== Identifier
+==== Identifier
 
 Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace `+<https://linked.data.gov.au/def/abis/req/>+` and `X` is a number, the number of the _requirement_.
 
@@ -121,27 +129,27 @@ The IRI namespace plus the number make the complete IRI of the _requirement_.
 
 An IRI is an link:https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier[Internationalized Resource Identifier] which is a globally unique web address created within a managed namespace that resolves to the element it identifies
 
-=== Labeled
+==== Labeled
 
 Each _requirement_ is named with a short form of its definition, to assist with human referencing.
 
-=== Definition
+==== Definition
 
 Each _requirement_ is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the link:https://www.w3.org/TR/owl2-overview/[Web Ontology Language (OWL)] since the _target models_ of the ABIS are themselves OWL Ontologies.
 
 > NOTE: if there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
 
-=== Conformance Classes list
+==== Conformance Classes list
 
 Each _requirement_ is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the ABIS, the Conformance Classes form modules which data may conform to individually.
 
 Each _requirement_ needs to indicate its Conformance Classes by linking to them.
 
-=== Contains source notes 
+==== Contains source notes 
 
 Each _requirement_ contains source notes  what motivated the _requirement_'s definition, including references to source documents or other ABIS artifacts, such as ontologies.
 
-=== Related validators
+==== Related validators
 
 Each _requirement_ contains references to individual, identified, data validation _shapes_ defined in the ABIS Profile's _validator_ used to validate link:https://www.w3.org/RDF/[Resource Description Framework (RDF)] data - the only form of data allowed to be used for ABIS data exchange.
 
@@ -149,11 +157,12 @@ The content of _validator_s is contianed in the ABIS' _Validator_ resource.
 
 > NOTE: the validating _shapes_ are not 1:1 with these _requirements_ and that there are _requirements_ for which there are no _shapes_ - those _requirements_ that cannot be determined to have been met by inspecting data.
 
-=== Canonical examples
+==== Canonical examples
 
 For each _requirement_, references are given to at least two _canonical examples_ of RDF data that do (positive example) and don't (negative example) pass validation using the validators related to the _requirement_.
 
 The content of the _canonical examples_, i.e. the examples' data, is contianed in the ABIS' _Canonical Examples_ resource.
+
 
 include::01_conformance_classes.adoc[]
 
@@ -173,4 +182,6 @@ include::04_examples.adoc[]
 
 :sectnums!:
 
-include::15_annex_a_bdr_messages.adoc[]
+include::14_annex_a_abis_parts.adoc[]
+
+include::15_annex_b_bdr_messages.adoc[]

@@ -1,0 +1,19 @@
+== Annex A: ABIS Parts
+
+[NOTE]
+This Annex is normative.
+
+_Here will soon be the authorititive listing of the parts - onlologies & vocabs - of ABIS._
+
+=== Ontologies
+
+* TERN Ontology
+* BDR Messaging Ontology
+
+=== Vocabularies
+
+These vocabularies are used by the ontologies listed above.
+
+=== Background Ontologies
+
+These ontologies are relied on (imported by or used by) the ontologies and vocabularies above.
