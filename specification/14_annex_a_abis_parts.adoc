@@ -14,6 +14,23 @@ _Here will soon be the authorititive listing of the parts - onlologies & vocabs 
 
 These vocabularies are used by the ontologies listed above.
 
+* https://linkeddata.tern.org.au/viewer/tern/id/http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e[Parameter Types]
+
+* https://linkeddata.tern.org.au/viewer/tern/id/http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d[Feature Types]
+
+* http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8[Instrument Types]
+
+* http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924[Attributes]
+
 === Background Ontologies
 
 These ontologies are relied on (imported by or used by) the ontologies and vocabularies above.
+
+* Somantic Sensor Network Ontology (SSN)
+* Sensor, Observation, Sample, and Actuator (SOSA) Ontology
+* Parameter Usage Vocabulary Ontology (PUV)
+* Profiles Vocabulary (PROF)
+* Provenance, Authoring, and Versioning Ontology (PAV)
+* Location Integration Capability Ontology (LOC)
+* I-ADOPT Framework Ontology (I-ADOPT)
+* Darwin Core (DWC)
