@@ -21,7 +21,7 @@ The Conformance Classes are:
 |Requirements | link:https://linked.data.gov.au/def/abis/req/observation-properties[`req:observation-properties`]
 |===
 
-=== BDR Messages Conformance Class
+=== BDR System Conformance Class
 
 [width=75%, frame=none]
 |===

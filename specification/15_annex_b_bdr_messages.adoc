@@ -3,7 +3,7 @@
 [NOTE]
 This Annex is normative.
 
-The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <<BDR Messages, BDR Messages>>.
+The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <<BDR System, BDR System>>.
 
 All interactions with the BDR around messages take place via the BDR Gateway, which is the API provided for this purpose. It is online at https://gateway.bdr.gov.au.
 

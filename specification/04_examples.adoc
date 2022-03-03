@@ -1,6 +1,6 @@
 == Examples
 
-=== BDR Messages
+=== BDR Sytem
 
 This section contains examples of the messages that may be sent to the Biodiversity Data Repository (BDR) and potentially other ABIS-conformant systems to alter their content. 
 
