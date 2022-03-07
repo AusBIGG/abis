@@ -17,11 +17,11 @@ The ABIS specification's domain model is based on the TERN Ontology and includes
 ** http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8[Instrument Types]
 ** http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924[Attributes]
 * Background Ontologies
-** Sensor, Observation, Sample, and Actuator (SOSA) Ontology
-** Darwin Core (DWC)
+** https://www.w3.org/TR/vocab-ssn/[Sensor, Observation, Sample, and Actuator (SOSA) Ontology]
+** https://dwc.tdwg.org/rdf/[Darwin Core (DWC)]
 * Mapping Ontologies
-** Parameter Usage Vocabulary Ontology (PUV)
-** I-ADOPT Framework Ontology (I-ADOPT)
+** https://rawcdn.githack.com/CSIRO-enviro-informatics/PUV-ont/dd2d8762f80a58e618269593e99d3f840de0f150/puv.html[Parameter Usage Vocabulary Ontology (PUV)]
+** https://i-adopt.github.io/index.html[I-ADOPT Framework Ontology (I-ADOPT)]
 ** Location Integration Capability Ontology (LOC)
 
 === BDR System
