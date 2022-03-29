@@ -1,6 +1,6 @@
 === BDR Message Conformance Class Requirements
 
-The https://linked.data.gov.au/def/bdr-msg:[BDR Messages Ontology] defines a general message class object, `bdrm:Message`, and four subclasses of it that are to be used to convey _create_, _update_, _delete_ and _exists_ (existance check) messages to the BDR. The following Requirements specify the required _structure_ of BDRM messages only and not any requirements of Domain Model content with messages' payloads which is specified in the _Domain Model_ above.
+The https://linked.data.gov.au/def/bdr-msg:[BDR Messages Ontology] defines a general message class object, `bdrm:Message`, and four subclasses of it that are to be used to convey _create_, _update_, _delete_, and _exists_ (existance check) messages to the BDR. The following Requirements specify the required _structure_ of BDRM messages only and not any requirements of Domain Model content with messages' payloads which is specified in the _Domain Model_ above.
 
 When ABIS content is send to the the Biodiversity Data Repository, the BDR acts both as the storage of that content and also the authoratitive identifier creator for instances of certain classes of resources in that content, namely:
 
