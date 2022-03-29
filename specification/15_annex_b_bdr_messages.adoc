@@ -1,7 +1,5 @@
 == Annex B: BDR Message Interactions
 
-[NOTE]
-This Annex is normative.
 
 The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <<BDR System, BDR System>>.
 
