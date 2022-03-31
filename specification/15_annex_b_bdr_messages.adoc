@@ -1,11 +1,18 @@
-== Annex B: BDR Message Interactions
+== Annex B: Biodiversity Data Repository
 
+This Annex contains information about the Biodiversity Data Repository (BDR) that is a major implementing system of the ABIS.
+
+The BDR is visible online at https://bdr.gov.au
+
+=== A.1 BDR Description
+
+The BDR's data is predicated on ABIS - all data within the BDR is ABIS-conformant - however the BDR also contains extensions to ABIS to cater for system-specific needs. For example, the BDR requires that ABIS information sent to it for storage be packaged in _BDR Messages_ and the BDR defines a _BDR Messages Ontology_ that contains the data model for those messages. The BDR also employs some backgrounding ontologies for enhanced data versioning such as _Provenance Annotation & Versioning_
 
 The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <<BDR System, BDR System>>.
 
 All interactions with the BDR around messages take place via the BDR Gateway, which is the API provided for this purpose. It is online at https://gateway.bdr.gov.au.
 
-=== A.1 Sending messages to the BDR
+=== A.2 Sending messages to the BDR
 
 Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message's placeholder IRI is replaced with a persistent identifier of the form `+https://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` where the `<MESSAGE-ID>` is assigned by the BDR. 
 
@@ -18,9 +25,9 @@ Persistent Identifiers created for messages by the BDR use the same namespace as
 I.e., IRIs of the form `+https://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` do not resolve, by design.
 ====
 
-=== A.2 Following message absorbtion progress
+=== A.3 Following message absorbtion progress
 
-==== A.2.1 BDR Gateway status endpoint
+==== A.3.1 BDR Gateway status endpoint
 
 Using the persistent identifier of a message, you can track the status of that message regarding it's absorbtion into the BDR by using the BDR Gateway's message status endpoint, `/status`, which is online at `+https://gateway.bdr.gov.au/status+`.
 
@@ -32,7 +39,7 @@ http://bdrgateway.surroundaustralia.com/status?iri=https://linked.data.gov.au/da
 
 The responses that the BDR Gateway will provide are RDF messages based on the statuses in the next section.
 
-==== A.2.2 Message statuses
+==== A.3.2 Message statuses
 
 The table below indicates the statuses of messages sent to the BDR.
 
@@ -58,7 +65,7 @@ NOTE: Messages submitted to the BDR Gateway only have their status tracked _afte
 
 Note that any object with a status of `live` will also have the property `bdrm:exists` and a boolean value of `true`.
 
-==== A.2.3 Message status state diagram
+==== A.3.3 Message status state diagram
 
 The following figure shows the state diagram used to indicate allowed message transitions between statues.
 
@@ -75,7 +82,7 @@ image::/img/statuses-state-diagram.png[Message statuses state diagram]
     * messages in state `notlive` may progress to `live` if system actions allow it to be staged, e.g. a system failure os overcome
 
 
-==== A.2.4 Message status RDF
+==== A.3.4 Message status RDF
 
 Each status is formally defined within the _Message Statuses_ vocabulary which is part of the _BDR Messages Ontology_ used to characterise messages within the BDR. The vocabulary's concepts correspond to entires in the table above and identifiers for each are, as all things in the BDR, IRIs. 
 
