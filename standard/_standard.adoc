@@ -105,7 +105,26 @@ _(this document)_
 | https://surroundaustralia.github.io/abis/standard.ttl[https://linked.data.gov.au/def/abis.ttl]
 |===
 
+#TODO: re-add content below to table above#
+```
+|https://surroundaustralia.github.io/abis/specification.html[specification.html] | https://surroundaustralia.github.io/prof-roles/specification[Specification] | The document that lists the normative requirements - business rules - for data to conform to in order to be compliant
+|https://linkeddata-dev.tern.org.au/tern-ontology[TERN Ontology] | https://surroundaustralia.github.io/prof-roles/schema[Schema] | The main domain model for this Standard, in human-readable form
+|https://raw.githubusercontent.com/ternaustralia/ontology_tern/master/docs/tern.ttl[TERN Ontology in RDF] | https://surroundaustralia.github.io/prof-roles/schema[Schema] | The main domain model for this Standard, in machine-readable form (RDF Turtle)
+|https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/mappings[RDF Mappings (folder)] | https://surroundaustralia.github.io/prof-roles/mapping[Mapping] | Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.
 
+See also the _Mappings_ section within the https://surroundaustralia.github.io/abis/specification.html[specification.html] document
+|https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/examples[RDF Examples (folder)] | https://surroundaustralia.github.io/prof-roles/example[Example] | Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.
+
+See also the _Examples_ section within the https://surroundaustralia.github.io/abis/specification.html[specification.html] document
+|https://github.com/surroundaustralia/abis/tree/master/kg/validators[Shapes validators (folder)] | https://surroundaustralia.github.io/prof-roles/validation[Validation] | Machine-readable, https://www.w3.org/TR/shacl/[Shapes Constraint Language (SHACL)], validators.
+
+These are used to validate data claiming conformance to the ABIS, for instance by the http://bdrgateway.surroundaustralia.com/[BDR Gateway] to validate ABIS data bound for the Biodiversity Data Repository.
+
+Note that within the Specification Document, individual Requirements link to the individual validators relevant for them.
+|`XXX Vocabulary` | https://surroundaustralia.github.io/prof-roles/vocabulary[Vocabulary] | Supporting vocabulary XXX (example).
+```
+
+#TODO: TMI below, remove#
 The machine-redable form of this Standard's conceptual _profile_ declaration is provided in the RDF https://surroundaustralia.github.io/abis/profile.ttl[profile.ttl] resource and reproduced here for convenience:
 
 ```turtle
