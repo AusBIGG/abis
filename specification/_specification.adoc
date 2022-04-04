@@ -11,13 +11,13 @@ NOTE: DRAFT, incomplete
 |===
 |**IRI** | https://linked.data.gov.au/def/abis/spec
 |**Title** | Australian Biodiversity Information Standard's Specification
-|**Definition** | This document lists the normative requirements for data aiming to conform to the link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. It is to be used as the authoritative, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.
+|**Definition** | This document lists the normative requirements for data aiming to conform to the https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. It is to be used as the authoritative, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.
 |**Created** | 2021-10-24
 |**Modified** | 2022-02-28
-|**Creator** | link:https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), link:https://www.gaiaresources.com.au/[Gaia Resources] and the link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
-|**Publisher** | link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
-|**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|**Further information** | This specification is part of the Australian link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. That Standard is established as a _profile_ of multiple other standards and is, itself, made of many parts, of which this Specification is only one. +
+|**Creator** | https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), https://www.gaiaresources.com.au/[Gaia Resources] and the https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
+|**Publisher** | https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
+|**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|**Further information** | This specification is part of the Australian https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. That Standard is established as a _profile_ of multiple other standards and is, itself, made of many parts, of which this Specification is only one. +
 See that profile's main document for details of the other profile parts and how this Specification related to them.
 |===
 
@@ -47,7 +47,7 @@ Other parts of this _Standard_ are:
 * _Mappings_
 ** Instructions on how to convert BDR data to data conformaing to other Standards
 
-The formal and linked listing of this Standards's parts is found in its _Profile Declaration_ online at link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard].
+The formal and linked listing of this Standards's parts is found in its _Profile Declaration_ online at https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard].
 
 In addition to the "technical" parts, this Specification describes the conceptual parts of ABIS, in particular, the domain model and other non-domain models.
 
@@ -83,7 +83,7 @@ A JSON-LD _context_ built from this namespaces table is available as another res
 
 == Introduction
 
-This document contains general description of the link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard (ABIS)] and importantly a list of _requirements_ and groupings of requirements, _Conformance Classes_. Data must meet all the _requirements_ in _conformance classes_ to claim conformance to that _conformance class'_ part of the ABIS.
+This document contains general description of the https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard (ABIS)] and importantly a list of _requirements_ and groupings of requirements, _Conformance Classes_. Data must meet all the _requirements_ in _conformance classes_ to claim conformance to that _conformance class'_ part of the ABIS.
 
 This document also lists all the parts of the ABIS which are its various ontologies, vocabularies and others that these depend on. These parts are listed in <<Annex A: ABIS Parts, Annex A: ABIS Parts>>.
 
@@ -102,7 +102,7 @@ Each _requirement_ is defined with a table of values like this:
 |Examples | Related RDF example data
 |===
 
-The link:https://en.wikipedia.org/wiki/Semantic_Web[Semantic Web] interpretation of the relation of each of those properties are to each requirement instance are:
+The https://en.wikipedia.org/wiki/Semantic_Web[Semantic Web] interpretation of the relation of each of those properties are to each requirement instance are:
 
 [width=25%, frame=none, grid=none]
 |===
@@ -117,7 +117,7 @@ The link:https://en.wikipedia.org/wiki/Semantic_Web[Semantic Web] interpretation
 |Examples | `skos:example` | IRI of a `Resource Descriptor`
 |===
 
-See the link:#namespaces[Namespaces] section below to understand the prefixes in the table above.
+See the #namespaces[Namespaces] section below to understand the prefixes in the table above.
 
 The following subsections define properties of the _requirements_ in detail.
 
@@ -127,7 +127,7 @@ Each _requirement_ is identified with a unique identifier of the form `req:X`, w
 
 The IRI namespace plus the number make the complete IRI of the _requirement_.
 
-An IRI is an link:https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier[Internationalized Resource Identifier] which is a globally unique web address created within a managed namespace that resolves to the element it identifies
+An IRI is an https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier[Internationalized Resource Identifier] which is a globally unique web address created within a managed namespace that resolves to the element it identifies
 
 ==== Labeled
 
@@ -135,7 +135,7 @@ Each _requirement_ is named with a short form of its definition, to assist with 
 
 ==== Definition
 
-Each _requirement_ is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the link:https://www.w3.org/TR/owl2-overview/[Web Ontology Language (OWL)] since the _target models_ of the ABIS are themselves OWL Ontologies.
+Each _requirement_ is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the https://www.w3.org/TR/owl2-overview/[Web Ontology Language (OWL)] since the _target models_ of the ABIS are themselves OWL Ontologies.
 
 > NOTE: if there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
 
@@ -151,7 +151,7 @@ Each _requirement_ contains source notes  what motivated the _requirement_'s def
 
 ==== Related validators
 
-Each _requirement_ contains references to individual, identified, data validation _shapes_ defined in the ABIS Profile's _validator_ used to validate link:https://www.w3.org/RDF/[Resource Description Framework (RDF)] data - the only form of data allowed to be used for ABIS data exchange.
+Each _requirement_ contains references to individual, identified, data validation _shapes_ defined in the ABIS Profile's _validator_ used to validate https://www.w3.org/RDF/[Resource Description Framework (RDF)] data - the only form of data allowed to be used for ABIS data exchange.
 
 The content of _validator_s is contianed in the ABIS' _Validator_ resource.
 

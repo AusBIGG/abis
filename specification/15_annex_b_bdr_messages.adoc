@@ -71,7 +71,7 @@ The following figure shows the state diagram used to indicate allowed message tr
 
 [[status-state-diagram]]
 .Message statuses state diagram
-image::/img/statuses-state-diagram.png[Message statuses state diagram]
+image::img/statuses-state-diagram.png[Message statuses state diagram]
 
 * The states of `duplicate` and `badvalues` are terminal: a message cannot progress from these states to any other
 * `submitted` will progress to either `duplicate` or `nonduplicate` when it passes or failes duplication testing

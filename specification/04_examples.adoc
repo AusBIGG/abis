@@ -433,7 +433,7 @@ There are several options for spatial positioning, as shown in the 3-part Figure
 
 [[sampling-position]]
 .Options for the spatial positioning of `tern:Sampling` instances. Left: direct positioning; Centre: indirect positioning via linking to a `tern:Site`; Right: Indirect positioning by linking to a non-Site spatial object (a `geo:Feature`) using a _spatial relations_ property.
-image::/img/sample-positioning.png[Options for the spatial positioning of `tern:Sampling` instances]
+image::img/sample-positioning.png[Options for the spatial positioning of `tern:Sampling` instances]
 
 RDF data matching the Left, Centre & right parts of the Figure above are given next.
 
@@ -501,7 +501,7 @@ The value of `ALT-IDENTIFIER` can be anything, such as a URL, a number, a string
 
 [[sample-alternate-identifiers-fig]]
 .An example of a `tern:Sample` instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternat identifers with custom datatypes
-image::/img/sample-alternate-identifiers.png[An example of a `tern:Sample` instance]
+image::img/sample-alternate-identifiers.png[An example of a `tern:Sample` instance]
 
 The RDF corresponding to the figure above is goven below: 
 

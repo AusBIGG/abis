@@ -16,21 +16,31 @@ jobs:
       run: |
         echo "Making deployment dir - docs/"
         mkdir docs
+        #
         echo "Add README to docs/"
         cp README.md docs/        
         sudo apt-get install asciidoctor ruby -y
+        #
         echo "Add standard to docs/"
         asciidoctor standard/_standard.adoc -o docs/standard.html
+        cp -r standard/img docs/
         sed -i 's#img src="#img src="https://surroundaustralia.github.io/abis/#' docs/standard.html        
+        #
         echo "Add standard RDF to docs/"
         cp profile.ttl docs/
-        echo "Add specification to docs/"   
+        #
+        echo "Add Specification to docs/"   
         asciidoctor specification/_specification.adoc -o docs/specification.html
+        cp -r specification/img docs/
         sed -i 's#img src="#img src="https://surroundaustralia.github.io/abis/#' docs/specification.html
+        #
+        echo "Add Overview to docs/"   
+        asciidoctor overview/_overview.adoc -o docs/overview.html
+        # cp -r overview/img docs/
+        sed -i 's#img src="#img src="https://surroundaustralia.github.io/abis/#' docs/overview.html        
+        #
         echo "Add JSON-LD Context to docs/"
         cp context.json docs/
-        echo "Add images to docs/"
-        cp -r img docs/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
