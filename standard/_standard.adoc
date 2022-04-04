@@ -1,5 +1,5 @@
 = ABIS Definition
-:toc:
+:toc: left
 :table-stripes: even
 :sectnums:
 
@@ -11,47 +11,41 @@ NOTE: DRAFT, incomplete
 |===
 |**IRI** | https://linked.data.gov.au/def/abis
 |**Title** | Australian Biodiversity Information Standard
-|**Definition** | This resource describes the structure and multiple parts of the ABIS Standard as well as the formalisms used in their definitions.
+|**Definition** | This is the Standard Definition of the Australian Biodiversity Information Standard (ABIS). It formally defines the parts of the standard.
 |**Created** | 2021-12-13
-|**Modified** | 2021-12-13
+|**Modified** | 2022-04-04
 |**Issued** | 0000-00-00
-|**Creator** | link:https://linked.data.gov.au/org/surround[SURROUND Australia Pty Ltd], link:https://www.gaiaresources.com.au/[Gaia Resources] and the link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
-|**Publisher** | link:https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
-|**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|**Further information** | This specification is part of the Australian link:https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. That Standard is established as a _profile_ of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one. +
-See that profile's main document for details of the other profile parts and how this Specification related to them.
+|**Creator** | https://linked.data.gov.au/org/surround[SURROUND Australia Pty Ltd], https://www.gaiaresources.com.au/[Gaia Resources], https://www.tern.org.au[TERN] and the https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
+|**Publisher** | https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
+|**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|**Further information** | See the core repository that contains all the resources used to create ABIS: https://github.com/surroundaustralia/abis
 |===         
 
 [#img-rdf]
-.Overview of the ABIS and it's parts. The Standard is a conceptual thing containing documents, data objects and so on. This document is the Standard Definition document.
-image::/img/standard-overview.png[ABIS Overview,600,400,align="center"]
+.Overview of the ABIS and it's main parts.
+image::img/standard-overview.png[ABIS Overview,600,400,align="center"]
 
 == Preamble
 === Abstract
 
-This document decribes the structure and multiple parts of the candidate Australian Biodiversity Information Standard (ABIS) as well as the formalisms used in part desription.
+This is the Standard Definition of the Australian Biodiversity Information Standard (ABIS). It formally defines the parts of the standard.
 
 === Normative Status
 
-This Standard description is normative for the structure of the ABIS and take precedence over other expressions of the Standar's structure.
-
-=== Standard Parts
-
-This Standard definition document is one of many resources that together make the ABIS _Standard_. The Standard and its parts are formally defined using terminology from the _Profiles Vocabulary_ <<PROF>>.
-
-See <<resources-table, Table 1>> for a listing of this Standard's parts.
+This Standard Definition is normative for the structure of the ABIS and take precedence over other expressions of the Standard's structure.
 
 === Namespaces
+
+This document references namespaces for machine-readable objects. All referenced namespaces are defined in this table.
 
 [width=75%, frame=none, grid=none]
 |===
 |Prefix | Namespace | Description
 
+|**`abis:`** | **`https://linked.data.gov.au/def/abis/`** | **ABIS Standard Definition namespace**
 |**`req:`** | **`https://linked.data.gov.au/def/abis/req/`** | **ABIS Requirements namespace**
 |`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
-|`ex:` | `http://example.com/thing` | Generic examples namespace
-|`nex:` | `https://linked.data.gov.au/def/abis/examples/` | ABIS Canonical Examples namespace
-|`nsh:` | `https://linked.data.gov.au/def/abis/shape/` | ABIS Validators Shapes namespace
+|`ex:` | `http://example.com/` | Generic examples namespace
 |`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
 |`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 |`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
@@ -64,33 +58,55 @@ See <<resources-table, Table 1>> for a listing of this Standard's parts.
 
 == Introduction
 
-This Standard is a multi-part publication that consists of human-readable documents, such as this one and the _Specifciation_, human- and machine-readable schemas, models and mappings and also example data.
+This Standard is a multi-part publication that consists of human-readable documents, such as this one, the _Overview_ and _Specification_, and machine-readable artifacts, such as data validators.
 
-This Standard and its parts are defined in machine-readable form according to the _Profiles Vocabulary_ <<PROF>> in the RDF Standard Definition file, which is the machine-readable version of this document.
+This Standard and its parts are defined here in human-readable form and in machine-readable form according to the _Profiles Vocabulary_ <<PROF>>.
 
-The following sections describe how the Profiles Vocabulary works and what the parst of this Standard are, described in Profiles Vocabulary terms.
+The following sections describe the parts and how they relate to each other and other standards using terminology from the Profiles Vocabulary.
 
-NOTE: The document that describes the business rules and other requirements that this Standard caters for is the link:https://linked.data.gov.au/def/abis/spec[_Specification_], not this document.
+NOTE: The document that describes the business rules and other requirements of ABIS is the https://linked.data.gov.au/def/abis/spec[_Specification_], not this document.
 
 === Profiles Vocabulary overview
 
-The _Profiles Vocabulary_ <<PROF>> is a link:https://www.w3.org:[World Wide Web Consortium] standard for the formal (machine-readable, logical data) description of Standards, their parts, and how they relate to other Standards.
+The _Profiles Vocabulary_ <<PROF>> is a https://www.w3.org:[World Wide Web Consortium] standard for the formal description of Standards, their parts, and how they relate to other Standards.
 
 The use of the word 'profile' here is due to the way Standards reuse other Standards: if one extends another and remains faithful to its rules, it can be said to _profile_ it.
 
 Standards described using PROF:
 
-* **define a conceptual _profile_**
-** this is the overarching standard thing and is independent of any of the particular resources within the standard
+* **provide a standard definition**
+** this is the overarching description of the standard which is independent of any of the particular resources within the standard
 * **describe multiple _resources_ within the Standard**
-** each part of a Stanard is described using roles, formats, online or other locations and other metadata
+** each part of a Standard is described using roles, formats, online or other locations and other metadata
+** roles are defined formally by a roles vocabulary within PROF
 * **indicate what they are profiles of**
-** if a PROF-defined Standard profiles another Standard, perhaps a generic standard for data or a broad information domain, this is indicated in a formal way
-** data that conforms to a PROF stnadard must conform to all the other Standards that this Standard profiles
+** if a Standard extends/constrains another Standard, and many do, this is indicated in a formal way
+** data that conforms to a Standard extending another must also conform to all the Standards being extended
 
-The formal declaration of this Standard as a conceptual _profile_ is given here in with details in the Section <<Metadata, Metadata>> and this document's resource description in the following section.
+=== ABIS Parts
 
-The machein-redable form of this Standard's conceptual _profile_ declaration is provided in the RDF link:https://surroundaustralia.github.io/abis/profile.ttl[profile.ttl] resource and reproduced here for convenience:
+<<resources-table, Table 1>> gives a listing of this Standard's parts, known as _resources_, their roles and their persistent identifers which are also web links to them.
+
+[id="resources-table", width=100%, frame=none, grid=none, cols="2,1,6,2"]
+.Resources in this Standard
+|===
+| Resource | Role | Description | PID
+
+|*Standard Definition*
+
+_(this document)_ 
+| *https://surroundaustralia.github.io/prof-roles/profile-definition[Profile Definition]*
+| *Defines this Standard's parts and relations to other Standards*
+| *https://surroundaustralia.github.io/abis/standard.html[https://linked.data.gov.au/def/abis]*
+
+|Machine-readable Standard Definition
+| https://surroundaustralia.github.io/prof-roles/profile-definition[Profile Definition]
+| Defines this Standard's parts and relations to other Standards in machine-readable form
+| https://surroundaustralia.github.io/abis/standard.ttl[https://linked.data.gov.au/def/abis.ttl]
+|===
+
+
+The machine-redable form of this Standard's conceptual _profile_ declaration is provided in the RDF https://surroundaustralia.github.io/abis/profile.ttl[profile.ttl] resource and reproduced here for convenience:
 
 ```turtle
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -115,39 +131,6 @@ The machein-redable form of this Standard's conceptual _profile_ declaration is 
         <https://www.w3.org/TR/vocab-ssn/> ;
 .
 ```
-
-== Parts of the ABIS
-
-This Standard comprises the resources listed in <<resources-table, Table 1>> with their _Profile Vocabulary_ `roles` and some explanation of their purpose given also.
-
-[id="resources-table", width=75%, frame=none, grid=none, cols="1,1,3"]
-.Resources in this Standard
-|===
-|Resource | Role | Description
-
-|link:https://surroundaustralia.github.io/abis/standard.html[standard.html]
- 
-_(this document)_ | link:https://surroundaustralia.github.io/prof-roles/specification[Profile Definition] | This document formally defines this Standard's parts and relations to other Standards.
-
-In cases of conflict between this document and the machine-readable form, this document is normative
-|link:https://surroundaustralia.github.io/abis/profile.ttl[profile.ttl] | link:https://surroundaustralia.github.io/prof-roles/specification[Profile Definition] | The machine-readable (RDF, Turtle syntax) version of this document.
-|link:https://surroundaustralia.github.io/abis/specification.html[specification.html] | link:https://surroundaustralia.github.io/prof-roles/specification[Specification] | The document that lists the normative requirements - business rules - for data to conform to in order to be compliant
-|link:https://linkeddata-dev.tern.org.au/tern-ontology[TERN Ontology] | link:https://surroundaustralia.github.io/prof-roles/schema[Schema] | The main domain model for this Standard, in human-readable form
-|link:https://raw.githubusercontent.com/ternaustralia/ontology_tern/master/docs/tern.ttl[TERN Ontology in RDF] | link:https://surroundaustralia.github.io/prof-roles/schema[Schema] | The main domain model for this Standard, in machine-readable form (RDF Turtle)
-|link:https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/mappings[RDF Mappings (folder)] | link:https://surroundaustralia.github.io/prof-roles/mapping[Mapping] | Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.
-
-See also the _Mappings_ section within the link:https://surroundaustralia.github.io/abis/specification.html[specification.html] document
-|link:https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/examples[RDF Examples (folder)] | link:https://surroundaustralia.github.io/prof-roles/example[Example] | Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.
-
-See also the _Examples_ section within the link:https://surroundaustralia.github.io/abis/specification.html[specification.html] document
-|link:https://github.com/surroundaustralia/abis/tree/master/kg/validators[Shapes validators (folder)] | link:https://surroundaustralia.github.io/prof-roles/validation[Validation] | Machine-readable, link:https://www.w3.org/TR/shacl/[Shapes Constraint Language (SHACL)], validators.
-
-These are used to validate data claiming conformance to the ABIS, for instance by the link:http://bdrgateway.surroundaustralia.com/[BDR Gateway] to validate ABIS data bound for the Biodiversity Data Repository.
-
-Note that within the Specification Document, individual Requirements link to the individual validators relevant for them.
-|`XXX Vocabulary` | link:https://surroundaustralia.github.io/prof-roles/vocabulary[Vocabulary] | Supporting vocabulary XXX (example).
-|===
-
 
 
 == References

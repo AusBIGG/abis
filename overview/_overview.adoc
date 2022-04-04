@@ -1,0 +1,16 @@
+= ABIS Overview
+:toc: left
+:table-stripes: even
+:sectnums:
+
+NOTE: DRAFT, incomplete
+
+This is a short overview of the Australian Biodiversity Information Standard (ABIS). It is only one of many parts of the ABIS and all the parts are defined in the https://surroundaustralia.github.io/abis/standard.html:[ABIS Standard Definition].
+
+== What is ABIS?
+
+== How do I use it?
+
+== Who ownes it?
+
+== How do I improve it?
