@@ -1,0 +1,23 @@
+{  
+    "@context": {
+      "abis": "https://linked.data.gov.au/def/abis/",
+      "req": "https://linked.data.gov.au/def/abis/req/",
+      "rul": "https://linked.data.gov.au/def/abis/rul/",
+      "cc": "https://linked.data.gov.au/def/abis/req/",
+      "aex": "https://linked.data.gov.au/def/abis/eg/",
+      "ash": "https://linked.data.gov.au/def/abis/sh/",
+      "bdrm": "https://linked.data.gov.au/def/bdr-msg/",
+      "dcterms": "http://purl.org/dc/terms/",
+      "ex": "http://example.com/thing",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "sosa": "http://www.w3.org/ns/sosa/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "status": "https://linked.data.gov.au/def/bdr-msg/status/",
+      "tern": "https://w3id.org/tern/ontologies/tern/",
+      "time": "http://www.w3.org/2006/time#",
+      "void": "http://rdfs.org/ns/void#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+  }
