@@ -3,14 +3,123 @@
 :table-stripes: even
 :sectnums:
 
-NOTE: DRAFT, incomplete
+By https://orcid.org/0000-0002-8742-7730[Nicholas Car]
 
-This is a short overview of the Australian Biodiversity Information Standard (ABIS). It is only one of many parts of the ABIS and all the parts are defined in the https://surroundaustralia.github.io/abis/standard.html:[ABIS Standard Definition].
+This is a short overview of the Australian Biodiversity Information Standard (ABIS). It is only one of many parts of the ABIS and all the parts are defined in the https://ausbigg.github.io/abis/standard.html[ABIS Standard Definition].
 
 == What is ABIS?
 
+ABIS is a data standard that specifies how information about biodiversity is to be represented for exchange and use in Australia. 
+
+It is a technical data standard and mandates a specific form of machine-readable information representation: RDF (Resource Description Framework). RDF is "a standard model for data interchange on the Web"footnote:[https://www.w3.org/RDF/], so ABIS data is machine-readable and able to be sent between users over the web.
+
+Use of the ABIS results in biodiversity information being formulated into data that can be validated agains ABIS requirements in an automated way and the standard provides validators (see <<How do I use it?>>).
+
+ABIS models domain-specific concepts itself but mostly re-uses existing models. <<ABIS Parts>> describes them.
+
+=== ABIS Parts
+
+ABIS draws on multiple, existing, domain standards for many of its parts. For example, ABIS requires use of the https://linkeddata.tern.org.au/information-models/overview[TERN Ontology] for the representation of _Sampling_, _Samples_, _Sites_ and most aspects of filed sampling. Another example: the https://www.ogc.org/[Open Geospatial Consortium]'s https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html[GeoSAPRQL Standard] must be used to represent spatial information.
+
+The figure below shows the parts of ABIS and the list following it describes what they are all for.
+
+[#abis-parts]
+.The main part models within ABIS
+image::abis-parts.png[ABIS Parts,600,400,align="center"]
+
+https://www.tdwg.org/standards/dwc/[Darwin Core Terms], https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html[GeoSPARQL] and https://www.w3.org/TR/vocab-ssn/[SOSA] are international standards for biological, spatial and observations data respectively. The https://linkeddata.tern.org.au/information-models/overview[TERN Ontology], which uses all three of them, is a domain model about 
+sampling and surveying created by the Terrestrial Ecosystems Research Network and the ABIS Data Management Ontology provides additional properties for system management of TERN data.
+
 == How do I use it?
+
+The main things you can do with ABIS are:
+
+* <<Create>>
+** you can create data tha conforms to it
+* <<Validate>>
+** check that the data you've created is actually valid by applying a validator to it
+* <<Exchange>>
+** exchange ABIS with organisations/systems that are designed to accept it, such as the https://bdr.gov.au[Biodiversity Data Repository (BDR)].
+
+=== Create
+
+ABIS data must be in an https://www.w3.org/RDF/[RDF] fomat. RDF is a data model for expressing graphs - nodes of information related by defined types of edges - and there are several different formats that can be used for RDF. All are technically equivalent but different forms suite different people.
+
+Perhaps the best way to start is to consider this small example file in the https://www.w3.org/TR/turtle/[Turtle] RDF format:
+
+```turtle
+PREFIX ex: <http://example.com/>
+PREFIX bdrm: <https://linked.data.gov.au/def/bdr-msg/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sdo: <https://schema.org/>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ex:msg-1
+    a bdrm:CreateMessage ;
+    dcterms:hasPart
+        ex:sampling-1 ,
+        ex:sample-1 ;
+.
+
+ex:sampling-1
+    a tern:Sampling ;
+    prov:wasAssociatedWith <https://example.com/someone> ;
+    sosa:hasFeatureOfInterest ex:foi-1 ;
+    sosa:hasResult ex:sample-1 ;
+    sosa:resultTime "2020-09-21T14:02:03"^^xsd:dateTime ;
+    sosa:usedProcedure <http://linked.data.gov.au/def/tern-cv/8fef9acb-e702-4b2c-8b79-3b22b00987da> ;
+    void:inDataset ex:dataset-1 ;
+    geo:hasGeometry [ geo:asWKT "POINT(115.01, -33.86)"^^geo:wktLiteral ] ;
+.
+
+ex:sample-1
+    a tern:Sample ;
+    sosa:isResultOf ex:sampling-1 ;
+    void:inDataset ex:dataset-1 ;
+.
+
+<https://example.com/someone>
+    a sdo:Person ;
+    sdo:name "Some One" ;
+    sdo:email "someone@someemail.com"^^xsd:anyURI ;
+.
+```
+
+Here a `bdrm:CreateMessage` - used to instruct the Biodiverity Data Repostory to create new information - contains information about a `tern:Sampling` and a `tern:Sample` which reference each other and a `tern:FeatureOfInterest` as well as a `tern:RDFDataset`. Finally, the person this was all associated with (who created/supplied the data) is described.
+
+There are many other examples of ABIS data in the https://ausbigg.github.io/abis/specification.html[Specification] and also in tools that 'talk' ABIS, for example the BDR Gateway: https://gateway.bdr.gov.au.
+
+To test, you may want to create RDF data files by hand, however, for automated production of ABIS data, you should use any one of very many RDF generation tools - just search for them!
+
+Note also that systems to convert non-RDF data to ABIS RDF have been established as part of the Biodiveristy Data Repository project, see https://submission.bdr.gov.au.
+
+=== Validate
+
+You can validate RDF data files against any or all of the validators for its part models using a SHACL validation tool. SHACL is a graph validation language and SHACL tools apply validators to data and report pass/fail and, if fail, error messages.
+
+All the ABIS validators are loaded into the https://gateway.bdr.gov.au[BDR Gateway] and you may submit data to the Gateway's validation endpoint which is set up for testing. There are many pre-loaded valid and invalid examples of data there too to play with.
+
+=== Exchange
+
+If you have ABIS data that you want to submit to an ABIS system, you can do so by sending it in to the system in an automated way. For the BDR, you will need to have been issued with a BDR account and then you can send data to the https://gateway.bdr.gov.au[BDR Gateway]. The BDR is not the only system that undertstands ABIS data and other may accept submissions in other ways.
 
 == Who ownes it?
 
+ABIS is owned by http://example.com[AusBIGG], the Australian Biodiversity Information Governance Group. That group is supported by the https://www.awe.gov.au[Department of Agriculture, Water and the Environment].
+
 == How do I improve it?
+
+Either contact AusBIGG or make direct contributions agains the ABIS repository that contains all of its source files:
+
+* https://github.com/AusBIGG/abis
+
+Submissions agains ABIS will be reviewed in regular AusBIGG meetings and AusBIGG members will vote on their acceptance.
+
+== More help
+
+Please be in contact with AusBIGG or read the https://ausbigg.github.io/abis/specification.html[ABIS Specification].

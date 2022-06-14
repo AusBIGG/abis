@@ -79,7 +79,7 @@ In addition to the "technical" parts, this Specification describes the conceptua
 
 A JSON-LD _context_ built from this namespaces table is available as another resource within the ABIS specification and is online at:
 
-* https://surroundaustralia.github.io/abis/context.json
+* https://ausbigg.github.io/abis/context.json
 
 == Introduction
 
