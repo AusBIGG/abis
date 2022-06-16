@@ -16,7 +16,7 @@ This Standard is in an early stage of development, as of June 2022.
 
 This work is being conducted as part of the Biodiversity Data Repository (BDR) project for the [Department of Agriculture, Water and the Environment (DAWE)](https://www.awe.gov.au/). The technical work for ABIS is being conducted by [SURROUND Australia Pty Ltd](https://surroundaustralia.com) with input from [Gaia Resources](https://www.gaiaresources.com.au) and [TERN](https://www.tern.org.au). 
 
-ABIS is managed by the AusBIGG with asstance from the [department of Agriculture, Water and the Environment](https://www.awe.gov.au).
+ABIS is owned by the Australian Biodiversity Governance Group (AusBIGG) and managed by the ABIS working group with asstance from the [Department of Agriculture, Water and the Environment](https://www.awe.gov.au) and [TERN](https://www.tern.org.au).
 
 For technical initial enquiries, please contact:  
 
@@ -24,3 +24,9 @@ _Lead author_:
 **Nicholas Car**  
 _Data Architect_  
 <nick@kurrawong.net>  
+
+_ABIS WG Co-chairs_:  
+**Siddeswara Guru**  
+<s.guru@uq.edu.au>  
+**Kheeran Dharmawardena**  
+<kheeran.dharmawardena@awe.gov.au>
