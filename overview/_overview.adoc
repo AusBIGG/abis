@@ -108,7 +108,7 @@ All the ABIS validators are loaded into the https://gateway.bdr.gov.au[BDR Gatew
 
 If you have ABIS data that you want to submit to an ABIS system, you can do so by sending it in to the system in an automated way. For the BDR, you will need to have been issued with a BDR account and then you can send data to the https://gateway.bdr.gov.au[BDR Gateway]. The BDR is not the only system that undertstands ABIS data and other may accept submissions in other ways.
 
-== Who ownes it?
+== Who owns it?
 
 ABIS is owned by http://example.com[AusBIGG], the Australian Biodiversity Information Governance Group. That group is supported by the https://www.awe.gov.au[Department of Agriculture, Water and the Environment].
 
