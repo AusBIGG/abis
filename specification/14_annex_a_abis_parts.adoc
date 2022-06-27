@@ -20,7 +20,7 @@ The ABIS specification's domain model is based on the TERN Ontology and includes
 ** https://www.w3.org/TR/vocab-ssn/[Sensor, Observation, Sample, and Actuator (SOSA) Ontology^]
 ** https://dwc.tdwg.org/rdf/[Darwin Core (DWC)^]
 ** https://www.w3.org/2004/02/skos/[SKOS]
-* Mapping Ontologies
+* Mapping Ontologies - _aspirational!_
 ** https://rawcdn.githack.com/CSIRO-enviro-informatics/PUV-ont/dd2d8762f80a58e618269593e99d3f840de0f150/puv.html[Parameter Usage Vocabulary Ontology (PUV)^]
 ** https://i-adopt.github.io/index.html[I-ADOPT Framework Ontology (I-ADOPT)^]
 ** Location Integration Capability Ontology (LOC)
@@ -31,18 +31,15 @@ The BDR system has model requirements for information management and use that ex
 
 * Models
 ** BDR Messaging Ontology
+*** _Incorporated within the BDR_
 * Background Ontologies
-** Profiles Vocabulary (PROF)
-** Provenance, Authoring, and Versioning Ontology (PAV)
+** https://www.w3.org/TR/dx-prof/[Profiles Vocabulary (PROF)]
+** https://pav-ontology.github.io/pav/[Provenance, Authoring, and Versioning Ontology (PAV)]
 
 === Vocabularies
 
 These vocabularies are used by the ontologies listed above.
 
-
-
 === Background Ontologies
 
 These ontologies are relied on (imported by or used by) the ontologies and vocabularies above.
-
-

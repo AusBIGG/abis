@@ -2,45 +2,26 @@
 
 Requirements are the individual rules that data claiming conformance to the ABIS must abide by. 
 
+Requirements in ABIS are grouped according to several Conformance Classes detailed in the section above.
+
 === Requirements Index
 
-* <<Domain Model Conformance Class Requirements, Domain Model Conformance Class Requirements>>
-** <<Sampling space & time position, Sampling space & time position>>
-** <<Sample alternate identifiers, Sample alternate identifiers>>
-** <<TERN `Attribute` class Properties, TERN `Attribute` class Properties>>
-** <<TERN `Boolean` class Properties, TERN `Boolean` class Properties>>
-** <<TERN `Concept` class Properties, TERN `Concept` class Properties>>
-** <<TERN `Count` class Properties, TERN `Count` class Properties>>
-** <<TERN `Dataset` class Properties, TERN `Dataset` class Properties>>
-** <<TERN `Date` class Properties, TERN `Date` class Properties>>
-** <<TERN `DateTime` class Properties, TERN `DateTime` class Properties>>
-** <<TERN `Deployment` class Properties, TERN `Deployment` class Properties>>
-** <<TERN `FeatureOfInterest` class Properties, TERN `FeatureOfInterest` class Properties>>
-** <<TERN `IRI` class Properties, TERN `IRI` class Properties>>
-** <<TERN `Instant` class Properties, TERN `Instant` class Properties>>
-** <<TERN `Instrument` class Properties, TERN `Instrument` class Properties>>
-** <<TERN `ManagedFeature` class Properties, TERN `ManagedFeature` class Properties>>
-** <<TERN `Observation` class Properties, TERN `Observation` class Properties>>
-** <<TERN `ObservationCollection` class Properties, TERN `ObservationCollection` class Properties>>
-** <<TERN `Percent` class Properties, TERN `Percent` class Properties>>
-** <<TERN `PercentRange` class Properties, TERN `PercentRange` class Properties>>
-** <<TERN `Plot` class Properties, TERN `Plot` class Properties>>
-** <<TERN `Quadrat` class Properties, TERN `Quadrat` class Properties>>
-** <<TERN `QuantitativeMeasure` class Properties, TERN `QuantitativeMeasure` class Properties>>
-** <<TERN `QuantitativeRange` class Properties, TERN `QuantitativeRange` class Properties>>
-** <<TERN `RDFDataset` class Properties, TERN `RDFDataset` class Properties>>
-** <<TERN `Result` class Properties, TERN `Result` class Properties>>
-** <<TERN `Sample` class Properties, TERN `Sample` class Properties>>
-** <<TERN `Sampling` class Properties, TERN `Sampling` class Properties>>
-** <<TERN `Site` class Properties, TERN `Site` class Properties>>
-** <<TERN `SiteVisit` class Properties, TERN `SiteVisit` class Properties>>
-** <<TERN `System` class Properties, TERN `System` class Properties>>
-** <<TERN `Text` class Properties, TERN `Text` class Properties>>
-** <<TERN `Transect` class Properties, TERN `Transect` class Properties>>
-* <<ABIS Message Conformance Class Requirements, ABIS Message Conformance Class Requirements>>
-** <<Message containing new Observations, Message containing new Observations>>
-** <<Message containing Observation to be deleted, Message containing Observation to be deleted>>
+==== <<Domain Model, Domain Model Conformance Class>>
+* TERN Ontology
+** All TERN Ontology Requirements as specified in model documentation
+** See the https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model[TERN Ontology Conceptual Model overview]
+* GeoSPARQL
+** All of the Requirements relating to the GeoSPARQL ontology, not the GeoSAPRQL functions
+** See the https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_annex_a_abstract_test_suite_normative[GeoSAPRQL 1.1. Abstract Test Suite]
+* Vocabulary Publication Profile
+** See the https://w3id.org/profile/vocpub/spec[VocPub Specification's listing of Requirements]
+* <<Domain Model Extended ABIS Requirements>>
+** All of the Requirements specified in this section of this Specification
 
+==== <<BDR Messages, BDR Messages Conformance Class>>
+* <<Message Parts>>
+* <<CreateMessage Createme IRIs>>
+* <<Update or Delete Message IRIs>>
 
 include::02_1_domain_model.adoc[]
 

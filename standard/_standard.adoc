@@ -1,9 +1,11 @@
-= ABIS Definition
+= ABIS Standard's Definition
 :toc: left
 :table-stripes: even
 :sectnums:
 
-NOTE: DRAFT, incomplete
+[#overview]
+.Overview of the ABIS and it's main parts.
+image::img/standard-overview.png[ABIS Overview,600,400,align="center"]
 
 == Metadata
 
@@ -21,10 +23,6 @@ NOTE: DRAFT, incomplete
 |**Further information** | See the core repository that contains all the resources used to create ABIS: https://github.com/surroundaustralia/abis
 |===         
 
-[#img-rdf]
-.Overview of the ABIS and it's main parts.
-image::img/standard-overview.png[ABIS Overview,600,400,align="center"]
-
 == Preamble
 === Abstract
 
@@ -34,28 +32,6 @@ This is the Standard Definition of the Australian Biodiversity Information Stand
 
 This Standard Definition is normative for the structure of the ABIS and take precedence over other expressions of the Standard's structure.
 
-=== Namespaces
-
-This document references namespaces for machine-readable objects. All referenced namespaces are defined in this table.
-
-[width=75%, frame=none, grid=none]
-|===
-|Prefix | Namespace | Description
-
-|**`abis:`** | **`https://linked.data.gov.au/def/abis/`** | **ABIS Standard Definition namespace**
-|**`req:`** | **`https://linked.data.gov.au/def/abis/req/`** | **ABIS Requirements namespace**
-|`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
-|`ex:` | `http://example.com/` | Generic examples namespace
-|`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
-|`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
-|`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
-|`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
-|`tern:` | `http://www.w3.org/ns/sosa/` | TERN Ontology namespace
-|`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
-|`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
-|`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
-|===
-
 == Introduction
 
 This Standard is a multi-part publication that consists of human-readable documents, such as this one, the _Overview_ and _Specification_, and machine-readable artifacts, such as data validators.
@@ -64,7 +40,7 @@ This Standard and its parts are defined here in human-readable form and in machi
 
 The following sections describe the parts and how they relate to each other and other standards using terminology from the Profiles Vocabulary.
 
-NOTE: The document that describes the business rules and other requirements of ABIS is the https://linked.data.gov.au/def/abis/spec[_Specification_], not this document.
+NOTE: The document that describes the business rules and other requirements of ABIS is the https://linked.data.gov.au/def/abis/specification[_Specification_], not this document.
 
 === Profiles Vocabulary overview
 
@@ -97,60 +73,33 @@ Standards described using PROF:
 _(this document)_ 
 | *https://surroundaustralia.github.io/prof-roles/profile-definition[Profile Definition]*
 | *Defines this Standard's parts and relations to other Standards*
-| *https://surroundaustralia.github.io/abis/standard.html[https://linked.data.gov.au/def/abis]*
+| *<https://linked.data.gov.au/def/abis>*
 
-|Machine-readable Standard Definition
+| Standard Definition - machine-readable
 | https://surroundaustralia.github.io/prof-roles/profile-definition[Profile Definition]
 | Defines this Standard's parts and relations to other Standards in machine-readable form
-| https://surroundaustralia.github.io/abis/standard.ttl[https://linked.data.gov.au/def/abis.ttl]
+| <https://linked.data.gov.au/def/abis.ttl>
+
+| Overview
+| https://surroundaustralia.github.io/prof-roles/guidance[Guidance]
+| Provides a high-level, non-technical view of ABIS
+| <https://linked.data.gov.au/def/abis/overview>
+
+| Specification
+| https://surroundaustralia.github.io/prof-roles/specification[Specification]
+| The normative ABIS specification
+| <https://linked.data.gov.au/def/abis/specification>
+
+| Validator
+| https://surroundaustralia.github.io/prof-roles/validation[Validation]
+| Machine-actionable validators to test data claiming conformance to ABIS
+| <https://linked.data.gov.au/def/abis/validator>
+
+| JSON-LD Context
+| https://surroundaustralia.github.io/prof-roles/vocabulary[Vocabulary]
+| Machine-readable listing of RDF namespaces used by ABIS
+| <https://linked.data.gov.au/def/abis/jsonldcontext>
 |===
-
-#TODO: re-add content below to table above#
-```
-|https://surroundaustralia.github.io/abis/specification.html[specification.html] | https://surroundaustralia.github.io/prof-roles/specification[Specification] | The document that lists the normative requirements - business rules - for data to conform to in order to be compliant
-|https://linkeddata-dev.tern.org.au/tern-ontology[TERN Ontology] | https://surroundaustralia.github.io/prof-roles/schema[Schema] | The main domain model for this Standard, in human-readable form
-|https://raw.githubusercontent.com/ternaustralia/ontology_tern/master/docs/tern.ttl[TERN Ontology in RDF] | https://surroundaustralia.github.io/prof-roles/schema[Schema] | The main domain model for this Standard, in machine-readable form (RDF Turtle)
-|https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/mappings[RDF Mappings (folder)] | https://surroundaustralia.github.io/prof-roles/mapping[Mapping] | Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.
-
-See also the _Mappings_ section within the https://surroundaustralia.github.io/abis/specification.html[specification.html] document
-|https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/examples[RDF Examples (folder)] | https://surroundaustralia.github.io/prof-roles/example[Example] | Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.
-
-See also the _Examples_ section within the https://surroundaustralia.github.io/abis/specification.html[specification.html] document
-|https://github.com/surroundaustralia/abis/tree/master/kg/validators[Shapes validators (folder)] | https://surroundaustralia.github.io/prof-roles/validation[Validation] | Machine-readable, https://www.w3.org/TR/shacl/[Shapes Constraint Language (SHACL)], validators.
-
-These are used to validate data claiming conformance to the ABIS, for instance by the http://bdrgateway.surroundaustralia.com/[BDR Gateway] to validate ABIS data bound for the Biodiversity Data Repository.
-
-Note that within the Specification Document, individual Requirements link to the individual validators relevant for them.
-|`XXX Vocabulary` | https://surroundaustralia.github.io/prof-roles/vocabulary[Vocabulary] | Supporting vocabulary XXX (example).
-```
-
-#TODO: TMI below, remove#
-The machine-redable form of this Standard's conceptual _profile_ declaration is provided in the RDF https://surroundaustralia.github.io/abis/profile.ttl[profile.ttl] resource and reproduced here for convenience:
-
-```turtle
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix prof: <http://www.w3.org/ns/dx/prof/> .
-
-
-<https://linked.data.gov.au/def/abis>
-    a prof:Profile , dcterms:Standard ;
-    dcterms:title "ABIS Definition" ;
-    dcterms:description "This resource describes the structure and multiple parts of the ABIS as well as the formalisms used in their definitions, in machine-readable form." ;
-    dcterms:created "2021-12-13"^^xsd:date ;
-    dcterms:modified "2021-12-13"^^xsd:date ;
-    # dcterms:issued "0000-00-00"^^xsd:date ;
-    dcterms:creator
-        <https://linked.data.gov.au/org/surround> ,
-        <https://www.gaiaresources.com.au> ,
-        <https://linked.data.gov.au/org/dawe> ;
-    dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
-    dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-    dcterms:rights "(c) Commonwealth of Australian (Department of Agriculture, Water and the Environment), 2021" ;
-    prof:isProfileOf 
-        <https://www.w3.org/TR/vocab-ssn/> ;
-.
-```
-
 
 == References
 

@@ -3,7 +3,12 @@
 :table-stripes: even
 :sectnums:
 
+The normative listing of requirements for data conformig to the Australian Biodiversity Information Standard for Biodiversity Data (ABIS).
+
 NOTE: DRAFT, incomplete
+
+[#abis-parts]
+image::../overview/abis-parts.png[ABIS Parts,450,300,align="center"]
 
 == Metadata
 
@@ -13,7 +18,8 @@ NOTE: DRAFT, incomplete
 |**Title** | Australian Biodiversity Information Standard's Specification
 |**Definition** | This document lists the normative requirements for data aiming to conform to the https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard]. It is to be used as the authoritative, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.
 |**Created** | 2021-10-24
-|**Modified** | 2022-02-28
+|**Modified** | 2022-06-26
+|**Issued** | 0000-00-00
 |**Creator** | https://linked.data.gov.au/org/dawe[SURROUND Australia Pty Ltd](https://linked.data.gov.au/org/surround), https://www.gaiaresources.com.au/[Gaia Resources] and the https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**Publisher** | https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
@@ -117,7 +123,7 @@ The https://en.wikipedia.org/wiki/Semantic_Web[Semantic Web] interpretation of t
 |Examples | `skos:example` | IRI of a `Resource Descriptor`
 |===
 
-See the #namespaces[Namespaces] section below to understand the prefixes in the table above.
+See the <<Namespaces>> section below to understand the prefixes in the table above.
 
 The following subsections define properties of the _requirements_ in detail.
 
@@ -137,7 +143,7 @@ Each _requirement_ is named with a short form of its definition, to assist with 
 
 Each _requirement_ is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the https://www.w3.org/TR/owl2-overview/[Web Ontology Language (OWL)] since the _target models_ of the ABIS are themselves OWL Ontologies.
 
-> NOTE: if there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
+NOTE: If there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
 
 ==== Conformance Classes list
 
@@ -155,7 +161,7 @@ Each _requirement_ contains references to individual, identified, data validatio
 
 The content of _validator_s is contianed in the ABIS' _Validator_ resource.
 
-> NOTE: the validating _shapes_ are not 1:1 with these _requirements_ and that there are _requirements_ for which there are no _shapes_ - those _requirements_ that cannot be determined to have been met by inspecting data.
+NOTE: The validating _shapes_ are not 1:1 with these _requirements_ and that there are _requirements_ for which there are no _shapes_ - those _requirements_ that cannot be determined to have been met by inspecting data.
 
 ==== Canonical examples
 
@@ -170,10 +176,7 @@ include::01_conformance_classes.adoc[]
 include::02_requirements.adoc[]
 
 
-include::03_sources.adoc[]
-
-
-include::04_examples.adoc[]
+include::03_examples.adoc[]
 
 
 == References

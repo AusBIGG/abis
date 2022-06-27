@@ -5,7 +5,7 @@
 
 By https://orcid.org/0000-0002-8742-7730[Nicholas Car]
 
-This is a short overview of the Australian Biodiversity Information Standard (ABIS). It is only one of many parts of the ABIS and all the parts are defined in the https://ausbigg.github.io/abis/standard.html[ABIS Standard Definition].
+This document is a short overview of the Australian Biodiversity Information Standard (ABIS). It is only one of many parts of the ABIS and all the parts are defined in the https://ausbigg.github.io/abis/standard.html[ABIS Standard Definition].
 
 == What is ABIS?
 
@@ -35,7 +35,7 @@ sampling and surveying created by the Terrestrial Ecosystems Research Network an
 The main things you can do with ABIS are:
 
 * <<Create>>
-** you can create data tha conforms to it
+** you can create data that conforms to ABIS
 * <<Validate>>
 ** check that the data you've created is actually valid by applying a validator to it
 * <<Exchange>>
@@ -102,7 +102,11 @@ Note also that systems to convert non-RDF data to ABIS RDF have been established
 
 You can validate RDF data files against any or all of the validators for its part models using a SHACL validation tool. SHACL is a graph validation language and SHACL tools apply validators to data and report pass/fail and, if fail, error messages.
 
-All the ABIS validators are loaded into the https://gateway.bdr.gov.au[BDR Gateway] and you may submit data to the Gateway's validation endpoint which is set up for testing. There are many pre-loaded valid and invalid examples of data there too to play with.
+A free, online, SHACL validation tool that allows you to select from stored validators or add your own validator is:
+
+* http://rdftools.kurrawong.net[RDF Tools]
+
+All the ABIS validators are pre-loaded into the https://gateway.bdr.gov.au[BDR Gateway] and you may submit data to the Gateway's validation endpoint which is set up for testing. There are many pre-loaded valid and invalid examples of data there too to play with.
 
 === Exchange
 
