@@ -8,7 +8,7 @@ The normative listing of requirements for data conformig to the Australian Biodi
 NOTE: DRAFT, incomplete
 
 [#abis-parts]
-image::../overview/abis-parts.png[ABIS Parts,450,300,align="center"]
+image::abis-parts.png[ABIS Parts,450,300,align="center"]
 
 == Metadata
 

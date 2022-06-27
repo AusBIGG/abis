@@ -1,4 +1,4 @@
-name: Auto-buid HTML
+name: Auto-build HTML
 
 on: 
   push: 
