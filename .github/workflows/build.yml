@@ -24,7 +24,7 @@ jobs:
         echo "Add standard to docs/"
         asciidoctor standard/_standard.adoc -o docs/standard.html
         cp -r standard/img docs/
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/abis/#' docs/standard.html        
+        sed -i 's#img src="#img src="https://ausbigg.github.io/abis/#' docs/standard.html        
         #
         echo "Add standard RDF to docs/"
         cp profile.ttl docs/
@@ -32,12 +32,12 @@ jobs:
         echo "Add Specification to docs/"   
         asciidoctor specification/_specification.adoc -o docs/specification.html
         cp -r specification/img docs/
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/abis/#' docs/specification.html
+        sed -i 's#img src="#img src="https://ausbigg.github.io/abis/#' docs/specification.html
         #
         echo "Add Overview to docs/"   
         asciidoctor overview/_overview.adoc -o docs/overview.html
-        # cp -r overview/img docs/
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/abis/#' docs/overview.html        
+        cp -r overview/*.png docs/
+        sed -i 's#img src="#img src="https://ausbigg.github.io/abis/#' docs/overview.html        
         #
         echo "Add JSON-LD Context to docs/"
         cp context.json docs/
