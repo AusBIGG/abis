@@ -18,15 +18,15 @@ This work is being conducted as part of the Biodiversity Data Repository (BDR) p
 
 ABIS is owned by the Australian Biodiversity Governance Group (AusBIGG) and managed by the ABIS working group with asstance from the [Department of Agriculture, Water and the Environment](https://www.awe.gov.au) and [TERN](https://www.tern.org.au).
 
-For technical initial enquiries, please contact:  
-
-_Lead author_:  
-**Nicholas Car**  
-_Data Architect_  
-<nick@kurrawong.net>  
+For enquiries, please contact:  
 
 _ABIS WG Co-chairs_:  
 **Siddeswara Guru**  
 <s.guru@uq.edu.au>  
 **Kheeran Dharmawardena**  
 <kheeran.dharmawardena@awe.gov.au>
+
+_Lead author_:  
+**Nicholas Car**  
+_Data Architect_  
+<nick@kurrawong.net>  

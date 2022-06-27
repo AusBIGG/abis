@@ -459,37 +459,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_conformance_classes">4. Conformance Classes</a>
 <ul class="sectlevel2">
 <li><a href="#_conformance_class_index">4.1. Conformance Class Index</a></li>
-<li><a href="#_domain_model_conformance_class">4.2. Domain Model Conformance Class</a></li>
-<li><a href="#_bdr_system_conformance_class">4.3. BDR System Conformance Class</a></li>
+<li><a href="#_domain_model">4.2. Domain Model</a></li>
+<li><a href="#_bdr_messages">4.3. BDR Messages</a></li>
 </ul>
 </li>
 <li><a href="#_requirements">5. Requirements</a>
 <ul class="sectlevel2">
 <li><a href="#_requirements_index">5.1. Requirements Index</a></li>
-<li><a href="#_domain_model_conformance_class_requirements">5.2. Domain Model Conformance Class Requirements</a></li>
-<li><a href="#_bdr_message_conformance_class_requirements">5.3. BDR Message Conformance Class Requirements</a></li>
+<li><a href="#_domain_model_requirements">5.2. Domain Model Requirements</a></li>
+<li><a href="#_bdr_messages_requirements">5.3. BDR Messages Requirements</a></li>
 </ul>
 </li>
-<li><a href="#_sources">6. Sources</a>
+<li><a href="#_examples">6. Examples</a>
 <ul class="sectlevel2">
-<li><a href="#_abis_messaging">6.1. ABIS Messaging</a></li>
-<li><a href="#_tern_ontology">6.2. TERN Ontology</a></li>
-<li><a href="#_darwin_core_rdf">6.3. Darwin Core RDF</a></li>
-<li><a href="#_audubon_core_term_list">6.4. Audubon Core Term List</a></li>
-<li><a href="#_abis_messaging_2">6.5. ABIS Messaging</a></li>
+<li><a href="#_domain_model_2">6.1. Domain Model</a></li>
+<li><a href="#_bdr_sytem">6.2. BDR Sytem</a></li>
 </ul>
 </li>
-<li><a href="#_examples">7. Examples</a>
-<ul class="sectlevel2">
-<li><a href="#_bdr_sytem">7.1. BDR Sytem</a></li>
-<li><a href="#_domain_model">7.2. Domain Model</a></li>
-<li><a href="#_sampling_position">7.3. Sampling Position</a></li>
-</ul>
-</li>
-<li><a href="#_references">8. References</a></li>
+<li><a href="#_references">7. References</a></li>
 <li><a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>
 <ul class="sectlevel2">
-<li><a href="#_domain_model_2">Domain Model</a></li>
+<li><a href="#_domain_model_3">Domain Model</a></li>
 <li><a href="#_bdr_system">BDR System</a></li>
 <li><a href="#_vocabularies">Vocabularies</a></li>
 <li><a href="#_background_ontologies">Background Ontologies</a></li>
@@ -508,6 +498,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>The normative listing of requirements for data conformig to the Australian Biodiversity Information Standard for Biodiversity Data (ABIS).</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -519,6 +512,11 @@ DRAFT, incomplete
 </td>
 </tr>
 </table>
+</div>
+<div id="abis-parts" class="imageblock text-center">
+<div class="content">
+<img src="https://surroundaustralia.github.io/abis/../overview/abis-parts.png" alt="ABIS Parts" width="450" height="300">
+</div>
 </div>
 </div>
 </div>
@@ -549,7 +547,11 @@ DRAFT, incomplete
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-28</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-26</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0000-00-00</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
@@ -875,7 +877,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 </tbody>
 </table>
 <div class="paragraph">
-<p>See the #namespaces[Namespaces] section below to understand the prefixes in the table above.</p>
+<p>See the <a href="#_namespaces">Namespaces</a> section below to understand the prefixes in the table above.</p>
 </div>
 <div class="paragraph">
 <p>The following subsections define properties of the <em>requirements</em> in detail.</p>
@@ -903,8 +905,6 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="paragraph">
 <p>Each <em>requirement</em> is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the <a href="https://www.w3.org/TR/owl2-overview/">Web Ontology Language (OWL)</a> since the <em>target models</em> of the ABIS are themselves OWL Ontologies.</p>
 </div>
-<div class="quoteblock">
-<blockquote>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -912,12 +912,10 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="title">Note</div>
 </td>
 <td class="content">
-if there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
+If there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
 </td>
 </tr>
 </table>
-</div>
-</blockquote>
 </div>
 </div>
 <div class="sect3">
@@ -943,8 +941,6 @@ if there are differences between derivatives of this specification, including th
 <div class="paragraph">
 <p>The content of <em>validator_s is contianed in the ABIS' _Validator</em> resource.</p>
 </div>
-<div class="quoteblock">
-<blockquote>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -952,12 +948,10 @@ if there are differences between derivatives of this specification, including th
 <div class="title">Note</div>
 </td>
 <td class="content">
-the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and that there are <em>requirements</em> for which there are no <em>shapes</em> - those <em>requirements</em> that cannot be determined to have been met by inspecting data.
+The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and that there are <em>requirements</em> for which there are no <em>shapes</em> - those <em>requirements</em> that cannot be determined to have been met by inspecting data.
 </td>
 </tr>
 </table>
-</div>
-</blockquote>
 </div>
 </div>
 <div class="sect3">
@@ -981,25 +975,25 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="sect2">
 <h3 id="_conformance_class_index">4.1. Conformance Class Index</h3>
 <div class="paragraph">
-<p>The Conformance Classes are:</p>
+<p>The ABIS Conformance Classes are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#_domain_model_conformance_class">Domain Model Conformance Class</a></p>
+<p><a href="#_domain_model">Domain Model</a></p>
 </li>
 <li>
-<p><a href="#ABIS Messages Conformance Class">ABIS Messages Conformance Class</a></p>
+<p><a href="#_bdr_messages">BDR Messages</a></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_domain_model_conformance_class">4.2. Domain Model Conformance Class</h3>
+<h3 id="_domain_model">4.2. Domain Model</h3>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -1018,21 +1012,35 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The set of requirements needed to be met to ensure conformance with the Domain Model within this Standard which is derived from the <a href="https://linkeddata-dev.tern.org.au/tern-ontology">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Requirements</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/observation-properties"><code>req:observation-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The set of requirements needed to be met to ensure conformance with the Domain Model within this Standard. Requirements in this Conformance Class are all those specified for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="https://linkeddata-dev.tern.org.au/tern-ontology">TERN Ontology</a> - for sampling information</p>
+</li>
+<li>
+<p><a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html">GeoSPARQL 1.1</a> - for spatiality</p>
+</li>
+<li>
+<p>The <a href="https://w3id.org/profile/vocpub">Vocabulary Publications Profile</a> of SKOS - for vocabulary content</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As well as Requirements specified within this Specification in <a href="#_domain_model_extended_abis_requirements">Domain Model Extended ABIS Requirements</a></p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_bdr_system_conformance_class">4.3. BDR System Conformance Class</h3>
+<h3 id="_bdr_messages">4.3. BDR Messages</h3>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -1053,10 +1061,6 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The set of requirements needed to be met to ensure conformance with the ABIS' Gateway&#8217;s message needs</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Requirements</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/message-new-observations"><code>req:message-new-observations</code></a></p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1068,179 +1072,108 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="paragraph">
 <p>Requirements are the individual rules that data claiming conformance to the ABIS must abide by.</p>
 </div>
+<div class="paragraph">
+<p>Requirements in ABIS are grouped according to several Conformance Classes detailed in the section above.</p>
+</div>
 <div class="sect2">
 <h3 id="_requirements_index">5.1. Requirements Index</h3>
+<div class="sect3">
+<h4 id="_domain_model_conformance_class">5.1.1. <a href="#_domain_model">Domain Model Conformance Class</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#_domain_model_conformance_class_requirements">Domain Model Conformance Class Requirements</a></p>
+<p>TERN Ontology</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#_sampling_space_time_position">Sampling space &amp; time position</a></p>
+<p>All TERN Ontology Requirements as specified in model documentation</p>
 </li>
 <li>
-<p><a href="#_sample_alternate_identifiers">Sample alternate identifiers</a></p>
-</li>
-<li>
-<p><a href="#_tern_attribute_class_properties">TERN <code>Attribute</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_boolean_class_properties">TERN <code>Boolean</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_concept_class_properties">TERN <code>Concept</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_count_class_properties">TERN <code>Count</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_dataset_class_properties">TERN <code>Dataset</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_date_class_properties">TERN <code>Date</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_datetime_class_properties">TERN <code>DateTime</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_deployment_class_properties">TERN <code>Deployment</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_featureofinterest_class_properties">TERN <code>FeatureOfInterest</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_iri_class_properties">TERN <code>IRI</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_instant_class_properties">TERN <code>Instant</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_instrument_class_properties">TERN <code>Instrument</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_managedfeature_class_properties">TERN <code>ManagedFeature</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_observation_class_properties">TERN <code>Observation</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_observationcollection_class_properties">TERN <code>ObservationCollection</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_percent_class_properties">TERN <code>Percent</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_percentrange_class_properties">TERN <code>PercentRange</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_plot_class_properties">TERN <code>Plot</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_quadrat_class_properties">TERN <code>Quadrat</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_quantitativemeasure_class_properties">TERN <code>QuantitativeMeasure</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_quantitativerange_class_properties">TERN <code>QuantitativeRange</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_rdfdataset_class_properties">TERN <code>RDFDataset</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_result_class_properties">TERN <code>Result</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_sample_class_properties">TERN <code>Sample</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_sampling_class_properties">TERN <code>Sampling</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_site_class_properties">TERN <code>Site</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_sitevisit_class_properties">TERN <code>SiteVisit</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_system_class_properties">TERN <code>System</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_text_class_properties">TERN <code>Text</code> class Properties</a></p>
-</li>
-<li>
-<p><a href="#_tern_transect_class_properties">TERN <code>Transect</code> class Properties</a></p>
+<p>See the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model">TERN Ontology Conceptual Model overview</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><a href="#ABIS Message Conformance Class Requirements">ABIS Message Conformance Class Requirements</a></p>
+<p>GeoSPARQL</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#_message_containing_new_observations">Message containing new Observations</a></p>
+<p>All of the Requirements relating to the GeoSPARQL ontology, not the GeoSAPRQL functions</p>
 </li>
 <li>
-<p><a href="#Message containing Observation to be deleted">Message containing Observation to be deleted</a></p>
+<p>See the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_annex_a_abstract_test_suite_normative">GeoSAPRQL 1.1. Abstract Test Suite</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Vocabulary Publication Profile</p>
+<div class="ulist">
+<ul>
+<li>
+<p>See the <a href="https://w3id.org/profile/vocpub/spec">VocPub Specification&#8217;s listing of Requirements</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#_domain_model_extended_abis_requirements">Domain Model Extended ABIS Requirements</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>All of the Requirements specified in this section of this Specification</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bdr_messages_conformance_class">5.1.2. <a href="#_bdr_messages">BDR Messages Conformance Class</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_message_parts">Message Parts</a></p>
+</li>
+<li>
+<p><a href="#_createmessage_createme_iris">CreateMessage Createme IRIs</a></p>
+</li>
+<li>
+<p><a href="#_update_or_delete_message_iris">Update or Delete Message IRIs</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_domain_model_conformance_class_requirements">5.2. Domain Model Conformance Class Requirements</h3>
+<h3 id="_domain_model_requirements">5.2. Domain Model Requirements</h3>
 <div class="sect3">
-<h4 id="_sampling_space_time_position">5.2.1. Sampling space &amp; time position</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sampling-position"><code>req:sampling-position</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sampling space &amp; time position</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Instances of the TERN Ontology&#8217;s <code>Sampling</code> class <em>MUST</em> be located in space and time</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/cc/domain-model"><code>cc:domain-model</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a>, BDR Project Co-design</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>coming</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RDF: <a href="https://github.com/surroundaustralia/abis/blob/master/kg/datagraphs/examples/sample-position.ttl">sample-position.ttl</a></p>
-<p class="tableblock">Descriptions: <a href="#_sampling_position">Sampling Position</a></p></td>
-</tr>
-</tbody>
-</table>
+<h4 id="_tern_ontology">5.2.1. TERN Ontology</h4>
+<div class="paragraph">
+<p>See the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model">TERN Ontology Conceptual Model overview</a></p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_sample_alternate_identifiers">5.2.2. Sample alternate identifiers</h4>
+<h4 id="_geosaprql_1_1">5.2.2. GeoSAPRQL 1.1</h4>
+<div class="paragraph">
+<p>See the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_annex_a_abstract_test_suite_normative">GeoSAPRQL 1.1. Abstract Test Suite</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vocpub">5.2.3. VocPub</h4>
+<div class="paragraph">
+<p>See the <a href="https://w3id.org/profile/vocpub/spec">VocPub Specification&#8217;s listing of Requirements</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_domain_model_extended_abis_requirements">5.2.4. Domain Model Extended ABIS Requirements</h4>
+<div class="paragraph">
+<p>These Requirements are specified here and address ABIS-specific domain model concerns not already covered by the TERN Ontology, GeoSPARQL or VocPub.</p>
+</div>
+<div class="sect4">
+<h5 id="_sample_alternate_identifiers">Sample alternate identifiers</h5>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1279,1976 +1212,18 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RDF: <a href="https://github.com/surroundaustralia/abis/blob/master/kg/datagraphs/examples/sample-alternate-identifiersttl">sample-alternate-identifiers.ttl</a></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDF: <a href="https://github.com/AusBIGG/abis/blob/master/kg/datagraphs/examples/sample-alternate-identifiers.ttl">sample-alternate-identifiers.ttl</a></p>
 <p class="tableblock">Descriptions: <a href="#_sample_alternate_identifiers_example">Sample alternate identifiers example</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="_tern_attribute_class_properties">5.2.3. TERN <code>Attribute</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/attribute-properties"><code>req:Attribute-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN attribute Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Attribute</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 TERN Ontology <code>attribute</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>exactly 1 TERN Ontology <code>hasSimpleValue</code> predicate indicating an IRI or literal value;</p>
-</li>
-<li>
-<p>exactly 1 TERN Ontology <code>hasValue</code> predicate indicating a TERN Ontology <code>Value</code> instance;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a Dublin Core Terms <code>type</code> predicate, it <em>must</em> indicate an IRI;</p>
-</li>
-<li>
-<p>a Vocabulary of Interlinked Data Ontology <code>inDataset</code> predicate, it <em>must</em> indicate a TERN Ontology <code>RDFDataset</code> instance;</p>
-</li>
-<li>
-<p>a TERN Ontology <code>isAttributeOf</code> predicate, it <em>must</em> indicate an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Attribute"><code>tern:Attribute</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/attribute/example-valid-01"><code>attribute:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_boolean_class_properties">5.2.4. TERN <code>Boolean</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/boolean-properties"><code>req:Boolean-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN boolean Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Boolean</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating a <code>boolean</code> literal value;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Boolean"><code>tern:Boolean</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/boolean/example-valid-01"><code>boolean:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_concept_class_properties">5.2.5. TERN <code>Concept</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/concept-properties"><code>req:Concept-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN concept Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Concept</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>localValue</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>localVocabulary</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>exactly 1 TERN Ontology <code>vocabulary</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Concept"><code>tern:Concept</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/concept/example-valid-01"><code>concept:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_count_class_properties">5.2.6. TERN <code>Count</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/count-properties"><code>req:Count-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN count Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Count</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating a <code>integer</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>uncertainty</code> predicate indicating a <code>double</code> literal value;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Count"><code>tern:Count</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/count/example-valid-01"><code>count:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_dataset_class_properties">5.2.7. TERN <code>Dataset</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/dataset-properties"><code>req:Dataset-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN dataset Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a (FIX: No namespace binding for <code><a href="http://www.w3.org/ns/dcat#distribution" class="bare">http://www.w3.org/ns/dcat#distribution</a></code>), it <em>must</em> indicate a TERN Ontology <code>Distribution</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01"><code>dataset:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_date_class_properties">5.2.8. TERN <code>Date</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/date-properties"><code>req:Date-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN date Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Date</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating a <code>date</code> literal value;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Date"><code>tern:Date</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/date/example-valid-01"><code>date:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_datetime_class_properties">5.2.9. TERN <code>DateTime</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/datetime-properties"><code>req:DateTime-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN datetime Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>DateTime</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating a <code>dateTime</code> literal value;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/DateTime"><code>tern:DateTime</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/datetime/example-valid-01"><code>datetime:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_deployment_class_properties">5.2.10. TERN <code>Deployment</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/deployment-properties"><code>req:Deployment-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN deployment Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Deployment</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 Semantic Sensor Network Ontology <code>deployedOnPlatform</code> predicate indicating a TERN Ontology <code>Platform</code> instance;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a Semantic Sensor Network Ontology <code>deployedSystem</code> predicate, it <em>must</em> indicate a TERN Ontology <code>System</code> instance;</p>
-</li>
-<li>
-<p>a TERN Ontology <code>hasAttribute</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Attribute</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Deployment"><code>tern:Deployment</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/deployment/example-valid-01"><code>deployment:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_featureofinterest_class_properties">5.2.11. TERN <code>FeatureOfInterest</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/featureofinterest-properties"><code>req:FeatureOfInterest-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN featureofinterest Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>FeatureOfInterest</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>exactly 1 Vocabulary of Interlinked Data Ontology <code>inDataset</code> predicate indicating a TERN Ontology <code>RDFDataset</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 RDF Schema Ontology <code>comment</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a Dublin Core Terms <code>identifier</code> predicate, it <em>must</em> indicate a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>a GeoSPARQL Ontology <code>hasGeometry</code> predicate, it <em>must</em> indicate a TERN Location Alignment Ontology <code>Geometry</code> instance;</p>
-</li>
-<li>
-<p>a SOSA Ontology <code>hasSample</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Sample</code> instance;</p>
-</li>
-<li>
-<p>a SOSA Ontology <code>isFeatureOfInterestOf</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Observation</code> instance or TERN Ontology <code>Sampling</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"><code>tern:FeatureOfInterest</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/featureofinterest/example-valid-01"><code>featureofinterest:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_iri_class_properties">5.2.12. TERN <code>IRI</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/iri-properties"><code>req:IRI-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN iri Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>IRI</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/IRI"><code>tern:IRI</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/iri/example-valid-01"><code>iri:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_instant_class_properties">5.2.13. TERN <code>Instant</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/instant-properties"><code>req:Instant-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN instant Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Instant</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 Time Ontology <code>inXSDDateTimeStamp</code> predicate indicating a <code>dateTimeStamp</code> literal value or <code>dateTime</code> literal value;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Instant"><code>tern:Instant</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/instant/example-valid-01"><code>instant:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_instrument_class_properties">5.2.14. TERN <code>Instrument</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/instrument-properties"><code>req:Instrument-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN instrument Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Instrument</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>a maximum of 1 RDF Schema Ontology <code>comment</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 RDF Schema Ontology <code>label</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 TERN Ontology <code>instrumentType</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Instrument"><code>tern:Instrument</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/instrument/example-valid-01"><code>instrument:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_managedfeature_class_properties">5.2.15. TERN <code>ManagedFeature</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/managedfeature-properties"><code>req:ManagedFeature-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN managedfeature Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>ManagedFeature</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 TERN Ontology <code>dateCommissioned</code> predicate indicating a <code>date</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>dateDecommissioned</code> predicate indicating a <code>date</code> literal value;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/ManagedFeature"><code>tern:ManagedFeature</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/managedfeature/example-valid-01"><code>managedfeature:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_observation_class_properties">5.2.16. TERN <code>Observation</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/observation-properties"><code>req:Observation-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN observation Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Observation</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>exactly 1 Vocabulary of Interlinked Data Ontology <code>inDataset</code> predicate indicating a TERN Ontology <code>RDFDataset</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 RDF Schema Ontology <code>comment</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 SOSA Ontology <code>hasFeatureOfInterest</code> predicate indicating a TERN Ontology <code>FeatureOfInterest</code> instance;</p>
-</li>
-<li>
-<p>exactly 1 SOSA Ontology <code>hasResult</code> predicate indicating a TERN Ontology <code>Value</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 SOSA Ontology <code>madeBySensor</code> predicate indicating a TERN Ontology <code>Sensor</code> instance;</p>
-</li>
-<li>
-<p>exactly 1 SOSA Ontology <code>observedProperty</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>exactly 1 SOSA Ontology <code>phenomenonTime</code> predicate indicating a TERN Ontology <code>Instant</code> instance;</p>
-</li>
-<li>
-<p>exactly 1 SOSA Ontology <code>resultTime</code> predicate indicating a <code>dateTime</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 SOSA Ontology <code>usedProcedure</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>hasSiteVisit</code> predicate indicating a TERN Ontology <code>SiteVisit</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>observationType</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a Dublin Core Terms <code>identifier</code> predicate, it <em>must</em> indicate a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>a GeoSPARQL Ontology <code>hasGeometry</code> predicate, it <em>must</em> indicate a TERN Location Alignment Ontology <code>Geometry</code> instance;</p>
-</li>
-<li>
-<p>a Provenance Ontology <code>wasAssociatedWith</code> predicate, it <em>must</em> indicate a TERN Organisations Ontology <code>Person</code> instance, TERN Organisations Ontology <code>Person</code> instance or TERN Organisations Ontology <code>Organization</code> instance;</p>
-</li>
-<li>
-<p>a TERN Ontology <code>usedInstrument</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Instrument</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Observation"><code>tern:Observation</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/observation/example-valid-01"><code>observation:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_observationcollection_class_properties">5.2.17. TERN <code>ObservationCollection</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/observationcollection-properties"><code>req:ObservationCollection-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN observationcollection Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>ObservationCollection</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 SOSA Ontology <code>hasFeatureOfInterest</code> predicate indicating a TERN Ontology <code>FeatureOfInterest</code> instance;</p>
-</li>
-<li>
-<p>a minimum of 1 SOSA Ontology <code>hasMember</code> predicate indicating a TERN Ontology <code>Observation</code> instance or TERN Ontology <code>ObservationCollection</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 SOSA Ontology <code>hasUltimateFeatureOfInterest</code> predicate indicating a TERN Ontology <code>FeatureOfInterest</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 SOSA Ontology <code>madeBySensor</code> predicate indicating a TERN Ontology <code>Sensor</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 SOSA Ontology <code>observedProperty</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>a maximum of 1 SOSA Ontology <code>phenomenonTime</code> predicate indicating a TERN Ontology <code>Instant</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 SOSA Ontology <code>resultTime</code> predicate indicating a <code>dateTime</code> literal value;</p>
-</li>
-<li>
-<p>a minimum of 1 SOSA Ontology <code>usedProcedure</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/ObservationCollection"><code>tern:ObservationCollection</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/observationcollection/example-valid-01"><code>observationcollection:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_percent_class_properties">5.2.18. TERN <code>Percent</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/percent-properties"><code>req:Percent-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN percent Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Percent</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 TERN Ontology <code>unit</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Percent"><code>tern:Percent</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/percent/example-valid-01"><code>percent:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_percentrange_class_properties">5.2.19. TERN <code>PercentRange</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/percentrange-properties"><code>req:PercentRange-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN percentrange Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>PercentRange</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 TERN Ontology <code>unit</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/PercentRange"><code>tern:PercentRange</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/percentrange/example-valid-01"><code>percentrange:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_plot_class_properties">5.2.20. TERN <code>Plot</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/plot-properties"><code>req:Plot-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN plot Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Plot</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Plot"><code>tern:Plot</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/plot/example-valid-01"><code>plot:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_quadrat_class_properties">5.2.21. TERN <code>Quadrat</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/quadrat-properties"><code>req:Quadrat-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN quadrat Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Quadrat</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Quadrat"><code>tern:Quadrat</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/quadrat/example-valid-01"><code>quadrat:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_quantitativemeasure_class_properties">5.2.22. TERN <code>QuantitativeMeasure</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/quantitativemeasure-properties"><code>req:QuantitativeMeasure-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN quantitativemeasure Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>QuantitativeMeasure</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating a <code>double</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>uncertainty</code> predicate indicating a <code>double</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 TERN Ontology <code>unit</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/QuantitativeMeasure"><code>tern:QuantitativeMeasure</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/quantitativemeasure/example-valid-01"><code>quantitativemeasure:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_quantitativerange_class_properties">5.2.23. TERN <code>QuantitativeRange</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/quantitativerange-properties"><code>req:QuantitativeRange-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN quantitativerange Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>QuantitativeRange</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 Quantities, Units, Dimensions and Types Schema <code>maxInclusive</code> predicate indicating a <code>double</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 Quantities, Units, Dimensions and Types Schema <code>minInclusive</code> predicate indicating a <code>double</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>uncertainty</code> predicate indicating a <code>double</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>unit</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/QuantitativeRange"><code>tern:QuantitativeRange</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/quantitativerange/example-valid-01"><code>quantitativerange:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_rdfdataset_class_properties">5.2.24. TERN <code>RDFDataset</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/rdfdataset-properties"><code>req:RDFDataset-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN rdfdataset Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>RDFDataset</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 Dublin Core Terms <code>description</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 Dublin Core Terms <code>issued</code> predicate indicating a <code>date</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 Dublin Core Terms <code>title</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a Dublin Core Terms <code>contributor</code> predicate, it <em>must</em> indicate an IRI;</p>
-</li>
-<li>
-<p>a Dublin Core Terms <code>creator</code> predicate, it <em>must</em> indicate an IRI;</p>
-</li>
-<li>
-<p>a Dublin Core Terms <code>publisher</code> predicate, it <em>must</em> indicate an IRI;</p>
-</li>
-<li>
-<p>a Dublin Core Terms <code>source</code> predicate, it <em>must</em> indicate an IRI;</p>
-</li>
-<li>
-<p>a Vocabulary of Interlinked Data Ontology <code>vocabulary</code> predicate, it <em>must</em> indicate an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/rdfdataset/example-valid-01"><code>rdfdataset:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_result_class_properties">5.2.25. TERN <code>Result</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/result-properties"><code>req:Result-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN result Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Result</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 SOSA Ontology <code>isResultOf</code> predicate indicating a TERN Ontology <code>Observation</code> instance, TERN Ontology <code>Sampling</code> instance or TERN Ontology <code>Attribute</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Result"><code>tern:Result</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/result/example-valid-01"><code>result:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_sample_class_properties">5.2.26. TERN <code>Sample</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sample-properties"><code>req:Sample-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN sample Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Sample</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a minimum of 1 SOSA Ontology <code>isResultOf</code> predicate indicating a TERN Ontology <code>Sampling</code> instance;</p>
-</li>
-<li>
-<p>a minimum of 1 SOSA Ontology <code>isSampleOf</code> predicate indicating a TERN Ontology <code>FeatureOfInterest</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sample"><code>tern:Sample</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/sample/example-valid-01"><code>sample:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_sampling_class_properties">5.2.27. TERN <code>Sampling</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sampling-properties"><code>req:Sampling-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN sampling Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Sampling</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>a maximum of 1 RDF Schema Ontology <code>comment</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 SOSA Ontology <code>hasFeatureOfInterest</code> predicate indicating a TERN Ontology <code>FeatureOfInterest</code> instance;</p>
-</li>
-<li>
-<p>a minimum of 1 SOSA Ontology <code>hasResult</code> predicate indicating a TERN Ontology <code>Sample</code> instance;</p>
-</li>
-<li>
-<p>exactly 1 SOSA Ontology <code>resultTime</code> predicate indicating a <code>dateTime</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 SOSA Ontology <code>usedProcedure</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>hasSiteVisit</code> predicate indicating a TERN Ontology <code>SiteVisit</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>samplingType</code> predicate indicating an IRI;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a Dublin Core Terms <code>identifier</code> predicate, it <em>must</em> indicate a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>a GeoSPARQL Ontology <code>hasGeometry</code> predicate, it <em>must</em> indicate a TERN Location Alignment Ontology <code>Geometry</code> instance;</p>
-</li>
-<li>
-<p>a Provenance Ontology <code>wasAssociatedWith</code> predicate, it <em>must</em> indicate a TERN Organisations Ontology <code>Person</code> instance or TERN Organisations Ontology <code>Organization</code> instance;</p>
-</li>
-<li>
-<p>a SOSA Ontology <code>madeBySampler</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Sampler</code> instance;</p>
-</li>
-<li>
-<p>a TERN Ontology <code>usedInstrument</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Instrument</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sampling"><code>tern:Sampling</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/sampling/example-valid-01"><code>sampling:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_site_class_properties">5.2.28. TERN <code>Site</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/site-properties"><code>req:Site-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN site Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Site</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 RDF Schema Ontology <code>label</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>dimension</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>locationDescription</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>locationProcedure</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>polygon</code> predicate indicating a TERN Location Alignment Ontology <code>Polygon</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>siteDescription</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a GeoSPARQL Ontology <code>sfWithin</code> predicate, it <em>must</em> indicate an IRI;</p>
-</li>
-<li>
-<p>a TERN Ontology <code>hasSiteVisit</code> predicate, it <em>must</em> indicate a TERN Ontology <code>SiteVisit</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Site"><code>tern:Site</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/site/example-valid-01"><code>site:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_sitevisit_class_properties">5.2.29. TERN <code>SiteVisit</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sitevisit-properties"><code>req:SiteVisit-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN sitevisit Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>SiteVisit</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>exactly 1 Vocabulary of Interlinked Data Ontology <code>inDataset</code> predicate indicating a TERN Ontology <code>RDFDataset</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 Provenance Ontology <code>endedAtTime</code> predicate indicating a <code>dateTime</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 Provenance Ontology <code>startedAtTime</code> predicate indicating a <code>dateTime</code> literal value;</p>
-</li>
-<li>
-<p>exactly 1 TERN Ontology <code>hasSite</code> predicate indicating a TERN Ontology <code>Site</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>locationDescription</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>siteDescription</code> predicate indicating a <code>string</code> literal value;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a Dublin Core Terms <code>identifier</code> predicate, it <em>must</em> indicate a <code>string</code> literal value;</p>
-</li>
-<li>
-<p>a TERN Ontology <code>hasObservation</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Observation</code> instance;</p>
-</li>
-<li>
-<p>a TERN Ontology <code>hasSampling</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Sampling</code> instance;</p>
-</li>
-<li>
-<p>a TERN Ontology <code>isSiteVisitOf</code> predicate, it <em>must</em> indicate an IRI;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/SiteVisit"><code>tern:SiteVisit</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/sitevisit/example-valid-01"><code>sitevisit:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_system_class_properties">5.2.30. TERN <code>System</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/system-properties"><code>req:System-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN system Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>System</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 SOSA Ontology <code>isHostedBy</code> predicate indicating a TERN Ontology <code>Platform</code> instance;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If the instance has:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a Semantic Sensor Network Ontology <code>hasDeployment</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Deployment</code> instance;</p>
-</li>
-<li>
-<p>a Semantic Sensor Network Ontology <code>implements</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Method</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/System"><code>tern:System</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/system/example-valid-01"><code>system:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_text_class_properties">5.2.31. TERN <code>Text</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/text-properties"><code>req:Text-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN text Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Text</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating a <code>string</code> literal value or <code>langString</code> literal value;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Text"><code>tern:Text</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/text/example-valid-01"><code>text:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_tern_transect_class_properties">5.2.32. TERN <code>Transect</code> class Properties</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/transect-properties"><code>req:Transect-properties</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN transect Properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Transect</code> class <em>MUST</em> have:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a maximum of 1 GeoSPARQL Ontology <code>hasGeometry</code> predicate indicating a TERN Location Alignment Ontology <code>LineString</code> instance;</p>
-</li>
-<li>
-<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating an IRI;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>transectDirection</code> predicate indicating an IRI or literal value;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>transectEndPoint</code> predicate indicating a TERN Location Alignment Ontology <code>Point</code> instance;</p>
-</li>
-<li>
-<p>a maximum of 1 TERN Ontology <code>transectStartPoint</code> predicate indicating a TERN Location Alignment Ontology <code>Point</code> instance;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern">TERN Ontology</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Transect"><code>tern:Transect</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/transect/example-valid-01"><code>transect:example-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bdr_message_conformance_class_requirements">5.3. BDR Message Conformance Class Requirements</h3>
+<h3 id="_bdr_messages_requirements">5.3. BDR Messages Requirements</h3>
 <div class="paragraph">
-<p>The <a href="https://linked.data.gov.au/def/bdr-msg:">BDR Messages Ontology</a> defines a general message class object, <code>bdrm:Message</code>, and four subclasses of it that are to be used to convey <em>create</em>, <em>update</em>, <em>delete</em>, and <em>exists</em> (existance check) messages to the BDR. The following Requirements specify the required <em>structure</em> of BDRM messages only and not any requirements of Domain Model content with messages' payloads which is specified in the <a href="#_domain_model_conformance_class_requirements">Domain Model Conformance Class Requirements</a> above.</p>
+<p>The <a href="https://linked.data.gov.au/def/bdr-msg:">BDR Messages Ontology</a> defines a general message class object, <code>bdrm:Message</code>, and four subclasses of it that are to be used to convey <em>create</em>, <em>update</em>, <em>delete</em>, and <em>exists</em> (existance check) messages to the Biodiversity Data Repository (BDR). The following Requirements specify the required <em>structure</em> of BDRM messages only and not any requirements of Domain Model content with messages' payloads which are specified in the <a href="#_domain_model_requirements">Domain Model Requirements</a> above.</p>
 </div>
 <div class="paragraph">
 <p>When ABIS content is send to the the Biodiversity Data Repository, the BDR acts both as the storage of that content and also the authoratitive identifier creator for instances of certain classes of resources in that content, namely:</p>
@@ -3256,81 +1231,37 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p><code>tern:Sampling</code></p>
+<p><code>bdrm:Message</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>and subclasses</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>tern:RDFDataset</code></p>
 </li>
 <li>
 <p><code>tern:Sampling</code></p>
+</li>
+<li>
+<p><code>tern:Sample</code></p>
 </li>
 <li>
 <p><code>tern:Site</code></p>
 </li>
+<li>
+<p><code>tern:FeatureOfInterest</code></p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
-<p>and also instnaces of the BDR Message classes: <code>bdrm:createMessage</code>, <code>bdrm:UpdateMessage</code>, <code>bdrm:DeleteMessage</code> &amp; <code>bdrm:ExistsMessage</code>.</p>
-</div>
-<div class="paragraph">
-<p><code>bdrm:CreateMessage</code> instances, used to create new content within the BDR, must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of those classes, so that the BDR can replace them with ones it issues. The client requesting new content creation will receive responses from the BDR that indicate what the BDR IRIs ultimately issued for the given placeholder IRI are. There are lots of examples of  <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code> in use in the <a href="http://bdrgateway.surroundaustralia.com:">BDR Gateway</a>.</p>
+<p><code>bdrm:CreateMessage</code> instances, used to create new content within the BDR, must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of those classes, so that the BDR can replace them with ones it issues, except for <code>tern:RDFDataset</code> which they may either use <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code> or pre-allocate via the dataset IRI allocation mechanism in the BDR Gateway (see <a href="http://gateway.dev.bdr.gov.au/allocate" class="bare">http://gateway.dev.bdr.gov.au/allocate</a>). The client requesting new content creation will receive responses from the BDR that indicate what the BDR IRIs ultimately issued for the given placeholder IRIs are. There are lots of examples of  <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code> in use in the <a href="http://gateway.dev.bdr.gov.au">BDR Gateway</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="_message_containing_new_observations">5.3.1. Message containing new Observations</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/message-new-observations"><code>req:message-new-observations</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message containing new Observations</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the ABIS Ontology&#8217;s <code>NewObservationsMessage</code> class <em>MUST</em> contain:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a minimum of 1 RDFS Ontology <code>member</code> predicate indicating a SOSA Ontology <code>ObservationCollection</code> class instance;</p>
-</li>
-<li>
-<p>exactly 1 ABIS Ontology <code>targetDataset</code> predicate indicating a TERN Ontology <code>RDFDataset</code> class instance.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/abis-messages"><code>cc:bdr-messages</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Gateway Messaging</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/shape/message-new-observations-01"><code>nsh:message-new-observations-01</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01"><code>https://linked.data.gov.au/dataset/bdr/message/example-new-valid-01</code></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_message_part">5.3.2. Message Part</h4>
+<h4 id="_message_parts">5.3.1. Message Parts</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3354,7 +1285,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>ABIS messages must have at least one part, indicated with dcterms:hasPart</p>
+<p>BDR messages must have at least one part, indicated with <code>dcterms:hasPart</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -3363,7 +1294,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Gateway Messaging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Gateway Messaging</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
@@ -3371,13 +1302,13 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://bdrgateway.surroundaustralia.com:">BDR Gateway</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://gateway.dev.bdr.gov.au">BDR Gateway</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_createmessage_createme_iris">5.3.3. CreateMessage Createme IRIs</h4>
+<h4 id="_createmessage_createme_iris">5.3.2. CreateMessage Createme IRIs</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3401,10 +1332,10 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>BDR CreateMessages instances must indicate parts with createme.org IRIs only</p>
+<p>BDR Create messages must indicate parts with createme.org IRIs only</p>
 </div>
 <div class="paragraph">
-<p><em>All items requested to be created via a <code>bdrm:CreateMessage</code> must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of classes to be created whose authoratitive namespace is managed by the BDR system. This includes the classes <code>tern:Sampling</code>, <code>tern:Sampling</code> &amp; <code>tern:Site</code>.</em></p>
+<p><em>All items requested to be created via a <code>bdrm:CreateMessage</code> must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of classes to be created whose authoratitive namespace is managed by the BDR system. This includes the classes <code>tern:Sampling</code>, <code>tern:Sampling</code>, <code>tern:Site</code> etc.</em></p>
 </div></div></td>
 </tr>
 <tr>
@@ -3413,7 +1344,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Gateway Messaging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Gateway Messaging</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
@@ -3421,13 +1352,13 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://bdrgateway.surroundaustralia.com:">BDR Gateway</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="#_create_messages">Create Messages</a> and the <a href="http://gateway.dev.bdr.gov.au">BDR Gateway</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_non_create_message_bdr_iris">5.3.4. Non-Create Message BDR IRIs</h4>
+<h4 id="_update_or_delete_message_iris">5.3.3. Update or Delete Message IRIs</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3451,7 +1382,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>BDR Update, Delete &amp; Exists messages must indicate parts with BDR IRIs only.</p>
+<p>BDR Update &amp; Delete messages must indicate parts with BDR IRIs only</p>
 </div>
 <div class="paragraph">
 <p><em>All items requested to be Updated, Deleted or have their existance checked must be indicated with IRIs starting <code><a href="https://linked.data.gov.au/dataset/bdr/" class="bare">https://linked.data.gov.au/dataset/bdr/</a></code>.</em></p>
@@ -3463,7 +1394,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Gateway Messaging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Gateway Messaging</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
@@ -3471,7 +1402,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://bdrgateway.surroundaustralia.com:">BDR Gateway</a>, <a href="#_create_messages">Create Messages</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://gateway.dev.bdr.gov.au">BDR Gateway</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3480,124 +1411,158 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_sources">6. Sources</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The sources listed here are documents, agreements, other Standards and so on from which the Requirements in this Specification originate.</p>
-</div>
-<div class="sect2">
-<h3 id="_abis_messaging">6.1. ABIS Messaging</h3>
-<div class="paragraph">
-<p>Requirements for messages to tbe Biodiversity Data Repository.</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-even" style="width: 50%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Authoratitive copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/ont" class="bare">https://linked.data.gov.au/def/abis/ont</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Local copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kg/ontologies/abis.ttl</code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_tern_ontology">6.2. TERN Ontology</h3>
-<div class="paragraph">
-<p>Requirements for the scientific data within the Biodiversity Data Repository.</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-even" style="width: 50%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Authoratitive copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/" class="bare">https://w3id.org/tern/ontologies/tern/</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Local copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kg/ontologies/tern.ttl</code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_darwin_core_rdf">6.3. Darwin Core RDF</h3>
-<div class="paragraph">
-<p>Requirements to meet the Darwin Core international biodiversity data model.</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-even" style="width: 50%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Documentation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/terms/" class="bare">https://dwc.tdwg.org/terms/</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Authoratitive copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/rdf/" class="bare">https://dwc.tdwg.org/rdf/</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Local copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kg/ontologies/dwc.ttl</code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_audubon_core_term_list">6.4. Audubon Core Term List</h3>
-<div class="paragraph">
-<p>Requirements to meet the Audubon Core international biodiversity data model.</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-even" style="width: 50%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Authoratitive copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ac.tdwg.org/termlist/" class="bare">https://ac.tdwg.org/termlist/</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_abis_messaging_2">6.5. ABIS Messaging</h3>
-<div class="paragraph">
-<p>Requirements for creating packages of ABIS data - "ABIS Messages".</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-even" style="width: 50%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Documentation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bdrgateway.surroundaustralia.com/" class="bare">http://bdrgateway.surroundaustralia.com/</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_examples">7. Examples</h2>
+<h2 id="_examples">6. Examples</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bdr_sytem">7.1. BDR Sytem</h3>
+<h3 id="_domain_model_2">6.1. Domain Model</h3>
+<div class="paragraph">
+<p>These examples extend on those of the domain ontology provided in the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology">TERN Ontology&#8217;s examples</a>. These examples are for non-core domain model (TERN Ontology) converns whcih are nevertheless useful or required for the Biodiversity Data Repository or other ABIS-conformant datasets.</p>
+</div>
+<div class="sect3">
+<h4 id="_sampling_position">6.1.1. Sampling Position</h4>
+<div class="paragraph">
+<p><em>The options for indicating Samping position demonstrated here are now incorporated into the TERN Ontology&#8217;s Requirements</em></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Instances of the TERN Ontology&#8217;s <code>Sampling</code> class <em>MUST</em> be located in space and time</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Instances of <code>tern:Sampling</code> must have both space and time positions either indicated or they must be linked to other things for which space and time positions are indicated.</p>
+</div>
+<div class="paragraph">
+<p>So far, all time position is done directly, i.e. with time properties assigned directly to the <code>tern:Sampling</code> instance.</p>
+</div>
+<div class="paragraph">
+<p>There are several options for spatial positioning, as shown in the 3-part Figure below.</p>
+</div>
+<div id="sampling-position" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/abis/img/sample-positioning.png" alt="Options for the spatial positioning of `tern:Sampling` instances">
+</div>
+<div class="title">Figure 1. Options for the spatial positioning of <code>tern:Sampling</code> instances. Left: direct positioning; Centre: indirect positioning via linking to a <code>tern:Site</code>; Right: Indirect positioning by linking to a non-Site spatial object (a <code>geo:Feature</code>) using a <em>spatial relations</em> property.</div>
+</div>
+<div class="paragraph">
+<p>RDF data matching the Left, Centre &amp; right parts of the Figure above are given next.</p>
+</div>
+<div class="listingblock">
+<div class="title">Left: direct positioning</div>
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sampling/x&gt;
+	geo:hasGeometry [
+		geo:asWKT "POINT (153, -57)"
+ 	] ;
+	sosa:resultTime "2021-12-09"^^xsd:dateTime ;
+.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Centre: indirect positioning via linking to a <code>tern:Site</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sampling/x&gt;
+	sosa:resultTime "2021-12-09"^^xsd:dateTime ;
+	tern:hasSiteVisit &lt;https://linked.data.gov.au/dataset/bdr/sitevisit/y&gt; ;
+.
+
+&lt;https://linked.data.gov.au/dataset/bdr/sitevisit/y&gt;
+	tern:hasSite &lt;https://linked.data.gov.au/dataset/bdr/site/y&gt; ;
+.
+&lt;https://linked.data.gov.au/dataset/bdr/site/y&gt;
+	geo:hasGeometry [
+		geo:asWKT "POINT (153, -57)"
+ 	] ;
+.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Right: Indirect positioning by linking to a non-Site spatial object (a <code>geo:Feature</code>) using a <em>spatial relations</em> property</div>
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sampling/x&gt;
+	sosa:resultTime "2021-12-09"^^xsd:dateTime ;
+	geo:sfWithin &lt;http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010s&gt; ;
+.
+
+&lt;http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010&gt;
+	a asgs:LocalGovernmentArea ;
+	geo:hasGeometry [
+		geo:asWKT "POINT (153, -57)"
+ 	] ;
+.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sample_alternate_identifiers_example">6.1.2. Sample alternate identifiers example</h4>
+<div class="paragraph">
+<p>From <a href="#_sample_alternate_identifiers">Sample alternate identifiers</a>:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier&#8217;smanager, creator and system</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If a data supplier wishes to record a non-BDR identifier for a <code>tern:Sample</code> instance, such as a museum specimen, then the pattern for doing that is to use a <code>dcterms:identifier</code> property for the <code>term:Sample</code> instance like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;BDR-PLACEHOLDER-IDENTIFIER&gt;
+	a tern:Sample ;
+	dcterms:identifier "ALT-IDENTIFIER"^^CUSTOM-DATATYPE ;
+	...
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The value of <code>&lt;BDR-PLACEHOLDER-IDENTIFIER&gt;</code> might be something like <code><a href="http://example.org/1234-4567-890" class="bare">http://example.org/1234-4567-890</a></code> and the BDR will replace this with something like <code>&lt;<a href="https://linked.data.gov.au/dataset/bdr/sample/abcd-efg-hij" class="bare">https://linked.data.gov.au/dataset/bdr/sample/abcd-efg-hij</a></code>.</p>
+</div>
+<div class="paragraph">
+<p>The value of <code>ALT-IDENTIFIER</code> can be anything, such as a URL, a number, a string, etc.: this will be determined by the identifier generator, such as a museum. In the figure below, a dummy Western Australian Museum identifier of <code>WAM-75</code> and an International GeoSample Number <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> of "1073/123-456" is given. The <code>CUSTOM-DATATYPE</code> is an RDF data type descriptor that must be lodged with the BDR. In the figure below, these are <code>bdr:WAMID</code> &amp; <code>bdr:IGSN</code> indicating "Western Australian Museum ID" and "International GeoSample Number", respectively,</p>
+</div>
+<div id="sample-alternate-identifiers-fig" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/abis/img/sample-alternate-identifiers.png" alt="An example of a `tern:Sample` instance">
+</div>
+<div class="title">Figure 2. An example of a <code>tern:Sample</code> instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternat identifers with custom datatypes</div>
+</div>
+<div class="paragraph">
+<p>The RDF corresponding to the figure above is goven below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sample/x&gt;
+	a tern:Sample ;
+    dcterms:identifier
+		"WAM-75"^^bdr:WAMID ,
+		"1073/123-456"^^bdr:IGSN ;
+    ...
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Registering custom datatypes with the BDR is a controlled admininstrative task, i.e. one which cannot be accomplished by sending in a special message, so please contact BDR admin to register these.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>, then any <code>dcterms:identifier</code> property supplied for it will be considered a <code>dwc:materialSampleID</code> property too.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bdr_sytem">6.2. BDR Sytem</h3>
 <div class="paragraph">
 <p>This section contains examples of the messages that may be sent to the Biodiversity Data Repository (BDR) and potentially other ABIS-conformant systems to alter their content.</p>
 </div>
@@ -3619,7 +1584,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_exists_messages">7.1.1. Exists Messages</h4>
+<h4 id="_exists_messages">6.2.1. Exists Messages</h4>
 <div class="paragraph">
 <p>The following RDF data represents a minimalist <em>create</em> message send to the BDR to check the existance of an object, in this case, something with th IRI the <code>&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;</code> which can be inferred to be an instance of <code>tern:Site</code>:</p>
 </div>
@@ -3704,7 +1669,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_delete_messages">7.1.2. Delete Messages</h4>
+<h4 id="_delete_messages">6.2.2. Delete Messages</h4>
 <div class="paragraph">
 <p>The following RDF data represents a minimalist <em>delete</em> message send to the Biodiversity Data Repository to delete an existing object:</p>
 </div>
@@ -3789,7 +1754,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_messages">7.1.3. Create Messages</h4>
+<h4 id="_create_messages">6.2.3. Create Messages</h4>
 <div class="paragraph">
 <p>The following RDF data represents a minimalist <em>create</em> message send to the Biodiversity Data Repository to create a new instance of <code>tern:Sampling</code> within it. It necissarily creates an instance of <code>tern:Sample</code> too to record the outcome of the Sampling.</p>
 </div>
@@ -4009,7 +1974,7 @@ Placeholder IRIs can be anything starting with <code>http://createme.org/</code>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_update_messages">7.1.4. Update Messages</h4>
+<h4 id="_update_messages">6.2.4. Update Messages</h4>
 <div class="paragraph">
 <p>An update message sent to the BDR can update any item that the client has permission to update - BRD-managed things like Sites &amp; Samples or other things like vocabularies. An update message might look like this:</p>
 </div>
@@ -4081,158 +2046,10 @@ Placeholder IRIs can be anything starting with <code>http://createme.org/</code>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_domain_model">7.2. Domain Model</h3>
-<div class="paragraph">
-<p>These examples extend on those of the domain ontology provided in the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology">TERN Ontology&#8217;s examples</a>. These examples are for non-core domain model (TERN Ontology) converns whcih are nevertheless useful or required for the Biodiversity Data Repository or other ABIS-conformant datasets.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_sampling_position">7.3. Sampling Position</h3>
-<div class="paragraph">
-<p>From <a href="#_sampling_space_time_position">Sampling space &amp; time position</a>:</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Sampling</code> class <em>MUST</em> be located in space and time</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>Instances of <code>tern:Sampling</code> must have both space and time positions either indicated or they must be linked to other things for which space and time positions are indicated.</p>
-</div>
-<div class="paragraph">
-<p>So far, all time position is done directly, i.e. with time properties assigned directly to the <code>tern:Sampling</code> instance.</p>
-</div>
-<div class="paragraph">
-<p>There are several options for spatial positioning, as shown in the 3-part Figure below.</p>
-</div>
-<div id="sampling-position" class="imageblock">
-<div class="content">
-<img src="https://surroundaustralia.github.io/abis/img/sample-positioning.png" alt="Options for the spatial positioning of `tern:Sampling` instances">
-</div>
-<div class="title">Figure 1. Options for the spatial positioning of <code>tern:Sampling</code> instances. Left: direct positioning; Centre: indirect positioning via linking to a <code>tern:Site</code>; Right: Indirect positioning by linking to a non-Site spatial object (a <code>geo:Feature</code>) using a <em>spatial relations</em> property.</div>
-</div>
-<div class="paragraph">
-<p>RDF data matching the Left, Centre &amp; right parts of the Figure above are given next.</p>
-</div>
-<div class="listingblock">
-<div class="title">Left: direct positioning</div>
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sampling/x&gt;
-	geo:hasGeometry [
-		geo:asWKT "POINT (153, -57)"
- 	] ;
-	sosa:resultTime "2021-12-09"^^xsd:dateTime ;
-.</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Centre: indirect positioning via linking to a <code>tern:Site</code></div>
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sampling/x&gt;
-	sosa:resultTime "2021-12-09"^^xsd:dateTime ;
-	tern:hasSiteVisit &lt;https://linked.data.gov.au/dataset/bdr/sitevisit/y&gt; ;
-.
-
-&lt;https://linked.data.gov.au/dataset/bdr/sitevisit/y&gt;
-	tern:hasSite &lt;https://linked.data.gov.au/dataset/bdr/site/y&gt; ;
-.
-&lt;https://linked.data.gov.au/dataset/bdr/site/y&gt;
-	geo:hasGeometry [
-		geo:asWKT "POINT (153, -57)"
- 	] ;
-.</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Right: Indirect positioning by linking to a non-Site spatial object (a <code>geo:Feature</code>) using a <em>spatial relations</em> property</div>
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sampling/x&gt;
-	sosa:resultTime "2021-12-09"^^xsd:dateTime ;
-	geo:sfWithin &lt;http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010s&gt; ;
-.
-
-&lt;http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010&gt;
-	a asgs:LocalGovernmentArea ;
-	geo:hasGeometry [
-		geo:asWKT "POINT (153, -57)"
- 	] ;
-.</code></pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_sample_alternate_identifiers_example">7.3.1. Sample alternate identifiers example</h4>
-<div class="paragraph">
-<p>From <a href="#_sample_alternate_identifiers">Sample alternate identifiers</a>:</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier&#8217;smanager, creator and system</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>If a data supplier wishes to record a non-BDR identifier for a <code>tern:Sample</code> instance, such as a museum specimen, then the pattern for doing that is to use a <code>dcterms:identifier</code> property for the <code>term:Sample</code> instance like so:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;BDR-PLACEHOLDER-IDENTIFIER&gt;
-	a tern:Sample ;
-	dcterms:identifier "ALT-IDENTIFIER"^^CUSTOM-DATATYPE ;
-	...
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The value of <code>&lt;BDR-PLACEHOLDER-IDENTIFIER&gt;</code> might be something like <code><a href="http://example.org/1234-4567-890" class="bare">http://example.org/1234-4567-890</a></code> and the BDR will replace this with something like <code>&lt;<a href="https://linked.data.gov.au/dataset/bdr/sample/abcd-efg-hij" class="bare">https://linked.data.gov.au/dataset/bdr/sample/abcd-efg-hij</a></code>.</p>
-</div>
-<div class="paragraph">
-<p>The value of <code>ALT-IDENTIFIER</code> can be anything, such as a URL, a number, a string, etc.: this will be determined by the identifier generator, such as a museum. In the figure below, a dummy Western Australian Museum identifier of <code>WAM-75</code> and an International GeoSample Number <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> of "1073/123-456" is given. The <code>CUSTOM-DATATYPE</code> is an RDF data type descriptor that must be lodged with the BDR. In the figure below, these are <code>bdr:WAMID</code> &amp; <code>bdr:IGSN</code> indicating "Western Australian Museum ID" and "International GeoSample Number", respectively,</p>
-</div>
-<div id="sample-alternate-identifiers-fig" class="imageblock">
-<div class="content">
-<img src="https://surroundaustralia.github.io/abis/img/sample-alternate-identifiers.png" alt="An example of a `tern:Sample` instance">
-</div>
-<div class="title">Figure 2. An example of a <code>tern:Sample</code> instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternat identifers with custom datatypes</div>
-</div>
-<div class="paragraph">
-<p>The RDF corresponding to the figure above is goven below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sample/x&gt;
-	a tern:Sample ;
-    dcterms:identifier
-		"WAM-75"^^bdr:WAMID ,
-		"1073/123-456"^^bdr:IGSN ;
-    ...
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Registering custom datatypes with the BDR is a controlled admininstrative task, i.e. one which cannot be accomplished by sending in a special message, so please contact BDR admin to register these.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>, then any <code>dcterms:identifier</code> property supplied for it will be considered a <code>dwc:materialSampleID</code> property too.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references">8. References</h2>
+<h2 id="_references">7. References</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -4262,7 +2079,7 @@ This Annex is normative.
 <p>This annex lists the major information elements of the ABIS specification: the domain and background ontologies, their supporting vocabularies and other elements approved for use by the ABIS Working Group.</p>
 </div>
 <div class="sect2">
-<h3 id="_domain_model_2">Domain Model</h3>
+<h3 id="_domain_model_3">Domain Model</h3>
 <div class="paragraph">
 <p>The ABIS specification&#8217;s domain model is based on the TERN Ontology and includes it, the vocabularies required/approved for use with it and its model dependencies (background ontologies). There are also a series of "mapping" ontologies that relate ABIS data to other models.</p>
 </div>
@@ -4314,7 +2131,7 @@ This Annex is normative.
 </div>
 </li>
 <li>
-<p>Mapping Ontologies</p>
+<p>Mapping Ontologies - <em>aspirational!</em></p>
 <div class="ulist">
 <ul>
 <li>
@@ -4345,6 +2162,13 @@ This Annex is normative.
 <ul>
 <li>
 <p>BDR Messaging Ontology</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Incorporated within the BDR</em></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -4354,10 +2178,10 @@ This Annex is normative.
 <div class="ulist">
 <ul>
 <li>
-<p>Profiles Vocabulary (PROF)</p>
+<p><a href="https://www.w3.org/TR/dx-prof/">Profiles Vocabulary (PROF)</a></p>
 </li>
 <li>
-<p>Provenance, Authoring, and Versioning Ontology (PAV)</p>
+<p><a href="https://pav-ontology.github.io/pav/">Provenance, Authoring, and Versioning Ontology (PAV)</a></p>
 </li>
 </ul>
 </div>
@@ -4787,7 +2611,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-16 03:28:38 UTC
+Last updated 2022-06-27 04:52:15 UTC
 </div>
 </div>
 </body>

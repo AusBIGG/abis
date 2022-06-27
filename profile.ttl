@@ -20,12 +20,44 @@
         <https://linkeddata.tern.org.au/information-models/tern-ontology> ;
 .
 
-<https://linked.data.gov.au/def/abis/spec>
+<https://linked.data.gov.au/def/abis>
     a prof:ResourceDescriptor ;
-    dcterms:title "ABIS Specification online"@en ;
+    dcterms:title "ABIS Profile Definition"@en ;
     dcterms:format "text/html" ;
-    prof:hasArtifact "https://surroundaustralia.github.io/abis/specification.html"^^xsd:anyURI ;
+    prof:hasArtifact "https://linked.data.gov.au/def/abis"^^xsd:anyURI ;
+    prof:hasRole role:profile-definition
+.
+
+<https://linked.data.gov.au/def/abis.ttl>
+    a prof:ResourceDescriptor ;
+    dcterms:title "ABIS Profile Definition - machine-readable"@en ;
+    dcterms:format "text/turtle" ;
+    prof:hasArtifact "https://linked.data.gov.au/def/abis.ttl"^^xsd:anyURI ;
+    prof:hasRole role:profile-definition
+.
+
+<https://linked.data.gov.au/def/abis/guidance>
+    a prof:ResourceDescriptor ;
+    dcterms:title "ABIS Overview"@en ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "https://linked.data.gov.au/def/abis/overview"^^xsd:anyURI ;
+    prof:hasRole role:guidance
+.
+
+<https://linked.data.gov.au/def/abis/specification>
+    a prof:ResourceDescriptor ;
+    dcterms:title "ABIS Specification"@en ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "https://linked.data.gov.au/def/abis/specification"^^xsd:anyURI ;
     prof:hasRole role:specification
+.
+
+<https://linked.data.gov.au/def/abis/validator>
+    a prof:ResourceDescriptor ;
+    dcterms:title "ABIS Validator"@en ;
+    dcterms:format "text/turtle" ;
+    prof:hasArtifact "https://linked.data.gov.au/def/abis/validator"^^xsd:anyURI ;
+    prof:hasRole role:validation
 .
 
 <https://linked.data.gov.au/def/abis/jsonldcontext>
