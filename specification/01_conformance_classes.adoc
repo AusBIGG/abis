@@ -19,7 +19,7 @@ The ABIS Conformance Classes are:
 |Label | Domain Model Conformance Class
 |Definition a| The set of requirements needed to be met to ensure conformance with the Domain Model within this Standard. Requirements in this Conformance Class are all those specified for:
 
-* The https://linkeddata-dev.tern.org.au/tern-ontology[TERN Ontology] - for sampling information
+* The https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model[TERN Ontology] - for sampling information
 * https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html[GeoSPARQL 1.1] - for spatiality
 * The https://w3id.org/profile/vocpub[Vocabulary Publications Profile] of SKOS - for vocabulary content
 
