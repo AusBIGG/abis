@@ -71,32 +71,32 @@ Standards described using PROF:
 |*Standard Definition*
 
 _(this document)_ 
-| *https://surroundaustralia.github.io/prof-roles/profile-definition[Profile Definition]*
+| *https://agldwg.github.io/prof-roles/profile-definition[Profile Definition]*
 | *Defines this Standard's parts and relations to other Standards*
 | *<https://linked.data.gov.au/def/abis>*
 
 | Standard Definition - machine-readable
-| https://surroundaustralia.github.io/prof-roles/profile-definition[Profile Definition]
+| https://agldwg.github.io/prof-roles/profile-definition[Profile Definition]
 | Defines this Standard's parts and relations to other Standards in machine-readable form
 | <https://linked.data.gov.au/def/abis.ttl>
 
 | Overview
-| https://surroundaustralia.github.io/prof-roles/guidance[Guidance]
+| https://agldwg.github.io/prof-roles/guidance[Guidance]
 | Provides a high-level, non-technical view of ABIS
 | <https://linked.data.gov.au/def/abis/overview>
 
 | Specification
-| https://surroundaustralia.github.io/prof-roles/specification[Specification]
+| https://agldwg.github.io/prof-roles/specification[Specification]
 | The normative ABIS specification
 | <https://linked.data.gov.au/def/abis/specification>
 
 | Validator
-| https://surroundaustralia.github.io/prof-roles/validation[Validation]
+| https://agldwg.github.io/prof-roles/validation[Validation]
 | Machine-actionable validators to test data claiming conformance to ABIS
 | <https://linked.data.gov.au/def/abis/validator>
 
 | JSON-LD Context
-| https://surroundaustralia.github.io/prof-roles/vocabulary[Vocabulary]
+| https://agldwg.github.io/prof-roles/vocabulary[Vocabulary]
 | Machine-readable listing of RDF namespaces used by ABIS
 | <https://linked.data.gov.au/def/abis/jsonldcontext>
 |===
