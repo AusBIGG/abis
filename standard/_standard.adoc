@@ -20,7 +20,7 @@ image::img/standard-overview.png[ABIS Overview,600,400,align="center"]
 |**Creator** | https://linked.data.gov.au/org/surround[SURROUND Australia Pty Ltd], https://www.gaiaresources.com.au/[Gaia Resources], https://www.tern.org.au[TERN] and the https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**Publisher** | https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|**Further information** | See the core repository that contains all the resources used to create ABIS: https://github.com/surroundaustralia/abis
+|**Further information** | See the core repository that contains all the resources used to create ABIS: https://ausbigg.github.io/abis
 |===         
 
 == Preamble
