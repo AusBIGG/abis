@@ -474,14 +474,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_examples">6. Examples</a>
 <ul class="sectlevel2">
 <li><a href="#_domain_model_2">6.1. Domain Model</a></li>
-<li><a href="#_bdr_sytem">6.2. BDR Sytem</a></li>
+<li><a href="#_bdr_system">6.2. BDR System</a></li>
 </ul>
 </li>
 <li><a href="#_references">7. References</a></li>
 <li><a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>
 <ul class="sectlevel2">
 <li><a href="#_domain_model_3">Domain Model</a></li>
-<li><a href="#_bdr_system">BDR System</a></li>
+<li><a href="#_bdr_system_2">BDR System</a></li>
 <li><a href="#_vocabularies">Vocabularies</a></li>
 <li><a href="#_background_ontologies">Background Ontologies</a></li>
 </ul>
@@ -490,7 +490,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_a_1_bdr_description">A.1 BDR Description</a></li>
 <li><a href="#_a_2_sending_messages_to_the_bdr">A.2 Sending messages to the BDR</a></li>
-<li><a href="#_a_3_following_message_absorbtion_progress">A.3 Following message absorbtion progress</a></li>
+<li><a href="#_a_3_following_message_absorption_progress">A.3 Following message absorption progress</a></li>
 </ul>
 </li>
 </ul>
@@ -651,7 +651,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="ulist">
 <ul>
 <li>
-<p>Instructions on how to convert BDR data to data conformaing to other Standards</p>
+<p>Instructions on how to convert BDR data to data conforming to other Standards</p>
 </li>
 </ul>
 </div>
@@ -960,7 +960,7 @@ If there are differences between derivatives of this specification, including th
 <p>Each <em>requirement</em> contains references to individual, identified, data validation <em>shapes</em> defined in the ABIS Profile&#8217;s <em>validator</em> used to validate <a href="https://www.w3.org/RDF/">Resource Description Framework (RDF)</a> data - the only form of data allowed to be used for ABIS data exchange.</p>
 </div>
 <div class="paragraph">
-<p>The content of <em>validator_s is contianed in the ABIS' _Validator</em> resource.</p>
+<p>The content of <em>validator_s is contained in the ABIS' _Validator</em> resource.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -981,7 +981,7 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>For each <em>requirement</em>, references are given to at least two <em>canonical examples</em> of RDF data that do (positive example) and don&#8217;t (negative example) pass validation using the validators related to the <em>requirement</em>.</p>
 </div>
 <div class="paragraph">
-<p>The content of the <em>canonical examples</em>, i.e. the examples' data, is contianed in the ABIS' <em>Canonical Examples</em> resource.</p>
+<p>The content of the <em>canonical examples</em>, i.e. the examples' data, is contained in the ABIS' <em>Canonical Examples</em> resource.</p>
 </div>
 </div>
 </div>
@@ -1120,7 +1120,7 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>All of the Requirements relating to the GeoSPARQL ontology, not the GeoSAPRQL functions</p>
+<p>All the Requirements relating to the GeoSPARQL ontology, not the GeoSAPRQL functions</p>
 </li>
 <li>
 <p>See the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_annex_a_abstract_test_suite_normative">GeoSAPRQL 1.1. Abstract Test Suite</a></p>
@@ -1217,7 +1217,7 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier&#8217;smanager, creator and system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatype with the datatype definition providing information about the identifier&#8217;s manager, creator and system</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
@@ -1247,7 +1247,7 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>The <a href="https://linked.data.gov.au/def/bdr-msg:">BDR Messages Ontology</a> defines a general message class object, <code>bdrm:Message</code>, and four subclasses of it that are to be used to convey <em>create</em>, <em>update</em>, <em>delete</em>, and <em>exists</em> (existance check) messages to the Biodiversity Data Repository (BDR). The following Requirements specify the required <em>structure</em> of BDRM messages only and not any requirements of Domain Model content with messages' payloads which are specified in the <a href="#_domain_model_requirements">Domain Model Requirements</a> above.</p>
 </div>
 <div class="paragraph">
-<p>When ABIS content is send to the the Biodiversity Data Repository, the BDR acts both as the storage of that content and also the authoratitive identifier creator for instances of certain classes of resources in that content, namely:</p>
+<p>When ABIS content is send to the Biodiversity Data Repository, the BDR acts both as the storage of that content and also the authoritative identifier creator for instances of certain classes of resources in that content, namely:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1356,7 +1356,7 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>BDR Create messages must indicate parts with createme.org IRIs only</p>
 </div>
 <div class="paragraph">
-<p><em>All items requested to be created via a <code>bdrm:CreateMessage</code> must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of classes to be created whose authoratitive namespace is managed by the BDR system. This includes the classes <code>tern:Sampling</code>, <code>tern:Sampling</code>, <code>tern:Site</code> etc.</em></p>
+<p><em>All items requested to be created via a <code>bdrm:CreateMessage</code> must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of classes to be created whose authoritative namespace is managed by the BDR system. This includes the classes <code>tern:Sampling</code>, <code>tern:Sampling</code>, <code>tern:Site</code> etc.</em></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1523,7 +1523,7 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier&#8217;smanager, creator and system</p>
+<p>Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatype with the datatype definition providing information about the identifier&#8217;s manager, creator and system</p>
 </div>
 </blockquote>
 </div>
@@ -1549,7 +1549,7 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="content">
 <img src="https://ausbigg.github.io/abis/img/sample-alternate-identifiers.png" alt="An example of a `tern:Sample` instance">
 </div>
-<div class="title">Figure 2. An example of a <code>tern:Sample</code> instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternat identifers with custom datatypes</div>
+<div class="title">Figure 2. An example of a <code>tern:Sample</code> instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternate identifiers with custom datatypes</div>
 </div>
 <div class="paragraph">
 <p>The RDF corresponding to the figure above is goven below:</p>
@@ -1566,7 +1566,7 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="paragraph">
-<p>Registering custom datatypes with the BDR is a controlled admininstrative task, i.e. one which cannot be accomplished by sending in a special message, so please contact BDR admin to register these.</p>
+<p>Registering custom datatypes with the BDR is a controlled administrative task, i.e. one which cannot be accomplished by sending in a special message, so please contact BDR admin to register these.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1583,7 +1583,7 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bdr_sytem"><a class="anchor" href="#_bdr_sytem"></a>6.2. BDR Sytem</h3>
+<h3 id="_bdr_system"><a class="anchor" href="#_bdr_system"></a>6.2. BDR System</h3>
 <div class="paragraph">
 <p>This section contains examples of the messages that may be sent to the Biodiversity Data Repository (BDR) and potentially other ABIS-conformant systems to alter their content.</p>
 </div>
@@ -1595,10 +1595,10 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The BDR uses the <a href="https://www.linked.data.gov.au">Australian Government Linked Data Working Group</a>-issued persistent identifier <code>https://linked.data.gov.au/dataset/bdr</code> for all of the content for which it is the authoritive store. Other ABIS-conformant systems will necissarily use other PIDs, so these examples, if taken for direcion with other systems, will need to substitute that PID for others.</p>
+<p>The BDR uses the <a href="https://www.linked.data.gov.au">Australian Government Linked Data Working Group</a>-issued persistent identifier <code>https://linked.data.gov.au/dataset/bdr</code> for all the content for which it is the authoritative store. Other ABIS-conformant systems will necessarily use other PIDs, so these examples, if taken for direction with other systems, will need to substitute that PID for others.</p>
 </div>
 <div class="paragraph">
-<p>The <code>http://createme.org</code> IRI used is a data placholder - a token - with no meaning other than for system identification and it may be reused by other systems.</p>
+<p>The <code>http://createme.org</code> IRI used is a data placeholder - a token - with no meaning other than for system identification, and it may be reused by other systems.</p>
 </div>
 </td>
 </tr>
@@ -1876,7 +1876,7 @@ Placeholder IRIs can be anything starting with <code>http://createme.org/</code>
 <p>In this example, the client message, Sampling and Sample instances were all ingested successfully, as indicated by the predicate <code>bdrm:exists</code> indicating the object now exists in the BDR.</p>
 </div>
 <div class="paragraph">
-<p>If a part of the client&#8217;s message was not able to be ingested, perhaps the Sample instance indicated a non-existet Feature of Interest, <code>&lt;site/xxx&gt;</code>, the BDR response message may look like like this:</p>
+<p>If a part of the client&#8217;s message was not able to be ingested, perhaps the Sample instance indicated a non-existent Feature of Interest, <code>&lt;site/xxx&gt;</code>, the BDR response message may look like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1910,10 +1910,10 @@ Placeholder IRIs can be anything starting with <code>http://createme.org/</code>
 </div>
 </div>
 <div class="paragraph">
-<p>In the creation message above, the client message <code>&lt;http://createme.org/create-msg-2022-01-03-968574&gt;</code> and its contained <code>tern:Sampling</code> instance, <code>&lt;http://createme.org/2&gt;</code>, have been indested successfully but not the <code>tern:Sample</code> instance.</p>
+<p>In the creation message above, the client message <code>&lt;http://createme.org/create-msg-2022-01-03-968574&gt;</code> and its contained <code>tern:Sampling</code> instance, <code>&lt;http://createme.org/2&gt;</code>, have been ingested successfully but not the <code>tern:Sample</code> instance.</p>
 </div>
 <div class="paragraph">
-<p>After receiveing this message, the client <em>SHOULD</em> send an update message to the BDR to update the <code>tern:Sampling</code> instance with corrected <code>tern:Sample</code> information, which it <em>MUST</em> identifiy with the BDR-issued IRI <code>&lt;sampling/12345&gt;</code>, and <em>NOT</em> it&#8217;s original IRI for it <code>&lt;http://createme.org/2&gt;</code>.</p>
+<p>After receiveing this message, the client <em>SHOULD</em> send an update message to the BDR to update the <code>tern:Sampling</code> instance with corrected <code>tern:Sample</code> information, which it <em>MUST</em> identify with the BDR-issued IRI <code>&lt;sampling/12345&gt;</code>, and <em>NOT</em> it&#8217;s original IRI for it <code>&lt;http://createme.org/2&gt;</code>.</p>
 </div>
 <div class="sect4">
 <h5 id="_creating_non_bdr_objects"><a class="anchor" href="#_creating_non_bdr_objects"></a>Creating non-BDR objects</h5>
@@ -1960,10 +1960,10 @@ Placeholder IRIs can be anything starting with <code>http://createme.org/</code>
 </div>
 </div>
 <div class="paragraph">
-<p>In the message above, the <code>CreaeMessage</code> only refers to the <code>ConceptScheme</code> instance added to the BDR, not each of its contained <code>Concept</code> instances. The alead-defined IRI of the <code>ConceptScheme</code> is given - not a <code>http://createme.org</code> IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.</p>
+<p>In the message above, the <code>CreaeMessage</code> only refers to the <code>ConceptScheme</code> instance added to the BDR, not each of its contained <code>Concept</code> instances. The already-defined IRI of the <code>ConceptScheme</code> is given - not a <code>http://createme.org</code> IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.</p>
 </div>
 <div class="paragraph">
-<p>The BDR may erspond to this sort of message with the following:</p>
+<p>The BDR may respond to this sort of message with the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2171,7 +2171,7 @@ This Annex is normative.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bdr_system"><a class="anchor" href="#_bdr_system"></a>BDR System</h3>
+<h3 id="_bdr_system_2"><a class="anchor" href="#_bdr_system_2"></a>BDR System</h3>
 <div class="paragraph">
 <p>The BDR system has model requirements for information management and use that extend beyond the ABIS Domain Model:</p>
 </div>
@@ -2251,7 +2251,7 @@ This Annex is normative.
 <p>Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message&#8217;s placeholder IRI is replaced with a persistent identifier of the form <code>https://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> where the <code>&lt;MESSAGE-ID&gt;</code> is assigned by the BDR.</p>
 </div>
 <div class="paragraph">
-<p>The BDR Gateway replies to a client sending a message with the message&#8217;s persistent identifier. This PID can then be used to check progress of the message&#8217;s absorbtion into the BDR, see the next section.</p>
+<p>The BDR Gateway replies to a client sending a message with the message&#8217;s persistent identifier. This PID can then be used to check progress of the message&#8217;s absorption into the BDR, see the next section.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2261,7 +2261,7 @@ This Annex is normative.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Persistent Identifiers created for messages by the BDR use the same namespace as other BDR objects however unlike many BDR <code>site</code>, <code>Sampling</code>, <code>Observation</code> &amp; <code>Sample</code> instances, messages sent to the BDR are not public. This means you cannot just laod a message&#8217;s PID into a web browser and be taken to a representation of that message.</p>
+<p>Persistent Identifiers created for messages by the BDR use the same namespace as other BDR objects however unlike many BDR <code>site</code>, <code>Sampling</code>, <code>Observation</code> &amp; <code>Sample</code> instances, messages sent to the BDR are not public. This means you cannot just load a message&#8217;s PID into a web browser and be taken to a representation of that message.</p>
 </div>
 <div class="paragraph">
 <p>I.e., IRIs of the form <code>https://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> do not resolve, by design.</p>
@@ -2272,7 +2272,7 @@ This Annex is normative.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_a_3_following_message_absorbtion_progress"><a class="anchor" href="#_a_3_following_message_absorbtion_progress"></a>A.3 Following message absorbtion progress</h3>
+<h3 id="_a_3_following_message_absorption_progress"><a class="anchor" href="#_a_3_following_message_absorption_progress"></a>A.3 Following message absorption progress</h3>
 <div class="sect3">
 <h4 id="_a_3_1_bdr_gateway_status_endpoint"><a class="anchor" href="#_a_3_1_bdr_gateway_status_endpoint"></a>A.3.1 BDR Gateway status endpoint</h4>
 <div class="paragraph">
@@ -2336,7 +2336,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>duplicate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an <code>bdrm:duplicates</code> property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indicated with an <code>bdrm:duplicates</code> property</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nonduplicate</code></p></td>
@@ -2423,7 +2423,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <p>Each status is formally defined within the <em>Message Statuses</em> vocabulary which is part of the <em>BDR Messages Ontology</em> used to characterise messages within the BDR. The vocabulary&#8217;s concepts correspond to entires in the table above and identifiers for each are, as all things in the BDR, IRIs.</p>
 </div>
 <div class="paragraph">
-<p>Message status IRIs are made with the BDR Messages Ontology Namespace, <code>https://linked.data.gov.au/def/bdr-msg/</code> with an assitional <code>status</code> path segment, and the IDs from the first column in table, thus the status <code>submitted&#8217;s full IRI is `https://linked.data.gov.au/def/bdr-msg/status/submitted</code>. This may be contracted to <code>status:submitted</code>, using the BDR Messages Ontology Namespace&#8217;s prefix, as given in <a href="#_namespaces">Namespaces</a>.</p>
+<p>Message status IRIs are made with the BDR Messages Ontology Namespace, <code>https://linked.data.gov.au/def/bdr-msg/</code> with an additional <code>status</code> path segment, and the IDs from the first column in table, thus the status <code>submitted&#8217;s full IRI is `https://linked.data.gov.au/def/bdr-msg/status/submitted</code>. This may be contracted to <code>status:submitted</code>, using the BDR Messages Ontology Namespace&#8217;s prefix, as given in <a href="#_namespaces">Namespaces</a>.</p>
 </div>
 <div class="paragraph">
 <p>Following are a list of per-status RDF examples, all of which use an IRI of <code>https://linked.data.gov.au/dataset/bdr/message/1234</code> for a <code>CreateMessage</code> type of message. The IRI base of <code>https://linked.data.gov.au/dataset/bdr/</code> is used, thus the IRI for the message is shown as <code>&lt;message/1234&gt;</code>.</p>
@@ -2608,7 +2608,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 </div>
 <div class="paragraph">
-<p>For permissions and similar violations, the absorbtion process will fail at the values stage, thus a status of <code>badvalues</code> will be given with a relevant error message, for example a client attempting to delete a <code>tern:Site</code> that they dn&#8217;t have editor permissions for may see this:</p>
+<p>For permissions and similar violations, the absorption process will fail at the values stage, thus a status of <code>badvalues</code> will be given with a relevant error message, for example a client attempting to delete a <code>tern:Site</code> that they don&#8217;t have editor permissions for may see this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2632,7 +2632,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-04 22:54:04 UTC
+Last updated 2023-05-04 22:58:48 UTC
 </div>
 </div>
 </body>
