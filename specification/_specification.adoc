@@ -44,6 +44,9 @@ This _Specification_ document one of many resources that together make the ABIS 
 
 Other parts of this _Standard_ are:
 
+* _Overview_
+** https://linked.data.gov.au/def/abis/overview
+** A not-so-technical introduction to ABIS
 * _Schema_
 ** ontologies and other target data models
 ** including the overarching ABIS Ontology and the TERN Ontology
