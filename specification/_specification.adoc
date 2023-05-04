@@ -2,13 +2,14 @@
 :toc: left
 :table-stripes: even
 :sectnums:
+:sectanchors:
 
 The normative listing of requirements for data conformig to the Australian Biodiversity Information Standard for Biodiversity Data (ABIS).
 
 NOTE: DRAFT, incomplete
 
 [#abis-parts]
-image::abis-parts.png[ABIS Parts,450,300,align="center"]
+image::img/abis-parts.png[ABIS Parts,450,300,align="center"]
 
 == Metadata
 
@@ -59,7 +60,7 @@ In addition to the "technical" parts, this Specification describes the conceptua
 
 === Namespaces
 
-[width=75%, frame=none, grid=none]
+[frame=none, grid=none]
 |===
 |Prefix | Namespace | Description
 
@@ -71,12 +72,12 @@ In addition to the "technical" parts, this Specification describes the conceptua
 |**`ash:`** | **`https://linked.data.gov.au/def/abis/sh/`** | **ABIS Validators Shapes namespace**
 |`bdrm:` | `https://linked.data.gov.au/def/bdr-msg/` | BDR Messages Ontology Namespace
 |`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
-|`ex:` | `http://example.com/thing` | Generic examples namespace
+|`ex:` | `+http://example.com/thing+` | Generic examples namespace - _does not resolve_
 |`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
 |`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 |`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
 |`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
-|`status:` | `https://linked.data.gov.au/def/bdr-msg/status/` | BDR Messages Status Vocabulary**
+|`status:` | `https://linked.data.gov.au/def/bdr-msg/status/` | **BDR Messages Status Vocabulary**
 |`tern:` | `https://w3id.org/tern/ontologies/tern/` | TERN Ontology namespace
 |`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
 |`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
