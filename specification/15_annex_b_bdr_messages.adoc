@@ -16,16 +16,16 @@ All interactions with the BDR around messages take place via the BDR Gateway, wh
 
 Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message's placeholder IRI is replaced with a persistent identifier of the form `+https://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` where the `<MESSAGE-ID>` is assigned by the BDR. 
 
-The BDR Gateway replies to a client sending a message with the message's persistent identifier. This PID can then be used to check progress of the message's absorbtion into the BDR, see the next section.
+The BDR Gateway replies to a client sending a message with the message's persistent identifier. This PID can then be used to check progress of the message's absorption into the BDR, see the next section.
 
 [NOTE]
 ====
-Persistent Identifiers created for messages by the BDR use the same namespace as other BDR objects however unlike many BDR `site`, `Sampling`, `Observation` & `Sample` instances, messages sent to the BDR are not public. This means you cannot just laod a message's PID into a web browser and be taken to a representation of that message. 
+Persistent Identifiers created for messages by the BDR use the same namespace as other BDR objects however unlike many BDR `site`, `Sampling`, `Observation` & `Sample` instances, messages sent to the BDR are not public. This means you cannot just load a message's PID into a web browser and be taken to a representation of that message.
 
 I.e., IRIs of the form `+https://linked.data.gov.au/dataset/bdr/message/<MESSAGE-ID>+` do not resolve, by design.
 ====
 
-=== A.3 Following message absorbtion progress
+=== A.3 Following message absorption progress
 
 ==== A.3.1 BDR Gateway status endpoint
 
@@ -51,7 +51,7 @@ NOTE: Messages submitted to the BDR Gateway only have their status tracked _afte
 |ID | Description
 
 |`submitted` | The message has been submitted to tbe BDR via the BDR Gateway and has passed validation and had a persistent IRI assigned to it, but not yet processed further
-|`duplicate` | The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an `bdrm:duplicates` property
+|`duplicate` | The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indicated with an `bdrm:duplicates` property
 |`nonduplicate` | The message has passed duplication analysis (i.e. it is not considered a duplicate)
 |`badvalues` | The message's values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix `bdrm:failed`
 |`goodvalues` | The message's values - object IRIs and literal data values - are valid according to the value-based validation tests within the BDR
@@ -86,7 +86,7 @@ image::img/statuses-state-diagram.png[Message statuses state diagram]
 
 Each status is formally defined within the _Message Statuses_ vocabulary which is part of the _BDR Messages Ontology_ used to characterise messages within the BDR. The vocabulary's concepts correspond to entires in the table above and identifiers for each are, as all things in the BDR, IRIs. 
 
-Message status IRIs are made with the BDR Messages Ontology Namespace, `+https://linked.data.gov.au/def/bdr-msg/+` with an assitional `status` path segment, and the IDs from the first column in table, thus the status `submitted`'s full IRI is `+https://linked.data.gov.au/def/bdr-msg/status/submitted+`. This may be contracted to `status:submitted`, using the BDR Messages Ontology Namespace's prefix, as given in <<Namespaces, Namespaces>>.
+Message status IRIs are made with the BDR Messages Ontology Namespace, `+https://linked.data.gov.au/def/bdr-msg/+` with an additional `status` path segment, and the IDs from the first column in table, thus the status `submitted`'s full IRI is `+https://linked.data.gov.au/def/bdr-msg/status/submitted+`. This may be contracted to `status:submitted`, using the BDR Messages Ontology Namespace's prefix, as given in <<Namespaces, Namespaces>>.
 
 Following are a list of per-status RDF examples, all of which use an IRI of `+https://linked.data.gov.au/dataset/bdr/message/1234+` for a `CreateMessage` type of message. The IRI base of `+https://linked.data.gov.au/dataset/bdr/+` is used, thus the IRI for the message is shown as `<message/1234>`.
 
@@ -220,7 +220,7 @@ For messages other than `bdrm:CreateMessage` instances, the responses are simila
 .
 ```
 
-For permissions and similar violations, the absorbtion process will fail at the values stage, thus a status of `badvalues` will be given with a relevant error message, for example a client attempting to delete a `tern:Site` that they dn't have editor permissions for may see this:
+For permissions and similar violations, the absorption process will fail at the values stage, thus a status of `badvalues` will be given with a relevant error message, for example a client attempting to delete a `tern:Site` that they don't have editor permissions for may see this:
 
 ```turtle
 <message/5678>

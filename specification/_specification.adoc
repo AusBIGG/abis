@@ -55,7 +55,7 @@ Other parts of this _Standard_ are:
 * _Examples_
 ** Examples of RDF data to show how to formulate BDR information
 * _Mappings_
-** Instructions on how to convert BDR data to data conformaing to other Standards
+** Instructions on how to convert BDR data to data conforming to other Standards
 
 The formal and linked listing of this Standards's parts is found in its _Profile Declaration_ online at https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard].
 
@@ -165,7 +165,7 @@ Each _requirement_ contains source notes  what motivated the _requirement_'s def
 
 Each _requirement_ contains references to individual, identified, data validation _shapes_ defined in the ABIS Profile's _validator_ used to validate https://www.w3.org/RDF/[Resource Description Framework (RDF)] data - the only form of data allowed to be used for ABIS data exchange.
 
-The content of _validator_s is contianed in the ABIS' _Validator_ resource.
+The content of _validator_s is contained in the ABIS' _Validator_ resource.
 
 NOTE: The validating _shapes_ are not 1:1 with these _requirements_ and that there are _requirements_ for which there are no _shapes_ - those _requirements_ that cannot be determined to have been met by inspecting data.
 
@@ -173,7 +173,7 @@ NOTE: The validating _shapes_ are not 1:1 with these _requirements_ and that the
 
 For each _requirement_, references are given to at least two _canonical examples_ of RDF data that do (positive example) and don't (negative example) pass validation using the validators related to the _requirement_.
 
-The content of the _canonical examples_, i.e. the examples' data, is contianed in the ABIS' _Canonical Examples_ resource.
+The content of the _canonical examples_, i.e. the examples' data, is contained in the ABIS' _Canonical Examples_ resource.
 
 
 include::01_conformance_classes.adoc[]

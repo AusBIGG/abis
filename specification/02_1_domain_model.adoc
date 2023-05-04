@@ -24,7 +24,7 @@ These Requirements are specified here and address ABIS-specific domain model con
 
 |Identifier | https://linked.data.gov.au/def/abis/req/sample-alternate-identifiers[`req:sample-alternate-identifiers`]
 |Label | Sample alternate identifiers
-|Definition | Alternate - non-BDR - identifiers for Sample class instances _MUST_ be indicated the property `dcterms:identifier` and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier'smanager, creator and system
+|Definition | Alternate - non-BDR - identifiers for Sample class instances _MUST_ be indicated the property `dcterms:identifier` and consist of a literal value of a custom datatype with the datatype definition providing information about the identifier's manager, creator and system
 |Conformance Classes | https://linked.data.gov.au/def/abis/cc/domain-model[`cc:domain-model`]
 |Source | BDR Project Co-design
 |Validators | _coming_

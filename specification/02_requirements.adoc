@@ -11,7 +11,7 @@ Requirements in ABIS are grouped according to several Conformance Classes detail
 ** All TERN Ontology Requirements as specified in model documentation
 ** See the https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model[TERN Ontology Conceptual Model overview]
 * GeoSPARQL
-** All of the Requirements relating to the GeoSPARQL ontology, not the GeoSAPRQL functions
+** All the Requirements relating to the GeoSPARQL ontology, not the GeoSAPRQL functions
 ** See the https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_annex_a_abstract_test_suite_normative[GeoSAPRQL 1.1. Abstract Test Suite]
 * Vocabulary Publication Profile
 ** See the https://w3id.org/profile/vocpub/spec[VocPub Specification's listing of Requirements]

@@ -68,7 +68,7 @@ RDF data matching the Left, Centre & right parts of the Figure above are given n
 
 From <<Sample alternate identifiers>>:
 
-> Alternate - non-BDR - identifiers for Sample class instances _MUST_ be indicated the property `dcterms:identifier` and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier'smanager, creator and system
+> Alternate - non-BDR - identifiers for Sample class instances _MUST_ be indicated the property `dcterms:identifier` and consist of a literal value of a custom datatype with the datatype definition providing information about the identifier's manager, creator and system
 
 If a data supplier wishes to record a non-BDR identifier for a `tern:Sample` instance, such as a museum specimen, then the pattern for doing that is to use a `dcterms:identifier` property for the `term:Sample` instance like so:
 
@@ -85,7 +85,7 @@ The value of `<BDR-PLACEHOLDER-IDENTIFIER>` might be something like `<http://exa
 The value of `ALT-IDENTIFIER` can be anything, such as a URL, a number, a string, etc.: this will be determined by the identifier generator, such as a museum. In the figure below, a dummy Western Australian Museum identifier of `WAM-75` and an International GeoSample Number footnote:[See https://www.igsn.org/] of "1073/123-456" is given. The `CUSTOM-DATATYPE` is an RDF data type descriptor that must be lodged with the BDR. In the figure below, these are `bdr:WAMID` & `bdr:IGSN` indicating "Western Australian Museum ID" and "International GeoSample Number", respectively,
 
 [[sample-alternate-identifiers-fig]]
-.An example of a `tern:Sample` instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternat identifers with custom datatypes
+.An example of a `tern:Sample` instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternate identifiers with custom datatypes
 image::img/sample-alternate-identifiers.png[An example of a `tern:Sample` instance]
 
 The RDF corresponding to the figure above is goven below: 
@@ -100,19 +100,19 @@ The RDF corresponding to the figure above is goven below:
 .
 ```
 
-Registering custom datatypes with the BDR is a controlled admininstrative task, i.e. one which cannot be accomplished by sending in a special message, so please contact BDR admin to register these.
+Registering custom datatypes with the BDR is a controlled administrative task, i.e. one which cannot be accomplished by sending in a special message, so please contact BDR admin to register these.
 
 NOTE: If an instance of `term:Sample` is a `term:MaterialSample`, then any `dcterms:identifier` property supplied for it will be considered a `dwc:materialSampleID` property too.
 
-=== BDR Sytem
+=== BDR System
 
 This section contains examples of the messages that may be sent to the Biodiversity Data Repository (BDR) and potentially other ABIS-conformant systems to alter their content. 
 
 [NOTE]
 ====
-The BDR uses the link:https://www.linked.data.gov.au[Australian Government Linked Data Working Group]-issued persistent identifier `+https://linked.data.gov.au/dataset/bdr+` for all of the content for which it is the authoritive store. Other ABIS-conformant systems will necissarily use other PIDs, so these examples, if taken for direcion with other systems, will need to substitute that PID for others.
+The BDR uses the link:https://www.linked.data.gov.au[Australian Government Linked Data Working Group]-issued persistent identifier `+https://linked.data.gov.au/dataset/bdr+` for all the content for which it is the authoritative store. Other ABIS-conformant systems will necessarily use other PIDs, so these examples, if taken for direction with other systems, will need to substitute that PID for others.
 
-The `+http://createme.org+` IRI used is a data placholder - a token - with no meaning other than for system identification and it may be reused by other systems.
+The `+http://createme.org+` IRI used is a data placeholder - a token - with no meaning other than for system identification, and it may be reused by other systems.
 ====
 
 ==== Exists Messages
@@ -346,7 +346,7 @@ NOT: Since the BDR uses a monotonically increasing numberical identifier, in thi
 
 In this example, the client message, Sampling and Sample instances were all ingested successfully, as indicated by the predicate `bdrm:exists` indicating the object now exists in the BDR.
 
-If a part of the client's message was not able to be ingested, perhaps the Sample instance indicated a non-existet Feature of Interest, `<site/xxx>`, the BDR response message may look like like this: 
+If a part of the client's message was not able to be ingested, perhaps the Sample instance indicated a non-existent Feature of Interest, `<site/xxx>`, the BDR response message may look like this:
 
 ```turtle
 @prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
@@ -378,9 +378,9 @@ If a part of the client's message was not able to be ingested, perhaps the Sampl
 .
 ```
 
-In the creation message above, the client message `+<http://createme.org/create-msg-2022-01-03-968574>+` and its contained `tern:Sampling` instance, `+<http://createme.org/2>+`, have been indested successfully but not the `tern:Sample` instance.
+In the creation message above, the client message `+<http://createme.org/create-msg-2022-01-03-968574>+` and its contained `tern:Sampling` instance, `+<http://createme.org/2>+`, have been ingested successfully but not the `tern:Sample` instance.
 
-After receiveing this message, the client _SHOULD_ send an update message to the BDR to update the `tern:Sampling` instance with corrected `tern:Sample` information, which it _MUST_ identifiy with the BDR-issued IRI `<sampling/12345>`, and _NOT_ it's original IRI for it `+<http://createme.org/2>+`.
+After receiveing this message, the client _SHOULD_ send an update message to the BDR to update the `tern:Sampling` instance with corrected `tern:Sample` information, which it _MUST_ identify with the BDR-issued IRI `<sampling/12345>`, and _NOT_ it's original IRI for it `+<http://createme.org/2>+`.
 
 ===== Creating non-BDR objects
 
@@ -424,9 +424,9 @@ The following RDF data adds an externally-defined vocabulary to the BDR:
 .
 ```
 
-In the message above, the `CreaeMessage` only refers to the `ConceptScheme` instance added to the BDR, not each of its contained `Concept` instances. The alead-defined IRI of the `ConceptScheme` is given - not a `+http://createme.org+` IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.
+In the message above, the `CreaeMessage` only refers to the `ConceptScheme` instance added to the BDR, not each of its contained `Concept` instances. The already-defined IRI of the `ConceptScheme` is given - not a `+http://createme.org+` IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.
 
-The BDR may erspond to this sort of message with the following:
+The BDR may respond to this sort of message with the following:
 
 ```turtle
 @prefix bdrm: <https://linked.data.gov.au/def/bdr-msg/> .
