@@ -490,7 +490,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_abis_parts">1.1. ABIS Parts</h3>
 <div class="paragraph">
-<p>ABIS draws on multiple, existing, domain standards for many of its parts. For example, ABIS requires use of the <a href="https://linkeddata.tern.org.au/information-models/overview">TERN Ontology</a> for the representation of <em>Sampling</em>, <em>Samples</em>, <em>Sites</em> and most aspects of filed sampling. Another example: the <a href="https://www.ogc.org/">Open Geospatial Consortium</a>'s <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html">GeoSAPRQL Standard</a> must be used to represent spatial information.</p>
+<p>ABIS draws on multiple, existing, domain standards for many of its parts. For example, ABIS requires use of the <a href="https://linkeddata.tern.org.au/information-models/overview">TERN Ontology</a> for the representation of <em>Sampling</em>, <em>Samples</em>, <em>Sites</em> and most aspects of filed sampling. Another example: the <a href="https://www.ogc.org/">Open Geospatial Consortium</a>'s <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html">GeoSPARQL Standard</a> must be used to represent spatial information.</p>
 </div>
 <div class="paragraph">
 <p>The figure below shows the parts of ABIS and the list following it describes what they are all for.</p>
@@ -541,7 +541,7 @@ sampling and surveying created by the Terrestrial Ecosystems Research Network an
 <div class="ulist">
 <ul>
 <li>
-<p>exchange ABIS with organisations/systems that are designed to accept it, such as the <a href="https://bdr.gov.au">Biodiversity Data Repository (BDR)</a>.</p>
+<p>exchange ABIS data with organisations/systems that are designed to accept it, such as the Biodiversity Data Repository (BDR).</p>
 </li>
 </ul>
 </div>
@@ -554,14 +554,110 @@ sampling and surveying created by the Terrestrial Ecosystems Research Network an
 <p>ABIS data must be in an <a href="https://www.w3.org/RDF/">RDF</a> fomat. RDF is a data model for expressing graphs - nodes of information related by defined types of edges - and there are several different formats that can be used for RDF. All are technically equivalent but different forms suite different people.</p>
 </div>
 <div class="paragraph">
-<p>Perhaps the best way to start is to consider this small example file in the <a href="https://www.w3.org/TR/turtle/">Turtle</a> RDF format:</p>
+<p>Perhaps the best way to start is to consider this small example data about an observation.</p>
+</div>
+<div class="sect3">
+<h4 id="_example_tree_width_observation">2.1.1. Example - tree width observation</h4>
+<div class="paragraph">
+<p>This observation is a tree in at Site X.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Observation ID</th>
+<th class="tableblock halign-left valign-top">Long</th>
+<th class="tableblock halign-left valign-top">Lat</th>
+<th class="tableblock halign-left valign-top">Time</th>
+<th class="tableblock halign-left valign-top">Site</th>
+<th class="tableblock halign-left valign-top">Method Used</th>
+<th class="tableblock halign-left valign-top">Result</th>
+<th class="tableblock halign-left valign-top">Observer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4321</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">115.01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-33.86</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21/09/23, 2:02:03pm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Site X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stem level measurements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">142cm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J. Bloggs</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>We have an <code>Observation</code> - an ABIS class of thing - with ID 4321, taken at a location, (115.01, -33.86), and at a particular time. <code>Site</code> is also something known to ABIS - see the <a href="https://w3id.org/tern/ontologies/tern/Site">TERN Ontology&#8217;s Site class definition</a>.</p>
+</div>
+<div class="paragraph">
+<p>We need to do a couple of things before turning this data into ABIS data:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Conceptual split</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>we need to place information about the observation and site into the conceptual model of ABIS</p>
+</li>
+<li>
+<p>the TERN Ontology separates an observation into the act of observing and resulting data from the act: an <code>Observation</code> and a <code>Result</code></p>
+</li>
+<li>
+<p>ABIS also knows about a "Site", so for this data we have an <a href="https://w3id.org/tern/ontologies/tern/Observation"><code>Observation</code></a>, a <a href="https://w3id.org/tern/ontologies/tern/Result"><code>Result</code></a>, a <a href="https://w3id.org/tern/ontologies/tern/Site"><code>Site</code></a>, a <a href="https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"><code>Procedure</code></a> (see Method ID below) and a <a href="https://schema.org/Person"><code>Person</code></a> - the observer</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>IRIs for IDs</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>we need IRIs to identify the observation and all the things according to the ABS concepts listed above</p>
+</li>
+<li>
+<p>these need to be universally unique web addresses, like <code><a href="https://linked.data.gov.au/dataset/bdr/eg/sample/4324" class="bare">https://linked.data.gov.au/dataset/bdr/eg/sample/4324</a></code>, not just <code>4321</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Method IDs</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>we need to ensure that any methods used are identified not in text but using a method listed in a controllec vocabulary</p>
+</li>
+<li>
+<p>the method used here, <em>Stem level measurements</em>, is listed in one of TERN&#8217;s methods vocab with ID <a href="http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35" class="bare">http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For the first point, we need to either get a namespace for IRIs assigned to us for use - this is what the BDR team will do if you wish to send data to the BDR, but you can use other IRI systems if you are using ABIS data but not working with the BDR. Here we will just use <code><a href="http://example.org/" class="bare">http://example.org/</a></code> for demonstrating.</p>
+</div>
+<div class="paragraph">
+<p>Say we use the IRI <code><a href="http://example.com/obs/4321" class="bare">http://example.com/obs/4321</a></code> for the observation, <code><a href="http://example.com/site/x" class="bare">http://example.com/site/x</a></code> for Site X and <code><a href="https://orcid.org/0000-0000-1234-5678" class="bare">https://orcid.org/0000-0000-1234-5678</a></code> for the person who made the observation - perhaps the person is a scientist with an <a href="https://orcid.org">ORCID</a> they use to identify them in their publications - then we can make the following RDF, in the <a href="https://www.w3.org/TR/turtle/">Turtle</a> format:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">PREFIX ex: &lt;http://example.com/&gt;
-PREFIX bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt;
-PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
-PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
 PREFIX prov: &lt;http://www.w3.org/ns/prov#&gt;
 PREFIX sdo: &lt;https://schema.org/&gt;
 PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
@@ -569,39 +665,47 @@ PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
 PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
 PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
 
-ex:msg-1
-    a bdrm:CreateMessage ;
-    dcterms:hasPart
-        ex:sampling-1 ,
-        ex:sample-1 ;
-.
-
-ex:sampling-1
-    a tern:Sampling ;
-    prov:wasAssociatedWith &lt;https://example.com/someone&gt; ;
-    sosa:hasFeatureOfInterest ex:foi-1 ;
-    sosa:hasResult ex:sample-1 ;
+&lt;http://example.com/obs/4321&gt;
+    a tern:Observation ;
+    prov:wasAssociatedWith &lt;https://orcid.org/0000-0000-1234-5678&gt; ;
+    sosa:hasFeatureOfInterest &lt;http://example.com/site/x&gt; ;
+    sosa:hasResult [
+        a tern:Result ;
+        sdo:value 142 ;
+        sdo:unitCode &lt;https://qudt.org/vocab/unit/CentiM&gt; ;
+    ] ;
     sosa:resultTime "2020-09-21T14:02:03"^^xsd:dateTime ;
-    sosa:usedProcedure &lt;http://linked.data.gov.au/def/tern-cv/8fef9acb-e702-4b2c-8b79-3b22b00987da&gt; ;
-    void:inDataset ex:dataset-1 ;
-    geo:hasGeometry [ geo:asWKT "POINT(115.01, -33.86)"^^geo:wktLiteral ] ;
+    sosa:usedProcedure &lt;http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35&gt; ;
+    void:inDataset &lt;http://example.com/dataset/123&gt; ;
+    geo:hasGeometry [
+        geo:asWKT "POINT(115.01, -33.86)"^^geo:wktLiteral
+    ] ;
 .
 
-ex:sample-1
-    a tern:Sample ;
-    sosa:isResultOf ex:sampling-1 ;
-    void:inDataset ex:dataset-1 ;
+&lt;http://example.com/site/x&gt;
+    a tern:Site ;
+    geo:hasGeometry [
+        geo:asWKT "POLYGON(115 -33, 115 -34, 116 -34, 116 -33, 115 -33)"^^geo:wktLiteral
+    ] ;
 .
 
-&lt;https://example.com/someone&gt;
+&lt;https://orcid.org/0000-0000-1234-5678&gt;
     a sdo:Person ;
-    sdo:name "Some One" ;
-    sdo:email "someone@someemail.com"^^xsd:anyURI ;
+    sdo:name "Joe Bloggs" ;
+    sdo:email "joebloggs@hotmail.com"^^xsd:anyURI ;
 .</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Here a <code>bdrm:CreateMessage</code> - used to instruct the Biodiverity Data Repostory to create new information - contains information about a <code>tern:Sampling</code> and a <code>tern:Sample</code> which reference each other and a <code>tern:FeatureOfInterest</code> as well as a <code>tern:RDFDataset</code>. Finally, the person this was all associated with (who created/supplied the data) is described.</p>
+<p>In the data above, the <code>Observation</code> is</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;http://example.com/obs/4321&gt;
+    a tern:Observation ;
+    # a series of other properties ..
+.</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>There are many other examples of ABIS data in the <a href="https://ausbigg.github.io/abis/specification.html">Specification</a> and also in tools that 'talk' ABIS, for example the BDR Gateway: <a href="https://gateway.bdr.gov.au" class="bare">https://gateway.bdr.gov.au</a>.</p>
@@ -611,6 +715,7 @@ ex:sample-1
 </div>
 <div class="paragraph">
 <p>Note also that systems to convert non-RDF data to ABIS RDF have been established as part of the Biodiveristy Data Repository project, see <a href="https://submission.bdr.gov.au" class="bare">https://submission.bdr.gov.au</a>.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -683,7 +788,7 @@ ex:sample-1
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-11-02 22:48:44 UTC
+Last updated 2023-11-03 00:53:03 UTC
 </div>
 </div>
 </body>
