@@ -579,7 +579,7 @@ sampling and surveying created by the Terrestrial Ecosystems Research Network an
 <th class="tableblock halign-left valign-top">Lat</th>
 <th class="tableblock halign-left valign-top">Time</th>
 <th class="tableblock halign-left valign-top">Site</th>
-<th class="tableblock halign-left valign-top">Method Used</th>
+<th class="tableblock halign-left valign-top">Parameter</th>
 <th class="tableblock halign-left valign-top">Result</th>
 <th class="tableblock halign-left valign-top">Observer</th>
 </tr>
@@ -591,8 +591,8 @@ sampling and surveying created by the Terrestrial Ecosystems Research Network an
 <td class="tableblock halign-left valign-top"><p class="tableblock">-33.86</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">21/09/23, 2:02:03pm</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Site X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stem level measurements</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">142cm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trunk diameter at chest height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">142&#177;5cm</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">J. Bloggs</p></td>
 </tr>
 </tbody>
@@ -610,39 +610,77 @@ sampling and surveying created by the Terrestrial Ecosystems Research Network an
 <div class="ulist">
 <ul>
 <li>
-<p>we need to place information about the observation and site into the conceptual model of ABIS</p>
+<p>we need to place information about the observation, the values obtained, the site and so on into the conceptual model of ABIS</p>
 </li>
 <li>
-<p>the TERN Ontology separates an observation into the act of observing and resulting data from the act: an <code>Observation</code> and a <code>Result</code></p>
+<p>the TERN Ontology separates an observation into the act of observing and resulting data from the act: - an <code>Observation</code> and a <code>Result</code> - and also splits the type of thing observed - the parameter, an <code>Observable Property</code> - from the method used - a <code>Procedure</code></p>
 </li>
 <li>
-<p>ABIS also knows about a "Site", so for this data we have an <a href="https://w3id.org/tern/ontologies/tern/Observation"><code>Observation</code></a>, a <a href="https://w3id.org/tern/ontologies/tern/Result"><code>Result</code></a>, a <a href="https://w3id.org/tern/ontologies/tern/Site"><code>Site</code></a>, a <a href="https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"><code>Procedure</code></a> (see Method ID below) and a <a href="https://schema.org/Person"><code>Person</code></a> - the observer</p>
+<p>ABIS also knows about a "Site", so for this data we have:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>an <a href="https://w3id.org/tern/ontologies/tern/Observation"><code>Observation</code></a> - the thing identified with <code>4321</code></p>
+</li>
+<li>
+<p>a <a href="https://w3id.org/tern/ontologies/tern/Result"><code>Result</code></a> - the value 42&#177;5cm</p>
+</li>
+<li>
+<p>an <a href="https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty"><code>Observable Property</code></a> - the parameter observed - here tree trunk diameter</p>
+</li>
+<li>
+<p>a <a href="https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"><code>Procedure</code></a> - the method used to obtain the result, <em>see Reference Object ID below</em></p>
+</li>
+<li>
+<p>a <a href="https://w3id.org/tern/ontologies/tern/Site"><code>Site</code></a> - the named location the Observation took place at</p>
+</li>
+<li>
+<p>and a <a href="https://schema.org/Person"><code>Person</code></a> - the observer</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>IRIs for IDs</strong></p>
+<p><strong>New Object IDs</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>we need IRIs to identify the observation and all the things according to the ABS concepts listed above</p>
+<p>we need to use IRIs to identify all new information defined in this data</p>
 </li>
 <li>
-<p>these need to be universally unique web addresses, like <code><a href="https://linked.data.gov.au/dataset/bdr/eg/sample/4324" class="bare">https://linked.data.gov.au/dataset/bdr/eg/sample/4324</a></code>, not just <code>4321</code></p>
+<p>this is the <code>Observation</code> and many of the things listed above</p>
+</li>
+<li>
+<p>these need to be universally unique web addresses, like <code><a href="https://linked.data.gov.au/dataset/bdr/eg/sample/4324" class="bare">https://linked.data.gov.au/dataset/bdr/eg/sample/4324</a></code>, not just simple IDs like <code>4321</code></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Method IDs</strong></p>
+<p><strong>Reference Object IDs</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>we need to ensure that any methods used are identified not in text but using a method listed in a controllec vocabulary</p>
+<p>we need to ensure that any objects referenced used are identified not in text but also using IRIS</p>
 </li>
 <li>
-<p>the method used here, <em>Stem level measurements</em>, is listed in one of TERN&#8217;s methods vocab with ID <a href="http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35" class="bare">http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35</a></p>
+<p>reference objects like <code>Procedure</code> should be listed in published vocabularies</p>
+<div class="ulist">
+<ul>
+<li>
+<p>the procedure used here, <em>Stem level measurements</em>, is listed in one of TERN&#8217;s methods vocab with ID <a href="http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35" class="bare">http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>some reference objects like <code>Person</code> are IDed with IRIs via other initiatives, such as <a href="https://orcid.org">ORCID</a></p>
+</li>
+<li>
+<p>some objects could be new in this data or reference objects created previously, such as a <code>Site</code></p>
 </li>
 </ul>
 </div>
@@ -650,15 +688,16 @@ sampling and surveying created by the Terrestrial Ecosystems Research Network an
 </ol>
 </div>
 <div class="paragraph">
-<p>For the first point, we need to either get a namespace for IRIs assigned to us for use - this is what the BDR team will do if you wish to send data to the BDR, but you can use other IRI systems if you are using ABIS data but not working with the BDR. Here we will just use <code><a href="http://example.org/" class="bare">http://example.org/</a></code> for demonstrating.</p>
+<p>For the first point, we need to either get a namespace for IRIs assigned to us for use for new objects - this is what the BDR team will do if you are registered to send ABIS data to the BDR, but you can use other IRI systems if you are using ABIS data for other purposes. Here we will just use <code><a href="http://example.org/" class="bare">http://example.org/</a></code> for demonstrating.</p>
 </div>
 <div class="paragraph">
-<p>Say we use the IRI <code><a href="http://example.com/obs/4321" class="bare">http://example.com/obs/4321</a></code> for the observation, <code><a href="http://example.com/site/x" class="bare">http://example.com/site/x</a></code> for Site X and <code><a href="https://orcid.org/0000-0000-1234-5678" class="bare">https://orcid.org/0000-0000-1234-5678</a></code> for the person who made the observation - perhaps the person is a scientist with an <a href="https://orcid.org">ORCID</a> they use to identify them in their publications - then we can make the following RDF, in the <a href="https://www.w3.org/TR/turtle/">Turtle</a> format:</p>
+<p>Say we use the IRI <code><a href="http://example.com/obs/4321" class="bare">http://example.com/obs/4321</a></code> for the observation, <code><a href="http://example.com/site/x" class="bare">http://example.com/site/x</a></code> for Site X and <code><a href="https://orcid.org/0000-0000-1234-5678" class="bare">https://orcid.org/0000-0000-1234-5678</a></code> for the person who made the observation - perhaps the person is a scientist using an <a href="https://orcid.org">ORCID</a> to identify themselves in their publications - then we can make the following RDF, in the <a href="https://www.w3.org/TR/turtle/">Turtle</a> format:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
 PREFIX prov: &lt;http://www.w3.org/ns/prov#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
 PREFIX sdo: &lt;https://schema.org/&gt;
 PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
 PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
@@ -669,13 +708,16 @@ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
     a tern:Observation ;
     prov:wasAssociatedWith &lt;https://orcid.org/0000-0000-1234-5678&gt; ;
     sosa:hasFeatureOfInterest &lt;http://example.com/site/x&gt; ;
+    sosa:observedProperty &lt;http://linked.data.gov.au/def/tern-cv/a3ad8f31-6896-416e-8ac6-bc61b93aaab5&gt; ;
+    sosa:usedProcedure &lt;http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35&gt; ;
     sosa:hasResult [
-        a tern:Result ;
-        sdo:value 142 ;
-        sdo:unitCode &lt;https://qudt.org/vocab/unit/CentiM&gt; ;
+        a tern:Float ;
+        rdf:value 142.0 ;
+        tern:unit &lt;https://qudt.org/vocab/unit/CentiM&gt; ;
+        tern:uncertainty 5 ;
     ] ;
     sosa:resultTime "2020-09-21T14:02:03"^^xsd:dateTime ;
-    sosa:usedProcedure &lt;http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35&gt; ;
+
     void:inDataset &lt;http://example.com/dataset/123&gt; ;
     geo:hasGeometry [
         geo:asWKT "POINT(115.01, -33.86)"^^geo:wktLiteral
@@ -697,7 +739,7 @@ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
 </div>
 </div>
 <div class="paragraph">
-<p>In the data above, the <code>Observation</code> is</p>
+<p>In the data above, the <code>Observation</code> is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -788,7 +830,7 @@ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-11-03 00:53:03 UTC
+Last updated 2023-11-03 01:59:39 UTC
 </div>
 </div>
 </body>
