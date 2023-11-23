@@ -1,0 +1,49 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sdo: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://linked.data.gov.au/org/abis/validator>
+    a owl:Ontology ;
+    owl:versionIRI <https://linked.data.gov.au/org/abis/validator/2.0> ;
+    owl:versionInfo "2.0: A complete rewrite of the validator, moving all module validators out to separate file and leaving total ABIS validation to the ABIS-Compounded validator" ;
+    skos:prefLabel "ABIS Validator"@en ;
+    sdo:copyrightNotice "(c) Commonwealth of Australia (Department of Climate Change, Energy, the Environment and Water)" ;
+    sdo:creator <https://linked.data.gov.au/org/dcceew> ;
+    sdo:dateCreated "2022-06-24"^^xsd:date ;
+    sdo:dateIssued "2022-06-24"^^xsd:date ;
+    sdo:dateModified "2023-11-22"^^xsd:date ;
+    sdo:description """This SHACL validator is the Australian Biodiversity Information Standard (ABIS)'s validator. It only validates ontology elements defined in the ABIS namespace and not those defined by submodules of ABIS, such as the TERN Ontology.
+
+In addition to this validator, there is the ABIS-Combined validator that combines this validator and all those of ABIS' submodules and background models, such as GeoSPARQL."""@en ;
+    sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sdo:publisher <https://linked.data.gov.au/org/ausbigg> ;
+    skos:historyNote "This validator was created originally in 2022 and drastically updated in 2023 to assist with the validation of data to the Biodiversity Data Repository"
+.
+
+<https://linked.data.gov.au/org/agldwg>
+    a sdo:Organization ;
+    sdo:name "Australian Government Linked Data Working Group" ;
+    sdo:url "https://www.linked.data.gov.au"^^xsd:anyURI ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:email "nicholas.car@dcceew.gov.au"^^xsd:anyURI ;
+    sdo:identifier "https://orcid.org/0000-0002-8742-7730"^^xsd:anyURI ;
+    sdo:memberOf <https://linked.data.gov.au/org/dcceew> ;
+    sdo:name "Nicholas J. Car" ;
+.
+
+<https://linked.data.gov.au/org/ausbigg>
+    a sdo:Organization ;
+    sdo:name "Australian Biodiversity Information Governance Group" ;
+    sdo:parentOrganization <https://linked.data.gov.au/org/dcceew> ;
+    sdo:url "https://github.com/AusBIGG/"^^xsd:anyURI ;
+.
+
+<https://linked.data.gov.au/org/dcceew>
+    a sdo:Organization ;
+    sdo:name "Department of Climate Change, Energy, the Environment and Water" ;
+    sdo:url "https://www.dcceew.gov.au"^^xsd:anyURI ;
+.

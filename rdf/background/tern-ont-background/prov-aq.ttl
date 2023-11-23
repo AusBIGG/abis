@@ -7,33 +7,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-rdfs:comment
-  a owl:AnnotationProperty ;
-  rdfs:comment ""@en ;
-.
-rdfs:isDefinedBy
-  a owl:AnnotationProperty ;
-.
-rdfs:label
-  a owl:AnnotationProperty ;
-  rdfs:comment ""@en ;
-.
-rdfs:seeAlso
-  a owl:AnnotationProperty ;
-  rdfs:comment ""@en ;
-.
-owl:Thing
-  a owl:Class ;
-.
-owl:topObjectProperty
-  a owl:ObjectProperty ;
-.
-owl:versionInfo
-  a owl:AnnotationProperty ;
-.
-prov:
-  a owl:Ontology ;
-.
 prov:DirectQueryService
   a owl:Class ;
   rdfs:comment "Type for a generic provenance query service. Mainly for use in RDF provenance query service descriptions, to facilitate discovery in linked data environments." ;

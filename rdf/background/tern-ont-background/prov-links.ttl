@@ -8,24 +8,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-rdfs:comment
-  a owl:AnnotationProperty ;
-.
-rdfs:isDefinedBy
-  a owl:AnnotationProperty ;
-.
-rdfs:label
-  a owl:AnnotationProperty ;
-.
-rdfs:seeAlso
-  a owl:AnnotationProperty ;
-.
-owl:Thing
-  a owl:Class ;
-.
-owl:versionInfo
-  a owl:AnnotationProperty ;
-.
 prov:asInBundle
   a owl:ObjectProperty ;
   rdfs:comment """prov:asInBundle is used to specify which bundle the general entity of a prov:mentionOf property is described.

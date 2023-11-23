@@ -14,34 +14,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-rdfs:comment
-  a owl:AnnotationProperty ;
-  rdfs:comment ""@en ;
-  rdfs:isDefinedBy prov: ;
-  rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
-.
-rdfs:isDefinedBy
-  a owl:AnnotationProperty ;
-.
-rdfs:label
-  a owl:AnnotationProperty ;
-  rdfs:comment ""@en ;
-  rdfs:isDefinedBy prov: ;
-  rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
-.
-rdfs:seeAlso
-  a owl:AnnotationProperty ;
-  rdfs:comment ""@en ;
-.
-owl:Thing
-  a owl:Class ;
-.
-owl:topObjectProperty
-  a owl:ObjectProperty ;
-.
-owl:versionInfo
-  a owl:AnnotationProperty ;
-.
 prov:
   a owl:Ontology ;
   rdfs:comment """This document is published by the Provenance Working Group (http://www.w3.org/2011/prov/wiki/Main_Page).
