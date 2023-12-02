@@ -1,0 +1,56 @@
+== Preamble
+
+=== Parts of ABIS
+
+The Australian Biodiversity Information Standard (ABIS) is a multi-part standard and this document is its normative specification.
+
+The other parts of ABIS are:
+
+* *Overview Document*
+** https://linked.data.gov.au/def/abis/overview
+** A simple introduction to the concepts within ABIS
+* *Profile Definition*
+** The technical expression of ABIS as a standard that inherits from other standards
+** This is available in human- and machine-readable forms
+* *Models*
+** ABIS is made of multiple models which are listed in the <<Model, Model Section>> but are published and maintained elsewhere
+** Both human- and machine-readable forms of all ABIS models are available
+* *Vocabularies*
+** ABIS, and the modes it depends on, rely on many vocabularies
+** These are listed in the <<Vocabularies, Vocabularies Section>> but are published and maintained elsewhere
+* *Validators*
+** Data 'shape' files that can be used with validation tooling to check conformance of data to ABIS
+** These are listed in the <<Validation, Validation Section>> but are published and maintained elsewhere
+
+
+=== Namespaces
+
+[frame=none, grid=none]
+|===
+|Prefix | Namespace | Description
+3+|*ABIS Namespaces*
+|*`abis:`* | *`https://linked.data.gov.au/def/abis/`* | *ABIS namespace* - for the Standard as a whole
+|*`cc:`* | *`https://linked.data.gov.au/def/abis/req/`* | *ABIS Conformance Class namespace*
+|*`req:`* | *`https://linked.data.gov.au/def/abis/req/`* | *ABIS Requirements namespace*
+|*`aex:`* | *`https://linked.data.gov.au/def/abis/eg/`* | *ABIS Canonical Examples namespace*
+|*`ash:`* | *`https://linked.data.gov.au/def/abis/sh/`* | *ABIS Validators Shapes namespace*
+|*`rul:`* | *`+https://linked.data.gov.au/def/abis/rul/+`* | *ABIS Rules namespace* - _not implemented yet_
+3+|*BDR Messaging Ontology Namespaces*
+|*`bdrm:`* | *`https://linked.data.gov.au/def/bdr-msg/`* | *BDR Messages Ontology Namespace*
+|*`status:`* | *`https://linked.data.gov.au/def/bdr-msg/status/`* | *BDR Messages Status Vocabulary*
+3+|*Other Namespaces*
+|`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
+|`ex:` | `+http://example.com/thing+` | Generic examples namespace - _does not resolve_
+|`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
+|`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
+|`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
+|`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
+|`tern:` | `https://w3id.org/tern/ontologies/tern/` | TERN Ontology namespace
+|`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
+|`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
+|`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
+|===
+
+A JSON-LD _context_ built from this namespaces table is available as another resource within the ABIS specification and is online at:
+
+* https://linked.data.gov.au/def/abis/context.json
