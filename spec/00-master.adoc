@@ -28,11 +28,13 @@ image::img/abis-parts.png[ABIS Parts,450,300,align="center"]
 |===
 |*IRI* | https://linked.data.gov.au/def/abis
 |*Title* | Australian Biodiversity Information Standard
-|*Definition* | This document is the normative specification of the Australian Biodiversity Information Standard and includes its authoritative statements on requirements, parts, patterns and models
+|*Definition* | This document is the normative specification of the Australian Biodiversity Information Standard (ABIS) and includes its authoritative statements on parts, requirements and patterns.
 |*Created* | 2021-10-24
 |*Modified* | 2023-11-30
-|*Issued* | 2023-12-01
+|*Issued* | 2023-12-04
 |*Version* | 2.0
+|*Version History*| *2.0* - 2023 Nov -Produced by https://linked.data.gov.au/org/dcceew[DCCEEW] for initial <<BDR, BDR>> operations. Includes handling of systematic surveys and project information. +
+*1.0* - 2022 Jun - Initial version of ABIS. Tested with SURROUND Australia Pty Ltd and used for an initial national data acquisition survey for the <<BDR, BDR>>
 |*Creator* | Originally https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment], +
 now the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment]
 |*Publisher* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment]
@@ -47,13 +49,15 @@ include::03-intro.adoc[]
 
 include::04-patterns.adoc[]
 
-include::05-model.adoc[]
+include::05-models.adoc[]
 
 include::06-vocabs.adoc[]
 
 include::07-conformance.adoc[]
 
 include::08-validation.adoc[]
+
+include::09-mappings.adoc[]
 
 include::99-references.adoc[]
 

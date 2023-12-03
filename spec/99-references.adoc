@@ -1,3 +1,11 @@
 == References
 
-* [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>
+[[ISO19156]]
+ISO19156:: International Organization for Standardization, ISO 19156: Geographic information — Observations and measurements (2011)
+
+
+[[PROF]]
+PROF:: World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>
+
+[[TERNOntology]]
+TERN Ontology:: Terrestrial Ecosystems Research Network (TERN). _TERN Ontology_. A information model to represent plot-based ecological surveys. https://linkeddata.tern.org.au/information-models/tern-ontology

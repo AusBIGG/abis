@@ -1,3 +1,3 @@
 == Abstract
 
-This document is the normative specification of the Australian Biodiversity Information Standard (ABIS) and includes its authoritative statements on requirements, parts, patterns and models.
+This document is the normative specification of the Australian Biodiversity Information Standard (ABIS) and includes its authoritative statements on parts, requirements and patterns.

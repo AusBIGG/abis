@@ -1,11 +1,7 @@
 {  
     "@context": {
       "abis": "https://linked.data.gov.au/def/abis/",
-      "req": "https://linked.data.gov.au/def/abis/req/",
-      "rul": "https://linked.data.gov.au/def/abis/rul/",
-      "cc": "https://linked.data.gov.au/def/abis/req/",
-      "aex": "https://linked.data.gov.au/def/abis/eg/",
-      "ash": "https://linked.data.gov.au/def/abis/sh/",
+      "bdr": "https://linked.data.gov.au/dataset/bdr/",
       "dcterms": "http://purl.org/dc/terms/",
       "ex": "http://example.com/",
       "geo": "http://www.opengis.net/ont/geosparql#",

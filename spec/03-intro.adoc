@@ -1,42 +1,75 @@
 == Introduction
 
-This document contains general description of the https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard (ABIS)] and importantly a list of _requirements_ and groupings of requirements, _Conformance Classes_. Data must meet all the _requirements_ in _conformance classes_ to claim conformance to that _conformance class'_ part of the ABIS.
+This document is the specification of the parts, requirements and patterns of the https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard (ABIS)].
 
-This document also lists all the parts of the ABIS which are its various ontologies, vocabularies and others that these depend on. These parts are listed in <<Annex A: ABIS Parts, Annex A: ABIS Parts>>.
+The goal of ABIS is to simplify the exchange of standardised biodiversity data in Australia between data holders - States & Territories, the Commonwealth, educational and research organisations, private companies and the public - by providing a scientific observations data model and a series of additions to is that cater for institution details, data management and mappings to other information models.
 
-=== Requirement and Conformance Class modelling
+ABIS uses a rigorous and formal data models which means that data wanting to be compliant with it can be automatically validated and this specification indicates where the validators are and how to use them.
 
-Each _requirement_ is defined with a table of values like this:
+=== ABIS' Multiple Models
 
-[width=25%, frame=none, grid=none]
-|===
-|Identifier | Prefixed IRI identifier
-|Label | Short text
-|Definition | Defining text
-|Conformance Classes | Selected Conformance Class Identifiers
-|Source | Notes on _requirement_ source
-|Validators | Related SHACL validators
-|Examples | Related RDF example data
-|===
+ABIS is centred on the <<TERNOntology, TERN Ontology>> which is a data model that represents ecological survey information. The TERN Ontology is designed in accordance with the principles of the _Observations & Measurement_ standard <<ISO19156, ISO19156>> that separates acts of observation from the results of those observations and ever-present details of the things observed.
 
-The https://en.wikipedia.org/wiki/Semantic_Web[Semantic Web] interpretation of the relation of each of those properties are to each requirement instance are:
+In addition to things represented by the TERN Ontology, ABIS includes all of the models depended on by ABIS as well as the following:
 
-[width=25%, frame=none, grid=none]
-|===
-|Property | Defining RDF predicate | Object type
+* Projects
+** A basic model of projects that generate data
+* Profiles
+** A model that related models to other models
+* Olis
+** A model used to manage chunks of data within a <<KnowledgeGraph, Knowledge Graph>>
 
-|Identifier | `dcterms:identifier` | IRI
-|Label | `skos:prefLabel` | text
-|Definition | `skos:definition` | text
-|Conformance Classes | `dcterms:isPartOf` | IRIs
-|Source | `dcterms:source` or `dcterms:provenance` | IRI of an ABIS resource or text
-|Validators | ??? | IRI of a `Resource Descriptor`
-|Examples | `skos:example` | IRI of a `Resource Descriptor`
-|===
 
-See the <<Namespaces>> section below to understand the prefixes in the table above.
+=== Background
 
-The following subsections define properties of the _requirements_ in detail.
+==== Aim
+
+ABIS was established to enable a national Biodiversity Data Repository <<BDR, BDR>> in Australia that absorbed data from a range of sources.
+
+These data supplier sources - Australian State & Territories and other organsations such as museums, herbaria, research organisations and companies - have been collecting biodiversity data for over a century in Australia and have been doing so independently, so there is a wide range of information collected relating to where, when and how species are observed.
+
+Since the BDR aims for a comprehensive and up-to-date data holding, it needs to ble able to absorb large volumes of biodiversity data and process it quickly. Given that existing source data collections contain millions of observations, this is only achievable through automatic data processing.
+
+To enable effective automatic processing of data - both in terms of effort and quality - common models and formats must be implemented by data suppliers who map their data holdings to a form that can be automatically assessed (validated) and processed. ABIS is that form.
+
+==== Development History
+
+The TERN Ontology was created in 2020 for TERN to use for their own observations <<KnowledgeGraph, Knowledge Graph>>.
+
+In 2021, the <<BDR, BDR>> adopted the TERN Ontology as its base.
+
+In 2022, the first version of ABIS was created, building on top of the TERN Ontology to cater for messaging methods and some aspects of data management, such as the withholding of data publication due to data embargoes. This version of ABIS was used to for the data acquired in November 2022 through the scan of State & Territory biodiversity observation data holdings.
+
+At the end of 2023, version 2.0 of ABIS was created which removed all representation of messaging protocols, requirements and rules. Version 2.0 focuses on building on top of the TERN Ontology data elements used to manage and provide access to expected <<BDR, BDR>> data holdings.
+
+=== Governance
+
+ABIS is managed day-to-day by https://linked.data.gov.au/org/dcceew[DCCEEW] however many parts of ABIS are maintained externally, such as the <<TERNOntology, TERN Ontology>> which is maintained by https://linked.data.gov.au/org/tern[TERN].
+
+Governance of ABIS is undertaken by linked.data.gov.au/org/ausbigg[AusBIGG] (_TODO_), the Australian Biodiversity Information Governance Group, which comprises DCCEEW, State & Territory biodiversity data holders and other organisations in the sector, such as TERN.
+
+As of 2023, the processes for maintaining and extending ABIS are not fully established with AusBIGG still coming to understand ABIS' uses and its place in the landscape of international biodiversity observation data models, such as https://www.gbif.org/new-data-model[GBIF's _New Data Model_].
+
+=== Related Standards
+
+ABIS both comprises multiple models and some of them inherit from other models and standards. See the <<Models, Models>> section for details.
+
+Additionally, ABIS exists within a domain that already contains many international and national standards and well-known models. The <<Mappings, Mappings>> section described how ABIS relates to many of them.
+
+=== Specification Structure
+
+This specification aims to cover all the information needed to understand ABIS and use it. The following is a list of the major sections in this document and their purposes.
+
+1. Introduction
+** This section. An informal overview of ABIS
+2. Model
+** The normative description of the data models used within ABIS
+3. Vocabularies
+** Description of, and links to, the vocabularies needed for use with ABIS
+4. Validation
+** How to validate data according to ABIS and links to the various validators
+
+
 
 ==== Identifier
 
