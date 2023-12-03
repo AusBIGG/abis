@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<title>ABIS Specification</title>
+<title>Australian Biodiversity Information Standard</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,53 +436,267 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .cd {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
 </head>
-<body class="article toc2 toc-left">
+<body class="book toc2 toc-left">
 <div id="header">
-<h1>ABIS Specification</h1>
+<h1>Australian Biodiversity Information Standard</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_metadata">1. Metadata</a></li>
-<li><a href="#_preamble">2. Preamble</a>
+<li><a href="#_abstract">2. Abstract</a></li>
+<li><a href="#_preamble">3. Preamble</a>
 <ul class="sectlevel2">
-<li><a href="#_abstract">2.1. Abstract</a></li>
-<li><a href="#_normative_status">2.2. Normative Status</a></li>
-<li><a href="#_standard_parts">2.3. Standard Parts</a></li>
-<li><a href="#_namespaces">2.4. Namespaces</a></li>
+<li><a href="#_parts_of_abis">3.1. Parts of ABIS</a></li>
+<li><a href="#_namespaces">3.2. Namespaces</a></li>
+<li><a href="#_terms_definitions">3.3. Terms &amp; Definitions</a></li>
 </ul>
 </li>
-<li><a href="#_introduction">3. Introduction</a>
+<li><a href="#_introduction">4. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_requirement_and_conformance_class_modelling">3.1. Requirement and Conformance Class modelling</a></li>
+<li><a href="#_abis_multiple_models">4.1. ABIS' Multiple Models</a></li>
+<li><a href="#_background">4.2. Background</a>
+<ul class="sectlevel3">
+<li><a href="#_aim">4.2.1. Aim</a></li>
+<li><a href="#_development_history">4.2.2. Development History</a></li>
 </ul>
 </li>
-<li><a href="#_conformance_classes">4. Conformance Classes</a>
-<ul class="sectlevel2">
-<li><a href="#_conformance_class_index">4.1. Conformance Class Index</a></li>
-<li><a href="#_domain_model">4.2. Domain Model</a></li>
-<li><a href="#_bdr_messages">4.3. BDR Messages</a></li>
+<li><a href="#_governance">4.3. Governance</a></li>
+<li><a href="#_related_standards">4.4. Related Standards</a></li>
+<li><a href="#_specification_structure">4.5. Specification Structure</a>
+<ul class="sectlevel3">
+<li><a href="#_identifier">4.5.1. Identifier</a></li>
+<li><a href="#_labeled">4.5.2. Labeled</a></li>
+<li><a href="#_definition">4.5.3. Definition</a></li>
+<li><a href="#_conformance_classes_list">4.5.4. Conformance Classes list</a></li>
+<li><a href="#_contains_source_notes">4.5.5. Contains source notes</a></li>
+<li><a href="#_related_validators">4.5.6. Related validators</a></li>
+<li><a href="#_canonical_examples">4.5.7. Canonical examples</a></li>
 </ul>
 </li>
-<li><a href="#_requirements">5. Requirements</a>
-<ul class="sectlevel2">
-<li><a href="#_requirements_index">5.1. Requirements Index</a></li>
-<li><a href="#_domain_model_requirements">5.2. Domain Model Requirements</a></li>
-<li><a href="#_bdr_messages_requirements">5.3. BDR Messages Requirements</a></li>
 </ul>
 </li>
-<li><a href="#_examples">6. Examples</a>
-<ul class="sectlevel2">
-<li><a href="#_domain_model_2">6.1. Domain Model</a></li>
-<li><a href="#_bdr_system">6.2. BDR System</a></li>
-</ul>
-</li>
-<li><a href="#_references">7. References</a></li>
+<li><a href="#_models">5. Models</a></li>
+<li><a href="#_vocabularies">6. Vocabularies</a></li>
+<li><a href="#_validation">7. Validation</a></li>
+<li><a href="#_mappings">8. Mappings</a></li>
+<li><a href="#_references">9. References</a></li>
 <li><a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>
 <ul class="sectlevel2">
-<li><a href="#_domain_model_3">Domain Model</a></li>
-<li><a href="#_bdr_system_2">BDR System</a></li>
-<li><a href="#_vocabularies">Vocabularies</a></li>
+<li><a href="#_domain_model">Domain Model</a></li>
+<li><a href="#_bdr_system">BDR System</a></li>
+<li><a href="#_vocabularies_2">Vocabularies</a></li>
 <li><a href="#_background_ontologies">Background Ontologies</a></li>
 </ul>
 </li>
@@ -490,7 +704,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_a_1_bdr_description">A.1 BDR Description</a></li>
 <li><a href="#_a_2_sending_messages_to_the_bdr">A.2 Sending messages to the BDR</a></li>
-<li><a href="#_a_3_following_message_absorption_progress">A.3 Following message absorption progress</a></li>
+<li><a href="#_a_3_following_message_absorption_progress">A.3 Following message absorption progress</a>
+<ul class="sectlevel3">
+<li><a href="#_a_3_1_bdr_gateway_status_endpoint">A.3.1 BDR Gateway status endpoint</a></li>
+<li><a href="#_a_3_2_message_statuses">A.3.2 Message statuses</a></li>
+<li><a href="#_a_3_3_message_status_state_diagram">A.3.3 Message status state diagram</a></li>
+<li><a href="#_a_3_4_message_status_rdf">A.3.4 Message status RDF</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -499,21 +720,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>The normative listing of requirements for data conformig to the Australian Biodiversity Information Standard for Biodiversity Data (ABIS).</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-DRAFT, incomplete
-</td>
-</tr>
-</table>
-</div>
 <div id="abis-parts" class="imageblock text-center">
 <div class="content">
 <img src="https://ausbigg.github.io/abis/img/abis-parts.png" alt="ABIS Parts" width="450" height="300">
@@ -532,15 +738,15 @@ DRAFT, incomplete
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IRI</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/spec" class="bare">https://linked.data.gov.au/def/abis/spec</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis" class="bare">https://linked.data.gov.au/def/abis</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Title</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Australian Biodiversity Information Standard&#8217;s Specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Australian Biodiversity Information Standard</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definition</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This document lists the normative requirements for data aiming to conform to the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard</a>. It is to be used as the authoritative, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This document is the normative specification of the Australian Biodiversity Information Standard (ABIS) and includes its authoritative statements on parts, requirements and patterns.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created</strong></p></td>
@@ -548,130 +754,134 @@ DRAFT, incomplete
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023-11-30</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0000-00-00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023-12-04</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version History</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.0</strong> - 2023 Nov -Produced by <a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a> for initial <a href="#BDR">BDR</a> operations. Includes handling of systematic surveys and project information.<br>
+<strong>1.0</strong> - 2022 Jun - Initial version of ABIS. Tested with SURROUND Australia Pty Ltd and used for an initial national data acquisition survey for the <a href="#BDR">BDR</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dawe">SURROUND Australia Pty Ltd</a>(<a href="https://linked.data.gov.au/org/surround" class="bare">https://linked.data.gov.au/org/surround</a>), <a href="https://www.gaiaresources.com.au/">Gaia Resources</a> and the <a href="https://linked.data.gov.au/org/dawe">Department of Agriculture, Water and the Environment</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Originally <a href="https://linked.data.gov.au/org/dawe">Department of Agriculture, Water and the Environment</a>,<br>
+now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Publisher</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dawe">Department of Agriculture, Water and the Environment</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>License</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Further information</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This specification is part of the Australian <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard</a>. That Standard is established as a <em>profile</em> of multiple other standards and is, itself, made of many parts, of which this Specification is only one.<br>
-See that profile&#8217;s main document for details of the other profile parts and how this Specification related to them.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_preamble"><a class="anchor" href="#_preamble"></a>2. Preamble</h2>
+<h2 id="_abstract"><a class="anchor" href="#_abstract"></a>2. Abstract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document is the normative specification of the Australian Biodiversity Information Standard (ABIS) and includes its authoritative statements on parts, requirements and patterns.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preamble"><a class="anchor" href="#_preamble"></a>3. Preamble</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_abstract"><a class="anchor" href="#_abstract"></a>2.1. Abstract</h3>
+<h3 id="_parts_of_abis"><a class="anchor" href="#_parts_of_abis"></a>3.1. Parts of ABIS</h3>
 <div class="paragraph">
-<p>This Specification is the normative listing of requirements for data conformig to the Australian Biodiversity Information Standard for Biodiversity Data (ABIS).</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_normative_status"><a class="anchor" href="#_normative_status"></a>2.2. Normative Status</h3>
-<div class="paragraph">
-<p>This Specification is normative for the ABIS and take precedence over other elements of the Standard where conflicts are found.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_standard_parts"><a class="anchor" href="#_standard_parts"></a>2.3. Standard Parts</h3>
-<div class="paragraph">
-<p>This <em>Specification</em> document one of many resources that together make the ABIS <em>Standard</em>. The Standard and its parts are formally defined using terminology from the <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a>.</p>
+<p>The Australian Biodiversity Information Standard (ABIS) is a multi-part standard and this document is its normative specification.</p>
 </div>
 <div class="paragraph">
-<p>Other parts of this <em>Standard</em> are:</p>
+<p>The other parts of ABIS are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><em>Overview</em></p>
+<p><strong>Overview Document</strong></p>
 <div class="ulist">
 <ul>
 <li>
 <p><a href="https://linked.data.gov.au/def/abis/overview" class="bare">https://linked.data.gov.au/def/abis/overview</a></p>
 </li>
 <li>
-<p>A not-so-technical introduction to ABIS</p>
+<p>A simple introduction to the concepts within ABIS</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><em>Schema</em></p>
+<p><strong>Profile Definition</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>ontologies and other target data models</p>
+<p>The technical expression of ABIS as a standard that inherits from other standards</p>
 </li>
 <li>
-<p>including the overarching ABIS Ontology and the TERN Ontology</p>
+<p>This is available in human- and machine-readable forms</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><em>Validators</em></p>
+<p><strong>Models</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>machine-readable validation code to validate data claiming conformance to the ABIS</p>
+<p>ABIS is made of multiple models which are listed in the <a href="#Model">Model Section</a> but are published and maintained elsewhere</p>
+</li>
+<li>
+<p>Both human- and machine-readable forms of all ABIS models are available</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><em>Examples</em></p>
+<p><strong>Vocabularies</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Examples of RDF data to show how to formulate BDR information</p>
+<p>ABIS, and the modes it depends on, rely on many vocabularies</p>
+</li>
+<li>
+<p>These are listed in the <a href="#_vocabularies">Vocabularies Section</a> but are published and maintained elsewhere</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><em>Mappings</em></p>
+<p><strong>Validators</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Instructions on how to convert BDR data to data conforming to other Standards</p>
+<p>Data 'shape' files that can be used with validation tooling to check conformance of data to ABIS</p>
+</li>
+<li>
+<p>These are listed in the <a href="#_validation">Validation Section</a> but are published and maintained elsewhere</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>The formal and linked listing of this Standards&#8217;s parts is found in its <em>Profile Declaration</em> online at <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard</a>.</p>
-</div>
-<div class="paragraph">
-<p>In addition to the "technical" parts, this Specification describes the conceptual parts of ABIS, in particular, the domain model and other non-domain models.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_namespaces"><a class="anchor" href="#_namespaces"></a>2.4. Namespaces</h3>
+<h3 id="_namespaces"><a class="anchor" href="#_namespaces"></a>3.2. Namespaces</h3>
 <table class="tableblock frame-none grid-none stripes-even stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
 </colgroup>
 <tbody>
 <tr>
@@ -680,53 +890,14 @@ See that profile&#8217;s main document for details of the other profile parts an
 <td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>ABIS Namespaces</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>abis:</code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/" class="bare">https://linked.data.gov.au/def/abis/</a></code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS namespace</strong> - for the Standard as a whole</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>cc:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/req/" class="bare">https://linked.data.gov.au/def/abis/req/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Conformance Class namespace</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>req:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/req/" class="bare">https://linked.data.gov.au/def/abis/req/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Requirements namespace</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>aex:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/eg/" class="bare">https://linked.data.gov.au/def/abis/eg/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Canonical Examples namespace</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>ash:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/sh/" class="bare">https://linked.data.gov.au/def/abis/sh/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Validators Shapes namespace</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>rul:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>https://linked.data.gov.au/def/abis/rul/</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Rules namespace</strong> - <em>not implemented yet</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>BDR Messaging Ontology Namespaces</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>bdrm:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/bdr-msg/" class="bare">https://linked.data.gov.au/def/bdr-msg/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BDR Messages Ontology Namespace</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>status:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/bdr-msg/status/" class="bare">https://linked.data.gov.au/def/bdr-msg/status/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BDR Messages Status Vocabulary</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Other Namespaces</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>bdr:</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/dataset/bdr/" class="bare">https://linked.data.gov.au/dataset/bdr/</a></code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BDR Dataset Namespace</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
@@ -791,120 +962,265 @@ See that profile&#8217;s main document for details of the other profile parts an
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_terms_definitions"><a class="anchor" href="#_terms_definitions"></a>3.3. Terms &amp; Definitions</h3>
+<div id="ABIS" class="dlist">
+<dl>
+<dt class="hdlist1">ABIS</dt>
+<dd>
+<p>The Australian Biodiversity Standard - the data standard this document is about</p>
+</dd>
+</dl>
+</div>
+<div id="BDR" class="dlist">
+<dl>
+<dt class="hdlist1">BDR</dt>
+<dd>
+<p>Biodiversity Data Repository - a data collection managed by the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment</a> that incorporates biodiversity observations from State &amp; Territory jurisdictions and aims to incorporate non-government data too</p>
+</dd>
+</dl>
+</div>
+<div id="IRI" class="dlist">
+<dl>
+<dt class="hdlist1">IRI</dt>
+<dd>
+<p>An Internationalized Resource Identifier is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. <a href="https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince" class="bare">https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince</a> identifies the Queensland Geological Feature Anakie Province or for data only, e.g. <a href="https://w3id.org/tern/ontologies/tern/Text" class="bare">https://w3id.org/tern/ontologies/tern/Text</a> which identifies the class of 'Text' - textual results - within the <a href="#TERN Ontology">[TERN Ontology]</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>IRIs do not have to resolve - go somewhere online when clicked - but they do have to follow all the rules for URLs, such as no spaces.</p>
+</div>
+<div id="Class" class="dlist">
+<dl>
+<dt class="hdlist1">Class</dt>
+<dd>
+<p>Based on the mathematical notion of a <em>set</em>, within formal OWL modelling, a class is a set of objects exhibiting common properties. For example, the set of all people who are studying could be defined as being within a Student class.</p>
+</dd>
+</dl>
+</div>
+<div id="KnowledgeGraph" class="dlist">
+<dl>
+<dt class="hdlist1">Knowledge Graph</dt>
+<dd>
+<p>A data holding that implements node-edge-node (graph) data structures. The 'knowledge' part is often taken to indicate that the graph contains refined information, not just pure, raw, data.</p>
+</dd>
+</dl>
+</div>
+<div id="LinkedData" class="dlist">
+<dl>
+<dt class="hdlist1">Linked Data</dt>
+<dd>
+<p>A series of technologies and methodologies for the publication of data on the Internet. Uses <a href="#RDF">RDF</a> as its underlying data structure, <a href="#OWL">OWL</a> as its data model and the common mechanics of the Domain Name System (DNS) and the Hypertext Transfer Protocol (HTTP) to identify and share its data.</p>
+</dd>
+</dl>
+</div>
+<div id="OWL" class="dlist">
+<dl>
+<dt class="hdlist1">OWL</dt>
+<dd>
+<p>The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language for the Semantic Web with formally defined meaning. OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents. OWL 2 ontologies can be used along with information written in RDF, and OWL 2 ontologies themselves are primarily exchanged as RDF documents. OWL</p>
+</dd>
+</dl>
+</div>
+<div id="Predicate" class="dlist">
+<dl>
+<dt class="hdlist1">Predicate</dt>
+<dd>
+<p>Predicates, within formal OWL modelling, are the defined relations between objects of different classes (see <a href="#Class">Class</a>) and also between objects and simple data values such as numbers and dates. For example, if Person X "knows" Person Y, then we can use a predicate of <em>knows</em> to relate them.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Frequently we use predicates already defined in existing ontologies. "knows", for example, is defined in the schema.org ontology <a href="#SDO">SDO</a> to be "The most generic bi-directional social/work relation".</p>
+</div>
+<div id="RDF" class="dlist">
+<dl>
+<dt class="hdlist1">RDF</dt>
+<dd>
+<p>The Resource Description Framework (RDF) is a data structure for representing information on the Web. RDF is made of identified nodes linked by typed edges that form graphs. Node/edge/node associations are often called 'triples'.</p>
+</dd>
+</dl>
+</div>
+<div id="SeamanticWeb" class="dlist">
+<dl>
+<dt class="hdlist1">Semantic Web</dt>
+<dd>
+<p>A vision of a machine-understandable Internet, created in the year 2000, and thought to be attainable through the use of Linked Data.</p>
+</dd>
+</dl>
+</div>
+<div id="SPARQL" class="dlist">
+<dl>
+<dt class="hdlist1">SPARQL</dt>
+<dd>
+<p>SPARQL is a query language for RDF. SPARQL matches patterns within RDF data to extract subsets of a graph. The results of SPARQL queries can be subset graphs or data in tabular form.</p>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>3. Introduction</h2>
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>4. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This document contains general description of the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard (ABIS)</a> and importantly a list of <em>requirements</em> and groupings of requirements, <em>Conformance Classes</em>. Data must meet all the <em>requirements</em> in <em>conformance classes</em> to claim conformance to that <em>conformance class'</em> part of the ABIS.</p>
+<p>This document is the specification of the parts, requirements and patterns of the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard (ABIS)</a>.</p>
 </div>
 <div class="paragraph">
-<p>This document also lists all the parts of the ABIS which are its various ontologies, vocabularies and others that these depend on. These parts are listed in <a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>.</p>
+<p>The goal of ABIS is to simplify the exchange of standardised biodiversity data in Australia between data holders - States &amp; Territories, the Commonwealth, educational and research organisations, private companies and the public - by providing a scientific observations data model and a series of additions to is that cater for institution details, data management and mappings to other information models.</p>
+</div>
+<div class="paragraph">
+<p>ABIS uses a rigorous and formal data models which means that data wanting to be compliant with it can be automatically validated and this specification indicates where the validators are and how to use them.</p>
 </div>
 <div class="sect2">
-<h3 id="_requirement_and_conformance_class_modelling"><a class="anchor" href="#_requirement_and_conformance_class_modelling"></a>3.1. Requirement and Conformance Class modelling</h3>
+<h3 id="_abis_multiple_models"><a class="anchor" href="#_abis_multiple_models"></a>4.1. ABIS' Multiple Models</h3>
 <div class="paragraph">
-<p>Each <em>requirement</em> is defined with a table of values like this:</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-even" style="width: 25%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Prefixed IRI identifier</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Short text</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defining text</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Selected Conformance Class Identifiers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Notes on <em>requirement</em> source</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Related SHACL validators</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Related RDF example data</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The <a href="https://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> interpretation of the relation of each of those properties are to each requirement instance are:</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-even" style="width: 25%;">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Defining RDF predicate</th>
-<th class="tableblock halign-left valign-top">Object type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:identifier</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skos:prefLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skos:definition</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:isPartOf</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRIs</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:source</code> or <code>dcterms:provenance</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI of an ABIS resource or text</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI of a <code>Resource Descriptor</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skos:example</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI of a <code>Resource Descriptor</code></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>See the <a href="#_namespaces">Namespaces</a> section below to understand the prefixes in the table above.</p>
+<p>ABIS is centred on the <a href="#TERNOntology">TERN Ontology</a> which is a data model that represents ecological survey information. The TERN Ontology is designed in accordance with the principles of the <em>Observations &amp; Measurement</em> standard <a href="#ISO19156">ISO19156</a> that separates acts of observation from the results of those observations and ever-present details of the things observed.</p>
 </div>
 <div class="paragraph">
-<p>The following subsections define properties of the <em>requirements</em> in detail.</p>
+<p>In addition to things represented by the TERN Ontology, ABIS includes all of the models depended on by ABIS as well as the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Projects</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A basic model of projects that generate data</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Profiles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A model that related models to other models</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Olis</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A model used to manage chunks of data within a <a href="#KnowledgeGraph">Knowledge Graph</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_background"><a class="anchor" href="#_background"></a>4.2. Background</h3>
+<div class="sect3">
+<h4 id="_aim"><a class="anchor" href="#_aim"></a>4.2.1. Aim</h4>
+<div class="paragraph">
+<p>ABIS was established to enable a national Biodiversity Data Repository <a href="#BDR">BDR</a> in Australia that absorbed data from a range of sources.</p>
+</div>
+<div class="paragraph">
+<p>These data supplier sources - Australian State &amp; Territories and other organsations such as museums, herbaria, research organisations and companies - have been collecting biodiversity data for over a century in Australia and have been doing so independently, so there is a wide range of information collected relating to where, when and how species are observed.</p>
+</div>
+<div class="paragraph">
+<p>Since the BDR aims for a comprehensive and up-to-date data holding, it needs to ble able to absorb large volumes of biodiversity data and process it quickly. Given that existing source data collections contain millions of observations, this is only achievable through automatic data processing.</p>
+</div>
+<div class="paragraph">
+<p>To enable effective automatic processing of data - both in terms of effort and quality - common models and formats must be implemented by data suppliers who map their data holdings to a form that can be automatically assessed (validated) and processed. ABIS is that form.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_identifier"><a class="anchor" href="#_identifier"></a>3.1.1. Identifier</h4>
+<h4 id="_development_history"><a class="anchor" href="#_development_history"></a>4.2.2. Development History</h4>
+<div class="paragraph">
+<p>The TERN Ontology was created in 2020 for TERN to use for their own observations <a href="#KnowledgeGraph">Knowledge Graph</a>.</p>
+</div>
+<div class="paragraph">
+<p>In 2021, the <a href="#BDR">BDR</a> adopted the TERN Ontology as its base.</p>
+</div>
+<div class="paragraph">
+<p>In 2022, the first version of ABIS was created, building on top of the TERN Ontology to cater for messaging methods and some aspects of data management, such as the withholding of data publication due to data embargoes. This version of ABIS was used to for the data acquired in November 2022 through the scan of State &amp; Territory biodiversity observation data holdings.</p>
+</div>
+<div class="paragraph">
+<p>At the end of 2023, version 2.0 of ABIS was created which removed all representation of messaging protocols, requirements and rules. Version 2.0 focuses on building on top of the TERN Ontology data elements used to manage and provide access to expected <a href="#BDR">BDR</a> data holdings.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_governance"><a class="anchor" href="#_governance"></a>4.3. Governance</h3>
+<div class="paragraph">
+<p>ABIS is managed day-to-day by <a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a> however many parts of ABIS are maintained externally, such as the <a href="#TERNOntology">TERN Ontology</a> which is maintained by <a href="https://linked.data.gov.au/org/tern">TERN</a>.</p>
+</div>
+<div class="paragraph">
+<p>Governance of ABIS is undertaken by linked.data.gov.au/org/ausbigg[AusBIGG] (<em>TODO</em>), the Australian Biodiversity Information Governance Group, which comprises DCCEEW, State &amp; Territory biodiversity data holders and other organisations in the sector, such as TERN.</p>
+</div>
+<div class="paragraph">
+<p>As of 2023, the processes for maintaining and extending ABIS are not fully established with AusBIGG still coming to understand ABIS' uses and its place in the landscape of international biodiversity observation data models, such as <a href="https://www.gbif.org/new-data-model">GBIF&#8217;s <em>New Data Model</em></a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_related_standards"><a class="anchor" href="#_related_standards"></a>4.4. Related Standards</h3>
+<div class="paragraph">
+<p>ABIS both comprises multiple models and some of them inherit from other models and standards. See the <a href="#_models">Models</a> section for details.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, ABIS exists within a domain that already contains many international and national standards and well-known models. The <a href="#_mappings">Mappings</a> section described how ABIS relates to many of them.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_specification_structure"><a class="anchor" href="#_specification_structure"></a>4.5. Specification Structure</h3>
+<div class="paragraph">
+<p>This specification aims to cover all the information needed to understand ABIS and use it. The following is a list of the major sections in this document and their purposes.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Introduction</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This section. An informal overview of ABIS</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Model</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The normative description of the data models used within ABIS</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Vocabularies</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Description of, and links to, the vocabularies needed for use with ABIS</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Validation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>How to validate data according to ABIS and links to the various validators</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_identifier"><a class="anchor" href="#_identifier"></a>4.5.1. Identifier</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> is identified with a unique identifier of the form <code>req:X</code>, where <code>req:</code> is a prefix for the IRI namespace <code>&lt;https://linked.data.gov.au/def/abis/req/&gt;</code> and <code>X</code> is a number, the number of the <em>requirement</em>.</p>
 </div>
@@ -916,13 +1232,13 @@ See that profile&#8217;s main document for details of the other profile parts an
 </div>
 </div>
 <div class="sect3">
-<h4 id="_labeled"><a class="anchor" href="#_labeled"></a>3.1.2. Labeled</h4>
+<h4 id="_labeled"><a class="anchor" href="#_labeled"></a>4.5.2. Labeled</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> is named with a short form of its definition, to assist with human referencing.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_definition"><a class="anchor" href="#_definition"></a>3.1.3. Definition</h4>
+<h4 id="_definition"><a class="anchor" href="#_definition"></a>4.5.3. Definition</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the <a href="https://www.w3.org/TR/owl2-overview/">Web Ontology Language (OWL)</a> since the <em>target models</em> of the ABIS are themselves OWL Ontologies.</p>
 </div>
@@ -940,7 +1256,7 @@ If there are differences between derivatives of this specification, including th
 </div>
 </div>
 <div class="sect3">
-<h4 id="_conformance_classes_list"><a class="anchor" href="#_conformance_classes_list"></a>3.1.4. Conformance Classes list</h4>
+<h4 id="_conformance_classes_list"><a class="anchor" href="#_conformance_classes_list"></a>4.5.4. Conformance Classes list</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the ABIS, the Conformance Classes form modules which data may conform to individually.</p>
 </div>
@@ -949,13 +1265,13 @@ If there are differences between derivatives of this specification, including th
 </div>
 </div>
 <div class="sect3">
-<h4 id="_contains_source_notes"><a class="anchor" href="#_contains_source_notes"></a>3.1.5. Contains source notes</h4>
+<h4 id="_contains_source_notes"><a class="anchor" href="#_contains_source_notes"></a>4.5.5. Contains source notes</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> contains source notes  what motivated the <em>requirement</em>'s definition, including references to source documents or other ABIS artifacts, such as ontologies.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_related_validators"><a class="anchor" href="#_related_validators"></a>3.1.6. Related validators</h4>
+<h4 id="_related_validators"><a class="anchor" href="#_related_validators"></a>4.5.6. Related validators</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> contains references to individual, identified, data validation <em>shapes</em> defined in the ABIS Profile&#8217;s <em>validator</em> used to validate <a href="https://www.w3.org/RDF/">Resource Description Framework (RDF)</a> data - the only form of data allowed to be used for ABIS data exchange.</p>
 </div>
@@ -976,7 +1292,7 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_canonical_examples"><a class="anchor" href="#_canonical_examples"></a>3.1.7. Canonical examples</h4>
+<h4 id="_canonical_examples"><a class="anchor" href="#_canonical_examples"></a>4.5.7. Canonical examples</h4>
 <div class="paragraph">
 <p>For each <em>requirement</em>, references are given to at least two <em>canonical examples</em> of RDF data that do (positive example) and don&#8217;t (negative example) pass validation using the validators related to the <em>requirement</em>.</p>
 </div>
@@ -988,1096 +1304,63 @@ The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_conformance_classes"><a class="anchor" href="#_conformance_classes"></a>4. Conformance Classes</h2>
+<h2 id="_models"><a class="anchor" href="#_models"></a>5. Models</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Conformance Classes are groupings of Requirements within the ABIS. Data claiming conforming to the ABIS may indicate conformance per-Conformance Class. Conformance  to a Conformance Class means conforming to <em>all</em> the Requirements within it, not just some.</p>
-</div>
-<div class="sect2">
-<h3 id="_conformance_class_index"><a class="anchor" href="#_conformance_class_index"></a>4.1. Conformance Class Index</h3>
-<div class="paragraph">
-<p>The ABIS Conformance Classes are:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#_domain_model">Domain Model</a></p>
-</li>
-<li>
-<p><a href="#_bdr_messages">BDR Messages</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_domain_model"><a class="anchor" href="#_domain_model"></a>4.2. Domain Model</h3>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:domain-model</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain Model Conformance Class</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The set of requirements needed to be met to ensure conformance with the Domain Model within this Standard. Requirements in this Conformance Class are all those specified for:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <a href="https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model">TERN Ontology</a> - for sampling information</p>
-</li>
-<li>
-<p><a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html">GeoSPARQL 1.1</a> - for spatiality</p>
-</li>
-<li>
-<p>The <a href="https://w3id.org/profile/vocpub">Vocabulary Publications Profile</a> of SKOS - for vocabulary content</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>As well as Requirements specified within this Specification in <a href="#_domain_model_extended_abis_requirements">Domain Model Extended ABIS Requirements</a></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_bdr_messages"><a class="anchor" href="#_bdr_messages"></a>4.3. BDR Messages</h3>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages"><code>cc:bdr-messages</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Messages Conformance Class</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The set of requirements needed to be met to ensure conformance with the ABIS' Gateway&#8217;s message needs</p></td>
-</tr>
-</tbody>
-</table>
+<p>Model section</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_requirements"><a class="anchor" href="#_requirements"></a>5. Requirements</h2>
+<h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>6. Vocabularies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Requirements are the individual rules that data claiming conformance to the ABIS must abide by.</p>
-</div>
-<div class="paragraph">
-<p>Requirements in ABIS are grouped according to several Conformance Classes detailed in the section above.</p>
-</div>
-<div class="sect2">
-<h3 id="_requirements_index"><a class="anchor" href="#_requirements_index"></a>5.1. Requirements Index</h3>
-<div class="sect3">
-<h4 id="_domain_model_conformance_class"><a class="anchor" href="#_domain_model_conformance_class"></a>5.1.1. <a href="#_domain_model">Domain Model Conformance Class</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>TERN Ontology</p>
-<div class="ulist">
-<ul>
-<li>
-<p>All TERN Ontology Requirements as specified in model documentation</p>
-</li>
-<li>
-<p>See the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model">TERN Ontology Conceptual Model overview</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>GeoSPARQL</p>
-<div class="ulist">
-<ul>
-<li>
-<p>All the Requirements relating to the GeoSPARQL ontology, not the GeoSAPRQL functions</p>
-</li>
-<li>
-<p>See the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_annex_a_abstract_test_suite_normative">GeoSAPRQL 1.1. Abstract Test Suite</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Vocabulary Publication Profile</p>
-<div class="ulist">
-<ul>
-<li>
-<p>See the <a href="https://w3id.org/profile/vocpub/spec">VocPub Specification&#8217;s listing of Requirements</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="#_domain_model_extended_abis_requirements">Domain Model Extended ABIS Requirements</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>All of the Requirements specified in this section of this Specification</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_bdr_messages_conformance_class"><a class="anchor" href="#_bdr_messages_conformance_class"></a>5.1.2. <a href="#_bdr_messages">BDR Messages Conformance Class</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#_message_parts">Message Parts</a></p>
-</li>
-<li>
-<p><a href="#_createmessage_createme_iris">CreateMessage Createme IRIs</a></p>
-</li>
-<li>
-<p><a href="#_update_or_delete_message_iris">Update or Delete Message IRIs</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_domain_model_requirements"><a class="anchor" href="#_domain_model_requirements"></a>5.2. Domain Model Requirements</h3>
-<div class="sect3">
-<h4 id="_tern_ontology"><a class="anchor" href="#_tern_ontology"></a>5.2.1. TERN Ontology</h4>
-<div class="paragraph">
-<p>See the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model">TERN Ontology Conceptual Model overview</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_geosaprql_1_1"><a class="anchor" href="#_geosaprql_1_1"></a>5.2.2. GeoSAPRQL 1.1</h4>
-<div class="paragraph">
-<p>See the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_annex_a_abstract_test_suite_normative">GeoSAPRQL 1.1. Abstract Test Suite</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_vocpub"><a class="anchor" href="#_vocpub"></a>5.2.3. VocPub</h4>
-<div class="paragraph">
-<p>See the <a href="https://w3id.org/profile/vocpub/spec">VocPub Specification&#8217;s listing of Requirements</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_domain_model_extended_abis_requirements"><a class="anchor" href="#_domain_model_extended_abis_requirements"></a>5.2.4. Domain Model Extended ABIS Requirements</h4>
-<div class="paragraph">
-<p>These Requirements are specified here and address ABIS-specific domain model concerns not already covered by the TERN Ontology, GeoSPARQL or VocPub.</p>
-</div>
-<div class="sect4">
-<h5 id="_sample_alternate_identifiers"><a class="anchor" href="#_sample_alternate_identifiers"></a>Sample alternate identifiers</h5>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sample-alternate-identifiers"><code>req:sample-alternate-identifiers</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sample alternate identifiers</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatype with the datatype definition providing information about the identifier&#8217;s manager, creator and system</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/cc/domain-model"><code>cc:domain-model</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Project Co-design</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>coming</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RDF: <a href="https://github.com/AusBIGG/abis/blob/master/kg/datagraphs/examples/sample-alternate-identifiers.ttl">sample-alternate-identifiers.ttl</a></p>
-<p class="tableblock">Descriptions: <a href="#_sample_alternate_identifiers_example">Sample alternate identifiers example</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_bdr_messages_requirements"><a class="anchor" href="#_bdr_messages_requirements"></a>5.3. BDR Messages Requirements</h3>
-<div class="paragraph">
-<p>The <a href="https://linked.data.gov.au/def/bdr-msg:">BDR Messages Ontology</a> defines a general message class object, <code>bdrm:Message</code>, and four subclasses of it that are to be used to convey <em>create</em>, <em>update</em>, <em>delete</em>, and <em>exists</em> (existance check) messages to the Biodiversity Data Repository (BDR). The following Requirements specify the required <em>structure</em> of BDRM messages only and not any requirements of Domain Model content with messages' payloads which are specified in the <a href="#_domain_model_requirements">Domain Model Requirements</a> above.</p>
-</div>
-<div class="paragraph">
-<p>When ABIS content is send to the Biodiversity Data Repository, the BDR acts both as the storage of that content and also the authoritative identifier creator for instances of certain classes of resources in that content, namely:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>bdrm:Message</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>and subclasses</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>tern:RDFDataset</code></p>
-</li>
-<li>
-<p><code>tern:Sampling</code></p>
-</li>
-<li>
-<p><code>tern:Sample</code></p>
-</li>
-<li>
-<p><code>tern:Site</code></p>
-</li>
-<li>
-<p><code>tern:FeatureOfInterest</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><code>bdrm:CreateMessage</code> instances, used to create new content within the BDR, must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of those classes, so that the BDR can replace them with ones it issues, except for <code>tern:RDFDataset</code> which they may either use <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code> or pre-allocate via the dataset IRI allocation mechanism in the BDR Gateway (see <a href="http://gateway.dev.bdr.gov.au/allocate" class="bare">http://gateway.dev.bdr.gov.au/allocate</a>). The client requesting new content creation will receive responses from the BDR that indicate what the BDR IRIs ultimately issued for the given placeholder IRIs are. There are lots of examples of  <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code> in use in the <a href="http://gateway.dev.bdr.gov.au">BDR Gateway</a>.</p>
-</div>
-<div class="sect3">
-<h4 id="_message_parts"><a class="anchor" href="#_message_parts"></a>5.3.1. Message Parts</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/bdr-messages"><code>req:bdr-messages</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Message part</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>BDR messages must have at least one part, indicated with <code>dcterms:hasPart</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages"><code>cc:bdr-messages</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Gateway Messaging</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/bdr-msg-shapes"><code>https://linked.data.gov.au/def/bdr-msg-shapes</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://gateway.dev.bdr.gov.au">BDR Gateway</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_createmessage_createme_iris"><a class="anchor" href="#_createmessage_createme_iris"></a>5.3.2. CreateMessage Createme IRIs</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/create-createme"><code>req:create-createme</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CreateMessage Createme IRIs</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>BDR Create messages must indicate parts with createme.org IRIs only</p>
-</div>
-<div class="paragraph">
-<p><em>All items requested to be created via a <code>bdrm:CreateMessage</code> must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of classes to be created whose authoritative namespace is managed by the BDR system. This includes the classes <code>tern:Sampling</code>, <code>tern:Sampling</code>, <code>tern:Site</code> etc.</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages"><code>cc:bdr-messages</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Gateway Messaging</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/bdr-msg-shapes"><code>https://linked.data.gov.au/def/bdr-msg-shapes</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="#_create_messages">Create Messages</a> and the <a href="http://gateway.dev.bdr.gov.au">BDR Gateway</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_update_or_delete_message_iris"><a class="anchor" href="#_update_or_delete_message_iris"></a>5.3.3. Update or Delete Message IRIs</h4>
-<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/non-create-iris"><code>req:non-create-iris</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CreateMessage Createme IRIs</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>BDR Update &amp; Delete messages must indicate parts with BDR IRIs only</p>
-</div>
-<div class="paragraph">
-<p><em>All items requested to be Updated, Deleted or have their existance checked must be indicated with IRIs starting <code><a href="https://linked.data.gov.au/dataset/bdr/" class="bare">https://linked.data.gov.au/dataset/bdr/</a></code>.</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages"><code>cc:bdr-messages</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Gateway Messaging</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/bdr-msg-shapes"><code>https://linked.data.gov.au/def/bdr-msg-shapes</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://gateway.dev.bdr.gov.au">BDR Gateway</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>Vocabs section</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_examples"><a class="anchor" href="#_examples"></a>6. Examples</h2>
+<h2 id="_validation"><a class="anchor" href="#_validation"></a>7. Validation</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_domain_model_2"><a class="anchor" href="#_domain_model_2"></a>6.1. Domain Model</h3>
 <div class="paragraph">
-<p>These examples extend on those of the domain ontology provided in the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology">TERN Ontology&#8217;s examples</a>. These examples are for non-core domain model (TERN Ontology) converns whcih are nevertheless useful or required for the Biodiversity Data Repository or other ABIS-conformant datasets.</p>
-</div>
-<div class="sect3">
-<h4 id="_sampling_position"><a class="anchor" href="#_sampling_position"></a>6.1.1. Sampling Position</h4>
-<div class="paragraph">
-<p><em>The options for indicating Samping position demonstrated here are now incorporated into the TERN Ontology&#8217;s Requirements</em></p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Instances of the TERN Ontology&#8217;s <code>Sampling</code> class <em>MUST</em> be located in space and time</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>Instances of <code>tern:Sampling</code> must have both space and time positions either indicated or they must be linked to other things for which space and time positions are indicated.</p>
-</div>
-<div class="paragraph">
-<p>So far, all time position is done directly, i.e. with time properties assigned directly to the <code>tern:Sampling</code> instance.</p>
-</div>
-<div class="paragraph">
-<p>There are several options for spatial positioning, as shown in the 3-part Figure below.</p>
-</div>
-<div id="sampling-position" class="imageblock">
-<div class="content">
-<img src="https://ausbigg.github.io/abis/img/sample-positioning.png" alt="Options for the spatial positioning of `tern:Sampling` instances">
-</div>
-<div class="title">Figure 1. Options for the spatial positioning of <code>tern:Sampling</code> instances. Left: direct positioning; Centre: indirect positioning via linking to a <code>tern:Site</code>; Right: Indirect positioning by linking to a non-Site spatial object (a <code>geo:Feature</code>) using a <em>spatial relations</em> property.</div>
-</div>
-<div class="paragraph">
-<p>RDF data matching the Left, Centre &amp; right parts of the Figure above are given next.</p>
-</div>
-<div class="listingblock">
-<div class="title">Left: direct positioning</div>
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sampling/x&gt;
-	geo:hasGeometry [
-		geo:asWKT "POINT (153, -57)"
- 	] ;
-	sosa:resultTime "2021-12-09"^^xsd:dateTime ;
-.</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Centre: indirect positioning via linking to a <code>tern:Site</code></div>
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sampling/x&gt;
-	sosa:resultTime "2021-12-09"^^xsd:dateTime ;
-	tern:hasSiteVisit &lt;https://linked.data.gov.au/dataset/bdr/sitevisit/y&gt; ;
-.
-
-&lt;https://linked.data.gov.au/dataset/bdr/sitevisit/y&gt;
-	tern:hasSite &lt;https://linked.data.gov.au/dataset/bdr/site/y&gt; ;
-.
-&lt;https://linked.data.gov.au/dataset/bdr/site/y&gt;
-	geo:hasGeometry [
-		geo:asWKT "POINT (153, -57)"
- 	] ;
-.</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Right: Indirect positioning by linking to a non-Site spatial object (a <code>geo:Feature</code>) using a <em>spatial relations</em> property</div>
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sampling/x&gt;
-	sosa:resultTime "2021-12-09"^^xsd:dateTime ;
-	geo:sfWithin &lt;http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010s&gt; ;
-.
-
-&lt;http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010&gt;
-	a asgs:LocalGovernmentArea ;
-	geo:hasGeometry [
-		geo:asWKT "POINT (153, -57)"
- 	] ;
-.</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_sample_alternate_identifiers_example"><a class="anchor" href="#_sample_alternate_identifiers_example"></a>6.1.2. Sample alternate identifiers example</h4>
-<div class="paragraph">
-<p>From <a href="#_sample_alternate_identifiers">Sample alternate identifiers</a>:</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatype with the datatype definition providing information about the identifier&#8217;s manager, creator and system</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>If a data supplier wishes to record a non-BDR identifier for a <code>tern:Sample</code> instance, such as a museum specimen, then the pattern for doing that is to use a <code>dcterms:identifier</code> property for the <code>term:Sample</code> instance like so:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;BDR-PLACEHOLDER-IDENTIFIER&gt;
-	a tern:Sample ;
-	dcterms:identifier "ALT-IDENTIFIER"^^CUSTOM-DATATYPE ;
-	...
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The value of <code>&lt;BDR-PLACEHOLDER-IDENTIFIER&gt;</code> might be something like <code><a href="http://example.org/1234-4567-890" class="bare">http://example.org/1234-4567-890</a></code> and the BDR will replace this with something like <code>&lt;<a href="https://linked.data.gov.au/dataset/bdr/sample/abcd-efg-hij" class="bare">https://linked.data.gov.au/dataset/bdr/sample/abcd-efg-hij</a></code>.</p>
-</div>
-<div class="paragraph">
-<p>The value of <code>ALT-IDENTIFIER</code> can be anything, such as a URL, a number, a string, etc.: this will be determined by the identifier generator, such as a museum. In the figure below, a dummy Western Australian Museum identifier of <code>WAM-75</code> and an International GeoSample Number <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> of "1073/123-456" is given. The <code>CUSTOM-DATATYPE</code> is an RDF data type descriptor that must be lodged with the BDR. In the figure below, these are <code>bdr:WAMID</code> &amp; <code>bdr:IGSN</code> indicating "Western Australian Museum ID" and "International GeoSample Number", respectively,</p>
-</div>
-<div id="sample-alternate-identifiers-fig" class="imageblock">
-<div class="content">
-<img src="https://ausbigg.github.io/abis/img/sample-alternate-identifiers.png" alt="An example of a `tern:Sample` instance">
-</div>
-<div class="title">Figure 2. An example of a <code>tern:Sample</code> instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternate identifiers with custom datatypes</div>
-</div>
-<div class="paragraph">
-<p>The RDF corresponding to the figure above is goven below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sample/x&gt;
-	a tern:Sample ;
-    dcterms:identifier
-		"WAM-75"^^bdr:WAMID ,
-		"1073/123-456"^^bdr:IGSN ;
-    ...
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Registering custom datatypes with the BDR is a controlled administrative task, i.e. one which cannot be accomplished by sending in a special message, so please contact BDR admin to register these.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>, then any <code>dcterms:identifier</code> property supplied for it will be considered a <code>dwc:materialSampleID</code> property too.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_bdr_system"><a class="anchor" href="#_bdr_system"></a>6.2. BDR System</h3>
-<div class="paragraph">
-<p>This section contains examples of the messages that may be sent to the Biodiversity Data Repository (BDR) and potentially other ABIS-conformant systems to alter their content.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The BDR uses the <a href="https://www.linked.data.gov.au">Australian Government Linked Data Working Group</a>-issued persistent identifier <code>https://linked.data.gov.au/dataset/bdr</code> for all the content for which it is the authoritative store. Other ABIS-conformant systems will necessarily use other PIDs, so these examples, if taken for direction with other systems, will need to substitute that PID for others.</p>
-</div>
-<div class="paragraph">
-<p>The <code>http://createme.org</code> IRI used is a data placeholder - a token - with no meaning other than for system identification, and it may be reused by other systems.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_exists_messages"><a class="anchor" href="#_exists_messages"></a>6.2.1. Exists Messages</h4>
-<div class="paragraph">
-<p>The following RDF data represents a minimalist <em>create</em> message send to the BDR to check the existance of an object, in this case, something with th IRI the <code>&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;</code> which can be inferred to be an instance of <code>tern:Site</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-
-
-&lt;http://createme.org/exists-2022-01-03-5432&gt;
-    a bdrm:ExistsMessage ;
-    dcterms:hasPart &lt;https://linked.data.gov.au/dataset/bdr/site/25&gt; ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The IRI of the message, <code>&lt;http://createme.org/exists-2022-01-03-5432&gt;</code> uses the placeholder namespace <code>http://createme.org</code> and an ID part <code>exists-2022-01-03-5432</code> that presumably means something to the client.</p>
-</div>
-<div class="paragraph">
-<p>The thing checked is the IRI <code>&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;</code> which, as required for all existence check items, starts with the namespace of the BDR dataset, <code>https://linked.data.gov.au/dataset/bdr</code>.</p>
-</div>
-<div class="paragraph">
-<p>If that object exists, the BDR may respond with the following <em>Exists Response Message</em>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
-
-&lt;message/12347&gt;
-    a bdrm:ExistsResponseMessage ;
-    dcterms:hasPart
-		&lt;http://createme.org/exists-2022-01-03-5432&gt; ,
-		&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt; ;
-.
-
-&lt;http://createme.org/exists-2022-01-03-5432&gt;
-	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;
-	a tern:Site ;
-	bdrm:exists true ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here the BDR has ingested the Exists client message and issued it an ID, <code>&lt;message/12344&gt;</code> and also confirmed that the object <code>&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;</code> does exist and that it is of type <code>tern:Plot</code> which is a specialised subclass of <code>tern:Site</code>. We already knew it was of type <code>tern:Site</code> by <code>/site/</code> in the IRI but the BDR will indicate the most specialised type for an object.</p>
-</div>
-<div class="paragraph">
-<p>If the object does not exist, the BDR may respond with the following <em>Exists Response Message</em>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
-
-&lt;message/12347&gt;
-    a bdrm:ExistsResponseMessage ;
-    dcterms:hasPart
-		&lt;http://createme.org/exists-2022-01-03-5432&gt; ,
-		&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt; ;
-.
-
-&lt;http://createme.org/exists-2022-01-03-5432&gt;
-	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;
-	bdrm:exists false ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here the BDR has ingested the Exists client message and issued it an ID, <code>&lt;message/12344&gt;</code> and confoirmed that the object <code>&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;</code> does <em>not</em> exist with <code>bdrm:exists false</code>. No typing information can be given for a non-existant object.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_delete_messages"><a class="anchor" href="#_delete_messages"></a>6.2.2. Delete Messages</h4>
-<div class="paragraph">
-<p>The following RDF data represents a minimalist <em>delete</em> message send to the Biodiversity Data Repository to delete an existing object:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-
-&lt;http://createme.org/abcdefg&gt;
-    a bdrm:DeleteMessage ;
-    dcterms:hasPart
-        &lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt; ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>No content other than the message object, here <code>&lt;http://createme.org/abcdefg&gt;</code>, and the predicate <code>dcterms:hasPart</code> indicating the things to delete, here <code>https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;</code>.</p>
-</div>
-<div class="paragraph">
-<p>Multiple things may be deleted with multiple values for <code>dcterms:hasPart</code>.</p>
-</div>
-<div class="paragraph">
-<p>A response message from the server, a <code>dbrm:DeleteResponseMessage</code>, could look like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
-
-&lt;message/12347&gt;
-    a bdrm:DeleteResponseMessage ;
-    dcterms:hasPart
-		&lt;http://createme.org/abcdefg&gt; ,
-		&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt; ;
-.
-
-&lt;http://createme.org/abcdefg&gt;
-	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;
-	bdrm:exists false ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here the initial <code>bdrm:DeleteMessage</code> from the client has been stored by the server with IRI <code>&lt;message/12344&gt;</code> and the object that was requested to be deleted <code>&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;</code>, is indicated as not existing.</p>
-</div>
-<div class="paragraph">
-<p>If a non-existent object was requested for deletion, the response message would still indicate <code>bdrm:exists false</code> since it doesn&#8217;t exist.</p>
-</div>
-<div class="paragraph">
-<p>If an object that the client is not allowed to delete is requested for deletion, an error message like the following may be sent by the BDR:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
-
-&lt;message/12347&gt;
-    a bdrm:DeleteResponseMessage ;
-    dcterms:hasPart
-		&lt;http://createme.org/abcdefg&gt; ,
-		&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt; ;
-.
-
-&lt;http://createme.org/abcdefg&gt;
-	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;
-	bdrm:exists true ;
-	bdrm:clientMessageError "This instance of tern:Site may not be deleted by this client. The client does not have sufficient privileges" ;
-.</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_create_messages"><a class="anchor" href="#_create_messages"></a>6.2.3. Create Messages</h4>
-<div class="paragraph">
-<p>The following RDF data represents a minimalist <em>create</em> message send to the Biodiversity Data Repository to create a new instance of <code>tern:Sampling</code> within it. It necissarily creates an instance of <code>tern:Sample</code> too to record the outcome of the Sampling.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
-@prefix tern: &lt;https://w3id.org/tern/ontologies/tern/&gt; .
-@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
-
-&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
-    a bdrm:CreateMessage ;
-    dcterms:hasPart
-        &lt;http://createme.org/2&gt; ,
-        &lt;http://createme.org/3&gt; ;
-.
-
-&lt;http://createme.org/2&gt;
-	a tern:Sampling ;
-    sosa:hasFeatureOfInterest &lt;site/tbjc&gt; ;
-    sosa:hasResult &lt;http://createme.org/3&gt; ;
-    sosa:resultTime "2022-01-03"^^xsd:date ;
-    sosa:usedProcedure &lt;http://example.com/procedure/x&gt; ;
-.
-
-&lt;http://createme.org/3&gt;
-	a tern:Sample ;
-    void:inDataset &lt;dataset/fake&gt; ;
-    sosa:isResultOf &lt;http://createme.org/2&gt; ;
-    sosa:isSampleOf &lt;site/tbjc&gt; ;
-    tern:featureType
-		&lt;http://linked.data.gov.au/def/tern-cv/ecb855ed-50e1-4299-8491-861759ef40b7&gt; ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In code above, the BDR client <code>CreateMessage</code> object, <code>&lt;http://createme.org/create-msg-2022-01-03-968574&gt;</code>, indicates the two things are to be created, the <code>tern:Sampling</code> instance, <code>&lt;http://createme.org/2&gt;</code> and the <code>tern:Sample</code> instance, <code>&lt;http://createme.org/3&gt;</code>, with the predicate <code>dcterms:hasPart</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Placeholder IRIs can be anything starting with <code>http://createme.org/</code> so the IRI for the <code>CreateMessage</code> above <code>create-msg-2022-01-03-968574</code> means something to the client. The BDR will only use this <code>createme.org</code> ID part in its response message so that the client can know what BDR-issued IRI the BDR has allocated to that object.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>All the required properties of both the <code>tern:Sampling</code> &amp; <code>tern:Sample</code> instances, as specified by the <em>Domain Model</em> requirements, are present in this data. It is presumed here that the site <code>&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;</code> (using the short form IRI <code>&lt;site/tbjc&gt;</code> in the data above) and the dataset <code>&lt;https://linked.data.gov.au/dataset/bdr/dataset/fake&gt;</code> (<code>&lt;dataset/fake&gt;</code>) are present in the BDR. Their existence is not checked by message validation but by ingest procedures.</p>
-</div>
-<div class="paragraph">
-<p>Validation of this message will return <code>true</code> and creation of its content in the BDR will return a response similar to this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
-
-&lt;message/12347&gt;
-    a bdrm:CreateResponseMessage ;
-    dcterms:hasPart
-        &lt;http://createme.org/create-msg-2022-01-03-968574&gt; ,
-        &lt;http://createme.org/2&gt; ,
-        &lt;http://createme.org/3&gt; ;
-.
-
-&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
-	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;http://createme.org/2&gt;
-	owl:sameAs &lt;sampling/12345&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;http://createme.org/3&gt;
-	owl:sameAs &lt;sample/12346&gt; ;
-	bdrm:exists true ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the code above, the message sent from the BDR system to the client in response to the client&#8217;s <em>create</em> message is identified with the IRI <code>&lt;https://linked.data.gov.au/dataset/bdr/message/12347&gt;</code>, given in short form above as <code>&lt;message/12347&gt;</code>. The original message, which the client supplied with the placeholder identifier <code>&lt;http://createme.org/create-msg-2022-01-03-968574&gt;</code> - the previous example - is shown to have been reidentified by the BDR as <code>&lt;message/12344&gt;</code>. Similarly, what the client identified as <code>&lt;http://createme.org/2&gt;</code>, the BDR has reidentified as <code>&lt;sampling/12345&gt;</code> and what the client called <code>&lt;http://createme.org/2&gt;</code> the BDR has reidentified as <code>&lt;sample/12346&gt;</code>.</p>
-</div>
-<div class="paragraph">
-<p>NOT: Since the BDR uses a monotonically increasing numberical identifier, in this example the BDR identifiers for the client message, the Sampling and Sample instances and the BDR&#8217;s reponse message are all sequential integers, <code>12344</code>, <code>12345</code>, <code>12346</code> &amp; <code>12347</code>. Such sequential numbering should <em>NOT</em> be relied on as the BDR may be handing multiple requests and issuing many numerical IDs which may appear out of order to clients.</p>
-</div>
-<div class="paragraph">
-<p>In this example, the client message, Sampling and Sample instances were all ingested successfully, as indicated by the predicate <code>bdrm:exists</code> indicating the object now exists in the BDR.</p>
-</div>
-<div class="paragraph">
-<p>If a part of the client&#8217;s message was not able to be ingested, perhaps the Sample instance indicated a non-existent Feature of Interest, <code>&lt;site/xxx&gt;</code>, the BDR response message may look like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
-
-&lt;message/12347&gt;
-    a bdrm:CreateResponseMessage ;
-    dcterms:hasPart
-        &lt;http://createme.org/create-msg-2022-01-03-968574&gt; ,
-        &lt;http://createme.org/2&gt; ,
-        &lt;http://createme.org/3&gt; ;
-.
-
-&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
-	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;http://createme.org/2&gt;
-	owl:sameAs &lt;sampling/12345&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;http://createme.org/3&gt;
-	bdrm:exists false ;
-	bdrm:clientMessageError "This instance of tern:Sample cannot be ingested. The Feature of Interest indicate with sosa:isSampleOf (https://linked.data.gov.au/dataset/bdr/site/xxx) does not exist."
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the creation message above, the client message <code>&lt;http://createme.org/create-msg-2022-01-03-968574&gt;</code> and its contained <code>tern:Sampling</code> instance, <code>&lt;http://createme.org/2&gt;</code>, have been ingested successfully but not the <code>tern:Sample</code> instance.</p>
-</div>
-<div class="paragraph">
-<p>After receiveing this message, the client <em>SHOULD</em> send an update message to the BDR to update the <code>tern:Sampling</code> instance with corrected <code>tern:Sample</code> information, which it <em>MUST</em> identify with the BDR-issued IRI <code>&lt;sampling/12345&gt;</code>, and <em>NOT</em> it&#8217;s original IRI for it <code>&lt;http://createme.org/2&gt;</code>.</p>
-</div>
-<div class="sect4">
-<h5 id="_creating_non_bdr_objects"><a class="anchor" href="#_creating_non_bdr_objects"></a>Creating non-BDR objects</h5>
-<div class="paragraph">
-<p>The following RDF data adds an externally-defined vocabulary to the BDR:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix geo: &lt;http://www.opengis.net/ont/geosparql#&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
-@prefix tern: &lt;https://w3id.org/tern/ontologies/tern/&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-
-&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
-    a bdrm:CreateMessage ;
-    dcterms:hasPart &lt;http://example.com/voc/habitats-extended&gt; ;
-.
-
-&lt;http://example.com/voc/habitats-extended&gt;
-    a skos:ConceptScheme ;
-    skos:prefLabel "BDR Extended Feature Types"@en ;
-    ...
-    skos:hasTopConcept
-		&lt;http://example.com/voc/habitats-extended/underground&gt; ,
-		&lt;http://example.com/voc/habitats-extended/underwater&gt; ;
-.
-
-&lt;http://example.com/voc/habitats-extended/underground&gt;
-    a skos:Concept ;
-    skos:prefLabel "Underground Habitat"@en ;
-    ...
-    skos:topConceptOf &lt;http://example.com/voc/habitats-extended&gt; ;
-.
-
-&lt;http://example.com/voc/habitats-extended/underwater&gt;
-    a skos:Concept ;
-    skos:prefLabel "Underwater Habitat"@en ;
-    ...
-    skos:topConceptOf &lt;http://example.com/voc/habitats-extended&gt; ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the message above, the <code>CreaeMessage</code> only refers to the <code>ConceptScheme</code> instance added to the BDR, not each of its contained <code>Concept</code> instances. The already-defined IRI of the <code>ConceptScheme</code> is given - not a <code>http://createme.org</code> IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.</p>
-</div>
-<div class="paragraph">
-<p>The BDR may respond to this sort of message with the following:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
-
-&lt;message/12347&gt;
-    a bdrm:CreateResponseMessage ;
-    dcterms:hasPart
-        &lt;http://createme.org/create-msg-2022-01-03-968574&gt; ,
-        &lt;http://example.com/voc/habitats-extended&gt; ;
-.
-
-&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
-	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;http://example.com/voc/habitats-extended&gt;
-	bdrm:exists true ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the response message above, the BDR confirms creation of the create message and gives it a BDR IRI, <code>&lt;message/12344&gt;</code>. It also confirms the existence within it of the vocabulary with <code>&lt;http://example.com/voc/habitats-extended&gt;</code> <code>bdrm:exists true</code>.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_update_messages"><a class="anchor" href="#_update_messages"></a>6.2.4. Update Messages</h4>
-<div class="paragraph">
-<p>An update message sent to the BDR can update any item that the client has permission to update - BRD-managed things like Sites &amp; Samples or other things like vocabularies. An update message might look like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix tern: &lt;https://w3id.org/tern/ontologies/tern/&gt; .
-
-&lt;http://createme.org/abcdefghij&gt;
-    a bdrm:UpdateMessage ;
-    dcterms:hasPart
-        &lt;https://linked.data.gov.au/dataset/bdr/site/asm&gt; ,
-		&lt;http://example.com/voc/habitats-extended&gt; ;
-.
-
-&lt;https://linked.data.gov.au/dataset/bdr/site/asm&gt;
-    tern:siteDescription """The Alice Springs Mulga flux station is located on ...""" ;
-.
-
-&lt;http://example.com/voc/habitats-extended&gt;
-	skos:hasTopConcept &lt;http://example.com/voc/habitats-extended/under-sea&gt; ;
-.
-
-&lt;http://example.com/voc/habitats-extended/under-sea&gt;
-    a skos:Concept ;
-    skos:prefLabel "Under Sea Habitat"@en ;
-    ...
-    skos:topConceptOf &lt;http://example.com/voc/habitats-extended&gt; ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the message above, two things in the BDR are updated: the Site <code>&lt;site/asm&gt;</code> - a new <code>tern:siteDescription</code> property is added - and the vocabulary <code><a href="http://example.com/voc/habitats-extended" class="bare">http://example.com/voc/habitats-extended</a></code> - a new <code>skos:hasTopConcept</code> property is added and a new <code>skos:Concept</code>, <code><a href="http://example.com/voc/habitats-extended/under-sea" class="bare">http://example.com/voc/habitats-extended/under-sea</a></code>, is added.</p>
-</div>
-<div class="paragraph">
-<p>The response to the above message may be:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
-
-&lt;message/12347&gt;
-    a bdrm:UpdateResponseMessage ;
-    dcterms:hasPart
-        &lt;site/asm&gt; ,
-		&lt;http://example.com/voc/habitats-extended&gt; ;
-.
-
-&lt;http://createme.org/abcdefghij&gt;
-	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:exists true ;
-.
-
-&lt;site/asm&gt;
-	bdrm:exists true ;
-.
-
-&lt;http://example.com/voc/habitats-extended&gt;
-	bdrm:exists true ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the response message above, the BDR confirms the creation of the client creation message <code><a href="http://createme.org/abcdefghij" class="bare">http://createme.org/abcdefghij</a></code> and the update of <code>&lt;site/asm&gt;</code> &amp; <code><a href="http://example.com/voc/habitats-extended" class="bare">http://example.com/voc/habitats-extended</a></code> with existence conformations (<code>bdrm:exists true</code>) but does not indicate anything regarding the new <code>Concept</code>, <code><a href="http://example.com/voc/habitats-extended/under-sea" class="bare">http://example.com/voc/habitats-extended/under-sea</a></code>. While the <code>Concept</code> was addedd successfully, the success is only inferred from the fact that the update to the vocabulary indicated no error.</p>
-</div>
-</div>
+<p>Validation section</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references"><a class="anchor" href="#_references"></a>7. References</h2>
+<h2 id="_mappings"><a class="anchor" href="#_mappings"></a>8. Mappings</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a id="PROF"></a> World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Mappings section</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>9. References</h2>
+<div class="sectionbody">
+<div id="ISO19156" class="dlist">
+<dl>
+<dt class="hdlist1">ISO19156</dt>
+<dd>
+<p>International Organization for Standardization, ISO 19156: Geographic information — Observations and measurements (2011)</p>
+</dd>
+</dl>
+</div>
+<div id="PROF" class="dlist">
+<dl>
+<dt class="hdlist1">PROF</dt>
+<dd>
+<p>World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
+</dd>
+</dl>
+</div>
+<div id="TERNOntology" class="dlist">
+<dl>
+<dt class="hdlist1">TERN Ontology</dt>
+<dd>
+<p>Terrestrial Ecosystems Research Network (TERN). <em>TERN Ontology</em>. A information model to represent plot-based ecological surveys. <a href="https://linkeddata.tern.org.au/information-models/tern-ontology" class="bare">https://linkeddata.tern.org.au/information-models/tern-ontology</a></p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -2100,7 +1383,7 @@ This Annex is normative.
 <p>This annex lists the major information elements of the ABIS specification: the domain and background ontologies, their supporting vocabularies and other elements approved for use by the ABIS Working Group.</p>
 </div>
 <div class="sect2">
-<h3 id="_domain_model_3"><a class="anchor" href="#_domain_model_3"></a>Domain Model</h3>
+<h3 id="_domain_model"><a class="anchor" href="#_domain_model"></a>Domain Model</h3>
 <div class="paragraph">
 <p>The ABIS specification&#8217;s domain model is based on the TERN Ontology and includes it, the vocabularies required/approved for use with it and its model dependencies (background ontologies). There are also a series of "mapping" ontologies that relate ABIS data to other models.</p>
 </div>
@@ -2171,7 +1454,7 @@ This Annex is normative.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bdr_system_2"><a class="anchor" href="#_bdr_system_2"></a>BDR System</h3>
+<h3 id="_bdr_system"><a class="anchor" href="#_bdr_system"></a>BDR System</h3>
 <div class="paragraph">
 <p>The BDR system has model requirements for information management and use that extend beyond the ABIS Domain Model:</p>
 </div>
@@ -2211,7 +1494,7 @@ This Annex is normative.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>Vocabularies</h3>
+<h3 id="_vocabularies_2"><a class="anchor" href="#_vocabularies_2"></a>Vocabularies</h3>
 <div class="paragraph">
 <p>These vocabularies are used by the ontologies listed above.</p>
 </div>
@@ -2389,7 +1672,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <img src="https://ausbigg.github.io/abis/img/statuses-state-diagram.png" alt="Message statuses state diagram">
 </div>
-<div class="title">Figure 3. Message statuses state diagram</div>
+<div class="title">Figure 1. Message statuses state diagram</div>
 </div>
 <div class="ulist">
 <ul>
@@ -2433,10 +1716,10 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:submitted ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">submitted</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2444,11 +1727,11 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:duplicate ;
-    bdrm:duplicates &lt;message/54321&gt; ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">duplicate</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">duplicates</span><span class="w"> </span><span class="nl">&lt;message/54321&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2459,10 +1742,10 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:notduplicate ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notduplicate</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2470,13 +1753,13 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:badvalues ;
-    bdrm:failed
-        req:ValuesReqK ,
-        req:ValuesReqL ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">badvalues</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">failed
+</span><span class="w">        </span><span class="nn">req:</span><span class="n">ValuesReqK</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="nn">req:</span><span class="n">ValuesReqL</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2499,10 +1782,10 @@ At the time of writing, value tests for BDR messages haven&#8217;t been defined 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:goodvalues ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">goodvalues</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2510,13 +1793,13 @@ At the time of writing, value tests for BDR messages haven&#8217;t been defined 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:notexpanded ;
-    bdrm:failed
-        rul:ExpRuleM ,
-        rul:ExpRuleN ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notexpanded</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">failed
+</span><span class="w">        </span><span class="nn">rul:</span><span class="n">ExpRuleM</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="nn">rul:</span><span class="n">ExpRuleN</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2539,10 +1822,10 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:expanded ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">expanded</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2550,11 +1833,11 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:notstaged ;
-    bdrm:statusMessage "The BDR Staging environment is offline due to routine maintenance" ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notstaged</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">statusMessage</span><span class="w"> </span><span class="s">"The BDR Staging environment is offline due to routine maintenance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2565,9 +1848,9 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:staged ;</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">staged</span><span class="w"> </span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2575,11 +1858,11 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:notlive ;
-    bdrm:statusMessage "The BDR Live environment is offline due to a system fault" ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notlive</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">statusMessage</span><span class="w"> </span><span class="s">"The BDR Live environment is offline due to a system fault"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2590,9 +1873,9 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
-    a bdrm:CreateMessage ;
-    bdrm:absorptionStatus status:live ;</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">live</span><span class="w"> </span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2600,11 +1883,11 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/5678&gt;
-    a bdrm:DeleteMessage ;
-    bdrm:absorptionStatus status:notlive ;
-    bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/5678&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">DeleteMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notlive</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">statusMessage</span><span class="w"> </span><span class="s">"The BDR Live environment is offline due to a fault"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2612,27 +1895,21 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/5678&gt;
-    a bdrm:DeleteMessage ;
-    bdrm:absorptionStatus status:badvalues ;
-    bdrm:statusMessage "You do not have permission to delete that resource"
-.</code></pre>
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/5678&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">DeleteMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">badvalues</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">bdrm:</span><span class="n">statusMessage</span><span class="w"> </span><span class="s">"You do not have permission to delete that resource"</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. See <a href="https://www.igsn.org/" class="bare">https://www.igsn.org/</a>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-11-03 01:59:39 UTC
+Last updated 2023-12-03 22:59:38 UTC
 </div>
 </div>
 </body>
