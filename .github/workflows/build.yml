@@ -30,8 +30,8 @@ jobs:
         cp rdf/profile.ttl docs/
         #
         echo "Add Specification to docs/"   
-        asciidoctor specification/_specification.adoc -o docs/specification.html
-        cp -r specification/img docs/
+        asciidoctor spec/00-master.adoc -o docs/specification.html
+        cp -r spec/img docs/
         sed -i 's#img src="#img src="https://ausbigg.github.io/abis/#' docs/specification.html
         #
         echo "Add Overview to docs/"   
