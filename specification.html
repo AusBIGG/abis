@@ -665,33 +665,25 @@ pre.rouge {
 </li>
 <li><a href="#_introduction">4. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_abis_multiple_models">4.1. ABIS' Multiple Models</a></li>
+<li><a href="#_multiple_models">4.1. Multiple Models</a></li>
 <li><a href="#_background">4.2. Background</a>
 <ul class="sectlevel3">
 <li><a href="#_aim">4.2.1. Aim</a></li>
-<li><a href="#_development_history">4.2.2. Development History</a></li>
+<li><a href="#_history">4.2.2. History</a></li>
 </ul>
 </li>
 <li><a href="#_governance">4.3. Governance</a></li>
 <li><a href="#_related_standards">4.4. Related Standards</a></li>
-<li><a href="#_specification_structure">4.5. Specification Structure</a>
-<ul class="sectlevel3">
-<li><a href="#_identifier">4.5.1. Identifier</a></li>
-<li><a href="#_labeled">4.5.2. Labeled</a></li>
-<li><a href="#_definition">4.5.3. Definition</a></li>
-<li><a href="#_conformance_classes_list">4.5.4. Conformance Classes list</a></li>
-<li><a href="#_contains_source_notes">4.5.5. Contains source notes</a></li>
-<li><a href="#_related_validators">4.5.6. Related validators</a></li>
-<li><a href="#_canonical_examples">4.5.7. Canonical examples</a></li>
+<li><a href="#_structure">4.5. Structure</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#_models">5. Models</a></li>
-<li><a href="#_vocabularies">6. Vocabularies</a></li>
-<li><a href="#_validation">7. Validation</a></li>
-<li><a href="#_mappings">8. Mappings</a></li>
-<li><a href="#_references">9. References</a></li>
+<li><a href="#_patterns">5. Patterns</a></li>
+<li><a href="#_models">6. Models</a></li>
+<li><a href="#_vocabularies">7. Vocabularies</a></li>
+<li><a href="#_conformance">8. Conformance</a></li>
+<li><a href="#_validation">9. Validation</a></li>
+<li><a href="#_mappings">10. Mappings</a></li>
+<li><a href="#_references">11. References</a></li>
 <li><a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>
 <ul class="sectlevel2">
 <li><a href="#_domain_model">Domain Model</a></li>
@@ -724,6 +716,9 @@ pre.rouge {
 <div class="content">
 <img src="https://ausbigg.github.io/abis/img/abis-parts.png" alt="ABIS Parts" width="450" height="300">
 </div>
+</div>
+<div class="paragraph">
+<p><mark>TODO: redraw excluding background models</mark></p>
 </div>
 </div>
 </div>
@@ -766,21 +761,29 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version History</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.0</strong> - 2023 Nov -Produced by <a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a> for initial <a href="#BDR">BDR</a> operations. Includes handling of systematic surveys and project information.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.0</strong> - 2023 Nov - Produced by <a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a> for initial <a href="#BDR">BDR</a> operations. Includes handling of systematic surveys and project information.<br>
 <strong>1.0</strong> - 2022 Jun - Initial version of ABIS. Tested with SURROUND Australia Pty Ltd and used for an initial national data acquisition survey for the <a href="#BDR">BDR</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Originally <a href="https://linked.data.gov.au/org/dawe">Department of Agriculture, Water and the Environment</a>,<br>
-now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Originally <a href="https://linked.data.gov.au/org/dawe">Department of Agriculture, Water and the Environment (DAWE)</a>,<br>
+now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment (DCCEEW)</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/ausbigg">Australian Biodiversity Information Governance Group (AUSBIGG)</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Publisher</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment (DCCEEW)</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>License</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contacts</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>TODO: Add BDR Team details</mark></p></td>
 </tr>
 </tbody>
 </table>
@@ -984,12 +987,12 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <dl>
 <dt class="hdlist1">IRI</dt>
 <dd>
-<p>An Internationalized Resource Identifier is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. <a href="https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince" class="bare">https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince</a> identifies the Queensland Geological Feature Anakie Province or for data only, e.g. <a href="https://w3id.org/tern/ontologies/tern/Text" class="bare">https://w3id.org/tern/ontologies/tern/Text</a> which identifies the class of 'Text' - textual results - within the <a href="#TERN Ontology">[TERN Ontology]</a>.</p>
-</dd>
-</dl>
-</div>
+<p>An <a href="https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier">Internationalized Resource Identifier</a> is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. <a href="https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince" class="bare">https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince</a> identifies the Queensland Geological Feature Anakie Province or for data only, e.g. <a href="https://w3id.org/tern/ontologies/tern/Text" class="bare">https://w3id.org/tern/ontologies/tern/Text</a> which identifies the class of 'Text' - textual results - within the <a href="#TERN Ontology">[TERN Ontology]</a>.</p>
 <div class="paragraph">
 <p>IRIs do not have to resolve - go somewhere online when clicked - but they do have to follow all the rules for URLs, such as no spaces.</p>
+</div>
+</dd>
+</dl>
 </div>
 <div id="Class" class="dlist">
 <dl>
@@ -1028,11 +1031,11 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <dt class="hdlist1">Predicate</dt>
 <dd>
 <p>Predicates, within formal OWL modelling, are the defined relations between objects of different classes (see <a href="#Class">Class</a>) and also between objects and simple data values such as numbers and dates. For example, if Person X "knows" Person Y, then we can use a predicate of <em>knows</em> to relate them.</p>
-</dd>
-</dl>
-</div>
 <div class="paragraph">
 <p>Frequently we use predicates already defined in existing ontologies. "knows", for example, is defined in the schema.org ontology <a href="#SDO">SDO</a> to be "The most generic bi-directional social/work relation".</p>
+</div>
+</dd>
+</dl>
 </div>
 <div id="RDF" class="dlist">
 <dl>
@@ -1074,17 +1077,17 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <p>ABIS uses a rigorous and formal data models which means that data wanting to be compliant with it can be automatically validated and this specification indicates where the validators are and how to use them.</p>
 </div>
 <div class="sect2">
-<h3 id="_abis_multiple_models"><a class="anchor" href="#_abis_multiple_models"></a>4.1. ABIS' Multiple Models</h3>
+<h3 id="_multiple_models"><a class="anchor" href="#_multiple_models"></a>4.1. Multiple Models</h3>
 <div class="paragraph">
 <p>ABIS is centred on the <a href="#TERNOntology">TERN Ontology</a> which is a data model that represents ecological survey information. The TERN Ontology is designed in accordance with the principles of the <em>Observations &amp; Measurement</em> standard <a href="#ISO19156">ISO19156</a> that separates acts of observation from the results of those observations and ever-present details of the things observed.</p>
 </div>
 <div class="paragraph">
-<p>In addition to things represented by the TERN Ontology, ABIS includes all of the models depended on by ABIS as well as the following:</p>
+<p>In addition to things represented by the TERN Ontology, ABIS includes all the models depended on by ABIS as well as the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Projects</p>
+<p><strong>Projects</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1094,7 +1097,17 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </div>
 </li>
 <li>
-<p>Profiles</p>
+<p><strong>BDR Data Management</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>A model of aspects of data management specific to the BDR, such as data embargoes</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Profiles</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1104,7 +1117,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </div>
 </li>
 <li>
-<p>Olis</p>
+<p><strong>Olis</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1114,6 +1127,9 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Details of all these models are given in the <a href="#_models">Models</a> section.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1134,7 +1150,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </div>
 </div>
 <div class="sect3">
-<h4 id="_development_history"><a class="anchor" href="#_development_history"></a>4.2.2. Development History</h4>
+<h4 id="_history"><a class="anchor" href="#_history"></a>4.2.2. History</h4>
 <div class="paragraph">
 <p>The TERN Ontology was created in 2020 for TERN to use for their own observations <a href="#KnowledgeGraph">Knowledge Graph</a>.</p>
 </div>
@@ -1155,10 +1171,19 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <p>ABIS is managed day-to-day by <a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a> however many parts of ABIS are maintained externally, such as the <a href="#TERNOntology">TERN Ontology</a> which is maintained by <a href="https://linked.data.gov.au/org/tern">TERN</a>.</p>
 </div>
 <div class="paragraph">
-<p>Governance of ABIS is undertaken by linked.data.gov.au/org/ausbigg[AusBIGG] (<em>TODO</em>), the Australian Biodiversity Information Governance Group, which comprises DCCEEW, State &amp; Territory biodiversity data holders and other organisations in the sector, such as TERN.</p>
+<p>To contact the ABIS managers, please see use the following details:</p>
+</div>
+<div class="paragraph">
+<p><mark>TODO: Add BDR Team details</mark></p>
+</div>
+<div class="paragraph">
+<p>Governance of ABIS is undertaken by <a href="https://linked.data.gov.au/org/ausbigg">AusBIGG</a> <mark>TODO: make link resolve</mark>, the Australian Biodiversity Information Governance Group, which comprises DCCEEW, State &amp; Territory biodiversity data holders and other organisations in the sector, such as TERN.</p>
 </div>
 <div class="paragraph">
 <p>As of 2023, the processes for maintaining and extending ABIS are not fully established with AusBIGG still coming to understand ABIS' uses and its place in the landscape of international biodiversity observation data models, such as <a href="https://www.gbif.org/new-data-model">GBIF&#8217;s <em>New Data Model</em></a>.</p>
+</div>
+<div class="paragraph">
+<p>An Issue Tracker for this document and for any other aspects of ABIS is public and online at: <a href="https://github.com/AusBIGG/abis/issues" class="bare">https://github.com/AusBIGG/abis/issues</a>. Anyone with an interest in ABIS is invited to submit Issues there to be considered by ABIS management &amp; governance parties.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1171,7 +1196,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </div>
 </div>
 <div class="sect2">
-<h3 id="_specification_structure"><a class="anchor" href="#_specification_structure"></a>4.5. Specification Structure</h3>
+<h3 id="_structure"><a class="anchor" href="#_structure"></a>4.5. Structure</h3>
 <div class="paragraph">
 <p>This specification aims to cover all the information needed to understand ABIS and use it. The following is a list of the major sections in this document and their purposes.</p>
 </div>
@@ -1219,125 +1244,66 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </li>
 </ol>
 </div>
-<div class="sect3">
-<h4 id="_identifier"><a class="anchor" href="#_identifier"></a>4.5.1. Identifier</h4>
-<div class="paragraph">
-<p>Each <em>requirement</em> is identified with a unique identifier of the form <code>req:X</code>, where <code>req:</code> is a prefix for the IRI namespace <code>&lt;https://linked.data.gov.au/def/abis/req/&gt;</code> and <code>X</code> is a number, the number of the <em>requirement</em>.</p>
-</div>
-<div class="paragraph">
-<p>The IRI namespace plus the number make the complete IRI of the <em>requirement</em>.</p>
-</div>
-<div class="paragraph">
-<p>An IRI is an <a href="https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier">Internationalized Resource Identifier</a> which is a globally unique web address created within a managed namespace that resolves to the element it identifies</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_labeled"><a class="anchor" href="#_labeled"></a>4.5.2. Labeled</h4>
-<div class="paragraph">
-<p>Each <em>requirement</em> is named with a short form of its definition, to assist with human referencing.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_definition"><a class="anchor" href="#_definition"></a>4.5.3. Definition</h4>
-<div class="paragraph">
-<p>Each <em>requirement</em> is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the <a href="https://www.w3.org/TR/owl2-overview/">Web Ontology Language (OWL)</a> since the <em>target models</em> of the ABIS are themselves OWL Ontologies.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-If there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_conformance_classes_list"><a class="anchor" href="#_conformance_classes_list"></a>4.5.4. Conformance Classes list</h4>
-<div class="paragraph">
-<p>Each <em>requirement</em> is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the ABIS, the Conformance Classes form modules which data may conform to individually.</p>
-</div>
-<div class="paragraph">
-<p>Each <em>requirement</em> needs to indicate its Conformance Classes by linking to them.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_contains_source_notes"><a class="anchor" href="#_contains_source_notes"></a>4.5.5. Contains source notes</h4>
-<div class="paragraph">
-<p>Each <em>requirement</em> contains source notes  what motivated the <em>requirement</em>'s definition, including references to source documents or other ABIS artifacts, such as ontologies.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_related_validators"><a class="anchor" href="#_related_validators"></a>4.5.6. Related validators</h4>
-<div class="paragraph">
-<p>Each <em>requirement</em> contains references to individual, identified, data validation <em>shapes</em> defined in the ABIS Profile&#8217;s <em>validator</em> used to validate <a href="https://www.w3.org/RDF/">Resource Description Framework (RDF)</a> data - the only form of data allowed to be used for ABIS data exchange.</p>
-</div>
-<div class="paragraph">
-<p>The content of <em>validator_s is contained in the ABIS' _Validator</em> resource.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and that there are <em>requirements</em> for which there are no <em>shapes</em> - those <em>requirements</em> that cannot be determined to have been met by inspecting data.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_canonical_examples"><a class="anchor" href="#_canonical_examples"></a>4.5.7. Canonical examples</h4>
-<div class="paragraph">
-<p>For each <em>requirement</em>, references are given to at least two <em>canonical examples</em> of RDF data that do (positive example) and don&#8217;t (negative example) pass validation using the validators related to the <em>requirement</em>.</p>
-</div>
-<div class="paragraph">
-<p>The content of the <em>canonical examples</em>, i.e. the examples' data, is contained in the ABIS' <em>Canonical Examples</em> resource.</p>
-</div>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_models"><a class="anchor" href="#_models"></a>5. Models</h2>
+<h2 id="_patterns"><a class="anchor" href="#_patterns"></a>5. Patterns</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Model section</p>
+<p><mark>TODO: include Examples info</mark></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>6. Vocabularies</h2>
+<h2 id="_models"><a class="anchor" href="#_models"></a>6. Models</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Vocabs section</p>
+<p><mark>TODO: write this section</mark></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_validation"><a class="anchor" href="#_validation"></a>7. Validation</h2>
+<h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>7. Vocabularies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Validation section</p>
+<p><mark>TODO: write this section</mark></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mappings"><a class="anchor" href="#_mappings"></a>8. Mappings</h2>
+<h2 id="_conformance"><a class="anchor" href="#_conformance"></a>8. Conformance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mappings section</p>
+<p><mark>TODO: write this section</mark></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references"><a class="anchor" href="#_references"></a>9. References</h2>
+<h2 id="_validation"><a class="anchor" href="#_validation"></a>9. Validation</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><mark>TODO: write this section</mark></p>
+</div>
+<div class="paragraph">
+<p>Pinch from Geochem Spec</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mappings"><a class="anchor" href="#_mappings"></a>10. Mappings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><mark>TODO: write this section</mark></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>11. References</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><mark>TODO: grow with docs/models references</mark></p>
+</div>
 <div id="ISO19156" class="dlist">
 <dl>
 <dt class="hdlist1">ISO19156</dt>
@@ -1909,7 +1875,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-12-03 22:59:38 UTC
+Last updated 2023-12-04 00:11:28 UTC
 </div>
 </div>
 </body>
