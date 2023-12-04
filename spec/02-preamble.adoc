@@ -55,8 +55,8 @@ ABIS:: The Australian Biodiversity Standard - the data standard this document is
 BDR:: Biodiversity Data Repository - a data collection managed by the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment] that incorporates biodiversity observations from State & Territory jurisdictions and aims to incorporate non-government data too
 
 [[IRI]]
-IRI:: An Internationalized Resource Identifier is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince identifies the Queensland Geological Feature Anakie Province or for data only, e.g. https://w3id.org/tern/ontologies/tern/Text which identifies the class of 'Text' - textual results - within the <<TERN Ontology>>.
-
+IRI:: An https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier[Internationalized Resource Identifier] is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince identifies the Queensland Geological Feature Anakie Province or for data only, e.g. https://w3id.org/tern/ontologies/tern/Text which identifies the class of 'Text' - textual results - within the <<TERN Ontology>>.
++
 IRIs do not have to resolve - go somewhere online when clicked - but they do have to follow all the rules for URLs, such as no spaces.
 
 [[Class]]
@@ -73,7 +73,7 @@ OWL:: The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language
 
 [[Predicate]]
 Predicate:: Predicates, within formal OWL modelling, are the defined relations between objects of different classes (see <<Class, Class>>) and also between objects and simple data values such as numbers and dates. For example, if Person X "knows" Person Y, then we can use a predicate of _knows_ to relate them.
-
++
 Frequently we use predicates already defined in existing ontologies. "knows", for example, is defined in the schema.org ontology <<SDO, SDO>> to be "The most generic bi-directional social/work relation".
 
 [[RDF]]

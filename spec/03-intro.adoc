@@ -6,19 +6,22 @@ The goal of ABIS is to simplify the exchange of standardised biodiversity data i
 
 ABIS uses a rigorous and formal data models which means that data wanting to be compliant with it can be automatically validated and this specification indicates where the validators are and how to use them.
 
-=== ABIS' Multiple Models
+=== Multiple Models
 
 ABIS is centred on the <<TERNOntology, TERN Ontology>> which is a data model that represents ecological survey information. The TERN Ontology is designed in accordance with the principles of the _Observations & Measurement_ standard <<ISO19156, ISO19156>> that separates acts of observation from the results of those observations and ever-present details of the things observed.
 
-In addition to things represented by the TERN Ontology, ABIS includes all of the models depended on by ABIS as well as the following:
+In addition to things represented by the TERN Ontology, ABIS includes all the models depended on by ABIS as well as the following:
 
-* Projects
+* *Projects*
 ** A basic model of projects that generate data
-* Profiles
+* *BDR Data Management*
+** A model of aspects of data management specific to the BDR, such as data embargoes
+* *Profiles*
 ** A model that related models to other models
-* Olis
+* *Olis*
 ** A model used to manage chunks of data within a <<KnowledgeGraph, Knowledge Graph>>
 
+Details of all these models are given in the <<Models, Models>> section.
 
 === Background
 
@@ -32,7 +35,7 @@ Since the BDR aims for a comprehensive and up-to-date data holding, it needs to 
 
 To enable effective automatic processing of data - both in terms of effort and quality - common models and formats must be implemented by data suppliers who map their data holdings to a form that can be automatically assessed (validated) and processed. ABIS is that form.
 
-==== Development History
+==== History
 
 The TERN Ontology was created in 2020 for TERN to use for their own observations <<KnowledgeGraph, Knowledge Graph>>.
 
@@ -46,9 +49,15 @@ At the end of 2023, version 2.0 of ABIS was created which removed all representa
 
 ABIS is managed day-to-day by https://linked.data.gov.au/org/dcceew[DCCEEW] however many parts of ABIS are maintained externally, such as the <<TERNOntology, TERN Ontology>> which is maintained by https://linked.data.gov.au/org/tern[TERN].
 
-Governance of ABIS is undertaken by linked.data.gov.au/org/ausbigg[AusBIGG] (_TODO_), the Australian Biodiversity Information Governance Group, which comprises DCCEEW, State & Territory biodiversity data holders and other organisations in the sector, such as TERN.
+To contact the ABIS managers, please see use the following details:
+
+#TODO: Add BDR Team details#
+
+Governance of ABIS is undertaken by https://linked.data.gov.au/org/ausbigg[AusBIGG] #TODO: make link resolve#, the Australian Biodiversity Information Governance Group, which comprises DCCEEW, State & Territory biodiversity data holders and other organisations in the sector, such as TERN.
 
 As of 2023, the processes for maintaining and extending ABIS are not fully established with AusBIGG still coming to understand ABIS' uses and its place in the landscape of international biodiversity observation data models, such as https://www.gbif.org/new-data-model[GBIF's _New Data Model_].
+
+An Issue Tracker for this document and for any other aspects of ABIS is public and online at: https://github.com/AusBIGG/abis/issues. Anyone with an interest in ABIS is invited to submit Issues there to be considered by ABIS management & governance parties.
 
 === Related Standards
 
@@ -56,7 +65,7 @@ ABIS both comprises multiple models and some of them inherit from other models a
 
 Additionally, ABIS exists within a domain that already contains many international and national standards and well-known models. The <<Mappings, Mappings>> section described how ABIS relates to many of them.
 
-=== Specification Structure
+=== Structure
 
 This specification aims to cover all the information needed to understand ABIS and use it. The following is a list of the major sections in this document and their purposes.
 
@@ -68,47 +77,3 @@ This specification aims to cover all the information needed to understand ABIS a
 ** Description of, and links to, the vocabularies needed for use with ABIS
 4. Validation
 ** How to validate data according to ABIS and links to the various validators
-
-
-
-==== Identifier
-
-Each _requirement_ is identified with a unique identifier of the form `req:X`, where `req:` is a prefix for the IRI namespace `+<https://linked.data.gov.au/def/abis/req/>+` and `X` is a number, the number of the _requirement_.
-
-The IRI namespace plus the number make the complete IRI of the _requirement_.
-
-An IRI is an https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier[Internationalized Resource Identifier] which is a globally unique web address created within a managed namespace that resolves to the element it identifies
-
-==== Labeled
-
-Each _requirement_ is named with a short form of its definition, to assist with human referencing.
-
-==== Definition
-
-Each _requirement_ is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the https://www.w3.org/TR/owl2-overview/[Web Ontology Language (OWL)] since the _target models_ of the ABIS are themselves OWL Ontologies.
-
-NOTE: If there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
-
-==== Conformance Classes list
-
-Each _requirement_ is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the ABIS, the Conformance Classes form modules which data may conform to individually.
-
-Each _requirement_ needs to indicate its Conformance Classes by linking to them.
-
-==== Contains source notes
-
-Each _requirement_ contains source notes  what motivated the _requirement_'s definition, including references to source documents or other ABIS artifacts, such as ontologies.
-
-==== Related validators
-
-Each _requirement_ contains references to individual, identified, data validation _shapes_ defined in the ABIS Profile's _validator_ used to validate https://www.w3.org/RDF/[Resource Description Framework (RDF)] data - the only form of data allowed to be used for ABIS data exchange.
-
-The content of _validator_s is contained in the ABIS' _Validator_ resource.
-
-NOTE: The validating _shapes_ are not 1:1 with these _requirements_ and that there are _requirements_ for which there are no _shapes_ - those _requirements_ that cannot be determined to have been met by inspecting data.
-
-==== Canonical examples
-
-For each _requirement_, references are given to at least two _canonical examples_ of RDF data that do (positive example) and don't (negative example) pass validation using the validators related to the _requirement_.
-
-The content of the _canonical examples_, i.e. the examples' data, is contained in the ABIS' _Canonical Examples_ resource.

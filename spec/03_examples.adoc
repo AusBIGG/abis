@@ -1,5 +1,7 @@
 == Examples
 
+#TODO: collapse this into Patterns#
+
 === Domain Model 
 
 These examples extend on those of the domain ontology provided in the link:https://linkeddata.tern.org.au/information-models/tern-ontology[TERN Ontology's examples]. These examples are for non-core domain model (TERN Ontology) converns whcih are nevertheless useful or required for the Biodiversity Data Repository or other ABIS-conformant datasets.

@@ -1,3 +1,5 @@
 == Validation
 
-Validation section
+#TODO: write this section#
+
+Pinch from Geochem Spec
