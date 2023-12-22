@@ -19,10 +19,9 @@
 :xrefstyle: short
 :source-highlighter: rouge
 
-[#abis-parts]
-image::img/abis-parts.png[ABIS Parts,450,300,align="center"]
-
-#TODO: redraw excluding background models#
+[#overview,link="img/overview.svg"]
+.An overview of the major model parts of ABIS. The models shown here are detailed in the <<Multiple Models, Multiple Models>> section. Overlaps indicated shared model elements.
+image::img/overview.svg[ABIS Parts,650,align="center"]
 
 == Metadata
 
@@ -32,7 +31,7 @@ image::img/abis-parts.png[ABIS Parts,450,300,align="center"]
 |*Title* | Australian Biodiversity Information Standard
 |*Definition* | This document is the normative specification of the Australian Biodiversity Information Standard (ABIS) and includes its authoritative statements on parts, requirements and patterns.
 |*Created* | 2021-10-24
-|*Modified* | 2023-11-30
+|*Modified* | 2023-12-21
 |*Issued* | 2023-12-04
 |*Version* | 2.0
 |*Version History*| *2.0* - 2023 Nov - Produced by https://linked.data.gov.au/org/dcceew[DCCEEW] for initial <<BDR, BDR>> operations. Includes handling of systematic surveys and project information. +
@@ -42,7 +41,8 @@ now the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Ener
 |*Owner* | https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AUSBIGG)]
 |*Publisher* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
 |*License* | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|*Contacts* | #TODO: Add BDR Team details#
+|*Contacts* | AusBIGG is supported by DCCEEW's' Biodiversity Data Repository (BDR) Team. Contact the BDR Team on bdr@dcceew.gov.au +
+Issue tracking of the ABIS standard is managed online at https://github.com/AusBIGG/abis/issues
 |===
 
 include::01-abstract.adoc[]

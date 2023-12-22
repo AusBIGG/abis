@@ -1,3 +1,55 @@
 == Models
 
-#TODO: write this section#
+As per the <<Multiple Models, Multiple Models>> section within the <<Introduction, Introduction>>, ABIS is a set of models. The models have different roles and a dependency hierarchy.
+
+=== Model Roles
+
+The roles played by the various models within ABIS are:
+
+* <<Foreground Model, Foreground Model>>
+** The main model that is the union of its Component Models
+* <<Component Models, Component Models>>
+** Parts of the Foreground Model that may be used independently
+* <<Background Models, Background Models>>
+** Models that Component Models profile
+
+=== Model Dependency Hierarchy
+
+The dependency hierarchy indicates which models profile other models and thus are dependent on them. The mechanism of profiling are as per the <<PROF, Profiles Vocabulary>> but can easily be summaries as:
+
+[verse,Profiles Vocabulary]
+Any data which conforms to a model _MUST_ conform to any models it profiles
+
+In practice this means that any model profiling any other may use elements from that profiled model but must not break any rules imposed on that element's use by the profiled model. These rules usually take the forms of required predicates and values for instances of particular classes, categorisation of object with terms from vocabularies and so on.
+
+The following figure depicts the profiling relationships between the various models within ABIS.
+
+[#hierarchy,link="img/hierarchy.svg"]
+.The profile hierarchy of the models within ABIS
+image::img/hierarchy.svg[ABIS Parts,650align="center"]
+
+=== Foreground Model
+
+The Foreground Model for ABIS is the union of the TERN Ontology and the ABIS Component Models.
+
+The Foreground Model is not directly defined here other that the statement above since each of the parts are defined below.
+
+=== Component Models
+
+The Component Models of ABIS are:
+
+* The <<TERNOntology, TERN Ontology>>
+* <<Projects Model, Projects Model>>
+* <<Data Release Model, Data Release Model>>
+
+==== Projects Model
+
+Projects Model
+
+==== Data Release Model
+
+Data Release Model
+
+=== Background Models
+
+The Background Models within ABIS are all those profiled by the Component Models.

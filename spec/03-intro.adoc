@@ -8,18 +8,34 @@ ABIS uses a rigorous and formal data models which means that data wanting to be 
 
 === Multiple Models
 
-ABIS is centred on the <<TERNOntology, TERN Ontology>> which is a data model that represents ecological survey information. The TERN Ontology is designed in accordance with the principles of the _Observations & Measurement_ standard <<ISO19156, ISO19156>> that separates acts of observation from the results of those observations and ever-present details of the things observed.
+ABIS is centred on the <<TERNOntology, TERN Ontology>> - see <<abis-parts, Figure 1>> - which is a data model that represents ecological survey information. The TERN Ontology is designed in accordance with the principles of the _Observations & Measurement_ standard <<ISO19156, ISO19156>> that separates acts of observation from the results of those observations and ever-present details of the things observed.
 
-In addition to things represented by the TERN Ontology, ABIS includes all the models depended on by ABIS as well as the following:
+The TERN Ontology itself inherits most of its modelling from several general-purpose and well-known <<SemanticWeb, Semantic Web>> models (ontologies), in particular:
 
-* *Projects*
-** A basic model of projects that generate data
-* *BDR Data Management*
-** A model of aspects of data management specific to the BDR, such as data embargoes
-* *Profiles*
+* <<DWC, Darwin Core>> - specialised properties for biodiversity modelling
+* <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> - sampling, observation & results modelling
+* <<PROV, Provenance Ontology (PROV)>> - for the lineage and attribution of data
+* <<GSP, GeoSPARQL>> - for spatial object modelling
+* <<SDO, schema.org>> - for general-purpose attributes like names, dates, simple metadata etc.
+
+Each of these "background models" are shown in <<abis-parts, Figure 1>>.
+
+In addition to the TERN Ontology and the background models it uses, ABIS also use other "background models":
+
+* <<NSLM, National Species List Model>>
+** The Semantic Web form of the https://biodiversity.org.au[National Species List]'s data model
+** Used to model taxonomic names, their references to literature and relations to taxa
+* The <<PROF, Profiles Vocabulary>>
 ** A model that related models to other models
-* *Olis*
-** A model used to manage chunks of data within a <<KnowledgeGraph, Knowledge Graph>>
+* <<OLIS, Olis Ontology>>
+** A model used to manage graphs of data with within a <<KnowledgeGraph, Knowledge Graph>>
+
+ABIS also includes additional "component models" that extend the range of things ABIS can cover:
+
+* <<Projects Model, Projects Model>>
+** A basic model of projects that generate data
+* <<Data Release Model, Data Release Model>>
+** A model for data embargoes, withholding times and so on
 
 Details of all these models are given in the <<Models, Models>> section.
 

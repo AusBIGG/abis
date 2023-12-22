@@ -1,12 +1,31 @@
 == References
 
-#TODO: grow with docs/models references#
+[[DWC]]
+DWC:: Darwin Core Maintenance Group, _Darwin Core_, Biodiversity Information Standards (TDWG), Technical Specification (2009). http://www.tdwg.org/standards/450
+
+[[GSP]]
+[GSP]:: Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data_, OGC Implementation Standard. Car, N. J., & Homburg, T. (eds.) (2011). http://www.opengis.net/doc/IS/geosparql/1.1
 
 [[ISO19156]]
 ISO19156:: International Organization for Standardization, ISO 19156: Geographic information — Observations and measurements (2011)
 
+[[NSLM]]
+NSLM:: Centre for Australian National Biodiversity Research (CANBR), _National Species List - Semantic Web Model_ (2023). https://linked.data.gov.au/def/nsl
+
+[[OLIS]]
+OLIS:: KurrawongAI, _Olis Ontology_, Semantic Web Model (2022). https://olis.dev/ont
+
 [[PROF]]
 PROF:: World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>
+
+[[PROV]]
+[PROV]:: World Wide Web Consortium, _PROV-O: The PROV Ontology_, W3C Recommendation (30 February 2013). https://www.w3.org/TR/prov-o/
+
+[[SDO]]
+[SDO]:: schema.org Consortium, _schema.org_, OWL vocabulary (26 June 2023). https://schema.org/
+
+[[SOSA]]
+[SOSA]:: World Wide Web Consortium, _Sensor, Observation, Sample, and Actuator ontology_, within _Semantic Sensor Network Ontology_, W3C Recommendation (19 October 2017). https://www.w3.org/TR/vocab-ssn/
 
 [[TERNOntology]]
 TERN Ontology:: Terrestrial Ecosystems Research Network (TERN). _TERN Ontology_. A information model to represent plot-based ecological surveys. https://linkeddata.tern.org.au/information-models/tern-ontology

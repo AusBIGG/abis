@@ -79,7 +79,7 @@ Frequently we use predicates already defined in existing ontologies. "knows", fo
 [[RDF]]
 RDF:: The Resource Description Framework (RDF) is a data structure for representing information on the Web. RDF is made of identified nodes linked by typed edges that form graphs. Node/edge/node associations are often called 'triples'.
 
-[[SeamanticWeb]]
+[[SemanticWeb]]
 Semantic Web:: A vision of a machine-understandable Internet, created in the year 2000, and thought to be attainable through the use of Linked Data.
 
 [[SPARQL]]
