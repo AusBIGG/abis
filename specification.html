@@ -678,7 +678,20 @@ pre.rouge {
 </ul>
 </li>
 <li><a href="#_patterns">5. Patterns</a></li>
-<li><a href="#_models">6. Models</a></li>
+<li><a href="#_models">6. Models</a>
+<ul class="sectlevel2">
+<li><a href="#_model_roles">6.1. Model Roles</a></li>
+<li><a href="#_model_dependency_hierarchy">6.2. Model Dependency Hierarchy</a></li>
+<li><a href="#_foreground_model">6.3. Foreground Model</a></li>
+<li><a href="#_component_models">6.4. Component Models</a>
+<ul class="sectlevel3">
+<li><a href="#_projects_model">6.4.1. Projects Model</a></li>
+<li><a href="#_data_release_model">6.4.2. Data Release Model</a></li>
+</ul>
+</li>
+<li><a href="#_background_models">6.5. Background Models</a></li>
+</ul>
+</li>
 <li><a href="#_vocabularies">7. Vocabularies</a></li>
 <li><a href="#_conformance">8. Conformance</a></li>
 <li><a href="#_validation">9. Validation</a></li>
@@ -712,13 +725,11 @@ pre.rouge {
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div id="abis-parts" class="imageblock text-center">
+<div id="overview" class="imageblock text-center">
 <div class="content">
-<img src="https://ausbigg.github.io/abis/img/abis-parts.png" alt="ABIS Parts" width="450" height="300">
+<a class="image" href="img/overview.svg"><img src="https://ausbigg.github.io/abis/img/overview.svg" alt="ABIS Parts" width="650"></a>
 </div>
-</div>
-<div class="paragraph">
-<p><mark>TODO: redraw excluding background models</mark></p>
+<div class="title">Figure 1. An overview of the major model parts of ABIS. The models shown here are detailed in the <a href="#_multiple_models">Multiple Models</a> section. Overlaps indicated shared model elements.</div>
 </div>
 </div>
 </div>
@@ -749,7 +760,7 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2023-11-30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023-12-21</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -783,7 +794,8 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contacts</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>TODO: Add BDR Team details</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AusBIGG is supported by DCCEEW&#8217;s' Biodiversity Data Repository (BDR) Team. Contact the BDR Team on <a href="mailto:bdr@dcceew.gov.au">bdr@dcceew.gov.au</a><br>
+Issue tracking of the ABIS standard is managed online at <a href="https://github.com/AusBIGG/abis/issues" class="bare">https://github.com/AusBIGG/abis/issues</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1045,7 +1057,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </dd>
 </dl>
 </div>
-<div id="SeamanticWeb" class="dlist">
+<div id="SemanticWeb" class="dlist">
 <dl>
 <dt class="hdlist1">Semantic Web</dt>
 <dd>
@@ -1079,35 +1091,53 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <div class="sect2">
 <h3 id="_multiple_models"><a class="anchor" href="#_multiple_models"></a>4.1. Multiple Models</h3>
 <div class="paragraph">
-<p>ABIS is centred on the <a href="#TERNOntology">TERN Ontology</a> which is a data model that represents ecological survey information. The TERN Ontology is designed in accordance with the principles of the <em>Observations &amp; Measurement</em> standard <a href="#ISO19156">ISO19156</a> that separates acts of observation from the results of those observations and ever-present details of the things observed.</p>
+<p>ABIS is centred on the <a href="#TERNOntology">TERN Ontology</a> - see <a href="#abis-parts">Figure 1</a> - which is a data model that represents ecological survey information. The TERN Ontology is designed in accordance with the principles of the <em>Observations &amp; Measurement</em> standard <a href="#ISO19156">ISO19156</a> that separates acts of observation from the results of those observations and ever-present details of the things observed.</p>
 </div>
 <div class="paragraph">
-<p>In addition to things represented by the TERN Ontology, ABIS includes all the models depended on by ABIS as well as the following:</p>
+<p>The TERN Ontology itself inherits most of its modelling from several general-purpose and well-known <a href="#SemanticWeb">Semantic Web</a> models (ontologies), in particular:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Projects</strong></p>
+<p><a href="#DWC">Darwin Core</a> - specialised properties for biodiversity modelling</p>
+</li>
+<li>
+<p><a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> - sampling, observation &amp; results modelling</p>
+</li>
+<li>
+<p><a href="#PROV">Provenance Ontology (PROV)</a> - for the lineage and attribution of data</p>
+</li>
+<li>
+<p><a href="#GSP">GeoSPARQL</a> - for spatial object modelling</p>
+</li>
+<li>
+<p><a href="#SDO">schema.org</a> - for general-purpose attributes like names, dates, simple metadata etc.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of these "background models" are shown in <a href="#abis-parts">Figure 1</a>.</p>
+</div>
+<div class="paragraph">
+<p>In addition to the TERN Ontology and the background models it uses, ABIS also use other "background models":</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>A basic model of projects that generate data</p>
+<p><a href="#NSLM">National Species List Model</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The Semantic Web form of the <a href="https://biodiversity.org.au">National Species List</a>'s data model</p>
+</li>
+<li>
+<p>Used to model taxonomic names, their references to literature and relations to taxa</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>BDR Data Management</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>A model of aspects of data management specific to the BDR, such as data embargoes</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Profiles</strong></p>
+<p>The <a href="#PROF">Profiles Vocabulary</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1117,11 +1147,38 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </div>
 </li>
 <li>
-<p><strong>Olis</strong></p>
+<p><a href="#OLIS">Olis Ontology</a></p>
 <div class="ulist">
 <ul>
 <li>
-<p>A model used to manage chunks of data within a <a href="#KnowledgeGraph">Knowledge Graph</a></p>
+<p>A model used to manage graphs of data with within a <a href="#KnowledgeGraph">Knowledge Graph</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ABIS also includes additional "component models" that extend the range of things ABIS can cover:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_projects_model">Projects Model</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>A basic model of projects that generate data</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#_data_release_model">Data Release Model</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>A model for data embargoes, withholding times and so on</p>
 </li>
 </ul>
 </div>
@@ -1259,7 +1316,117 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <h2 id="_models"><a class="anchor" href="#_models"></a>6. Models</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><mark>TODO: write this section</mark></p>
+<p>As per the <a href="#_multiple_models">Multiple Models</a> section within the <a href="#_introduction">Introduction</a>, ABIS is a set of models. The models have different roles and a dependency hierarchy.</p>
+</div>
+<div class="sect2">
+<h3 id="_model_roles"><a class="anchor" href="#_model_roles"></a>6.1. Model Roles</h3>
+<div class="paragraph">
+<p>The roles played by the various models within ABIS are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_foreground_model">Foreground Model</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The main model that is the union of its Component Models</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#_component_models">Component Models</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Parts of the Foreground Model that may be used independently</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#_background_models">Background Models</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Models that Component Models profile</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_model_dependency_hierarchy"><a class="anchor" href="#_model_dependency_hierarchy"></a>6.2. Model Dependency Hierarchy</h3>
+<div class="paragraph">
+<p>The dependency hierarchy indicates which models profile other models and thus are dependent on them. The mechanism of profiling are as per the <a href="#PROF">Profiles Vocabulary</a> but can easily be summaries as:</p>
+</div>
+<div class="verseblock">
+<pre class="content">Any data which conforms to a model <em>MUST</em> conform to any models it profiles</pre>
+<div class="attribution">
+&#8212; Profiles Vocabulary
+</div>
+</div>
+<div class="paragraph">
+<p>In practice this means that any model profiling any other may use elements from that profiled model but must not break any rules imposed on that element&#8217;s use by the profiled model. These rules usually take the forms of required predicates and values for instances of particular classes, categorisation of object with terms from vocabularies and so on.</p>
+</div>
+<div class="paragraph">
+<p>The following figure depicts the profiling relationships between the various models within ABIS.</p>
+</div>
+<div id="hierarchy" class="imageblock">
+<div class="content">
+<a class="image" href="img/hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/hierarchy.svg" alt="ABIS Parts"></a>
+</div>
+<div class="title">Figure 2. The profile hierarchy of the models within ABIS</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_foreground_model"><a class="anchor" href="#_foreground_model"></a>6.3. Foreground Model</h3>
+<div class="paragraph">
+<p>The Foreground Model for ABIS is the union of the TERN Ontology and the ABIS Component Models.</p>
+</div>
+<div class="paragraph">
+<p>The Foreground Model is not directly defined here other that the statement above since each of the parts are defined below.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_component_models"><a class="anchor" href="#_component_models"></a>6.4. Component Models</h3>
+<div class="paragraph">
+<p>The Component Models of ABIS are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="#TERNOntology">TERN Ontology</a></p>
+</li>
+<li>
+<p><a href="#_projects_model">Projects Model</a></p>
+</li>
+<li>
+<p><a href="#_data_release_model">Data Release Model</a></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_projects_model"><a class="anchor" href="#_projects_model"></a>6.4.1. Projects Model</h4>
+<div class="paragraph">
+<p>Projects Model</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_data_release_model"><a class="anchor" href="#_data_release_model"></a>6.4.2. Data Release Model</h4>
+<div class="paragraph">
+<p>Data Release Model</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_background_models"><a class="anchor" href="#_background_models"></a>6.5. Background Models</h3>
+<div class="paragraph">
+<p>The Background Models within ABIS are all those profiled by the Component Models.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1301,8 +1468,21 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <div class="sect1">
 <h2 id="_references"><a class="anchor" href="#_references"></a>11. References</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><mark>TODO: grow with docs/models references</mark></p>
+<div id="DWC" class="dlist">
+<dl>
+<dt class="hdlist1">DWC</dt>
+<dd>
+<p>Darwin Core Maintenance Group, <em>Darwin Core</em>, Biodiversity Information Standards (TDWG), Technical Specification (2009). <a href="http://www.tdwg.org/standards/450" class="bare">http://www.tdwg.org/standards/450</a></p>
+</dd>
+</dl>
+</div>
+<div id="GSP" class="dlist">
+<dl>
+<dt class="hdlist1">[GSP]</dt>
+<dd>
+<p>Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data</em>, OGC Implementation Standard. Car, N. J., &amp; Homburg, T. (eds.) (2011). <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
+</dd>
+</dl>
 </div>
 <div id="ISO19156" class="dlist">
 <dl>
@@ -1312,11 +1492,51 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </dd>
 </dl>
 </div>
+<div id="NSLM" class="dlist">
+<dl>
+<dt class="hdlist1">NSLM</dt>
+<dd>
+<p>Centre for Australian National Biodiversity Research (CANBR), <em>National Species List - Semantic Web Model</em> (2023). <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></p>
+</dd>
+</dl>
+</div>
+<div id="OLIS" class="dlist">
+<dl>
+<dt class="hdlist1">OLIS</dt>
+<dd>
+<p>KurrawongAI, <em>Olis Ontology</em>, Semantic Web Model (2022). <a href="https://olis.dev/ont" class="bare">https://olis.dev/ont</a></p>
+</dd>
+</dl>
+</div>
 <div id="PROF" class="dlist">
 <dl>
 <dt class="hdlist1">PROF</dt>
 <dd>
 <p>World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
+</dd>
+</dl>
+</div>
+<div id="PROV" class="dlist">
+<dl>
+<dt class="hdlist1">[PROV]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>PROV-O: The PROV Ontology</em>, W3C Recommendation (30 February 2013). <a href="https://www.w3.org/TR/prov-o/" class="bare">https://www.w3.org/TR/prov-o/</a></p>
+</dd>
+</dl>
+</div>
+<div id="SDO" class="dlist">
+<dl>
+<dt class="hdlist1">[SDO]</dt>
+<dd>
+<p>schema.org Consortium, <em>schema.org</em>, OWL vocabulary (26 June 2023). <a href="https://schema.org/" class="bare">https://schema.org/</a></p>
+</dd>
+</dl>
+</div>
+<div id="SOSA" class="dlist">
+<dl>
+<dt class="hdlist1">[SOSA]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>Sensor, Observation, Sample, and Actuator ontology</em>, within <em>Semantic Sensor Network Ontology</em>, W3C Recommendation (19 October 2017). <a href="https://www.w3.org/TR/vocab-ssn/" class="bare">https://www.w3.org/TR/vocab-ssn/</a></p>
 </dd>
 </dl>
 </div>
@@ -1638,7 +1858,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <img src="https://ausbigg.github.io/abis/img/statuses-state-diagram.png" alt="Message statuses state diagram">
 </div>
-<div class="title">Figure 1. Message statuses state diagram</div>
+<div class="title">Figure 3. Message statuses state diagram</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1875,7 +2095,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-12-18 00:34:51 UTC
+Last updated 2023-12-22 13:03:28 UTC
 </div>
 </div>
 </body>
