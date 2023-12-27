@@ -32,19 +32,114 @@ image::img/pattern-foi.svg[ABIS Parts,width="650",align="center"]
 
 === ABIS Identifiers
 
-All data objects in ABIS are identified either with an <<IRI, IRI>> or as a <<BN, Blank Node>>. Classes and predicates defined in ABIS use the identifiers for them given in this document. Instances of classes, for example a particular sample, _Sample X_ of the class `<<tern:Sample, Sample`>>, are identified by IRIs assigned to the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used.
+All data objects in ABIS are identified either with an <<IRI, IRI>> or as a <<BN, Blank Node>>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, _Sample Y_ of the class `<<tern:Sample, Sample`>>, are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for _Sample Y_ in _Dataset X_ which also contains _Observation Z_:
 
-Identifiers for datasets take the form `https://{IRI-STEM}/{DATASET-ID}` and act as a unique namespace for objects within it. If Dataset X contained Sample Y, we may have the following identifiers:
+[source,turtle]
+----
+<http://example.com/dataset/x>
+    a tern:RDFDataset ;
+    sdo:hasPart
+        <http://example.com/dataset/x/sample/y> ,
+        <http://example.com/dataset/x/obs/z> ;
+.
 
-* *Dataset X*: `+https://linked.data.gov.au/dataset/abc-123-def-456+`
-** A unique dataset IRI issued by the https://linked.data.gov.au/agldwg[Australian Government Linked Data Working Group]
+<http://example.com/dataset/x/sample/y>
+    a tern:Sample ;
+.
+
+<http://example.com/dataset/x/obs/z>
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest <http://example.com/dataset/x/sample/y> ;
+.
+----
+
+Identifiers for datasets take the form `https://{IRI-STEM}/{DATASET-ID}` and act as a unique namespace for objects within it. If Dataset `abc-123-def-456` contained Sample Y, we may have the following identifiers:
+
+* *Dataset abc-123-def-456*: `+https://linked.data.gov.au/dataset/abc-123-def-456+`
+** A unique dataset IRI issued by the https://linked.data.gov.au/agldwg[Australian Government Linked Data Working Group] using the `+https://linked.data.gov.au/dataset/+` namespace
 ** Other identifier issuing regimes/organisations may be used
-** Dataset Namespace: `+https://linked.data.gov.au/dataset/abc-123-def-456/+` - ending in a '/'
+** Dataset X's Namespace: `+https://linked.data.gov.au/dataset/abc-123-def-456/+` - ending in a '/'
 * *Sample Y*: `+https://linked.data.gov.au/dataset/abc-123-def-456/sample/y+`
 ** Uses the Dataset Namespace and a class identifier (optional) of 'sample' and an ID for the particular sample - 'y'
 ** Datasets can create identifiers for their elements, within their namespace however they like
 
 === Alternate Identifiers
 
+Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.
 
+All forms of alternate identifiers may be recorded and how they are recorded and used depends on how they function.
 
+[discrete]
+==== Alternate IRIs
+
+If an object already has an IRI identifier, and that identifier responds to <<LinkedData, Linked Data>> operations, it _MAY_ be used as the primary identifier of the object.
+
+* If Dataset X contains a representation of Site Y and Site Y has the IRI of `http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002` assigned to it by TERN, then that IRI _MAY_ be used as the IRI for the site as it is resolvable online, linking to RDF data (and human-readable data)
+* If Dataset X contains a representation of Sample Z and Sample Z has an https://ev.igsn.org/[International GeoSample Identifier (IGSN)] or https://www.doi.org/[DOI] IRI of `https://doi.org/10.58052/IECUR00N9` then that IRI _MAY NOT_ be used as the IRI for the sample for, while it resolves online to a web page, it does not link to RDF data
+
+If an object has a Linked Data IRI assigned to it AND another assigned to it within an ABIS data generation propcess, perhaps automatically, the two IRIs should be linked like this:
+
+[source,turtle]
+----
+<{ORIGINAL-IRI}> owl:sameAs <{NEW-IRI]}>
+----
+
+Here the <<OWL2, OWL>> predicate http://www.w3.org/2002/07/owl#sameAs[`owl:sameAs`] indicates the two IRIs identify the same thing.
+
+If an object has an IRI assigned to it that does not link to RDF data, it should be recorded in the following manner:
+
+[source,turtle]
+----
+<{NEW-IRI]}>
+    sdo:identifier "{ORIGINAL-IRI}"^^{DATATYPE} ;
+    ...  # other properties
+.
+----
+
+Here the `{ORIGINAL-IRI}`, since it does not act as a Linked Data IRI, is indicated as being a literal of a specified data type.
+
+If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGSN, then that type might be found in the _BDR Datatypes Register_ #TODO: link to datatypes register# and it should be used. If its type is not known or is a generic URL, the type `xsd:anyURI` should be used like this:
+
+[source,turtle]
+----
+<{NEW-IRI]}>
+    sdo:identifier "{ORIGINAL-IRI}"^^xsd:anyURI ;
+    ...  # other properties
+.
+----
+
+[discrete]
+==== Alternate IDs - non-IRIs
+
+Alternate identifiers for objects that are not IRIs/URLs _MUST_ have their identifier regime indicated. For example, if Museum X issues identifiers for samples and Sample Y has an issued identifier of `SAM-Y1234`, then this should be given like this:
+
+[source,turtle]
+----
+<{SAMPLE-IRI]}>
+    a tern:Sample ;
+    sdo:identifier "SAM-Y1234"^^ex:museum-x-id ;
+    ...  # other properties
+.
+----
+
+...where `{DATASET-IRI]}` is an IRI assigned to the _sample_ and the predicate `sdo:identifier` is used to give the literal identifier value of `SAM-Y1234` which has the datatype `ex:museum-x-id` indicated.
+
+Datatypes such as the example `ex:museum-x-ids` used here _MUST_ be registered to be useful.
+
+[NOTE]
+====
+ABIS data destined for the Biodiversity Data Repository _MUST_ have identifier datatypes registered in the _BDR Datatypes Register_ #TODO: link to datatypes register#
+====
+
+Multiple alternate identifiers may be given, as long as their datatypes are unique:
+
+[source,turtle]
+----
+<{SAMPLE-IRI]}>
+    a tern:Sample ;
+    sdo:identifier
+        "SAM-Y1234"^^ex:museum-x-id ,
+        "1073/SAMY"^^ex:igsn ;
+    ...  # other properties
+.
+----

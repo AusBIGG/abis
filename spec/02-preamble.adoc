@@ -26,7 +26,6 @@ The other parts of ABIS are:
 * *Data Objects*
 ** <<RDF, RDF>> expressions of this Standard, JSON-LD context files and RDF forms of the mappings are given in the sections that describe the human-readable forms of those objects
 
-
 === Namespaces
 
 Namespaces are used within the identifiers for model elements to ensure that they are globally unique. For example, the <<TERNOntology, TERN Ontology>>'s `Sample` class is identified by the <<IRI, IRI>> `https://w3id.org/tern/ontologies/tern/Sample` which distinguishes it from the <<SOSA, SOSA>> `Sample` class, identified with `http://www.w3.org/ns/sosa/Sample` that it is based on but extends.
@@ -74,7 +73,7 @@ BDR:: Biodiversity Data Repository - a data collection managed by the https://li
 Blank Node:: A Blank Node is a node within <<RDF, RDF>> data that does not have a globally unique or even persistent identifier, instead it is a node that is identifiable only in relation to the other nodes in the RDF data in which it is recorded. Blank Nodes are used to convey things that are entirely dependent on, and meaningless without, other things, for example values for `<<tern:Result, Result>>` classes.
 
 [[IRI]]
-IRI:: An https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier[Internationalized Resource Identifier] is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince identifies the Queensland Geological Feature Anakie Province or for data only, e.g. https://w3id.org/tern/ontologies/tern/Text which identifies the class of 'Text' - textual results - within the <<TERN Ontology>>.
+IRI:: An https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier[Internationalized Resource Identifier] is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince identifies the Queensland Geological Feature Anakie Province or for data only, e.g. https://w3id.org/tern/ontologies/tern/Text which identifies the class of 'Text' - textual results - within the <<TERNOntology, TERN Ontology>>.
 +
 IRIs do not have to resolve - go somewhere online when clicked - but they do have to follow all the rules for URLs, such as no spaces.
 
@@ -103,3 +102,38 @@ Semantic Web:: A vision of a machine-understandable Internet, created in the yea
 
 [[SPARQL]]
 SPARQL:: SPARQL is a query language for RDF. SPARQL matches patterns within RDF data to extract subsets of a graph. The results of SPARQL queries can be subset graphs or data in tabular form.
+
+=== Conventions
+
+[discrete]
+==== Figures
+
+In this document, figures showing model elements use the following key:
+
+[#key,link="img/key.svg"]
+.Key of model figure elements. `Activity`, `Entity` and `Agent` are classes from <<PROV, The Provenance Ontology>> and indicate temporal events, all manner of things and people and organisations with agency, respectively. Where `prefix:ElementID` is used, the prefix refers to entries in the <<Namespaces, Namespaces table>>.
+image::img/key.svg[ABIS Parts,align="center"]
+
+[discrete]
+==== Code
+Where examples of ABIS data are given in this document, <<RDFSPEC, RDF>> data serialised in the <<TURTLE, Turtle>> format is used. For example:
+
+[source,turtle]
+----
+PREFIX : <https://example.om/dataset/>
+PREFIX sdo: <https://schema.org/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+
+:x
+    a tern:RDFDataset ;
+    sdo:name "Dataset X" ;
+    sdo:hasPart <https://example.om/dataset/sample/y> ;
+.
+
+<https://example.om/dataset/sample/y>
+    a tern:Sample ;
+    sdo:name "Sample Y" ;
+.
+----
+
+The above example data, while invalid according to the ABIS <<Validation, Validator>>, provides a simple example of a _dataset_ and a _sample_ and a relationship between them, encoded in Turtle.
