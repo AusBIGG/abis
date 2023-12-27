@@ -666,12 +666,7 @@ pre.rouge {
 <li><a href="#_introduction">4. Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#_multiple_models">4.1. Multiple Models</a></li>
-<li><a href="#_background">4.2. Background</a>
-<ul class="sectlevel3">
-<li><a href="#_aim">4.2.1. Aim</a></li>
-<li><a href="#_history">4.2.2. History</a></li>
-</ul>
-</li>
+<li><a href="#_background">4.2. Background</a></li>
 <li><a href="#_governance">4.3. Governance</a></li>
 <li><a href="#_related_standards">4.4. Related Standards</a></li>
 <li><a href="#_structure">4.5. Structure</a></li>
@@ -693,10 +688,9 @@ pre.rouge {
 </ul>
 </li>
 <li><a href="#_vocabularies">7. Vocabularies</a></li>
-<li><a href="#_conformance">8. Conformance</a></li>
-<li><a href="#_validation">9. Validation</a></li>
-<li><a href="#_mappings">10. Mappings</a></li>
-<li><a href="#_references">11. References</a></li>
+<li><a href="#_validation">8. Validation</a></li>
+<li><a href="#_mappings">9. Mappings</a></li>
+<li><a href="#_references">10. References</a></li>
 <li><a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>
 <ul class="sectlevel2">
 <li><a href="#_domain_model">Domain Model</a></li>
@@ -887,11 +881,37 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </ul>
 </div>
 </li>
+<li>
+<p><strong>Mappings</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Mappings of ABIS to/from other well-known standards or models in the same domain are given in the <a href="#_mappings">Mappings Section</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Data Objects</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#RDF">RDF</a> expressions of this Standard, JSON-LD context files and RDF forms of the mappings are given in the sections that describe the human-readable forms of those objects</p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_namespaces"><a class="anchor" href="#_namespaces"></a>3.2. Namespaces</h3>
+<div class="paragraph">
+<p>Namespaces are used within the identifiers for model elements to ensure that they are globally unique. For example, the <a href="#TERNOntology">TERN Ontology</a>'s <code>Sample</code> class is identified by the <a href="#IRI">IRI</a> <code><a href="https://w3id.org/tern/ontologies/tern/Sample" class="bare">https://w3id.org/tern/ontologies/tern/Sample</a></code> which distinguishes it from the <a href="#SOSA">SOSA</a> <code>Sample</code> class, identified with <code><a href="http://www.w3.org/ns/sosa/Sample" class="bare">http://www.w3.org/ns/sosa/Sample</a></code> that it is based on but extends.</p>
+</div>
+<div class="paragraph">
+<p>Namespaces are used in shortened form in documents and data by assigning them a prefix and the prefixes used in this document are given in the table below.</p>
+</div>
 <table class="tableblock frame-none grid-none stripes-even stretch">
 <colgroup>
 <col style="width: 14.2857%;">
@@ -907,7 +927,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>abis:</code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/" class="bare">https://linked.data.gov.au/def/abis/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS namespace</strong> - for the Standard as a whole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS namespace</strong> - for this Standard</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>bdr:</code></strong></p></td>
@@ -915,70 +935,88 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BDR Dataset Namespace</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://purl.org/dc/terms/" class="bare">http://purl.org/dc/terms/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms vocabulary namespace</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://example.com/thing</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generic examples namespace - <em>does not resolve</em></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.opengis.net/ont/geosparql#" class="bare">http://www.opengis.net/ont/geosparql#</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GSP">GeoSPARQL Ontology</a> namespace</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2002/07/owl#" class="bare">http://www.w3.org/2002/07/owl#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Web Ontology Language ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#OWL2">Web Ontology Language ontology</a> namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2000/01/rdf-schema#" class="bare">http://www.w3.org/2000/01/rdf-schema#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RDF Schema ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RDFSSPEC">RDF Schema ontology</a> namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sosa:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/ns/sosa/" class="bare">http://www.w3.org/ns/sosa/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sensor, Observation, Sample, and Actuator ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SOSA">Sensor, Observation, Sample, and Actuator (SOSA) ontology</a> namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://schema.org/" class="bare">https://schema.org/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">schema.org</a> namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>skos:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2004/02/skos/core#" class="bare">http://www.w3.org/2004/02/skos/core#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Simple Knowledge Organization System (SKOS) ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SKOS">Simple Knowledge Organization System (SKOS) ontology</a> namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tern:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/tern/ontologies/tern/" class="bare">https://w3id.org/tern/ontologies/tern/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN Ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#TERNOntology">TERN Ontology</a> namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>time:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2006/time#" class="bare">http://www.w3.org/2006/time#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Time Ontology in OWL namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#TIME">Time Ontology</a> in OWL namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>void:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://rdfs.org/ns/void#" class="bare">http://rdfs.org/ns/void#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vocabulary of Interlinked Data (VoID) ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#VOID">Vocabulary of Interlinked Data (VoID) ontology</a> namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2001/XMLSchema#" class="bare">http://www.w3.org/2001/XMLSchema#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XML Schema Definitions ontology namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#XSD2">XML Schema Definitions ontology</a> namespace</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
+<p>Using the table above, the <a href="#TERNOntology">TERN Ontology</a>'s <code>Sample</code> class would be identified as <code>tern:Sample</code> and the <a href="#SOSA">SOSA</a> <code>Sample</code> class as <code>sosa:Sample</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
 <p>A JSON-LD <em>context</em> built from this namespaces table is available as another resource within the ABIS specification and is online at:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p><a href="https://linked.data.gov.au/def/abis/context.json" class="bare">https://linked.data.gov.au/def/abis/context.json</a></p>
-</li>
-</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_terms_definitions"><a class="anchor" href="#_terms_definitions"></a>3.3. Terms &amp; Definitions</h3>
+<div class="paragraph">
+<p>The following terms &amp; definitions are used throughout this document.</p>
+</div>
 <div id="ABIS" class="dlist">
 <dl>
 <dt class="hdlist1">ABIS</dt>
@@ -1034,7 +1072,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <dl>
 <dt class="hdlist1">OWL</dt>
 <dd>
-<p>The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language for the Semantic Web with formally defined meaning. OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents. OWL 2 ontologies can be used along with information written in RDF, and OWL 2 ontologies themselves are primarily exchanged as RDF documents. OWL</p>
+<p>The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language for the Semantic Web with formally defined meaning. OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents. OWL 2 ontologies can be used along with information written in RDF, and OWL 2 ontologies themselves are primarily exchanged as RDF documents. Reference: <a href="#OWL2">OWL2</a></p>
 </dd>
 </dl>
 </div>
@@ -1053,7 +1091,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <dl>
 <dt class="hdlist1">RDF</dt>
 <dd>
-<p>The Resource Description Framework (RDF) is a data structure for representing information on the Web. RDF is made of identified nodes linked by typed edges that form graphs. Node/edge/node associations are often called 'triples'.</p>
+<p>The Resource Description Framework (RDF) is a data structure for representing information on the Web. RDF is made of identified nodes linked by typed edges that form graphs. Node/edge/node associations are often called 'triples'. Reference: <a href="#RDFSPEC">RDF</a></p>
 </dd>
 </dl>
 </div>
@@ -1086,7 +1124,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <p>The goal of ABIS is to simplify the exchange of standardised biodiversity data in Australia between data holders - States &amp; Territories, the Commonwealth, educational and research organisations, private companies and the public - by providing a scientific observations data model and a series of additions to is that cater for institution details, data management and mappings to other information models.</p>
 </div>
 <div class="paragraph">
-<p>ABIS uses a rigorous and formal data models which means that data wanting to be compliant with it can be automatically validated and this specification indicates where the validators are and how to use them.</p>
+<p>ABIS uses rigorous and formal data models which means that data wanting to be compliant with it can be automatically validated using machine-readable forms of the models and validation tools. This specification indicates where the validators are and how to use them in the <a href="#_validation">Validation Section</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_multiple_models"><a class="anchor" href="#_multiple_models"></a>4.1. Multiple Models</h3>
@@ -1105,10 +1143,10 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <p><a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> - sampling, observation &amp; results modelling</p>
 </li>
 <li>
-<p><a href="#PROV">Provenance Ontology (PROV)</a> - for the lineage and attribution of data</p>
+<p><a href="#GSP">GeoSPARQL</a> - for spatial object modelling</p>
 </li>
 <li>
-<p><a href="#GSP">GeoSPARQL</a> - for spatial object modelling</p>
+<p><a href="#PROV">Provenance Ontology (PROV)</a> - for the lineage and attribution of data</p>
 </li>
 <li>
 <p><a href="#SDO">schema.org</a> - for general-purpose attributes like names, dates, simple metadata etc.</p>
@@ -1191,8 +1229,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div class="sect2">
 <h3 id="_background"><a class="anchor" href="#_background"></a>4.2. Background</h3>
-<div class="sect3">
-<h4 id="_aim"><a class="anchor" href="#_aim"></a>4.2.1. Aim</h4>
+<h4 id="_aim" class="discrete">Aim</h4>
 <div class="paragraph">
 <p>ABIS was established to enable a national Biodiversity Data Repository <a href="#BDR">BDR</a> in Australia that absorbed data from a range of sources.</p>
 </div>
@@ -1205,9 +1242,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="paragraph">
 <p>To enable effective automatic processing of data - both in terms of effort and quality - common models and formats must be implemented by data suppliers who map their data holdings to a form that can be automatically assessed (validated) and processed. ABIS is that form.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_history"><a class="anchor" href="#_history"></a>4.2.2. History</h4>
+<h4 id="_history" class="discrete">History</h4>
 <div class="paragraph">
 <p>The TERN Ontology was created in 2020 for TERN to use for their own observations <a href="#KnowledgeGraph">Knowledge Graph</a>.</p>
 </div>
@@ -1221,20 +1256,23 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <p>At the end of 2023, version 2.0 of ABIS was created which removed all representation of messaging protocols, requirements and rules. Version 2.0 focuses on building on top of the TERN Ontology data elements used to manage and provide access to expected <a href="#BDR">BDR</a> data holdings.</p>
 </div>
 </div>
-</div>
 <div class="sect2">
 <h3 id="_governance"><a class="anchor" href="#_governance"></a>4.3. Governance</h3>
 <div class="paragraph">
-<p>ABIS is managed day-to-day by <a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a> however many parts of ABIS are maintained externally, such as the <a href="#TERNOntology">TERN Ontology</a> which is maintained by <a href="https://linked.data.gov.au/org/tern">TERN</a>.</p>
+<p>ABIS is managed day-to-day by the Department of Climate Change, Energy, the Environment and Water (<a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a>) however many parts of ABIS are maintained externally, such as the <a href="#TERNOntology">TERN Ontology</a> which is maintained by <a href="https://linked.data.gov.au/org/tern">TERN</a>.</p>
 </div>
 <div class="paragraph">
 <p>To contact the ABIS managers, please see use the following details:</p>
 </div>
 <div class="paragraph">
-<p><mark>TODO: Add BDR Team details</mark></p>
+<p><strong>BDR Team</strong><br>
+<em>Environmental Data Products</em><br>
+Department of Climate Change, Energy, the Environment and Water<br>
+<a href="https://www.dcceew.gov.au" class="bare">https://www.dcceew.gov.au</a><br>
+<a href="mailto:bdr@dcceew.gov.au">bdr@dcceew.gov.au</a></p>
 </div>
 <div class="paragraph">
-<p>Governance of ABIS is undertaken by <a href="https://linked.data.gov.au/org/ausbigg">AusBIGG</a> <mark>TODO: make link resolve</mark>, the Australian Biodiversity Information Governance Group, which comprises DCCEEW, State &amp; Territory biodiversity data holders and other organisations in the sector, such as TERN.</p>
+<p>Governance of ABIS is undertaken by <a href="https://linked.data.gov.au/org/ausbigg">AusBIGG</a>, the Australian Biodiversity Information Governance Group, which comprises DCCEEW, State &amp; Territory biodiversity data holders and other organisations in the sector, such as TERN.</p>
 </div>
 <div class="paragraph">
 <p>As of 2023, the processes for maintaining and extending ABIS are not fully established with AusBIGG still coming to understand ABIS' uses and its place in the landscape of international biodiversity observation data models, such as <a href="https://www.gbif.org/new-data-model">GBIF&#8217;s <em>New Data Model</em></a>.</p>
@@ -1246,7 +1284,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="sect2">
 <h3 id="_related_standards"><a class="anchor" href="#_related_standards"></a>4.4. Related Standards</h3>
 <div class="paragraph">
-<p>ABIS both comprises multiple models and some of them inherit from other models and standards. See the <a href="#_models">Models</a> section for details.</p>
+<p>ABIS comprises multiple models and some of them inherit from other models and standards. See the <a href="#_models">Models</a> section for details.</p>
 </div>
 <div class="paragraph">
 <p>Additionally, ABIS exists within a domain that already contains many international and national standards and well-known models. The <a href="#_mappings">Mappings</a> section described how ABIS relates to many of them.</p>
@@ -1260,7 +1298,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Introduction</p>
+<p><a href="#_introduction">Introduction</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1270,7 +1308,17 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </li>
 <li>
-<p>Model</p>
+<p><a href="#_patterns">Patterns</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Descriptions of important modelling choices made in ABIS and the models it inherits from</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#_models">Models</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1280,7 +1328,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </li>
 <li>
-<p>Vocabularies</p>
+<p><a href="#_vocabularies">Vocabularies</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1290,11 +1338,21 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </li>
 <li>
-<p>Validation</p>
+<p><a href="#_validation">Validation</a></p>
 <div class="ulist">
 <ul>
 <li>
 <p>How to validate data according to ABIS and links to the various validators</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#_mappings">Mappings</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Human- and machine-readable mappings between ABIS and other standards within ABIS' domain</p>
 </li>
 </ul>
 </div>
@@ -1308,7 +1366,10 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <h2 id="_patterns"><a class="anchor" href="#_patterns"></a>5. Patterns</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><mark>TODO: include Examples info</mark></p>
+<p>This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.</p>
+</div>
+<div class="paragraph">
+<p>===</p>
 </div>
 </div>
 </div>
@@ -1439,15 +1500,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect1">
-<h2 id="_conformance"><a class="anchor" href="#_conformance"></a>8. Conformance</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><mark>TODO: write this section</mark></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_validation"><a class="anchor" href="#_validation"></a>9. Validation</h2>
+<h2 id="_validation"><a class="anchor" href="#_validation"></a>8. Validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><mark>TODO: write this section</mark></p>
@@ -1458,7 +1511,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mappings"><a class="anchor" href="#_mappings"></a>10. Mappings</h2>
+<h2 id="_mappings"><a class="anchor" href="#_mappings"></a>9. Mappings</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><mark>TODO: write this section</mark></p>
@@ -1466,7 +1519,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references"><a class="anchor" href="#_references"></a>11. References</h2>
+<h2 id="_references"><a class="anchor" href="#_references"></a>10. References</h2>
 <div class="sectionbody">
 <div id="DWC" class="dlist">
 <dl>
@@ -1492,6 +1545,14 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </dd>
 </dl>
 </div>
+<div id="JSON-LD" class="dlist">
+<dl>
+<dt class="hdlist1">[JSON-LD]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>JSON-LD 1.1: A JSON-based Serialization for Linked Data</em>, W3C Recommendation (16 July 2020). <a href="https://www.w3.org/TR/json-ld11/" class="bare">https://www.w3.org/TR/json-ld11/</a></p>
+</dd>
+</dl>
+</div>
 <div id="NSLM" class="dlist">
 <dl>
 <dt class="hdlist1">NSLM</dt>
@@ -1505,6 +1566,14 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <dt class="hdlist1">OLIS</dt>
 <dd>
 <p>KurrawongAI, <em>Olis Ontology</em>, Semantic Web Model (2022). <a href="https://olis.dev/ont" class="bare">https://olis.dev/ont</a></p>
+</dd>
+</dl>
+</div>
+<div id="OWL2" class="dlist">
+<dl>
+<dt class="hdlist1">[OWL2]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
 </dd>
 </dl>
 </div>
@@ -1524,11 +1593,35 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </dd>
 </dl>
 </div>
+<div id="RDFSPEC" class="dlist">
+<dl>
+<dt class="hdlist1">[RDFSPEC]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>RDF 1.1 Concepts and Abstract Syntax</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/rdf11-concepts/" class="bare">https://www.w3.org/TR/rdf11-concepts/</a></p>
+</dd>
+</dl>
+</div>
+<div id="RDFSSPEC" class="dlist">
+<dl>
+<dt class="hdlist1">[RDFSSPEC]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>RDF Schema 1.1</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/rdf11-schema/" class="bare">https://www.w3.org/TR/rdf11-schema/</a></p>
+</dd>
+</dl>
+</div>
 <div id="SDO" class="dlist">
 <dl>
 <dt class="hdlist1">[SDO]</dt>
 <dd>
 <p>schema.org Consortium, <em>schema.org</em>, OWL vocabulary (26 June 2023). <a href="https://schema.org/" class="bare">https://schema.org/</a></p>
+</dd>
+</dl>
+</div>
+<div id="SKOS" class="dlist">
+<dl>
+<dt class="hdlist1">[SKOS]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System Reference</em>, W3C Recommendation (18 August 2009). <a href="https://www.w3.org/TR/skos-reference/" class="bare">https://www.w3.org/TR/skos-reference/</a></p>
 </dd>
 </dl>
 </div>
@@ -1545,6 +1638,38 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <dt class="hdlist1">TERN Ontology</dt>
 <dd>
 <p>Terrestrial Ecosystems Research Network (TERN). <em>TERN Ontology</em>. A information model to represent plot-based ecological surveys. <a href="https://linkeddata.tern.org.au/information-models/tern-ontology" class="bare">https://linkeddata.tern.org.au/information-models/tern-ontology</a></p>
+</dd>
+</dl>
+</div>
+<div id="TIME" class="dlist">
+<dl>
+<dt class="hdlist1">[TIME]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>Time Ontology in OWL</em>, W3C Candidate Recommendation (26 March 2020). <a href="https://www.w3.org/TR/owl-time/" class="bare">https://www.w3.org/TR/owl-time/</a></p>
+</dd>
+</dl>
+</div>
+<div id="TURTLE" class="dlist">
+<dl>
+<dt class="hdlist1">[TURTLE]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>RDF 1.1 Turtle - Terse RDF Triple Language</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/turtle/" class="bare">https://www.w3.org/TR/turtle/</a></p>
+</dd>
+</dl>
+</div>
+<div id="VOID" class="dlist">
+<dl>
+<dt class="hdlist1">[VOID]</dt>
+<dd>
+<p>DERI, <em>Vocabulary of Interlinked Datasets (VoID)</em>, OWL vocabulary (2010). <a href="http://vocab.deri.ie/void" class="bare">http://vocab.deri.ie/void</a></p>
+</dd>
+</dl>
+</div>
+<div id="XSD2" class="dlist">
+<dl>
+<dt class="hdlist1">[XSD2]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>XML Schema Part 2: Datatypes (Second Edition)</em>, W3C Recommendation (28 October 2004). <a href="https://www.w3.org/TR/xmlschema-2/" class="bare">https://www.w3.org/TR/xmlschema-2/</a></p>
 </dd>
 </dl>
 </div>
@@ -2095,7 +2220,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-12-22 13:03:28 UTC
+Last updated 2023-12-27 00:20:13 UTC
 </div>
 </div>
 </body>
