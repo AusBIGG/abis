@@ -661,6 +661,7 @@ pre.rouge {
 <li><a href="#_parts_of_abis">3.1. Parts of ABIS</a></li>
 <li><a href="#_namespaces">3.2. Namespaces</a></li>
 <li><a href="#_terms_definitions">3.3. Terms &amp; Definitions</a></li>
+<li><a href="#_conventions">3.4. Conventions</a></li>
 </ul>
 </li>
 <li><a href="#_introduction">4. Introduction</a>
@@ -1052,7 +1053,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <dl>
 <dt class="hdlist1">IRI</dt>
 <dd>
-<p>An <a href="https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier">Internationalized Resource Identifier</a> is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. <a href="https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince" class="bare">https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince</a> identifies the Queensland Geological Feature Anakie Province or for data only, e.g. <a href="https://w3id.org/tern/ontologies/tern/Text" class="bare">https://w3id.org/tern/ontologies/tern/Text</a> which identifies the class of 'Text' - textual results - within the <a href="#TERN Ontology">[TERN Ontology]</a>.</p>
+<p>An <a href="https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier">Internationalized Resource Identifier</a> is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. <a href="https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince" class="bare">https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince</a> identifies the Queensland Geological Feature Anakie Province or for data only, e.g. <a href="https://w3id.org/tern/ontologies/tern/Text" class="bare">https://w3id.org/tern/ontologies/tern/Text</a> which identifies the class of 'Text' - textual results - within the <a href="#TERNOntology">TERN Ontology</a>.</p>
 <div class="paragraph">
 <p>IRIs do not have to resolve - go somewhere online when clicked - but they do have to follow all the rules for URLs, such as no spaces.</p>
 </div>
@@ -1125,6 +1126,44 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <p>SPARQL is a query language for RDF. SPARQL matches patterns within RDF data to extract subsets of a graph. The results of SPARQL queries can be subset graphs or data in tabular form.</p>
 </dd>
 </dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conventions"><a class="anchor" href="#_conventions"></a>3.4. Conventions</h3>
+<h4 id="_figures" class="discrete">Figures</h4>
+<div class="paragraph">
+<p>In this document, figures showing model elements use the following key:</p>
+</div>
+<div id="key" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/key.svg"><img src="https://ausbigg.github.io/abis/img/key.svg" alt="ABIS Parts"></a>
+</div>
+<div class="title">Figure 2. Key of model figure elements. <code>Activity</code>, <code>Entity</code> and <code>Agent</code> are classes from <a href="#PROV">The Provenance Ontology</a> and indicate temporal events, all manner of things and people and organisations with agency, respectively. Where <code>prefix:ElementID</code> is used, the prefix refers to entries in the <a href="#_namespaces">Namespaces table</a>.</div>
+</div>
+<h4 id="_code" class="discrete">Code</h4>
+<div class="paragraph">
+<p>Where examples of ABIS data are given in this document, <a href="#RDFSPEC">RDF</a> data serialised in the <a href="#TURTLE">Turtle</a> format is used. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="nl">&lt;https://example.om/dataset/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">sdo:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+
+</span><span class="err">:</span><span class="n">x
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sdo:</span><span class="n">name</span><span class="w"> </span><span class="s">"Dataset X"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sdo:</span><span class="n">hasPart</span><span class="w"> </span><span class="nl">&lt;https://example.om/dataset/sample/y&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nl">&lt;https://example.om/dataset/sample/y&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sdo:</span><span class="n">name</span><span class="w"> </span><span class="s">"Sample Y"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above example data, while invalid according to the ABIS <a href="#_validation">Validator</a>, provides a simple example of a <em>dataset</em> and a <em>sample</em> and a relationship between them, encoded in Turtle.</p>
 </div>
 </div>
 </div>
@@ -1401,7 +1440,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/pattern-obs-result.svg"><img src="https://ausbigg.github.io/abis/img/pattern-obs-result.svg" alt="ABIS Parts"></a>
 </div>
-<div class="title">Figure 2. Two styles of Result: a numerical and a classification</div>
+<div class="title">Figure 3. Two styles of Result: a numerical and a classification</div>
 </div>
 <div class="paragraph">
 <p>Using this pattern, the thing that ties the result value to the property of the thing observed is the <em>observation</em>.</p>
@@ -1427,31 +1466,50 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/pattern-foi.svg"><img src="https://ausbigg.github.io/abis/img/pattern-foi.svg" alt="ABIS Parts" width="650"></a>
 </div>
-<div class="title">Figure 3. Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn&#8217;t affect its status as a Feature of Interest with respect to an Observation.</div>
+<div class="title">Figure 4. Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn&#8217;t affect its status as a Feature of Interest with respect to an Observation.</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_abis_identifiers"><a class="anchor" href="#_abis_identifiers"></a>5.3. ABIS Identifiers</h3>
 <div class="paragraph">
-<p>All data objects in ABIS are identified either with an <a href="#IRI">IRI</a> or as a <a href="#BN">Blank Node</a>. Classes and predicates defined in ABIS use the identifiers for them given in this document. Instances of classes, for example a particular sample, <em>Sample X</em> of the class <code><a href="#tern:Sample">Sample</code></a>, are identified by IRIs assigned to the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used.</p>
+<p>All data objects in ABIS are identified either with an <a href="#IRI">IRI</a> or as a <a href="#BN">Blank Node</a>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, <em>Sample Y</em> of the class <code><a href="#tern:Sample">Sample</code></a>, are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for <em>Sample Y</em> in <em>Dataset X</em> which also contains <em>Observation Z</em>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;http://example.com/dataset/x&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sdo:</span><span class="n">hasPart
+</span><span class="w">        </span><span class="nl">&lt;http://example.com/dataset/x/sample/y&gt;</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="nl">&lt;http://example.com/dataset/x/obs/z&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nl">&lt;http://example.com/dataset/x/sample/y&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nl">&lt;http://example.com/dataset/x/obs/z&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;http://example.com/dataset/x/sample/y&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Identifiers for datasets take the form <code><a href="https://{IRI-STEM}/{DATASET-ID}" class="bare">https://{IRI-STEM}/{DATASET-ID}</a></code> and act as a unique namespace for objects within it. If Dataset X contained Sample Y, we may have the following identifiers:</p>
+<p>Identifiers for datasets take the form <code><a href="https://{IRI-STEM}/{DATASET-ID}" class="bare">https://{IRI-STEM}/{DATASET-ID}</a></code> and act as a unique namespace for objects within it. If Dataset <code>abc-123-def-456</code> contained Sample Y, we may have the following identifiers:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Dataset X</strong>: <code>https://linked.data.gov.au/dataset/abc-123-def-456</code></p>
+<p><strong>Dataset abc-123-def-456</strong>: <code>https://linked.data.gov.au/dataset/abc-123-def-456</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>A unique dataset IRI issued by the <a href="https://linked.data.gov.au/agldwg">Australian Government Linked Data Working Group</a></p>
+<p>A unique dataset IRI issued by the <a href="https://linked.data.gov.au/agldwg">Australian Government Linked Data Working Group</a> using the <code>https://linked.data.gov.au/dataset/</code> namespace</p>
 </li>
 <li>
 <p>Other identifier issuing regimes/organisations may be used</p>
 </li>
 <li>
-<p>Dataset Namespace: <code>https://linked.data.gov.au/dataset/abc-123-def-456/</code> - ending in a '/'</p>
+<p>Dataset X&#8217;s Namespace: <code>https://linked.data.gov.au/dataset/abc-123-def-456/</code> - ending in a '/'</p>
 </li>
 </ul>
 </div>
@@ -1474,7 +1532,109 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 <div class="sect2">
 <h3 id="_alternate_identifiers"><a class="anchor" href="#_alternate_identifiers"></a>5.4. Alternate Identifiers</h3>
-
+<div class="paragraph">
+<p>Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.</p>
+</div>
+<div class="paragraph">
+<p>All forms of alternate identifiers may be recorded and how they are recorded and used depends on how they function.</p>
+</div>
+<h4 id="_alternate_iris" class="discrete">Alternate IRIs</h4>
+<div class="paragraph">
+<p>If an object already has an IRI identifier, and that identifier responds to <a href="#LinkedData">Linked Data</a> operations, it <em>MAY</em> be used as the primary identifier of the object.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If Dataset X contains a representation of Site Y and Site Y has the IRI of <code><a href="http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002" class="bare">http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002</a></code> assigned to it by TERN, then that IRI <em>MAY</em> be used as the IRI for the site as it is resolvable online, linking to RDF data (and human-readable data)</p>
+</li>
+<li>
+<p>If Dataset X contains a representation of Sample Z and Sample Z has an <a href="https://ev.igsn.org/">International GeoSample Identifier (IGSN)</a> or <a href="https://www.doi.org/">DOI</a> IRI of <code><a href="https://doi.org/10.58052/IECUR00N9" class="bare">https://doi.org/10.58052/IECUR00N9</a></code> then that IRI <em>MAY NOT</em> be used as the IRI for the sample for, while it resolves online to a web page, it does not link to RDF data</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If an object has a Linked Data IRI assigned to it AND another assigned to it within an ABIS data generation propcess, perhaps automatically, the two IRIs should be linked like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{ORIGINAL-IRI}&gt;</span><span class="w"> </span><span class="nn">owl:</span><span class="n">sameAs</span><span class="w"> </span><span class="nl">&lt;{NEW-IRI]}&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the <a href="#OWL2">OWL</a> predicate <a href="http://www.w3.org/2002/07/owl#sameAs"><code>owl:sameAs</code></a> indicates the two IRIs identify the same thing.</p>
+</div>
+<div class="paragraph">
+<p>If an object has an IRI assigned to it that does not link to RDF data, it should be recorded in the following manner:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{NEW-IRI]}&gt;</span><span class="w">
+    </span><span class="nn">sdo:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"{ORIGINAL-IRI}"</span><span class="p">^^{</span><span class="n">DATATYPE</span><span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">...</span><span class="w">  </span><span class="c1"># other properties</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the <code>{ORIGINAL-IRI}</code>, since it does not act as a Linked Data IRI, is indicated as being a literal of a specified data type.</p>
+</div>
+<div class="paragraph">
+<p>If the datatype of the <code>{ORIGINAL-IRI}</code> is of a known form, such as a DOI or IGSN, then that type might be found in the <em>BDR Datatypes Register</em> <mark>TODO: link to datatypes register</mark> and it should be used. If its type is not known or is a generic URL, the type <code>xsd:anyURI</code> should be used like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{NEW-IRI]}&gt;</span><span class="w">
+    </span><span class="nn">sdo:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"{ORIGINAL-IRI}"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">anyURI</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">...</span><span class="w">  </span><span class="c1"># other properties</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<h4 id="_alternate_ids_non_iris" class="discrete">Alternate IDs - non-IRIs</h4>
+<div class="paragraph">
+<p>Alternate identifiers for objects that are not IRIs/URLs <em>MUST</em> have their identifier regime indicated. For example, if Museum X issues identifiers for samples and Sample Y has an issued identifier of <code>SAM-Y1234</code>, then this should be given like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{SAMPLE-IRI]}&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sdo:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"SAM-Y1234"</span><span class="p">^^</span><span class="nn">ex:</span><span class="n">museum-x-id</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">...</span><span class="w">  </span><span class="c1"># other properties</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;where <code>{DATASET-IRI]}</code> is an IRI assigned to the <em>sample</em> and the predicate <code>sdo:identifier</code> is used to give the literal identifier value of <code>SAM-Y1234</code> which has the datatype <code>ex:museum-x-id</code> indicated.</p>
+</div>
+<div class="paragraph">
+<p>Datatypes such as the example <code>ex:museum-x-ids</code> used here <em>MUST</em> be registered to be useful.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>ABIS data destined for the Biodiversity Data Repository <em>MUST</em> have identifier datatypes registered in the <em>BDR Datatypes Register</em> <mark>TODO: link to datatypes register</mark></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Multiple alternate identifiers may be given, as long as their datatypes are unique:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{SAMPLE-IRI]}&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sdo:</span><span class="n">identifier
+</span><span class="w">        </span><span class="s">"SAM-Y1234"</span><span class="p">^^</span><span class="nn">ex:</span><span class="n">museum-x-id</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="s">"1073/SAMY"</span><span class="p">^^</span><span class="nn">ex:</span><span class="n">igsn</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">...</span><span class="w">  </span><span class="c1"># other properties</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1545,7 +1705,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/hierarchy.svg" alt="ABIS Parts"></a>
 </div>
-<div class="title">Figure 4. The profile hierarchy of the models within ABIS</div>
+<div class="title">Figure 5. The profile hierarchy of the models within ABIS</div>
 </div>
 </div>
 <div class="sect2">
@@ -2088,7 +2248,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <img src="https://ausbigg.github.io/abis/img/statuses-state-diagram.png" alt="Message statuses state diagram">
 </div>
-<div class="title">Figure 5. Message statuses state diagram</div>
+<div class="title">Figure 6. Message statuses state diagram</div>
 </div>
 <div class="ulist">
 <ul>
@@ -2325,7 +2485,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-12-27 01:34:59 UTC
+Last updated 2023-12-27 04:00:30 UTC
 </div>
 </div>
 </body>
