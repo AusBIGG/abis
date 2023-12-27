@@ -70,6 +70,9 @@ ABIS:: The Australian Biodiversity Standard - the data standard this document is
 [[BDR]]
 BDR:: Biodiversity Data Repository - a data collection managed by the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment] that incorporates biodiversity observations from State & Territory jurisdictions and aims to incorporate non-government data too
 
+[[BN]]
+Blank Node:: A Blank Node is a node within <<RDF, RDF>> data that does not have a globally unique or even persistent identifier, instead it is a node that is identifiable only in relation to the other nodes in the RDF data in which it is recorded. Blank Nodes are used to convey things that are entirely dependent on, and meaningless without, other things, for example values for `<<tern:Result, Result>>` classes.
+
 [[IRI]]
 IRI:: An https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier[Internationalized Resource Identifier] is a web address-style URL that is used as an identifier for something. It may be for a real-world object, e.g. https://linked.data.gov.au/dataset/qldgeofeatures/AnakieProvince identifies the Queensland Geological Feature Anakie Province or for data only, e.g. https://w3id.org/tern/ontologies/tern/Text which identifies the class of 'Text' - textual results - within the <<TERN Ontology>>.
 +

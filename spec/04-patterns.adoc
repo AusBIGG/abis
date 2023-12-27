@@ -2,4 +2,49 @@
 
 This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.
 
-===
+=== Observations & Results
+
+_This pattern is inherited from the <<TERNOntology, TERN Ontology>>, which, in turn, inherits it from <<SOSA, SOSA>>._
+
+The _result_ of any _observation_ in ABIS is a numerical or classification _value_ for an _observed property_ of a _feature of interest_ (see next pattern).
+
+The _observation_ act is a temporal activity which, recorded or not, follows some _procedure_.
+
+The _value_ may be qualified with units of measure and uncertainty.
+
+[#pattern-obs-result,link="img/pattern-obs-result.svg"]
+.Two styles of Result: a numerical and a classification
+image::img/pattern-obs-result.svg[ABIS Parts,align="center"]
+
+Using this pattern, the thing that ties the result value to the property of the thing observed is the _observation_.
+
+NOTE:: Since _observations_ record when a result was produced, multiple observations of the property of a thing can be recorded over time, such as multiple estimations of the taxon of a specimen.
+
+=== Feature of Interest
+
+A _feature of interest_ is the object of some activity's focus. This is a relative term: when an _observation_ considers the property of something - perhaps the colour of a part of a leaf - then the part leaf only - a sample of it - is the _feature of interest_. If the _observation_ were to consider the colour of the whole leaf, then the leaf is the _feature of interest_. If the colour of the whole bush from which the leaf came was considered, then the whole bush is the _feature of interest_.
+
+If the average colour of a whole area of bushland was considered, the _feature of interest_ would be the whole area, not any single bush or plant within it.
+
+[#pattern-foi,link="img/pattern-foi.svg"]
+.Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn't affect its status as a Feature of Interest with respect to an Observation.
+image::img/pattern-foi.svg[ABIS Parts,width="650",align="center"]
+
+=== ABIS Identifiers
+
+All data objects in ABIS are identified either with an <<IRI, IRI>> or as a <<BN, Blank Node>>. Classes and predicates defined in ABIS use the identifiers for them given in this document. Instances of classes, for example a particular sample, _Sample X_ of the class `<<tern:Sample, Sample`>>, are identified by IRIs assigned to the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used.
+
+Identifiers for datasets take the form `https://{IRI-STEM}/{DATASET-ID}` and act as a unique namespace for objects within it. If Dataset X contained Sample Y, we may have the following identifiers:
+
+* *Dataset X*: `+https://linked.data.gov.au/dataset/abc-123-def-456+`
+** A unique dataset IRI issued by the https://linked.data.gov.au/agldwg[Australian Government Linked Data Working Group]
+** Other identifier issuing regimes/organisations may be used
+** Dataset Namespace: `+https://linked.data.gov.au/dataset/abc-123-def-456/+` - ending in a '/'
+* *Sample Y*: `+https://linked.data.gov.au/dataset/abc-123-def-456/sample/y+`
+** Uses the Dataset Namespace and a class identifier (optional) of 'sample' and an ID for the particular sample - 'y'
+** Datasets can create identifiers for their elements, within their namespace however they like
+
+=== Alternate Identifiers
+
+
+
