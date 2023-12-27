@@ -57,11 +57,9 @@ include::05-models.adoc[]
 
 include::06-vocabs.adoc[]
 
-include::07-conformance.adoc[]
+include::07-validation.adoc[]
 
-include::08-validation.adoc[]
-
-include::09-mappings.adoc[]
+include::08-mappings.adoc[]
 
 include::99-references.adoc[]
 

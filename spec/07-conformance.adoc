@@ -1,3 +1,0 @@
-== Conformance
-
-#TODO: write this section#

@@ -1,3 +1,5 @@
 == Patterns
 
-#TODO: include Examples info#
+This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.
+
+===

@@ -21,32 +21,48 @@ The other parts of ABIS are:
 * *Validators*
 ** Data 'shape' files that can be used with validation tooling to check conformance of data to ABIS
 ** These are listed in the <<Validation, Validation Section>> but are published and maintained elsewhere
+* *Mappings*
+** Mappings of ABIS to/from other well-known standards or models in the same domain are given in the <<Mappings, Mappings Section>>
+* *Data Objects*
+** <<RDF, RDF>> expressions of this Standard, JSON-LD context files and RDF forms of the mappings are given in the sections that describe the human-readable forms of those objects
 
 
 === Namespaces
 
+Namespaces are used within the identifiers for model elements to ensure that they are globally unique. For example, the <<TERNOntology, TERN Ontology>>'s `Sample` class is identified by the <<IRI, IRI>> `https://w3id.org/tern/ontologies/tern/Sample` which distinguishes it from the <<SOSA, SOSA>> `Sample` class, identified with `http://www.w3.org/ns/sosa/Sample` that it is based on but extends.
+
+Namespaces are used in shortened form in documents and data by assigning them a prefix and the prefixes used in this document are given in the table below.
+
 [frame=none, grid=none, cols="1,3,3"]
 |===
 |Prefix | Namespace | Description
-|*`abis:`* | *`https://linked.data.gov.au/def/abis/`* | *ABIS namespace* - for the Standard as a whole
+|*`abis:`* | *`https://linked.data.gov.au/def/abis/`* | *ABIS namespace* - for this Standard
 |*`bdr:`* | *`https://linked.data.gov.au/dataset/bdr/`* | *BDR Dataset Namespace*
-|`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
 |`ex:` | `+http://example.com/thing+` | Generic examples namespace - _does not resolve_
-|`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
-|`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
-|`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
-|`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
-|`tern:` | `https://w3id.org/tern/ontologies/tern/` | TERN Ontology namespace
-|`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
-|`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
-|`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
+|`geo:` | `http://www.opengis.net/ont/geosparql#` | <<GSP, GeoSPARQL Ontology>> namespace
+|`owl:` | `http://www.w3.org/2002/07/owl#` | <<OWL2, Web Ontology Language ontology>> namespace
+|`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | <<RDFSSPEC, RDF Schema ontology>> namespace
+|`sosa:` | `http://www.w3.org/ns/sosa/` | <<SOSA, Sensor, Observation, Sample, and Actuator (SOSA) ontology>> namespace
+|`sdo:` | `https://schema.org/` | <<SDO, schema.org>> namespace
+|`skos:` | `http://www.w3.org/2004/02/skos/core#` | <<SKOS, Simple Knowledge Organization System (SKOS) ontology>> namespace
+|`tern:` | `https://w3id.org/tern/ontologies/tern/` | <<TERNOntology, TERN Ontology>> namespace
+|`time:` | `http://www.w3.org/2006/time#` | <<TIME, Time Ontology>> in OWL namespace
+|`void:` | `http://rdfs.org/ns/void#` | <<VOID, Vocabulary of Interlinked Data (VoID) ontology>> namespace
+|`xsd:` | `http://www.w3.org/2001/XMLSchema#` | <<XSD2, XML Schema Definitions ontology>> namespace
 |===
 
+Using the table above, the <<TERNOntology, TERN Ontology>>'s `Sample` class would be identified as `tern:Sample` and the <<SOSA, SOSA>> `Sample` class as `sosa:Sample`.
+
+[NOTE]
+====
 A JSON-LD _context_ built from this namespaces table is available as another resource within the ABIS specification and is online at:
 
-* https://linked.data.gov.au/def/abis/context.json
+https://linked.data.gov.au/def/abis/context.json
+====
 
 === Terms & Definitions
+
+The following terms & definitions are used throughout this document.
 
 [[ABIS]]
 ABIS:: The Australian Biodiversity Standard - the data standard this document is about
@@ -69,7 +85,7 @@ Knowledge Graph:: A data holding that implements node-edge-node (graph) data str
 Linked Data:: A series of technologies and methodologies for the publication of data on the Internet. Uses <<RDF, RDF>> as its underlying data structure, <<OWL, OWL>> as its data model and the common mechanics of the Domain Name System (DNS) and the Hypertext Transfer Protocol (HTTP) to identify and share its data.
 
 [[OWL]]
-OWL:: The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language for the Semantic Web with formally defined meaning. OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents. OWL 2 ontologies can be used along with information written in RDF, and OWL 2 ontologies themselves are primarily exchanged as RDF documents. OWL
+OWL:: The OWL 2 Web Ontology Language, informally OWL 2, is an ontology language for the Semantic Web with formally defined meaning. OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents. OWL 2 ontologies can be used along with information written in RDF, and OWL 2 ontologies themselves are primarily exchanged as RDF documents. Reference: <<OWL2, OWL2>>
 
 [[Predicate]]
 Predicate:: Predicates, within formal OWL modelling, are the defined relations between objects of different classes (see <<Class, Class>>) and also between objects and simple data values such as numbers and dates. For example, if Person X "knows" Person Y, then we can use a predicate of _knows_ to relate them.
@@ -77,7 +93,7 @@ Predicate:: Predicates, within formal OWL modelling, are the defined relations b
 Frequently we use predicates already defined in existing ontologies. "knows", for example, is defined in the schema.org ontology <<SDO, SDO>> to be "The most generic bi-directional social/work relation".
 
 [[RDF]]
-RDF:: The Resource Description Framework (RDF) is a data structure for representing information on the Web. RDF is made of identified nodes linked by typed edges that form graphs. Node/edge/node associations are often called 'triples'.
+RDF:: The Resource Description Framework (RDF) is a data structure for representing information on the Web. RDF is made of identified nodes linked by typed edges that form graphs. Node/edge/node associations are often called 'triples'. Reference: <<RDFSPEC, RDF>>
 
 [[SemanticWeb]]
 Semantic Web:: A vision of a machine-understandable Internet, created in the year 2000, and thought to be attainable through the use of Linked Data.
