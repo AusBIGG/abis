@@ -1,3 +1,8 @@
 == Abstract
 
 This document is the normative specification of the Australian Biodiversity Information Standard (ABIS) and includes its authoritative statements on parts, requirements and patterns.
+
+[NOTE]
+====
+The one-stop-shop for ABIS is the https://abis.dev.kurrawong.ai[ABIS Portal]. It contains example data, vocabularies and validators that you can play with online, without needing to install anything. Go there if you are new to ABIS.
+====
