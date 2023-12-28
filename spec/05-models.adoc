@@ -44,7 +44,54 @@ The Component Models of ABIS are:
 * <<Data Release Model, Data Release Model>>
 
 ==== TERN Ontology
-nsl-model-overview
+
+The <<TERNOntology, TERN Ontology>> is a re-skinned, and slightly extended, version of the <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> to better cater for the biodiversity community.
+
+The main patterns within the TERN Ontology are for _observation_ and _sampling_. The _observation_ patterns are inherited directly from SOSA and are essentially as per the following figure.
+
+[#tern-sosa,link="img/tern-sosa.svg"]
+.Classes and predicates from the <<SOSA, SOSA ontology>> used directly within the <<TERNOntology, TERN Ontology>>.
+image::img/tern-sosa.svg[TERN's Observation pattern,align="center",width=650]
+
+This pattern sees instances of the class `Observation` - individual acts of a person or a sensor observing something - following procedures to observe properties of a `Feature Of Interest` which could be a surveyed site, a material sample or even a satellite images (which would, in turn, be a sample of the land imaged). `Observation` instances produce `Result` instances which contain categorisations, numerical values, units of measure and so on, as necessary to well characterise the observed property quantity or category.
+
+The <<PROV, Provenance Ontology>> offers a generic perspective on _observation_ and _sampling_ with its take on the _observation_ pattern above given in the figure below. This is as per the <<Provenance, Provenance Pattern>> described in the <<Patterns, Patterns Section>>.
+
+[#tern-prov,link="img/tern-prov.svg"]
+.The <<PROV, PROV>> perspective on the classes and predicates in the <<#tern-sosa, TERN Ontology's Observation pattern>>
+image::img/tern-prov.svg[PROV interpretation of observation,align="center",width=550]
+
+The TERN Ontology's _sampling_ pattern follows SOSA too but uses specialised classes for `Site`, `Survey` and other things familiar to staff who have undertaken biodiversity surveys in the field. The general pattern is as the figure below.
+
+[#tern-samping,link="img/tern-sampling.svg"]
+.Classes and predicates within the <<TERNOntology, TERN Ontology>> used to characterise sampling. The `is sample of` predicate can be derived from relations between a `Sample`, the `Sampling` and the `Site`. Note the similarity of structure to the <<#tern-sosa, SOSA Observation pattern>>.
+image::img/tern-sampling.svg[TERN's Observation pattern,align="center",width=650]
+
+TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class like this:
+
+----
+ex:dataset-x
+    a tern:RDFDataset ;
+    # ... dataset metadata
+.
+
+ex:sample-y
+    a tern:Sample ;
+    # ...
+    void:inDataset ex:dataset-x ;
+.
+
+ex:obs-z
+    a tern:Observation ;
+    # ...
+    void:inDataset ex:dataset-x ;
+    sosa:hasFeatureOfInterest ex:sample-y ;
+.
+----
+
+Further details of the TERN Ontology's classes, predicates and patterns of expected use are documented at:
+
+* https://linkeddata.tern.org.au/information-models/overview
 
 ==== NSL Model
 
