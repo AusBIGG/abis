@@ -675,10 +675,11 @@ pre.rouge {
 </li>
 <li><a href="#_patterns">5. Patterns</a>
 <ul class="sectlevel2">
-<li><a href="#_observations_results">5.1. Observations &amp; Results</a></li>
-<li><a href="#_feature_of_interest">5.2. Feature of Interest</a></li>
-<li><a href="#_abis_identifiers">5.3. ABIS Identifiers</a></li>
-<li><a href="#_alternate_identifiers">5.4. Alternate Identifiers</a></li>
+<li><a href="#_process_flow">5.1. Process Flow</a></li>
+<li><a href="#_observations_results">5.2. Observations &amp; Results</a></li>
+<li><a href="#_feature_of_interest">5.3. Feature of Interest</a></li>
+<li><a href="#_abis_identifiers">5.4. ABIS Identifiers</a></li>
+<li><a href="#_alternate_identifiers">5.5. Alternate Identifiers</a></li>
 </ul>
 </li>
 <li><a href="#_models">6. Models</a>
@@ -688,8 +689,10 @@ pre.rouge {
 <li><a href="#_foreground_model">6.3. Foreground Model</a></li>
 <li><a href="#_component_models">6.4. Component Models</a>
 <ul class="sectlevel3">
-<li><a href="#_projects_model">6.4.1. Projects Model</a></li>
-<li><a href="#_data_release_model">6.4.2. Data Release Model</a></li>
+<li><a href="#_tern_ontology">6.4.1. TERN Ontology</a></li>
+<li><a href="#_nsl_model">6.4.2. NSL Model</a></li>
+<li><a href="#_projects_model">6.4.3. Projects Model</a></li>
+<li><a href="#_data_release_model">6.4.4. Data Release Model</a></li>
 </ul>
 </li>
 <li><a href="#_background_models">6.5. Background Models</a></li>
@@ -699,24 +702,24 @@ pre.rouge {
 <li><a href="#_validation">8. Validation</a></li>
 <li><a href="#_mappings">9. Mappings</a></li>
 <li><a href="#_references">10. References</a></li>
-<li><a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>
+<li><a href="#annex-a">Annex A: Projects Model</a>
 <ul class="sectlevel2">
-<li><a href="#_domain_model">Domain Model</a></li>
-<li><a href="#_bdr_system">BDR System</a></li>
-<li><a href="#_vocabularies_2">Vocabularies</a></li>
-<li><a href="#_background_ontologies">Background Ontologies</a></li>
+<li><a href="#_classes">Classes</a>
+<ul class="sectlevel3">
+<li><a href="#Project">Project</a></li>
+<li><a href="#Program">Program</a></li>
 </ul>
 </li>
-<li><a href="#_annex_b_biodiversity_data_repository">Annex B: Biodiversity Data Repository</a>
+<li><a href="#_predicates">Predicates</a></li>
+</ul>
+</li>
+<li><a href="#annex-b">Annex A: Data Release Model</a>
 <ul class="sectlevel2">
-<li><a href="#_a_1_bdr_description">A.1 BDR Description</a></li>
-<li><a href="#_a_2_sending_messages_to_the_bdr">A.2 Sending messages to the BDR</a></li>
-<li><a href="#_a_3_following_message_absorption_progress">A.3 Following message absorption progress</a>
+<li><a href="#_classes_2">Classes</a></li>
+<li><a href="#_predicates_2">Predicates</a>
 <ul class="sectlevel3">
-<li><a href="#_a_3_1_bdr_gateway_status_endpoint">A.3.1 BDR Gateway status endpoint</a></li>
-<li><a href="#_a_3_2_message_statuses">A.3.2 Message statuses</a></li>
-<li><a href="#_a_3_3_message_status_state_diagram">A.3.3 Message status state diagram</a></li>
-<li><a href="#_a_3_4_message_status_rdf">A.3.4 Message status RDF</a></li>
+<li><a href="#embargoedUntil">embargoed until</a></li>
+<li><a href="#embargoPeriod">embargo period</a></li>
 </ul>
 </li>
 </ul>
@@ -1216,14 +1219,11 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#NSLM">National Species List Model</a></p>
+<p><a href="#BIRO">Bibliographic Reference Ontology (BiRO)</a></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The Semantic Web form of the <a href="https://biodiversity.org.au">National Species List</a>'s data model</p>
-</li>
-<li>
-<p>Used to model taxonomic names, their references to literature and relations to taxa</p>
+<p>A model for the description of reference lists and bibliographic references themselves</p>
 </li>
 </ul>
 </div>
@@ -1423,7 +1423,13 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <p>This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.</p>
 </div>
 <div class="sect2">
-<h3 id="_observations_results"><a class="anchor" href="#_observations_results"></a>5.1. Observations &amp; Results</h3>
+<h3 id="_process_flow"><a class="anchor" href="#_process_flow"></a>5.1. Process Flow</h3>
+<div class="paragraph">
+<p>Activity &#8594; Entity</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observations_results"><a class="anchor" href="#_observations_results"></a>5.2. Observations &amp; Results</h3>
 <div class="paragraph">
 <p><em>This pattern is inherited from the <a href="#TERNOntology">TERN Ontology</a>, which, in turn, inherits it from <a href="#SOSA">SOSA</a>.</em></p>
 </div>
@@ -1455,7 +1461,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_feature_of_interest"><a class="anchor" href="#_feature_of_interest"></a>5.2. Feature of Interest</h3>
+<h3 id="_feature_of_interest"><a class="anchor" href="#_feature_of_interest"></a>5.3. Feature of Interest</h3>
 <div class="paragraph">
 <p>A <em>feature of interest</em> is the object of some activity&#8217;s focus. This is a relative term: when an <em>observation</em> considers the property of something - perhaps the colour of a part of a leaf - then the part leaf only - a sample of it - is the <em>feature of interest</em>. If the <em>observation</em> were to consider the colour of the whole leaf, then the leaf is the <em>feature of interest</em>. If the colour of the whole bush from which the leaf came was considered, then the whole bush is the <em>feature of interest</em>.</p>
 </div>
@@ -1470,7 +1476,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_abis_identifiers"><a class="anchor" href="#_abis_identifiers"></a>5.3. ABIS Identifiers</h3>
+<h3 id="_abis_identifiers"><a class="anchor" href="#_abis_identifiers"></a>5.4. ABIS Identifiers</h3>
 <div class="paragraph">
 <p>All data objects in ABIS are identified either with an <a href="#IRI">IRI</a> or as a <a href="#BN">Blank Node</a>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, <em>Sample Y</em> of the class <code><a href="#tern:Sample">Sample</code></a>, are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for <em>Sample Y</em> in <em>Dataset X</em> which also contains <em>Observation Z</em>:</p>
 </div>
@@ -1531,7 +1537,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_alternate_identifiers"><a class="anchor" href="#_alternate_identifiers"></a>5.4. Alternate Identifiers</h3>
+<h3 id="_alternate_identifiers"><a class="anchor" href="#_alternate_identifiers"></a>5.5. Alternate Identifiers</h3>
 <div class="paragraph">
 <p>Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.</p>
 </div>
@@ -1701,20 +1707,20 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="paragraph">
 <p>The following figure depicts the profiling relationships between the various models within ABIS.</p>
 </div>
-<div id="hierarchy" class="imageblock">
+<div id="hierarchy" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/hierarchy.svg" alt="ABIS Parts"></a>
 </div>
-<div class="title">Figure 5. The profile hierarchy of the models within ABIS</div>
+<div class="title">Figure 5. The profile hierarchy of the models within ABIS. All the arrows indicate dependency or, formally, <a href="https://www.w3.org/TR/dx-prof/#Property:isProfileOf"><code>prof:isProfileOf</code></a> relationships between the models, shown as rectangles. The ABIS model itself is the union of the NSL Model, the TERN Ontology and the ABIS Component Models.</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_foreground_model"><a class="anchor" href="#_foreground_model"></a>6.3. Foreground Model</h3>
 <div class="paragraph">
-<p>The Foreground Model for ABIS is the union of the TERN Ontology and the ABIS Component Models.</p>
+<p>The ABIS Foreground Model is the union of the NSL Model, the TERN Ontology and the ABIS Component Models, as shown in <a href="#hierarchy">Figure 5</a>, above.</p>
 </div>
 <div class="paragraph">
-<p>The Foreground Model is not directly defined here other that the statement above since each of the parts are defined below.</p>
+<p>When modelling biodiversity observations - ABIS' main concern - ABIS uses the <a href="#TERNOntology">TERN Ontology</a>. When modelling taxonomic name objects, ABIS uses the <a href="#NSLM">NSL Model</a>. When project information and data release details are modelled, the <a href="#_projects_model">ABIS Projects</a> &amp; <a href="#_data_release_model">ABIS Data Release</a> models are used.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1728,6 +1734,9 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <p>The <a href="#TERNOntology">TERN Ontology</a></p>
 </li>
 <li>
+<p>The <a href="#NSLM">NSL Model</a></p>
+</li>
+<li>
 <p><a href="#_projects_model">Projects Model</a></p>
 </li>
 <li>
@@ -1736,22 +1745,141 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_projects_model"><a class="anchor" href="#_projects_model"></a>6.4.1. Projects Model</h4>
+<h4 id="_tern_ontology"><a class="anchor" href="#_tern_ontology"></a>6.4.1. TERN Ontology</h4>
 <div class="paragraph">
-<p>Projects Model</p>
+<p>nsl-model-overview</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_data_release_model"><a class="anchor" href="#_data_release_model"></a>6.4.2. Data Release Model</h4>
+<h4 id="_nsl_model"><a class="anchor" href="#_nsl_model"></a>6.4.2. NSL Model</h4>
 <div class="paragraph">
-<p>Data Release Model</p>
+<p>An overview of the main classes and predicates of the NSL Model is given in the figure below.</p>
+</div>
+<div id="nsl-model-overview" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/nsl-model-overview.svg"><img src="https://ausbigg.github.io/abis/img/nsl-model-overview.svg" alt="NSL Model Overview" width="700"></a>
+</div>
+<div class="title">Figure 6. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
+</div>
+<div class="paragraph">
+<p>The NSL Model associates the class <a href="https://kurrawong.github.io/nsl-model/spec.html#Taxon"><code>Taxon</code></a> representing "A group of organisms considered by taxonomists to form a homogeneous unit" with names for them - <a href="https://kurrawong.github.io/nsl-model/spec.html#TaxonName"><code>Taxon Name</code></a> - and usage of that name in literature - instances of the class <a href="https://kurrawong.github.io/nsl-model/spec.html#Usage"><code>Usage</code></a>, which is a special type of <a href="http://www.sparontologies.net/ontologies/biro"><code>BibliographicReference</code></a> that quotes the <code>Taxon Name</code> as used in a <a href="https://schema.org/CreativeWork"><code>CreativeWork</code></a>. It also allows the citation of <code>Usage</code> instances bu other <code>Usage</code> instances.</p>
+</div>
+<div class="paragraph">
+<p>The join point between the NSL Model and the TERN Ontology is on the <code>Result</code> of an <code>Observation</code> being the assignment of a <code>Taxon Name</code> to a <code>Feature of Interest</code> (probably a <code>Sample</code>) as per the figure below:</p>
+</div>
+<div id="nsl-join" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/nsl-model-overview.svg"><img src="https://ausbigg.github.io/abis/img/nsl-join.svg" alt="NSL Model Overview" width="550"></a>
+</div>
+<div class="title">Figure 7. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
+</div>
+<div class="paragraph">
+<p>According to the NSL Model, a <code>Taxon</code>, rather than a <code>Taxon Name</code> <em>may</em> be assigned to a <code>Feature of Interest</code>, but the NSL Model encourages the use of <code>Taxon Name</code> instances, not <code>Taxon</code>. See the NSL Model&#8217;s <mark>Section XX</mark> for the rules about when Taxon assignment can be made.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_projects_model"><a class="anchor" href="#_projects_model"></a>6.4.3. Projects Model</h4>
+<div class="paragraph">
+<p>ABIS contains a simple model of Projects where a <a href="#Project"><code>Project</code></a> is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective". The Model is fully described in <a href="#annex-a">Annex A: Projects Model</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following figure illustrates the basic relationships of the class <a href="#Project"><code>Project</code></a> and <a href="#Program"><code>Program</code></a>, the only other class defined by the model.</p>
+</div>
+<div id="proj-hierarchy" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/proj-hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/proj-hierarchy.svg" alt="Projects Model Class Hierarchy" width="400"></a>
+</div>
+<div class="title">Figure 8. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
+</div>
+<div class="paragraph">
+<p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class - are produced by instances of <a href="#Project"><code>Project</code></a> as per the figure below.</p>
+</div>
+<div id="proj-join" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/proj-join.svg"><img src="https://ausbigg.github.io/abis/img/proj-join.svg" alt="Projects Model Join Poin" width="400"></a>
+</div>
+<div class="title">Figure 9. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> instances.</div>
+</div>
+<div class="paragraph">
+<p>See <a href="#annex-a">Annex A</a> for more details about the Project Model.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_data_release_model"><a class="anchor" href="#_data_release_model"></a>6.4.4. Data Release Model</h4>
+<div class="paragraph">
+<p>ABIS contains a simple model for describing aspects of data release: to whom, under what circumstances and when data may be released. The Model is fully described in <a href="#annex-b">Annex B: Data Release Model</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following figure illustrates the basic elements of this model.</p>
+</div>
+<div id="data-realse-overview" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/data-release.svg"><img src="https://ausbigg.github.io/abis/img/data-release.svg" alt="Overview of the Data Release Model" width="350"></a>
+</div>
+<div class="title">Figure 10. An overview of the Data Release Model</div>
+</div>
+<div class="paragraph">
+<p>The Data Release Model defines predicates - <a href="#embargoedUntil">embargoed until</a> &amp; <a href="#embargoPeriod">embargo period</a> - which can be applied to instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class which set absolute or relative embargo release times. The model details the relations between these predicates.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_background_models"><a class="anchor" href="#_background_models"></a>6.5. Background Models</h3>
 <div class="paragraph">
-<p>The Background Models within ABIS are all those profiled by the Component Models.</p>
+<p>The Background Models within ABIS are all those profiled by the Component Models. They are shown visually in the <a href="#hierarchy">Model Dependency Hierarchy</a>, above.</p>
+</div>
+<div class="paragraph">
+<p>The main Background Models for ABIS are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#DWC">Darwin Core</a> - specialised properties for biodiversity modelling</p>
+</li>
+<li>
+<p><a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> - sampling, observation &amp; results modelling</p>
+</li>
+<li>
+<p><a href="#GSP">GeoSPARQL</a> - for spatial object modelling</p>
+</li>
+<li>
+<p><a href="#PROV">Provenance Ontology (PROV)</a> - for the lineage and attribution of data</p>
+</li>
+<li>
+<p><a href="#SDO">schema.org</a> - for general-purpose attributes like names, dates, simple metadata etc.</p>
+</li>
+<li>
+<p><a href="#BIRO">Bibliographic Reference Ontology (BiRO)</a> - for the description of reference lists and bibliographic references themselves</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Of these models, all provide Semantic Web rules that can be used for data validation except for Darwin Core. Validators for each of these models, other than Darwin Core, are given in the <a href="#_validation">Validation Section</a>. These validators may be used individually or combined, within the ABIS Validator.</p>
+</div>
+<div class="paragraph">
+<p>These models in turn profile several fundamental Semantic Web models:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#OWL2">OWL</a></p>
+</li>
+<li>
+<p><a href="#RDFSSPEC">RDF Schema</a></p>
+</li>
+<li>
+<p><a href="#RDFSPEC">RDF</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Neither these models nor ABIS provide validators, however syntactic and some semantic data validation for RDF, RDFS &amp; OWL data is built in to many Semantic Web / Linked Data tooling and, for example, syntactically invalid RDF data will not be able to be processed by ABIS other validators.</p>
+</div>
+<div class="paragraph">
+<p>Additional Background Models - <a href="#PROF">the Profiles Vocabulary</a> &amp; <a href="#OLIS">Olis</a> - are used to describe the relationships between ABIS models and between units of ABIS data within datasets, respectively, and do not need to be directly considered by users of ABIS: their impact is felt within the descriptions of this specification document itself.</p>
+</div>
+<div class="paragraph">
+<p>Specific details of all these Background Models are not directly given here, other than certain patterns they impose and these are presented in the <a href="#_patterns">Patterns Section</a>.</p>
 </div>
 </div>
 </div>
@@ -1786,6 +1914,14 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="sect1">
 <h2 id="_references"><a class="anchor" href="#_references"></a>10. References</h2>
 <div class="sectionbody">
+<div id="BIRO" class="dlist">
+<dl>
+<dt class="hdlist1">BIRO</dt>
+<dd>
+<p>Di Iorio, A., Nuzzolese, A. G., Peroni, S., Shotton, D., Vitali, F. <em>Describing bibliographic references in RDF</em>. In Garcia Castro, A., Lange, C., Lord, P., Stevens, R. (Eds.), Proceedings of 4th Workshop on Semantic Publishing (SePublica 2014), CEUR Workshop Proceedings 1155. Aachen, Germany: CEUR-WS.org. <a href="http://ceur-ws.org/Vol-1155/paper-05.pdf" class="bare">http://ceur-ws.org/Vol-1155/paper-05.pdf</a> (Open Access). Ontology description online at <a href="http://www.sparontologies.net/ontologies/biro" class="bare">http://www.sparontologies.net/ontologies/biro</a></p>
+</dd>
+</dl>
+</div>
 <div id="DWC" class="dlist">
 <dl>
 <dt class="hdlist1">DWC</dt>
@@ -1941,176 +2077,39 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annex_a_abis_parts"><a class="anchor" href="#_annex_a_abis_parts"></a>Annex A: ABIS Parts</h2>
+<h2 id="annex-a"><a class="anchor" href="#annex-a"></a>Annex A: Projects Model</h2>
 <div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-This Annex is normative.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
-<p>This annex lists the major information elements of the ABIS specification: the domain and background ontologies, their supporting vocabularies and other elements approved for use by the ABIS Working Group.</p>
+<p>This is Annex A.</p>
 </div>
 <div class="sect2">
-<h3 id="_domain_model"><a class="anchor" href="#_domain_model"></a>Domain Model</h3>
-<div class="paragraph">
-<p>The ABIS specification&#8217;s domain model is based on the TERN Ontology and includes it, the vocabularies required/approved for use with it and its model dependencies (background ontologies). There are also a series of "mapping" ontologies that relate ABIS data to other models.</p>
+<h3 id="_classes"><a class="anchor" href="#_classes"></a>Classes</h3>
+<div class="sect3">
+<h4 id="Project"><a class="anchor" href="#Project"></a>Project</h4>
+
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Model</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://linkeddata.tern.org.au/viewers/tern-ontology">TERN Ontology</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Vocabularies</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e" target="_blank" rel="noopener">Parameter Types</a></p>
-</li>
-<li>
-<p><a href="http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d" target="_blank" rel="noopener">Feature Types</a></p>
-</li>
-<li>
-<p><a href="http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8" target="_blank" rel="noopener">Instrument Types</a></p>
-</li>
-<li>
-<p><a href="http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924" target="_blank" rel="noopener">Attributes</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Background Ontologies</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.w3.org/TR/vocab-ssn/" target="_blank" rel="noopener">Sensor, Observation, Sample, and Actuator (SOSA) Ontology</a></p>
-</li>
-<li>
-<p><a href="https://dwc.tdwg.org/rdf/" target="_blank" rel="noopener">Darwin Core (DWC)</a></p>
-</li>
-<li>
-<p><a href="https://www.w3.org/2004/02/skos/">SKOS</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Mapping Ontologies - <em>aspirational!</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://rawcdn.githack.com/CSIRO-enviro-informatics/PUV-ont/dd2d8762f80a58e618269593e99d3f840de0f150/puv.html" target="_blank" rel="noopener">Parameter Usage Vocabulary Ontology (PUV)</a></p>
-</li>
-<li>
-<p><a href="https://i-adopt.github.io/index.html" target="_blank" rel="noopener">I-ADOPT Framework Ontology (I-ADOPT)</a></p>
-</li>
-<li>
-<p>Location Integration Capability Ontology (LOC)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<div class="sect3">
+<h4 id="Program"><a class="anchor" href="#Program"></a>Program</h4>
+
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bdr_system"><a class="anchor" href="#_bdr_system"></a>BDR System</h3>
-<div class="paragraph">
-<p>The BDR system has model requirements for information management and use that extend beyond the ABIS Domain Model:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Models</p>
-<div class="ulist">
-<ul>
-<li>
-<p>BDR Messaging Ontology</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Incorporated within the BDR</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Background Ontologies</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.w3.org/TR/dx-prof/">Profiles Vocabulary (PROF)</a></p>
-</li>
-<li>
-<p><a href="https://pav-ontology.github.io/pav/">Provenance, Authoring, and Versioning Ontology (PAV)</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_vocabularies_2"><a class="anchor" href="#_vocabularies_2"></a>Vocabularies</h3>
-<div class="paragraph">
-<p>These vocabularies are used by the ontologies listed above.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_background_ontologies"><a class="anchor" href="#_background_ontologies"></a>Background Ontologies</h3>
-<div class="paragraph">
-<p>These ontologies are relied on (imported by or used by) the ontologies and vocabularies above.</p>
-</div>
+<h3 id="_predicates"><a class="anchor" href="#_predicates"></a>Predicates</h3>
+
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annex_b_biodiversity_data_repository"><a class="anchor" href="#_annex_b_biodiversity_data_repository"></a>Annex B: Biodiversity Data Repository</h2>
+<h2 id="annex-b"><a class="anchor" href="#annex-b"></a>Annex A: Data Release Model</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This Annex contains information about the Biodiversity Data Repository (BDR) that is a major implementing system of the ABIS.</p>
+<div id="data-realse" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/data-release.svg"><img src="https://ausbigg.github.io/abis/img/data-release.svg" alt="Overview of the Data Release Model" width="350"></a>
+</div>
+<div class="title">Figure 11. An overview of the Data Release Model</div>
 </div>
 <div class="paragraph">
-<p>The BDR is visible online at <a href="https://bdr.gov.au" class="bare">https://bdr.gov.au</a></p>
-</div>
-<div class="sect2">
-<h3 id="_a_1_bdr_description"><a class="anchor" href="#_a_1_bdr_description"></a>A.1 BDR Description</h3>
-<div class="paragraph">
-<p>The BDR&#8217;s data is predicated on ABIS - all data within the BDR is ABIS-conformant - however the BDR also contains extensions to ABIS to cater for system-specific needs. For example, the BDR requires that ABIS information sent to it for storage be packaged in <em>BDR Messages</em> and the BDR defines a <em>BDR Messages Ontology</em> that contains the data model for those messages. The BDR also employs some backgrounding ontologies for enhanced data versioning such as <em>Provenance Annotation &amp; Versioning</em></p>
-</div>
-<div class="paragraph">
-<p>The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <a href="#_bdr_system">BDR System</a>.</p>
-</div>
-<div class="paragraph">
-<p>All interactions with the BDR around messages take place via the BDR Gateway, which is the API provided for this purpose. It is online at <a href="https://gateway.bdr.gov.au" class="bare">https://gateway.bdr.gov.au</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_a_2_sending_messages_to_the_bdr"><a class="anchor" href="#_a_2_sending_messages_to_the_bdr"></a>A.2 Sending messages to the BDR</h3>
-<div class="paragraph">
-<p>Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message&#8217;s placeholder IRI is replaced with a persistent identifier of the form <code>https://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> where the <code>&lt;MESSAGE-ID&gt;</code> is assigned by the BDR.</p>
-</div>
-<div class="paragraph">
-<p>The BDR Gateway replies to a client sending a message with the message&#8217;s persistent identifier. This PID can then be used to check progress of the message&#8217;s absorption into the BDR, see the next section.</p>
+<p>This model is for describing aspects of data release: to whom, under what circumstances and when data may be released.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2120,364 +2119,155 @@ This Annex is normative.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Persistent Identifiers created for messages by the BDR use the same namespace as other BDR objects however unlike many BDR <code>site</code>, <code>Sampling</code>, <code>Observation</code> &amp; <code>Sample</code> instances, messages sent to the BDR are not public. This means you cannot just load a message&#8217;s PID into a web browser and be taken to a representation of that message.</p>
-</div>
-<div class="paragraph">
-<p>I.e., IRIs of the form <code>https://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> do not resolve, by design.</p>
+<p>Currently, the Data Release model only handles data embargos but it is likely to be expanded as data release/restriction concerns are found to be important within the ABIS community. Please communicate any data release modelling issues to the BDR Team using the <a href="#_metadata">"Contacts"</a> details.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_classes_2"><a class="anchor" href="#_classes_2"></a>Classes</h3>
+<div class="paragraph">
+<p>This model defines none of its own classes and only indicates the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class for use with the predicates it does define.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_a_3_following_message_absorption_progress"><a class="anchor" href="#_a_3_following_message_absorption_progress"></a>A.3 Following message absorption progress</h3>
+<h3 id="_predicates_2"><a class="anchor" href="#_predicates_2"></a>Predicates</h3>
 <div class="sect3">
-<h4 id="_a_3_1_bdr_gateway_status_endpoint"><a class="anchor" href="#_a_3_1_bdr_gateway_status_endpoint"></a>A.3.1 BDR Gateway status endpoint</h4>
-<div class="paragraph">
-<p>Using the persistent identifier of a message, you can track the status of that message regarding it&#8217;s absorbtion into the BDR by using the BDR Gateway&#8217;s message status endpoint, <code>/status</code>, which is online at <code>https://gateway.bdr.gov.au/status</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-In the development phase of the BDR, the BDR Gateway is online at <a href="http://bdrgateway.surroundaustralia.com" class="bare">http://bdrgateway.surroundaustralia.com</a>, thus the status endpoint is <a href="http://bdrgateway.surroundaustralia.com/status" class="bare">http://bdrgateway.surroundaustralia.com/status</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The BDR Gateway&#8217;s status endpoint accepts just one parameter, "iri", which is the IRI of the item you are requesting the status of. For example, the status of a message with IRI <code>https://linked.data.gov.au/dataset/bdr/message/1234</code> may be requested like so:</p>
-</div>
-<div class="paragraph">
-<p><a href="http://bdrgateway.surroundaustralia.com/status?iri=https://linked.data.gov.au/dataset/bdr/message/1234" class="bare">http://bdrgateway.surroundaustralia.com/status?iri=https://linked.data.gov.au/dataset/bdr/message/1234</a></p>
-</div>
-<div class="paragraph">
-<p>The responses that the BDR Gateway will provide are RDF messages based on the statuses in the next section.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_a_3_2_message_statuses"><a class="anchor" href="#_a_3_2_message_statuses"></a>A.3.2 Message statuses</h4>
-<div class="paragraph">
-<p>The table below indicates the statuses of messages sent to the BDR.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Messages submitted to the BDR Gateway only have their status tracked <em>after</em> they are calculated to be valid according to the Gateway&#8217;s SHACL validators (see <a href="http://bdrgateway.surroundaustralia.com/validators" class="bare">http://bdrgateway.surroundaustralia.com/validators</a>). This means there is no status for "not valid" or even "valid": not valid messages are indecated as such on submission and valid messages are assigned a persistent identifier (PID) which is then used for status tracking.
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-none grid-none stripes-even stretch">
-<caption class="title">Table 1. Message statuses</caption>
+<h4 id="embargoedUntil"><a class="anchor" href="#embargoedUntil"></a>embargoed until</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 83.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">ID</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>submitted</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message has been submitted to tbe BDR via the BDR Gateway and has passed validation and had a persistent IRI assigned to it, but not yet processed further</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abis:embargoedUntil</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>duplicate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indicated with an <code>bdrm:duplicates</code> property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">embargoed until</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nonduplicate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message has passed duplication analysis (i.e. it is not considered a duplicate)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A date after which the is no longer embargoed</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>badvalues</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message&#8217;s values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix <code>bdrm:failed</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby">Is Defined By</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>goodvalues</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message&#8217;s values - object IRIs and literal data values - are valid according to the value-based validation tests within the BDR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_domain">Domain</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notexpanded</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message content has not been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to <code>CreateMessage</code> messages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_range">Range</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/xmlschema11-2/#date"><code>xsd:date</code></a>, <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime"><code>xsd:dateTime</code></a> or <a href="https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"><code>xsd:dateTimeStamp</code></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>expanded</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message content has been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to <code>CreateMessage</code> messages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#scopeNote">Scope Note</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The embargo period is understood to cease on the time instance of the start of the object value, e.g. at 00:00:00 (midnight) of a given date, or midnight of the first day of a given month.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notstaged</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message could not be stored in the Staging BDR</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>staged</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message is stored in the Staging BDR environment ready for synchronisation to the Live environment</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notlive</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message is not able to progress from Staging to Live for reason(s) given with the prefix <code>bdrm:statusMessage</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>live</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message is fully processed and available in the Live BDR environment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre># Dataset X is embargoed until the 5th of May, 2024
+
+:dataset-x
+    a tern:RDFDataset ;
+    sdo:name "Dataset X" ;
+    dcterms:embargoedUntil "2024-05-11"^^xsd:date ;
+    # ... other dataset properties
+.
+
+# Dataset Y is embargoed until 2025
+
+:dataset-y
+    a tern:RDFDataset ;
+    sdo:name "Dataset Y" ;
+    dcterms:embargoedUntil "2025-01-01"^^xsd:date ;
+    # ... other dataset properties
+.</pre>
+</div>
+</div></div></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Note that any object with a status of <code>live</code> will also have the property <code>bdrm:exists</code> and a boolean value of <code>true</code>.</p>
-</div>
 </div>
 <div class="sect3">
-<h4 id="_a_3_3_message_status_state_diagram"><a class="anchor" href="#_a_3_3_message_status_state_diagram"></a>A.3.3 Message status state diagram</h4>
-<div class="paragraph">
-<p>The following figure shows the state diagram used to indicate allowed message transitions between statues.</p>
-</div>
-<div id="status-state-diagram" class="imageblock">
-<div class="content">
-<img src="https://ausbigg.github.io/abis/img/statuses-state-diagram.png" alt="Message statuses state diagram">
-</div>
-<div class="title">Figure 6. Message statuses state diagram</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The states of <code>duplicate</code> and <code>badvalues</code> are terminal: a message cannot progress from these states to any other</p>
-</li>
-<li>
-<p><code>submitted</code> will progress to either <code>duplicate</code> or <code>nonduplicate</code> when it passes or failes duplication testing</p>
-</li>
-<li>
-<p><code>nonduplicate</code> will progress to either <code>goodvalues</code> or <code>badvalues</code> when it passes or failes values testing</p>
-</li>
-<li>
-<p><code>goodvalues</code> will progress to either <code>staged</code> or <code>notstaged</code> when it is loaded into the BDR&#8217;s Staging environment</p>
-</li>
-<li>
-<p>messages in state <code>notstaged</code> may progress to <code>staged</code> if system actions allow it to be staged, e.g. a system failure os overcome</p>
-</li>
-<li>
-<p><code>staged</code> will progress to either <code>live</code> or <code>notlive</code> when it is loaded into the BDR&#8217;s Live environment</p>
-</li>
-<li>
-<p>messages in state <code>notlive</code> may progress to <code>live</code> if system actions allow it to be staged, e.g. a system failure os overcome</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_a_3_4_message_status_rdf"><a class="anchor" href="#_a_3_4_message_status_rdf"></a>A.3.4 Message status RDF</h4>
-<div class="paragraph">
-<p>Each status is formally defined within the <em>Message Statuses</em> vocabulary which is part of the <em>BDR Messages Ontology</em> used to characterise messages within the BDR. The vocabulary&#8217;s concepts correspond to entires in the table above and identifiers for each are, as all things in the BDR, IRIs.</p>
-</div>
-<div class="paragraph">
-<p>Message status IRIs are made with the BDR Messages Ontology Namespace, <code>https://linked.data.gov.au/def/bdr-msg/</code> with an additional <code>status</code> path segment, and the IDs from the first column in table, thus the status <code>submitted&#8217;s full IRI is `https://linked.data.gov.au/def/bdr-msg/status/submitted</code>. This may be contracted to <code>status:submitted</code>, using the BDR Messages Ontology Namespace&#8217;s prefix, as given in <a href="#_namespaces">Namespaces</a>.</p>
-</div>
-<div class="paragraph">
-<p>Following are a list of per-status RDF examples, all of which use an IRI of <code>https://linked.data.gov.au/dataset/bdr/message/1234</code> for a <code>CreateMessage</code> type of message. The IRI base of <code>https://linked.data.gov.au/dataset/bdr/</code> is used, thus the IRI for the message is shown as <code>&lt;message/1234&gt;</code>.</p>
-</div>
-<div class="paragraph">
-<p><code>submitted</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">submitted</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>duplicate</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">duplicate</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">duplicates</span><span class="w"> </span><span class="nl">&lt;message/54321&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The message <code>&lt;message/1234&gt;</code> has been determined to be a duplicate of <code>&lt;message/54321&gt;</code>.</p>
-</div>
-<div class="paragraph">
-<p><code>nonduplicate</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notduplicate</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>badvalues</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">badvalues</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">failed
-</span><span class="w">        </span><span class="nn">req:</span><span class="n">ValuesReqK</span><span class="w"> </span><span class="p">,</span><span class="w">
-        </span><span class="nn">req:</span><span class="n">ValuesReqL</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The message <code>&lt;message/1234&gt;</code> has failed message values tests for Requirements <code>req:ValuesReqK</code> &amp; <code>req:ValuesReqL</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
+<h4 id="embargoPeriod"><a class="anchor" href="#embargoPeriod"></a>embargo period</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-At the time of writing, value tests for BDR messages haven&#8217;t been defined so dummy test IRIs of <code>req:ValuesReqK</code> &amp; <code>req:ValuesReqL</code> are used here. When defined, real IRIs will be referenced.
-</td>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
 </tr>
-</table>
-</div>
-<div class="paragraph">
-<p><code>goodvalues</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">goodvalues</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>notexpanded</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notexpanded</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">failed
-</span><span class="w">        </span><span class="nn">rul:</span><span class="n">ExpRuleM</span><span class="w"> </span><span class="p">,</span><span class="w">
-        </span><span class="nn">rul:</span><span class="n">ExpRuleN</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The message <code>&lt;message/1234&gt;</code> has failed successful expansion following system and ABIS rules.</p>
-</div>
-<div class="admonitionblock note">
-<table>
+</thead>
+<tbody>
 <tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-At the time of writing, expansion rules for BDR messages haven&#8217;t been defined so dummy test IRIs of <code>rul:ExpRuleM</code> &amp; <code>rul:ExpRuleM</code> are used here. When defined, real IRIs will be referenced.
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abis:embargoPeriod</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">embargo period</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A temporal duration within which the object is embargoed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby">Is Defined By</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_domain">Domain</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_range">Range</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:TemporalDuration"><code>time:TemporalDuration</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#scopeNote">Scope Note</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This predicate can only be used if the start of the embargo period&#8217;s duration can be established by a business or system rule. If it cannot, use <a href="#embargoedUntil">embargoed until</a> instead, with a fixed date.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre># Dataset X is embargoed for a period of 3 months, calculated to start
+# from the issued date.
+# The calculation is defined by a business rule which is not
+# expressable in RDF
+
+:dataset-x
+    a tern:RDFDataset ;
+    sdo:name "Dataset X" ;
+    dcterms:issued "2023-12-25"^^xsd:date ;
+    abis:embargoPeriod [
+        a time:DurationDescription ;
+        time:months 3 ;
+    ] ;
+    # ... other dataset properties
+.</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
 </table>
-</div>
-<div class="paragraph">
-<p><code>expanded</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">expanded</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>notstaged</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notstaged</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">statusMessage</span><span class="w"> </span><span class="s">"The BDR Staging environment is offline due to routine maintenance"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The message <code>&lt;message/1234&gt;</code> is not able to be staged due to the reason given in the <code>bdrm:statusMessage</code>.</p>
-</div>
-<div class="paragraph">
-<p><code>staged</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">staged</span><span class="w"> </span><span class="p">;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>notlive</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notlive</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">statusMessage</span><span class="w"> </span><span class="s">"The BDR Live environment is offline due to a system fault"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The message <code>&lt;message/1234&gt;</code> is not able to be made live due to the reason given in the <code>bdrm:statusMessage</code>.</p>
-</div>
-<div class="paragraph">
-<p><code>live</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/1234&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">CreateMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">live</span><span class="w"> </span><span class="p">;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For messages other than <code>bdrm:CreateMessage</code> instances, the responses are similar. For example, for a deletion message with IRI <code>&lt;message/5678&gt;</code> that has failed to propagate to the <code>live</code> environment, you may have a status of:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/5678&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">DeleteMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">notlive</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">statusMessage</span><span class="w"> </span><span class="s">"The BDR Live environment is offline due to a fault"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For permissions and similar violations, the absorption process will fail at the values stage, thus a status of <code>badvalues</code> will be given with a relevant error message, for example a client attempting to delete a <code>tern:Site</code> that they don&#8217;t have editor permissions for may see this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;message/5678&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdrm:</span><span class="n">DeleteMessage</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">absorptionStatus</span><span class="w"> </span><span class="nn">status:</span><span class="n">badvalues</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">bdrm:</span><span class="n">statusMessage</span><span class="w"> </span><span class="s">"You do not have permission to delete that resource"</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -2485,7 +2275,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-12-27 04:00:30 UTC
+Last updated 2023-12-28 02:14:54 UTC
 </div>
 </div>
 </body>
