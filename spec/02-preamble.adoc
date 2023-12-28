@@ -36,6 +36,8 @@ Namespaces are used in shortened form in documents and data by assigning them a 
 |===
 |Prefix | Namespace | Description
 |*`abis:`* | *`https://linked.data.gov.au/def/abis/`* | *ABIS namespace* - for this Standard
+|*`abisdr:`* | *`https://linked.data.gov.au/def/abis/data-release/`* | <<#annex-a, ABIS Data Release Model>> namespace
+|*`abisp:`* | *`https://linked.data.gov.au/def/abis/projects/`* | <<#annex-a, ABIS Projects Model>> namespace
 |*`bdr:`* | *`https://linked.data.gov.au/dataset/bdr/`* | *BDR Dataset Namespace*
 |`ex:` | `+http://example.com/thing+` | Generic examples namespace - _does not resolve_
 |`geo:` | `http://www.opengis.net/ont/geosparql#` | <<GSP, GeoSPARQL Ontology>> namespace

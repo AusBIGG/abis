@@ -1,5 +1,5 @@
 [[annex-b]]
-== Annex A: Data Release Model
+== Annex B: Data Release Model
 
 [#data-realse,link="img/data-release.svg"]
 .An overview of the Data Release Model
@@ -9,8 +9,38 @@ This model is for describing aspects of data release: to whom, under what circum
 
 [NOTE]
 ====
-Currently, the Data Release model only handles data embargos but it is likely to be expanded as data release/restriction concerns are found to be important within the ABIS community. Please communicate any data release modelling issues to the BDR Team using the <<Metadata, "Contacts">> details.
+Currently, the Data Release model only handles data embargos, but it is likely to be expanded as data release/restriction concerns are found to be important within the ABIS community. Please communicate any data release modelling issues to the BDR Team using the <<#data-release-metadata, "Contacts">> details.
 ====
+
+[[data-release-metadata]]
+=== Metadata
+
+[frame=none, grid=none, cols="1,5"]
+|===
+|*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis/data-release
+|*https://schema.org/name[Name]* | ABIS Data Release Model
+|*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This model is for describing aspects of data release: to whom, under what circumstances and when data may be released.
+|*https://schema.org/dateCreated[Created Date]* | 2023-10-15
+|*https://schema.org/dateModified[Modified Date]* | 2023-12-28
+|*https://schema.org/dateIssued[Issued Date]* | 2023-12-28
+|*https://schema.org/version[Version]* | 1.0
+|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/data-release/2.0[abisdr:2.0]
+|*Version History*| *2.0* - 2023 Dec - First release (v2.0 to match ABIS)
+|*https://schema.org/creator[Creator]* | the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
+|*https://schema.org/owner[Owner]* | https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AUSBIGG)]
+|*https://schema.org/publisher[Publisher]* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
+|*https://schema.org/license[License]* | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|*https://www.w3.org/TR/vocab-dcat/#Property:resource_contact_point[Contacts]* | AusBIGG is supported by DCCEEW's' Biodiversity Data Repository (BDR) Team. Contact the BDR Team on bdr@dcceew.gov.au +
+Issue tracking of the ABIS standard is managed online at https://github.com/AusBIGG/abis/issues
+|*https://schema.org/codeRepository[Code Repository]* | https://github.com/AusBIGG/abis
+|===
+
+=== Supporting assets
+
+* RDF schema:
+** https://linked.data.gov.au/def/abis/data-release.ttl
+* <<SHACL, SHACL>> validation file:
+** https://linked.data.gov.au/def/abis/data-release/validator.ttl
 
 === Classes
 
@@ -18,6 +48,7 @@ This model defines none of its own classes and only indicates the <<TERNOntology
 
 === Predicates
 
+[discrete]
 [[embargoedUntil]]
 ==== embargoed until
 
@@ -54,6 +85,7 @@ This model defines none of its own classes and only indicates the <<TERNOntology
 ----
 |===
 
+[discrete]
 [[embargoPeriod]]
 ==== embargo period
 
