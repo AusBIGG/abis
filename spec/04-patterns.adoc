@@ -2,9 +2,77 @@
 
 This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.
 
-=== Process Flow
+=== Set Modelling
 
-Activity -> Entity
+The most basic pattern used by this model and all the <<OWL2, OWL>>-based models it profiles is that of https://en.wikipedia.org/wiki/Set_theory[Set Theory] modelling, that is, modelling according to the mathematical notion of sets.
+
+The basic principles are that things - all things - can be modelled as atomic objects and groups of objects known as _sets_. The basic object/set relations (_membership_ of an object within a set) and set/set relations (_union_, _intersection_, _disjoint_ etc.) are likely familiar to all Australian high school graduates.
+
+In OWL modelling, objects are usually called Named Individuals or Instances and sets are called Classes.
+
+The set of all people, the class `Person` is defined like this:
+
+----
+ex:Person
+    a owl:Class ;
+    sdo:name "Person" ;
+    sdo:description "Persons are individuals of the species Homo sapiens" ;
+.
+----
+
+`Nicholas Car` is an object in the set of `Person` so, in OWL modelling, `Nicholas Car` is a  Named Individual of type `Person`:
+
+----
+ex:nicholasCar
+    a ex:Person ;
+    sdo:name "Nicholas Car" ;
+    sdo:description "Nicholas is a Person, born in South Africa, now living in Brisbane" ;
+.
+----
+
+Subsetting is very important in OWL: `Nicholas Car` might also be an `Engineer` where `Engineer` is defined as a subset of `Person`. This means every `Engineer` is also a `Person` but not all `Person` objects are `Engineers`:
+
+----
+ex:nicholasCar
+    a ex:Engineer ;
+    sdo:name "Nicholas Car" ;
+    sdo:description "Nicholas is an Engineer, born in South Africa, now living in Brisbane" ;
+.
+
+ex:Engineer rdfs:subClassOf ex:Person .
+----
+
+In OWL modelling, classes may be seen by grouping instances with similar properties. `Nicholas Car` might be understood to be an Australian by virtue of the predicate `citizenship` being given for him indicating `Australian`:
+
+----
+ex:nicholasCar
+    a ex:Person ;
+    sdo:name "Nicholas Car" ;
+    ex:citizenship ex:Australian ;
+.
+----
+
+The figure below shows Nicholas Car, the individual, declared as a `Person`, and `Engineer` and understood to be an `Australian`.
+
+[#pattern-sets,link="img/pattern-sets.svg"]
+.Set Modelling using OWL: The Named Individual `Nicholas Car` and three Classes he is a member of and which are subclasses of others.
+image::img/pattern-sets.svg[Set Modelling,width=650,align="center"]
+
+In the domain of ABIS, all animals living in the sea constitute the class marine animals and there are intersecting classes of terrestrial animals for things like crabs and penguins that live both in the sea and on land.
+
+=== Provenance
+
+How things derive from other things, when and where this occurs and who may be responsible for actions is the domain of the <<PROV, Provenance Ontology (PROV)>> which is one of ABIS's Background Models.
+
+PROV's basic classes and the predicates that relate them to one another are given below.
+
+[#pattern-prov-basic,link="img/pattern-prov-basic.svg"]
+.Basic PROV classes and predicates
+image::img/pattern-prov-basic.svg[Basic PROV classes and predicates,width=650,align="center"]
+
+Many of ABIS' models follow on from the pattern in the figure above and many figures further down in this document are coloured according to PROV's basic classes. For example, the <<TERNOntology, TERN Ontology>>'s https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sampling[`Sampling`] class is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`] class and instances of it may have https://www.w3.org/TR/prov-o/#used[`used`] an instance of a https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Site[`Site`], which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Entity`], to have https://www.w3.org/TR/prov-o/#generated[`generated`] an instance of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`Sample`] which is another subclass of https://www.w3.org/TR/prov-o/#Activity[`Entity`]. This scenario is shown in figures #XX# & #YY#.
+
+PROV's provenance reasoning is applicable: The <<#annex-a, Projects Model>> indicates that instances of its <<abis:Project, `Project`>> class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Entity`, and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `RDFDataset` instances will be able to have an attributional relationship to the `Agent` instance calculated.
 
 === Observations & Results
 
@@ -18,7 +86,7 @@ The _value_ may be qualified with units of measure and uncertainty.
 
 [#pattern-obs-result,link="img/pattern-obs-result.svg"]
 .Two styles of Result: a numerical and a classification
-image::img/pattern-obs-result.svg[ABIS Parts,align="center"]
+image::img/pattern-obs-result.svg[ABIS Parts,align="center",width=650]
 
 Using this pattern, the thing that ties the result value to the property of the thing observed is the _observation_.
 
@@ -36,9 +104,8 @@ image::img/pattern-foi.svg[ABIS Parts,width=650,align="center"]
 
 === ABIS Identifiers
 
-All data objects in ABIS are identified either with an <<IRI, IRI>> or as a <<BN, Blank Node>>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, _Sample Y_ of the class `<<tern:Sample, Sample`>>, are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for _Sample Y_ in _Dataset X_ which also contains _Observation Z_:
+All data objects in ABIS are identified either with an <<IRI, IRI>> or as a <<BN, Blank Node>>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, _Sample Y_ of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`Sample`], are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for _Sample Y_ in _Dataset X_ which also contains _Observation Z_:
 
-[source,turtle]
 ----
 <http://example.com/dataset/x>
     a tern:RDFDataset ;
@@ -83,7 +150,6 @@ If an object already has an IRI identifier, and that identifier responds to <<Li
 
 If an object has a Linked Data IRI assigned to it AND another assigned to it within an ABIS data generation propcess, perhaps automatically, the two IRIs should be linked like this:
 
-[source,turtle]
 ----
 <{ORIGINAL-IRI}> owl:sameAs <{NEW-IRI]}>
 ----
@@ -92,7 +158,6 @@ Here the <<OWL2, OWL>> predicate http://www.w3.org/2002/07/owl#sameAs[`owl:sameA
 
 If an object has an IRI assigned to it that does not link to RDF data, it should be recorded in the following manner:
 
-[source,turtle]
 ----
 <{NEW-IRI]}>
     sdo:identifier "{ORIGINAL-IRI}"^^{DATATYPE} ;
@@ -104,7 +169,6 @@ Here the `{ORIGINAL-IRI}`, since it does not act as a Linked Data IRI, is indica
 
 If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGSN, then that type might be found in the _BDR Datatypes Register_ #TODO: link to datatypes register# and it should be used. If its type is not known or is a generic URL, the type `xsd:anyURI` should be used like this:
 
-[source,turtle]
 ----
 <{NEW-IRI]}>
     sdo:identifier "{ORIGINAL-IRI}"^^xsd:anyURI ;
@@ -117,7 +181,6 @@ If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGS
 
 Alternate identifiers for objects that are not IRIs/URLs _MUST_ have their identifier regime indicated. For example, if Museum X issues identifiers for samples and Sample Y has an issued identifier of `SAM-Y1234`, then this should be given like this:
 
-[source,turtle]
 ----
 <{SAMPLE-IRI]}>
     a tern:Sample ;
@@ -137,7 +200,6 @@ ABIS data destined for the Biodiversity Data Repository _MUST_ have identifier d
 
 Multiple alternate identifiers may be given, as long as their datatypes are unique:
 
-[source,turtle]
 ----
 <{SAMPLE-IRI]}>
     a tern:Sample ;
