@@ -675,11 +675,12 @@ pre.rouge {
 </li>
 <li><a href="#_patterns">5. Patterns</a>
 <ul class="sectlevel2">
-<li><a href="#_process_flow">5.1. Process Flow</a></li>
-<li><a href="#_observations_results">5.2. Observations &amp; Results</a></li>
-<li><a href="#_feature_of_interest">5.3. Feature of Interest</a></li>
-<li><a href="#_abis_identifiers">5.4. ABIS Identifiers</a></li>
-<li><a href="#_alternate_identifiers">5.5. Alternate Identifiers</a></li>
+<li><a href="#_set_modelling">5.1. Set Modelling</a></li>
+<li><a href="#_provenance">5.2. Provenance</a></li>
+<li><a href="#_observations_results">5.3. Observations &amp; Results</a></li>
+<li><a href="#_feature_of_interest">5.4. Feature of Interest</a></li>
+<li><a href="#_abis_identifiers">5.5. ABIS Identifiers</a></li>
+<li><a href="#_alternate_identifiers">5.6. Alternate Identifiers</a></li>
 </ul>
 </li>
 <li><a href="#_models">6. Models</a>
@@ -1435,13 +1436,102 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <p>This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.</p>
 </div>
 <div class="sect2">
-<h3 id="_process_flow"><a class="anchor" href="#_process_flow"></a>5.1. Process Flow</h3>
+<h3 id="_set_modelling"><a class="anchor" href="#_set_modelling"></a>5.1. Set Modelling</h3>
 <div class="paragraph">
-<p>Activity &#8594; Entity</p>
+<p>The most basic pattern used by this model and all the <a href="#OWL2">OWL</a>-based models it profiles is that of <a href="https://en.wikipedia.org/wiki/Set_theory">Set Theory</a> modelling, that is, modelling according to the mathematical notion of sets.</p>
+</div>
+<div class="paragraph">
+<p>The basic principles are that things - all things - can be modelled as atomic objects and groups of objects known as <em>sets</em>. The basic object/set relations (<em>membership</em> of an object within a set) and set/set relations (<em>union</em>, <em>intersection</em>, <em>disjoint</em> etc.) are likely familiar to all Australian high school graduates.</p>
+</div>
+<div class="paragraph">
+<p>In OWL modelling, objects are usually called Named Individuals or Instances and sets are called Classes.</p>
+</div>
+<div class="paragraph">
+<p>The set of all people, the class <code>Person</code> is defined like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:Person
+    a owl:Class ;
+    sdo:name "Person" ;
+    sdo:description "Persons are individuals of the species Homo sapiens" ;
+.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>Nicholas Car</code> is an object in the set of <code>Person</code> so, in OWL modelling, <code>Nicholas Car</code> is a  Named Individual of type <code>Person</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:nicholasCar
+    a ex:Person ;
+    sdo:name "Nicholas Car" ;
+    sdo:description "Nicholas is a Person, born in South Africa, now living in Brisbane" ;
+.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Subsetting is very important in OWL: <code>Nicholas Car</code> might also be an <code>Engineer</code> where <code>Engineer</code> is defined as a subset of <code>Person</code>. This means every <code>Engineer</code> is also a <code>Person</code> but not all <code>Person</code> objects are <code>Engineers</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:nicholasCar
+    a ex:Engineer ;
+    sdo:name "Nicholas Car" ;
+    sdo:description "Nicholas is an Engineer, born in South Africa, now living in Brisbane" ;
+.
+
+ex:Engineer rdfs:subClassOf ex:Person .</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In OWL modelling, classes may be seen by grouping instances with similar properties. <code>Nicholas Car</code> might be understood to be an Australian by virtue of the predicate <code>citizenship</code> being given for him indicating <code>Australian</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:nicholasCar
+    a ex:Person ;
+    sdo:name "Nicholas Car" ;
+    ex:citizenship ex:Australian ;
+.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The figure below shows Nicholas Car, the individual, declared as a <code>Person</code>, and <code>Engineer</code> and understood to be an <code>Australian</code>.</p>
+</div>
+<div id="pattern-sets" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/pattern-sets.svg"><img src="https://ausbigg.github.io/abis/img/pattern-sets.svg" alt="Set Modelling" width="650"></a>
+</div>
+<div class="title">Figure 3. Set Modelling using OWL: The Named Individual <code>Nicholas Car</code> and three Classes he is a member of and which are subclasses of others.</div>
+</div>
+<div class="paragraph">
+<p>In the domain of ABIS, all animals living in the sea constitute the class marine animals and there are intersecting classes of terrestrial animals for things like crabs and penguins that live both in the sea and on land.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_observations_results"><a class="anchor" href="#_observations_results"></a>5.2. Observations &amp; Results</h3>
+<h3 id="_provenance"><a class="anchor" href="#_provenance"></a>5.2. Provenance</h3>
+<div class="paragraph">
+<p>How things derive from other things, when and where this occurs and who may be responsible for actions is the domain of the <a href="#PROV">Provenance Ontology (PROV)</a> which is one of ABIS&#8217;s Background Models.</p>
+</div>
+<div class="paragraph">
+<p>PROV&#8217;s basic classes and the predicates that relate them to one another are given below.</p>
+</div>
+<div id="pattern-prov-basic" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/pattern-prov-basic.svg"><img src="https://ausbigg.github.io/abis/img/pattern-prov-basic.svg" alt="Basic PROV classes and predicates" width="650"></a>
+</div>
+<div class="title">Figure 4. Basic PROV classes and predicates</div>
+</div>
+<div class="paragraph">
+<p>Many of ABIS' models follow on from the pattern in the figure above and many figures further down in this document are coloured according to PROV&#8217;s basic classes. For example, the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sampling"><code>Sampling</code></a> class is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/" class="bare">https://www.w3.org/TR/prov-o/</a><mark>Activity[<code>Activity</code>] class and instances of it may have <a href="https://www.w3.org/TR/prov-o/#used"><code>used</code></a> an instance of a <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Site"><code>Site</code></a>, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Entity</code></a>, to have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> an instance of the class <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample"><code>Sample</code></a> which is another subclass of <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Entity</code></a>. This scenario is shown in figures #XX</mark> &amp; <mark>YY</mark>.</p>
+</div>
+<div class="paragraph">
+<p>PROV&#8217;s provenance reasoning is applicable: The <a href="#annex-a">Projects Model</a> indicates that instances of its <a href="#abis:Project"><code>Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Entity</code>, and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[<code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>RDFDataset</code> instances will be able to have an attributional relationship to the <code>Agent</code> instance calculated.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observations_results"><a class="anchor" href="#_observations_results"></a>5.3. Observations &amp; Results</h3>
 <div class="paragraph">
 <p><em>This pattern is inherited from the <a href="#TERNOntology">TERN Ontology</a>, which, in turn, inherits it from <a href="#SOSA">SOSA</a>.</em></p>
 </div>
@@ -1456,9 +1546,9 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 <div id="pattern-obs-result" class="imageblock text-center">
 <div class="content">
-<a class="image" href="img/pattern-obs-result.svg"><img src="https://ausbigg.github.io/abis/img/pattern-obs-result.svg" alt="ABIS Parts"></a>
+<a class="image" href="img/pattern-obs-result.svg"><img src="https://ausbigg.github.io/abis/img/pattern-obs-result.svg" alt="ABIS Parts" width="650"></a>
 </div>
-<div class="title">Figure 3. Two styles of Result: a numerical and a classification</div>
+<div class="title">Figure 5. Two styles of Result: a numerical and a classification</div>
 </div>
 <div class="paragraph">
 <p>Using this pattern, the thing that ties the result value to the property of the thing observed is the <em>observation</em>.</p>
@@ -1473,7 +1563,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_feature_of_interest"><a class="anchor" href="#_feature_of_interest"></a>5.3. Feature of Interest</h3>
+<h3 id="_feature_of_interest"><a class="anchor" href="#_feature_of_interest"></a>5.4. Feature of Interest</h3>
 <div class="paragraph">
 <p>A <em>feature of interest</em> is the object of some activity&#8217;s focus. This is a relative term: when an <em>observation</em> considers the property of something - perhaps the colour of a part of a leaf - then the part leaf only - a sample of it - is the <em>feature of interest</em>. If the <em>observation</em> were to consider the colour of the whole leaf, then the leaf is the <em>feature of interest</em>. If the colour of the whole bush from which the leaf came was considered, then the whole bush is the <em>feature of interest</em>.</p>
 </div>
@@ -1484,31 +1574,31 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/pattern-foi.svg"><img src="https://ausbigg.github.io/abis/img/pattern-foi.svg" alt="ABIS Parts" width="650"></a>
 </div>
-<div class="title">Figure 4. Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn&#8217;t affect its status as a Feature of Interest with respect to an Observation.</div>
+<div class="title">Figure 6. Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn&#8217;t affect its status as a Feature of Interest with respect to an Observation.</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_abis_identifiers"><a class="anchor" href="#_abis_identifiers"></a>5.4. ABIS Identifiers</h3>
+<h3 id="_abis_identifiers"><a class="anchor" href="#_abis_identifiers"></a>5.5. ABIS Identifiers</h3>
 <div class="paragraph">
-<p>All data objects in ABIS are identified either with an <a href="#IRI">IRI</a> or as a <a href="#BN">Blank Node</a>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, <em>Sample Y</em> of the class <code><a href="#tern:Sample">Sample</code></a>, are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for <em>Sample Y</em> in <em>Dataset X</em> which also contains <em>Observation Z</em>:</p>
+<p>All data objects in ABIS are identified either with an <a href="#IRI">IRI</a> or as a <a href="#BN">Blank Node</a>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, <em>Sample Y</em> of the class <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample"><code>Sample</code></a>, are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for <em>Sample Y</em> in <em>Dataset X</em> which also contains <em>Observation Z</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;http://example.com/dataset/x&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sdo:</span><span class="n">hasPart
-</span><span class="w">        </span><span class="nl">&lt;http://example.com/dataset/x/sample/y&gt;</span><span class="w"> </span><span class="p">,</span><span class="w">
-        </span><span class="nl">&lt;http://example.com/dataset/x/obs/z&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+<pre>&lt;http://example.com/dataset/x&gt;
+    a tern:RDFDataset ;
+    sdo:hasPart
+        &lt;http://example.com/dataset/x/sample/y&gt; ,
+        &lt;http://example.com/dataset/x/obs/z&gt; ;
+.
 
-</span><span class="nl">&lt;http://example.com/dataset/x/sample/y&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+&lt;http://example.com/dataset/x/sample/y&gt;
+    a tern:Sample ;
+.
 
-</span><span class="nl">&lt;http://example.com/dataset/x/obs/z&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nl">&lt;http://example.com/dataset/x/sample/y&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+&lt;http://example.com/dataset/x/obs/z&gt;
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest &lt;http://example.com/dataset/x/sample/y&gt; ;
+.</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1549,7 +1639,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_alternate_identifiers"><a class="anchor" href="#_alternate_identifiers"></a>5.5. Alternate Identifiers</h3>
+<h3 id="_alternate_identifiers"><a class="anchor" href="#_alternate_identifiers"></a>5.6. Alternate Identifiers</h3>
 <div class="paragraph">
 <p>Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.</p>
 </div>
@@ -1575,7 +1665,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{ORIGINAL-IRI}&gt;</span><span class="w"> </span><span class="nn">owl:</span><span class="n">sameAs</span><span class="w"> </span><span class="nl">&lt;{NEW-IRI]}&gt;</span></code></pre>
+<pre>&lt;{ORIGINAL-IRI}&gt; owl:sameAs &lt;{NEW-IRI]}&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1586,10 +1676,10 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{NEW-IRI]}&gt;</span><span class="w">
-    </span><span class="nn">sdo:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"{ORIGINAL-IRI}"</span><span class="p">^^{</span><span class="n">DATATYPE</span><span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">...</span><span class="w">  </span><span class="c1"># other properties</span><span class="w">
-</span><span class="p">.</span></code></pre>
+<pre>&lt;{NEW-IRI]}&gt;
+    sdo:identifier "{ORIGINAL-IRI}"^^{DATATYPE} ;
+    ...  # other properties
+.</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1600,10 +1690,10 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{NEW-IRI]}&gt;</span><span class="w">
-    </span><span class="nn">sdo:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"{ORIGINAL-IRI}"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">anyURI</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">...</span><span class="w">  </span><span class="c1"># other properties</span><span class="w">
-</span><span class="p">.</span></code></pre>
+<pre>&lt;{NEW-IRI]}&gt;
+    sdo:identifier "{ORIGINAL-IRI}"^^xsd:anyURI ;
+    ...  # other properties
+.</pre>
 </div>
 </div>
 <h4 id="_alternate_ids_non_iris" class="discrete">Alternate IDs - non-IRIs</h4>
@@ -1612,11 +1702,11 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{SAMPLE-IRI]}&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sdo:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"SAM-Y1234"</span><span class="p">^^</span><span class="nn">ex:</span><span class="n">museum-x-id</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">...</span><span class="w">  </span><span class="c1"># other properties</span><span class="w">
-</span><span class="p">.</span></code></pre>
+<pre>&lt;{SAMPLE-IRI]}&gt;
+    a tern:Sample ;
+    sdo:identifier "SAM-Y1234"^^ex:museum-x-id ;
+    ...  # other properties
+.</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1644,13 +1734,13 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nl">&lt;{SAMPLE-IRI]}&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sdo:</span><span class="n">identifier
-</span><span class="w">        </span><span class="s">"SAM-Y1234"</span><span class="p">^^</span><span class="nn">ex:</span><span class="n">museum-x-id</span><span class="w"> </span><span class="p">,</span><span class="w">
-        </span><span class="s">"1073/SAMY"</span><span class="p">^^</span><span class="nn">ex:</span><span class="n">igsn</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">...</span><span class="w">  </span><span class="c1"># other properties</span><span class="w">
-</span><span class="p">.</span></code></pre>
+<pre>&lt;{SAMPLE-IRI]}&gt;
+    a tern:Sample ;
+    sdo:identifier
+        "SAM-Y1234"^^ex:museum-x-id ,
+        "1073/SAMY"^^ex:igsn ;
+    ...  # other properties
+.</pre>
 </div>
 </div>
 </div>
@@ -1723,7 +1813,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/hierarchy.svg" alt="ABIS Parts"></a>
 </div>
-<div class="title">Figure 5. The profile hierarchy of the models within ABIS. All the arrows indicate dependency or, formally, <a href="https://www.w3.org/TR/dx-prof/#Property:isProfileOf"><code>prof:isProfileOf</code></a> relationships between the models, shown as rectangles. The ABIS model itself is the union of the NSL Model, the TERN Ontology and the ABIS Component Models.</div>
+<div class="title">Figure 7. The profile hierarchy of the models within ABIS. All the arrows indicate dependency or, formally, <a href="https://www.w3.org/TR/dx-prof/#Property:isProfileOf"><code>prof:isProfileOf</code></a> relationships between the models, shown as rectangles. The ABIS model itself is the union of the NSL Model, the TERN Ontology and the ABIS Component Models.</div>
 </div>
 </div>
 <div class="sect2">
@@ -1771,7 +1861,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/nsl-model-overview.svg"><img src="https://ausbigg.github.io/abis/img/nsl-model-overview.svg" alt="NSL Model Overview" width="700"></a>
 </div>
-<div class="title">Figure 6. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
+<div class="title">Figure 8. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
 </div>
 <div class="paragraph">
 <p>The NSL Model associates the class <a href="https://kurrawong.github.io/nsl-model/spec.html#Taxon"><code>Taxon</code></a> representing "A group of organisms considered by taxonomists to form a homogeneous unit" with names for them - <a href="https://kurrawong.github.io/nsl-model/spec.html#TaxonName"><code>Taxon Name</code></a> - and usage of that name in literature - instances of the class <a href="https://kurrawong.github.io/nsl-model/spec.html#Usage"><code>Usage</code></a>, which is a special type of <a href="http://www.sparontologies.net/ontologies/biro"><code>BibliographicReference</code></a> that quotes the <code>Taxon Name</code> as used in a <a href="https://schema.org/CreativeWork"><code>CreativeWork</code></a>. It also allows the citation of <code>Usage</code> instances bu other <code>Usage</code> instances.</p>
@@ -1783,7 +1873,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/nsl-model-overview.svg"><img src="https://ausbigg.github.io/abis/img/nsl-join.svg" alt="NSL Model Overview" width="550"></a>
 </div>
-<div class="title">Figure 7. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
+<div class="title">Figure 9. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
 </div>
 <div class="paragraph">
 <p>According to the NSL Model, a <code>Taxon</code>, rather than a <code>Taxon Name</code> <em>may</em> be assigned to a <code>Feature of Interest</code>, but the NSL Model encourages the use of <code>Taxon Name</code> instances, not <code>Taxon</code>. See the NSL Model&#8217;s <mark>Section XX</mark> for the rules about when Taxon assignment can be made.</p>
@@ -1801,7 +1891,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/proj-hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/proj-hierarchy.svg" alt="Projects Model Class Hierarchy" width="400"></a>
 </div>
-<div class="title">Figure 8. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
+<div class="title">Figure 10. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
 </div>
 <div class="paragraph">
 <p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class - are produced by instances of <a href="#Project"><code>Project</code></a> as per the figure below.</p>
@@ -1810,7 +1900,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/proj-join.svg"><img src="https://ausbigg.github.io/abis/img/proj-join.svg" alt="Projects Model Join Poin" width="400"></a>
 </div>
-<div class="title">Figure 9. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> instances.</div>
+<div class="title">Figure 11. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> instances.</div>
 </div>
 <div class="paragraph">
 <p>See <a href="#annex-a">Annex A</a> for more details about the Project Model.</p>
@@ -1828,7 +1918,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/data-release.svg"><img src="https://ausbigg.github.io/abis/img/data-release.svg" alt="Overview of the Data Release Model" width="350"></a>
 </div>
-<div class="title">Figure 10. An overview of the Data Release Model</div>
+<div class="title">Figure 12. An overview of the Data Release Model</div>
 </div>
 <div class="paragraph">
 <p>The Data Release Model defines predicates - <a href="#embargoedUntil">embargoed until</a> &amp; <a href="#embargoPeriod">embargo period</a> - which can be applied to instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class which set absolute or relative embargo release times. The model details the relations between these predicates.</p>
@@ -2103,7 +2193,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <a class="image" href="img/proj-hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/proj-hierarchy.svg" alt="Projects Model Class Hierarchy" width="400"></a>
 </div>
-<div class="title">Figure 11. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
+<div class="title">Figure 13. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
 </div>
 <div class="paragraph">
 <p><a href="#abis:Project"><code>Project</code></a>s are part of <a href="#abis:Program"><code>Program</code></a>s and both are specialised forms of <a href="#PROV">PROV</a>'s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> class. An <code>Activity</code> is "something that occurs over a period of time and acts upon or with entities" which means <code>Project`s &amp; `Program`s can have all the properties that `Activities</code> can have, such as temporal extents, <code>Agents</code> that have causal relationships to them and so on.</p>
@@ -2247,7 +2337,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <a class="image" href="img/proj-project.svg"><img src="https://ausbigg.github.io/abis/img/proj-project.svg" alt="Projects Model Project Class" width="650"></a>
 </div>
-<div class="title">Figure 12. The Projects Model <code>Project</code> Class and its expected predicates</div>
+<div class="title">Figure 14. The Projects Model <code>Project</code> Class and its expected predicates</div>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -2342,7 +2432,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <a class="image" href="img/proj-program.svg"><img src="https://ausbigg.github.io/abis/img/proj-program.svg" alt="Projects Model Program Class" width="650"></a>
 </div>
-<div class="title">Figure 13. The Projects Model <code>Program</code> Class and its expected predicates</div>
+<div class="title">Figure 15. The Projects Model <code>Program</code> Class and its expected predicates</div>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -3184,7 +3274,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <a class="image" href="img/data-release.svg"><img src="https://ausbigg.github.io/abis/img/data-release.svg" alt="Overview of the Data Release Model" width="350"></a>
 </div>
-<div class="title">Figure 14. An overview of the Data Release Model</div>
+<div class="title">Figure 16. An overview of the Data Release Model</div>
 </div>
 <div class="paragraph">
 <p>This model is for describing aspects of data release: to whom, under what circumstances and when data may be released.</p>
@@ -3448,7 +3538,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-12-28 05:33:17 UTC
+Last updated 2023-12-28 11:22:19 UTC
 </div>
 </div>
 </body>
