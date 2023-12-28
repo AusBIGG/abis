@@ -1,0 +1,89 @@
+[[annex-b]]
+== Annex A: Data Release Model
+
+[#data-realse,link="img/data-release.svg"]
+.An overview of the Data Release Model
+image::img/data-release.svg[Overview of the Data Release Model,align="center",width=350]
+
+This model is for describing aspects of data release: to whom, under what circumstances and when data may be released.
+
+[NOTE]
+====
+Currently, the Data Release model only handles data embargos but it is likely to be expanded as data release/restriction concerns are found to be important within the ABIS community. Please communicate any data release modelling issues to the BDR Team using the <<Metadata, "Contacts">> details.
+====
+
+=== Classes
+
+This model defines none of its own classes and only indicates the <<TERNOntology, TERN Ontology>>'s https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class for use with the predicates it does define.
+
+=== Predicates
+
+[[embargoedUntil]]
+==== embargoed until
+
+[cols="1,5"]
+|===
+| Property | Value
+
+| <<IRI, IRI>> | `abis:embargoedUntil`
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | embargoed until
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | A date after which the is no longer embargoed
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
+| https://www.w3.org/TR/rdf12-schema/#ch_domain[Domain] | https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`]
+| https://www.w3.org/TR/rdf12-schema/#ch_range[Range] | https://www.w3.org/TR/xmlschema11-2/#date[`xsd:date`], https://www.w3.org/TR/xmlschema11-2/#dateTime[`xsd:dateTime`] or https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp[`xsd:dateTimeStamp`]
+| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | The embargo period is understood to cease on the time instance of the start of the object value, e.g. at 00:00:00 (midnight) of a given date, or midnight of the first day of a given month.
+| https://www.w3.org/TR/skos-reference/#example[Example] a|
+----
+# Dataset X is embargoed until the 5th of May, 2024
+
+:dataset-x
+    a tern:RDFDataset ;
+    sdo:name "Dataset X" ;
+    dcterms:embargoedUntil "2024-05-11"^^xsd:date ;
+    # ... other dataset properties
+.
+
+# Dataset Y is embargoed until 2025
+
+:dataset-y
+    a tern:RDFDataset ;
+    sdo:name "Dataset Y" ;
+    dcterms:embargoedUntil "2025-01-01"^^xsd:date ;
+    # ... other dataset properties
+.
+----
+|===
+
+[[embargoPeriod]]
+==== embargo period
+
+[cols="1,5"]
+|===
+| Property | Value
+
+| <<IRI, IRI>> | `abis:embargoPeriod`
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | embargo period
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | A temporal duration within which the object is embargoed
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
+| https://www.w3.org/TR/rdf12-schema/#ch_domain[Domain] | https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`]
+| https://www.w3.org/TR/rdf12-schema/#ch_range[Range] | https://www.w3.org/TR/owl-time/#time:TemporalDuration[`time:TemporalDuration`]
+| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | This predicate can only be used if the start of the embargo period's duration can be established by a business or system rule. If it cannot, use <<#embargoedUntil, embargoed until>> instead, with a fixed date.
+| https://www.w3.org/TR/skos-reference/#example[Example] a|
+----
+# Dataset X is embargoed for a period of 3 months, calculated to start
+# from the issued date.
+# The calculation is defined by a business rule which is not
+# expressable in RDF
+
+:dataset-x
+    a tern:RDFDataset ;
+    sdo:name "Dataset X" ;
+    dcterms:issued "2023-12-25"^^xsd:date ;
+    abis:embargoPeriod [
+        a time:DurationDescription ;
+        time:months 3 ;
+    ] ;
+    # ... other dataset properties
+.
+----
+|===

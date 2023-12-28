@@ -65,6 +65,6 @@ include::99-references.adoc[]
 
 :sectnums!:
 
-include::14_annex_a_abis_parts.adoc[]
+include::10_annex_a.adoc[]
 
-include::15_annex_b_bdr_messages.adoc[]
+include::11_annex_b.adoc[]

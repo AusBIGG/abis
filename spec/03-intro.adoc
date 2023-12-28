@@ -22,9 +22,8 @@ Each of these "background models" are shown in <<abis-parts, Figure 1>>.
 
 In addition to the TERN Ontology and the background models it uses, ABIS also use other "background models":
 
-* <<NSLM, National Species List Model>>
-** The Semantic Web form of the https://biodiversity.org.au[National Species List]'s data model
-** Used to model taxonomic names, their references to literature and relations to taxa
+* <<BIRO, Bibliographic Reference Ontology (BiRO)>>
+** A model for the description of reference lists and bibliographic references themselves
 * The <<PROF, Profiles Vocabulary>>
 ** A model that related models to other models
 * <<OLIS, Olis Ontology>>

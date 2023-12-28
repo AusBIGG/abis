@@ -2,6 +2,10 @@
 
 This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.
 
+=== Process Flow
+
+Activity -> Entity
+
 === Observations & Results
 
 _This pattern is inherited from the <<TERNOntology, TERN Ontology>>, which, in turn, inherits it from <<SOSA, SOSA>>._
@@ -28,7 +32,7 @@ If the average colour of a whole area of bushland was considered, the _feature o
 
 [#pattern-foi,link="img/pattern-foi.svg"]
 .Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn't affect its status as a Feature of Interest with respect to an Observation.
-image::img/pattern-foi.svg[ABIS Parts,width="650",align="center"]
+image::img/pattern-foi.svg[ABIS Parts,width=650,align="center"]
 
 === ABIS Identifiers
 

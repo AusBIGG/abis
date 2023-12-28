@@ -25,31 +25,98 @@ In practice this means that any model profiling any other may use elements from 
 The following figure depicts the profiling relationships between the various models within ABIS.
 
 [#hierarchy,link="img/hierarchy.svg"]
-.The profile hierarchy of the models within ABIS
-image::img/hierarchy.svg[ABIS Parts,650align="center"]
+.The profile hierarchy of the models within ABIS. All the arrows indicate dependency or, formally, https://www.w3.org/TR/dx-prof/#Property:isProfileOf[`prof:isProfileOf`] relationships between the models, shown as rectangles. The ABIS model itself is the union of the NSL Model, the TERN Ontology and the ABIS Component Models.
+image::img/hierarchy.svg[ABIS Parts,align="center"]
 
 === Foreground Model
 
-The Foreground Model for ABIS is the union of the TERN Ontology and the ABIS Component Models.
+The ABIS Foreground Model is the union of the NSL Model, the TERN Ontology and the ABIS Component Models, as shown in <<#hierarchy, Figure 5>>, above.
 
-The Foreground Model is not directly defined here other that the statement above since each of the parts are defined below.
+When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>>. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When project information and data release details are modelled, the <<Projects Model, ABIS Projects>> & <<Data Release Model, ABIS Data Release>> models are used.
 
 === Component Models
 
 The Component Models of ABIS are:
 
 * The <<TERNOntology, TERN Ontology>>
+* The <<NSLM, NSL Model>>
 * <<Projects Model, Projects Model>>
 * <<Data Release Model, Data Release Model>>
 
+==== TERN Ontology
+nsl-model-overview
+
+==== NSL Model
+
+An overview of the main classes and predicates of the NSL Model is given in the figure below.
+
+[#nsl-model-overview,link="img/nsl-model-overview.svg"]
+.An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model's documentation online at https://linked.data.gov.au/def/nsl
+image::img/nsl-model-overview.svg[NSL Model Overview,align="center",width=700]
+
+The NSL Model associates the class https://kurrawong.github.io/nsl-model/spec.html#Taxon[`Taxon`] representing "A group of organisms considered by taxonomists to form a homogeneous unit" with names for them - https://kurrawong.github.io/nsl-model/spec.html#TaxonName[`Taxon Name`] - and usage of that name in literature - instances of the class https://kurrawong.github.io/nsl-model/spec.html#Usage[`Usage`], which is a special type of http://www.sparontologies.net/ontologies/biro[`BibliographicReference`] that quotes the `Taxon Name` as used in a https://schema.org/CreativeWork[`CreativeWork`]. It also allows the citation of `Usage` instances bu other `Usage` instances.
+
+The join point between the NSL Model and the TERN Ontology is on the `Result` of an `Observation` being the assignment of a `Taxon Name` to a `Feature of Interest` (probably a `Sample`) as per the figure below:
+
+[#nsl-join,link="img/nsl-model-overview.svg"]
+.An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model's documentation online at https://linked.data.gov.au/def/nsl
+image::img/nsl-join.svg[NSL Model Overview,align="center",width=550]
+
+According to the NSL Model, a `Taxon`, rather than a `Taxon Name` _may_ be assigned to a `Feature of Interest`, but the NSL Model encourages the use of `Taxon Name` instances, not `Taxon`. See the NSL Model's #Section XX# for the rules about when Taxon assignment can be made.
+
 ==== Projects Model
 
-Projects Model
+ABIS contains a simple model of Projects where a <<#Project, `Project`>> is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective". The Model is fully described in <<#annex-a, Annex A: Projects Model>>.
+
+The following figure illustrates the basic relationships of the class <<#Project, `Project`>> and <<#Program, `Program`>>, the only other class defined by the model.
+
+[#proj-hierarchy,link="img/proj-hierarchy.svg"]
+.The two classes defined by the Projects Model - Project & Program - and their main relationships.
+image::img/proj-hierarchy.svg[Projects Model Class Hierarchy,align="center",width=400]
+
+The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class - are produced by instances of <<#Project, `Project`>> as per the figure below.
+
+[#proj-join,link="img/proj-join.svg"]
+.The Projects Model joins the rest of ABIS by Project instances producing https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] instances.
+image::img/proj-join.svg[Projects Model Join Poin,align="center",width=400]
+
+See <<#annex-a, Annex A>> for more details about the Project Model.
 
 ==== Data Release Model
 
-Data Release Model
+ABIS contains a simple model for describing aspects of data release: to whom, under what circumstances and when data may be released. The Model is fully described in <<#annex-b, Annex B: Data Release Model>>.
+
+The following figure illustrates the basic elements of this model.
+
+[#data-realse-overview,link="img/data-release.svg"]
+.An overview of the Data Release Model
+image::img/data-release.svg[Overview of the Data Release Model,align="center",width=350]
+
+The Data Release Model defines predicates - <<#embargoedUntil, embargoed until>> & <<#embargoPeriod, embargo period>> - which can be applied to instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class which set absolute or relative embargo release times. The model details the relations between these predicates.
 
 === Background Models
 
-The Background Models within ABIS are all those profiled by the Component Models.
+The Background Models within ABIS are all those profiled by the Component Models. They are shown visually in the <<#hierarchy, Model Dependency Hierarchy>>, above.
+
+The main Background Models for ABIS are:
+
+* <<DWC, Darwin Core>> - specialised properties for biodiversity modelling
+* <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> - sampling, observation & results modelling
+* <<GSP, GeoSPARQL>> - for spatial object modelling
+* <<PROV, Provenance Ontology (PROV)>> - for the lineage and attribution of data
+* <<SDO, schema.org>> - for general-purpose attributes like names, dates, simple metadata etc.
+* <<BIRO, Bibliographic Reference Ontology (BiRO)>> - for the description of reference lists and bibliographic references themselves
+
+Of these models, all provide Semantic Web rules that can be used for data validation except for Darwin Core. Validators for each of these models, other than Darwin Core, are given in the <<Validation, Validation Section>>. These validators may be used individually or combined, within the ABIS Validator.
+
+These models in turn profile several fundamental Semantic Web models:
+
+* <<OWL2, OWL>>
+* <<RDFSSPEC, RDF Schema>>
+* <<RDFSPEC, RDF>>
+
+Neither these models nor ABIS provide validators, however syntactic and some semantic data validation for RDF, RDFS & OWL data is built in to many Semantic Web / Linked Data tooling and, for example, syntactically invalid RDF data will not be able to be processed by ABIS other validators.
+
+Additional Background Models - <<PROF, the Profiles Vocabulary>> & <<OLIS, Olis>> - are used to describe the relationships between ABIS models and between units of ABIS data within datasets, respectively, and do not need to be directly considered by users of ABIS: their impact is felt within the descriptions of this specification document itself.
+
+Specific details of all these Background Models are not directly given here, other than certain patterns they impose and these are presented in the <<Patterns, Patterns Section>>.
