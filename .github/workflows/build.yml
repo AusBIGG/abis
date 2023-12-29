@@ -27,7 +27,7 @@ jobs:
         sed -i 's#img src="#img src="https://ausbigg.github.io/abis/#' docs/standard.html        
         #
         echo "Add standard RDF to docs/"
-        cp rdf/profile.ttl docs/
+        cp models/profile.ttl docs/
         #
         echo "Add Specification to docs/"   
         asciidoctor spec/00-master.adoc -o docs/specification.html
