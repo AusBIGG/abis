@@ -30,7 +30,7 @@ Issue tracking of the ABIS standard is managed online at https://github.com/AusB
 |*https://schema.org/codeRepository[Code Repository]* | https://github.com/AusBIGG/abis
 |===
 
-=== Supporting assets
+=== Supporting Assets
 
 * RDF schema:
 ** https://linked.data.gov.au/def/abis/projects.ttl
@@ -447,3 +447,41 @@ Predicates defined elsewhere:
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<PROV, PROV>>
 | https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:Project, Project>>
 |===
+
+=== Shapes
+
+The following <<SHACL, SHACL>> shapes are graph patterns mandated by this model.
+
+[discrete]
+==== Shapes Index
+
+* <<#idn-roles, IDN Roles>>
+
+#INCOMPLETE#
+
+[discrete]
+[[idn-roles]]
+==== IDN Roles
+
+[cols="3,10"]
+|===
+| Property | Value
+
+| <<IRI, IRI>> | `abis:idn-roles`
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | IDN Roles
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | Roles for the predicate `prov:role` on instances of `prov:Attribution` linked to an `abis:Project` must be taken from the https://data.idnau.org/pid/vocab/idn-role-codes[IDN Role Codes Vocabulary]
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model's validator
+| Code a|
+----
+abis:idn-roles
+    a shacl:Shape ;
+    sdo:name "IDN Roles" ;
+    sdo:description "Roles for the predicate prov:role on instances of prov:Attribution linked to an abis:Project must be taken from the IDN Role Codes Vocabulary (https://data.idnau.org/pid/vocab/idn-role-codes)" ;
+    sh:path [
+
+    ] ;
+.
+----
+|===
+
+#INCOMPLETE#

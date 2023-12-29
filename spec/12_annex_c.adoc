@@ -13,7 +13,7 @@ To validate these examples locally - on your own computer - you will need a vali
 | File | Location | Validity
 
 | TERN Ontology Validator | https://github.com/AusBIGG/abis/tree/master/validators/tern-validator.ttl | -
-| TERN Ontology Model | https://github.com/AusBIGG/abis/tree/master/models/tern-model.ttl | -
+| TERN Ontology Model | https://github.com/AusBIGG/abis/tree/master/models/components/tern-model.ttl | -
 | Example 01 data | https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-01.ttl | valid
 | Example 02 data | https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-02.ttl | invalid
 |===

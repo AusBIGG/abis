@@ -1,3 +1,22 @@
 == Vocabularies
 
-#TODO: write this section#
+=== Mandate Status
+
+ABIS overall does not generally mandate that data use particular vocabularies for predicate values, however many of the individual <<Component Models, Component Models>> do.
+
+For example, the <<#annex-a, Projects Model>> mandates that roles chosen for an attribution's `hadRole` predicate, when used for an instances of the `abis:Project` class must come from the https://data.idnau.org/pid/vocab/idn-role-codes[IDN Role Codes Vocabulary]
+
+Profiles of ABIS may also further mandate particular vocabulary use: check particular profile details for this.
+
+=== Listing
+
+Here is a list of vocabularies known to be either required or suggested for use with ABIS and the locations in which they are used (which predicates are expected to indicate concepts from them).
+
+[cols="1,2,2"]
+|===
+| Vocabulary | Domain | Where Used
+
+| https://data.idnau.org/pid/vocab/idn-role-codes[IDN Role Codes Vocabulary] | Roles that <<prov:Agent, `Agent`>> instances play with respect to proscribed subclassses of https://www.w3.org/TR/prov-o/#Activity[`Activity`] via https://www.w3.org/TR/prov-o/#Association[`Association`] instances | <<annex-a, Projects Model>>, range value for the predicate `prov:hadRole` when used on `Association` or `Attribution` instances when linked to an <<abis:Project, `Project`>> or <<abis:Program, Program>> instances
+|===
+
+#Incomplete#
