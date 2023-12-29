@@ -699,24 +699,37 @@ pre.rouge {
 <li><a href="#_background_models">6.5. Background Models</a></li>
 </ul>
 </li>
-<li><a href="#_vocabularies">7. Vocabularies</a></li>
+<li><a href="#_vocabularies">7. Vocabularies</a>
+<ul class="sectlevel2">
+<li><a href="#_mandate_status">7.1. Mandate Status</a></li>
+<li><a href="#_listing">7.2. Listing</a></li>
+</ul>
+</li>
 <li><a href="#_validation">8. Validation</a></li>
 <li><a href="#_mappings">9. Mappings</a></li>
 <li><a href="#_references">10. References</a></li>
 <li><a href="#annex-a">Annex A: Projects Model</a>
 <ul class="sectlevel2">
 <li><a href="#projects-metadata">Metadata</a></li>
-<li><a href="#_supporting_assets">Supporting assets</a></li>
+<li><a href="#_supporting_assets">Supporting Assets</a></li>
 <li><a href="#_classes">Classes</a></li>
 <li><a href="#_predicates">Predicates</a></li>
+<li><a href="#_shapes">Shapes</a></li>
 </ul>
 </li>
 <li><a href="#annex-b">Annex B: Data Release Model</a>
 <ul class="sectlevel2">
 <li><a href="#data-release-metadata">Metadata</a></li>
-<li><a href="#_supporting_assets_2">Supporting assets</a></li>
+<li><a href="#_supporting_assets_2">Supporting Assets</a></li>
 <li><a href="#_classes_2">Classes</a></li>
 <li><a href="#_predicates_2">Predicates</a></li>
+</ul>
+</li>
+<li><a href="#annex-c">Annex C: TERN Ontology Examples</a>
+<ul class="sectlevel2">
+<li><a href="#_c1_validating">C1. Validating</a></li>
+<li><a href="#_c2_example_01_valid">C2. Example 01 - valid</a></li>
+<li><a href="#_c3_example_02_invalid">C3. Example 02 - invalid</a></li>
 </ul>
 </li>
 </ul>
@@ -1919,6 +1932,17 @@ ex:obs-z
 .</pre>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_examples"><a class="anchor" href="#_examples"></a>6.4.1.1. Examples</h5>
+<div class="paragraph">
+<p>See <a href="#annex-c">Annex C: TERN Ontology Examples</a> for a full example of TERN Ontology data with explanations for each part.</p>
+</div>
+<div class="paragraph">
+<p>Also see the <a href="https://abis.dev.kurrawong.ai">ABIS Portal</a> for multiple examples that can be loaded and validated using the online validators also there.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_further_information"><a class="anchor" href="#_further_information"></a>6.4.1.2. Further Information</h5>
 <div class="paragraph">
 <p>Further details of the TERN Ontology&#8217;s classes, predicates and patterns of expected use are documented at:</p>
 </div>
@@ -1928,6 +1952,7 @@ ex:obs-z
 <p><a href="https://linkeddata.tern.org.au/information-models/overview" class="bare">https://linkeddata.tern.org.au/information-models/overview</a></p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1953,8 +1978,19 @@ ex:obs-z
 </div>
 <div class="title">Figure 12. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>According to the NSL Model, a <code>Taxon</code>, rather than a <code>Taxon Name</code> <em>may</em> be assigned to a <code>Feature of Interest</code>, but the NSL Model encourages the use of <code>Taxon Name</code> instances, not <code>Taxon</code>. See the NSL Model&#8217;s <mark>Section XX</mark> for the rules about when Taxon assignment can be made.</p>
+<p>The NSL Model stated that a <code>Taxon</code>, rather than a <code>Taxon Name</code>, <em>MAY</em> be assigned to a <code>Feature of Interest</code>, but it sets criteria for this in its <a href="https://linked.data.gov.au/def/nsl#mapping-abis">ABIS Mapping</a> section.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -2067,8 +2103,47 @@ ex:obs-z
 <div class="sect1">
 <h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>7. Vocabularies</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_mandate_status"><a class="anchor" href="#_mandate_status"></a>7.1. Mandate Status</h3>
 <div class="paragraph">
-<p><mark>TODO: write this section</mark></p>
+<p>ABIS overall does not generally mandate that data use particular vocabularies for predicate values, however many of the individual <a href="#_component_models">Component Models</a> do.</p>
+</div>
+<div class="paragraph">
+<p>For example, the <a href="#annex-a">Projects Model</a> mandates that roles chosen for an attribution&#8217;s <code>hadRole</code> predicate, when used for an instances of the <code>abis:Project</code> class must come from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p>
+</div>
+<div class="paragraph">
+<p>Profiles of ABIS may also further mandate particular vocabulary use: check particular profile details for this.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_listing"><a class="anchor" href="#_listing"></a>7.2. Listing</h3>
+<div class="paragraph">
+<p>Here is a list of vocabularies known to be either required or suggested for use with ABIS and the locations in which they are used (which predicates are expected to indicate concepts from them).</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Vocabulary</th>
+<th class="tableblock halign-left valign-top">Domain</th>
+<th class="tableblock halign-left valign-top">Where Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roles that <a href="#prov:Agent"><code>Agent</code></a> instances play with respect to proscribed subclassses of <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> via <a href="https://www.w3.org/TR/prov-o/#Association"><code>Association</code></a> instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-a">Projects Model</a>, range value for the predicate <code>prov:hadRole</code> when used on <code>Association</code> or <code>Attribution</code> instances when linked to an <a href="#abis:Project"><code>Project</code></a> or <a href="#abis:Program">Program</a> instances</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><mark>Incomplete</mark></p>
+</div>
 </div>
 </div>
 </div>
@@ -2349,7 +2424,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_supporting_assets"><a class="anchor" href="#_supporting_assets"></a>Supporting assets</h3>
+<h3 id="_supporting_assets"><a class="anchor" href="#_supporting_assets"></a>Supporting Assets</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3343,6 +3418,72 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_shapes"><a class="anchor" href="#_shapes"></a>Shapes</h3>
+<div class="paragraph">
+<p>The following <a href="#SHACL">SHACL</a> shapes are graph patterns mandated by this model.</p>
+</div>
+<h4 id="_shapes_index" class="discrete">Shapes Index</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#idn-roles">IDN Roles</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>INCOMPLETE</mark></p>
+</div>
+<h4 id="idn-roles" class="discrete">IDN Roles</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 23.0769%;">
+<col style="width: 76.9231%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abis:idn-roles</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IDN Roles</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roles for the predicate <code>prov:role</code> on instances of <code>prov:Attribution</code> linked to an <code>abis:Project</code> must be taken from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby">Is Defined By</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model&#8217;s validator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>abis:idn-roles
+    a shacl:Shape ;
+    sdo:name "IDN Roles" ;
+    sdo:description "Roles for the predicate prov:role on instances of prov:Attribution linked to an abis:Project must be taken from the IDN Role Codes Vocabulary (https://data.idnau.org/pid/vocab/idn-role-codes)" ;
+    sh:path [
+
+    ] ;
+.</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><mark>INCOMPLETE</mark></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3444,7 +3585,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_supporting_assets_2"><a class="anchor" href="#_supporting_assets_2"></a>Supporting assets</h3>
+<h3 id="_supporting_assets_2"><a class="anchor" href="#_supporting_assets_2"></a>Supporting Assets</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3613,10 +3754,214 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="annex-c"><a class="anchor" href="#annex-c"></a>Annex C: TERN Ontology Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This following examples are all <a href="#RDF">RDF</a> data in the <a href="#TURTLE">Turtle</a> format.</p>
+</div>
+<div class="sect2">
+<h3 id="_c1_validating"><a class="anchor" href="#_c1_validating"></a>C1. Validating</h3>
+<div class="paragraph">
+<p>All these examples are loaded into the <a href="https://abis.dev.kurrawong.ai">ABIS Portal</a> and may be validated online using the TERN Ontology validator which is also loaded there.</p>
+</div>
+<div class="paragraph">
+<p>To validate these examples locally - on your own computer - you will need a validation tool installed - see the <a href="#_validation">Validation Section</a>, the example data file, the TERN Ontology validator and the TERN Ontology itself. These files are all available from this ABIS repository:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">File</th>
+<th class="tableblock halign-left valign-top">Location</th>
+<th class="tableblock halign-left valign-top">Validity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TERN Ontology Validator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/AusBIGG/abis/tree/master/validators/tern-validator.ttl" class="bare">https://github.com/AusBIGG/abis/tree/master/validators/tern-validator.ttl</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TERN Ontology Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/AusBIGG/abis/tree/master/models/components/tern-model.ttl" class="bare">https://github.com/AusBIGG/abis/tree/master/models/components/tern-model.ttl</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example 01 data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-01.ttl" class="bare">https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-01.ttl</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">valid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example 02 data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-02.ttl" class="bare">https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-02.ttl</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">invalid</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If using the <a href="https://github.com/RDFLib/pySHACL">pySHACL</a> tool, the following command will validate the data using the files above:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>pyshaclz -s tern-validator.ttl -e tern-ont.ttl tern-eg-01.ttl -f table</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_c2_example_01_valid"><a class="anchor" href="#_c2_example_01_valid"></a>C2. Example 01 - valid</h3>
+<div class="paragraph">
+<p>This example is valid according to the TERN Ontology validator.</p>
+</div>
+<div class="listingblock">
+<div class="title">TERN Ontology example 01 - valid</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/thing/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">time:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">void:</span><span class="w"> </span><span class="nl">&lt;http://rdfs.org/ns/void#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">dataset-01
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN RDFDataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">obs-01
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN Observation 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT(143, -27)"</span><span class="p">^^</span><span class="nn">geo:</span><span class="n">wktLiteral
+</span><span class="w">    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"A minimally valid tern:Observation instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nn">ex:</span><span class="n">foi-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasResult</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Float</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">rdf:</span><span class="n">value</span><span class="w"> </span><span class="s">"42"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">tern:</span><span class="n">uncertainty</span><span class="w"> </span><span class="s">"0.5"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;https://example.org/op/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">phenomenonTime</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="k">a</span><span class="w"> </span><span class="nn">time:</span><span class="n">Instant</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">time:</span><span class="n">inXSDDateTimeStamp</span><span class="w"> </span><span class="s">"2021-11-18T14:35+10:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTimeStamp</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">usedProcedure</span><span class="w"> </span><span class="nl">&lt;https://example.org/proc/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">tern:</span><span class="n">resultDateTime</span><span class="w"> </span><span class="s">"2021-11-18T14:35:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">foi-01
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">FeatureOfInterest</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN FeatureOfInterest 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">tern:</span><span class="n">featureType</span><span class="w"> </span><span class="nl">&lt;https://example.org/ft/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_c3_example_02_invalid"><a class="anchor" href="#_c3_example_02_invalid"></a>C3. Example 02 - invalid</h3>
+<div class="paragraph">
+<p>This example is the same data as the above but with several lines commented out (starting with <code>#</code>) which makes it invalid according to the TERN Ontology validator.</p>
+</div>
+<div class="listingblock">
+<div class="title">TERN Ontology example 02 - invalid</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/thing/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">time:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">void:</span><span class="w"> </span><span class="nl">&lt;http://rdfs.org/ns/void#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">dataset-01
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN RDFDataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">obs-01
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN Observation 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="c1">#    geo:hasGeometry [</span><span class="w">
+</span><span class="c1">#        a geo:Geometry ;</span><span class="w">
+</span><span class="c1">#        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral</span><span class="w">
+</span><span class="c1">#    ] ;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"A minimally valid tern:Observation instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nn">ex:</span><span class="n">foi-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasResult</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Float</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">rdf:</span><span class="n">value</span><span class="w"> </span><span class="s">"42"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">tern:</span><span class="n">uncertainty</span><span class="w"> </span><span class="s">"0.5"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;https://example.org/op/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">phenomenonTime</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="k">a</span><span class="w"> </span><span class="nn">time:</span><span class="n">Instant</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">time:</span><span class="n">inXSDDateTimeStamp</span><span class="w"> </span><span class="s">"2021-11-18T14:35+10:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTimeStamp</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">usedProcedure</span><span class="w"> </span><span class="nl">&lt;https://example.org/proc/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">tern:</span><span class="n">resultDateTime</span><span class="w"> </span><span class="s">"2021-11-18T14:35:00"</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># ^^xsd:dateTime ;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">foi-01
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">FeatureOfInterest</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN FeatureOfInterest 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="c1">#    void:inDataset ex:dataset-01 ;</span><span class="w">
+    </span><span class="nn">tern:</span><span class="n">featureType</span><span class="w"> </span><span class="nl">&lt;https://example.org/ft/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Results from validating this example should indicate two Violations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The datatype for the value indicated by the <code>tern:resultDateTime</code> predicate on the object <code>ex:obs-01</code> is of an invalid datatype</p>
+<div class="ulist">
+<ul>
+<li>
+<p>no datatype is given, so a string (<code>xsd:string</code>) is presumed but it should be an <code>xsd:date</code>, <code>xsd:dateTime</code> or <code>xsd:dateTimeStamp</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>ex:obs-01</code> is missing a <code>geo:hasGeometry</code> predicate</p>
+</li>
+<li>
+<p><code>ex:foi-01</code> is missing a <code>void:inDataset</code> predicate</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-12-28 12:04:33 UTC
+Last updated 2023-12-29 06:06:47 UTC
 </div>
 </div>
 </body>
