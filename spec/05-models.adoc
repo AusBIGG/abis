@@ -118,7 +118,7 @@ image::img/nsl-join.svg[NSL Model Overview,align="center",width=550]
 
 [NOTE]
 ====
-The NSL Model stated that a `Taxon`, rather than a `Taxon Name`, _MAY_ be assigned to a `Feature of Interest`, but it sets criteria for `Taxon` assignment in its https://linked.data.gov.au/def/nsl#mapping-abis[ABIS Mapping] section.
+The NSL Model stated that a `Taxon`, rather than a `Taxon Name`, _MAY_ be assigned to a `Feature of Interest`, but it sets criteria for this in its https://linked.data.gov.au/def/nsl#mapping-abis[ABIS Mapping] section.
 ====
 
 ==== Projects Model
