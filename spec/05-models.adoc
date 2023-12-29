@@ -116,7 +116,10 @@ The join point between the NSL Model and the TERN Ontology is on the `Result` of
 .An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model's documentation online at https://linked.data.gov.au/def/nsl
 image::img/nsl-join.svg[NSL Model Overview,align="center",width=550]
 
-According to the NSL Model, a `Taxon`, rather than a `Taxon Name` _may_ be assigned to a `Feature of Interest`, but the NSL Model encourages the use of `Taxon Name` instances, not `Taxon`. See the NSL Model's #Section XX# for the rules about when Taxon assignment can be made.
+[NOTE]
+====
+The NSL Model stated that a `Taxon`, rather than a `Taxon Name`, _MAY_ be assigned to a `Feature of Interest`, but it sets criteria for `Taxon` assignment in its https://linked.data.gov.au/def/nsl#mapping-abis[ABIS Mapping] section.
+====
 
 ==== Projects Model
 
