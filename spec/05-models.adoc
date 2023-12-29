@@ -89,6 +89,13 @@ ex:obs-z
 .
 ----
 
+===== Examples
+
+See <<#annex-c, Annex C: TERN Ontology Examples>> for a full example of TERN Ontology data with explanations for each part.
+
+Also see the https://abis.dev.kurrawong.ai[ABIS Portal] for multiple examples that can be loaded and validated using the online validators also there.
+
+===== Further Information
 Further details of the TERN Ontology's classes, predicates and patterns of expected use are documented at:
 
 * https://linkeddata.tern.org.au/information-models/overview

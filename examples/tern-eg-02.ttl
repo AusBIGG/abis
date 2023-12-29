@@ -1,0 +1,49 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <http://example.com/thing/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ex:dataset-01
+    a tern:RDFDataset ;
+    dcterms:description "A minimally valid tern:RDFDataset instance" ;
+    dcterms:issued "2021-11-18"^^xsd:date ;
+    dcterms:title "TERN RDFDataset 01" ;
+.
+
+ex:obs-01
+    a tern:Observation ;
+    rdfs:label "TERN Observation 01" ;
+    void:inDataset ex:dataset-01 ;
+#    geo:hasGeometry [
+#        a geo:Geometry ;
+#        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral
+#    ] ;
+    rdfs:comment "A minimally valid tern:Observation instance" ;
+    sosa:hasFeatureOfInterest ex:foi-01 ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value "42"^^xsd:double ;
+        tern:uncertainty "0.5"^^xsd:double ;
+    ] ;
+    sosa:hasSimpleResult "42" ;
+    sosa:observedProperty <https://example.org/op/1> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2021-11-18T14:35+10:00"^^xsd:dateTimeStamp ;
+    ] ;
+    sosa:usedProcedure <https://example.org/proc/1> ;
+    tern:resultDateTime "2021-11-18T14:35:00" ;  # ^^xsd:dateTime ;
+.
+
+ex:foi-01
+    a tern:FeatureOfInterest ;
+    rdfs:label "TERN FeatureOfInterest 01" ;
+#    void:inDataset ex:dataset-01 ;
+    tern:featureType <https://example.org/ft/1> ;
+.

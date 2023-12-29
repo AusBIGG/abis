@@ -239,8 +239,8 @@ tern-shapes:Intervention
     a sh:NodeShape ;
     rdfs:label "Intervention" ;
     sh:property
-        tern-shapes:Intervention-endedAtTime ,
-        tern-shapes:Intervention-startedAtTime ,
+        tern-shapes:prov-endedAtTime ,
+        tern-shapes:prov-startedAtTime ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
         tern-shapes:geo-hasGeometry ,
@@ -416,16 +416,23 @@ tern-shapes:SiteVisit
     a sh:NodeShape ;
     rdfs:label "Site Visit" ;
     sh:property
-        tern-shapes:SiteVisit-endedAtTime ,
-        tern-shapes:SiteVisit-startedAtTime ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
+        tern-shapes:tern-locationDescription ,
+        tern-shapes:tern-siteDescription ;
+    sh:targetClass tern:SiteVisit ;
+.
+
+tern-shapes:Survey
+    a sh:NodeShape ;
+    rdfs:label "Survey" ;
+    sh:property
+        tern-shapes:prov-endedAtTime ,
+        tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
         tern-shapes:prov-wasAssociatedWith ,
-        tern-shapes:tern-locationDescription ,
-        tern-shapes:tern-siteDescription ,
         tern-shapes:void-inDataset ;
-    sh:targetClass tern:SiteVisit ;
+    sh:targetClass tern:Survey ;
 .
 
 tern-shapes:System
@@ -775,27 +782,27 @@ tern-shapes:Integer-value
     sh:path rdf:value ;
 .
 
-tern-shapes:Intervention-endedAtTime
+tern-shapes:prov-endedAtTime
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
     skos:prefLabel "ended at time" ;
     sh:datatype xsd:dateTime ;
     sh:description "The time at which an activity ended." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
     sh:name "prov:endedAtTime" ;
     sh:nodeKind sh:Literal ;
     sh:path prov:endedAtTime ;
 .
 
-tern-shapes:Intervention-startedAtTime
+tern-shapes:prov-startedAtTime
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
     skos:prefLabel "started at time" ;
     sh:datatype xsd:dateTime ;
     sh:description "The time at which an activity started." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
     sh:minCount 1 ;
     sh:name "prov:startedAtTime" ;
     sh:nodeKind sh:Literal ;
@@ -1259,33 +1266,6 @@ tern-shapes:Site-locationProcedure
     sh:name "tern:locationProcedure" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:locationProcedure ;
-.
-
-tern-shapes:SiteVisit-endedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "ended at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity ended." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:SiteVisit` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
-    sh:name "prov:endedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:endedAtTime ;
-.
-
-tern-shapes:SiteVisit-startedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "started at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity started." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:SiteVisit` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
-    sh:minCount 1 ;
-    sh:name "prov:startedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:startedAtTime ;
 .
 
 tern-shapes:System-hasDeployment
@@ -2401,7 +2381,7 @@ tern-shapes:tern-locationDescription
     reg:status reg:statusExperimental ;
     skos:prefLabel "location description" ;
     sh:datatype xsd:string ;
-    sh:description """The description of the site's location. 
+    sh:description """The description of the site's location.
 
 Example: 10km west of Fletcherview Tropical Rangeland SuperSite.""" ;
     sh:maxCount 1 ;
@@ -2416,7 +2396,7 @@ tern-shapes:tern-siteDescription
     reg:status reg:statusExperimental ;
     skos:prefLabel "site description" ;
     sh:datatype xsd:string ;
-    sh:description """The description of the site. 
+    sh:description """The description of the site.
 
 Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sand fan into western edge. Very few, 3, plants regenerating after recent moderate rains. Silt, sand with scattered iron conglomerate stones on surface.""" ;
     sh:maxCount 1 ;

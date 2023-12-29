@@ -19,9 +19,11 @@ BASE <https://w3id.org/profile/vocpub/validator/>
     sdo:creator <https://orcid.org/0000-0002-8742-7730> ;
     sdo:publisher <https://linked.data.gov.au/org/agldwg> ;
     sdo:dateCreated "2020-06-14"^^xsd:date ;
-    sdo:dateModified "2023-11-15"^^xsd:date ;
-    owl:versionIRI <https://w3id.org/profile/vocpub/validator/4.6> ;
-    owl:versionInfo """4.6 Fixed sdo:historyNote->skos:historyNote bug
+    sdo:dateModified "2023-12-05"^^xsd:date ;
+    owl:versionIRI <https://w3id.org/profile/vocpub/validator/4.7> ;
+    owl:versionInfo """4.7 Fixed modified date alternate path listing bug
+
+4.6 Fixed sdo:historyNote->skos:historyNote bug
 
 4.5 Added suggested predicates of license & copyrightHolder
 
@@ -87,7 +89,7 @@ BASE <https://w3id.org/profile/vocpub/validator/>
 	sh:message "Requirement 2.1.5 Each vocabulary MUST have exactly one created date and exactly one modified date indicated using the sdo:dateCreated and sdo:dateModified or dcterms:created and dcterms:modified predicates respectively that must be either an xsd:date, xsd:dateTime or xsd:dateTimeStamp literal value" ;
 	sh:property
         <created> ,
-        <modified> ;
+        <modified> ;    
 .
 
 <Requirement-2.1.6>
@@ -378,8 +380,8 @@ BASE <https://w3id.org/profile/vocpub/validator/>
     sh:message "Requirement 2.15 - modified date - violated" ;
     sh:path [
         sh:alternativePath (
-            sh:path sdo:dateModified
-            sh:path dcterms:modified
+            sdo:dateModified
+            dcterms:modified
         ) ;
     ] ;
     sh:minCount 1 ;
@@ -388,7 +390,7 @@ BASE <https://w3id.org/profile/vocpub/validator/>
         [ sh:datatype xsd:dateTime ]
         [ sh:datatype xsd:date ]
         [ sh:datatype xsd:dateTimeStamp ]
-    ) ;
+    ) ;        
 .
 
 <creator>

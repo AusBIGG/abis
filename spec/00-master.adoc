@@ -70,3 +70,5 @@ include::99-references.adoc[]
 include::10_annex_a.adoc[]
 
 include::11_annex_b.adoc[]
+
+include::12_annex_c.adoc[]
