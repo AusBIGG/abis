@@ -13,7 +13,7 @@ The other parts of ABIS are:
 ** The technical expression of ABIS as a standard that inherits from other standards
 ** This is available in human- and machine-readable forms
 * *Models*
-** ABIS is made of multiple models which are listed in the <<Model, Model Section>> but are published and maintained elsewhere
+** ABIS is made of multiple models which are listed in the <<Models, Models Section>> but are published and maintained elsewhere
 ** Both human- and machine-readable forms of all ABIS models are available
 * *Vocabularies*
 ** ABIS, and the modes it depends on, rely on many vocabularies
@@ -35,10 +35,10 @@ Namespaces are used in shortened form in documents and data by assigning them a 
 [frame=none, grid=none, cols="1,3,3"]
 |===
 |Prefix | Namespace | Description
-|*`abis:`* | *`https://linked.data.gov.au/def/abis/`* | *ABIS namespace* - for this Standard
-|*`abisdr:`* | *`https://linked.data.gov.au/def/abis/data-release/`* | <<#annex-a, ABIS Data Release Model>> namespace
-|*`abisp:`* | *`https://linked.data.gov.au/def/abis/projects/`* | <<#annex-a, ABIS Projects Model>> namespace
-|*`bdr:`* | *`https://linked.data.gov.au/dataset/bdr/`* | *BDR Dataset Namespace*
+|`abis:` | `https://linked.data.gov.au/def/abis/` | *ABIS namespace* - for this Standard
+|`abisdr:` | `https://linked.data.gov.au/def/abis/data-release/` | <<#annex-a, ABIS Data Release Model>> namespace
+|`abisp:` | `https://linked.data.gov.au/def/abis/projects/` | <<#annex-a, ABIS Projects Model>> namespace
+|`bdr:` | `https://linked.data.gov.au/dataset/bdr/` | BDR Dataset Namespace
 |`ex:` | `+http://example.com/thing+` | Generic examples namespace - _does not resolve_
 |`geo:` | `http://www.opengis.net/ont/geosparql#` | <<GSP, GeoSPARQL Ontology>> namespace
 |`owl:` | `http://www.w3.org/2002/07/owl#` | <<OWL2, Web Ontology Language ontology>> namespace
