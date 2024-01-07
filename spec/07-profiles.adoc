@@ -14,7 +14,7 @@ The following profiles of ABIS are known to exist:
 
 1. <<BDR Profile, BDR Profile>>
 
-
+[[profile-bdr]]
 === BDR Profile
 
 This profile defines the requirements for data to be absorbed into the https://www.dcceew.gov.au/environment/epbc/publications/biodiversity-data-repository[Biodiversity Data Repository].
