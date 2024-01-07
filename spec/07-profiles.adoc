@@ -1,0 +1,68 @@
+== Profiles
+
+ABIS is a multi-part model that profiles many other models - see the <<Model Dependency Hierarchy, Model Dependency Hierarchy>> section for details.
+
+Likewise, profiles of ABIS are made to constrain and/or extend its use.
+
+Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on: profile rules are entirely a matter for profile defines however data valida according to a profile of a standard, must always be valid according to the standard itself.
+
+=== Profiles of ABIS
+
+Profiles of ABIS may be defined anywhere however profile creators are encouraged to list their profiles here by <<Metadata, contacting ABIS' maintainers>>.
+
+The following profiles of ABIS are known to exist:
+
+1. <<BDR Profile, BDR Profile>>
+
+
+=== BDR Profile
+
+This profile defines the requirements for data to be absorbed into the https://www.dcceew.gov.au/environment/epbc/publications/biodiversity-data-repository[Biodiversity Data Repository].
+
+[discrete]
+==== Resources
+
+The resources within this profile are listed below. The roles given for each are taken from _The Profiles Vocabulary_ <<PROF>>.
+
+[cols="1,1,1,2"]
+|===
+| Resource | Role | IRI | Description
+
+| Specification | https://www.w3.org/TR/dx-prof/#Role:specification[Specification] | `https://linked.data.gov.au/def/abis/bdr` | The <<BDR Profile, BDR Profile>> of https://linked.data.gov.au/def/abis/spec[ABIS] (this section)
+| Machine-readable Profile Definition | https://www.w3.org/TR/dx-prof/#Role:profile-definition[Profile Definition] | `https://linked.data.gov.au/def/abis/bdr.ttl` | The machine-readable definition of this Profile, as per this text, but in RDF, according to The Profiles Vocabulary <<PROF>>
+| Validator | https://www.w3.org/TR/dx-prof/#Role:validation[Validation] | `https://linked.data.gov.au/def/abis/bdr/validator` | A <<SHACL, SHACL>> file used to validate RDF data according to this Profile’s rules
+| Data Expander | https://www.w3.org/TR/dx-prof/#Role:script[Script] | `https://linked.data.gov.au/def/abis/bdr/expander` | A SHACL <<SHACL, SHACL>> file used to expand RDF data according to this Specification’s rules
+| Combined Validator & Expander | https://www.w3.org/TR/dx-prof/#Role:validation[Validation] | `https://linked.data.gov.au/def/abis/bdr/validator-combined` | The combined validator and data expander <<SHACL, SHACL>> file
+|===
+
+[NOTE]
+====
+This profile's validators are pre-loaded in the https://abis.dev.kurrawong.net[ABIS Portal].
+====
+
+[discrete]
+==== Specification
+
+The following subsections contain the rules of this Profile and form this Profile’s normative specification.
+
+[discrete]
+===== Model Element Mandates
+
+The following table lists the requirements for the presence of classes and predicates assigned to data supplied according to this Profile. These requirements are in addition to those imposed by <<Component Models, ABIS Component models>>, such as the <<#tern-ontology, TERN Ontology>>.
+
+A cardinality of `1` means mandatory. `0+` means zero or more, `1+` one more, etc. `0-1` means zero or one only.
+
+|===
+| Class | Predicate | Cardinality | Notes
+
+|===
+
+[discrete]
+==== Validators
+
+Validators
+
+[discrete]
+==== Examples
+
+Examples

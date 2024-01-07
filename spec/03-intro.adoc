@@ -90,6 +90,7 @@ Additionally, ABIS exists within a domain that already contains many internation
 
 This specification aims to cover all the information needed to understand ABIS and use it. The following is a list of the major sections in this document and their purposes.
 
+[start=4]
 . <<Introduction, Introduction>>
 ** This section. An informal overview of ABIS
 . <<Patterns, Patterns>>
@@ -98,7 +99,16 @@ This specification aims to cover all the information needed to understand ABIS a
 ** The normative description of the data models used within ABIS
 . <<Vocabularies, Vocabularies>>
 ** Description of, and links to, the vocabularies needed for use with ABIS
+. <<Profiles, Profiles>>
+** A listing of known profiles of ABIS
 . <<Validation, Validation>>
 ** How to validate data according to ABIS and links to the various validators
 . <<Mappings, Mappings>>
 ** Human- and machine-readable mappings between ABIS and other standards within ABIS' domain
+
+Two additional models - extensions to ABIS - are defined in this document:
+
+* <<annex-a, Annex A: Projects Model>>
+* <<annex-b, Annex B: Data Release Model>>
+
+Extended examples <<TERNOntology, TERN Ontology>> data, in use within ABIS, are given in <<annex-c, Annex C>>.

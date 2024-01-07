@@ -4,5 +4,5 @@ This document is the normative specification of the Australian Biodiversity Info
 
 [NOTE]
 ====
-The one-stop-shop for ABIS is the https://abis.dev.kurrawong.ai[ABIS Portal]. It contains example data, vocabularies and validators that you can play with online, without needing to install anything. Go there if you are new to ABIS.
+The one-stop-shop for ABIS is the https://abis.dev.kurrawong.net[ABIS Portal]. It contains example data, vocabularies and validators that you can play with online, without needing to install anything. Go there if you are new to ABIS.
 ====

@@ -5,7 +5,7 @@ This following examples are all <<RDF, RDF>> data in the <<TURTLE, Turtle>> form
 
 === C1. Validating
 
-All these examples are loaded into the https://abis.dev.kurrawong.ai[ABIS Portal] and may be validated online using the TERN Ontology validator which is also loaded there.
+All these examples are loaded into the https://abis.dev.kurrawong.net[ABIS Portal] and may be validated online using the TERN Ontology validator which is also loaded there.
 
 To validate these examples locally - on your own computer - you will need a validation tool installed - see the <<Validation, Validation Section>>, the example data file, the TERN Ontology validator and the TERN Ontology itself. These files are all available from this ABIS repository:
 

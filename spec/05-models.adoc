@@ -43,6 +43,7 @@ The Component Models of ABIS are:
 * <<Projects Model, Projects Model>>
 * <<Data Release Model, Data Release Model>>
 
+[[tern-ontology]]
 ==== TERN Ontology
 
 The <<TERNOntology, TERN Ontology>> is a re-skinned, and slightly extended, version of the <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> to better cater for the biodiversity community.
@@ -93,7 +94,7 @@ ex:obs-z
 
 See <<#annex-c, Annex C: TERN Ontology Examples>> for a full example of TERN Ontology data with explanations for each part.
 
-Also see the https://abis.dev.kurrawong.ai[ABIS Portal] for multiple examples that can be loaded and validated using the online validators also there.
+Also see the https://abis.dev.kurrawong.net[ABIS Portal] for multiple examples that can be loaded and validated using the online validators also there.
 
 ===== Further Information
 Further details of the TERN Ontology's classes, predicates and patterns of expected use are documented at:
