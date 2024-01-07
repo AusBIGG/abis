@@ -690,7 +690,7 @@ pre.rouge {
 <li><a href="#_foreground_model">6.3. Foreground Model</a></li>
 <li><a href="#_component_models">6.4. Component Models</a>
 <ul class="sectlevel3">
-<li><a href="#_tern_ontology">6.4.1. TERN Ontology</a></li>
+<li><a href="#tern-ontology">6.4.1. TERN Ontology</a></li>
 <li><a href="#_nsl_model">6.4.2. NSL Model</a></li>
 <li><a href="#_projects_model">6.4.3. Projects Model</a></li>
 <li><a href="#_data_release_model">6.4.4. Data Release Model</a></li>
@@ -705,9 +705,15 @@ pre.rouge {
 <li><a href="#_listing">7.2. Listing</a></li>
 </ul>
 </li>
-<li><a href="#_validation">8. Validation</a></li>
-<li><a href="#_mappings">9. Mappings</a></li>
-<li><a href="#_references">10. References</a></li>
+<li><a href="#_profiles">8. Profiles</a>
+<ul class="sectlevel2">
+<li><a href="#_profiles_of_abis">8.1. Profiles of ABIS</a></li>
+<li><a href="#_bdr_profile">8.2. BDR Profile</a></li>
+</ul>
+</li>
+<li><a href="#_validation">9. Validation</a></li>
+<li><a href="#_mappings">10. Mappings</a></li>
+<li><a href="#_references">11. References</a></li>
 <li><a href="#annex-a">Annex A: Projects Model</a>
 <ul class="sectlevel2">
 <li><a href="#projects-metadata">Metadata</a></li>
@@ -837,7 +843,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The one-stop-shop for ABIS is the <a href="https://abis.dev.kurrawong.ai">ABIS Portal</a>. It contains example data, vocabularies and validators that you can play with online, without needing to install anything. Go there if you are new to ABIS.</p>
+<p>The one-stop-shop for ABIS is the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a>. It contains example data, vocabularies and validators that you can play with online, without needing to install anything. Go there if you are new to ABIS.</p>
 </div>
 </td>
 </tr>
@@ -1391,7 +1397,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <p>This specification aims to cover all the information needed to understand ABIS and use it. The following is a list of the major sections in this document and their purposes.</p>
 </div>
 <div class="olist arabic">
-<ol class="arabic">
+<ol class="arabic" start="4">
 <li>
 <p><a href="#_introduction">Introduction</a></p>
 <div class="ulist">
@@ -1433,6 +1439,16 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 </li>
 <li>
+<p><a href="#_profiles">Profiles</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>A listing of known profiles of ABIS</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p><a href="#_validation">Validation</a></p>
 <div class="ulist">
 <ul>
@@ -1453,6 +1469,22 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Two additional models - extensions to ABIS - are defined in this document:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#annex-a">Annex A: Projects Model</a></p>
+</li>
+<li>
+<p><a href="#annex-b">Annex B: Data Release Model</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Extended examples <a href="#TERNOntology">TERN Ontology</a> data, in use within ABIS, are given in <a href="#annex-c">Annex C</a>.</p>
 </div>
 </div>
 </div>
@@ -1875,7 +1907,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_tern_ontology"><a class="anchor" href="#_tern_ontology"></a>6.4.1. TERN Ontology</h4>
+<h4 id="tern-ontology"><a class="anchor" href="#tern-ontology"></a>6.4.1. TERN Ontology</h4>
 <div class="paragraph">
 <p>The <a href="#TERNOntology">TERN Ontology</a> is a re-skinned, and slightly extended, version of the <a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> to better cater for the biodiversity community.</p>
 </div>
@@ -1939,7 +1971,7 @@ ex:obs-z
 <p>See <a href="#annex-c">Annex C: TERN Ontology Examples</a> for a full example of TERN Ontology data with explanations for each part.</p>
 </div>
 <div class="paragraph">
-<p>Also see the <a href="https://abis.dev.kurrawong.ai">ABIS Portal</a> for multiple examples that can be loaded and validated using the online validators also there.</p>
+<p>Also see the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> for multiple examples that can be loaded and validated using the online validators also there.</p>
 </div>
 </div>
 <div class="sect4">
@@ -2149,7 +2181,144 @@ ex:obs-z
 </div>
 </div>
 <div class="sect1">
-<h2 id="_validation"><a class="anchor" href="#_validation"></a>8. Validation</h2>
+<h2 id="_profiles"><a class="anchor" href="#_profiles"></a>8. Profiles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ABIS is a multi-part model that profiles many other models - see the <a href="#_model_dependency_hierarchy">Model Dependency Hierarchy</a> section for details.</p>
+</div>
+<div class="paragraph">
+<p>Likewise, profiles of ABIS are made to constrain and/or extend its use.</p>
+</div>
+<div class="paragraph">
+<p>Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on: profile rules are entirely a matter for profile defines however data valida according to a profile of a standard, must always be valid according to the standard itself.</p>
+</div>
+<div class="sect2">
+<h3 id="_profiles_of_abis"><a class="anchor" href="#_profiles_of_abis"></a>8.1. Profiles of ABIS</h3>
+<div class="paragraph">
+<p>Profiles of ABIS may be defined anywhere however profile creators are encouraged to list their profiles here by <a href="#_metadata">contacting ABIS' maintainers</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following profiles of ABIS are known to exist:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#_bdr_profile">BDR Profile</a></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bdr_profile"><a class="anchor" href="#_bdr_profile"></a>8.2. BDR Profile</h3>
+<div class="paragraph">
+<p>This profile defines the requirements for data to be absorbed into the <a href="https://www.dcceew.gov.au/environment/epbc/publications/biodiversity-data-repository">Biodiversity Data Repository</a>.</p>
+</div>
+<h4 id="_resources" class="discrete">Resources</h4>
+<div class="paragraph">
+<p>The resources within this profile are listed below. The roles given for each are taken from <em>The Profiles Vocabulary</em> <a href="#PROF">[PROF]</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Resource</th>
+<th class="tableblock halign-left valign-top">Role</th>
+<th class="tableblock halign-left valign-top">IRI</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:specification">Specification</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr" class="bare">https://linked.data.gov.au/def/abis/bdr</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="#_bdr_profile">BDR Profile</a> of <a href="https://linked.data.gov.au/def/abis/spec">ABIS</a> (this section)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable Profile Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:profile-definition">Profile Definition</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr.ttl" class="bare">https://linked.data.gov.au/def/abis/bdr.ttl</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable definition of this Profile, as per this text, but in RDF, according to The Profiles Vocabulary <a href="#PROF">[PROF]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:validation">Validation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr/validator" class="bare">https://linked.data.gov.au/def/abis/bdr/validator</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <a href="#SHACL">SHACL</a> file used to validate RDF data according to this Profile’s rules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Expander</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:script">Script</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr/expander" class="bare">https://linked.data.gov.au/def/abis/bdr/expander</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A SHACL <a href="#SHACL">SHACL</a> file used to expand RDF data according to this Specification’s rules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Combined Validator &amp; Expander</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:validation">Validation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr/validator-combined" class="bare">https://linked.data.gov.au/def/abis/bdr/validator-combined</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The combined validator and data expander <a href="#SHACL">SHACL</a> file</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This profile&#8217;s validators are pre-loaded in the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h4 id="_specification" class="discrete">Specification</h4>
+<div class="paragraph">
+<p>The following subsections contain the rules of this Profile and form this Profile’s normative specification.</p>
+</div>
+<h5 id="_model_element_mandates" class="discrete">Model Element Mandates</h5>
+<div class="paragraph">
+<p>The following table lists the requirements for the presence of classes and predicates assigned to data supplied according to this Profile. These requirements are in addition to those imposed by <a href="#_component_models">ABIS Component models</a>, such as the <a href="#tern-ontology">TERN Ontology</a>.</p>
+</div>
+<div class="paragraph">
+<p>A cardinality of <code>1</code> means mandatory. <code>0+</code> means zero or more, <code>1+</code> one more, etc. <code>0-1</code> means zero or one only.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Class</th>
+<th class="tableblock halign-left valign-top">Predicate</th>
+<th class="tableblock halign-left valign-top">Cardinality</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+</table>
+<h4 id="_validators" class="discrete">Validators</h4>
+<div class="paragraph">
+<p>Validators</p>
+</div>
+<h4 id="_examples_2" class="discrete">Examples</h4>
+<div class="paragraph">
+<p>Examples</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_validation"><a class="anchor" href="#_validation"></a>9. Validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><mark>TODO: write this section</mark></p>
@@ -2160,7 +2329,7 @@ ex:obs-z
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mappings"><a class="anchor" href="#_mappings"></a>9. Mappings</h2>
+<h2 id="_mappings"><a class="anchor" href="#_mappings"></a>10. Mappings</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><mark>TODO: write this section</mark></p>
@@ -2168,7 +2337,7 @@ ex:obs-z
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references"><a class="anchor" href="#_references"></a>10. References</h2>
+<h2 id="_references"><a class="anchor" href="#_references"></a>11. References</h2>
 <div class="sectionbody">
 <div id="BIRO" class="dlist">
 <dl>
@@ -3764,7 +3933,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="sect2">
 <h3 id="_c1_validating"><a class="anchor" href="#_c1_validating"></a>C1. Validating</h3>
 <div class="paragraph">
-<p>All these examples are loaded into the <a href="https://abis.dev.kurrawong.ai">ABIS Portal</a> and may be validated online using the TERN Ontology validator which is also loaded there.</p>
+<p>All these examples are loaded into the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> and may be validated online using the TERN Ontology validator which is also loaded there.</p>
 </div>
 <div class="paragraph">
 <p>To validate these examples locally - on your own computer - you will need a validation tool installed - see the <a href="#_validation">Validation Section</a>, the example data file, the TERN Ontology validator and the TERN Ontology itself. These files are all available from this ABIS repository:</p>
@@ -3962,7 +4131,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-03 01:59:14 UTC
+Last updated 2024-01-07 22:03:15 UTC
 </div>
 </div>
 </body>
