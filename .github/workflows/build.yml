@@ -26,8 +26,8 @@ jobs:
         cp -r standard/img docs/
         sed -i 's#img src="#img src="https://ausbigg.github.io/abis/#' docs/standard.html        
         #
-        echo "Add standard RDF to docs/"
-        cp models/profile.ttl docs/
+        echo "Add profile RDF to docs/"
+        cp profile.ttl docs/
         #
         echo "Add Specification to docs/"   
         asciidoctor spec/00-master.adoc -o docs/specification.html
@@ -41,6 +41,17 @@ jobs:
         #
         echo "Add JSON-LD Context to docs/"
         cp context.json docs/
+        #
+        echo "Add Component Models to docs/"
+        cp models/components/data-release.ttl docs/
+        cp models/components/projects.ttl docs/
+        #
+        echo "Add profiles of ABIS to docs/"
+        cp profiles/bdr/profile.ttl docs/bdr.ttl
+        #
+        echo "Add validator to docs/"
+        cp validators/validator.ttl docs/validator.ttl
+        echo "TODO: add creation of compounded vocalidator here"
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
