@@ -2,7 +2,7 @@
 
 This document is the specification of the parts, requirements and patterns of the https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard (ABIS)].
 
-The goal of ABIS is to simplify the exchange of standardised biodiversity data in Australia between data holders - States & Territories, the Commonwealth, educational and research organisations, private companies and the public - by providing a scientific observations data model and a series of additions to is that cater for institution details, data management and mappings to other information models.
+The goal of ABIS is to simplify the exchange of standardised biodiversity data in Australia between data holders - States & Territories, the Commonwealth, educational and research organisations, private companies and the public - by providing a scientific observations data model and a series of additions to it that cater for institution details, data management and mappings to other information models.
 
 ABIS uses rigorous and formal data models which means that data wanting to be compliant with it can be automatically validated using machine-readable forms of the models and validation tools. This specification indicates where the validators are and how to use them in the <<Validation, Validation Section>>.
 
@@ -25,7 +25,7 @@ In addition to the TERN Ontology and the background models it uses, ABIS also us
 * <<BIRO, Bibliographic Reference Ontology (BiRO)>>
 ** A model for the description of reference lists and bibliographic references themselves
 * The <<PROF, Profiles Vocabulary>>
-** A model that related models to other models
+** A model that relates models to other models
 * <<OLIS, Olis Ontology>>
 ** A model used to manage graphs of data with within a <<KnowledgeGraph, Knowledge Graph>>
 
@@ -43,11 +43,11 @@ Details of all these models are given in the <<Models, Models>> section.
 [discrete]
 ==== Aim
 
-ABIS was established to enable a national Biodiversity Data Repository <<BDR, BDR>> in Australia that absorbed data from a range of sources.
+ABIS was established to enable a national Biodiversity Data Repository <<BDR, BDR>> in Australia that absorbs data from a range of sources.
 
-These data supplier sources - Australian State & Territories and other organsations such as museums, herbaria, research organisations and companies - have been collecting biodiversity data for over a century in Australia and have been doing so independently, so there is a wide range of information collected relating to where, when and how species are observed.
+These data supplier sources - Australian State & Territories and other organisations such as museums, herbaria, research organisations and companies - have been collecting biodiversity data for over a century in Australia and have been doing so independently, so there is a wide range of information collected relating to where, when and how species are observed.
 
-Since the BDR aims for a comprehensive and up-to-date data holding, it needs to ble able to absorb large volumes of biodiversity data and process it quickly. Given that existing source data collections contain millions of observations, this is only achievable through automatic data processing.
+Since the BDR aims for a comprehensive and up-to-date data holding, it needs to be able to absorb large volumes of biodiversity data and process them quickly. Given that existing source data collections contain millions of observations, this is only achievable through automatic data processing.
 
 To enable effective automatic processing of data - both in terms of effort and quality - common models and formats must be implemented by data suppliers who map their data holdings to a form that can be automatically assessed (validated) and processed. ABIS is that form.
 
