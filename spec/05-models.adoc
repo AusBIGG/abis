@@ -15,7 +15,7 @@ The roles played by the various models within ABIS are:
 
 === Model Dependency Hierarchy
 
-The dependency hierarchy indicates which models profile other models and thus are dependent on them. The mechanism of profiling are as per the <<PROF, Profiles Vocabulary>> but can easily be summaries as:
+The dependency hierarchy indicates which models profile other models and thus are dependent on them. The mechanism of profiling are as per the <<PROF, Profiles Vocabulary>> but can easily be summarised as:
 
 [verse,Profiles Vocabulary]
 Any data which conforms to a model _MUST_ conform to any models it profiles
@@ -30,7 +30,7 @@ image::img/hierarchy.svg[ABIS Parts,align="center"]
 
 === Foreground Model
 
-The ABIS Foreground Model is the union of the NSL Model, the TERN Ontology and the ABIS Component Models, as shown in <<#hierarchy, Figure 5>>, above.
+The ABIS Foreground Model is the union of the NSL Model, the TERN Ontology and the ABIS Component Models, as shown in <<#hierarchy, Figure 7>>, above.
 
 When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>>. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When project information and data release details are modelled, the <<Projects Model, ABIS Projects>> & <<Data Release Model, ABIS Data Release>> models are used.
 
@@ -62,7 +62,7 @@ The <<PROV, Provenance Ontology>> offers a generic perspective on _observation_ 
 .The <<PROV, PROV>> perspective on the classes and predicates in the <<#tern-sosa, TERN Ontology's Observation pattern>>
 image::img/tern-prov.svg[PROV interpretation of observation,align="center",width=550]
 
-The TERN Ontology's _sampling_ pattern follows SOSA too but uses specialised classes for `Site`, `Survey` and other things familiar to staff who have undertaken biodiversity surveys in the field. The general pattern is as the figure below.
+The TERN Ontology's _sampling_ pattern follows SOSA too but uses specialised classes for `Site`, `Survey` and other things familiar to those who have undertaken biodiversity surveys in the field. The general pattern is as the figure below.
 
 [#tern-samping,link="img/tern-sampling.svg"]
 .Classes and predicates within the <<TERNOntology, TERN Ontology>> used to characterise sampling. The `is sample of` predicate can be derived from relations between a `Sample`, the `Sampling` and the `Site`. Note the similarity of structure to the <<#tern-sosa, SOSA Observation pattern>>.
