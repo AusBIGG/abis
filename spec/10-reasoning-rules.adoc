@@ -1,0 +1,14 @@
+== Reasoning Rules
+
+[discrete]
+=== Spatial Reasoning
+
+The following spatial reasoning rules will be applied to ABIS data.
+
+[discrete]
+==== `Datasets` containment of `Surveys`
+
+[discrete]
+==== `Surveys` containment of `Observations`
+
+#TODO: complete this section#

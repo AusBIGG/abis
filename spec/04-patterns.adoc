@@ -60,51 +60,9 @@ image::img/pattern-sets.svg[Set Modelling,width=650,align="center"]
 
 In the domain of ABIS, all animals living in the sea constitute the class marine animals and there are intersecting classes of terrestrial animals for things like crabs and penguins that live both in the sea and on land.
 
-=== Provenance
+=== Identifiers
 
-How things derive from other things, when and where this occurs and who may be responsible for actions is the domain of the <<PROV, Provenance Ontology (PROV)>> which is one of ABIS's Background Models.
-
-PROV's basic classes and the predicates that relate them to one another are given below.
-
-[#pattern-prov-basic,link="img/pattern-prov-basic.svg"]
-.Basic PROV classes and predicates
-image::img/pattern-prov-basic.svg[Basic PROV classes and predicates,width=650,align="center"]
-
-Many of ABIS' models follow on from the pattern in the figure above and many figures further down in this document are coloured according to PROV's basic classes. For example, the <<TERNOntology, TERN Ontology>>'s https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sampling[`Sampling`] class is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`] class and instances of it may have https://www.w3.org/TR/prov-o/#used[`used`] an instance of a https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Site[`Site`], which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Entity`], to have https://www.w3.org/TR/prov-o/#generated[`generated`] an instance of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`Sample`] which is another subclass of https://www.w3.org/TR/prov-o/#Activity[`Entity`]. This scenario is shown in figures #XX# & #YY#.
-
-PROV's provenance reasoning is applicable: The <<#annex-a, Projects Model>> indicates that instances of its <<abis:Project, `Project`>> class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Entity`, and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `RDFDataset` instances will be able to have an attributional relationship to the `Agent` instance calculated.
-
-=== Observations & Results
-
-_This pattern is inherited from the <<TERNOntology, TERN Ontology>>, which, in turn, inherits it from <<SOSA, SOSA>>._
-
-The _result_ of any _observation_ in ABIS is a numerical or classification _value_ for an _observed property_ of a _feature of interest_ (see next pattern).
-
-The _observation_ act is a temporal activity which, recorded or not, follows some _procedure_.
-
-The _value_ may be qualified with units of measure and uncertainty.
-
-[#pattern-obs-result,link="img/pattern-obs-result.svg"]
-.Two styles of Result: a numerical and a classification
-image::img/pattern-obs-result.svg[ABIS Parts,align="center",width=650]
-
-Using this pattern, the thing that ties the result value to the property of the thing observed is the _observation_.
-
-NOTE:: Since _observations_ record when a result was produced, multiple observations of the property of a thing can be recorded over time, such as multiple estimations of the taxon of a specimen.
-
-=== Feature of Interest
-
-A _feature of interest_ is the object of some activity's focus. This is a relative term: when an _observation_ considers the property of something - perhaps the colour of a part of a leaf - then the part leaf only - a sample of it - is the _feature of interest_. If the _observation_ were to consider the colour of the whole leaf, then the leaf is the _feature of interest_. If the colour of the whole bush from which the leaf came was considered, then the whole bush is the _feature of interest_.
-
-If the average colour of a whole area of bushland was considered, the _feature of interest_ would be the whole area, not any single bush or plant within it.
-
-[#pattern-foi,link="img/pattern-foi.svg"]
-.Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn't affect its status as a Feature of Interest with respect to an Observation.
-image::img/pattern-foi.svg[ABIS Parts,width=650,align="center"]
-
-=== ABIS Identifiers
-
-All data objects in ABIS are identified either with an <<IRI, IRI>> or as a <<BN, Blank Node>>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, _Sample Y_ of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`Sample`], are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for _Sample Y_ in _Dataset X_ which also contains _Observation Z_:
+All objects in OWL modelling - classes, predicates and instances of classes - are identified either with an <<IRI, IRI>> or a <<BN, Blank Node>>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, _Sample Y_ of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`Sample`], are identified by IRIs assigned to them often deriving from the IRI of an identified dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for _Sample Y_ in _Dataset X_ which also contains _Observation Z_:
 
 ----
 <http://example.com/dataset/x>
@@ -134,14 +92,17 @@ Identifiers for datasets take the form `https://{IRI-STEM}/{DATASET-ID}` and act
 ** Uses the Dataset Namespace and a class identifier (optional) of 'sample' and an ID for the particular sample - 'y'
 ** Datasets can create identifiers for their elements, within their namespace however they like
 
-=== Alternate Identifiers
+It is likely that initiatives will be created to manage data for Sites, Samples or other classes of object that ABIS knows about. If so, these initiatives might issue identifiers for those things and, if they do, those identifiers should be used. See the next section for how.
+
+[discrete]
+==== Alternate Identifiers
 
 Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.
 
 All forms of alternate identifiers may be recorded and how they are recorded and used depends on how they function.
 
 [discrete]
-==== Alternate IRIs
+===== Alternate IRIs
 
 If an object already has an IRI identifier, and that identifier responds to <<LinkedData, Linked Data>> operations, it _MAY_ be used as the primary identifier of the object.
 
@@ -177,7 +138,7 @@ If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGS
 ----
 
 [discrete]
-==== Alternate IDs - non-IRIs
+===== Alternate IDs - non-IRIs
 
 Alternate identifiers for objects that are not IRIs/URLs _MUST_ have their identifier regime indicated. For example, if Museum X issues identifiers for samples and Sample Y has an issued identifier of `SAM-Y1234`, then this should be given like this:
 
@@ -209,3 +170,79 @@ Multiple alternate identifiers may be given, as long as their datatypes are uniq
     ...  # other properties
 .
 ----
+
+=== Spatially
+
+_ABIS inherits its spatial modelling from <<GSP, GeoSPARQL>>, as does the <<TERNOntology, TERN Ontology>>._
+
+GeoSPARQL uses a "feature-centric" method of spatial modelling which means spatial things are represented as conceptual things first - spatial _features_ - and then a spatial projection or representation - _geometry_ - is linked to it. This is different to some GIS systems that model spatial things as geometries first and then apply properties to them.
+
+[#pattern-spatiality-basic,link="img/pattern-spatiality-basic.svg"]
+.A `Feature`, such as a `Site`, can be assigned a `Geometry` with any one of a number of representations. ABIS prefers the https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-Known Text] representation of coordinates.
+image::img/pattern-spatiality-basic.svg[Basic GeoSPARQL,width=650,align="center"]
+
+This feature-centric model allows for multiple or no geometries per spatial object which can be very powerful. The figure below gives several examples of a spatial feature with multiple geometries that differ different ways.
+
+[#pattern-spatiality,link="img/pattern-spatiality-qual.svg"]
+.Spatial `Features` and `Geometries` as modelled in the <<GSP, GeoSPARQL>> ontology with subfigure *A.* showing a `Site` feature that has two geometries provided for it: a Point and a Polygon. These could respectively represent the site's centroid and is boundary. subfigure *B.* shows a feature - Moreton Island - with multiple two boundary polygonal geometries _role_. Subfigure *C.* shows a time-varying feature with multiple geometries seperated by time. Note the use of the property https://idn-au.github.io/ext-geom-ont/ego.html#hasQualifiedGeometry[`ego:hasQualifiedGeometry`] to indicate qualified geometries instead of the usual https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#geo:hasGeometry[`geo:hasGeometry`] to indicate an un-qualified geometry.
+image::img/pattern-spatiality-qual.svg[Basic PROV classes and predicates,width=850,align="center"]
+
+ABIS will perform spatial reasoning on data. For example, if a dataset is presented that contains a https://w3id.org/tern/ontologies/tern/Survey[`Survey`] which, in turn, contains a series of https://w3id.org/tern/ontologies/tern/Observation[`Observation`] instances with their spatial locations indicated, the spatial extent of the `Survey` will be taken to be at least the area containing the `Observation` locations. The dataset's extent will be at least the boundary of all contained `Survey` instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <<Reasoning Rules, Reasoning Rules>> section.
+
+=== Temporality
+
+_ABIS inherits its temporal modelling from the <<TIME, Time Ontology>>. The <<TERNOntology, TERN Ontology>> uses the Time Ontology in places and used direct time representations elsewhere. This may be harmonised in the future._
+
+=== Provenance
+
+How things derive from other things, when and where this occurs and who may be responsible for actions is the domain of the <<PROV, Provenance Ontology (PROV)>> which is one of ABIS's Background Models.
+
+PROV's basic classes and the predicates that relate them to one another are given below.
+
+[#pattern-prov-basic,link="img/pattern-prov-basic.svg"]
+.Basic PROV classes and predicates
+image::img/pattern-prov-basic.svg[Basic PROV classes and predicates,width=650,align="center"]
+
+Many of ABIS' models follow on from the pattern in the figure above and many figures further down in this document are coloured according to PROV's basic classes. For example, the <<TERNOntology, TERN Ontology>>'s https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sampling[`Sampling`] class is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`] class and instances of it may have https://www.w3.org/TR/prov-o/#used[`used`] an instance of a https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Site[`Site`], which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Entity`], to have https://www.w3.org/TR/prov-o/#generated[`generated`] an instance of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`Sample`] which is another subclass of https://www.w3.org/TR/prov-o/#Entity[`Entity`].
+
+The figures in the <<Observations & Results, Observations & Results>> and the <<Feature of Interest, Feature of Interest>> patterns use this colouring.
+
+PROV's provenance reasoning is also applicable to parts of ABIS. For example, the <<#annex-a, Projects Model>> indicates that instances of its <<abis:Project, `Project`>> class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Entity[`Entity`], and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `RDFDataset` instances will be able to have an attributional relationship to the `Agent` instance calculated. This is shown in the figure below.
+
+[#pattern-prov-reasoning,link="img/pattern-prov-reasoning.svg"]
+.PROV-style reasoning using facts given in the <<Projects Model, Projects Model>>
+image::img/pattern-prov-reasoning.svg[PROV-style reasoning,width=650,align="center"]
+
+=== Agents
+
+
+
+=== Observations & Results
+
+_This pattern is inherited from the <<TERNOntology, TERN Ontology>>, which, in turn, inherits it from <<SOSA, SOSA>>._
+
+The _result_ of any _observation_ in ABIS is a numerical or classification _value_ for an _observed property_ of a _feature of interest_ (see next pattern).
+
+The _observation_ act is a temporal activity which, recorded or not, follows some _procedure_.
+
+The _value_ may be qualified with units of measure and uncertainty.
+
+[#pattern-obs-result,link="img/pattern-obs-result.svg"]
+.Two styles of Result: a numerical and a classification
+image::img/pattern-obs-result.svg[ABIS Parts,align="center",width=650]
+
+Using this pattern, the thing that ties the result value to the property of the thing observed is the _observation_.
+
+NOTE:: Since _observations_ record when a result was produced, multiple observations of the property of a thing can be recorded over time, such as multiple estimations of the taxon of a specimen.
+
+=== Feature of Interest
+
+A _feature of interest_ is the object of some activity's focus. This is a relative term: when an _observation_ considers the property of something - perhaps the colour of a part of a leaf - then the part leaf only - a sample of it - is the _feature of interest_. If the _observation_ were to consider the colour of the whole leaf, then the leaf is the _feature of interest_. If the colour of the whole bush from which the leaf came was considered, then the whole bush is the _feature of interest_.
+
+If the average colour of a whole area of bushland was considered, the _feature of interest_ would be the whole area, not any single bush or plant within it.
+
+[#pattern-foi,link="img/pattern-foi.svg"]
+.Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn't affect its status as a Feature of Interest with respect to an Observation.
+image::img/pattern-foi.svg[ABIS Parts,width=650,align="center"]
+
+

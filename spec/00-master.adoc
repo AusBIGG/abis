@@ -68,12 +68,14 @@ include::08-validation.adoc[]
 
 include::09-mappings.adoc[]
 
+include::10-reasoning-rules.adoc[]
+
 include::99-references.adoc[]
 
 :sectnums!:
 
-include::10_annex_a.adoc[]
+include::51_annex_a.adoc[]
 
-include::11_annex_b.adoc[]
+include::52_annex_b.adoc[]
 
-include::12_annex_c.adoc[]
+include::53_annex_c.adoc[]
