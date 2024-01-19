@@ -676,11 +676,13 @@ pre.rouge {
 <li><a href="#_patterns">5. Patterns</a>
 <ul class="sectlevel2">
 <li><a href="#_set_modelling">5.1. Set Modelling</a></li>
-<li><a href="#_provenance">5.2. Provenance</a></li>
-<li><a href="#_observations_results">5.3. Observations &amp; Results</a></li>
-<li><a href="#_feature_of_interest">5.4. Feature of Interest</a></li>
-<li><a href="#_abis_identifiers">5.5. ABIS Identifiers</a></li>
-<li><a href="#_alternate_identifiers">5.6. Alternate Identifiers</a></li>
+<li><a href="#_identifiers">5.2. Identifiers</a></li>
+<li><a href="#_spatially">5.3. Spatially</a></li>
+<li><a href="#_temporality">5.4. Temporality</a></li>
+<li><a href="#_provenance">5.5. Provenance</a></li>
+<li><a href="#_agents">5.6. Agents</a></li>
+<li><a href="#_observations_results">5.7. Observations &amp; Results</a></li>
+<li><a href="#_feature_of_interest">5.8. Feature of Interest</a></li>
 </ul>
 </li>
 <li><a href="#_models">6. Models</a>
@@ -713,7 +715,8 @@ pre.rouge {
 </li>
 <li><a href="#_validation">9. Validation</a></li>
 <li><a href="#_mappings">10. Mappings</a></li>
-<li><a href="#_references">11. References</a></li>
+<li><a href="#_reasoning_rules">11. Reasoning Rules</a></li>
+<li><a href="#_references">12. References</a></li>
 <li><a href="#annex-a">Annex A: Projects Model</a>
 <ul class="sectlevel2">
 <li><a href="#projects-metadata">Metadata</a></li>
@@ -991,6 +994,11 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bdr:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/dataset/bdr/" class="bare">https://linked.data.gov.au/dataset/bdr/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BDR Dataset Namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ego:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/idn/def/ego/" class="bare">https://w3id.org/idn/def/ego/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Geometries Ontology</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex:</code></p></td>
@@ -1570,77 +1578,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_provenance"><a class="anchor" href="#_provenance"></a>5.2. Provenance</h3>
+<h3 id="_identifiers"><a class="anchor" href="#_identifiers"></a>5.2. Identifiers</h3>
 <div class="paragraph">
-<p>How things derive from other things, when and where this occurs and who may be responsible for actions is the domain of the <a href="#PROV">Provenance Ontology (PROV)</a> which is one of ABIS&#8217;s Background Models.</p>
-</div>
-<div class="paragraph">
-<p>PROV&#8217;s basic classes and the predicates that relate them to one another are given below.</p>
-</div>
-<div id="pattern-prov-basic" class="imageblock text-center">
-<div class="content">
-<a class="image" href="img/pattern-prov-basic.svg"><img src="https://ausbigg.github.io/abis/img/pattern-prov-basic.svg" alt="Basic PROV classes and predicates" width="650"></a>
-</div>
-<div class="title">Figure 4. Basic PROV classes and predicates</div>
-</div>
-<div class="paragraph">
-<p>Many of ABIS' models follow on from the pattern in the figure above and many figures further down in this document are coloured according to PROV&#8217;s basic classes. For example, the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sampling"><code>Sampling</code></a> class is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/" class="bare">https://www.w3.org/TR/prov-o/</a><mark>Activity[<code>Activity</code>] class and instances of it may have <a href="https://www.w3.org/TR/prov-o/#used"><code>used</code></a> an instance of a <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Site"><code>Site</code></a>, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Entity</code></a>, to have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> an instance of the class <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample"><code>Sample</code></a> which is another subclass of <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Entity</code></a>. This scenario is shown in figures #XX</mark> &amp; <mark>YY</mark>.</p>
-</div>
-<div class="paragraph">
-<p>PROV&#8217;s provenance reasoning is applicable: The <a href="#annex-a">Projects Model</a> indicates that instances of its <a href="#abis:Project"><code>Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Entity</code>, and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[<code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>RDFDataset</code> instances will be able to have an attributional relationship to the <code>Agent</code> instance calculated.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_observations_results"><a class="anchor" href="#_observations_results"></a>5.3. Observations &amp; Results</h3>
-<div class="paragraph">
-<p><em>This pattern is inherited from the <a href="#TERNOntology">TERN Ontology</a>, which, in turn, inherits it from <a href="#SOSA">SOSA</a>.</em></p>
-</div>
-<div class="paragraph">
-<p>The <em>result</em> of any <em>observation</em> in ABIS is a numerical or classification <em>value</em> for an <em>observed property</em> of a <em>feature of interest</em> (see next pattern).</p>
-</div>
-<div class="paragraph">
-<p>The <em>observation</em> act is a temporal activity which, recorded or not, follows some <em>procedure</em>.</p>
-</div>
-<div class="paragraph">
-<p>The <em>value</em> may be qualified with units of measure and uncertainty.</p>
-</div>
-<div id="pattern-obs-result" class="imageblock text-center">
-<div class="content">
-<a class="image" href="img/pattern-obs-result.svg"><img src="https://ausbigg.github.io/abis/img/pattern-obs-result.svg" alt="ABIS Parts" width="650"></a>
-</div>
-<div class="title">Figure 5. Two styles of Result: a numerical and a classification</div>
-</div>
-<div class="paragraph">
-<p>Using this pattern, the thing that ties the result value to the property of the thing observed is the <em>observation</em>.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">NOTE</dt>
-<dd>
-<p>Since <em>observations</em> record when a result was produced, multiple observations of the property of a thing can be recorded over time, such as multiple estimations of the taxon of a specimen.</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_feature_of_interest"><a class="anchor" href="#_feature_of_interest"></a>5.4. Feature of Interest</h3>
-<div class="paragraph">
-<p>A <em>feature of interest</em> is the object of some activity&#8217;s focus. This is a relative term: when an <em>observation</em> considers the property of something - perhaps the colour of a part of a leaf - then the part leaf only - a sample of it - is the <em>feature of interest</em>. If the <em>observation</em> were to consider the colour of the whole leaf, then the leaf is the <em>feature of interest</em>. If the colour of the whole bush from which the leaf came was considered, then the whole bush is the <em>feature of interest</em>.</p>
-</div>
-<div class="paragraph">
-<p>If the average colour of a whole area of bushland was considered, the <em>feature of interest</em> would be the whole area, not any single bush or plant within it.</p>
-</div>
-<div id="pattern-foi" class="imageblock text-center">
-<div class="content">
-<a class="image" href="img/pattern-foi.svg"><img src="https://ausbigg.github.io/abis/img/pattern-foi.svg" alt="ABIS Parts" width="650"></a>
-</div>
-<div class="title">Figure 6. Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn&#8217;t affect its status as a Feature of Interest with respect to an Observation.</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_abis_identifiers"><a class="anchor" href="#_abis_identifiers"></a>5.5. ABIS Identifiers</h3>
-<div class="paragraph">
-<p>All data objects in ABIS are identified either with an <a href="#IRI">IRI</a> or as a <a href="#BN">Blank Node</a>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, <em>Sample Y</em> of the class <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample"><code>Sample</code></a>, are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for <em>Sample Y</em> in <em>Dataset X</em> which also contains <em>Observation Z</em>:</p>
+<p>All objects in OWL modelling - classes, predicates and instances of classes - are identified either with an <a href="#IRI">IRI</a> or a <a href="#BN">Blank Node</a>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, <em>Sample Y</em> of the class <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample"><code>Sample</code></a>, are identified by IRIs assigned to them often deriving from the IRI of an identified dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for <em>Sample Y</em> in <em>Dataset X</em> which also contains <em>Observation Z</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1697,16 +1637,17 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>It is likely that initiatives will be created to manage data for Sites, Samples or other classes of object that ABIS knows about. If so, these initiatives might issue identifiers for those things and, if they do, those identifiers should be used. See the next section for how.</p>
 </div>
-<div class="sect2">
-<h3 id="_alternate_identifiers"><a class="anchor" href="#_alternate_identifiers"></a>5.6. Alternate Identifiers</h3>
+<h4 id="_alternate_identifiers" class="discrete">Alternate Identifiers</h4>
 <div class="paragraph">
 <p>Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.</p>
 </div>
 <div class="paragraph">
 <p>All forms of alternate identifiers may be recorded and how they are recorded and used depends on how they function.</p>
 </div>
-<h4 id="_alternate_iris" class="discrete">Alternate IRIs</h4>
+<h5 id="_alternate_iris" class="discrete">Alternate IRIs</h5>
 <div class="paragraph">
 <p>If an object already has an IRI identifier, and that identifier responds to <a href="#LinkedData">Linked Data</a> operations, it <em>MAY</em> be used as the primary identifier of the object.</p>
 </div>
@@ -1756,7 +1697,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 .</pre>
 </div>
 </div>
-<h4 id="_alternate_ids_non_iris" class="discrete">Alternate IDs - non-IRIs</h4>
+<h5 id="_alternate_ids_non_iris" class="discrete">Alternate IDs - non-IRIs</h5>
 <div class="paragraph">
 <p>Alternate identifiers for objects that are not IRIs/URLs <em>MUST</em> have their identifier regime indicated. For example, if Museum X issues identifiers for samples and Sample Y has an issued identifier of <code>SAM-Y1234</code>, then this should be given like this:</p>
 </div>
@@ -1802,6 +1743,120 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
     ...  # other properties
 .</pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spatially"><a class="anchor" href="#_spatially"></a>5.3. Spatially</h3>
+<div class="paragraph">
+<p><em>ABIS inherits its spatial modelling from <a href="#GSP">GeoSPARQL</a>, as does the <a href="#TERNOntology">TERN Ontology</a>.</em></p>
+</div>
+<div class="paragraph">
+<p>GeoSPARQL uses a "feature-centric" method of spatial modelling which means spatial things are represented as conceptual things first - spatial <em>features</em> - and then a spatial projection or representation - <em>geometry</em> - is linked to it. This is different to some GIS systems that model spatial things as geometries first and then apply properties to them.</p>
+</div>
+<div id="pattern-spatiality-basic" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/pattern-spatiality-basic.svg"><img src="https://ausbigg.github.io/abis/img/pattern-spatiality-basic.svg" alt="Basic GeoSPARQL" width="650"></a>
+</div>
+<div class="title">Figure 4. A <code>Feature</code>, such as a <code>Site</code>, can be assigned a <code>Geometry</code> with any one of a number of representations. ABIS prefers the <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text</a> representation of coordinates.</div>
+</div>
+<div class="paragraph">
+<p>This feature-centric model allows for multiple or no geometries per spatial object which can be very powerful. The figure below gives several examples of a spatial feature with multiple geometries that differ different ways.</p>
+</div>
+<div id="pattern-spatiality" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/pattern-spatiality-qual.svg"><img src="https://ausbigg.github.io/abis/img/pattern-spatiality-qual.svg" alt="Basic PROV classes and predicates" width="850"></a>
+</div>
+<div class="title">Figure 5. Spatial <code>Features</code> and <code>Geometries</code> as modelled in the <a href="#GSP">GeoSPARQL</a> ontology with subfigure <strong>A.</strong> showing a <code>Site</code> feature that has two geometries provided for it: a Point and a Polygon. These could respectively represent the site&#8217;s centroid and is boundary. subfigure <strong>B.</strong> shows a feature - Moreton Island - with multiple two boundary polygonal geometries <em>role</em>. Subfigure <strong>C.</strong> shows a time-varying feature with multiple geometries seperated by time. Note the use of the property <a href="https://idn-au.github.io/ext-geom-ont/ego.html#hasQualifiedGeometry"><code>ego:hasQualifiedGeometry</code></a> to indicate qualified geometries instead of the usual <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#geo:hasGeometry"><code>geo:hasGeometry</code></a> to indicate an un-qualified geometry.</div>
+</div>
+<div class="paragraph">
+<p>ABIS will perform spatial reasoning on data. For example, if a dataset is presented that contains a <a href="https://w3id.org/tern/ontologies/tern/Survey"><code>Survey</code></a> which, in turn, contains a series of <a href="https://w3id.org/tern/ontologies/tern/Observation"><code>Observation</code></a> instances with their spatial locations indicated, the spatial extent of the <code>Survey</code> will be taken to be at least the area containing the <code>Observation</code> locations. The dataset&#8217;s extent will be at least the boundary of all contained <code>Survey</code> instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <a href="#_reasoning_rules">Reasoning Rules</a> section.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_temporality"><a class="anchor" href="#_temporality"></a>5.4. Temporality</h3>
+<div class="paragraph">
+<p><em>ABIS inherits its temporal modelling from the <a href="#TIME">Time Ontology</a>. The <a href="#TERNOntology">TERN Ontology</a> uses the Time Ontology in places and used direct time representations elsewhere. This may be harmonised in the future.</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_provenance"><a class="anchor" href="#_provenance"></a>5.5. Provenance</h3>
+<div class="paragraph">
+<p>How things derive from other things, when and where this occurs and who may be responsible for actions is the domain of the <a href="#PROV">Provenance Ontology (PROV)</a> which is one of ABIS&#8217;s Background Models.</p>
+</div>
+<div class="paragraph">
+<p>PROV&#8217;s basic classes and the predicates that relate them to one another are given below.</p>
+</div>
+<div id="pattern-prov-basic" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/pattern-prov-basic.svg"><img src="https://ausbigg.github.io/abis/img/pattern-prov-basic.svg" alt="Basic PROV classes and predicates" width="650"></a>
+</div>
+<div class="title">Figure 6. Basic PROV classes and predicates</div>
+</div>
+<div class="paragraph">
+<p>Many of ABIS' models follow on from the pattern in the figure above and many figures further down in this document are coloured according to PROV&#8217;s basic classes. For example, the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sampling"><code>Sampling</code></a> class is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> class and instances of it may have <a href="https://www.w3.org/TR/prov-o/#used"><code>used</code></a> an instance of a <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Site"><code>Site</code></a>, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Entity</code></a>, to have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> an instance of the class <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample"><code>Sample</code></a> which is another subclass of <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>The figures in the <a href="#_observations_results">Observations &amp; Results</a> and the <a href="#_feature_of_interest">Feature of Interest</a> patterns use this colouring.</p>
+</div>
+<div class="paragraph">
+<p>PROV&#8217;s provenance reasoning is also applicable to parts of ABIS. For example, the <a href="#annex-a">Projects Model</a> indicates that instances of its <a href="#abis:Project"><code>Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>, and may have been associated with an <a href="https://www.w3.org/TR/prov-o/#Agent"><code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>RDFDataset</code> instances will be able to have an attributional relationship to the <code>Agent</code> instance calculated. This is shown in the figure below.</p>
+</div>
+<div id="pattern-prov-reasoning" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/pattern-prov-reasoning.svg"><img src="https://ausbigg.github.io/abis/img/pattern-prov-reasoning.svg" alt="PROV-style reasoning" width="650"></a>
+</div>
+<div class="title">Figure 7. PROV-style reasoning using facts given in the <a href="#Projects Model">Projects Model</a></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_agents"><a class="anchor" href="#_agents"></a>5.6. Agents</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_observations_results"><a class="anchor" href="#_observations_results"></a>5.7. Observations &amp; Results</h3>
+<div class="paragraph">
+<p><em>This pattern is inherited from the <a href="#TERNOntology">TERN Ontology</a>, which, in turn, inherits it from <a href="#SOSA">SOSA</a>.</em></p>
+</div>
+<div class="paragraph">
+<p>The <em>result</em> of any <em>observation</em> in ABIS is a numerical or classification <em>value</em> for an <em>observed property</em> of a <em>feature of interest</em> (see next pattern).</p>
+</div>
+<div class="paragraph">
+<p>The <em>observation</em> act is a temporal activity which, recorded or not, follows some <em>procedure</em>.</p>
+</div>
+<div class="paragraph">
+<p>The <em>value</em> may be qualified with units of measure and uncertainty.</p>
+</div>
+<div id="pattern-obs-result" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/pattern-obs-result.svg"><img src="https://ausbigg.github.io/abis/img/pattern-obs-result.svg" alt="ABIS Parts" width="650"></a>
+</div>
+<div class="title">Figure 8. Two styles of Result: a numerical and a classification</div>
+</div>
+<div class="paragraph">
+<p>Using this pattern, the thing that ties the result value to the property of the thing observed is the <em>observation</em>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">NOTE</dt>
+<dd>
+<p>Since <em>observations</em> record when a result was produced, multiple observations of the property of a thing can be recorded over time, such as multiple estimations of the taxon of a specimen.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_feature_of_interest"><a class="anchor" href="#_feature_of_interest"></a>5.8. Feature of Interest</h3>
+<div class="paragraph">
+<p>A <em>feature of interest</em> is the object of some activity&#8217;s focus. This is a relative term: when an <em>observation</em> considers the property of something - perhaps the colour of a part of a leaf - then the part leaf only - a sample of it - is the <em>feature of interest</em>. If the <em>observation</em> were to consider the colour of the whole leaf, then the leaf is the <em>feature of interest</em>. If the colour of the whole bush from which the leaf came was considered, then the whole bush is the <em>feature of interest</em>.</p>
+</div>
+<div class="paragraph">
+<p>If the average colour of a whole area of bushland was considered, the <em>feature of interest</em> would be the whole area, not any single bush or plant within it.</p>
+</div>
+<div id="pattern-foi" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/pattern-foi.svg"><img src="https://ausbigg.github.io/abis/img/pattern-foi.svg" alt="ABIS Parts" width="650"></a>
+</div>
+<div class="title">Figure 9. Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn&#8217;t affect its status as a Feature of Interest with respect to an Observation.</div>
 </div>
 </div>
 </div>
@@ -1873,7 +1928,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="content">
 <a class="image" href="img/hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/hierarchy.svg" alt="ABIS Parts"></a>
 </div>
-<div class="title">Figure 7. The profile hierarchy of the models within ABIS. All the arrows indicate dependency or, formally, <a href="https://www.w3.org/TR/dx-prof/#Property:isProfileOf"><code>prof:isProfileOf</code></a> relationships between the models, shown as rectangles. The ABIS model itself is the union of the NSL Model, the TERN Ontology and the ABIS Component Models.</div>
+<div class="title">Figure 10. The profile hierarchy of the models within ABIS. All the arrows indicate dependency or, formally, <a href="https://www.w3.org/TR/dx-prof/#Property:isProfileOf"><code>prof:isProfileOf</code></a> relationships between the models, shown as rectangles. The ABIS model itself is the union of the NSL Model, the TERN Ontology and the ABIS Component Models.</div>
 </div>
 </div>
 <div class="sect2">
@@ -1918,7 +1973,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="content">
 <a class="image" href="img/tern-sosa.svg"><img src="https://ausbigg.github.io/abis/img/tern-sosa.svg" alt="TERN&#8217;s Observation pattern" width="650"></a>
 </div>
-<div class="title">Figure 8. Classes and predicates from the <a href="#SOSA">SOSA ontology</a> used directly within the <a href="#TERNOntology">TERN Ontology</a>.</div>
+<div class="title">Figure 11. Classes and predicates from the <a href="#SOSA">SOSA ontology</a> used directly within the <a href="#TERNOntology">TERN Ontology</a>.</div>
 </div>
 <div class="paragraph">
 <p>This pattern sees instances of the class <code>Observation</code> - individual acts of a person or a sensor observing something - following procedures to observe properties of a <code>Feature Of Interest</code> which could be a surveyed site, a material sample or even a satellite images (which would, in turn, be a sample of the land imaged). <code>Observation</code> instances produce <code>Result</code> instances which contain categorisations, numerical values, units of measure and so on, as necessary to well characterise the observed property quantity or category.</p>
@@ -1930,7 +1985,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="content">
 <a class="image" href="img/tern-prov.svg"><img src="https://ausbigg.github.io/abis/img/tern-prov.svg" alt="PROV interpretation of observation" width="550"></a>
 </div>
-<div class="title">Figure 9. The <a href="#PROV">PROV</a> perspective on the classes and predicates in the <a href="#tern-sosa">TERN Ontology&#8217;s Observation pattern</a></div>
+<div class="title">Figure 12. The <a href="#PROV">PROV</a> perspective on the classes and predicates in the <a href="#tern-sosa">TERN Ontology&#8217;s Observation pattern</a></div>
 </div>
 <div class="paragraph">
 <p>The TERN Ontology&#8217;s <em>sampling</em> pattern follows SOSA too but uses specialised classes for <code>Site</code>, <code>Survey</code> and other things familiar to staff who have undertaken biodiversity surveys in the field. The general pattern is as the figure below.</p>
@@ -1939,7 +1994,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="content">
 <a class="image" href="img/tern-sampling.svg"><img src="https://ausbigg.github.io/abis/img/tern-sampling.svg" alt="TERN&#8217;s Observation pattern" width="650"></a>
 </div>
-<div class="title">Figure 10. Classes and predicates within the <a href="#TERNOntology">TERN Ontology</a> used to characterise sampling. The <code>is sample of</code> predicate can be derived from relations between a <code>Sample</code>, the <code>Sampling</code> and the <code>Site</code>. Note the similarity of structure to the <a href="#tern-sosa">SOSA Observation pattern</a>.</div>
+<div class="title">Figure 13. Classes and predicates within the <a href="#TERNOntology">TERN Ontology</a> used to characterise sampling. The <code>is sample of</code> predicate can be derived from relations between a <code>Sample</code>, the <code>Sampling</code> and the <code>Site</code>. Note the similarity of structure to the <a href="#tern-sosa">SOSA Observation pattern</a>.</div>
 </div>
 <div class="paragraph">
 <p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class like this:</p>
@@ -1997,7 +2052,7 @@ ex:obs-z
 <div class="content">
 <a class="image" href="img/nsl-model-overview.svg"><img src="https://ausbigg.github.io/abis/img/nsl-model-overview.svg" alt="NSL Model Overview" width="700"></a>
 </div>
-<div class="title">Figure 11. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
+<div class="title">Figure 14. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
 </div>
 <div class="paragraph">
 <p>The NSL Model associates the class <a href="https://kurrawong.github.io/nsl-model/spec.html#Taxon"><code>Taxon</code></a> representing "A group of organisms considered by taxonomists to form a homogeneous unit" with names for them - <a href="https://kurrawong.github.io/nsl-model/spec.html#TaxonName"><code>Taxon Name</code></a> - and usage of that name in literature - instances of the class <a href="https://kurrawong.github.io/nsl-model/spec.html#Usage"><code>Usage</code></a>, which is a special type of <a href="http://www.sparontologies.net/ontologies/biro"><code>BibliographicReference</code></a> that quotes the <code>Taxon Name</code> as used in a <a href="https://schema.org/CreativeWork"><code>CreativeWork</code></a>. It also allows the citation of <code>Usage</code> instances bu other <code>Usage</code> instances.</p>
@@ -2009,7 +2064,7 @@ ex:obs-z
 <div class="content">
 <a class="image" href="img/nsl-model-overview.svg"><img src="https://ausbigg.github.io/abis/img/nsl-join.svg" alt="NSL Model Overview" width="550"></a>
 </div>
-<div class="title">Figure 12. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
+<div class="title">Figure 15. An overview of the National Species List (NSL) model in Semantic Web form, adapted from that model&#8217;s documentation online at <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2038,7 +2093,7 @@ ex:obs-z
 <div class="content">
 <a class="image" href="img/proj-hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/proj-hierarchy.svg" alt="Projects Model Class Hierarchy" width="400"></a>
 </div>
-<div class="title">Figure 13. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
+<div class="title">Figure 16. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
 </div>
 <div class="paragraph">
 <p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class - are produced by instances of <a href="#Project"><code>Project</code></a> as per the figure below.</p>
@@ -2047,7 +2102,7 @@ ex:obs-z
 <div class="content">
 <a class="image" href="img/proj-join.svg"><img src="https://ausbigg.github.io/abis/img/proj-join.svg" alt="Projects Model Join Poin" width="400"></a>
 </div>
-<div class="title">Figure 14. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> instances.</div>
+<div class="title">Figure 17. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> instances.</div>
 </div>
 <div class="paragraph">
 <p>See <a href="#annex-a">Annex A</a> for more details about the Project Model.</p>
@@ -2065,7 +2120,7 @@ ex:obs-z
 <div class="content">
 <a class="image" href="img/data-release.svg"><img src="https://ausbigg.github.io/abis/img/data-release.svg" alt="Overview of the Data Release Model" width="350"></a>
 </div>
-<div class="title">Figure 15. An overview of the Data Release Model</div>
+<div class="title">Figure 18. An overview of the Data Release Model</div>
 </div>
 <div class="paragraph">
 <p>The Data Release Model defines predicates - <a href="#embargoedUntil">embargoed until</a> &amp; <a href="#embargoPeriod">embargo period</a> - which can be applied to instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class which set absolute or relative embargo release times. The model details the relations between these predicates.</p>
@@ -2337,7 +2392,21 @@ ex:obs-z
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references"><a class="anchor" href="#_references"></a>11. References</h2>
+<h2 id="_reasoning_rules"><a class="anchor" href="#_reasoning_rules"></a>11. Reasoning Rules</h2>
+<div class="sectionbody">
+<h3 id="_spatial_reasoning" class="discrete">Spatial Reasoning</h3>
+<div class="paragraph">
+<p>The following spatial reasoning rules will be applied to ABIS data.</p>
+</div>
+<h4 id="_datasets_containment_of_surveys" class="discrete"><code>Datasets</code> containment of <code>Surveys</code></h4>
+<h4 id="_surveys_containment_of_observations" class="discrete"><code>Surveys</code> containment of <code>Observations</code></h4>
+<div class="paragraph">
+<p><mark>TODO: complete this section</mark></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>12. References</h2>
 <div class="sectionbody">
 <div id="BIRO" class="dlist">
 <dl>
@@ -2516,7 +2585,7 @@ ex:obs-z
 <div class="content">
 <a class="image" href="img/proj-hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/proj-hierarchy.svg" alt="Projects Model Class Hierarchy" width="400"></a>
 </div>
-<div class="title">Figure 16. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
+<div class="title">Figure 19. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
 </div>
 <div class="paragraph">
 <p><a href="#abis:Project"><code>Project</code></a>s are part of <a href="#abis:Program"><code>Program</code></a>s and both are specialised forms of <a href="#PROV">PROV</a>'s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> class. An <code>Activity</code> is "something that occurs over a period of time and acts upon or with entities" which means <code>Project`s &amp; `Program`s can have all the properties that `Activities</code> can have, such as temporal extents, <code>Agents</code> that have causal relationships to them and so on.</p>
@@ -2660,7 +2729,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <a class="image" href="img/proj-project.svg"><img src="https://ausbigg.github.io/abis/img/proj-project.svg" alt="Projects Model Project Class" width="650"></a>
 </div>
-<div class="title">Figure 17. The Projects Model <code>Project</code> Class and its expected predicates</div>
+<div class="title">Figure 20. The Projects Model <code>Project</code> Class and its expected predicates</div>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -2755,7 +2824,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <a class="image" href="img/proj-program.svg"><img src="https://ausbigg.github.io/abis/img/proj-program.svg" alt="Projects Model Program Class" width="650"></a>
 </div>
-<div class="title">Figure 18. The Projects Model <code>Program</code> Class and its expected predicates</div>
+<div class="title">Figure 21. The Projects Model <code>Program</code> Class and its expected predicates</div>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -3663,7 +3732,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <a class="image" href="img/data-release.svg"><img src="https://ausbigg.github.io/abis/img/data-release.svg" alt="Overview of the Data Release Model" width="350"></a>
 </div>
-<div class="title">Figure 19. An overview of the Data Release Model</div>
+<div class="title">Figure 22. An overview of the Data Release Model</div>
 </div>
 <div class="paragraph">
 <p>This model is for describing aspects of data release: to whom, under what circumstances and when data may be released.</p>
@@ -4131,7 +4200,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-12 14:21:55 UTC
+Last updated 2024-01-19 11:51:57 UTC
 </div>
 </div>
 </body>
