@@ -175,19 +175,87 @@ Multiple alternate identifiers may be given, as long as their datatypes are uniq
 
 _ABIS inherits its spatial modelling from <<GSP, GeoSPARQL>>, as does the <<TERNOntology, TERN Ontology>>._
 
+[discrete]
+==== Feature-centric
+
 GeoSPARQL uses a "feature-centric" method of spatial modelling which means spatial things are represented as conceptual things first - spatial _features_ - and then a spatial projection or representation - _geometry_ - is linked to it. This is different to some GIS systems that model spatial things as geometries first and then apply properties to them.
 
 [#pattern-spatiality-basic,link="img/pattern-spatiality-basic.svg"]
 .A `Feature`, such as a `Site`, can be assigned a `Geometry` with any one of a number of representations. ABIS prefers the https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-Known Text] representation of coordinates.
 image::img/pattern-spatiality-basic.svg[Basic GeoSPARQL,width=650,align="center"]
 
-This feature-centric model allows for multiple or no geometries per spatial object which can be very powerful. The figure below gives several examples of a spatial feature with multiple geometries that differ different ways.
+The RDF data for the example above is:
+
+[source,turtle]
+----
+PREFIX ex: <http://example.com/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX schema: <https://schema.org/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+
+ex:site-x
+    a tern:Site ;
+    schema:name "Site X" ;
+    geo:hasGeometry [
+        a geo:Geometry ;
+        schema:name "Geometry X1" ;
+        geo:asWKT "POLYGON ((...))"^^geo:wktLiteral ;
+    ] ;
+.
+----
+
+[discrete]
+==== Qualified Geometries
+
+This feature-centric model allows for multiple or no geometries per spatial object which can be very powerful. The figure below gives several examples of a spatial Feature with multiple Geometries that differ different ways. The pattern here is "qualification": when a Feature is assigned multiple Geometries, they must be differentiable in some way, either by having different geometry types (point, polygon etc.) or by having different roles with respect to the Feature or by each Geometry indicating a different temporal footprint. These differentiations qualify the Geometries with respect to the Feature.
 
 [#pattern-spatiality,link="img/pattern-spatiality-qual.svg"]
-.Spatial `Features` and `Geometries` as modelled in the <<GSP, GeoSPARQL>> ontology with subfigure *A.* showing a `Site` feature that has two geometries provided for it: a Point and a Polygon. These could respectively represent the site's centroid and is boundary. subfigure *B.* shows a feature - Moreton Island - with multiple two boundary polygonal geometries _role_. Subfigure *C.* shows a time-varying feature with multiple geometries seperated by time. Note the use of the property https://idn-au.github.io/ext-geom-ont/ego.html#hasQualifiedGeometry[`ego:hasQualifiedGeometry`] to indicate qualified geometries instead of the usual https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#geo:hasGeometry[`geo:hasGeometry`] to indicate an un-qualified geometry.
+.Spatial `Features` and `Geometries` as modelled in the <<GSP, GeoSPARQL>> ontology with subfigure *A.* showing a `Site` feature that has two geometries provided for it: a Point and a Polygon. These could respectively represent the site's centroid and is boundary and are differentiable by geometry type. Subfigure *B.* shows a feature - Saint Helena Island - with two boundary polygonal geometries differentiated by _role_. Subfigure *C.* shows a time-varying feature, a cyclone, with multiple geometries differentiated by time. Data for *B.* is given in the ABIS repository at https://github.com/AusBIGG/abis/tree/master/examples - see the file `pattern-spatiality-saint-helena-island`.
 image::img/pattern-spatiality-qual.svg[Basic PROV classes and predicates,width=850,align="center"]
 
-ABIS will perform spatial reasoning on data. For example, if a dataset is presented that contains a https://w3id.org/tern/ontologies/tern/Survey[`Survey`] which, in turn, contains a series of https://w3id.org/tern/ontologies/tern/Observation[`Observation`] instances with their spatial locations indicated, the spatial extent of the `Survey` will be taken to be at least the area containing the `Observation` locations. The dataset's extent will be at least the boundary of all contained `Survey` instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <<Reasoning Rules, Reasoning Rules>> section.
+[discrete]
+==== Centroid & Bounding Box Reasoning
+
+[#pattern-spatiality-pomingalarna,link="img/pattern-spatiality-pomingalarna.png"]
+.The field site 'Pomingolarna' with bounding box, boundary and centroid geometries indicated
+image::img/pattern-spatiality-pomingalarna.png[Pomingolarna site example,width=850,align="center"]
+
+While it is possible to supply point and polygon geometries for a spatial object's centroid, boundary and bounding box, a centroid and a bounding box are calculable from a boundary and should not be supplied if the boundary is known: ABIS data users, such as the <<BDR, BDR>>, will calculate them as needed. This rule is listed in ABIS' <<Reasoning Rules, Reasoning Rules>> section. In the image above, the bounding box and centroid have been calculated from the boundary.
+
+If only a centroid or a bounding box is known for a spatial object, then specific predicates from <<GSP, GeoSPARQL>> - https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#geo:hasCentroid[`geo:centroid`] & https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#geo:hasBoundingBox[`geo:hasBoundingBox`] - should be used to indicate that this is the type of geometry known, as opposed to a boundary or a general point for a point location which are indicated with the general-purpose https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#geo:hasGeometry[`geo:hasGeometry`] predicate. The RDF data example below is the data for the image above showing the predicates in use.
+
+[source,turtle]
+----
+PREFIX ex: <http://example.com/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX schema: <https://schema.org/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+
+ex:pomingolarna
+    a tern:Site ;
+    schema:name "Pomingalarna Bushland Site" ;
+    geo:hasCentroid [
+        geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)"^^geo:wktLiteral
+    ] ;
+    geo:hasGeometry [
+        geo:asWKT "POLYGON ((147.29457671209050318 -35.10188143482372425, 147.29938609061505872 -35.10242589276990088, 147.30346952521139769 -35.10657738460949417, 147.30287969576968976 -35.10988950378206397, 147.3050575275543963 -35.11195390682797779, 147.30707655910481435 -35.11340579468444645, 147.31129610818766196 -35.11354190917099061, 147.31088776472802238 -35.11581048394672422, 147.31177250889055586 -35.11599196992878547, 147.31009376355652307 -35.11773877250610099, 147.31007107780877163 -35.11739848628973704, 147.30911827640295542 -35.11696745708234602, 147.30846038971799317 -35.11726237180319288, 147.30800667476285071 -35.11814711596572636, 147.30793861751956797 -35.12043837648921851, 147.30812010350163632 -35.12086940569660953, 147.30827890373595324 -35.12243472229186381, 147.30832427523145611 -35.12338752369767292, 147.30684970162724312 -35.12356900967972706, 147.30635061517656936 -35.12338752369767292, 147.30455844110375097 -35.12309260897682606, 147.30274358128315271 -35.12254815103064942, 147.30147317940873108 -35.12184489285017008, 147.30029352052537206 -35.12107357742642222, 147.29224008007150815 -35.11304282272033106, 147.29457671209050318 -35.10188143482372425))"^^geo:wktLiteral
+    ] ;
+    geo:hasBoundingBox [
+        geo:asWKT "POLYGON ((147.29224008007150815 -35.12356900967972706, 147.31177250889055586 -35.12356900967972706, 147.31177250889055586 -35.10188143482372425, 147.29224008007150815 -35.10188143482372425, 147.29224008007150815 -35.12356900967972706))"^^geo:wktLiteral
+    ] ;
+.
+----
+
+[discrete]
+==== Spatial Aggregate Reasoning
+
+ABIS contains rules that will perform spatial reasoning on data. For example, if a dataset is presented that contains a https://w3id.org/tern/ontologies/tern/Survey[`Survey`] which, in turn, contains a series of https://w3id.org/tern/ontologies/tern/Observation[`Observation`] instances with their spatial locations indicated, the spatial extent of the `Survey` will be taken to be at least the area containing the `Observation` locations. The dataset's extent will be at least the boundary of all contained `Survey` instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <<Reasoning Rules, Reasoning Rules>> section.
+
+The figure below shows a boundary calculated for a series of point locations. The boundary could be the extent of a `Survey` for `Observation` point locations and this type of boundary - a convex hull - is the minimum non-concave area containing all points.
+
+[#pattern-spatiality-hull,link="img/pattern-spatiality-hull.png"]
+.A convex hull boundary - in green - calculated for a series of point locations - in yellow.
+image::img/pattern-spatiality-hull.png[Convex hull for points,width=650,align="center"]
 
 === Temporality
 

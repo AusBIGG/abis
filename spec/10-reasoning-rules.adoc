@@ -6,6 +6,9 @@
 The following spatial reasoning rules will be applied to ABIS data.
 
 [discrete]
+==== Centroids and Bounding Boxes from Boundaries
+
+[discrete]
 ==== `Datasets` containment of `Surveys`
 
 [discrete]
