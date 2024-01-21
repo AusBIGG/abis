@@ -677,12 +677,7 @@ pre.rouge {
 <ul class="sectlevel2">
 <li><a href="#_set_modelling">5.1. Set Modelling</a></li>
 <li><a href="#_identifiers">5.2. Identifiers</a></li>
-<li><a href="#_spatially">5.3. Spatially</a>
-<ul class="sectlevel3">
-<li><a href="#_abis_types_of_spatial_objects">5.3.1. ABIS Types of spatial objects</a></li>
-<li><a href="#_feature_to_feature_relations">5.3.2. Feature-to-Feature relations</a></li>
-</ul>
-</li>
+<li><a href="#_spatially">5.3. Spatially</a></li>
 <li><a href="#_temporality">5.4. Temporality</a></li>
 <li><a href="#_provenance">5.5. Provenance</a></li>
 <li><a href="#_agents">5.6. Agents</a></li>
@@ -1755,6 +1750,34 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="paragraph">
 <p><em>ABIS inherits its spatial modelling from <a href="#GSP">GeoSPARQL</a>, as does the <a href="#TERNOntology">TERN Ontology</a>.</em></p>
 </div>
+<div class="paragraph">
+<p>Paterns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_feature_centric">Feature-centric</a></p>
+</li>
+<li>
+<p><a href="#_abis_types_of_spatial_objects">ABIS Types of spatial objects</a></p>
+</li>
+<li>
+<p><a href="#_qualified_geometries">Qualified Geometries</a></p>
+</li>
+<li>
+<p><a href="#_centroid_bounding_box_reasoning">Centroid &amp; Bounding Box Reasoning</a></p>
+</li>
+<li>
+<p><a href="#_geometry_literals">Geometry Literals</a></p>
+</li>
+<li>
+<p><a href="#_spatial_aggregation_reasoning">Spatial Aggregation Reasoning</a></p>
+</li>
+<li>
+<p><a href="#_coordinate_reference_system">Coordinate Reference System</a></p>
+</li>
+</ul>
+</div>
 <h4 id="_feature_centric" class="discrete">Feature-centric</h4>
 <div class="paragraph">
 <p>GeoSPARQL uses a "feature-centric" method of spatial modelling which means spatial things are represented as conceptual things first - spatial <em>features</em> - and then a spatial projection or representation - <em>geometry</em> - is linked to it. This is different to some GIS systems that model spatial things as geometries first and then apply properties to them.</p>
@@ -1786,8 +1809,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="p">.</span></code></pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_abis_types_of_spatial_objects"><a class="anchor" href="#_abis_types_of_spatial_objects"></a>5.3.1. ABIS Types of spatial objects</h4>
+<h4 id="_abis_types_of_spatial_objects" class="discrete">ABIS Types of spatial objects</h4>
 <div class="paragraph">
 <p>There are multiple classes of spatial objects in ABIS. The following are always spatial, even when their spatial values - their geometries - are unknown:</p>
 </div>
@@ -1904,17 +1926,15 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="title">Figure 7. A convex hull boundary - in green - calculated for a series of point locations - in yellow.</div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_feature_to_feature_relations"><a class="anchor" href="#_feature_to_feature_relations"></a>5.3.2. Feature-to-Feature relations</h4>
+<h4 id="_feature_to_feature_relations" class="discrete">Feature-to-Feature relations</h4>
 <div class="paragraph">
 <p>In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#" class="bare">https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#</a><em>simple_features_relation_family[_Simple Features</em> relations] which are summarised as follows:</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>
@@ -2073,7 +2093,6 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>If a simple value for depth is given, e.g. <code>ex:obs-n schema:depth 3</code>, this will be interpreted as being in metres.</p>
 </div>
 </div>
-</div>
 <div class="sect2">
 <h3 id="_temporality"><a class="anchor" href="#_temporality"></a>5.4. Temporality</h3>
 <h4 id="_feature_centric_2" class="discrete">Feature-centric</h4>
@@ -2130,18 +2149,25 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <h4 id="_date_time_representations" class="discrete">Date &amp; Time representations</h4>
 <div class="paragraph">
-<p>OWL TIME allows a number of data and time literal representations for date/time instants and any may be used: use the one that best corresponds with the reality of the thing you are modelling. The code example above shows three different ones in use: <code>xsd:date</code>, <code>xsd:gYearMonth</code> and <code>xsd:dateTime</code>. The following table gives a list of date/time data types and the OWL TIME predicate used to indicate them.</p>
+<p>OWL TIME allows a number of data and time literal representations for date/time instants and any may be used: use the one that best corresponds with the reality of the thing you are modelling. The code example above shows three different ones in use: <code>xsd:date</code>, <code>xsd:gYearMonth</code> and <code>xsd:dateTime</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following table gives a list of date/time data types and the OWL TIME predicate used to indicate them. Format values in the table below use the codes from <a href="https://strftime.org/" class="bare">https://strftime.org/</a>, for example <code>%Y</code> is "Year with century as a decimal number" e.g. 2013, not 13.</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Datatype</th>
 <th class="tableblock halign-left valign-top">Indicating Predicate</th>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Example</th>
 <th class="tableblock halign-left valign-top">Use</th>
 </tr>
 </thead>
@@ -2149,32 +2175,56 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%Y-%m-%dT%H:%I:%S%z</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2013-07-24T15:17:12.55+1000</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To indicate a time - to the second or part of a second - with a known timezone</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTime</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTime"><code>time:inXSDDateTime</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%Y-%m-%dT%H:%I:%S</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2013-07-24T15:17:12.55</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To indicate a time - to the second or part of a second - without a known timezone</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDate"><code>time:inXSDDate</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%Y-%m-%d</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2013-07-24</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To indicate a date with time unknown or irrelevant</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYearMonth</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDgYearMonth"><code>time:inXSDgYearMonth</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%Y-%m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2013-07</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To indicate a month in a particular year</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYear</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDgYear"><code>time:inXSDgYear</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%Y</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2013</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To indicate a year</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Note that when you use predicates listed in the table above, ABIS will infer the datatype of the object indicated by the predicate and give an error if the data cannot be parsed as that datatype. This is as per</p>
+<p>Note that when you use the predicates listed in the table above, ABIS will infer the datatype of the object indicated by the predicate and give an error if the data cannot be parsed as that datatype. You do not need to specify the datatype but you must get the format correct.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Models that ABIS inherits from sometimes include seemingly arbitrary data/time restrictions, such as <a href="#SOSA">SOSA</a> requiring that a <a href="https://www.w3.org/TR/vocab-ssn/#SOSAresultTime">sosa:resultTime`</a> only be used to indicate an <code>xsd:dateTime</code>. ABIS ignores such restrictions: you may use the date or time representation best suited to convey the real-world reality of your objects' temporality of any temporal indication predicate.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -4603,7 +4653,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-21 01:32:40 UTC
+Last updated 2024-01-21 23:10:38 UTC
 </div>
 </div>
 </body>
