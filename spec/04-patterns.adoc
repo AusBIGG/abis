@@ -204,6 +204,23 @@ ex:site-x
 .
 ----
 
+==== ABIS Types of spatial objects
+
+There are multiple classes of spatial objects in ABIS. The following are always spatial, even when their spatial values - their geometries - are unknown:
+
+* `Observation`
+* `Site`
+* `Sample` - where the sample was collected from, not where it is now
+
+For these classes of object, we expect to see instances of them to be associated with geometries, if known.
+
+The following classes of object are either given as spatial - a geometry is provided - or for their spatial values to be inferred from child object geometries - see <<Spatial Aggregation Reasoning, Spatial Aggregation Reasoning>> below:
+
+* `RDFDataset`
+* `Survey`
+
+A `Survey` might have its spatial extent recorded directly or taken to be the envelope of the locations of the `Observations` it contains. Similarly, an `RDFDataset` will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be `Sites`, `Sample`, `Survey` or `Observation` instances, or all of them.
+
 [discrete]
 ==== Qualified Geometries
 
@@ -235,19 +252,38 @@ ex:pomingolarna
     a tern:Site ;
     schema:name "Pomingalarna Bushland Site" ;
     geo:hasCentroid [
-        geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)"^^geo:wktLiteral
+        geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)" ;
     ] ;
     geo:hasGeometry [
-        geo:asWKT "POLYGON ((147.29457671209050318 -35.10188143482372425, 147.29938609061505872 -35.10242589276990088, 147.30346952521139769 -35.10657738460949417, 147.30287969576968976 -35.10988950378206397, 147.3050575275543963 -35.11195390682797779, 147.30707655910481435 -35.11340579468444645, 147.31129610818766196 -35.11354190917099061, 147.31088776472802238 -35.11581048394672422, 147.31177250889055586 -35.11599196992878547, 147.31009376355652307 -35.11773877250610099, 147.31007107780877163 -35.11739848628973704, 147.30911827640295542 -35.11696745708234602, 147.30846038971799317 -35.11726237180319288, 147.30800667476285071 -35.11814711596572636, 147.30793861751956797 -35.12043837648921851, 147.30812010350163632 -35.12086940569660953, 147.30827890373595324 -35.12243472229186381, 147.30832427523145611 -35.12338752369767292, 147.30684970162724312 -35.12356900967972706, 147.30635061517656936 -35.12338752369767292, 147.30455844110375097 -35.12309260897682606, 147.30274358128315271 -35.12254815103064942, 147.30147317940873108 -35.12184489285017008, 147.30029352052537206 -35.12107357742642222, 147.29224008007150815 -35.11304282272033106, 147.29457671209050318 -35.10188143482372425))"^^geo:wktLiteral
+        geo:asWKT "POLYGON ((147.29457671209050318 -35.10188143482372425, 147.29938609061505872 -35.10242589276990088, 147.30346952521139769 -35.10657738460949417, 147.30287969576968976 -35.10988950378206397, 147.3050575275543963 -35.11195390682797779, 147.30707655910481435 -35.11340579468444645, 147.31129610818766196 -35.11354190917099061, 147.31088776472802238 -35.11581048394672422, 147.31177250889055586 -35.11599196992878547, 147.31009376355652307 -35.11773877250610099, 147.31007107780877163 -35.11739848628973704, 147.30911827640295542 -35.11696745708234602, 147.30846038971799317 -35.11726237180319288, 147.30800667476285071 -35.11814711596572636, 147.30793861751956797 -35.12043837648921851, 147.30812010350163632 -35.12086940569660953, 147.30827890373595324 -35.12243472229186381, 147.30832427523145611 -35.12338752369767292, 147.30684970162724312 -35.12356900967972706, 147.30635061517656936 -35.12338752369767292, 147.30455844110375097 -35.12309260897682606, 147.30274358128315271 -35.12254815103064942, 147.30147317940873108 -35.12184489285017008, 147.30029352052537206 -35.12107357742642222, 147.29224008007150815 -35.11304282272033106, 147.29457671209050318 -35.10188143482372425))" ;
     ] ;
     geo:hasBoundingBox [
-        geo:asWKT "POLYGON ((147.29224008007150815 -35.12356900967972706, 147.31177250889055586 -35.12356900967972706, 147.31177250889055586 -35.10188143482372425, 147.29224008007150815 -35.10188143482372425, 147.29224008007150815 -35.12356900967972706))"^^geo:wktLiteral
+        geo:asWKT "POLYGON ((147.29224008007150815 -35.12356900967972706, 147.31177250889055586 -35.12356900967972706, 147.31177250889055586 -35.10188143482372425, 147.29224008007150815 -35.10188143482372425, 147.29224008007150815 -35.12356900967972706))" ;
     ] ;
 .
 ----
 
 [discrete]
-==== Spatial Aggregate Reasoning
+==== Geometry Literals
+ABIS only allows for https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-Known Text representations of geometries] indicated by the `geo:asWKT` predicate. No other forms of geometry literal, e.g. GeoJSON, may be used.
+
+ABIS will infer that any literal object indicated with the `geo:asWKT` predicate is of the datatype `geo:wktLiteral` and the literal typing need not be supplied. It may also be supplied so the following are treated as equivalent:
+
+`geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)" ;`
+
+`geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)"geo:wktLiteral ;`
+
+This is as per a rule in the <<Spatial Reasoning, Spatial Reasoning>> part of the rules section.
+
+[discrete]
+==== Coordinate Reference System
+
+All spatial data supplied according to ABIS _MUST_ ues the WGS84 Coordinate Reference System. Systems such as GDA94, GDA202 or others _MUST NOT_ be used.
+
+Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <<Geometry Literals, Geometry Literals>> section above - and that format defaults to WGS84, no CRS need be indicated in data: WGS84 will be assumed.
+
+[discrete]
+==== Spatial Aggregation Reasoning
 
 ABIS contains rules that will perform spatial reasoning on data. For example, if a dataset is presented that contains a https://w3id.org/tern/ontologies/tern/Survey[`Survey`] which, in turn, contains a series of https://w3id.org/tern/ontologies/tern/Observation[`Observation`] instances with their spatial locations indicated, the spatial extent of the `Survey` will be taken to be at least the area containing the `Observation` locations. The dataset's extent will be at least the boundary of all contained `Survey` instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <<Reasoning Rules, Reasoning Rules>> section.
 
@@ -257,9 +293,194 @@ The figure below shows a boundary calculated for a series of point locations. Th
 .A convex hull boundary - in green - calculated for a series of point locations - in yellow.
 image::img/pattern-spatiality-hull.png[Convex hull for points,width=650,align="center"]
 
+==== Feature-to-Feature relations
+
+In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_simple_features_relation_family[_Simple Features_ relations] which are summarised as follows:
+
+|===
+| Name | GeoSPARQL Predicate | Meaning
+
+| equals        | `geo:sfEquals`        | The spatial extents of the two objects are exactly the same
+| disjoint      | `geo:sfDisjoint`      | The spatial extents of the two objects do not touch or overlap
+| intersects    | `geo:sfIntersects`    | The spatial extents of the two objects have at least one point in common
+| touches       | `geo:sfTouches`       | The spatial extents of the two objects have at least one point in common, but their interiors do not intersect (i.e. only their boundaries intersect)
+| within        | `geo:sfWithin`        | The spatial extent of the first object is wholly contained by the spatial extent of the second object
+| contains      | `geo:sfContains`      | The spatial extent of the first object wholly contains the spatial extent of the second object (i.e. the inverse of _within_)
+| overlaps      | `geo:sfOverlaps`      | The spatial extents of the two objects have some, but not all, points in common, and the dimensions of the intersection are the same as those of the objects
+| crosses       | `geo:sfCrosses`       | The spatial extents of the two objects have some, but not all, interior points in common and the dimensions of intersection is less than the dimensions of at least one of them (i.e. two 2-D areas' intersection is a 1-D line or two lines' intersection is a 0-D point)
+|===
+
+The most commonly used spatial relations are _contains_/_within_ and _overlaps_. Here are some examples of Feature-to-Feature relations for real and example Features:
+
+[source,turtle]
+----
+PREFIX ex: <http://example.com/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX schema: <https://schema.org/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+
+# Australia, according to the Australian Bureau of Statistics' ASGS Linked Data dataset
+<https://linked.data.gov.au/dataset/asgsed3/AUS/AUS>
+    a geo:Feature ;
+    schema:name "Australia" ;
+    geo:sfContains
+        <https://linked.data.gov.au/dataset/asgsed3/STE/8> ,  # ACT
+        <https://linked.data.gov.au/dataset/asgsed3/STE/1> ,  # NSW
+        <https://linked.data.gov.au/dataset/asgsed3/STE/7> ,  # NT
+        # ...
+        <https://linked.data.gov.au/dataset/asgsed3/STE/2> ;  # Victoria
+.
+
+<https://linked.data.gov.au/dataset/asgsed3/STE/1>  # NSW
+    a geo:Feature ;
+    schema:name "New South Wales" ;
+    geo:sfWithin <https://linked.data.gov.au/dataset/asgsed3/AUS/AUS> ;
+.
+
+# An example Site within NSW
+ex:site-x
+    a tern:Site ;
+    schema:name "Site X" ;
+    geo:sfWithin <https://linked.data.gov.au/dataset/asgsed3/STE/1> ;
+.
+# ex:site-x geo:sfWithin <https://linked.data.gov.au/dataset/asgsed3/AUS/AUS>
+# can be inferred from the site being within NSW being within Australia
+
+# NSW & Victoria touch along their common border
+<https://linked.data.gov.au/dataset/asgsed3/STE/1>
+    geo:sfTouches <https://linked.data.gov.au/dataset/asgsed3/STE/2> ;
+.
+----
+
+GeoSPARQL provides function definitions for the calculation of Feature-to-Feature relations from geometry data and all compliant implementations of GeoSPARQL allow these calculations to result in declarations of equivalent predicates. So if object A is calculated as being _within_ object B, then the RDF triple `<A> geo:sfWithin <B>` may be recorded.
+
+[discrete]
+==== Elevation & Depth
+
+[discrete]
+===== Absolute
+
+If the absolute elevation or depth of an object needs representation, the 2D + Z forms of https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-Known Text representation of a geometry] should be used: `POINTZ`, `LINESTRINGZ` & `POLYGONZ`.
+
+For example, if _Observation N_ was made at longitude 147.308040 E, latitude 35.121824 S at an elevation of 234 metres, `POINTZ` should be used like this:
+
+[source,turtle]
+----
+PREFIX ex: <http://example.com/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX schema: <https://schema.org/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+
+ex:obs-n
+    a tern:Observation ;
+    schema:name "Observation N" ;
+    geo:hasGeometry [
+        geo:asWKT "POINTZ(147.308040 -35.121824 234)" ;
+    ] ;
+.
+----
+
+Depth should be similarly indicated with a `POINTZ` WKT representation with the `Z` value given as a negative, i.e. 20m below sea level should be `-20`.
+
+[discrete]
+===== Relative
+
+If relative elevation or depth needs representation, the <<SDO, schema.org>> https://schema.org/elevation[`schema:elevation`] & https://schema.org/depth[`schema:depth`] should be used.
+
+For example, if a `Sample` is obtained 3m below ground surface at longitude 147.308040 E, latitude 35.121824 S, it should be recorded like this:
+
+[source,turtle]
+----
+PREFIX ex: <http://example.com/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX schema: <https://schema.org/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+
+ex:obs-n
+    a tern:Observation ;
+    schema:name "Observation N" ;
+    geo:hasGeometry [
+        geo:asWKT "POINT(147.308040 -35.121824)" ;
+    ] ;
+    schema:depth [
+        schema:value 3 ;
+        schema:unitCode <https://qudt.org/vocab/unit/M> ;  # QUDT's IRI for metre
+    ] ;
+.
+----
+
+Elevation and depth values should use positive numbers only.
+
+If a simple value for depth is given, e.g. `ex:obs-n schema:depth 3`, this will be interpreted as being in metres.
+
 === Temporality
 
+[discrete]
+==== Feature-centric
+
 _ABIS inherits its temporal modelling from the <<TIME, Time Ontology>>. The <<TERNOntology, TERN Ontology>> uses the Time Ontology in places and used direct time representations elsewhere. This may be harmonised in the future._
+
+ABIS uses a feature-centric approach for temporality, just as it does with spatiality. Just as per <GSP, GeoSPARQL>> where spatial objects are conceptual things with associated geometries, following <<TIME, OWL TIME>>, temporal objects are conceptual things with associated temporal "geometries" or temporal footprint.
+
+Where for spatial objects we link a `Feature` to a `Geometry` which in turn links to a literal representation of the spatial footprint, say a Well-Known Text polygon, for temporal objects we link the temporal feature to a https://www.w3.org/TR/owl-time/#time:TemporalEntity[`time:TemporalEntity`], the equivlane of a temporal geometry, which is either an https://www.w3.org/TR/owl-time/#time:Instant[`time:Instant`] or a https://www.w3.org/TR/owl-time/#time:Interval[time:Interval`] which then contains dates, date/times etc.
+
+The following code shows several example `Survey` instances, which are temporal features, linked to different temporal entities. The selection of particular temporal entities will come down to what is known about the `Survey`.
+
+[source,turtle]
+----
+PREFIX ex: <http://example.com/>
+PREFIX schema: <https://schema.org/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+
+# Survey X started on the 15th of March, 1987
+# and ended on the 23 of March, 1987
+ex:survey-x
+    a tern:Survey ;
+    schema:name "Survey X" ;
+    time:hasTime [
+        time:hasBeginning [ time:inXSDDate "1987-03-15" ] ;
+        time:hasEnd [ time:inXSDDate "1987-03-23" ] ;
+    ] ;
+.
+
+# We only know Survey Y occurred in April, 2010
+ex:survey-y
+    a tern:Survey ;
+    schema:name "Survey Y" ;
+    time:hasTime [
+        time:inXSDgYearMonth "2020-04"
+    ] ;
+.
+
+# Survey Z is on-going or at least
+# we don't know if/when it ended as only
+# a beginning date is given
+ex:survey-z
+    a tern:Survey ;
+    schema:name "Survey Z" ;
+    time:hasTime [
+        time:hasBeginning [ time:inXSDDateTime "2023-12-10T14:30:00" ] ;
+    ] ;
+.
+----
+
+[discrete]
+==== Date & Time representations
+OWL TIME allows a number of data and time literal representations for date/time instants and any may be used: use the one that best corresponds with the reality of the thing you are modelling. The code example above shows three different ones in use: `xsd:date`, `xsd:gYearMonth` and `xsd:dateTime`. The following table gives a list of date/time data types and the OWL TIME predicate used to indicate them.
+
+|===
+| Datatype | Indicating Predicate | Use
+
+| `xsd:dateTimeStamp` | https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp[`time:inXSDDateTimeStamp`] | To indicate a time - to the second or part of a second - with a known timezone
+| `xsd:dateTime` | https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp[`time:inXSDDateTimeStamp`]      | To indicate a time - to the second or part of a second - without a known timezone
+| `xsd:dateTimeStamp` | https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp[`time:inXSDDateTimeStamp`] |
+| `xsd:dateTimeStamp` | https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp[`time:inXSDDateTimeStamp`] |
+| `xsd:dateTimeStamp` | https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp[`time:inXSDDateTimeStamp`] |
+
+|===
+
+Note that when you use predicates listed in the table above, ABIS will infer the datatype of the object indicated by the predicate and give an error if the data cannot be parsed as that datatype. This is as per
 
 === Provenance
 

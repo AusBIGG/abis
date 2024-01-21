@@ -14,4 +14,14 @@ The following spatial reasoning rules will be applied to ABIS data.
 [discrete]
 ==== `Surveys` containment of `Observations`
 
+[discrete]
+==== Inference of geometry literal datatypes from GeoSPARQL predicates
+
+[discrete]
+=== Temporal Reasoning
+
+[discrete]
+==== Inference of date/time literal datatypes from TIME predicates
+
+
 #TODO: complete this section#
