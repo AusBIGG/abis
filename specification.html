@@ -677,7 +677,12 @@ pre.rouge {
 <ul class="sectlevel2">
 <li><a href="#_set_modelling">5.1. Set Modelling</a></li>
 <li><a href="#_identifiers">5.2. Identifiers</a></li>
-<li><a href="#_spatially">5.3. Spatially</a></li>
+<li><a href="#_spatially">5.3. Spatially</a>
+<ul class="sectlevel3">
+<li><a href="#_abis_types_of_spatial_objects">5.3.1. ABIS Types of spatial objects</a></li>
+<li><a href="#_feature_to_feature_relations">5.3.2. Feature-to-Feature relations</a></li>
+</ul>
+</li>
 <li><a href="#_temporality">5.4. Temporality</a></li>
 <li><a href="#_provenance">5.5. Provenance</a></li>
 <li><a href="#_agents">5.6. Agents</a></li>
@@ -1781,6 +1786,43 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="p">.</span></code></pre>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_abis_types_of_spatial_objects"><a class="anchor" href="#_abis_types_of_spatial_objects"></a>5.3.1. ABIS Types of spatial objects</h4>
+<div class="paragraph">
+<p>There are multiple classes of spatial objects in ABIS. The following are always spatial, even when their spatial values - their geometries - are unknown:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Observation</code></p>
+</li>
+<li>
+<p><code>Site</code></p>
+</li>
+<li>
+<p><code>Sample</code> - where the sample was collected from, not where it is now</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For these classes of object, we expect to see instances of them to be associated with geometries, if known.</p>
+</div>
+<div class="paragraph">
+<p>The following classes of object are either given as spatial - a geometry is provided - or for their spatial values to be inferred from child object geometries - see <a href="#_spatial_aggregation_reasoning">Spatial Aggregation Reasoning</a> below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>RDFDataset</code></p>
+</li>
+<li>
+<p><code>Survey</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A <code>Survey</code> might have its spatial extent recorded directly or taken to be the envelope of the locations of the <code>Observations</code> it contains. Similarly, an <code>RDFDataset</code> will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be <code>Sites</code>, <code>Sample</code>, <code>Survey</code> or <code>Observation</code> instances, or all of them.</p>
+</div>
 <h4 id="_qualified_geometries" class="discrete">Qualified Geometries</h4>
 <div class="paragraph">
 <p>This feature-centric model allows for multiple or no geometries per spatial object which can be very powerful. The figure below gives several examples of a spatial Feature with multiple Geometries that differ different ways. The pattern here is "qualification": when a Feature is assigned multiple Geometries, they must be differentiable in some way, either by having different geometry types (point, polygon etc.) or by having different roles with respect to the Feature or by each Geometry indicating a different temporal footprint. These differentiations qualify the Geometries with respect to the Feature.</p>
@@ -1815,18 +1857,41 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Site</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Pomingalarna Bushland Site"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geo:</span><span class="n">hasCentroid</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (147.30079728418488116 -35.11304660429588154)"</span><span class="p">^^</span><span class="nn">geo:</span><span class="n">wktLiteral
-</span><span class="w">    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (147.30079728418488116 -35.11304660429588154)"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.29457671209050318 -35.10188143482372425, 147.29938609061505872 -35.10242589276990088, 147.30346952521139769 -35.10657738460949417, 147.30287969576968976 -35.10988950378206397, 147.3050575275543963 -35.11195390682797779, 147.30707655910481435 -35.11340579468444645, 147.31129610818766196 -35.11354190917099061, 147.31088776472802238 -35.11581048394672422, 147.31177250889055586 -35.11599196992878547, 147.31009376355652307 -35.11773877250610099, 147.31007107780877163 -35.11739848628973704, 147.30911827640295542 -35.11696745708234602, 147.30846038971799317 -35.11726237180319288, 147.30800667476285071 -35.11814711596572636, 147.30793861751956797 -35.12043837648921851, 147.30812010350163632 -35.12086940569660953, 147.30827890373595324 -35.12243472229186381, 147.30832427523145611 -35.12338752369767292, 147.30684970162724312 -35.12356900967972706, 147.30635061517656936 -35.12338752369767292, 147.30455844110375097 -35.12309260897682606, 147.30274358128315271 -35.12254815103064942, 147.30147317940873108 -35.12184489285017008, 147.30029352052537206 -35.12107357742642222, 147.29224008007150815 -35.11304282272033106, 147.29457671209050318 -35.10188143482372425))"</span><span class="p">^^</span><span class="nn">geo:</span><span class="n">wktLiteral
-</span><span class="w">    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.29457671209050318 -35.10188143482372425, 147.29938609061505872 -35.10242589276990088, 147.30346952521139769 -35.10657738460949417, 147.30287969576968976 -35.10988950378206397, 147.3050575275543963 -35.11195390682797779, 147.30707655910481435 -35.11340579468444645, 147.31129610818766196 -35.11354190917099061, 147.31088776472802238 -35.11581048394672422, 147.31177250889055586 -35.11599196992878547, 147.31009376355652307 -35.11773877250610099, 147.31007107780877163 -35.11739848628973704, 147.30911827640295542 -35.11696745708234602, 147.30846038971799317 -35.11726237180319288, 147.30800667476285071 -35.11814711596572636, 147.30793861751956797 -35.12043837648921851, 147.30812010350163632 -35.12086940569660953, 147.30827890373595324 -35.12243472229186381, 147.30832427523145611 -35.12338752369767292, 147.30684970162724312 -35.12356900967972706, 147.30635061517656936 -35.12338752369767292, 147.30455844110375097 -35.12309260897682606, 147.30274358128315271 -35.12254815103064942, 147.30147317940873108 -35.12184489285017008, 147.30029352052537206 -35.12107357742642222, 147.29224008007150815 -35.11304282272033106, 147.29457671209050318 -35.10188143482372425))"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geo:</span><span class="n">hasBoundingBox</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.29224008007150815 -35.12356900967972706, 147.31177250889055586 -35.12356900967972706, 147.31177250889055586 -35.10188143482372425, 147.29224008007150815 -35.10188143482372425, 147.29224008007150815 -35.12356900967972706))"</span><span class="p">^^</span><span class="nn">geo:</span><span class="n">wktLiteral
-</span><span class="w">    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.29224008007150815 -35.12356900967972706, 147.31177250889055586 -35.12356900967972706, 147.31177250889055586 -35.10188143482372425, 147.29224008007150815 -35.10188143482372425, 147.29224008007150815 -35.12356900967972706))"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
 </div>
 </div>
-<h4 id="_spatial_aggregate_reasoning" class="discrete">Spatial Aggregate Reasoning</h4>
+<h4 id="_geometry_literals" class="discrete">Geometry Literals</h4>
+<div class="paragraph">
+<p>ABIS only allows for <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text representations of geometries</a> indicated by the <code>geo:asWKT</code> predicate. No other forms of geometry literal, e.g. GeoJSON, may be used.</p>
+</div>
+<div class="paragraph">
+<p>ABIS will infer that any literal object indicated with the <code>geo:asWKT</code> predicate is of the datatype <code>geo:wktLiteral</code> and the literal typing need not be supplied. It may also be supplied so the following are treated as equivalent:</p>
+</div>
+<div class="paragraph">
+<p><code>geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)" ;</code></p>
+</div>
+<div class="paragraph">
+<p><code>geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)"geo:wktLiteral ;</code></p>
+</div>
+<div class="paragraph">
+<p>This is as per a rule in the <a href="#_spatial_reasoning">Spatial Reasoning</a> part of the rules section.</p>
+</div>
+<h4 id="_coordinate_reference_system" class="discrete">Coordinate Reference System</h4>
+<div class="paragraph">
+<p>All spatial data supplied according to ABIS <em>MUST</em> ues the WGS84 Coordinate Reference System. Systems such as GDA94, GDA202 or others <em>MUST NOT</em> be used.</p>
+</div>
+<div class="paragraph">
+<p>Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <a href="#_geometry_literals">Geometry Literals</a> section above - and that format defaults to WGS84, no CRS need be indicated in data: WGS84 will be assumed.</p>
+</div>
+<h4 id="_spatial_aggregation_reasoning" class="discrete">Spatial Aggregation Reasoning</h4>
 <div class="paragraph">
 <p>ABIS contains rules that will perform spatial reasoning on data. For example, if a dataset is presented that contains a <a href="https://w3id.org/tern/ontologies/tern/Survey"><code>Survey</code></a> which, in turn, contains a series of <a href="https://w3id.org/tern/ontologies/tern/Observation"><code>Observation</code></a> instances with their spatial locations indicated, the spatial extent of the <code>Survey</code> will be taken to be at least the area containing the <code>Observation</code> locations. The dataset&#8217;s extent will be at least the boundary of all contained <code>Survey</code> instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <a href="#_reasoning_rules">Reasoning Rules</a> section.</p>
 </div>
@@ -1840,10 +1905,276 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 7. A convex hull boundary - in green - calculated for a series of point locations - in yellow.</div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_feature_to_feature_relations"><a class="anchor" href="#_feature_to_feature_relations"></a>5.3.2. Feature-to-Feature relations</h4>
+<div class="paragraph">
+<p>In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#" class="bare">https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#</a><em>simple_features_relation_family[_Simple Features</em> relations] which are summarised as follows:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">GeoSPARQL Predicate</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">equals</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:sfEquals</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spatial extents of the two objects are exactly the same</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">disjoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:sfDisjoint</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spatial extents of the two objects do not touch or overlap</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">intersects</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:sfIntersects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spatial extents of the two objects have at least one point in common</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">touches</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:sfTouches</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spatial extents of the two objects have at least one point in common, but their interiors do not intersect (i.e. only their boundaries intersect)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">within</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:sfWithin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spatial extent of the first object is wholly contained by the spatial extent of the second object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contains</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:sfContains</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spatial extent of the first object wholly contains the spatial extent of the second object (i.e. the inverse of <em>within</em>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">overlaps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:sfOverlaps</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spatial extents of the two objects have some, but not all, points in common, and the dimensions of the intersection are the same as those of the objects</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crosses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:sfCrosses</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spatial extents of the two objects have some, but not all, interior points in common and the dimensions of intersection is less than the dimensions of at least one of them (i.e. two 2-D areas' intersection is a 1-D line or two lines' intersection is a 0-D point)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The most commonly used spatial relations are <em>contains</em>/<em>within</em> and <em>overlaps</em>. Here are some examples of Feature-to-Feature relations for real and example Features:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+
+</span><span class="c1"># Australia, according to the Australian Bureau of Statistics' ASGS Linked Data dataset</span><span class="w">
+</span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Feature</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Australia"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">geo:</span><span class="n">sfContains
+</span><span class="w">        </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/8&gt;</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="c1"># ACT</span><span class="w">
+        </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="c1"># NSW</span><span class="w">
+        </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/7&gt;</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="c1"># NT</span><span class="w">
+        </span><span class="c1"># ...</span><span class="w">
+        </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/2&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># Victoria</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;</span><span class="w">  </span><span class="c1"># NSW</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Feature</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"New South Wales"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">geo:</span><span class="n">sfWithin</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="c1"># An example Site within NSW</span><span class="w">
+</span><span class="nn">ex:</span><span class="n">site-x
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Site</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Site X"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">geo:</span><span class="n">sfWithin</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+</span><span class="c1"># ex:site-x geo:sfWithin &lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt;</span><span class="w">
+</span><span class="c1"># can be inferred from the site being within NSW being within Australia</span><span class="w">
+
+</span><span class="c1"># NSW &amp; Victoria touch along their common border</span><span class="w">
+</span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;</span><span class="w">
+    </span><span class="nn">geo:</span><span class="n">sfTouches</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/2&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>GeoSPARQL provides function definitions for the calculation of Feature-to-Feature relations from geometry data and all compliant implementations of GeoSPARQL allow these calculations to result in declarations of equivalent predicates. So if object A is calculated as being <em>within</em> object B, then the RDF triple <code>&lt;A&gt; geo:sfWithin &lt;B&gt;</code> may be recorded.</p>
+</div>
+<h4 id="_elevation_depth" class="discrete">Elevation &amp; Depth</h4>
+<h5 id="_absolute" class="discrete">Absolute</h5>
+<div class="paragraph">
+<p>If the absolute elevation or depth of an object needs representation, the 2D + Z forms of <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text representation of a geometry</a> should be used: <code>POINTZ</code>, <code>LINESTRINGZ</code> &amp; <code>POLYGONZ</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example, if <em>Observation N</em> was made at longitude 147.308040 E, latitude 35.121824 S at an elevation of 234 metres, <code>POINTZ</code> should be used like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">obs-n
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Observation N"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINTZ(147.308040 -35.121824 234)"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Depth should be similarly indicated with a <code>POINTZ</code> WKT representation with the <code>Z</code> value given as a negative, i.e. 20m below sea level should be <code>-20</code>.</p>
+</div>
+<h5 id="_relative" class="discrete">Relative</h5>
+<div class="paragraph">
+<p>If relative elevation or depth needs representation, the <a href="#SDO">schema.org</a> <a href="https://schema.org/elevation"><code>schema:elevation</code></a> &amp; <a href="https://schema.org/depth"><code>schema:depth</code></a> should be used.</p>
+</div>
+<div class="paragraph">
+<p>For example, if a <code>Sample</code> is obtained 3m below ground surface at longitude 147.308040 E, latitude 35.121824 S, it should be recorded like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">obs-n
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Observation N"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT(147.308040 -35.121824)"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">depth</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nn">schema:</span><span class="n">value</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">schema:</span><span class="n">unitCode</span><span class="w"> </span><span class="nl">&lt;https://qudt.org/vocab/unit/M&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># QUDT's IRI for metre</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Elevation and depth values should use positive numbers only.</p>
+</div>
+<div class="paragraph">
+<p>If a simple value for depth is given, e.g. <code>ex:obs-n schema:depth 3</code>, this will be interpreted as being in metres.</p>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_temporality"><a class="anchor" href="#_temporality"></a>5.4. Temporality</h3>
+<h4 id="_feature_centric_2" class="discrete">Feature-centric</h4>
 <div class="paragraph">
 <p><em>ABIS inherits its temporal modelling from the <a href="#TIME">Time Ontology</a>. The <a href="#TERNOntology">TERN Ontology</a> uses the Time Ontology in places and used direct time representations elsewhere. This may be harmonised in the future.</em></p>
+</div>
+<div class="paragraph">
+<p>ABIS uses a feature-centric approach for temporality, just as it does with spatiality. Just as per &lt;GSP, GeoSPARQL&gt;&gt; where spatial objects are conceptual things with associated geometries, following <a href="#TIME">OWL TIME</a>, temporal objects are conceptual things with associated temporal "geometries" or temporal footprint.</p>
+</div>
+<div class="paragraph">
+<p>Where for spatial objects we link a <code>Feature</code> to a <code>Geometry</code> which in turn links to a literal representation of the spatial footprint, say a Well-Known Text polygon, for temporal objects we link the temporal feature to a <a href="https://www.w3.org/TR/owl-time/#time:TemporalEntity"><code>time:TemporalEntity</code></a>, the equivlane of a temporal geometry, which is either an <a href="https://www.w3.org/TR/owl-time/#time:Instant"><code>time:Instant</code></a> or a <a href="https://www.w3.org/TR/owl-time/#time:Interval">time:Interval`</a> which then contains dates, date/times etc.</p>
+</div>
+<div class="paragraph">
+<p>The following code shows several example <code>Survey</code> instances, which are temporal features, linked to different temporal entities. The selection of particular temporal entities will come down to what is known about the <code>Survey</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">time:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span><span class="w">
+
+</span><span class="c1"># Survey X started on the 15th of March, 1987</span><span class="w">
+</span><span class="c1"># and ended on the 23 of March, 1987</span><span class="w">
+</span><span class="nn">ex:</span><span class="n">survey-x
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Survey</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Survey X"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">time:</span><span class="n">hasTime</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nn">time:</span><span class="n">hasBeginning</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">inXSDDate</span><span class="w"> </span><span class="s">"1987-03-15"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">time:</span><span class="n">hasEnd</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">inXSDDate</span><span class="w"> </span><span class="s">"1987-03-23"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="c1"># We only know Survey Y occurred in April, 2010</span><span class="w">
+</span><span class="nn">ex:</span><span class="n">survey-y
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Survey</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Survey Y"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">time:</span><span class="n">hasTime</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nn">time:</span><span class="n">inXSDgYearMonth</span><span class="w"> </span><span class="s">"2020-04"</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="c1"># Survey Z is on-going or at least</span><span class="w">
+</span><span class="c1"># we don't know if/when it ended as only</span><span class="w">
+</span><span class="c1"># a beginning date is given</span><span class="w">
+</span><span class="nn">ex:</span><span class="n">survey-z
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Survey</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Survey Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">time:</span><span class="n">hasTime</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nn">time:</span><span class="n">hasBeginning</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">inXSDDateTime</span><span class="w"> </span><span class="s">"2023-12-10T14:30:00"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<h4 id="_date_time_representations" class="discrete">Date &amp; Time representations</h4>
+<div class="paragraph">
+<p>OWL TIME allows a number of data and time literal representations for date/time instants and any may be used: use the one that best corresponds with the reality of the thing you are modelling. The code example above shows three different ones in use: <code>xsd:date</code>, <code>xsd:gYearMonth</code> and <code>xsd:dateTime</code>. The following table gives a list of date/time data types and the OWL TIME predicate used to indicate them.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Datatype</th>
+<th class="tableblock halign-left valign-top">Indicating Predicate</th>
+<th class="tableblock halign-left valign-top">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To indicate a time - to the second or part of a second - with a known timezone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To indicate a time - to the second or part of a second - without a known timezone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl-time/#time:inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note that when you use predicates listed in the table above, ABIS will infer the datatype of the object indicated by the predicate and give an error if the data cannot be parsed as that datatype. This is as per</p>
 </div>
 </div>
 <div class="sect2">
@@ -2469,6 +2800,9 @@ ex:obs-z
 <h4 id="_centroids_and_bounding_boxes_from_boundaries" class="discrete">Centroids and Bounding Boxes from Boundaries</h4>
 <h4 id="_datasets_containment_of_surveys" class="discrete"><code>Datasets</code> containment of <code>Surveys</code></h4>
 <h4 id="_surveys_containment_of_observations" class="discrete"><code>Surveys</code> containment of <code>Observations</code></h4>
+<h4 id="_inference_of_geometry_literal_datatypes_from_geosparql_predicates" class="discrete">Inference of geometry literal datatypes from GeoSPARQL predicates</h4>
+<h3 id="_temporal_reasoning" class="discrete">Temporal Reasoning</h3>
+<h4 id="_inference_of_datetime_literal_datatypes_from_time_predicates" class="discrete">Inference of date/time literal datatypes from TIME predicates</h4>
 <div class="paragraph">
 <p><mark>TODO: complete this section</mark></p>
 </div>
@@ -4269,7 +4603,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-20 06:24:24 UTC
+Last updated 2024-01-21 01:32:40 UTC
 </div>
 </div>
 </body>
