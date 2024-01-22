@@ -4,7 +4,7 @@ ABIS is a multi-part model that profiles many other models - see the <<Model Dep
 
 Likewise, profiles of ABIS are made to constrain and/or extend its use.
 
-Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on: profile rules are entirely a matter for profile defines however data valida according to a profile of a standard, must always be valid according to the standard itself.
+Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on. Profile rules are entirely a matter for profile defines however data validated according to a profile of a standard, must always be valid according to the standard itself.
 
 === Profiles of ABIS
 
