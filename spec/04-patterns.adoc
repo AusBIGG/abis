@@ -175,16 +175,16 @@ Multiple alternate identifiers may be given, as long as their datatypes are uniq
 
 _ABIS inherits its spatial modelling from <<GSP, GeoSPARQL>>, as does the <<TERNOntology, TERN Ontology>>._
 
-Paterns:
+Patterns:
 
 * <<Feature-centric>>
 * <<ABIS Types of spatial objects>>
 * <<Qualified Geometries>>
-* <<_centroid_bounding_box_reasoning>>
+* <<Centroid & Bounding Box Reasoning>>
 * <<Geometry Literals>>
 * <<Spatial Aggregation Reasoning>>
 * <<Coordinate Reference System>>
-
+* <<Elevation & Depth>>
 
 [discrete]
 ==== Feature-centric
@@ -553,5 +553,7 @@ If the average colour of a whole area of bushland was considered, the _feature o
 [#pattern-foi,link="img/pattern-foi.svg"]
 .Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn't affect its status as a Feature of Interest with respect to an Observation.
 image::img/pattern-foi.svg[ABIS Parts,width=650,align="center"]
+
+=== Site hierarchy and types
 
 
