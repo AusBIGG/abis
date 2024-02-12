@@ -704,8 +704,11 @@ pre.rouge {
 </li>
 <li><a href="#_vocabularies">7. Vocabularies</a>
 <ul class="sectlevel2">
-<li><a href="#_mandate_status">7.1. Mandate Status</a></li>
-<li><a href="#_listing">7.2. Listing</a></li>
+<li><a href="#_listing">7.1. Listing</a>
+<ul class="sectlevel3">
+<li><a href="#_bdr_datatypes_register">7.1.1. BDR Datatypes Register</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_profiles">8. Profiles</a>
@@ -982,11 +985,6 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS namespace</strong> - for this Standard</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abisdr:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/data-release/" class="bare">https://linked.data.gov.au/def/abis/data-release/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-a">ABIS Data Release Model</a> namespace</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abisp:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/projects/" class="bare">https://linked.data.gov.au/def/abis/projects/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-a">ABIS Projects Model</a> namespace</p></td>
@@ -997,13 +995,23 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <td class="tableblock halign-left valign-top"><p class="tableblock">BDR Dataset Namespace</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dr:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/data-release/" class="bare">https://linked.data.gov.au/def/abis/data-release/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-a">ABIS Data Release Model</a> namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dt:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/datatypes/" class="bare">https://linked.data.gov.au/def/abis/datatypes/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Datatype Register namespace</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ego:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/idn/def/ego/" class="bare">https://w3id.org/idn/def/ego/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extended Geometries Ontology</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://example.com/thing</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://example.com/</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generic examples namespace - <em>does not resolve</em></p></td>
 </tr>
 <tr>
@@ -2648,20 +2656,20 @@ ex:obs-z
 <div class="sect1">
 <h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>7. Vocabularies</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>ABIS use depends on the selection of concepts from many vocabularies. For example, the observed <em>growth stage</em> of a plant may be indicated by use of <a href="http://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f">Dead</a>, <a href="http://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb">Regrowth</a> or <a href="https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15">Senescence</a> taken from <a href="https://www.tern.org.au/">TERN</a>'s <a href="http://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6">Growth Stage vocabulary</a>.</p>
+</div>
+<div class="paragraph">
+<p>Some uses of ABIS, such as for the submission of data to the <a href="#BDR">BDR</a>, required the use of particular vocabularies. Mandates for particular vocabulary use are indicated by individual profiles of ABSI - see <a href="#_profiles">Profiles</a>.</p>
+</div>
+<div class="paragraph">
+<p>Some <a href="#_component_models">Component Models</a> of ABIS also requie the use of particular vocabularies, for example, the <a href="#annex-a">Projects Model</a> mandates that roles chosen for an attribution&#8217;s <code>hadRole</code> predicate, when used for an instances of the <code>abis:Project</code> class must come from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p>
+</div>
+<div class="paragraph">
+<p>The next section lists vocabularies know to be used with ABIS.</p>
+</div>
 <div class="sect2">
-<h3 id="_mandate_status"><a class="anchor" href="#_mandate_status"></a>7.1. Mandate Status</h3>
-<div class="paragraph">
-<p>ABIS overall does not generally mandate that data use particular vocabularies for predicate values, however many of the individual <a href="#_component_models">Component Models</a> do.</p>
-</div>
-<div class="paragraph">
-<p>For example, the <a href="#annex-a">Projects Model</a> mandates that roles chosen for an attribution&#8217;s <code>hadRole</code> predicate, when used for an instances of the <code>abis:Project</code> class must come from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p>
-</div>
-<div class="paragraph">
-<p>Profiles of ABIS may also further mandate particular vocabulary use: check particular profile details for this.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_listing"><a class="anchor" href="#_listing"></a>7.2. Listing</h3>
+<h3 id="_listing"><a class="anchor" href="#_listing"></a>7.1. Listing</h3>
 <div class="paragraph">
 <p>Here is a list of vocabularies known to be either required or suggested for use with ABIS and the locations in which they are used (which predicates are expected to indicate concepts from them).</p>
 </div>
@@ -2680,14 +2688,50 @@ ex:obs-z
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_bdr_datatypes_register">BDR Datatypes Register</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifiers for data types which, in RDF, are literal data values. Simple datatypes are things like <em>string</em>, <em>date</em>, <em>integer</em> etc. The <a href="#BDR">BDR</a> maintains a list of custom datatypes in this vocabulary to allow the interpretation of strings as identifiers from particular systems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDF datatypes values<br></p>
+<p class="tableblock"><em>Use further <a href="#_bdr_datatypes_register">described below</a></em></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Roles that <a href="#prov:Agent"><code>Agent</code></a> instances play with respect to proscribed subclassses of <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> via <a href="https://www.w3.org/TR/prov-o/#Association"><code>Association</code></a> instances</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-a">Projects Model</a>, range value for the predicate <code>prov:hadRole</code> when used on <code>Association</code> or <code>Attribution</code> instances when linked to an <a href="#abis:Project"><code>Project</code></a> or <a href="#abis:Program">Program</a> instances</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Incomplete</mark></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="_bdr_datatypes_register"><a class="anchor" href="#_bdr_datatypes_register"></a>7.1.1. BDR Datatypes Register</h4>
+<div class="paragraph">
+<p>The <a href="#BDR">BDR</a> maintains a list of datatypes used to indicate systems and regimes that create identifiers for data and which is presented as a vocabulary  at the <a href="http://bdrtesting.net/vocabs.html">BDR Vocabs Page</a>. These datatypes are used with ABIS RDF data to indicate which system/regime created a literal datatype value.</p>
+</div>
+<div class="paragraph">
+<p>For example, the <a href="https://www.wa.gov.au/organisation/western-australian-museum">Western Australian Museum</a> creates numbers - "WAM Numbers" - for specimens abd this Register identifies the WAM Number system as <code>dt:WAMNumber</code>.</p>
+</div>
+<div class="paragraph">
+<p>If <em>Specimen X</em> has a WAM Number of 55 and an IRI assigned by some RDF creation system of <code>https://linked.data.gov.au/dataset/bdr/sample/316c92f0-d918-4648-a964-3e4066d767ed</code>, then the Sample can have the WAM Number associated with it like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">dt:</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/bdr/datatypes/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+
+</span><span class="nl">&lt;https://linked.data.gov.au/dataset/bdr/sample/316c92f0-d918-4648-a964-3e4066d767ed&gt;</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Specimen X"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"55"</span><span class="p">^^</span><span class="nn">dt:</span><span class="n">WAMNumber</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p><mark>Incomplete</mark></p>
+</div>
 </div>
 </div>
 </div>
@@ -4667,7 +4711,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-22 00:57:22 UTC
+Last updated 2024-02-12 21:41:16 UTC
 </div>
 </div>
 </body>
