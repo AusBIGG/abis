@@ -443,21 +443,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_what_is_abis">1. What is ABIS?</a>
-<ul class="sectlevel2">
-<li><a href="#_abis_parts">1.1. ABIS Parts</a></li>
-</ul>
-</li>
-<li><a href="#_how_do_i_use_it">2. How do I use it?</a>
-<ul class="sectlevel2">
-<li><a href="#_create">2.1. Create</a></li>
-<li><a href="#_validate">2.2. Validate</a></li>
-<li><a href="#_exchange">2.3. Exchange</a></li>
-</ul>
-</li>
-<li><a href="#_who_owns_it">3. Who owns it?</a></li>
-<li><a href="#_how_do_i_improve_it">4. How do I improve it?</a></li>
-<li><a href="#_more_help">5. More help</a></li>
+<li><a href="#_what_is_abis">1. What is ABIS?</a></li>
+<li><a href="#_how_do_i_use_it">2. How do I use it?</a></li>
 </ul>
 </div>
 </div>
@@ -468,7 +455,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>By <a href="https://orcid.org/0000-0002-8742-7730">Nicholas Car</a></p>
 </div>
 <div class="paragraph">
-<p>This document is a short overview of the Australian Biodiversity Information Standard (ABIS). It is only one of many parts of the ABIS and all the parts are defined in the <a href="https://ausbigg.github.io/abis/standard.html">ABIS Standard Definition</a>.</p>
+<p>This document will soon be a short overview of the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard (ABIS)</a>. It is only one of many parts of ABIS and <a href="https://linked.data.gov.au/def/abis#_structure">all the parts are listed in ABIS</a>.</p>
 </div>
 </div>
 </div>
@@ -479,32 +466,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>ABIS is a data standard that specifies how information about biodiversity is to be represented for exchange and use in Australia.</p>
 </div>
 <div class="paragraph">
-<p>It is a technical data standard and mandates a specific form of machine-readable information representation: RDF (Resource Description Framework). RDF is "a standard model for data interchange on the Web"<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, so ABIS data is machine-readable and able to be sent between users over the web.</p>
+<p>It is a technical data standard and mandates a specific form of machine-readable information representation for data exchange: RDF (Resource Description Framework). RDF is "a standard model for data interchange on the Web"<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 <div class="paragraph">
-<p>Use of the ABIS results in biodiversity information being formulated into data that can be validated against ABIS requirements in an automated way and the standard provides validators (see <a href="#_how_do_i_use_it">How do I use it?</a>).</p>
+<p>Use of the ABIS results in biodiversity information being formulated into data that can be validated against ABIS requirements in an automated way and the standard provides validators to verify data, see the <a href="https://linked.data.gov.au/def/abis#_validation">standard&#8217;s Validation section</a>.</p>
 </div>
 <div class="paragraph">
-<p>ABIS models domain-specific concepts itself but mostly re-uses existing models. <a href="#_abis_parts">ABIS Parts</a> describes them.</p>
-</div>
-<div class="sect2">
-<h3 id="_abis_parts">1.1. ABIS Parts</h3>
-<div class="paragraph">
-<p>ABIS draws on multiple, existing, domain standards for many of its parts. For example, ABIS requires use of the <a href="https://linkeddata.tern.org.au/information-models/overview">TERN Ontology</a> for the representation of <em>Sampling</em>, <em>Samples</em>, <em>Sites</em> and most aspects of filed sampling. Another example: the <a href="https://www.ogc.org/">Open Geospatial Consortium</a>'s <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html">GeoSPARQL Standard</a> must be used to represent spatial information.</p>
-</div>
-<div class="paragraph">
-<p>The figure below shows the parts of ABIS and the list following it describes what they are all for.</p>
-</div>
-<div id="abis-parts" class="imageblock text-center">
-<div class="content">
-<img src="https://ausbigg.github.io/abis/abis-parts.png" alt="ABIS Parts" width="600" height="400">
-</div>
-<div class="title">Figure 1. The main part models within ABIS</div>
-</div>
-<div class="paragraph">
-<p><a href="https://www.tdwg.org/standards/dwc/">Darwin Core Terms</a>, <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html">GeoSPARQL</a> and <a href="https://www.w3.org/TR/vocab-ssn/">SOSA</a> are international standards for biological, spatial and observations data respectively. The <a href="https://linkeddata.tern.org.au/information-models/overview">TERN Ontology</a>, which uses all three of them, is a domain model about
-sampling and surveying created by the Terrestrial Ecosystems Research Network and the ABIS Data Management Ontology provides additional properties for system management of TERN data.</p>
-</div>
+<p>ABIS implements a few domain-specific concepts itself but mostly re-uses existing models <a href="https://linked.data.gov.au/def/abis#_multiple_models">which it lists here</a>.</p>
 </div>
 </div>
 </div>
@@ -512,312 +480,7 @@ sampling and surveying created by the Terrestrial Ecosystems Research Network an
 <h2 id="_how_do_i_use_it">2. How do I use it?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The main things you can do with ABIS are:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#_create">Create</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>you can create data that conforms to ABIS</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="#_validate">Validate</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>check that the data you&#8217;ve created is actually valid by applying a validator to it</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="#_exchange">Exchange</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>exchange ABIS data with organisations/systems that are designed to accept it, such as the Biodiversity Data Repository (BDR).</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="_create">2.1. Create</h3>
-<div class="paragraph">
-<p>ABIS data must be in an <a href="https://www.w3.org/RDF/">RDF</a> fomat. RDF is a data model for expressing graphs - nodes of information related by defined types of edges - and there are several different formats that can be used for RDF. All are technically equivalent but different forms suite different people.</p>
-</div>
-<div class="paragraph">
-<p>Perhaps the best way to start is to consider this small example data about an observation.</p>
-</div>
-<div class="sect3">
-<h4 id="_example_tree_width_observation">2.1.1. Example - tree width observation</h4>
-<div class="paragraph">
-<p>This observation is a tree in at Site X.</p>
-</div>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Observation ID</th>
-<th class="tableblock halign-left valign-top">Long</th>
-<th class="tableblock halign-left valign-top">Lat</th>
-<th class="tableblock halign-left valign-top">Time</th>
-<th class="tableblock halign-left valign-top">Site</th>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Result</th>
-<th class="tableblock halign-left valign-top">Observer</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4321</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">115.01</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-33.86</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">21/09/23, 2:02:03pm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Site X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Trunk diameter at chest height</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">142&#177;5cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">J. Bloggs</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>We have an <code>Observation</code> - an ABIS class of thing - with ID 4321, taken at a location, (115.01, -33.86), and at a particular time. <code>Site</code> is also something known to ABIS - see the <a href="https://w3id.org/tern/ontologies/tern/Site">TERN Ontology&#8217;s Site class definition</a>.</p>
-</div>
-<div class="paragraph">
-<p>We need to do a couple of things before turning this data into ABIS data:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>Conceptual split</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>we need to place information about the observation, the values obtained, the site and so on into the conceptual model of ABIS</p>
-</li>
-<li>
-<p>the TERN Ontology separates an observation into the act of observing and resulting data from the act: - an <code>Observation</code> and a <code>Result</code> - and also splits the type of thing observed - the parameter, an <code>Observable Property</code> - from the method used - a <code>Procedure</code></p>
-</li>
-<li>
-<p>ABIS also knows about a "Site", so for this data we have:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>an <a href="https://w3id.org/tern/ontologies/tern/Observation"><code>Observation</code></a> - the thing identified with <code>4321</code></p>
-</li>
-<li>
-<p>a <a href="https://w3id.org/tern/ontologies/tern/Result"><code>Result</code></a> - the value 42&#177;5cm</p>
-</li>
-<li>
-<p>an <a href="https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty"><code>Observable Property</code></a> - the parameter observed - here tree trunk diameter</p>
-</li>
-<li>
-<p>a <a href="https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"><code>Procedure</code></a> - the method used to obtain the result, <em>see Reference Object ID below</em></p>
-</li>
-<li>
-<p>a <a href="https://w3id.org/tern/ontologies/tern/Site"><code>Site</code></a> - the named location the Observation took place at</p>
-</li>
-<li>
-<p>and a <a href="https://schema.org/Person"><code>Person</code></a> - the observer</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>New Object IDs</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>we need to use IRIs to identify all new information defined in this data</p>
-</li>
-<li>
-<p>this is the <code>Observation</code> and many of the things listed above</p>
-</li>
-<li>
-<p>these need to be universally unique web addresses, like <code><a href="https://linked.data.gov.au/dataset/bdr/eg/sample/4324" class="bare">https://linked.data.gov.au/dataset/bdr/eg/sample/4324</a></code>, not just simple IDs like <code>4321</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Reference Object IDs</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>we need to ensure that any objects referenced used are identified not in text but also using IRIS</p>
-</li>
-<li>
-<p>reference objects like <code>Procedure</code> should be listed in published vocabularies</p>
-<div class="ulist">
-<ul>
-<li>
-<p>the procedure used here, <em>Stem level measurements</em>, is listed in one of TERN&#8217;s methods vocab with ID <a href="http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35" class="bare">http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>some reference objects like <code>Person</code> are IDed with IRIs via other initiatives, such as <a href="https://orcid.org">ORCID</a></p>
-</li>
-<li>
-<p>some objects could be new in this data or reference objects created previously, such as a <code>Site</code></p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>For the first point, we need to either get a namespace for IRIs assigned to us for use for new objects - this is what the BDR team will do if you are registered to send ABIS data to the BDR, but you can use other IRI systems if you are using ABIS data for other purposes. Here we will just use <code><a href="http://example.org/" class="bare">http://example.org/</a></code> for demonstrating.</p>
-</div>
-<div class="paragraph">
-<p>Say we use the IRI <code><a href="http://example.com/obs/4321" class="bare">http://example.com/obs/4321</a></code> for the observation, <code><a href="http://example.com/site/x" class="bare">http://example.com/site/x</a></code> for Site X and <code><a href="https://orcid.org/0000-0000-1234-5678" class="bare">https://orcid.org/0000-0000-1234-5678</a></code> for the person who made the observation - perhaps the person is a scientist using an <a href="https://orcid.org">ORCID</a> to identify themselves in their publications - then we can make the following RDF, in the <a href="https://www.w3.org/TR/turtle/">Turtle</a> format:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
-PREFIX prov: &lt;http://www.w3.org/ns/prov#&gt;
-PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-PREFIX sdo: &lt;https://schema.org/&gt;
-PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
-PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
-PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
-PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
-
-&lt;http://example.com/obs/4321&gt;
-    a tern:Observation ;
-    prov:wasAssociatedWith &lt;https://orcid.org/0000-0000-1234-5678&gt; ;
-    sosa:hasFeatureOfInterest &lt;http://example.com/site/x&gt; ;
-    sosa:observedProperty &lt;http://linked.data.gov.au/def/tern-cv/a3ad8f31-6896-416e-8ac6-bc61b93aaab5&gt; ;
-    sosa:usedProcedure &lt;http://linked.data.gov.au/def/tern-cv/a3a41c41-f74e-48ec-b11c-78de3c99ce35&gt; ;
-    sosa:hasResult [
-        a tern:Float ;
-        rdf:value 142.0 ;
-        tern:unit &lt;https://qudt.org/vocab/unit/CentiM&gt; ;
-        tern:uncertainty 5 ;
-    ] ;
-    sosa:resultTime "2020-09-21T14:02:03"^^xsd:dateTime ;
-
-    void:inDataset &lt;http://example.com/dataset/123&gt; ;
-    geo:hasGeometry [
-        geo:asWKT "POINT(115.01, -33.86)"^^geo:wktLiteral
-    ] ;
-.
-
-&lt;http://example.com/site/x&gt;
-    a tern:Site ;
-    geo:hasGeometry [
-        geo:asWKT "POLYGON(115 -33, 115 -34, 116 -34, 116 -33, 115 -33)"^^geo:wktLiteral
-    ] ;
-.
-
-&lt;https://orcid.org/0000-0000-1234-5678&gt;
-    a sdo:Person ;
-    sdo:name "Joe Bloggs" ;
-    sdo:email "joebloggs@hotmail.com"^^xsd:anyURI ;
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the data above, the <code>Observation</code> is:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>&lt;http://example.com/obs/4321&gt;
-    a tern:Observation ;
-    # a series of other properties ..
-.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>There are many other examples of ABIS data in the <a href="https://ausbigg.github.io/abis/specification.html">Specification</a> and also in tools that 'talk' ABIS, for example the BDR Gateway: <a href="https://gateway.bdr.gov.au" class="bare">https://gateway.bdr.gov.au</a>.</p>
-</div>
-<div class="paragraph">
-<p>To test, you may want to create RDF data files by hand, however, for automated production of ABIS data, you should use any one of very many RDF generation tools - just search for them!</p>
-</div>
-<div class="paragraph">
-<p>Note also that systems to convert non-RDF data to ABIS RDF have been established as part of the Biodiveristy Data Repository project, see <a href="https://submission.bdr.gov.au" class="bare">https://submission.bdr.gov.au</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_validate">2.2. Validate</h3>
-<div class="paragraph">
-<p>You can validate RDF data files against any or all of the validators for its part models using a SHACL validation tool. SHACL is a graph validation language and SHACL tools apply validators to data and report pass/fail and, if fail, error messages.</p>
-</div>
-<div class="paragraph">
-<p>A free, online, SHACL validation tool that allows you to select from stored validators or add your own validator is:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://rdftools.kurrawong.net">RDF Tools</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>All the ABIS validators are pre-loaded into the <a href="https://gateway.bdr.gov.au">BDR Gateway</a> and you may submit data to the Gateway&#8217;s validation endpoint which is set up for testing. There are many pre-loaded valid and invalid examples of data there too to play with.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_exchange">2.3. Exchange</h3>
-<div class="paragraph">
-<p>If you have ABIS data that you want to submit to an ABIS system, you can do so by sending it in to the system in an automated way. For the BDR, you will need to have been issued with a BDR account and then you can send data to the <a href="https://gateway.bdr.gov.au">BDR Gateway</a>. The BDR is not the only system that undertstands ABIS data and other may accept submissions in other ways.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_who_owns_it">3. Who owns it?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>ABIS is owned by <a href="http://example.com">AusBIGG</a>, the Australian Biodiversity Information Governance Group. That group is supported by the <a href="https://www.awe.gov.au">Department of Agriculture, Water and the Environment</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_how_do_i_improve_it">4. How do I improve it?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Either contact AusBIGG or make direct contributions agains the ABIS repository that contains all of its source files:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/AusBIGG/abis" class="bare">https://github.com/AusBIGG/abis</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Submissions agains ABIS will be reviewed in regular AusBIGG meetings and AusBIGG members will vote on their acceptance.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_more_help">5. More help</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Please be in contact with AusBIGG or read the <a href="https://ausbigg.github.io/abis/specification.html">ABIS Specification</a>.</p>
+<p><em>coming soon!</em></p>
 </div>
 </div>
 </div>
@@ -830,7 +493,7 @@ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-02-12 21:41:16 UTC
+Last updated 2024-02-16 05:23:30 UTC
 </div>
 </div>
 </body>
