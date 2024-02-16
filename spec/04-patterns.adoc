@@ -510,7 +510,7 @@ PROV's basic classes and the predicates that relate them to one another are give
 
 [#pattern-prov-basic,link="img/pattern-prov-basic.svg"]
 .Basic PROV classes and predicates
-image::img/pattern-prov-basic.svg[Basic PROV classes and predicates,width=650,align="center"]
+image::img/pattern-prov-basic.svg[Basic PROV classes and predicates,width=550,align="center"]
 
 Many of ABIS' models follow on from the pattern in the figure above and many figures further down in this document are coloured according to PROV's basic classes. For example, the <<TERNOntology, TERN Ontology>>'s https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sampling[`Sampling`] class is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`] class and instances of it may have https://www.w3.org/TR/prov-o/#used[`used`] an instance of a https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Site[`Site`], which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Entity`], to have https://www.w3.org/TR/prov-o/#generated[`generated`] an instance of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`Sample`] which is another subclass of https://www.w3.org/TR/prov-o/#Entity[`Entity`].
 
@@ -520,10 +520,19 @@ PROV's provenance reasoning is also applicable to parts of ABIS. For example, th
 
 [#pattern-prov-reasoning,link="img/pattern-prov-reasoning.svg"]
 .PROV-style reasoning using facts given in the <<Projects Model, Projects Model>>
-image::img/pattern-prov-reasoning.svg[PROV-style reasoning,width=650,align="center"]
+image::img/pattern-prov-reasoning.svg[PROV-style reasoning,width=400,align="center"]
 
 === Agents
 
+Agents - things with agency to do work such as Organisations, People, Groups (of orgs and people) and perhaps software systems - are modelled in many Semantic Web and Knowledge Graph systems. In ABIS, we follow the general pattern for Agents outlined in the <<PROV, Provenance Ontology (PROV)>>: see the section above.
+
+In addition to the simple and direct kind of relationship between `Agents` and data (`Entities`) show above in Figure 8 where an `Entity` can be attributed to an `Agent`, we use a nuanced version of that `was attributed to` relationship, `qualified attribution`, which is also defined in PROV. `qualified attribution` is a type of _qualified relation_ which means it related two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the `Agent` plays with respect to the `Entity`. For example, for a dataset, one `Agetn` might be the _author_ of the data, another the _publisher_. This could be modelled as in Figure 10, below.
+
+[#pattern-prov-qualatt,link="img/pattern-prov-reasoning.svg"]
+.Two `Agents` related to a single dataset `Entity` with different roles using the `qualified attribution` predicate from <<PROV, PROV>>
+image::img/pattern-prov-reasoning.svg[PROV-style reasoning,width=400,align="center"]
+
+The roles that can be used for attributional qualification in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the _IDN Role Codes vocabulary_ - see the <<Listing, Vocabularies Listing>>. It contains concepts such as _author_, _publisher_, _collaborator_ and _funder_.
 
 
 === Observations & Results
