@@ -3,7 +3,7 @@
 :table-stripes: even
 :sectnums:
 
-By https://orcid.org/0000-0002-8742-7730[Nicholas Car]
+By Nicholas Car (nicholas.car@dcceew.gov.au) at DCCEEW, updated 16th Feb, 2024
 
 This document will soon be a short overview of the https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard (ABIS)]. It is only one of many parts of ABIS and https://linked.data.gov.au/def/abis#_structure[all the parts are listed in ABIS].
 
