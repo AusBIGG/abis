@@ -17,6 +17,18 @@ Use of the ABIS results in biodiversity information being formulated into data t
 
 ABIS implements a few domain-specific concepts itself but mostly re-uses existing models https://linked.data.gov.au/def/abis#_multiple_models[which it lists here].
 
+== Who owns it?
+
+_coming soon!_
+
 == How do I use it?
 
 _coming soon!_
+
+== More help
+
+ABIS is governed by https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AusBIGG)] who is supported with technical management and data modelling by the Biodiversity Data Repository (BDR) Team within https://linked.data.gov.au/org/dcceew[the Department of Climate Change, Energy, the Environment and Water (DCCEEW)].
+
+The BDR Team can be contacted on bdr@dcceew.gov.au.
+
+Issue tracking of the ABIS standard is managed online at https://github.com/AusBIGG/abis/issues
