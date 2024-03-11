@@ -7,13 +7,13 @@ BIRO:: Di Iorio, A., Nuzzolese, A. G., Peroni, S., Shotton, D., Vitali, F. _Desc
 DWC:: Darwin Core Maintenance Group, _Darwin Core_, Biodiversity Information Standards (TDWG), Technical Specification (2009). http://www.tdwg.org/standards/450
 
 [[GSP]]
-[GSP]:: Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data_, OGC Implementation Standard. Car, N. J., & Homburg, T. (eds.) (2011). http://www.opengis.net/doc/IS/geosparql/1.1
+GSP:: Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data_, OGC Implementation Standard. Car, N. J., & Homburg, T. (eds.) (2011). http://www.opengis.net/doc/IS/geosparql/1.1
 
 [[ISO19156]]
 ISO19156:: International Organization for Standardization, ISO 19156: Geographic information — Observations and measurements (2011)
 
 [[JSON-LD]]
-[JSON-LD]:: World Wide Web Consortium, _JSON-LD 1.1: A JSON-based Serialization for Linked Data_, W3C Recommendation (16 July 2020). https://www.w3.org/TR/json-ld11/
+JSON-LD:: World Wide Web Consortium, _JSON-LD 1.1: A JSON-based Serialization for Linked Data_, W3C Recommendation (16 July 2020). https://www.w3.org/TR/json-ld11/
 
 [[NSLM]]
 NSLM:: Centre for Australian National Biodiversity Research (CANBR), _National Species List - Semantic Web Model_ (2023). https://linked.data.gov.au/def/nsl
@@ -22,43 +22,43 @@ NSLM:: Centre for Australian National Biodiversity Research (CANBR), _National S
 OLIS:: KurrawongAI, _Olis Ontology_, Semantic Web Model (2022). https://olis.dev/ont
 
 [[OWL2]]
-[OWL2]:: World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
+OWL2:: World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
 
 [[PROF]]
 PROF:: World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). <https://www.w3.org/TR/dx-prof/>
 
 [[PROV]]
-[PROV]:: World Wide Web Consortium, _PROV-O: The PROV Ontology_, W3C Recommendation (30 February 2013). https://www.w3.org/TR/prov-o/
+PROV:: World Wide Web Consortium, _PROV-O: The PROV Ontology_, W3C Recommendation (30 February 2013). https://www.w3.org/TR/prov-o/
 
 [[RDFSPEC]]
-[RDFSPEC]:: World Wide Web Consortium, _RDF 1.1 Concepts and Abstract Syntax_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/rdf11-concepts/
+RDFSPEC:: World Wide Web Consortium, _RDF 1.1 Concepts and Abstract Syntax_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/rdf11-concepts/
 
 [[RDFSSPEC]]
-[RDFSSPEC]:: World Wide Web Consortium, _RDF Schema 1.1_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/rdf11-schema/
+RDFSSPEC:: World Wide Web Consortium, _RDF Schema 1.1_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/rdf11-schema/
 
 [[SDO]]
-[SDO]:: schema.org Consortium, _schema.org_, OWL vocabulary (26 June 2023). https://schema.org/
+SDO:: schema.org Consortium, _schema.org_, OWL vocabulary (26 June 2023). https://schema.org/
 
 [[SHACL]]
-[SHACL]:: World Wide Web Consortium, _Shapes Constraint Language (SHACL)_, W3C Recommendation (20 July 2017). https://www.w3.org/TR/shacl/
+SHACL:: World Wide Web Consortium, _Shapes Constraint Language (SHACL)_, W3C Recommendation (20 July 2017). https://www.w3.org/TR/shacl/
 
 [[SKOS]]
-[SKOS]:: World Wide Web Consortium, _SKOS Simple Knowledge Organization System Reference_, W3C Recommendation (18 August 2009). https://www.w3.org/TR/skos-reference/
+SKOS:: World Wide Web Consortium, _SKOS Simple Knowledge Organization System Reference_, W3C Recommendation (18 August 2009). https://www.w3.org/TR/skos-reference/
 
 [[SOSA]]
-[SOSA]:: World Wide Web Consortium, _Sensor, Observation, Sample, and Actuator ontology_, within _Semantic Sensor Network Ontology_, W3C Recommendation (19 October 2017). https://www.w3.org/TR/vocab-ssn/
+SOSA:: World Wide Web Consortium, _Sensor, Observation, Sample, and Actuator ontology_, within _Semantic Sensor Network Ontology_, W3C Recommendation (19 October 2017). https://www.w3.org/TR/vocab-ssn/
 
 [[TERNOntology]]
 TERN Ontology:: Terrestrial Ecosystems Research Network (TERN). _TERN Ontology_. A information model to represent plot-based ecological surveys. https://linkeddata.tern.org.au/information-models/tern-ontology
 
 [[TIME]]
-[TIME]:: World Wide Web Consortium, _Time Ontology in OWL_, W3C Candidate Recommendation (26 March 2020). https://www.w3.org/TR/owl-time/
+TIME:: World Wide Web Consortium, _Time Ontology in OWL_, W3C Candidate Recommendation (26 March 2020). https://www.w3.org/TR/owl-time/
 
 [[TURTLE]]
-[TURTLE]:: World Wide Web Consortium, _RDF 1.1 Turtle - Terse RDF Triple Language_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/turtle/
+TURTLE:: World Wide Web Consortium, _RDF 1.1 Turtle - Terse RDF Triple Language_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/turtle/
 
 [[VOID]]
 [VOID]:: DERI, _Vocabulary of Interlinked Datasets (VoID)_, OWL vocabulary (2010). http://vocab.deri.ie/void
 
 [[XSD2]]
-[XSD2]:: World Wide Web Consortium, _XML Schema Part 2: Datatypes (Second Edition)_, W3C Recommendation (28 October 2004). https://www.w3.org/TR/xmlschema-2/
+XSD2:: World Wide Web Consortium, _XML Schema Part 2: Datatypes (Second Edition)_, W3C Recommendation (28 October 2004). https://www.w3.org/TR/xmlschema-2/
