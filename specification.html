@@ -1920,10 +1920,15 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <h4 id="_coordinate_reference_system" class="discrete">Coordinate Reference System</h4>
 <div class="paragraph">
-<p>All spatial data supplied according to ABIS <em>MUST</em> ues the WGS84 Coordinate Reference System. Systems such as GDA94, GDA202 or others <em>MUST NOT</em> be used.</p>
+<p>All spatial data supplied according to ABIS <em>MUST</em> ues the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others <em>MUST NOT</em> be used.</p>
 </div>
 <div class="paragraph">
-<p>Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <a href="#_geometry_literals">Geometry Literals</a> section above - and that format defaults to WGS84, no CRS need be indicated in data: WGS84 will be assumed.</p>
+<p>Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <a href="#_geometry_literals">Geometry Literals</a> section above - and that format defaults to WGS84, the use of GDA2020 must be indicated in the WKT, as per the <a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_rdfs_datatype_geowktliteral">GeoSPARQL WKT guidance</a> using the IRI <code><a href="https://epsg.io/7843" class="bare">https://epsg.io/7843</a></code> for the CRS. For example, a <code>POINT</code> at `(123, -45) would have WKT like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>&lt;https://epsg.io/7843&gt; POINT (123, -45)</code></pre>
+</div>
 </div>
 <h4 id="_spatial_aggregation_reasoning" class="discrete">Spatial Aggregation Reasoning</h4>
 <div class="paragraph">
@@ -4725,7 +4730,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-11 02:22:55 UTC
+Last updated 2024-05-31 00:15:41 UTC
 </div>
 </div>
 </body>
