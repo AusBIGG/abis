@@ -290,9 +290,13 @@ This is as per a rule in the <<Spatial Reasoning, Spatial Reasoning>> part of th
 [discrete]
 ==== Coordinate Reference System
 
-All spatial data supplied according to ABIS _MUST_ ues the WGS84 Coordinate Reference System. Systems such as GDA94, GDA202 or others _MUST NOT_ be used.
+All spatial data supplied according to ABIS _MUST_ ues the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others _MUST NOT_ be used.
 
-Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <<Geometry Literals, Geometry Literals>> section above - and that format defaults to WGS84, no CRS need be indicated in data: WGS84 will be assumed.
+Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <<Geometry Literals, Geometry Literals>> section above - and that format defaults to WGS84, the use of GDA2020 must be indicated in the WKT, as per the https://docs.ogc.org/is/22-047r1/22-047r1.html#_rdfs_datatype_geowktliteral[GeoSPARQL WKT guidance] using the IRI `https://epsg.io/7843` for the CRS. For example, a `POINT` at `(123, -45) would have WKT like this:
+
+```
+<https://epsg.io/7843> POINT (123, -45)
+```
 
 [discrete]
 ==== Spatial Aggregation Reasoning
