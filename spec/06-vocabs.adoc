@@ -1,27 +1,17 @@
 == Vocabularies
 
-ABIS use depends on the selection of concepts from many vocabularies. For example, the observed _growth stage_ of a plant may be indicated by use of http://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f[Dead], http://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb[Regrowth] or https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15[Senescence] taken from https://www.tern.org.au/[TERN]'s http://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6[Growth Stage vocabulary].
+ABIS use depends on the use of many vocabularies. For example, the observed _growth stage_ of a plant may be indicated by use of http://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f[Dead], http://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb[Regrowth] or https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15[Senescence] taken from https://www.tern.org.au/[TERN]'s http://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6[Growth Stage vocabulary].
 
-Some uses of ABIS, such as for the submission of data to the <<BDR, BDR>>, required the use of particular vocabularies. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <<Profiles, Profiles>>.
+Some uses of ABIS, such as for the submission of data to the <<BDR, BDR>>, require the use of particular vocabularies. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <<Profiles, Profiles>>.
 
-Some <<Component Models, Component Models>> of ABIS also require the use of particular vocabularies, for example, the <<#annex-a, Projects Model>> mandates that roles chosen for an attribution's `hadRole` predicate, when used for an instances of the `abis:Project` class must come from the https://data.idnau.org/pid/vocab/idn-role-codes[IDN Role Codes Vocabulary]
+Some <<Component Models, Component Models>> of ABIS also require the use of particular vocabularies, for example, the <<#annex-a, Projects Model>> mandates that roles chosen for an attribution's `hadRole` predicate, when used for an instances of the `abis:Project` class, must come from the https://data.idnau.org/pid/vocab/idn-role-codes[IDN Role Codes Vocabulary]
 
-The next section lists vocabularies know to be used with ABIS.
+All the vocabularies required for use with ABIS and any known profile of ABIS are listed at the _BDR Vocabulary Register_:
 
-=== Listing
+* https://vocabs.bdr.gov.au/v/vocab[https://vocabs.bdr.gov.au]
 
-Here is a list of vocabularies known to be either required or suggested for use with ABIS and the locations in which they are used (which predicates are expected to indicate concepts from them).
+The profile or Component Model that requires each vocab's use is indicated, along with other metadata to assist with the discovery of vocabs. This register is live and continuously updated with use and vocab updates.
 
-[cols="1,2,2"]
-|===
-| Vocabulary | Domain | Where Used
-
-| <<BDR Datatypes Register, BDR Datatypes Register>> | Identifiers for data types which, in RDF, are literal data values. Simple datatypes are things like _string_, _date_, _integer_ etc. The <<BDR, BDR>> maintains a list of custom datatypes in this vocabulary to allow the interpretation of strings as identifiers from particular systems | RDF datatypes values +
-
-_Use further <<BDR Datatypes Register, described below>>_
-| https://data.idnau.org/pid/vocab/idn-role-codes[IDN Role Codes Vocabulary] | Roles that <<prov:Agent, `Agent`>> instances play with respect to proscribed subclassses of https://www.w3.org/TR/prov-o/#Activity[`Activity`] via https://www.w3.org/TR/prov-o/#Association[`Association`] instances | <<annex-a, Projects Model>>, range value for the predicate `prov:hadRole` when used on `Association` or `Attribution` instances when linked to an <<abis:Project, `Project`>> or <<abis:Program, Program>> instances
-|#Incomplete#||
-|===
 
 ==== BDR Datatypes Register
 

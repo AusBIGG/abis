@@ -3,6 +3,9 @@
 [[BIRO]]
 BIRO:: Di Iorio, A., Nuzzolese, A. G., Peroni, S., Shotton, D., Vitali, F. _Describing bibliographic references in RDF_. In Garcia Castro, A., Lange, C., Lord, P., Stevens, R. (Eds.), Proceedings of 4th Workshop on Semantic Publishing (SePublica 2014), CEUR Workshop Proceedings 1155. Aachen, Germany: CEUR-WS.org. http://ceur-ws.org/Vol-1155/paper-05.pdf (Open Access). Ontology description online at http://www.sparontologies.net/ontologies/biro
 
+[[DCAT]]
+DCAT:: World Wide Web Consortium, _Data Catalog Vocabulary (DCAT) - Version 2_, W3C Recommendation (04 February 2020). https://www.w3.org/TR/vocab-dcat/
+
 [[DWC]]
 DWC:: Darwin Core Maintenance Group, _Darwin Core_, Biodiversity Information Standards (TDWG), Technical Specification (2009). http://www.tdwg.org/standards/450
 

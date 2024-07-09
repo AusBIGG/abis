@@ -95,7 +95,7 @@ Identifiers for datasets take the form `https://{IRI-STEM}/{DATASET-ID}` and act
 It is likely that initiatives will be created to manage data for Sites, Samples or other classes of object that ABIS knows about. If so, these initiatives might issue identifiers for those things and, if they do, those identifiers should be used. See the next section for how.
 
 [discrete]
-==== Alternate Identifiers
+==== 5.2.1 Alternate Identifiers
 
 Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.
 
@@ -128,7 +128,7 @@ If an object has an IRI assigned to it that does not link to RDF data, it should
 
 Here the `{ORIGINAL-IRI}`, since it does not act as a Linked Data IRI, is indicated as being a literal of a specified data type.
 
-If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGSN, then that type might be found in the _BDR Datatypes Register_ #TODO: link to datatypes register# and it should be used. If its type is not known or is a generic URL, the type `xsd:anyURI` should be used like this:
+If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGSN, then that type might be found in the _BDR Datatypes Register_ https://vocabs.bdr.gov.au/v/vocab[https://vocabs.bdr.gov.au], and it should be used. If its type is not known or is a generic URL, the type `xsd:anyURI` should be used like this:
 
 ----
 <{NEW-IRI]}>
@@ -156,7 +156,7 @@ Datatypes such as the example `ex:museum-x-ids` used here _MUST_ be registered t
 
 [NOTE]
 ====
-ABIS data destined for the Biodiversity Data Repository _MUST_ have identifier datatypes registered in the _BDR Datatypes Register_ #TODO: link to datatypes register#
+ABIS data destined for the Biodiversity Data Repository _MUST_ have identifier datatypes registered in the _BDR Datatypes Register_ https://vocabs.bdr.gov.au/v/vocab[https://vocabs.bdr.gov.au]
 ====
 
 Multiple alternate identifiers may be given, as long as their datatypes are unique:
@@ -177,16 +177,15 @@ _ABIS inherits its spatial modelling from <<GSP, GeoSPARQL>>, as does the <<TERN
 
 Patterns:
 
-* <<Feature-centric>>
-* <<ABIS Types of spatial objects>>
-* <<Qualified Geometries>>
-* <<Centroid & Bounding Box Reasoning>>
-* <<Geometry Literals>>
-* <<Spatial Aggregation Reasoning>>
-* <<Coordinate Reference System>>
-* <<Elevation & Depth>>
+* <<Feature-centric, Feature-centric>>
+* <<ABIS spatial objects, ABIS spatial objects>>
+* <<Qualified Geometries, Qualified Geometries>>
+* <<Centroid & Bounding Box Reasoning, Centroid & Bounding Box Reasoning>>
+* <<Geometry Literals, Geometry Literals>>
+* <<Spatial Aggregation Reasoning, Spatial Aggregation Reasoning>>
+* <<Coordinate Reference System, Coordinate Reference System>>
+* <<Elevation & Depth, Elevation & Depth>>
 
-[discrete]
 ==== Feature-centric
 
 GeoSPARQL uses a "feature-centric" method of spatial modelling which means spatial things are represented as conceptual things first - spatial _features_ - and then a spatial projection or representation - _geometry_ - is linked to it. This is different to some GIS systems that model spatial things as geometries first and then apply properties to them.
@@ -215,8 +214,7 @@ ex:site-x
 .
 ----
 
-[discrete]
-==== ABIS Types of spatial objects
+==== ABIS spatial objects
 
 There are multiple classes of spatial objects in ABIS. The following are always spatial, even when their spatial values - their geometries - are unknown:
 
@@ -233,7 +231,6 @@ The following classes of object are either given as spatial - a geometry is prov
 
 A `Survey` might have its spatial extent recorded directly or taken to be the envelope of the locations of the `Observations` it contains. Similarly, an `RDFDataset` will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be `Sites`, `Sample`, `Survey` or `Observation` instances, or all of them.
 
-[discrete]
 ==== Qualified Geometries
 
 This feature-centric model allows for multiple or no geometries per spatial object which can be very powerful. The figure below gives several examples of a spatial Feature with multiple Geometries that differ different ways. The pattern here is "qualification": when a Feature is assigned multiple Geometries, they must be differentiable in some way, either by having different geometry types (point, polygon etc.) or by having different roles with respect to the Feature or by each Geometry indicating a different temporal footprint. These differentiations qualify the Geometries with respect to the Feature.
@@ -242,7 +239,6 @@ This feature-centric model allows for multiple or no geometries per spatial obje
 .Spatial `Features` and `Geometries` as modelled in the <<GSP, GeoSPARQL>> ontology with subfigure *A.* showing a `Site` feature that has two geometries provided for it: a Point and a Polygon. These could respectively represent the site's centroid and is boundary and are differentiable by geometry type. Subfigure *B.* shows a feature - Saint Helena Island - with two boundary polygonal geometries differentiated by _role_. Subfigure *C.* shows a time-varying feature, a cyclone, with multiple geometries differentiated by time. Data for *B.* is given in the ABIS repository at https://github.com/AusBIGG/abis/tree/master/examples - see the file `pattern-spatiality-saint-helena-island`.
 image::img/pattern-spatiality-qual.svg[Basic PROV classes and predicates,width=850,align="center"]
 
-[discrete]
 ==== Centroid & Bounding Box Reasoning
 
 [#pattern-spatiality-pomingalarna,link="img/pattern-spatiality-pomingalarna.png"]
@@ -264,30 +260,28 @@ ex:pomingolarna
     a tern:Site ;
     schema:name "Pomingalarna Bushland Site" ;
     geo:hasCentroid [
-        geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)" ;
+        geo:asWKT "POINT (147.300797 -35.113046)" ;
     ] ;
     geo:hasGeometry [
-        geo:asWKT "POLYGON ((147.29457671209050318 -35.10188143482372425, 147.29938609061505872 -35.10242589276990088, 147.30346952521139769 -35.10657738460949417, 147.30287969576968976 -35.10988950378206397, 147.3050575275543963 -35.11195390682797779, 147.30707655910481435 -35.11340579468444645, 147.31129610818766196 -35.11354190917099061, 147.31088776472802238 -35.11581048394672422, 147.31177250889055586 -35.11599196992878547, 147.31009376355652307 -35.11773877250610099, 147.31007107780877163 -35.11739848628973704, 147.30911827640295542 -35.11696745708234602, 147.30846038971799317 -35.11726237180319288, 147.30800667476285071 -35.11814711596572636, 147.30793861751956797 -35.12043837648921851, 147.30812010350163632 -35.12086940569660953, 147.30827890373595324 -35.12243472229186381, 147.30832427523145611 -35.12338752369767292, 147.30684970162724312 -35.12356900967972706, 147.30635061517656936 -35.12338752369767292, 147.30455844110375097 -35.12309260897682606, 147.30274358128315271 -35.12254815103064942, 147.30147317940873108 -35.12184489285017008, 147.30029352052537206 -35.12107357742642222, 147.29224008007150815 -35.11304282272033106, 147.29457671209050318 -35.10188143482372425))" ;
+        geo:asWKT "POLYGON ((147.294576 -35.101881, 147.299386 -35.102425, 147.303469 -35.106577, 147.302879 -35.109889, 147.305057 -35.111953, 147.307076 -35.113405, 147.311296 -35.113541, 147.310887 -35.115810, 147.311772 -35.115991, 147.310093 -35.117738, 147.310071 -35.117398, 147.309118 -35.116967, 147.308460 -35.117262, 147.308006 -35.118147, 147.307938 -35.120438, 147.308120 -35.120869, 147.308278 -35.122434, 147.308324 -35.123387, 147.306849 -35.123569, 147.306350 -35.123387, 147.304558 -35.123092, 147.302743 -35.122548, 147.301473 -35.121844, 147.300293 -35.121073, 147.292240 -35.113042, 147.294576 -35.101881))" ;
     ] ;
     geo:hasBoundingBox [
-        geo:asWKT "POLYGON ((147.29224008007150815 -35.12356900967972706, 147.31177250889055586 -35.12356900967972706, 147.31177250889055586 -35.10188143482372425, 147.29224008007150815 -35.10188143482372425, 147.29224008007150815 -35.12356900967972706))" ;
+        geo:asWKT "POLYGON ((147.292240 -35.123569, 147.311772 -35.123569, 147.311772 -35.101881, 147.292240 -35.101881, 147.292240 -35.123569))" ;
     ] ;
 .
 ----
 
-[discrete]
 ==== Geometry Literals
 ABIS only allows for https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-Known Text representations of geometries] indicated by the `geo:asWKT` predicate. No other forms of geometry literal, e.g. GeoJSON, may be used.
 
 ABIS will infer that any literal object indicated with the `geo:asWKT` predicate is of the datatype `geo:wktLiteral` and the literal typing need not be supplied. It may also be supplied so the following are treated as equivalent:
 
-`geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)" ;`
+`geo:asWKT "POINT (147.300797 -35.113046)" ;`
 
-`geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)"geo:wktLiteral ;`
+`geo:asWKT "POINT (147.300797 -35.113046)"geo:wktLiteral ;`
 
 This is as per a rule in the <<Spatial Reasoning, Spatial Reasoning>> part of the rules section.
 
-[discrete]
 ==== Coordinate Reference System
 
 All spatial data supplied according to ABIS _MUST_ ues the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others _MUST NOT_ be used.
@@ -298,7 +292,6 @@ Since spatial data formulated according to GeoSPARQL only use the Well-Known Tex
 <https://epsg.io/7843> POINT (123, -45)
 ```
 
-[discrete]
 ==== Spatial Aggregation Reasoning
 
 ABIS contains rules that will perform spatial reasoning on data. For example, if a dataset is presented that contains a https://w3id.org/tern/ontologies/tern/Survey[`Survey`] which, in turn, contains a series of https://w3id.org/tern/ontologies/tern/Observation[`Observation`] instances with their spatial locations indicated, the spatial extent of the `Survey` will be taken to be at least the area containing the `Observation` locations. The dataset's extent will be at least the boundary of all contained `Survey` instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <<Reasoning Rules, Reasoning Rules>> section.
@@ -309,7 +302,6 @@ The figure below shows a boundary calculated for a series of point locations. Th
 .A convex hull boundary - in green - calculated for a series of point locations - in yellow.
 image::img/pattern-spatiality-hull.png[Convex hull for points,width=650,align="center"]
 
-[discrete]
 ==== Feature-to-Feature relations
 
 In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_simple_features_relation_family[_Simple Features_ relations] which are summarised as follows:
@@ -372,7 +364,6 @@ ex:site-x
 
 GeoSPARQL provides function definitions for the calculation of Feature-to-Feature relations from geometry data and all compliant implementations of GeoSPARQL allow these calculations to result in declarations of equivalent predicates. So if object A is calculated as being _within_ object B, then the RDF triple `<A> geo:sfWithin <B>` may be recorded.
 
-[discrete]
 ==== Elevation & Depth
 
 [discrete]
@@ -537,7 +528,6 @@ In addition to the simple and direct kind of relationship between `Agents` and d
 image::img/pattern-prov-reasoning.svg[PROV-style reasoning,width=400,align="center"]
 
 The roles that can be used for attributional qualification in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the _IDN Role Codes vocabulary_ - see the <<Listing, Vocabularies Listing>>. It contains concepts such as _author_, _publisher_, _collaborator_ and _funder_.
-
 
 === Observations & Results
 

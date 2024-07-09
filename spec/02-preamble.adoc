@@ -38,6 +38,7 @@ Namespaces are used in shortened form in documents and data by assigning them a 
 |`abis:` | `https://linked.data.gov.au/def/abis/` | *ABIS namespace* - for this Standard
 |`abisp:` | `https://linked.data.gov.au/def/abis/projects/` | <<#annex-a, ABIS Projects Model>> namespace
 |`bdr:` | `https://linked.data.gov.au/dataset/bdr/` | BDR Dataset Namespace
+|`dcat:`| `http://www.w3.org/ns/dcat#` | <<DCAT, Data Catalogue Vocabulary>> namespace
 |`dr:` | `https://linked.data.gov.au/def/abis/data-release/` | <<#annex-a, ABIS Data Release Model>> namespace
 |`dt:` | `https://linked.data.gov.au/def/abis/datatypes/` | ABIS Datatype Register namespace
 |`ego:` | `https://w3id.org/idn/def/ego/` | Extended Geometries Ontology
