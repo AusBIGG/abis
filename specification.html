@@ -677,7 +677,19 @@ pre.rouge {
 <ul class="sectlevel2">
 <li><a href="#_set_modelling">5.1. Set Modelling</a></li>
 <li><a href="#_identifiers">5.2. Identifiers</a></li>
-<li><a href="#_spatially">5.3. Spatially</a></li>
+<li><a href="#_spatially">5.3. Spatially</a>
+<ul class="sectlevel3">
+<li><a href="#_feature_centric">5.3.1. Feature-centric</a></li>
+<li><a href="#_abis_spatial_objects">5.3.2. ABIS spatial objects</a></li>
+<li><a href="#_qualified_geometries">5.3.3. Qualified Geometries</a></li>
+<li><a href="#_centroid_bounding_box_reasoning">5.3.4. Centroid &amp; Bounding Box Reasoning</a></li>
+<li><a href="#_geometry_literals">5.3.5. Geometry Literals</a></li>
+<li><a href="#_coordinate_reference_system">5.3.6. Coordinate Reference System</a></li>
+<li><a href="#_spatial_aggregation_reasoning">5.3.7. Spatial Aggregation Reasoning</a></li>
+<li><a href="#_feature_to_feature_relations">5.3.8. Feature-to-Feature relations</a></li>
+<li><a href="#_elevation_depth">5.3.9. Elevation &amp; Depth</a></li>
+</ul>
+</li>
 <li><a href="#_temporality">5.4. Temporality</a></li>
 <li><a href="#_provenance">5.5. Provenance</a></li>
 <li><a href="#_agents">5.6. Agents</a></li>
@@ -703,12 +715,8 @@ pre.rouge {
 </ul>
 </li>
 <li><a href="#_vocabularies">7. Vocabularies</a>
-<ul class="sectlevel2">
-<li><a href="#_listing">7.1. Listing</a>
 <ul class="sectlevel3">
-<li><a href="#_bdr_datatypes_register">7.1.1. BDR Datatypes Register</a></li>
-</ul>
-</li>
+<li><a href="#_bdr_datatypes_register">7.1. BDR Datatypes Register</a></li>
 </ul>
 </li>
 <li><a href="#_profiles">8. Profiles</a>
@@ -786,7 +794,7 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateModified">Modified Date</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2024-01-03</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2024-07-09</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateIssued">Issued Date</a></strong></p></td>
@@ -794,15 +802,16 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/version">Version</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI">Version IRI</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/2.1">abis:2.1</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/2.1">abis:2.2</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#historyNote"><strong>History Note</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.1</strong> - 2024 Jan - Implementation of <a href="#annex-a">ABIS Projects Model</a> and <a href="#annex-b">ABIS Data Release Model</a> within ABIS<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.2</strong> - 2024 Jul - More Patterns, improved Mappings &amp; comprehensive Validators
+<strong>2.1</strong> - 2024 Jan - Implementation of <a href="#annex-a">ABIS Projects Model</a> and <a href="#annex-b">ABIS Data Release Model</a> within ABIS<br>
 <strong>2.0</strong> - 2023 Nov - Produced by <a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a> for initial <a href="#BDR">BDR</a> operations. Includes handling of systematic surveys and project information.<br>
 <strong>1.0</strong> - 2022 Jun - Initial version of ABIS. Tested with SURROUND Australia Pty Ltd and used for an initial national data acquisition survey for the <a href="#BDR">BDR</a></p></td>
 </tr>
@@ -993,6 +1002,11 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bdr:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/dataset/bdr/" class="bare">https://linked.data.gov.au/dataset/bdr/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BDR Dataset Namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcat:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/ns/dcat#" class="bare">http://www.w3.org/ns/dcat#</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#DCAT">Data Catalogue Vocabulary</a> namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dr:</code></p></td>
@@ -1649,7 +1663,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="paragraph">
 <p>It is likely that initiatives will be created to manage data for Sites, Samples or other classes of object that ABIS knows about. If so, these initiatives might issue identifiers for those things and, if they do, those identifiers should be used. See the next section for how.</p>
 </div>
-<h4 id="_alternate_identifiers" class="discrete">Alternate Identifiers</h4>
+<h4 id="_5_2_1_alternate_identifiers" class="discrete">5.2.1 Alternate Identifiers</h4>
 <div class="paragraph">
 <p>Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.</p>
 </div>
@@ -1696,7 +1710,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>Here the <code>{ORIGINAL-IRI}</code>, since it does not act as a Linked Data IRI, is indicated as being a literal of a specified data type.</p>
 </div>
 <div class="paragraph">
-<p>If the datatype of the <code>{ORIGINAL-IRI}</code> is of a known form, such as a DOI or IGSN, then that type might be found in the <em>BDR Datatypes Register</em> <mark>TODO: link to datatypes register</mark> and it should be used. If its type is not known or is a generic URL, the type <code>xsd:anyURI</code> should be used like this:</p>
+<p>If the datatype of the <code>{ORIGINAL-IRI}</code> is of a known form, such as a DOI or IGSN, then that type might be found in the <em>BDR Datatypes Register</em> <a href="https://vocabs.bdr.gov.au/v/vocab">https://vocabs.bdr.gov.au</a>, and it should be used. If its type is not known or is a generic URL, the type <code>xsd:anyURI</code> should be used like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1733,7 +1747,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>ABIS data destined for the Biodiversity Data Repository <em>MUST</em> have identifier datatypes registered in the <em>BDR Datatypes Register</em> <mark>TODO: link to datatypes register</mark></p>
+<p>ABIS data destined for the Biodiversity Data Repository <em>MUST</em> have identifier datatypes registered in the <em>BDR Datatypes Register</em> <a href="https://vocabs.bdr.gov.au/v/vocab">https://vocabs.bdr.gov.au</a></p>
 </div>
 </td>
 </tr>
@@ -1768,7 +1782,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p><a href="#_feature_centric">Feature-centric</a></p>
 </li>
 <li>
-<p><a href="#_abis_types_of_spatial_objects">ABIS Types of spatial objects</a></p>
+<p><a href="#_abis_spatial_objects">ABIS spatial objects</a></p>
 </li>
 <li>
 <p><a href="#_qualified_geometries">Qualified Geometries</a></p>
@@ -1790,7 +1804,8 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </li>
 </ul>
 </div>
-<h4 id="_feature_centric" class="discrete">Feature-centric</h4>
+<div class="sect3">
+<h4 id="_feature_centric"><a class="anchor" href="#_feature_centric"></a>5.3.1. Feature-centric</h4>
 <div class="paragraph">
 <p>GeoSPARQL uses a "feature-centric" method of spatial modelling which means spatial things are represented as conceptual things first - spatial <em>features</em> - and then a spatial projection or representation - <em>geometry</em> - is linked to it. This is different to some GIS systems that model spatial things as geometries first and then apply properties to them.</p>
 </div>
@@ -1821,7 +1836,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="p">.</span></code></pre>
 </div>
 </div>
-<h4 id="_abis_types_of_spatial_objects" class="discrete">ABIS Types of spatial objects</h4>
+</div>
+<div class="sect3">
+<h4 id="_abis_spatial_objects"><a class="anchor" href="#_abis_spatial_objects"></a>5.3.2. ABIS spatial objects</h4>
 <div class="paragraph">
 <p>There are multiple classes of spatial objects in ABIS. The following are always spatial, even when their spatial values - their geometries - are unknown:</p>
 </div>
@@ -1857,7 +1874,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="paragraph">
 <p>A <code>Survey</code> might have its spatial extent recorded directly or taken to be the envelope of the locations of the <code>Observations</code> it contains. Similarly, an <code>RDFDataset</code> will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be <code>Sites</code>, <code>Sample</code>, <code>Survey</code> or <code>Observation</code> instances, or all of them.</p>
 </div>
-<h4 id="_qualified_geometries" class="discrete">Qualified Geometries</h4>
+</div>
+<div class="sect3">
+<h4 id="_qualified_geometries"><a class="anchor" href="#_qualified_geometries"></a>5.3.3. Qualified Geometries</h4>
 <div class="paragraph">
 <p>This feature-centric model allows for multiple or no geometries per spatial object which can be very powerful. The figure below gives several examples of a spatial Feature with multiple Geometries that differ different ways. The pattern here is "qualification": when a Feature is assigned multiple Geometries, they must be differentiable in some way, either by having different geometry types (point, polygon etc.) or by having different roles with respect to the Feature or by each Geometry indicating a different temporal footprint. These differentiations qualify the Geometries with respect to the Feature.</p>
 </div>
@@ -1867,7 +1886,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="title">Figure 5. Spatial <code>Features</code> and <code>Geometries</code> as modelled in the <a href="#GSP">GeoSPARQL</a> ontology with subfigure <strong>A.</strong> showing a <code>Site</code> feature that has two geometries provided for it: a Point and a Polygon. These could respectively represent the site&#8217;s centroid and is boundary and are differentiable by geometry type. Subfigure <strong>B.</strong> shows a feature - Saint Helena Island - with two boundary polygonal geometries differentiated by <em>role</em>. Subfigure <strong>C.</strong> shows a time-varying feature, a cyclone, with multiple geometries differentiated by time. Data for <strong>B.</strong> is given in the ABIS repository at <a href="https://github.com/AusBIGG/abis/tree/master/examples" class="bare">https://github.com/AusBIGG/abis/tree/master/examples</a> - see the file <code>pattern-spatiality-saint-helena-island</code>.</div>
 </div>
-<h4 id="_centroid_bounding_box_reasoning" class="discrete">Centroid &amp; Bounding Box Reasoning</h4>
+</div>
+<div class="sect3">
+<h4 id="_centroid_bounding_box_reasoning"><a class="anchor" href="#_centroid_bounding_box_reasoning"></a>5.3.4. Centroid &amp; Bounding Box Reasoning</h4>
 <div id="pattern-spatiality-pomingalarna" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/pattern-spatiality-pomingalarna.png"><img src="https://ausbigg.github.io/abis/img/pattern-spatiality-pomingalarna.png" alt="Pomingolarna site example" width="850"></a>
@@ -1891,18 +1912,20 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Site</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Pomingalarna Bushland Site"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geo:</span><span class="n">hasCentroid</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (147.30079728418488116 -35.11304660429588154)"</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (147.300797 -35.113046)"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.29457671209050318 -35.10188143482372425, 147.29938609061505872 -35.10242589276990088, 147.30346952521139769 -35.10657738460949417, 147.30287969576968976 -35.10988950378206397, 147.3050575275543963 -35.11195390682797779, 147.30707655910481435 -35.11340579468444645, 147.31129610818766196 -35.11354190917099061, 147.31088776472802238 -35.11581048394672422, 147.31177250889055586 -35.11599196992878547, 147.31009376355652307 -35.11773877250610099, 147.31007107780877163 -35.11739848628973704, 147.30911827640295542 -35.11696745708234602, 147.30846038971799317 -35.11726237180319288, 147.30800667476285071 -35.11814711596572636, 147.30793861751956797 -35.12043837648921851, 147.30812010350163632 -35.12086940569660953, 147.30827890373595324 -35.12243472229186381, 147.30832427523145611 -35.12338752369767292, 147.30684970162724312 -35.12356900967972706, 147.30635061517656936 -35.12338752369767292, 147.30455844110375097 -35.12309260897682606, 147.30274358128315271 -35.12254815103064942, 147.30147317940873108 -35.12184489285017008, 147.30029352052537206 -35.12107357742642222, 147.29224008007150815 -35.11304282272033106, 147.29457671209050318 -35.10188143482372425))"</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.294576 -35.101881, 147.299386 -35.102425, 147.303469 -35.106577, 147.302879 -35.109889, 147.305057 -35.111953, 147.307076 -35.113405, 147.311296 -35.113541, 147.310887 -35.115810, 147.311772 -35.115991, 147.310093 -35.117738, 147.310071 -35.117398, 147.309118 -35.116967, 147.308460 -35.117262, 147.308006 -35.118147, 147.307938 -35.120438, 147.308120 -35.120869, 147.308278 -35.122434, 147.308324 -35.123387, 147.306849 -35.123569, 147.306350 -35.123387, 147.304558 -35.123092, 147.302743 -35.122548, 147.301473 -35.121844, 147.300293 -35.121073, 147.292240 -35.113042, 147.294576 -35.101881))"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geo:</span><span class="n">hasBoundingBox</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.29224008007150815 -35.12356900967972706, 147.31177250889055586 -35.12356900967972706, 147.31177250889055586 -35.10188143482372425, 147.29224008007150815 -35.10188143482372425, 147.29224008007150815 -35.12356900967972706))"</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.292240 -35.123569, 147.311772 -35.123569, 147.311772 -35.101881, 147.292240 -35.101881, 147.292240 -35.123569))"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
 </div>
 </div>
-<h4 id="_geometry_literals" class="discrete">Geometry Literals</h4>
+</div>
+<div class="sect3">
+<h4 id="_geometry_literals"><a class="anchor" href="#_geometry_literals"></a>5.3.5. Geometry Literals</h4>
 <div class="paragraph">
 <p>ABIS only allows for <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text representations of geometries</a> indicated by the <code>geo:asWKT</code> predicate. No other forms of geometry literal, e.g. GeoJSON, may be used.</p>
 </div>
@@ -1910,15 +1933,17 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>ABIS will infer that any literal object indicated with the <code>geo:asWKT</code> predicate is of the datatype <code>geo:wktLiteral</code> and the literal typing need not be supplied. It may also be supplied so the following are treated as equivalent:</p>
 </div>
 <div class="paragraph">
-<p><code>geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)" ;</code></p>
+<p><code>geo:asWKT "POINT (147.300797 -35.113046)" ;</code></p>
 </div>
 <div class="paragraph">
-<p><code>geo:asWKT "POINT (147.30079728418488116 -35.11304660429588154)"geo:wktLiteral ;</code></p>
+<p><code>geo:asWKT "POINT (147.300797 -35.113046)"geo:wktLiteral ;</code></p>
 </div>
 <div class="paragraph">
 <p>This is as per a rule in the <a href="#_spatial_reasoning">Spatial Reasoning</a> part of the rules section.</p>
 </div>
-<h4 id="_coordinate_reference_system" class="discrete">Coordinate Reference System</h4>
+</div>
+<div class="sect3">
+<h4 id="_coordinate_reference_system"><a class="anchor" href="#_coordinate_reference_system"></a>5.3.6. Coordinate Reference System</h4>
 <div class="paragraph">
 <p>All spatial data supplied according to ABIS <em>MUST</em> ues the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others <em>MUST NOT</em> be used.</p>
 </div>
@@ -1930,7 +1955,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <pre class="rouge highlight"><code>&lt;https://epsg.io/7843&gt; POINT (123, -45)</code></pre>
 </div>
 </div>
-<h4 id="_spatial_aggregation_reasoning" class="discrete">Spatial Aggregation Reasoning</h4>
+</div>
+<div class="sect3">
+<h4 id="_spatial_aggregation_reasoning"><a class="anchor" href="#_spatial_aggregation_reasoning"></a>5.3.7. Spatial Aggregation Reasoning</h4>
 <div class="paragraph">
 <p>ABIS contains rules that will perform spatial reasoning on data. For example, if a dataset is presented that contains a <a href="https://w3id.org/tern/ontologies/tern/Survey"><code>Survey</code></a> which, in turn, contains a series of <a href="https://w3id.org/tern/ontologies/tern/Observation"><code>Observation</code></a> instances with their spatial locations indicated, the spatial extent of the <code>Survey</code> will be taken to be at least the area containing the <code>Observation</code> locations. The dataset&#8217;s extent will be at least the boundary of all contained <code>Survey</code> instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <a href="#_reasoning_rules">Reasoning Rules</a> section.</p>
 </div>
@@ -1943,7 +1970,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="title">Figure 7. A convex hull boundary - in green - calculated for a series of point locations - in yellow.</div>
 </div>
-<h4 id="_feature_to_feature_relations" class="discrete">Feature-to-Feature relations</h4>
+</div>
+<div class="sect3">
+<h4 id="_feature_to_feature_relations"><a class="anchor" href="#_feature_to_feature_relations"></a>5.3.8. Feature-to-Feature relations</h4>
 <div class="paragraph">
 <p>In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#" class="bare">https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#</a><em>simple_features_relation_family[_Simple Features</em> relations] which are summarised as follows:</p>
 </div>
@@ -2049,7 +2078,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="paragraph">
 <p>GeoSPARQL provides function definitions for the calculation of Feature-to-Feature relations from geometry data and all compliant implementations of GeoSPARQL allow these calculations to result in declarations of equivalent predicates. So if object A is calculated as being <em>within</em> object B, then the RDF triple <code>&lt;A&gt; geo:sfWithin &lt;B&gt;</code> may be recorded.</p>
 </div>
-<h4 id="_elevation_depth" class="discrete">Elevation &amp; Depth</h4>
+</div>
+<div class="sect3">
+<h4 id="_elevation_depth"><a class="anchor" href="#_elevation_depth"></a>5.3.9. Elevation &amp; Depth</h4>
 <h5 id="_absolute" class="discrete">Absolute</h5>
 <div class="paragraph">
 <p>If the absolute elevation or depth of an object needs representation, the 2D + Z forms of <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text representation of a geometry</a> should be used: <code>POINTZ</code>, <code>LINESTRINGZ</code> &amp; <code>POLYGONZ</code>.</p>
@@ -2108,6 +2139,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="paragraph">
 <p>If a simple value for depth is given, e.g. <code>ex:obs-n schema:depth 3</code>, this will be interpreted as being in metres.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2289,7 +2321,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 10. Two <code>Agents</code> related to a single dataset <code>Entity</code> with different roles using the <code>qualified attribution</code> predicate from <a href="#PROV">PROV</a></div>
 </div>
 <div class="paragraph">
-<p>The roles that can be used for attributional qualification in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the <em>IDN Role Codes vocabulary</em> - see the <a href="#_listing">Vocabularies Listing</a>. It contains concepts such as <em>author</em>, <em>publisher</em>, <em>collaborator</em> and <em>funder</em>.</p>
+<p>The roles that can be used for attributional qualification in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the <em>IDN Role Codes vocabulary</em> - see the <a href="#Listing">Vocabularies Listing</a>. It contains concepts such as <em>author</em>, <em>publisher</em>, <em>collaborator</em> and <em>funder</em>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2676,56 +2708,29 @@ ex:obs-z
 <h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>7. Vocabularies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ABIS use depends on the selection of concepts from many vocabularies. For example, the observed <em>growth stage</em> of a plant may be indicated by use of <a href="http://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f">Dead</a>, <a href="http://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb">Regrowth</a> or <a href="https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15">Senescence</a> taken from <a href="https://www.tern.org.au/">TERN</a>'s <a href="http://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6">Growth Stage vocabulary</a>.</p>
+<p>ABIS use depends on the use of many vocabularies. For example, the observed <em>growth stage</em> of a plant may be indicated by use of <a href="http://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f">Dead</a>, <a href="http://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb">Regrowth</a> or <a href="https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15">Senescence</a> taken from <a href="https://www.tern.org.au/">TERN</a>'s <a href="http://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6">Growth Stage vocabulary</a>.</p>
 </div>
 <div class="paragraph">
-<p>Some uses of ABIS, such as for the submission of data to the <a href="#BDR">BDR</a>, required the use of particular vocabularies. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <a href="#_profiles">Profiles</a>.</p>
+<p>Some uses of ABIS, such as for the submission of data to the <a href="#BDR">BDR</a>, require the use of particular vocabularies. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <a href="#_profiles">Profiles</a>.</p>
 </div>
 <div class="paragraph">
-<p>Some <a href="#_component_models">Component Models</a> of ABIS also require the use of particular vocabularies, for example, the <a href="#annex-a">Projects Model</a> mandates that roles chosen for an attribution&#8217;s <code>hadRole</code> predicate, when used for an instances of the <code>abis:Project</code> class must come from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p>
+<p>Some <a href="#_component_models">Component Models</a> of ABIS also require the use of particular vocabularies, for example, the <a href="#annex-a">Projects Model</a> mandates that roles chosen for an attribution&#8217;s <code>hadRole</code> predicate, when used for an instances of the <code>abis:Project</code> class, must come from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p>
 </div>
 <div class="paragraph">
-<p>The next section lists vocabularies know to be used with ABIS.</p>
+<p>All the vocabularies required for use with ABIS and any known profile of ABIS are listed at the <em>BDR Vocabulary Register</em>:</p>
 </div>
-<div class="sect2">
-<h3 id="_listing"><a class="anchor" href="#_listing"></a>7.1. Listing</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://vocabs.bdr.gov.au/v/vocab">https://vocabs.bdr.gov.au</a></p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>Here is a list of vocabularies known to be either required or suggested for use with ABIS and the locations in which they are used (which predicates are expected to indicate concepts from them).</p>
+<p>The profile or Component Model that requires each vocab&#8217;s use is indicated, along with other metadata to assist with the discovery of vocabs. This register is live and continuously updated with use and vocab updates.</p>
 </div>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Vocabulary</th>
-<th class="tableblock halign-left valign-top">Domain</th>
-<th class="tableblock halign-left valign-top">Where Used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_bdr_datatypes_register">BDR Datatypes Register</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifiers for data types which, in RDF, are literal data values. Simple datatypes are things like <em>string</em>, <em>date</em>, <em>integer</em> etc. The <a href="#BDR">BDR</a> maintains a list of custom datatypes in this vocabulary to allow the interpretation of strings as identifiers from particular systems</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RDF datatypes values<br></p>
-<p class="tableblock"><em>Use further <a href="#_bdr_datatypes_register">described below</a></em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Roles that <a href="#prov:Agent"><code>Agent</code></a> instances play with respect to proscribed subclassses of <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> via <a href="https://www.w3.org/TR/prov-o/#Association"><code>Association</code></a> instances</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-a">Projects Model</a>, range value for the predicate <code>prov:hadRole</code> when used on <code>Association</code> or <code>Attribution</code> instances when linked to an <a href="#abis:Project"><code>Project</code></a> or <a href="#abis:Program">Program</a> instances</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Incomplete</mark></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
 <div class="sect3">
-<h4 id="_bdr_datatypes_register"><a class="anchor" href="#_bdr_datatypes_register"></a>7.1.1. BDR Datatypes Register</h4>
+<h4 id="_bdr_datatypes_register"><a class="anchor" href="#_bdr_datatypes_register"></a>7.1. BDR Datatypes Register</h4>
 <div class="paragraph">
 <p>The <a href="#BDR">BDR</a> maintains a list of datatypes used to indicate systems and regimes that create identifiers for data and which is presented as a vocabulary  at the <a href="http://bdrtesting.net/vocabs.html">BDR Vocabs Page</a>. These datatypes are used with ABIS RDF data to indicate which system/regime created a literal datatype value.</p>
 </div>
@@ -2750,7 +2755,6 @@ ex:obs-z
 </div>
 <div class="paragraph">
 <p><mark>Incomplete</mark></p>
-</div>
 </div>
 </div>
 </div>
@@ -2943,6 +2947,14 @@ ex:obs-z
 <dt class="hdlist1">BIRO</dt>
 <dd>
 <p>Di Iorio, A., Nuzzolese, A. G., Peroni, S., Shotton, D., Vitali, F. <em>Describing bibliographic references in RDF</em>. In Garcia Castro, A., Lange, C., Lord, P., Stevens, R. (Eds.), Proceedings of 4th Workshop on Semantic Publishing (SePublica 2014), CEUR Workshop Proceedings 1155. Aachen, Germany: CEUR-WS.org. <a href="http://ceur-ws.org/Vol-1155/paper-05.pdf" class="bare">http://ceur-ws.org/Vol-1155/paper-05.pdf</a> (Open Access). Ontology description online at <a href="http://www.sparontologies.net/ontologies/biro" class="bare">http://www.sparontologies.net/ontologies/biro</a></p>
+</dd>
+</dl>
+</div>
+<div id="DCAT" class="dlist">
+<dl>
+<dt class="hdlist1">DCAT</dt>
+<dd>
+<p>World Wide Web Consortium, <em>Data Catalog Vocabulary (DCAT) - Version 2</em>, W3C Recommendation (04 February 2020). <a href="https://www.w3.org/TR/vocab-dcat/" class="bare">https://www.w3.org/TR/vocab-dcat/</a></p>
 </dd>
 </dl>
 </div>
@@ -4730,7 +4742,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-05-31 00:15:41 UTC
+Last updated 2024-07-09 12:52:53 UTC
 </div>
 </div>
 </body>
