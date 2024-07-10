@@ -69,7 +69,7 @@ This model defines none of its own classes and only indicates the <<TERNOntology
 
 :dataset-x
     a tern:RDFDataset ;
-    sdo:name "Dataset X" ;
+    schema:name "Dataset X" ;
     dcterms:embargoedUntil "2024-05-11"^^xsd:date ;
     # ... other dataset properties
 .
@@ -78,7 +78,7 @@ This model defines none of its own classes and only indicates the <<TERNOntology
 
 :dataset-y
     a tern:RDFDataset ;
-    sdo:name "Dataset Y" ;
+    schema:name "Dataset Y" ;
     dcterms:embargoedUntil "2025-01-01"^^xsd:date ;
     # ... other dataset properties
 .
@@ -109,7 +109,7 @@ This model defines none of its own classes and only indicates the <<TERNOntology
 
 :dataset-x
     a tern:RDFDataset ;
-    sdo:name "Dataset X" ;
+    schema:name "Dataset X" ;
     dcterms:issued "2023-12-25"^^xsd:date ;
     abis:embargoPeriod [
         a time:DurationDescription ;

@@ -15,8 +15,8 @@ The set of all people, the class `Person` is defined like this:
 ----
 ex:Person
     a owl:Class ;
-    sdo:name "Person" ;
-    sdo:description "Persons are individuals of the species Homo sapiens" ;
+    schema:name "Person" ;
+    schema:description "Persons are individuals of the species Homo sapiens" ;
 .
 ----
 
@@ -25,8 +25,8 @@ ex:Person
 ----
 ex:nicholasCar
     a ex:Person ;
-    sdo:name "Nicholas Car" ;
-    sdo:description "Nicholas is a Person, born in South Africa, now living in Brisbane" ;
+    schema:name "Nicholas Car" ;
+    schema:description "Nicholas is a Person, born in South Africa, now living in Brisbane" ;
 .
 ----
 
@@ -35,8 +35,8 @@ Subsetting is very important in OWL: `Nicholas Car` might also be an `Engineer` 
 ----
 ex:nicholasCar
     a ex:Engineer ;
-    sdo:name "Nicholas Car" ;
-    sdo:description "Nicholas is an Engineer, born in South Africa, now living in Brisbane" ;
+    schema:name "Nicholas Car" ;
+    schema:description "Nicholas is an Engineer, born in South Africa, now living in Brisbane" ;
 .
 
 ex:Engineer rdfs:subClassOf ex:Person .
@@ -47,7 +47,7 @@ In OWL modelling, classes may be seen by grouping instances with similar propert
 ----
 ex:nicholasCar
     a ex:Person ;
-    sdo:name "Nicholas Car" ;
+    schema:name "Nicholas Car" ;
     ex:citizenship ex:Australian ;
 .
 ----
@@ -62,33 +62,43 @@ In the domain of ABIS, all animals living in the sea constitute the class marine
 
 === Identifiers
 
-All objects in OWL modelling - classes, predicates and instances of classes - are identified either with an <<IRI, IRI>> or a <<BN, Blank Node>>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, _Sample Y_ of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`Sample`], are identified by IRIs assigned to them often deriving from the IRI of an identified dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for _Sample Y_ in _Dataset X_ which also contains _Observation Z_:
+All complex objects in OWL modelling - classes, predicates and instances of classes - are identified either with an <<IRI, IRI>> or a <<BN, Blank Node>>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, _Sample Y_ of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`tern:Sample`], are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier for the object is still used to allow linking of information. An example for _Sample Y_ in _Dataset X_ which also contains _Observation Z_:
 
 ----
 <http://example.com/dataset/x>
     a tern:RDFDataset ;
-    sdo:hasPart
+    schema:hasPart
         <http://example.com/dataset/x/sample/y> ,
         <http://example.com/dataset/x/obs/z> ;
+    dcterms:title "Dataset X" ;
 .
 
 <http://example.com/dataset/x/sample/y>
     a tern:Sample ;
+    dcterms:title "Sample Y" ;
 .
 
 <http://example.com/dataset/x/obs/z>
     a tern:Observation ;
     sosa:hasFeatureOfInterest <http://example.com/dataset/x/sample/y> ;
+    sosa:hasResult [
+        a sosa:Result ;
+        schema:value 42 ;
+        schema:unitCode unit:PPM ;
+    ] ;
+    dcterms:title "Observation Z" ;
 .
 ----
 
-Identifiers for datasets take the form `https://{IRI-STEM}/{DATASET-ID}` and act as a unique namespace for objects within it. If Dataset `abc-123-def-456` contained Sample Y, we may have the following identifiers:
+In the above example data, _Dataset X_ - `http://example.com/dataset/x` - contains _Sample Y_ - `http://example.com/dataset/x/sample/y` - and _Observation Z_  - `http://example.com/dataset/x/obs/z` - was on the sample. The demonstration IRIs clearly all build on Dataset X's.
 
-* *Dataset abc-123-def-456*: `+https://linked.data.gov.au/dataset/abc-123-def-456+`
-** A unique dataset IRI issued by the https://linked.data.gov.au/agldwg[Australian Government Linked Data Working Group] using the `+https://linked.data.gov.au/dataset/+` namespace
-** Other identifier issuing regimes/organisations may be used
-** Dataset X's Namespace: `+https://linked.data.gov.au/dataset/abc-123-def-456/+` - ending in a '/'
-* *Sample Y*: `+https://linked.data.gov.au/dataset/abc-123-def-456/sample/y+`
+The result of the observation - the value `42` parts per million uses a Blank Node, not an IRI, for identity which is essentially an unknown ID. This is because there's no point in referring to the Result other than via the `Observation` that recorded it, so no IRI is ever needed to directly refer to it from elsewhere. The Blank Node is seen here in the <<TURTLE, Turtle>> syntax of RDF with information given between `[` & `]`.
+
+IRI identifiers for datasets take the form `https://{IRI-STEM}/{DATASET-ID}` and act as a unique namespace for objects within it. If Dataset `abc-123-def-456` contained Sample Y, we may have the following identifiers:
+
+* *Dataset abc-123-def-456*: `+https://example.com/dataset/abc-123-def-456+`
+** Dataset X's Namespace: `+https://example.com/dataset/abc-123-def-456/+` - ending in a '/'
+* *Sample Y*: `+https://example.com/dataset/abc-123-def-456/sample/y+`
 ** Uses the Dataset Namespace and a class identifier (optional) of 'sample' and an ID for the particular sample - 'y'
 ** Datasets can create identifiers for their elements, within their namespace however they like
 
@@ -97,19 +107,17 @@ It is likely that initiatives will be created to manage data for Sites, Samples 
 [discrete]
 ==== 5.2.1 Alternate Identifiers
 
-Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.
-
-All forms of alternate identifiers may be recorded and how they are recorded and used depends on how they function.
+Many objects represented using ABIS will usefully have external identifiers recorded, for example, samples with museum IDs or catalogue numbers. All forms of such identifiers _SHOULD_ be recorded and how they are recorded and used depends on their type.
 
 [discrete]
 ===== Alternate IRIs
 
-If an object already has an IRI identifier, and that identifier responds to <<LinkedData, Linked Data>> operations, it _MAY_ be used as the primary identifier of the object.
+If an object already has an IRI identifier, and that identifier responds to <<LinkedData, Linked Data>> operations, it _SHOULD_ be used as the primary identifier of the object.
 
-* If Dataset X contains a representation of Site Y and Site Y has the IRI of `http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002` assigned to it by TERN, then that IRI _MAY_ be used as the IRI for the site as it is resolvable online, linking to RDF data (and human-readable data)
+* If Dataset X contains a representation of Site Y and Site Y has the IRI of `http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002` assigned to it by TERN, then that IRI _SHOULD_ be used as the IRI for the site as it is resolvable online, linking to RDF data (and human-readable data)
 * If Dataset X contains a representation of Sample Z and Sample Z has an https://ev.igsn.org/[International GeoSample Identifier (IGSN)] or https://www.doi.org/[DOI] IRI of `https://doi.org/10.58052/IECUR00N9` then that IRI _MAY NOT_ be used as the IRI for the sample for, while it resolves online to a web page, it does not link to RDF data
 
-If an object has a Linked Data IRI assigned to it AND another assigned to it within an ABIS data generation propcess, perhaps automatically, the two IRIs should be linked like this:
+If an object has a Linked Data IRI assigned to it AND another assigned to it within an ABIS data generation process, perhaps automatically, the two IRIs should be linked like this:
 
 ----
 <{ORIGINAL-IRI}> owl:sameAs <{NEW-IRI]}>
@@ -121,21 +129,23 @@ If an object has an IRI assigned to it that does not link to RDF data, it should
 
 ----
 <{NEW-IRI]}>
-    sdo:identifier "{ORIGINAL-IRI}"^^{DATATYPE} ;
+    schema:identifier "{ORIGINAL-IRI}"^^{CUSTOM-DATATYPE} ;
     ...  # other properties
 .
 ----
 
-Here the `{ORIGINAL-IRI}`, since it does not act as a Linked Data IRI, is indicated as being a literal of a specified data type.
+Here the `{ORIGINAL-IRI}`, since it does not act as a Linked Data IRI, is indicated as being a literal of a specialised data type - `{CUSTOM-DATATYPE}`.
 
-If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGSN, then that type might be found in the _BDR Datatypes Register_ https://vocabs.bdr.gov.au/v/vocab[https://vocabs.bdr.gov.au], and it should be used. If its type is not known or is a generic URL, the type `xsd:anyURI` should be used like this:
+If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGSN, then that type might be found in the _BDR Datatypes_ vocabulary at https://vocabs.bdr.gov.au/v/vocab[https://vocabs.bdr.gov.au], and it should be used. If its type is not known or is a generic URL, the type `xsd:anyURI` should be used like this:
 
 ----
 <{NEW-IRI]}>
-    sdo:identifier "{ORIGINAL-IRI}"^^xsd:anyURI ;
+    schema:identifier "{ORIGINAL-IRI}"^^xsd:anyURI ;
     ...  # other properties
 .
 ----
+
+All special IRI types, such as DOI, should be recorded in the _BDR Datatypes_ vocabulary
 
 [discrete]
 ===== Alternate IDs - non-IRIs
@@ -145,18 +155,16 @@ Alternate identifiers for objects that are not IRIs/URLs _MUST_ have their ident
 ----
 <{SAMPLE-IRI]}>
     a tern:Sample ;
-    sdo:identifier "SAM-Y1234"^^ex:museum-x-id ;
+    schema:identifier "SAM-Y1234"^^ex:museum-x-id ;
     ...  # other properties
 .
 ----
 
-...where `{DATASET-IRI]}` is an IRI assigned to the _sample_ and the predicate `sdo:identifier` is used to give the literal identifier value of `SAM-Y1234` which has the datatype `ex:museum-x-id` indicated.
-
-Datatypes such as the example `ex:museum-x-ids` used here _MUST_ be registered to be useful.
+...where `{SAMPLE-IRI}` is an IRI assigned to the _sample_ and the predicate `schema:identifier` is used to give the literal identifier value of `SAM-Y1234` which has the datatype `ex:museum-x-id` indicated.
 
 [NOTE]
 ====
-ABIS data destined for the Biodiversity Data Repository _MUST_ have identifier datatypes registered in the _BDR Datatypes Register_ https://vocabs.bdr.gov.au/v/vocab[https://vocabs.bdr.gov.au]
+The https://bdr.gov.au[Biodiversity Data Repository] requires that all non-IRI alternate IDs used in submissions of data to it be registered within its https://vocabs.bdr.gov.au/v/vocab[BDR Datatypes] vocabulary.
 ====
 
 Multiple alternate identifiers may be given, as long as their datatypes are unique:
@@ -164,7 +172,7 @@ Multiple alternate identifiers may be given, as long as their datatypes are uniq
 ----
 <{SAMPLE-IRI]}>
     a tern:Sample ;
-    sdo:identifier
+    schema:identifier
         "SAM-Y1234"^^ex:museum-x-id ,
         "1073/SAMY"^^ex:igsn ;
     ...  # other properties
@@ -527,7 +535,7 @@ In addition to the simple and direct kind of relationship between `Agents` and d
 .Two `Agents` related to a single dataset `Entity` with different roles using the `qualified attribution` predicate from <<PROV, PROV>>
 image::img/pattern-prov-reasoning.svg[PROV-style reasoning,width=400,align="center"]
 
-The roles that can be used for attributional qualification in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the _IDN Role Codes vocabulary_ - see the <<Listing, Vocabularies Listing>>. It contains concepts such as _author_, _publisher_, _collaborator_ and _funder_.
+The roles that can be used for attributional qualification in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the _IDN Role Codes vocabulary_ - see the <<Vocabularies, Vocabularies>>. It contains concepts such as _author_, _publisher_, _collaborator_ and _funder_.
 
 === Observations & Results
 

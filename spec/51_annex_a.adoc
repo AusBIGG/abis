@@ -51,8 +51,8 @@ Classes defined elsewhere:
 
 * <<prov:Attribution, Attribution>>
 * <<prov:Agent, Agent>>
-* <<sdo:Organization, Organization>>
-* <<sdo:Person, Person>>
+* <<schema:Organization, Organization>>
+* <<schema:Person, Person>>
 
 [discrete]
 [[abis:Project]]
@@ -72,19 +72,19 @@ image::img/proj-project.svg[Projects Model Project Class,align="center",width=65
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | Project
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | An Activity that requires concerted effort following a Plan in pursuit of an objective
 | https://www.w3.org/TR/skos-reference/#definition[History Note] | Defined by BDR Team in 2023 in response to BDR usage needs
-| Expected Properties | <<sdo:isPartOf, is part of>>, <<time:hasTime, has time>>, <<geo:hasGeometry, has geometry>>, <<prov:generated, generated>>,
+| Expected Properties | <<schema:isPartOf, is part of>>, <<time:hasTime, has time>>, <<geo:hasGeometry, has geometry>>, <<prov:generated, generated>>,
 | https://www.w3.org/TR/skos-reference/#example[Example]
 a|
 ----
 :project-m
     a abis:Project ;
-    sdo:name "Project M" ;
-    sdo:description "South Australian government Project M-23" ;
+    schema:name "Project M" ;
+    schema:description "South Australian government Project M-23" ;
     abis:purpose "To determine extent of koala populations in NE SA" ;
-    sdo:keywords
+    schema:keywords
         ex:koala ,
         <https://linked.data.gov.au/dataset/asgsed3/STE/4> ;   # S.A.
-    sdo:isPartOf :program-n ;
+    schema:isPartOf :program-n ;
     # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
     # Note temporal range within that of containing Program
     prov:startedAtTime "2023-12-01"^^xsd:date ;
@@ -102,8 +102,8 @@ a|
 
 :program-n
     a abis:Program ;
-    sdo:name "Program N" ;
-    sdo:hasPart :project-m ;
+    schema:name "Program N" ;
+    schema:hasPart :project-m ;
     # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
     time:hasTime [
         time:hasBeginning [
@@ -137,7 +137,7 @@ image::img/proj-program.svg[Projects Model Program Class,align="center",width=65
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | Project
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | An Activity that requires concerted effort following a Plan in pursuit of an objective
 | https://www.w3.org/TR/skos-reference/#definition[History Note] | Defined by BDR Team in 2023 in response to BDR usage needs
-| Expected Properties | <<sdo:hasPart, has part>> and all the properties of <<abis:Project, Project>>, other than <<sdo:isPartOf, is part of>>
+| Expected Properties | <<schema:hasPart, has part>> and all the properties of <<abis:Project, Project>>, other than <<schema:isPartOf, is part of>>
 | https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:Project, Project>>
 |===
 
@@ -176,7 +176,7 @@ image::img/proj-program.svg[Projects Model Program Class,align="center",width=65
 |===
 
 [discrete]
-[[sdo:Organization]]
+[[schema:Organization]]
 ==== Organization
 
 [cols="3,10"]
@@ -195,7 +195,7 @@ image::img/proj-program.svg[Projects Model Program Class,align="center",width=65
 
 [discrete]
 [discrete]
-[[sdo:Person]]
+[[schema:Person]]
 ==== Person
 
 [cols="3,10"]
@@ -240,11 +240,11 @@ Predicates defined here:
 
 Predicates defined elsewhere:
 
-* <<sdo:name, name>>
-* <<sdo:description, description>>
-* <<sdo:keywords, keywords>>
-* <<sdo:hasPart, has part>>
-* <<sdo:isPartOf, is part of>>
+* <<schema:name, name>>
+* <<schema:description, description>>
+* <<schema:keywords, keywords>>
+* <<schema:hasPart, has part>>
+* <<schema:isPartOf, is part of>>
 * <<time:hasTime, has time>>
 * <<geo:hasGeometry, has geometry>>
 * <<prov:qualifiedAttribution, qualified attribution>>
@@ -269,14 +269,14 @@ Predicates defined elsewhere:
 |===
 
 [discrete]
-[[sdo:name]]
+[[schema:name]]
 ==== name
 
 [cols="3,10"]
 |===
 | Property | Value
 
-| <<IRI, IRI>> | `sdo:name`
+| <<IRI, IRI>> | `schema:name`
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | name
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | The name of the item
 | https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate a textual name for something
@@ -285,14 +285,14 @@ Predicates defined elsewhere:
 |===
 
 [discrete]
-[[sdo:description]]
+[[schema:description]]
 ==== description
 
 [cols="3,10"]
 |===
 | Property | Value
 
-| <<IRI, IRI>> | `sdo:description`
+| <<IRI, IRI>> | `schema:description`
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | description
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | A description of the item
 | https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate a textual description for something
@@ -301,14 +301,14 @@ Predicates defined elsewhere:
 |===
 
 [discrete]
-[[sdo:keywords]]
+[[schema:keywords]]
 ==== keywords
 
 [cols="3,10"]
 |===
 | Property | Value
 
-| <<IRI, IRI>> | `sdo:keywords`
+| <<IRI, IRI>> | `schema:keywords`
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | keywords
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | Keywords or tags used to describe some item
 | https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate <<skos:Concept, Concept>> instances from controlled vocabularies to categorise the object this predicate is applied to
@@ -317,34 +317,34 @@ Predicates defined elsewhere:
 |===
 
 [discrete]
-[[sdo:hasPart]]
+[[schema:hasPart]]
 ==== has part
 
 [cols="3,10"]
 |===
 | Property | Value
 
-| <<IRI, IRI>> | `sdo:hasPart`
+| <<IRI, IRI>> | `schema:hasPart`
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | has part
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | Indicates an item is part of this item
-| Inverse of | <<sdo:isPartOf, is part of>>
+| Inverse of | <<schema:isPartOf, is part of>>
 | https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate that a <<abis:Program, Program>> includes a See the example for <<abis:Project, Project>>
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<SDO, SDO>>
 | https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:Project, Project>>
 |===
 
 [discrete]
-[[sdo:isPartOf]]
+[[schema:isPartOf]]
 ==== is part of
 
 [cols="3,10"]
 |===
 | Property | Value
 
-| <<IRI, IRI>> | `sdo:isPartOf`
+| <<IRI, IRI>> | `schema:isPartOf`
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | is part of
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | Indicates an item that this item, in some sense, is part of
-| Inverse of | <<sdo:hasPart, has part>>
+| Inverse of | <<schema:hasPart, has part>>
 | https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate that a <<abis:Program, Program>> includes a See the example for <<abis:Project, Project>>
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<SDO, SDO>>
 | https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:Project, Project>>
@@ -475,8 +475,8 @@ The following <<SHACL, SHACL>> shapes are graph patterns mandated by this model.
 ----
 abis:idn-roles
     a shacl:Shape ;
-    sdo:name "IDN Roles" ;
-    sdo:description "Roles for the predicate prov:role on instances of prov:Attribution linked to an abis:Project must be taken from the IDN Role Codes Vocabulary (https://data.idnau.org/pid/vocab/idn-role-codes)" ;
+    schema:name "IDN Roles" ;
+    schema:description "Roles for the predicate prov:role on instances of prov:Attribution linked to an abis:Project must be taken from the IDN Role Codes Vocabulary (https://data.idnau.org/pid/vocab/idn-role-codes)" ;
     sh:path [
 
     ] ;

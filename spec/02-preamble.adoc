@@ -47,7 +47,7 @@ Namespaces are used in shortened form in documents and data by assigning them a 
 |`owl:` | `http://www.w3.org/2002/07/owl#` | <<OWL2, Web Ontology Language ontology>> namespace
 |`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | <<RDFSSPEC, RDF Schema ontology>> namespace
 |`sosa:` | `http://www.w3.org/ns/sosa/` | <<SOSA, Sensor, Observation, Sample, and Actuator (SOSA) ontology>> namespace
-|`sdo:` | `https://schema.org/` | <<SDO, schema.org>> namespace
+|`schema:` | `https://schema.org/` | <<SDO, schema.org>> namespace
 |`skos:` | `http://www.w3.org/2004/02/skos/core#` | <<SKOS, Simple Knowledge Organization System (SKOS) ontology>> namespace
 |`tern:` | `https://w3id.org/tern/ontologies/tern/` | <<TERNOntology, TERN Ontology>> namespace
 |`time:` | `http://www.w3.org/2006/time#` | <<TIME, Time Ontology>> in OWL namespace
@@ -126,18 +126,18 @@ Where examples of ABIS data are given in this document, <<RDFSPEC, RDF>> data se
 [source,turtle]
 ----
 PREFIX : <https://example.om/dataset/>
-PREFIX sdo: <https://schema.org/>
+PREFIX schema: <https://schema.org/>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 
 :x
     a tern:RDFDataset ;
-    sdo:name "Dataset X" ;
-    sdo:hasPart <https://example.om/dataset/sample/y> ;
+    schema:name "Dataset X" ;
+    schema:hasPart <https://example.om/dataset/sample/y> ;
 .
 
 <https://example.om/dataset/sample/y>
     a tern:Sample ;
-    sdo:name "Sample Y" ;
+    schema:name "Sample Y" ;
 .
 ----
 

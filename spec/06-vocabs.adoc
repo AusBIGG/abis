@@ -2,7 +2,7 @@
 
 ABIS use depends on the use of many vocabularies. For example, the observed _growth stage_ of a plant may be indicated by use of http://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f[Dead], http://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb[Regrowth] or https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15[Senescence] taken from https://www.tern.org.au/[TERN]'s http://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6[Growth Stage vocabulary].
 
-Some uses of ABIS, such as for the submission of data to the <<BDR, BDR>>, require the use of particular vocabularies. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <<Profiles, Profiles>>.
+Some uses of ABIS, such as for the submission of data to the <<BDR, BDR>>, require the use of particular vocabularies that aren't mandated for general ABIS use, for example the use of the https://linked.data.gov.au/dataset/bdr/datatypes/[_BDR Datatypes_] vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <<Profiles, Profiles>>.
 
 Some <<Component Models, Component Models>> of ABIS also require the use of particular vocabularies, for example, the <<#annex-a, Projects Model>> mandates that roles chosen for an attribution's `hadRole` predicate, when used for an instances of the `abis:Project` class, must come from the https://data.idnau.org/pid/vocab/idn-role-codes[IDN Role Codes Vocabulary]
 
@@ -10,28 +10,4 @@ All the vocabularies required for use with ABIS and any known profile of ABIS ar
 
 * https://vocabs.bdr.gov.au/v/vocab[https://vocabs.bdr.gov.au]
 
-The profile or Component Model that requires each vocab's use is indicated, along with other metadata to assist with the discovery of vocabs. This register is live and continuously updated with use and vocab updates.
-
-
-==== BDR Datatypes Register
-
-The <<BDR, BDR>> maintains a list of datatypes used to indicate systems and regimes that create identifiers for data and which is presented as a vocabulary  at the http://bdrtesting.net/vocabs.html[BDR Vocabs Page]. These datatypes are used with ABIS RDF data to indicate which system/regime created a literal datatype value.
-
-For example, the https://www.wa.gov.au/organisation/western-australian-museum[Western Australian Museum] creates numbers - "WAM Numbers" - for specimens abd this Register identifies the WAM Number system as `dt:WAMNumber`.
-
-If _Specimen X_ has a WAM Number of 55 and an IRI assigned by some RDF creation system of `+https://linked.data.gov.au/dataset/bdr/sample/316c92f0-d918-4648-a964-3e4066d767ed+`, then the Sample can have the WAM Number associated with it like this:
-
-[source,turtle]
-----
-PREFIX dt: <https://linked.data.gov.au/dataset/bdr/datatypes/>
-PREFIX schema: <https://schema.org/>
-PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
-
-<https://linked.data.gov.au/dataset/bdr/sample/316c92f0-d918-4648-a964-3e4066d767ed>
-    a tern:Sample ;
-    schema:name "Specimen X" ;
-    schema:identifier "55"^^dt:WAMNumber ;
-.
-----
-
-#Incomplete#
+The profile or Component Model that requires each vocab's use is indicated there, along with other metadata to assist with the discovery of vocabs. This register is live and continuously updated with use and vocab updates.
