@@ -718,7 +718,13 @@ pre.rouge {
 <li><a href="#_profiles">8. Profiles</a>
 <ul class="sectlevel2">
 <li><a href="#_profiles_of_abis">8.1. Profiles of ABIS</a></li>
-<li><a href="#profile-bdr">8.2. BDR Profile</a></li>
+<li><a href="#profile-bdr">8.2. BDR Profile</a>
+<ul class="sectlevel3">
+<li><a href="#_resources">8.2.1. Resources</a></li>
+<li><a href="#_specification">8.2.2. Specification</a></li>
+<li><a href="#_examples_2">8.2.3. Examples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_validation">9. Validation</a></li>
@@ -2298,7 +2304,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>The figures in the <a href="#_observations_results">Observations &amp; Results</a> and the <a href="#_feature_of_interest">Feature of Interest</a> patterns use this colouring.</p>
 </div>
 <div class="paragraph">
-<p>PROV&#8217;s provenance reasoning is also applicable to parts of ABIS. For example, the <a href="#annex-a">Projects Model</a> indicates that instances of its <a href="#abis:Project"><code>Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>, and may have been associated with an <a href="https://www.w3.org/TR/prov-o/#Agent"><code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>RDFDataset</code> instances will be able to have an attributional relationship to the <code>Agent</code> instance calculated. This is shown in the figure below.</p>
+<p>PROV&#8217;s provenance reasoning is also applicable to parts of ABIS. For example, the <a href="#annex-a">Projects Model</a> indicates that instances of its <a href="#abis:Project"><code>Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>, and may have been associated with an <a href="https://www.w3.org/TR/prov-o/#Agent"><code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>RDFDataset</code> instances will be able to have an attributional relationship to the <code>Agent</code> instance calculated. This is shown in the figure below.</p>
 </div>
 <div id="pattern-prov-reasoning" class="imageblock text-center">
 <div class="content">
@@ -2310,19 +2316,19 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect2">
 <h3 id="_agents"><a class="anchor" href="#_agents"></a>5.6. Agents</h3>
 <div class="paragraph">
-<p>Agents - things with agency to do work such as Organisations, People, Groups (of orgs and people) and perhaps software systems - are modelled in many Semantic Web and Knowledge Graph systems. In ABIS, we follow the general pattern for Agents outlined in the <a href="#PROV">Provenance Ontology (PROV)</a>: see the section above.</p>
+<p>Things with agency to do work such as Organisations, People, Groups (of orgs and people) and perhaps software systems - are modelled as <em>Agents</em> in many Semantic Web and Knowledge Graph systems. In ABIS, we follow the general pattern for Agents outlined in the <a href="#PROV">Provenance Ontology (PROV)</a>, see the section above.</p>
 </div>
 <div class="paragraph">
-<p>In addition to the simple and direct kind of relationship between <code>Agents</code> and data (<code>Entities</code>) show above in Figure 8 where an <code>Entity</code> can be attributed to an <code>Agent</code>, we use a nuanced version of that <code>was attributed to</code> relationship, <code>qualified attribution</code>, which is also defined in PROV. <code>qualified attribution</code> is a type of <em>qualified relation</em> which means it related two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the <code>Agent</code> plays with respect to the <code>Entity</code>. For example, for a dataset, one <code>Agetn</code> might be the <em>author</em> of the data, another the <em>publisher</em>. This could be modelled as in Figure 10, below.</p>
+<p>In addition to the simple and direct kind of relationship between <code>Agents</code> and data (<code>Entities</code>) show above in Figure 8 where an <code>Entity</code> can be attributed to an <code>Agent</code>, we use a nuanced version of that <code>was attributed to</code> relationship, <code>qualified attribution</code>, which is also defined in PROV. <code>qualified attribution</code> is a type of <em>qualified relation</em> which means it related two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the <code>Agent</code> plays with respect to the <code>Entity</code>. For example, for a dataset, one <code>Agent</code> might be the <em>author</em> of the data, another the <em>publisher</em>. This could be modelled as in Figure 10, below.</p>
 </div>
 <div id="pattern-prov-qualatt" class="imageblock text-center">
 <div class="content">
-<a class="image" href="img/pattern-prov-reasoning.svg"><img src="https://ausbigg.github.io/abis/img/pattern-prov-reasoning.svg" alt="PROV-style reasoning" width="400"></a>
+<a class="image" href="img/pattern-agent-multi.svg"><img src="https://ausbigg.github.io/abis/img/pattern-agent-multi.svg" alt="PROV-style reasoning" width="700"></a>
 </div>
-<div class="title">Figure 10. Two <code>Agents</code> related to a single dataset <code>Entity</code> with different roles using the <code>qualified attribution</code> predicate from <a href="#PROV">PROV</a></div>
+<div class="title">Figure 10. Two <code>Agents</code>, <code>Y</code> &amp; <code>Z</code>, related to a single dataset <code>X</code> with different roles using the <code>qualified attribution</code> predicate from <a href="#PROV">PROV</a></div>
 </div>
 <div class="paragraph">
-<p>The roles that can be used for attributional qualification in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the <em>IDN Role Codes vocabulary</em> - see the <a href="#_vocabularies">Vocabularies</a>. It contains concepts such as <em>author</em>, <em>publisher</em>, <em>collaborator</em> and <em>funder</em>.</p>
+<p>The roles that can be used for the qualification of attribution in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the <em>IDN Role Codes vocabulary</em> - see the <a href="#_vocabularies">Vocabularies</a>. It contains concepts such as <em>author</em>, <em>publisher</em>, <em>collaborator</em> and <em>funder</em>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2514,7 +2520,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 16. Classes and predicates within the <a href="#TERNOntology">TERN Ontology</a> used to characterise sampling. The <code>is sample of</code> predicate can be derived from relations between a <code>Sample</code>, the <code>Sampling</code> and the <code>Site</code>. Note the similarity of structure to the <a href="#tern-sosa">SOSA Observation pattern</a>.</div>
 </div>
 <div class="paragraph">
-<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class like this:</p>
+<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2613,13 +2619,13 @@ ex:obs-z
 <div class="title">Figure 19. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
 </div>
 <div class="paragraph">
-<p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class - are produced by instances of <a href="#Project"><code>Project</code></a> as per the figure below.</p>
+<p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class - are produced by instances of <a href="#Project"><code>Project</code></a> as per the figure below.</p>
 </div>
 <div id="proj-join" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/proj-join.svg"><img src="https://ausbigg.github.io/abis/img/proj-join.svg" alt="Projects Model Join Poin" width="400"></a>
 </div>
-<div class="title">Figure 20. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> instances.</div>
+<div class="title">Figure 20. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> instances.</div>
 </div>
 <div class="paragraph">
 <p>See <a href="#annex-a">Annex A</a> for more details about the Project Model.</p>
@@ -2640,7 +2646,7 @@ ex:obs-z
 <div class="title">Figure 21. An overview of the Data Release Model</div>
 </div>
 <div class="paragraph">
-<p>The Data Release Model defines predicates - <a href="#embargoedUntil">embargoed until</a> &amp; <a href="#embargoPeriod">embargo period</a> - which can be applied to instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class which set absolute or relative embargo release times. The model details the relations between these predicates.</p>
+<p>The Data Release Model defines predicates - <a href="#embargoedUntil">embargoed until</a> &amp; <a href="#embargoPeriod">embargo period</a> - which can be applied to instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class which set absolute or relative embargo release times. The model details the relations between these predicates.</p>
 </div>
 </div>
 </div>
@@ -2765,7 +2771,8 @@ ex:obs-z
 <div class="paragraph">
 <p>This profile defines the requirements for data to be absorbed into the <a href="https://www.dcceew.gov.au/environment/epbc/publications/biodiversity-data-repository">Biodiversity Data Repository</a>.</p>
 </div>
-<h4 id="_resources" class="discrete">Resources</h4>
+<div class="sect3">
+<h4 id="_resources"><a class="anchor" href="#_resources"></a>8.2.1. Resources</h4>
 <div class="paragraph">
 <p>The resources within this profile are listed below. The roles given for each are taken from <em>The Profiles Vocabulary</em> <a href="#PROF">[PROF]</a>.</p>
 </div>
@@ -2789,13 +2796,13 @@ ex:obs-z
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:specification">Specification</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr" class="bare">https://linked.data.gov.au/def/abis/bdr</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="#profile-bdr">BDR Profile</a> of <a href="https://linked.data.gov.au/def/abis/spec">ABIS</a> (this section)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The normative <a href="#profile-bdr">BDR Profile</a> of <a href="https://linked.data.gov.au/def/abis/spec">ABIS</a>. The next section in this document</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable Profile Definition</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:profile-definition">Profile Definition</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr.ttl" class="bare">https://linked.data.gov.au/def/abis/bdr.ttl</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable definition of this Profile, as per this text, but in RDF, according to The Profiles Vocabulary <a href="#PROF">[PROF]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The normative machine-readable definition of this Profile, as per the <em>Specification</em> text, but in RDF</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validator</p></td>
@@ -2804,16 +2811,10 @@ ex:obs-z
 <td class="tableblock halign-left valign-top"><p class="tableblock">A <a href="#SHACL">SHACL</a> file used to validate RDF data according to this Profile’s rules</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Expander</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:script">Script</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr/expander" class="bare">https://linked.data.gov.au/def/abis/bdr/expander</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A SHACL <a href="#SHACL">SHACL</a> file used to expand RDF data according to this Specification’s rules</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Combined Validator &amp; Expander</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:validation">Validation</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr/validator-combined" class="bare">https://linked.data.gov.au/def/abis/bdr/validator-combined</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The combined validator and data expander <a href="#SHACL">SHACL</a> file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/dx-prof/#Role:example">Example</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/bdr/examples" class="bare">https://linked.data.gov.au/def/abis/bdr/examples</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of examples of BDR data, as distinct from ABIS data. A section in this document</p></td>
 </tr>
 </tbody>
 </table>
@@ -2831,11 +2832,94 @@ ex:obs-z
 </tr>
 </table>
 </div>
-<h4 id="_specification" class="discrete">Specification</h4>
-<div class="paragraph">
-<p>The following subsections contain the rules of this Profile and form this Profile’s normative specification.</p>
 </div>
-<h5 id="_model_element_mandates" class="discrete">Model Element Mandates</h5>
+<div class="sect3">
+<h4 id="_specification"><a class="anchor" href="#_specification"></a>8.2.2. Specification</h4>
+<div class="paragraph">
+<p>The following subsections contain the rules of this Profile that go above and beyond those specified for ABIS generally. They form this Profile’s normative specification.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_required_identifiers">Required Identifiers</a></p>
+</li>
+<li>
+<p><a href="#_model_element_mandates">Model Element Mandates</a></p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="_required_identifiers"><a class="anchor" href="#_required_identifiers"></a>8.2.2.1. Required Identifiers</h5>
+<div class="paragraph">
+<p>The BDR requires that certain classes of ABIS object use identifiers from particular systems. Some classes of identifier are able to be generated by a data submitter, based on a patter, others must be pre-allocated by the BDR Team.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Class</th>
+<th class="tableblock halign-left valign-top">Authority</th>
+<th class="tableblock halign-left valign-top">Pattern / Logic</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Submitter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/dataset/bdr/{UUID}" class="bare">https://linked.data.gov.au/dataset/bdr/{UUID}</a></code> where <code>{UUID}</code> is a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)">UUIDv4</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Most software libraries can generate this e.g. Python can call <code>import uuid</code> and then <code>uuid.uuid4()</code><br>
+<br>
+Alternate IRIs <em>MAY</em> be able to be used, for example for pre-existing datasets, if arranged with the BDR Team</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Site"><code>tern:Site</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Submitter or original Site creator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{Dataset-IRI}/</code> + supplier pattern or original IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If created by a supplier, the IRI must be based on the IRI of the Dataset that it is part of and must be unique within the Dataset.<br>
+<br>
+Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Sample"><code>tern:Sample</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Submitter or original Sample creator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{Dataset-IRI}/</code> + supplier pattern or original IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As per Site</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Observation"><code>tern:Observation</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Submitter or original Sample creator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{Dataset-IRI}/</code> + supplier pattern or original IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As per Site</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>prov:Agent</code>, one of <a href="https://schema.org/Organisation"><code>schema:Organisation</code></a> or <a href="https://schema.org/Person"><code>schema:Person</code></a>, with a role in relation to a Dataset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixed, as registered</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Agents with roles relating to a Dataset <em>MUST</em> be identified by IRIs as registered in the <a href="https://linked.data.gov.au/dataset/bdr/orgs">BDR Submitting Organisations</a> vocabulary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>prov:Agent</code>, one of <a href="https://schema.org/Organisation"><code>schema:Organisation</code></a> or <a href="https://schema.org/Person"><code>schema:Person</code></a>, other relations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Submitter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Agents other than those with roles relating to Datasets may be identified using any IRI or a Blank Node</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://schema.org/"><code>schema:Datatype</code></a>, as used with the <a href="https://schema.org/identifier"><code>schema:identifier</code></a> predicate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixed, as registered</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datatypes indicated for literal values by the <a href="https://schema.org/identifier"><code>schema:identifier</code></a> predicate <em>MUST</em> be identified by IRIs as registered in the <a href="https://linked.data.gov.au/dataset/bdr/datatypes">BDR Datatypes</a> vocabulary</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_model_element_mandates"><a class="anchor" href="#_model_element_mandates"></a>8.2.2.2. Model Element Mandates</h5>
 <div class="paragraph">
 <p>The following table lists the requirements for the presence of classes and predicates assigned to data supplied according to this Profile. These requirements are in addition to those imposed by <a href="#_component_models">ABIS Component models</a>, such as the <a href="#tern-ontology">TERN Ontology</a>.</p>
 </div>
@@ -2844,27 +2928,80 @@ ex:obs-z
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Class</th>
 <th class="tableblock halign-left valign-top">Predicate</th>
 <th class="tableblock halign-left valign-top">Cardinality</th>
+<th class="tableblock halign-left valign-top">Datatype</th>
 <th class="tableblock halign-left valign-top">Notes</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:title</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:description</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">May use simple formatting such as linebreaks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:created</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not <code>xsd:dateTime</code> or other date variant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:modified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not <code>xsd:dateTime</code> or other date variant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:creator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the IRI of the Agent(s) must be listed in the <a href="https://linked.data.gov.au/dataset/bdr/orgs">BDR Submitting Organisations</a> vocabulary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:publisher</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the IRI of the Agent(s) must be listed in the <a href="https://linked.data.gov.au/dataset/bdr/orgs">BDR Submitting Organisations</a> vocabulary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
 </table>
-<h4 id="_validators" class="discrete">Validators</h4>
-<div class="paragraph">
-<p>Validators</p>
 </div>
-<h4 id="_examples_2" class="discrete">Examples</h4>
+</div>
+<div class="sect3">
+<h4 id="_examples_2"><a class="anchor" href="#_examples_2"></a>8.2.3. Examples</h4>
 <div class="paragraph">
-<p>Examples</p>
+<p><em>Coming Soon</em></p>
+</div>
 </div>
 </div>
 </div>
@@ -4157,7 +4294,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#scopeNote">Scope Note</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use this predicate to link a <a href="#abis:Project">Project</a> or a <a href="#abis:Program">Program</a> to data that it produced, in the form of an <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> containing ABIS data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this predicate to link a <a href="#abis:Project">Project</a> or a <a href="#abis:Program">Program</a> to data that it produced, in the form of an <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> containing ABIS data</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby">Is Defined By</a></p></td>
@@ -4368,7 +4505,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="sect2">
 <h3 id="_classes_2"><a class="anchor" href="#_classes_2"></a>Classes</h3>
 <div class="paragraph">
-<p>This model defines none of its own classes and only indicates the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class for use with the predicates it does define.</p>
+<p>This model defines none of its own classes and only indicates the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a> class for use with the predicates it does define.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4404,7 +4541,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_domain">Domain</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_range">Range</a></p></td>
@@ -4471,7 +4608,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_domain">Domain</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>RDFDataset</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_range">Range</a></p></td>
@@ -4715,7 +4852,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-07-10 02:16:59 UTC
+Last updated 2024-07-10 04:14:33 UTC
 </div>
 </div>
 </body>
