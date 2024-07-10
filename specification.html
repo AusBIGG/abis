@@ -714,11 +714,7 @@ pre.rouge {
 <li><a href="#_background_models">6.5. Background Models</a></li>
 </ul>
 </li>
-<li><a href="#_vocabularies">7. Vocabularies</a>
-<ul class="sectlevel3">
-<li><a href="#_bdr_datatypes_register">7.1. BDR Datatypes Register</a></li>
-</ul>
-</li>
+<li><a href="#_vocabularies">7. Vocabularies</a></li>
 <li><a href="#_profiles">8. Profiles</a>
 <ul class="sectlevel2">
 <li><a href="#_profiles_of_abis">8.1. Profiles of ABIS</a></li>
@@ -1049,7 +1045,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SOSA">Sensor, Observation, Sample, and Actuator (SOSA) ontology</a> namespace</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schema:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://schema.org/" class="bare">https://schema.org/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">schema.org</a> namespace</p></td>
 </tr>
@@ -1228,18 +1224,18 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="nl">&lt;https://example.om/dataset/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">sdo:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
 </span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
 
 </span><span class="err">:</span><span class="n">x
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sdo:</span><span class="n">name</span><span class="w"> </span><span class="s">"Dataset X"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sdo:</span><span class="n">hasPart</span><span class="w"> </span><span class="nl">&lt;https://example.om/dataset/sample/y&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Dataset X"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">hasPart</span><span class="w"> </span><span class="nl">&lt;https://example.om/dataset/sample/y&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nl">&lt;https://example.om/dataset/sample/y&gt;</span><span class="w">
     </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sdo:</span><span class="n">name</span><span class="w"> </span><span class="s">"Sample Y"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Sample Y"</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
 </div>
 </div>
@@ -1544,8 +1540,8 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <pre>ex:Person
     a owl:Class ;
-    sdo:name "Person" ;
-    sdo:description "Persons are individuals of the species Homo sapiens" ;
+    schema:name "Person" ;
+    schema:description "Persons are individuals of the species Homo sapiens" ;
 .</pre>
 </div>
 </div>
@@ -1556,8 +1552,8 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <pre>ex:nicholasCar
     a ex:Person ;
-    sdo:name "Nicholas Car" ;
-    sdo:description "Nicholas is a Person, born in South Africa, now living in Brisbane" ;
+    schema:name "Nicholas Car" ;
+    schema:description "Nicholas is a Person, born in South Africa, now living in Brisbane" ;
 .</pre>
 </div>
 </div>
@@ -1568,8 +1564,8 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="content">
 <pre>ex:nicholasCar
     a ex:Engineer ;
-    sdo:name "Nicholas Car" ;
-    sdo:description "Nicholas is an Engineer, born in South Africa, now living in Brisbane" ;
+    schema:name "Nicholas Car" ;
+    schema:description "Nicholas is an Engineer, born in South Africa, now living in Brisbane" ;
 .
 
 ex:Engineer rdfs:subClassOf ex:Person .</pre>
@@ -1582,7 +1578,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="content">
 <pre>ex:nicholasCar
     a ex:Person ;
-    sdo:name "Nicholas Car" ;
+    schema:name "Nicholas Car" ;
     ex:citizenship ex:Australian ;
 .</pre>
 </div>
@@ -1603,50 +1599,58 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect2">
 <h3 id="_identifiers"><a class="anchor" href="#_identifiers"></a>5.2. Identifiers</h3>
 <div class="paragraph">
-<p>All objects in OWL modelling - classes, predicates and instances of classes - are identified either with an <a href="#IRI">IRI</a> or a <a href="#BN">Blank Node</a>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, <em>Sample Y</em> of the class <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample"><code>Sample</code></a>, are identified by IRIs assigned to them often deriving from the IRI of an identified dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier is still used. An example for <em>Sample Y</em> in <em>Dataset X</em> which also contains <em>Observation Z</em>:</p>
+<p>All complex objects in OWL modelling - classes, predicates and instances of classes - are identified either with an <a href="#IRI">IRI</a> or a <a href="#BN">Blank Node</a>. Classes and predicates defined in ABIS or inherited from models it profiles use the identifiers for them given in this document. Instances of classes, for example a particular sample, <em>Sample Y</em> of the class <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample"><code>tern:Sample</code></a>, are identified by IRIs assigned to them often deriving from the IRI of the dataset in which they are first presented. If the instance is referred to again later - perhaps further observations were made on the sample - then the original identifier for the object is still used to allow linking of information. An example for <em>Sample Y</em> in <em>Dataset X</em> which also contains <em>Observation Z</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre>&lt;http://example.com/dataset/x&gt;
     a tern:RDFDataset ;
-    sdo:hasPart
+    schema:hasPart
         &lt;http://example.com/dataset/x/sample/y&gt; ,
         &lt;http://example.com/dataset/x/obs/z&gt; ;
+    dcterms:title "Dataset X" ;
 .
 
 &lt;http://example.com/dataset/x/sample/y&gt;
     a tern:Sample ;
+    dcterms:title "Sample Y" ;
 .
 
 &lt;http://example.com/dataset/x/obs/z&gt;
     a tern:Observation ;
     sosa:hasFeatureOfInterest &lt;http://example.com/dataset/x/sample/y&gt; ;
+    sosa:hasResult [
+        a sosa:Result ;
+        schema:value 42 ;
+        schema:unitCode unit:PPM ;
+    ] ;
+    dcterms:title "Observation Z" ;
 .</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Identifiers for datasets take the form <code><a href="https://{IRI-STEM}/{DATASET-ID}" class="bare">https://{IRI-STEM}/{DATASET-ID}</a></code> and act as a unique namespace for objects within it. If Dataset <code>abc-123-def-456</code> contained Sample Y, we may have the following identifiers:</p>
+<p>In the above example data, <em>Dataset X</em> - <code><a href="http://example.com/dataset/x" class="bare">http://example.com/dataset/x</a></code> - contains <em>Sample Y</em> - <code><a href="http://example.com/dataset/x/sample/y" class="bare">http://example.com/dataset/x/sample/y</a></code> - and <em>Observation Z</em>  - <code><a href="http://example.com/dataset/x/obs/z" class="bare">http://example.com/dataset/x/obs/z</a></code> - was on the sample. The demonstration IRIs clearly all build on Dataset X&#8217;s.</p>
+</div>
+<div class="paragraph">
+<p>The result of the observation - the value <code>42</code> parts per million uses a Blank Node, not an IRI, for identity which is essentially an unknown ID. This is because there&#8217;s no point in referring to the Result other than via the <code>Observation</code> that recorded it, so no IRI is ever needed to directly refer to it from elsewhere. The Blank Node is seen here in the <a href="#TURTLE">Turtle</a> syntax of RDF with information given between <code>[</code> &amp; <code>]</code>.</p>
+</div>
+<div class="paragraph">
+<p>IRI identifiers for datasets take the form <code><a href="https://{IRI-STEM}/{DATASET-ID}" class="bare">https://{IRI-STEM}/{DATASET-ID}</a></code> and act as a unique namespace for objects within it. If Dataset <code>abc-123-def-456</code> contained Sample Y, we may have the following identifiers:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Dataset abc-123-def-456</strong>: <code>https://linked.data.gov.au/dataset/abc-123-def-456</code></p>
+<p><strong>Dataset abc-123-def-456</strong>: <code>https://example.com/dataset/abc-123-def-456</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>A unique dataset IRI issued by the <a href="https://linked.data.gov.au/agldwg">Australian Government Linked Data Working Group</a> using the <code>https://linked.data.gov.au/dataset/</code> namespace</p>
-</li>
-<li>
-<p>Other identifier issuing regimes/organisations may be used</p>
-</li>
-<li>
-<p>Dataset X&#8217;s Namespace: <code>https://linked.data.gov.au/dataset/abc-123-def-456/</code> - ending in a '/'</p>
+<p>Dataset X&#8217;s Namespace: <code>https://example.com/dataset/abc-123-def-456/</code> - ending in a '/'</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Sample Y</strong>: <code>https://linked.data.gov.au/dataset/abc-123-def-456/sample/y</code></p>
+<p><strong>Sample Y</strong>: <code>https://example.com/dataset/abc-123-def-456/sample/y</code></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1665,19 +1669,16 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <h4 id="_5_2_1_alternate_identifiers" class="discrete">5.2.1 Alternate Identifiers</h4>
 <div class="paragraph">
-<p>Many objects represented using ABIS will usefully have external identifiers recorded. One case could be samples that have museum IDs, another, datasets already listed in a catalogue that have web page URLs.</p>
-</div>
-<div class="paragraph">
-<p>All forms of alternate identifiers may be recorded and how they are recorded and used depends on how they function.</p>
+<p>Many objects represented using ABIS will usefully have external identifiers recorded, for example, samples with museum IDs or catalogue numbers. All forms of such identifiers <em>SHOULD</em> be recorded and how they are recorded and used depends on their type.</p>
 </div>
 <h5 id="_alternate_iris" class="discrete">Alternate IRIs</h5>
 <div class="paragraph">
-<p>If an object already has an IRI identifier, and that identifier responds to <a href="#LinkedData">Linked Data</a> operations, it <em>MAY</em> be used as the primary identifier of the object.</p>
+<p>If an object already has an IRI identifier, and that identifier responds to <a href="#LinkedData">Linked Data</a> operations, it <em>SHOULD</em> be used as the primary identifier of the object.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If Dataset X contains a representation of Site Y and Site Y has the IRI of <code><a href="http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002" class="bare">http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002</a></code> assigned to it by TERN, then that IRI <em>MAY</em> be used as the IRI for the site as it is resolvable online, linking to RDF data (and human-readable data)</p>
+<p>If Dataset X contains a representation of Site Y and Site Y has the IRI of <code><a href="http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002" class="bare">http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002</a></code> assigned to it by TERN, then that IRI <em>SHOULD</em> be used as the IRI for the site as it is resolvable online, linking to RDF data (and human-readable data)</p>
 </li>
 <li>
 <p>If Dataset X contains a representation of Sample Z and Sample Z has an <a href="https://ev.igsn.org/">International GeoSample Identifier (IGSN)</a> or <a href="https://www.doi.org/">DOI</a> IRI of <code><a href="https://doi.org/10.58052/IECUR00N9" class="bare">https://doi.org/10.58052/IECUR00N9</a></code> then that IRI <em>MAY NOT</em> be used as the IRI for the sample for, while it resolves online to a web page, it does not link to RDF data</p>
@@ -1685,7 +1686,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>If an object has a Linked Data IRI assigned to it AND another assigned to it within an ABIS data generation propcess, perhaps automatically, the two IRIs should be linked like this:</p>
+<p>If an object has a Linked Data IRI assigned to it AND another assigned to it within an ABIS data generation process, perhaps automatically, the two IRIs should be linked like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1701,24 +1702,27 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="listingblock">
 <div class="content">
 <pre>&lt;{NEW-IRI]}&gt;
-    sdo:identifier "{ORIGINAL-IRI}"^^{DATATYPE} ;
+    schema:identifier "{ORIGINAL-IRI}"^^{CUSTOM-DATATYPE} ;
     ...  # other properties
 .</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Here the <code>{ORIGINAL-IRI}</code>, since it does not act as a Linked Data IRI, is indicated as being a literal of a specified data type.</p>
+<p>Here the <code>{ORIGINAL-IRI}</code>, since it does not act as a Linked Data IRI, is indicated as being a literal of a specialised data type - <code>{CUSTOM-DATATYPE}</code>.</p>
 </div>
 <div class="paragraph">
-<p>If the datatype of the <code>{ORIGINAL-IRI}</code> is of a known form, such as a DOI or IGSN, then that type might be found in the <em>BDR Datatypes Register</em> <a href="https://vocabs.bdr.gov.au/v/vocab">https://vocabs.bdr.gov.au</a>, and it should be used. If its type is not known or is a generic URL, the type <code>xsd:anyURI</code> should be used like this:</p>
+<p>If the datatype of the <code>{ORIGINAL-IRI}</code> is of a known form, such as a DOI or IGSN, then that type might be found in the <em>BDR Datatypes</em> vocabulary at <a href="https://vocabs.bdr.gov.au/v/vocab">https://vocabs.bdr.gov.au</a>, and it should be used. If its type is not known or is a generic URL, the type <code>xsd:anyURI</code> should be used like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre>&lt;{NEW-IRI]}&gt;
-    sdo:identifier "{ORIGINAL-IRI}"^^xsd:anyURI ;
+    schema:identifier "{ORIGINAL-IRI}"^^xsd:anyURI ;
     ...  # other properties
 .</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>All special IRI types, such as DOI, should be recorded in the <em>BDR Datatypes</em> vocabulary</p>
 </div>
 <h5 id="_alternate_ids_non_iris" class="discrete">Alternate IDs - non-IRIs</h5>
 <div class="paragraph">
@@ -1728,16 +1732,13 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="content">
 <pre>&lt;{SAMPLE-IRI]}&gt;
     a tern:Sample ;
-    sdo:identifier "SAM-Y1234"^^ex:museum-x-id ;
+    schema:identifier "SAM-Y1234"^^ex:museum-x-id ;
     ...  # other properties
 .</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>&#8230;&#8203;where <code>{DATASET-IRI]}</code> is an IRI assigned to the <em>sample</em> and the predicate <code>sdo:identifier</code> is used to give the literal identifier value of <code>SAM-Y1234</code> which has the datatype <code>ex:museum-x-id</code> indicated.</p>
-</div>
-<div class="paragraph">
-<p>Datatypes such as the example <code>ex:museum-x-ids</code> used here <em>MUST</em> be registered to be useful.</p>
+<p>&#8230;&#8203;where <code>{SAMPLE-IRI}</code> is an IRI assigned to the <em>sample</em> and the predicate <code>schema:identifier</code> is used to give the literal identifier value of <code>SAM-Y1234</code> which has the datatype <code>ex:museum-x-id</code> indicated.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1747,7 +1748,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>ABIS data destined for the Biodiversity Data Repository <em>MUST</em> have identifier datatypes registered in the <em>BDR Datatypes Register</em> <a href="https://vocabs.bdr.gov.au/v/vocab">https://vocabs.bdr.gov.au</a></p>
+<p>The <a href="https://bdr.gov.au">Biodiversity Data Repository</a> requires that all non-IRI alternate IDs used in submissions of data to it be registered within its <a href="https://vocabs.bdr.gov.au/v/vocab">BDR Datatypes</a> vocabulary.</p>
 </div>
 </td>
 </tr>
@@ -1760,7 +1761,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="content">
 <pre>&lt;{SAMPLE-IRI]}&gt;
     a tern:Sample ;
-    sdo:identifier
+    schema:identifier
         "SAM-Y1234"^^ex:museum-x-id ,
         "1073/SAMY"^^ex:igsn ;
     ...  # other properties
@@ -2321,7 +2322,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 10. Two <code>Agents</code> related to a single dataset <code>Entity</code> with different roles using the <code>qualified attribution</code> predicate from <a href="#PROV">PROV</a></div>
 </div>
 <div class="paragraph">
-<p>The roles that can be used for attributional qualification in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the <em>IDN Role Codes vocabulary</em> - see the <a href="#Listing">Vocabularies Listing</a>. It contains concepts such as <em>author</em>, <em>publisher</em>, <em>collaborator</em> and <em>funder</em>.</p>
+<p>The roles that can be used for attributional qualification in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the <em>IDN Role Codes vocabulary</em> - see the <a href="#_vocabularies">Vocabularies</a>. It contains concepts such as <em>author</em>, <em>publisher</em>, <em>collaborator</em> and <em>funder</em>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2711,7 +2712,7 @@ ex:obs-z
 <p>ABIS use depends on the use of many vocabularies. For example, the observed <em>growth stage</em> of a plant may be indicated by use of <a href="http://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f">Dead</a>, <a href="http://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb">Regrowth</a> or <a href="https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15">Senescence</a> taken from <a href="https://www.tern.org.au/">TERN</a>'s <a href="http://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6">Growth Stage vocabulary</a>.</p>
 </div>
 <div class="paragraph">
-<p>Some uses of ABIS, such as for the submission of data to the <a href="#BDR">BDR</a>, require the use of particular vocabularies. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <a href="#_profiles">Profiles</a>.</p>
+<p>Some uses of ABIS, such as for the submission of data to the <a href="#BDR">BDR</a>, require the use of particular vocabularies that aren&#8217;t mandated for general ABIS use, for example the use of the <a href="https://linked.data.gov.au/dataset/bdr/datatypes/"><em>BDR Datatypes</em></a> vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <a href="#_profiles">Profiles</a>.</p>
 </div>
 <div class="paragraph">
 <p>Some <a href="#_component_models">Component Models</a> of ABIS also require the use of particular vocabularies, for example, the <a href="#annex-a">Projects Model</a> mandates that roles chosen for an attribution&#8217;s <code>hadRole</code> predicate, when used for an instances of the <code>abis:Project</code> class, must come from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p>
@@ -2727,35 +2728,7 @@ ex:obs-z
 </ul>
 </div>
 <div class="paragraph">
-<p>The profile or Component Model that requires each vocab&#8217;s use is indicated, along with other metadata to assist with the discovery of vocabs. This register is live and continuously updated with use and vocab updates.</p>
-</div>
-<div class="sect3">
-<h4 id="_bdr_datatypes_register"><a class="anchor" href="#_bdr_datatypes_register"></a>7.1. BDR Datatypes Register</h4>
-<div class="paragraph">
-<p>The <a href="#BDR">BDR</a> maintains a list of datatypes used to indicate systems and regimes that create identifiers for data and which is presented as a vocabulary  at the <a href="http://bdrtesting.net/vocabs.html">BDR Vocabs Page</a>. These datatypes are used with ABIS RDF data to indicate which system/regime created a literal datatype value.</p>
-</div>
-<div class="paragraph">
-<p>For example, the <a href="https://www.wa.gov.au/organisation/western-australian-museum">Western Australian Museum</a> creates numbers - "WAM Numbers" - for specimens abd this Register identifies the WAM Number system as <code>dt:WAMNumber</code>.</p>
-</div>
-<div class="paragraph">
-<p>If <em>Specimen X</em> has a WAM Number of 55 and an IRI assigned by some RDF creation system of <code>https://linked.data.gov.au/dataset/bdr/sample/316c92f0-d918-4648-a964-3e4066d767ed</code>, then the Sample can have the WAM Number associated with it like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">dt:</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/bdr/datatypes/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
-
-</span><span class="nl">&lt;https://linked.data.gov.au/dataset/bdr/sample/316c92f0-d918-4648-a964-3e4066d767ed&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Specimen X"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"55"</span><span class="p">^^</span><span class="nn">dt:</span><span class="n">WAMNumber</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><mark>Incomplete</mark></p>
-</div>
+<p>The profile or Component Model that requires each vocab&#8217;s use is indicated there, along with other metadata to assist with the discovery of vocabs. This register is live and continuously updated with use and vocab updates.</p>
 </div>
 </div>
 </div>
@@ -3048,7 +3021,7 @@ ex:obs-z
 </div>
 <div id="SDO" class="dlist">
 <dl>
-<dt class="hdlist1">SDO</dt>
+<dt class="hdlist1">schema</dt>
 <dd>
 <p>schema.org Consortium, <em>schema.org</em>, OWL vocabulary (26 June 2023). <a href="https://schema.org/" class="bare">https://schema.org/</a></p>
 </dd>
@@ -3259,10 +3232,10 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <p><a href="#prov:Agent">Agent</a></p>
 </li>
 <li>
-<p><a href="#sdo:Organization">Organization</a></p>
+<p><a href="#schema:Organization">Organization</a></p>
 </li>
 <li>
-<p><a href="#sdo:Person">Person</a></p>
+<p><a href="#schema:Person">Person</a></p>
 </li>
 </ul>
 </div>
@@ -3311,7 +3284,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sdo:isPartOf">is part of</a>, <a href="#time:hasTime">has time</a>, <a href="#geo:hasGeometry">has geometry</a>, <a href="#prov:generated">generated</a>,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#schema:isPartOf">is part of</a>, <a href="#time:hasTime">has time</a>, <a href="#geo:hasGeometry">has geometry</a>, <a href="#prov:generated">generated</a>,</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
@@ -3319,13 +3292,13 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <pre>:project-m
     a abis:Project ;
-    sdo:name "Project M" ;
-    sdo:description "South Australian government Project M-23" ;
+    schema:name "Project M" ;
+    schema:description "South Australian government Project M-23" ;
     abis:purpose "To determine extent of koala populations in NE SA" ;
-    sdo:keywords
+    schema:keywords
         ex:koala ,
         &lt;https://linked.data.gov.au/dataset/asgsed3/STE/4&gt; ;   # S.A.
-    sdo:isPartOf :program-n ;
+    schema:isPartOf :program-n ;
     # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
     # Note temporal range within that of containing Program
     prov:startedAtTime "2023-12-01"^^xsd:date ;
@@ -3343,8 +3316,8 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 
 :program-n
     a abis:Program ;
-    sdo:name "Program N" ;
-    sdo:hasPart :project-m ;
+    schema:name "Program N" ;
+    schema:hasPart :project-m ;
     # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
     time:hasTime [
         time:hasBeginning [
@@ -3406,7 +3379,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sdo:hasPart">has part</a> and all the properties of <a href="#abis:Project">Project</a>, other than <a href="#sdo:isPartOf">is part of</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#schema:hasPart">has part</a> and all the properties of <a href="#abis:Project">Project</a>, other than <a href="#schema:isPartOf">is part of</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
@@ -3506,7 +3479,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="sdo:Organization" class="discrete">Organization</h4>
+<h4 id="schema:Organization" class="discrete">Organization</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -3553,7 +3526,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="sdo:Person" class="discrete">Person</h4>
+<h4 id="schema:Person" class="discrete">Person</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -3660,19 +3633,19 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#sdo:name">name</a></p>
+<p><a href="#schema:name">name</a></p>
 </li>
 <li>
-<p><a href="#sdo:description">description</a></p>
+<p><a href="#schema:description">description</a></p>
 </li>
 <li>
-<p><a href="#sdo:keywords">keywords</a></p>
+<p><a href="#schema:keywords">keywords</a></p>
 </li>
 <li>
-<p><a href="#sdo:hasPart">has part</a></p>
+<p><a href="#schema:hasPart">has part</a></p>
 </li>
 <li>
-<p><a href="#sdo:isPartOf">is part of</a></p>
+<p><a href="#schema:isPartOf">is part of</a></p>
 </li>
 <li>
 <p><a href="#time:hasTime">has time</a></p>
@@ -3735,7 +3708,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="sdo:name" class="discrete">name</h4>
+<h4 id="schema:name" class="discrete">name</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -3750,7 +3723,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schema:name</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
@@ -3776,7 +3749,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="sdo:description" class="discrete">description</h4>
+<h4 id="schema:description" class="discrete">description</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -3791,7 +3764,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:description</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schema:description</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
@@ -3817,7 +3790,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="sdo:keywords" class="discrete">keywords</h4>
+<h4 id="schema:keywords" class="discrete">keywords</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -3832,7 +3805,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:keywords</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schema:keywords</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
@@ -3858,7 +3831,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="sdo:hasPart" class="discrete">has part</h4>
+<h4 id="schema:hasPart" class="discrete">has part</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -3873,7 +3846,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:hasPart</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schema:hasPart</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
@@ -3885,7 +3858,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inverse of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sdo:isPartOf">is part of</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#schema:isPartOf">is part of</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#scopeNote">Scope Note</a></p></td>
@@ -3903,7 +3876,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="sdo:isPartOf" class="discrete">is part of</h4>
+<h4 id="schema:isPartOf" class="discrete">is part of</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -3918,7 +3891,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sdo:isPartOf</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schema:isPartOf</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
@@ -3930,7 +3903,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inverse of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sdo:hasPart">has part</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#schema:hasPart">has part</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#scopeNote">Scope Note</a></p></td>
@@ -4250,8 +4223,8 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <pre>abis:idn-roles
     a shacl:Shape ;
-    sdo:name "IDN Roles" ;
-    sdo:description "Roles for the predicate prov:role on instances of prov:Attribution linked to an abis:Project must be taken from the IDN Role Codes Vocabulary (https://data.idnau.org/pid/vocab/idn-role-codes)" ;
+    schema:name "IDN Roles" ;
+    schema:description "Roles for the predicate prov:role on instances of prov:Attribution linked to an abis:Project must be taken from the IDN Role Codes Vocabulary (https://data.idnau.org/pid/vocab/idn-role-codes)" ;
     sh:path [
 
     ] ;
@@ -4449,7 +4422,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 
 :dataset-x
     a tern:RDFDataset ;
-    sdo:name "Dataset X" ;
+    schema:name "Dataset X" ;
     dcterms:embargoedUntil "2024-05-11"^^xsd:date ;
     # ... other dataset properties
 .
@@ -4458,7 +4431,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 
 :dataset-y
     a tern:RDFDataset ;
-    sdo:name "Dataset Y" ;
+    schema:name "Dataset Y" ;
     dcterms:embargoedUntil "2025-01-01"^^xsd:date ;
     # ... other dataset properties
 .</pre>
@@ -4519,7 +4492,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 
 :dataset-x
     a tern:RDFDataset ;
-    sdo:name "Dataset X" ;
+    schema:name "Dataset X" ;
     dcterms:issued "2023-12-25"^^xsd:date ;
     abis:embargoPeriod [
         a time:DurationDescription ;
@@ -4742,7 +4715,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-07-09 12:52:53 UTC
+Last updated 2024-07-10 02:16:59 UTC
 </div>
 </div>
 </body>
