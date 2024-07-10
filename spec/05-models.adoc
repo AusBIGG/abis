@@ -68,7 +68,7 @@ The TERN Ontology's _sampling_ pattern follows SOSA too but uses specialised cla
 .Classes and predicates within the <<TERNOntology, TERN Ontology>> used to characterise sampling. The `is sample of` predicate can be derived from relations between a `Sample`, the `Sampling` and the `Site`. Note the similarity of structure to the <<#tern-sosa, SOSA Observation pattern>>.
 image::img/tern-sampling.svg[TERN's Observation pattern,align="center",width=650]
 
-TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class like this:
+TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class like this:
 
 ----
 ex:dataset-x
@@ -132,10 +132,10 @@ The following figure illustrates the basic relationships of the class <<#Project
 .The two classes defined by the Projects Model - Project & Program - and their main relationships.
 image::img/proj-hierarchy.svg[Projects Model Class Hierarchy,align="center",width=400]
 
-The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class - are produced by instances of <<#Project, `Project`>> as per the figure below.
+The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class - are produced by instances of <<#Project, `Project`>> as per the figure below.
 
 [#proj-join,link="img/proj-join.svg"]
-.The Projects Model joins the rest of ABIS by Project instances producing https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] instances.
+.The Projects Model joins the rest of ABIS by Project instances producing https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] instances.
 image::img/proj-join.svg[Projects Model Join Poin,align="center",width=400]
 
 See <<#annex-a, Annex A>> for more details about the Project Model.
@@ -150,7 +150,7 @@ The following figure illustrates the basic elements of this model.
 .An overview of the Data Release Model
 image::img/data-release.svg[Overview of the Data Release Model,align="center",width=350]
 
-The Data Release Model defines predicates - <<#embargoedUntil, embargoed until>> & <<#embargoPeriod, embargo period>> - which can be applied to instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class which set absolute or relative embargo release times. The model details the relations between these predicates.
+The Data Release Model defines predicates - <<#embargoedUntil, embargoed until>> & <<#embargoPeriod, embargo period>> - which can be applied to instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class which set absolute or relative embargo release times. The model details the relations between these predicates.
 
 === Background Models
 

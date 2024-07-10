@@ -44,7 +44,7 @@ Issue tracking of the ABIS standard is managed online at https://github.com/AusB
 
 === Classes
 
-This model defines none of its own classes and only indicates the <<TERNOntology, TERN Ontology>>'s https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class for use with the predicates it does define.
+This model defines none of its own classes and only indicates the <<TERNOntology, TERN Ontology>>'s https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class for use with the predicates it does define.
 
 === Predicates
 
@@ -60,7 +60,7 @@ This model defines none of its own classes and only indicates the <<TERNOntology
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | embargoed until
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | A date after which the is no longer embargoed
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
-| https://www.w3.org/TR/rdf12-schema/#ch_domain[Domain] | https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`]
+| https://www.w3.org/TR/rdf12-schema/#ch_domain[Domain] | https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`]
 | https://www.w3.org/TR/rdf12-schema/#ch_range[Range] | https://www.w3.org/TR/xmlschema11-2/#date[`xsd:date`], https://www.w3.org/TR/xmlschema11-2/#dateTime[`xsd:dateTime`] or https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp[`xsd:dateTimeStamp`]
 | https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | The embargo period is understood to cease on the time instance of the start of the object value, e.g. at 00:00:00 (midnight) of a given date, or midnight of the first day of a given month.
 | https://www.w3.org/TR/skos-reference/#example[Example] a|
@@ -97,7 +97,7 @@ This model defines none of its own classes and only indicates the <<TERNOntology
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | embargo period
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | A temporal duration within which the object is embargoed
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
-| https://www.w3.org/TR/rdf12-schema/#ch_domain[Domain] | https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`]
+| https://www.w3.org/TR/rdf12-schema/#ch_domain[Domain] | https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`]
 | https://www.w3.org/TR/rdf12-schema/#ch_range[Range] | https://www.w3.org/TR/owl-time/#time:TemporalDuration[`time:TemporalDuration`]
 | https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | This predicate can only be used if the start of the embargo period's duration can be established by a business or system rule. If it cannot, use <<#embargoedUntil, embargoed until>> instead, with a fixed date.
 | https://www.w3.org/TR/skos-reference/#example[Example] a|
