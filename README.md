@@ -1,5 +1,6 @@
 # Australian Biodiversity Information Standard
-This repository contains the Australian Biodiversity Information Standard (ABIS). ABIS is made of multiple resources: documents, code files and other resources. Together these present ABIS' definitions, rules and tools for its use.
+
+This repository contains the Australian Biodiversity Information Standard (ABIS). ABIS is made of multiple resources: documents, code files, executable validators and so on. Together these present ABIS' definitions, rules and tools for its use.
 
 See the following starting points:
 
@@ -10,13 +11,13 @@ See the following starting points:
 
 ## Status
 
-This Standard is in an early stage of development, as of June 2022. 
+This Standard is in effect, as of 2023-12-04. 
 
 ## Contact
 
 ABIS is owned by the Australian Biodiversity Governance Group (AusBIGG) and managed by the ABIS working group with asstance from the [Department of Climate Change, Energy, the Environment and Water](https://www.dcceew.gov.au/) and [TERN](https://www.tern.org.au).
 
-This work is being conducted as part of the Biodiversity Data Repository (BDR) project for the [Department of Climate Change, Energy, the Environment and Water](https://www.dcceew.gov.au/). The technical work for ABIS was initially conducted by [SURROUND Australia Pty Ltd](https://surroundaustralia.com) with input from [Gaia Resources](https://www.gaiaresources.com.au) and [TERN](https://www.tern.org.au) and now maintained by the ABIS working group. 
+This work is being conducted as part of the Biodiversity Data Repository (BDR) project for the [Department of Climate Change, Energy, the Environment and Water](https://www.dcceew.gov.au/). The technical work for ABIS was initially conducted by [SURROUND Australia Pty Ltd](https://surroundaustralia.com) with input from [Gaia Resources](https://www.gaiaresources.com.au) and [TERN](https://www.tern.org.au) and now maintained by the BDR Team and the ABIS working group. 
 
 For enquiries, please contact:  
 
@@ -29,4 +30,4 @@ _ABIS WG Co-chairs_:
 _Lead author_:  
 **Nicholas Car**  
 _Data Architect_  
-<nick@kurrawong.net>  
+<nick@kurrawong.ai>  
