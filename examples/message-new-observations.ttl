@@ -14,11 +14,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a abism:NewObservationsMessage ;
     rdfs:label "Valid ABIS NewObservationsMessage 01"@en ;
     rdfs:comment "A minimally valid abism:NewObservationsMessage instance"@en ;
-    abism:targetDataset <https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01> ;
+    abism:targetDataset <https://linked.data.gov.au/dataset/bdr/example-valid-01> ;
     rdfs:member <https://linked.data.gov.au/dataset/bdr/observationcollection/example-valid-01> ;
 .
 
-<https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01>
+<https://linked.data.gov.au/dataset/bdr/example-valid-01>
     a tern:RDFDataset ;
     rdfs:label "Valid TERN RDFDataset 01"@en ;
     rdfs:comment "A minimally valid tern:RDFDataset instance"@en ;

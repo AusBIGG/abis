@@ -31,6 +31,7 @@ The resources within this profile are listed below. The roles given for each are
 | Machine-readable Profile Definition | https://www.w3.org/TR/dx-prof/#Role:profile-definition[Profile Definition] | `https://linked.data.gov.au/def/abis/bdr.ttl` | The normative machine-readable definition of this Profile, as per the _Specification_ text, but in RDF
 | Validator | https://www.w3.org/TR/dx-prof/#Role:validation[Validation] | `https://linked.data.gov.au/def/abis/bdr/validator` | A <<SHACL, SHACL>> file used to validate RDF data according to this Profile’s rules
 | Examples | https://www.w3.org/TR/dx-prof/#Role:example[Example] | `https://linked.data.gov.au/def/abis/bdr/examples` | A list of examples of BDR data, as distinct from ABIS data. A section in this document
+| JSON-LD Context | https://www.w3.org/TR/dx-prof/#Role:schema[Schema] | `https://linked.data.gov.au/def/abis/bdr/context.json` | A https://www.w3.org/TR/json-ld/#the-context[JSON-LD Context] for this profile
 |===
 
 [NOTE]
@@ -76,12 +77,12 @@ A cardinality of `1` means mandatory. `0+` means zero or more, `1+` one more, et
 |===
 | Class | Predicate | Cardinality | Datatype | Notes
 
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] | `dcterms:title` | 1 | `xsd:string` |
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] | `dcterms:description` | 1 | `xsd:string` | May use simple formatting such as linebreaks
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] | `dcterms:created` | 1 | `xsd:date` | not `xsd:dateTime` or other date variant
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] | `dcterms:modified` | 1 | `xsd:date` | not `xsd:dateTime` or other date variant
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] | `dcterms:creator` | 1+ | IRI | the IRI of the Agent(s) must be listed in the https://linked.data.gov.au/dataset/bdr/orgs[BDR Submitting Organisations] vocabulary
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] | `dcterms:publisher` | 1 | IRI | the IRI of the Agent(s) must be listed in the https://linked.data.gov.au/dataset/bdr/orgs[BDR Submitting Organisations] vocabulary
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:title` | 1 | `xsd:string` |
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:description` | 1 | `xsd:string` | May use simple formatting such as linebreaks
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:created` | 1 | `xsd:date` | not `xsd:dateTime` or other date variant
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:modified` | 1 | `xsd:date` | not `xsd:dateTime` or other date variant
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:creator` | 1+ | IRI | the IRI of the Agent(s) must be listed in the https://linked.data.gov.au/dataset/bdr/orgs[BDR Submitting Organisations] vocabulary
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:publisher` | 1 | IRI | the IRI of the Agent(s) must be listed in the https://linked.data.gov.au/dataset/bdr/orgs[BDR Submitting Organisations] vocabulary
 | | | | |
 
 

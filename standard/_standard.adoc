@@ -15,9 +15,9 @@ image::img/standard-overview.png[ABIS Overview,600,400,align="center"]
 |**Title** | Australian Biodiversity Information Standard
 |**Definition** | This is the Standard Definition of the Australian Biodiversity Information Standard (ABIS). It formally defines the parts of the standard.
 |**Created** | 2021-12-13
-|**Modified** | 2022-04-04
-|**Issued** | 0000-00-00
-|**Creator** | https://linked.data.gov.au/org/surround[SURROUND Australia Pty Ltd], https://www.gaiaresources.com.au/[Gaia Resources], https://www.tern.org.au[TERN] and the https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
+|**Modified** | 2024-07-10
+|**Issued** | 2023-12-04
+|**Creator** | https://kurrawong.ai[KurrawongAI], https://www.gaiaresources.com.au/[Gaia Resources], https://www.tern.org.au[TERN] and the https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**Publisher** | https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment]
 |**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
 |**Further information** | See the core repository that contains all the resources used to create ABIS: https://ausbigg.github.io/abis
@@ -98,7 +98,7 @@ _(this document)_
 | JSON-LD Context
 | https://agldwg.github.io/prof-roles/vocabulary[Vocabulary]
 | Machine-readable listing of RDF namespaces used by ABIS
-| <https://linked.data.gov.au/def/abis/jsonldcontext>
+| <https://linked.data.gov.au/def/abis/context.json>
 |===
 
 == References

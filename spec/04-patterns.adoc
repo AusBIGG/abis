@@ -188,10 +188,10 @@ Patterns:
 * <<Feature-centric, Feature-centric>>
 * <<ABIS spatial objects, ABIS spatial objects>>
 * <<Qualified Geometries, Qualified Geometries>>
-* <<Centroid & Bounding Box Reasoning, Centroid & Bounding Box Reasoning>>
+* <<Centroid & Bounding Box, Centroid & Bounding Box>>
 * <<Geometry Literals, Geometry Literals>>
-* <<Spatial Aggregation Reasoning, Spatial Aggregation Reasoning>>
-* <<Coordinate Reference System, Coordinate Reference System>>
+* <<Aggregation Reasoning, Aggregation Reasoning>>
+* <<Coordinate System, Coordinate System>>
 * <<Elevation & Depth, Elevation & Depth>>
 
 ==== Feature-centric
@@ -232,12 +232,12 @@ There are multiple classes of spatial objects in ABIS. The following are always 
 
 For these classes of object, we expect to see instances of them to be associated with geometries, if known.
 
-The following classes of object are either given as spatial - a geometry is provided - or for their spatial values to be inferred from child object geometries - see <<Spatial Aggregation Reasoning, Spatial Aggregation Reasoning>> below:
+The following classes of object are either given as spatial - a geometry is provided - or for their spatial values to be inferred from child object geometries - see <<Aggregation Reasoning, Aggregation Reasoning>> below:
 
-* `RDFDataset`
+* `tern:RDFDataset`
 * `Survey`
 
-A `Survey` might have its spatial extent recorded directly or taken to be the envelope of the locations of the `Observations` it contains. Similarly, an `RDFDataset` will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be `Sites`, `Sample`, `Survey` or `Observation` instances, or all of them.
+A `Survey` might have its spatial extent recorded directly or taken to be the envelope of the locations of the `Observations` it contains. Similarly, an `tern:RDFDataset` will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be `Sites`, `Sample`, `Survey` or `Observation` instances, or all of them.
 
 ==== Qualified Geometries
 
@@ -247,7 +247,7 @@ This feature-centric model allows for multiple or no geometries per spatial obje
 .Spatial `Features` and `Geometries` as modelled in the <<GSP, GeoSPARQL>> ontology with subfigure *A.* showing a `Site` feature that has two geometries provided for it: a Point and a Polygon. These could respectively represent the site's centroid and is boundary and are differentiable by geometry type. Subfigure *B.* shows a feature - Saint Helena Island - with two boundary polygonal geometries differentiated by _role_. Subfigure *C.* shows a time-varying feature, a cyclone, with multiple geometries differentiated by time. Data for *B.* is given in the ABIS repository at https://github.com/AusBIGG/abis/tree/master/examples - see the file `pattern-spatiality-saint-helena-island`.
 image::img/pattern-spatiality-qual.svg[Basic PROV classes and predicates,width=850,align="center"]
 
-==== Centroid & Bounding Box Reasoning
+==== Centroid & Bounding Box
 
 [#pattern-spatiality-pomingalarna,link="img/pattern-spatiality-pomingalarna.png"]
 .The field site 'Pomingolarna' with bounding box, boundary and centroid geometries indicated
@@ -290,7 +290,7 @@ ABIS will infer that any literal object indicated with the `geo:asWKT` predicate
 
 This is as per a rule in the <<Spatial Reasoning, Spatial Reasoning>> part of the rules section.
 
-==== Coordinate Reference System
+==== Coordinate System
 
 All spatial data supplied according to ABIS _MUST_ ues the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others _MUST NOT_ be used.
 
@@ -300,7 +300,7 @@ Since spatial data formulated according to GeoSPARQL only use the Well-Known Tex
 <https://epsg.io/7843> POINT (123, -45)
 ```
 
-==== Spatial Aggregation Reasoning
+==== Aggregation Reasoning
 
 ABIS contains rules that will perform spatial reasoning on data. For example, if a dataset is presented that contains a https://w3id.org/tern/ontologies/tern/Survey[`Survey`] which, in turn, contains a series of https://w3id.org/tern/ontologies/tern/Observation[`Observation`] instances with their spatial locations indicated, the spatial extent of the `Survey` will be taken to be at least the area containing the `Observation` locations. The dataset's extent will be at least the boundary of all contained `Survey` instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <<Reasoning Rules, Reasoning Rules>> section.
 
@@ -310,7 +310,7 @@ The figure below shows a boundary calculated for a series of point locations. Th
 .A convex hull boundary - in green - calculated for a series of point locations - in yellow.
 image::img/pattern-spatiality-hull.png[Convex hull for points,width=650,align="center"]
 
-==== Feature-to-Feature relations
+==== Feature relations
 
 In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_simple_features_relation_family[_Simple Features_ relations] which are summarised as follows:
 
@@ -519,7 +519,7 @@ Many of ABIS' models follow on from the pattern in the figure above and many fig
 
 The figures in the <<Observations & Results, Observations & Results>> and the <<Feature of Interest, Feature of Interest>> patterns use this colouring.
 
-PROV's provenance reasoning is also applicable to parts of ABIS. For example, the <<#annex-a, Projects Model>> indicates that instances of its <<abis:Project, `Project`>> class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Entity[`Entity`], and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `RDFDataset` instances will be able to have an attributional relationship to the `Agent` instance calculated. This is shown in the figure below.
+PROV's provenance reasoning is also applicable to parts of ABIS. For example, the <<#annex-a, Projects Model>> indicates that instances of its <<abis:Project, `Project`>> class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Entity[`Entity`], and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `tern:RDFDataset` instances will be able to have an attributional relationship to the `Agent` instance calculated. This is shown in the figure below.
 
 [#pattern-prov-reasoning,link="img/pattern-prov-reasoning.svg"]
 .PROV-style reasoning using facts given in the <<Projects Model, Projects Model>>

@@ -443,7 +443,7 @@ Predicates defined elsewhere:
 | <<IRI, IRI>> | `prov:generated`
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | generated
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | Generation is the completion of production of a new entity by an activity
-| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to link a <<abis:Project, Project>> or a <<abis:Program, Program>> to data that it produced, in the form of an https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`RDFDataset`] containing ABIS data
+| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to link a <<abis:Project, Project>> or a <<abis:Program, Program>> to data that it produced, in the form of an https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] containing ABIS data
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<PROV, PROV>>
 | https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:Project, Project>>
 |===

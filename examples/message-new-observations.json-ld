@@ -54,7 +54,7 @@
       }
     },
     {
-      "@id": "https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01",
+      "@id": "https://linked.data.gov.au/dataset/bdr/example-valid-01",
       "@type": "tern:RDFDataset",
       "dcterms:description": {
         "@language": "en",
@@ -92,7 +92,7 @@
         "@id": "https://linked.data.gov.au/dataset/bdr/observationcollection/example-valid-01"
       },
       "abism:targetDataset": {
-        "@id": "https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01"
+        "@id": "https://linked.data.gov.au/dataset/bdr/example-valid-01"
       }
     },
     {

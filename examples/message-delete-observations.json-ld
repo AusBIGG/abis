@@ -42,7 +42,7 @@
         "@id": "_:b0"
       },
       "abism:targetDataset": {
-        "@id": "https://linked.data.gov.au/dataset/bdr/dataset/example-valid-01"
+        "@id": "https://linked.data.gov.au/dataset/bdr/example-valid-01"
       }
     }
   ]
