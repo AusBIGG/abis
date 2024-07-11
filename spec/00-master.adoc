@@ -23,53 +23,27 @@
 .An overview of the major model parts of ABIS. The models shown here are detailed in the <<Multiple Models, Multiple Models>> section. Overlaps indicated shared model elements.
 image::img/overview.svg[ABIS Parts,650,align="center"]
 
-== Metadata
+include::01-metadata.adoc[]
 
-[frame=none, grid=none, cols="1,5"]
-|===
-|*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis
-|*https://schema.org/name[Name]* | Australian Biodiversity Information Standard
-|*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This document is the normative specification of the Australian Biodiversity Information Standard (ABIS) and includes its authoritative statements on parts, requirements and patterns.
-|*https://schema.org/dateCreated[Created Date]* | 2021-10-24
-|*https://schema.org/dateModified[Modified Date]* | 2024-07-09
-|*https://schema.org/dateIssued[Issued Date]* | 2023-12-04
-|*https://schema.org/version[Version]* | 2.2
-|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/2.1[abis:2.2]
-|https://www.w3.org/TR/skos-reference/#historyNote[*History Note*]|
-*2.2* - 2024 Jul - More Patterns, improved Mappings & comprehensive Validators
-*2.1* - 2024 Jan - Implementation of <<#annex-a, ABIS Projects Model>> and <<#annex-b, ABIS Data Release Model>> within ABIS +
-*2.0* - 2023 Nov - Produced by https://linked.data.gov.au/org/dcceew[DCCEEW] for initial <<BDR, BDR>> operations. Includes handling of systematic surveys and project information. +
-*1.0* - 2022 Jun - Initial version of ABIS. Tested with SURROUND Australia Pty Ltd and used for an initial national data acquisition survey for the <<BDR, BDR>>
-|*https://schema.org/creator[Creator]* | Originally https://linked.data.gov.au/org/dawe[Department of Agriculture, Water and the Environment (DAWE)], +
-now the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
-|*https://schema.org/owner[Owner]* | https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AUSBIGG)]
-|*https://schema.org/publisher[Publisher]* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
-|*https://schema.org/license[License]* | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|*https://www.w3.org/TR/vocab-dcat/#Property:resource_contact_point[Contacts]* | AusBIGG is supported by DCCEEW's' Biodiversity Data Repository (BDR) Team. Contact the BDR Team on bdr@dcceew.gov.au +
+include::02-abstract.adoc[]
 
-Issue tracking of the ABIS standard is managed online at https://github.com/AusBIGG/abis/issues
-|*https://schema.org/codeRepository[Code Repository]* | https://github.com/AusBIGG/abis
-|===
+include::03-preamble.adoc[]
 
-include::01-abstract.adoc[]
+include::04-intro.adoc[]
 
-include::02-preamble.adoc[]
+include::05-patterns.adoc[]
 
-include::03-intro.adoc[]
+include::06-models.adoc[]
 
-include::04-patterns.adoc[]
+include::07-vocabs.adoc[]
 
-include::05-models.adoc[]
+include::08-profiles.adoc[]
 
-include::06-vocabs.adoc[]
+include::09-validation.adoc[]
 
-include::07-profiles.adoc[]
+include::10-mappings.adoc[]
 
-include::08-validation.adoc[]
-
-include::09-mappings.adoc[]
-
-include::10-reasoning-rules.adoc[]
+include::11-reasoning-rules.adoc[]
 
 include::99-references.adoc[]
 

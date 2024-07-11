@@ -1,5 +1,0 @@
-== Validation
-
-#TODO: write this section#
-
-Pinch from Geochem Spec

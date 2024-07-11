@@ -11,20 +11,22 @@ The other parts of ABIS are:
 ** A simple introduction to the concepts within ABIS
 * *Profile Definition*
 ** The technical expression of ABIS as a standard that inherits from other standards
-** This is available in human- and machine-readable forms
+** https://linked.data.gov.au/def/abis/profile
 * *Models*
 ** ABIS is made of multiple models which are listed in the <<Models, Models Section>> but are published and maintained elsewhere
 ** Both human- and machine-readable forms of all ABIS models are available
 * *Vocabularies*
 ** ABIS, and the modes it depends on, rely on many vocabularies
-** These are listed in the <<Vocabularies, Vocabularies Section>> but are published and maintained elsewhere
+** These are described in the <<Vocabularies, Vocabularies Section>> but are published and maintained elsewhere
 * *Validators*
 ** Data 'shape' files that can be used with validation tooling to check conformance of data to ABIS
 ** These are listed in the <<Validation, Validation Section>> but are published and maintained elsewhere
 * *Mappings*
 ** Mappings of ABIS to/from other well-known standards or models in the same domain are given in the <<Mappings, Mappings Section>>
+* *Reasoning Rules*
+** Machine executable rules defined in the <<Reasoning Rules, Reasoning Rules Section>> that create new information from ABIS data based on logical, ontological, spatial and other reasoning
 * *Data Objects*
-** <<RDF, RDF>> expressions of this Standard, JSON-LD context files and RDF forms of the mappings are given in the sections that describe the human-readable forms of those objects
+** <<RDF, RDF>> expressions of this Standard, JSON-LD context files, examples and RDF forms of mappings etc. are given in the sections that describe the human-readable forms of those objects
 
 === Namespaces
 
