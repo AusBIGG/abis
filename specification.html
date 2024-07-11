@@ -727,9 +727,19 @@ pre.rouge {
 </li>
 </ul>
 </li>
-<li><a href="#_validation">9. Validation</a></li>
+<li><a href="#_validation">9. Validation</a>
+<ul class="sectlevel2">
+<li><a href="#_multiple_validators">9.1. Multiple Validators</a></li>
+<li><a href="#_performing_validation">9.2. Performing Validation</a></li>
+</ul>
+</li>
 <li><a href="#_mappings">10. Mappings</a></li>
-<li><a href="#_reasoning_rules">11. Reasoning Rules</a></li>
+<li><a href="#_reasoning_rules">11. Reasoning Rules</a>
+<ul class="sectlevel2">
+<li><a href="#_how_rules_work">11.1. How Rules Work</a></li>
+<li><a href="#_rule_list">11.2. Rule List</a></li>
+</ul>
+</li>
 <li><a href="#_references">12. References</a></li>
 <li><a href="#annex-a">Annex A: Projects Model</a>
 <ul class="sectlevel2">
@@ -903,7 +913,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <p>The technical expression of ABIS as a standard that inherits from other standards</p>
 </li>
 <li>
-<p>This is available in human- and machine-readable forms</p>
+<p><a href="https://linked.data.gov.au/def/abis/profile" class="bare">https://linked.data.gov.au/def/abis/profile</a></p>
 </li>
 </ul>
 </div>
@@ -929,7 +939,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <p>ABIS, and the modes it depends on, rely on many vocabularies</p>
 </li>
 <li>
-<p>These are listed in the <a href="#_vocabularies">Vocabularies Section</a> but are published and maintained elsewhere</p>
+<p>These are described in the <a href="#_vocabularies">Vocabularies Section</a> but are published and maintained elsewhere</p>
 </li>
 </ul>
 </div>
@@ -958,11 +968,21 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </div>
 </li>
 <li>
+<p><strong>Reasoning Rules</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Machine executable rules defined in the <a href="#_reasoning_rules">Reasoning Rules Section</a> that create new information from ABIS data based on logical, ontological, spatial and other reasoning</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p><strong>Data Objects</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#RDF">RDF</a> expressions of this Standard, JSON-LD context files and RDF forms of the mappings are given in the sections that describe the human-readable forms of those objects</p>
+<p><a href="#RDF">RDF</a> expressions of this Standard, JSON-LD context files, examples and RDF forms of mappings etc. are given in the sections that describe the human-readable forms of those objects</p>
 </li>
 </ul>
 </div>
@@ -1969,7 +1989,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code>&lt;https://epsg.io/7843&gt; POINT (123, -45)</code></pre>
+<pre>&lt;https://epsg.io/7843&gt; POINT (123, -45)</pre>
 </div>
 </div>
 </div>
@@ -3026,10 +3046,56 @@ Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.
 <h2 id="_validation"><a class="anchor" href="#_validation"></a>9. Validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><mark>TODO: write this section</mark></p>
+<p>This model implements a validator for data claiming conformance to ABIS to test the claim. Since ABIS data <em>MUST</em> be provided in RDF, only an RDF validator is available and other forms of validation are non-normative.</p>
+</div>
+<div class="sect2">
+<h3 id="_multiple_validators"><a class="anchor" href="#_multiple_validators"></a>9.1. Multiple Validators</h3>
+<div class="paragraph">
+<p>Just as the ABIS model is a collection of models and also inherits model elements from other models (see <a href="#_multiple_models">Multiple Models</a>), so too is the ABIS validator a collection of ABIS-created validators and inherited validation rules. For data to validly conform ABIS, it must also be valid according all these validators. Part use of ABIS may choose to be valid according to only some ABIS validators.</p>
 </div>
 <div class="paragraph">
-<p>Pinch from Geochem Spec</p>
+<p>The following table lists all the validators relevant to ABIS and describes their roles.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even" style="width: 30%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Validator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Compounded Validator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All the validators relevant to ABIS, compounded into one</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Validator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validation rules implemented by ABIS only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Project Model Validator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validation rules implemented by the <a href="#_projects_model">Projects Model</a> only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Release Model Validator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validation rules implemented by the <a href="#_data_release_model">Data Release Model</a> only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_performing_validation"><a class="anchor" href="#_performing_validation"></a>9.2. Performing Validation</h3>
+
 </div>
 </div>
 </div>
@@ -3045,23 +3111,27 @@ Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.
 <h2 id="_reasoning_rules"><a class="anchor" href="#_reasoning_rules"></a>11. Reasoning Rules</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section contains rules that ABIS-compliant systems must implement. The rules result in the creation of new data based on logical, ontological, spatial and other reasoning.</p>
+<p>This section contains rules that ABIS-compliant systems must implement. The rules are machine executable rules that create new information from ABIS data based on logical, ontological, spatial and other reasoning.</p>
 </div>
-<div class="paragraph">
-<p>For example,</p>
+<div class="sect2">
+<h3 id="_how_rules_work"><a class="anchor" href="#_how_rules_work"></a>11.1. How Rules Work</h3>
+
 </div>
-<h3 id="_spatial_reasoning" class="discrete">Spatial Reasoning</h3>
+<div class="sect2">
+<h3 id="_rule_list"><a class="anchor" href="#_rule_list"></a>11.2. Rule List</h3>
+<h4 id="_spatial_reasoning" class="discrete">Spatial Reasoning</h4>
 <div class="paragraph">
 <p>The following spatial reasoning rules will be applied to ABIS data.</p>
 </div>
-<h4 id="_centroids_and_bounding_boxes_from_boundaries" class="discrete">Centroids and Bounding Boxes from Boundaries</h4>
-<h4 id="_datasets_containment_of_surveys" class="discrete"><code>Datasets</code> containment of <code>Surveys</code></h4>
-<h4 id="_surveys_containment_of_observations" class="discrete"><code>Surveys</code> containment of <code>Observations</code></h4>
-<h4 id="_inference_of_geometry_literal_datatypes_from_geosparql_predicates" class="discrete">Inference of geometry literal datatypes from GeoSPARQL predicates</h4>
-<h3 id="_temporal_reasoning" class="discrete">Temporal Reasoning</h3>
-<h4 id="_inference_of_datetime_literal_datatypes_from_time_predicates" class="discrete">Inference of date/time literal datatypes from TIME predicates</h4>
+<h5 id="_centroids_and_bounding_boxes_from_boundaries" class="discrete">Centroids and Bounding Boxes from Boundaries</h5>
+<h5 id="_datasets_containment_of_surveys" class="discrete"><code>Datasets</code> containment of <code>Surveys</code></h5>
+<h5 id="_surveys_containment_of_observations" class="discrete"><code>Surveys</code> containment of <code>Observations</code></h5>
+<h5 id="_inference_of_geometry_literal_datatypes_from_geosparql_predicates" class="discrete">Inference of geometry literal datatypes from GeoSPARQL predicates</h5>
+<h4 id="_temporal_reasoning" class="discrete">Temporal Reasoning</h4>
+<h5 id="_inference_of_datetime_literal_datatypes_from_time_predicates" class="discrete">Inference of date/time literal datatypes from TIME predicates</h5>
 <div class="paragraph">
 <p><mark>TODO: complete this section</mark></p>
+</div>
 </div>
 </div>
 </div>
@@ -4868,7 +4938,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-07-10 11:33:07 UTC
+Last updated 2024-07-11 02:12:16 UTC
 </div>
 </div>
 </body>
