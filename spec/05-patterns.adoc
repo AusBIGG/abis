@@ -565,6 +565,8 @@ If the average colour of a whole area of bushland was considered, the _feature o
 .Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn't affect its status as a Feature of Interest with respect to an Observation.
 image::img/pattern-foi.svg[ABIS Parts,width=650,align="center"]
 
-=== Site hierarchy and types
+=== Sites
+
+_coming_
 
 
