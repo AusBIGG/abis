@@ -247,7 +247,6 @@ The TERN Ontology uses some PROV classes directly:
 | https://www.w3.org/TR/prov-o/#Attribution[prov:Attribution]
 |===
 
-
 It required that these classes indicate https://www.w3.org/TR/prov-o/#Agent[prov:Agent] & https://www.w3.org/TR/prov-o/#Role[prov:Role] instances and that Association may also indicate a https://www.w3.org/TR/prov-o/#Plan[prov:Plan].
 
 It also defines the following relations to <<PROV, PROV>>:
@@ -351,6 +350,111 @@ ex:obs-1
 ----
 
 ==== Darwin Core Terms
+
+The TERN Ontology makes the following mappings to <<Darwin Core Terms, Darwin Core Terms>> elements:
+
+|===
+| From Element | Mapping Relation | To Element
+
+3+| *Classes*
+| https://w3id.org/tern/ontologies/tern/MaterialSample[tern:MaterialSample] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://dwc.tdwg.org/list/#dwc_MaterialSample[dwc:MaterialSample]
+|===
+
+and
+
+[width="25%"]
+|===
+| Used Directly
+
+| *Predicates*
+| https://dwc.tdwg.org/list/#dwc_materialSampleID[dwc:materialSampleID]
+|===
+
+This predicate is to be used on the class https://w3id.org/tern/ontologies/tern/MaterialSample[tern:MaterialSample].
+
+Additionally, the TERN Ontology validator indicates use of the following predicates:
+
+[width="50%"]
+|===
+| Used Directly
+
+| *Predicates*
+| http://rs.tdwg.org/dwc/terms/acceptedNameUsage[dwc:acceptedNameUsage]
+| http://rs.tdwg.org/dwc/terms/acceptedNameUsageID[dwc:acceptedNameUsageID]
+| http://rs.tdwg.org/dwc/terms/class[dwc:class]
+| http://rs.tdwg.org/dwc/terms/cultivarEpithet[dwc:cultivarEpithet]
+| http://rs.tdwg.org/dwc/terms/family[dwc:family]
+| http://rs.tdwg.org/dwc/terms/genericName[dwc:genericName]
+| http://rs.tdwg.org/dwc/terms/genus[dwc:genus]
+| http://rs.tdwg.org/dwc/terms/higherClassification[dwc:higherClassification]
+| http://rs.tdwg.org/dwc/terms/infragenericEpithet[dwc:infragenericEpithet]
+| http://rs.tdwg.org/dwc/terms/infraspecificEpithet[dwc:infraspecificEpithet]
+| http://rs.tdwg.org/dwc/terms/kingdom[dwc:kingdom]
+| http://rs.tdwg.org/dwc/terms/nameAccordingTo[dwc:nameAccordingTo]
+| http://rs.tdwg.org/dwc/terms/nameAccordingToID[dwc:nameAccordingToID]
+| http://rs.tdwg.org/dwc/terms/namePublishedIn[dwc:namePublishedIn]
+| http://rs.tdwg.org/dwc/terms/namePublishedInID[dwc:namePublishedInID]
+| http://rs.tdwg.org/dwc/terms/namePublishedInYear[dwc:namePublishedInYear]
+| http://rs.tdwg.org/dwc/terms/nomenclaturalCode[dwc:nomenclaturalCode]
+| http://rs.tdwg.org/dwc/terms/nomenclaturalStatus[dwc:nomenclaturalStatus]
+| http://rs.tdwg.org/dwc/terms/order[dwc:order]
+| http://rs.tdwg.org/dwc/terms/originalNameUsage[dwc:originalNameUsage]
+| http://rs.tdwg.org/dwc/terms/originalNameUsageID[dwc:originalNameUsageID]
+| http://rs.tdwg.org/dwc/terms/parentNameUsage[dwc:parentNameUsage]
+| http://rs.tdwg.org/dwc/terms/parentNameUsageID[dwc:parentNameUsageID]
+| http://rs.tdwg.org/dwc/terms/phylum[dwc:phylum]
+| http://rs.tdwg.org/dwc/terms/scientificName[dwc:scientificName]
+| http://rs.tdwg.org/dwc/terms/scientificNameAuthorship[dwc:scientificNameAuthorship]
+| http://rs.tdwg.org/dwc/terms/scientificNameID[dwc:scientificNameID]
+| http://rs.tdwg.org/dwc/terms/specificEpithet[dwc:specificEpithet]
+| http://rs.tdwg.org/dwc/terms/subfamily[dwc:subfamily]
+| http://rs.tdwg.org/dwc/terms/subgenus[dwc:subgenus]
+| http://rs.tdwg.org/dwc/terms/taxonConceptID[dwc:taxonConceptID]
+| http://rs.tdwg.org/dwc/terms/taxonID[dwc:taxonID]
+| http://rs.tdwg.org/dwc/terms/taxonRank[dwc:taxonRank]
+| http://rs.tdwg.org/dwc/terms/taxonRemarks[dwc:taxonRemarks]
+| http://rs.tdwg.org/dwc/terms/taxonomicStatus[dwc:taxonomicStatus]
+| http://rs.tdwg.org/dwc/terms/verbatimTaxonRank[dwc:verbatimTaxonRank]
+| http://rs.tdwg.org/dwc/terms/vernacularName[dwc:vernacularName]
+|===
+
+All of these predicates are to be used on the class https://w3id.org/tern/ontologies/tern/Taxon[tern:Taxon].
+
+The following mappings to non-deprecated Darwin Core Terms classes can be made from the TERN Ontology by following simple name similarities, shared definitions and shared higher order mappings to <<PROV, PROV>>:
+
+////
+
+
+////
+|===
+| From Element | Mapping Relation | To Element
+
+3+| *Classes*
+| https://w3id.org/tern/ontologies/tern/Intervention[tern:Intervention] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://dwc.tdwg.org/list/#dwc_Event[dwc:Event]
+| https://w3id.org/tern/ontologies/tern/Observation[tern:Observation] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://dwc.tdwg.org/list/#dwc_Event[dwc:Event]
+| https://w3id.org/tern/ontologies/tern/Sampling[tern:Sampling] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://dwc.tdwg.org/list/#dwc_Event[dwc:Event]
+| https://w3id.org/tern/ontologies/tern/SiteVisit[tern:SiteVisit] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://dwc.tdwg.org/list/#dwc_Event[dwc:Event]
+| https://dwc.tdwg.org/list/#dwc_FossilSpecimen[dwc:FossilSpecimen] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Sample[tern:Sample]
+| https://dwc.tdwg.org/list/#dwc_GeologicalContext[dwc:GeologicalContext] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest]
+| https://dwc.tdwg.org/list/#dwc_HumanObservation[dwc:HumanObservation] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Observation[tern:Observation]
+| https://dwc.tdwg.org/list/#dwc_Identification[dwc:Identification] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Observation[tern:Observation]
+| https://dwc.tdwg.org/list/#dwc_LivingSpecimen[dwc:LivingSpecimen] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Sample[tern:Sample]
+| https://dwc.tdwg.org/list/#dwc_Location[dwc:Location] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest]
+| https://dwc.tdwg.org/list/#dwc_MachineObservation[dwc:MachineObservation] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Observation[tern:Observation]
+| https://dwc.tdwg.org/list/#dwc_MaterialCitation[dwc:MaterialCitation] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://schema.org/CreativeWork[schema:CreativeWork]
+| https://dwc.tdwg.org/list/#dwc_MaterialEntity[dwc:MaterialEntity] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest]
+| https://dwc.tdwg.org/list/#dwc_MaterialSample[dwc:MaterialSample] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Sample[tern:Sample]
+| https://dwc.tdwg.org/list/#dwc_MeasurementOrFact[dwc:MeasurementOrFact] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Value[tern:Value]
+| https://w3id.org/tern/ontologies/tern/Taxon[tern:Taxon] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://dwc.tdwg.org/list/#dwc_Organism[dwc:Organism]
+| https://dwc.tdwg.org/list/#dwc_PreservedSpecimen[dwc:PreservedSpecimen] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Sample[tern:Sample]
+| https://w3id.org/tern/ontologies/tern/Taxon[tern:Taxon] | https://www.w3.org/TR/owl2-primer/#a_EquivalentClasses[owl:equivalentClass] | https://dwc.tdwg.org/list/#dwc_Taxon[dwc:Taxon]
+| https://dwc.tdwg.org/list/#dwc_UseWithIRI[dwc:UseWithIRI] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/shacl/#syntax-rule-nodeKind-in[sh:BlankNodeOrIRI]
+|===
+
+The following Darwin Core Terms classes have more complex mappings:
+
+* https://dwc.tdwg.org/list/#dwc_Occurrence[dwc:Occurrence]
+* https://dwc.tdwg.org/list/#dwc_ResourceRelationship[dwc:ResourceRelationship]
 
 
 
