@@ -1,3 +1,357 @@
 == Mappings
 
-#TODO: write this section#
+This section lists mappings between ABIS and related models. These are conceptual mappings that either show model element equivalence - ABIS Class X is equivalent to Other Model Class Y - or transformations for equivalence - or calculations that lead to equivalence.
+
+For each mapping given here, an RDF mapping file is also provided when the target of the mapping is also a Semantic Web model. The files are linked to in each section.
+
+=== Background Models
+
+ABIS background models such as <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> and <<GSP, GeoSPARQL>> are mapped to from ABIS foreground data in a simple manner: since all TERN Ontology/ABIS class objects are specialised versions of the background model's classes, if a background model export is needed, ABIS data can either be sent as-is and the receiver can then infer generic objects from specialised ones, or we could perform the inference and export objects according to that model only.
+
+The following methodology for export of ABIS data according to a SOSA will work with all background models.
+
+==== SOSA
+
+ABIS foreground model's mappings to the <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> and also SOSA's parent, the https://www.w3.org/TR/vocab-ssn/[Semantic Sensor Network Ontology] are established by following defined relations between elements such as subclass and subproperty relations. The following mapping table to SOSA/SSN from the TERN ontology can be produced by querying the TERN Ontology with this query:
+
+[sparql]
+----
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?from ?relation ?to
+WHERE {
+    VALUES ?relation {
+        rdfs:subClassOf
+        rdfs:subPropertyOf
+    }
+    ?from ?relation ?to .
+
+    FILTER REGEX(STR(?to), "ssn|sosa")
+} ORDER BY ?c
+----
+
+The query above produces the following results:
+
+|===
+| From Element | Mapping Relation | To Element
+
+3+| *Classes*
+| https://w3id.org/tern/ontologies/tern/Attribute[tern:Attribute]             | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SSNProperty[ssn:Property]
+| https://w3id.org/tern/ontologies/tern/Deployment[tern:Deployment]            | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SSNDeployment[ssn:Deployment]
+| https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest]     | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSAFeatureOfInterest[ssn:FeatureOfInterest]
+| https://w3id.org/tern/ontologies/tern/Input[tern:Input]                 | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SSNInput[ssn:Input]
+| https://w3id.org/tern/ontologies/tern/ObservableProperty[tern:ObservableProperty]    | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty[sosa:ObservableProperty]
+| https://w3id.org/tern/ontologies/tern/Observation[tern:Observation]           | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSAObservation[sosa:Observation]
+| https://w3id.org/tern/ontologies/tern/ObservationCollection[tern:ObservationCollection] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSAObservationCollection[sosa:ObservationCollection]
+| https://w3id.org/tern/ontologies/tern/Platform[tern:Platform]              | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSAPlatform[sosa:Platform]
+| https://w3id.org/tern/ontologies/tern/Procedure[tern:Procedure]             | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSAProcedure[sosa:Procedure]
+| https://w3id.org/tern/ontologies/tern/Result[tern:Result]                | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSAResult[sosa:Result]
+| https://w3id.org/tern/ontologies/tern/Sample[tern:Sample]                | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSASample[sosa:Sample]
+| https://w3id.org/tern/ontologies/tern/Sampler[tern:Sampler]               | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSASampler[sosa:Sampler]
+| https://w3id.org/tern/ontologies/tern/Sampling[tern:Sampling]              | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSASampling[sosa:Sampling]
+| https://w3id.org/tern/ontologies/tern/Sensor[tern:Sensor]                | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SOSASensor[sosa:Sensor]
+| https://w3id.org/tern/ontologies/tern/System[tern:System]                | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SSNSystem[ssn:System]
+
+3+| *Predicates*
+| https://w3id.org/tern/ontologies/tern/hasAttribute[tern:hasAttribute]          | http://www.w3.org/2000/01/rdf-schema#subPropertyOf[rdfs:subPropertyOf] | https://www.w3.org/TR/vocab-ssn/#SSNhasProperty[ssn:hasProperty]
+|===
+
+The TERN Ontology uses many SOSA predicated directly too:
+
+[width="25%"]
+|===
+| Used Directly
+
+| *Predicates*
+| https://www.w3.org/TR/vocab-ssn/#SOSAhasFeatureOfInterest[sosa:hasFeatureOfInterest]
+| https://www.w3.org/TR/vocab-ssn/#SOSAhasMember[sosa:hasMember]
+| https://www.w3.org/TR/vocab-ssn/#SOSAhasResult[sosa:hasResult]
+| https://www.w3.org/TR/vocab-ssn/#SOSAhasSample[sosa:hasSample]
+| https://www.w3.org/TR/vocab-ssn/#SOSAhasSimpleResult[sosa:hasSimpleResult]
+| https://www.w3.org/TR/vocab-ssn/#SOSAhasUltimateFeatureOfInterest[sosa:hasUltimateFeatureOfInterest]
+| https://www.w3.org/TR/vocab-ssn/#SOSAisFeatureOfInterestOf[sosa:isFeatureOfInterestOf]
+| https://www.w3.org/TR/vocab-ssn/#SOSAisHostedBy[sosa:isHostedBy]
+| https://www.w3.org/TR/vocab-ssn/#SOSAisResultOf[sosa:isResultOf]
+| https://www.w3.org/TR/vocab-ssn/#SOSAisSampleOf[sosa:isSampleOf]
+| https://www.w3.org/TR/vocab-ssn/#SOSAmadeBySampler[sosa:madeBySampler]
+| https://www.w3.org/TR/vocab-ssn/#SOSAmadeBySensor[sosa:madeBySensor]
+| https://www.w3.org/TR/vocab-ssn/#SOSAmadeObservation[sosa:madeObservation]
+| https://www.w3.org/TR/vocab-ssn/#SOSAmadeSampling[sosa:madeSampling]
+| https://www.w3.org/TR/vocab-ssn/#SOSAobservedProperty[sosa:observedProperty]
+| https://www.w3.org/TR/vocab-ssn/#SOSAobserves[sosa:observes]
+| https://www.w3.org/TR/vocab-ssn/#SOSAphenomenonTime[sosa:phenomenonTime]
+| https://www.w3.org/TR/vocab-ssn/#SOSAusedProcedure[sosa:usedProcedure]
+|===
+
+In addition to the above tables, many TERN Ontology Classes are subclasses of other TERN Ontology Classes, for example `tern:Site subclass of tern:Sample` and given `tern:Sample subclass of sosa:Sample`, then `tern:Site subclass of sosa:Sample`.
+
+Using the tables and logic above, much TERN Ontology data can be converted to purely SOSA/SSN terms. for the following TERN Ontology data:
+
+[turtle]
+----
+ex:sample-1
+    a tern:Sample ;
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a tern:Site ;
+    sosa:isSampleOf <https://example.com/feature/ultimate-foi> ;
+.
+
+ex:obs-1
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a tern:Integer ;
+        rdf:value 42 ;
+    ] ;
+.
+----
+
+the pure SOSA/SSN data is:
+
+[turtle]
+----
+ex:sample-1
+    a sosa:Sample ;
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a sosa:Sample , sosa:Platform ;
+    sosa:isSampleOf <https://example.com/feature/ultimate-foi> ;
+.
+
+ex:obs-1
+    a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a sosa:Result ;
+        rdf:value 42 ;
+    ] ;
+.
+----
+
+==== GeoSPARQL
+
+Conversion of ABIS data to pure GeoSPARQL may be needed to understand how SOSA data can be spatially indexed, given that most spatially-enabled triplestores only spatially index GoSPARQL values.
+
+The following SPARQL query applied to the TERN Ontology produces the table that follows:
+
+[sparql]
+----
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?from ?relation ?to
+WHERE {
+    VALUES ?relation {
+        rdfs:subClassOf
+        rdfs:subPropertyOf
+    }
+    ?from ?relation ?to .
+
+    FILTER REGEX(STR(?to), "geosparql")
+} ORDER BY ?c
+----
+
+|===
+| From Element | Mapping Relation | To Element
+
+3+| *Predicates*
+| https://w3id.org/tern/ontologies/tern/centroidPoint[tern:centroidPoint]         | http://www.w3.org/2000/01/rdf-schema#subPropertyOf[rdfs:subPropertyOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_property_geohasgeometry[geo:hasGeometry]
+| https://w3id.org/tern/ontologies/tern/sampleStorageLocation[tern:sampleStorageLocation] | http://www.w3.org/2000/01/rdf-schema#subPropertyOf[rdfs:subPropertyOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_property_geohasgeometry[geo:hasGeometry]
+| https://w3id.org/tern/ontologies/tern/swPoint[tern:swPoint]               | http://www.w3.org/2000/01/rdf-schema#subPropertyOf[rdfs:subPropertyOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_property_geohasgeometry[geo:hasGeometry]
+|===
+
+Additionally, the SHACL constraints of the TERN Ontology (see <<Validation, Validation>>) require that a number of TERN Ontology classes be allowed to indicate a https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geogeometry[geo:Geometry] which, by GeoSPARQL reasoning, makes them subclasses of https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature[geo:Feature].
+
+|===
+| From Element | Mapping Relation | To Element
+
+3+| *Classes*
+| https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature[geo:Feature]
+| https://w3id.org/tern/ontologies/tern/MaterialSample[tern:MaterialSample] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature[geo:Feature]
+| https://w3id.org/tern/ontologies/tern/Observation[tern:Observation]         | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature[geo:Feature]
+| https://w3id.org/tern/ontologies/tern/Sample[tern:Sample] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature[geo:Feature]
+| https://w3id.org/tern/ontologies/tern/Sampling[tern:Sampling]               | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature[geo:Feature]
+| https://w3id.org/tern/ontologies/tern/Site[tern:Site]               | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature[geo:Feature]
+| https://w3id.org/tern/ontologies/tern/Transect[tern:Transect] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature[geo:Feature]
+|===
+
+Further, by the nature of sample, we can make the following SOSA &rarr; GeoSPARQL predicate mappings:
+
+|===
+| From Element | Mapping Relation | To Element
+
+3+| *Predicates*
+| https://www.w3.org/TR/vocab-ssn/#SSNhasFeatureOfInterest[ssn:hasFeatureOfInterest]         | http://www.w3.org/2000/01/rdf-schema#subPropertyOf[rdfs:subPropertyOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_simple_features_relation_family[geo:sfWithin]
+| https://www.w3.org/TR/vocab-ssn/#SSNisSampleOf[ssn:isSampleOf]         | http://www.w3.org/2000/01/rdf-schema#subPropertyOf[rdfs:subPropertyOf] | https://docs.ogc.org/is/22-047r1/22-047r1.html#_simple_features_relation_family[geo:sfWithin]
+
+|===
+
+Here is the same dummy TERN Ontology data used in the SOSA mapping above:
+
+[turtle]
+----
+ex:sample-1
+    a tern:Sample ;
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a tern:Site ;
+    sosa:isSampleOf <https://example.com/feature/ultimate-foi> ;
+.
+
+ex:obs-1
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a tern:Integer ;
+        rdf:value 42 ;
+    ] ;
+.
+----
+
+The above, now rendered in purely GeoSPARQL terms from the 3 above mapping tables:
+
+[turtle]
+----
+ex:sample-1
+    a geo:Feature ;
+    geo:sfWithin ex:site-1 ;
+.
+
+ex:site-1
+    a geo:Feature ;
+    geo:sfWithin <https://example.com/feature/ultimate-foi> ;
+.
+
+ex:obs-1
+    a geo:Feature ;
+    geo:sfWithin ex:sample-1 ;
+.
+----
+
+==== PROV
+
+The TERN Ontology uses some PROV classes directly:
+
+[width="25%"]
+|===
+| Used Directly
+
+| *Classes*
+| https://www.w3.org/TR/prov-o/#Association[prov:Association]
+| https://www.w3.org/TR/prov-o/#Attribution[prov:Attribution]
+|===
+
+
+It required that these classes indicate https://www.w3.org/TR/prov-o/#Agent[prov:Agent] & https://www.w3.org/TR/prov-o/#Role[prov:Role] instances and that Association may also indicate a https://www.w3.org/TR/prov-o/#Plan[prov:Plan].
+
+It also defines the following relations to <<PROV, PROV>>:
+
+|===
+| From Element | Mapping Relation | To Element
+
+3+| *Classes*
+| https://w3id.org/tern/ontologies/tern/Intervention[tern:Intervention] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Activity[prov:Activity]
+| https://w3id.org/tern/ontologies/tern/Observation[tern:Observation]  | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Activity[prov:Activity]
+| https://w3id.org/tern/ontologies/tern/Sampling[tern:Sampling]     | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Activity[prov:Activity]
+| https://w3id.org/tern/ontologies/tern/SiteVisit[tern:SiteVisit]    | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Activity[prov:Activity]
+|===
+
+Each of these classes _MAY_ indicate an https://www.w3.org/TR/prov-o/#Association[prov:Association] (to an https://www.w3.org/TR/prov-o/#Agent[prov:Agent]) via either https://www.w3.org/TR/prov-o/#wasAssociatedWith[prov:wasAssociatedWith] or https://www.w3.org/TR/prov-o/#qualifiedAssociation[prov:qualifiedAssociation].
+
+The TERN Ontology does not define any mappings to PROV's `Agent` or `Entity` classes directly, however the TERN Validator does use https://www.w3.org/TR/prov-o/#Agent[prov:Agent] and we can infer the following class relations from SOSA's https://www.w3.org/TR/vocab-ssn/#PROV_Alignment[PROV Alignment]:
+
+|===
+| From Element | Mapping Relation | To Element
+
+3+| *Classes*
+| https://w3id.org/tern/ontologies/tern/RDFDataset[tern:RDFDataset] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/MaterialSample[tern:MaterialSample] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/Result[tern:Result] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/Sample[tern:Sample] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/Site[tern:Site]               | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/Transect[tern:Transect] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/Attribute[tern:Attribute]             | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+// | https://w3id.org/tern/ontologies/tern/Deployment[tern:Deployment]            | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/vocab-ssn/#SSNDeployment[ssn:Deployment]
+| https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest]     | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/Input[tern:Input]                 | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/ObservableProperty[tern:ObservableProperty]    | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+// | https://w3id.org/tern/ontologies/tern/ObservationCollection[tern:ObservationCollection] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/Platform[tern:Platform]              | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/Procedure[tern:Procedure]             | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Plan[prov:Plan]
+| https://w3id.org/tern/ontologies/tern/Result[tern:Result]                | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/Sampler[tern:Sampler]               | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Agent[prov:Agent]
+| https://w3id.org/tern/ontologies/tern/Sensor[tern:Sensor]                | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Agent[prov:Agent]
+| https://w3id.org/tern/ontologies/tern/System[tern:System]                | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Agent[prov:Agent]
+|===
+
+Subclasses of https://www.w3.org/TR/prov-o/#Entity[prov:Entity] _MAY_ always, according to PROV, indicate an https://www.w3.org/TR/prov-o/#Attribution[prov:Attribution] (to an https://www.w3.org/TR/prov-o/#Agent[prov:Agent]) via either https://www.w3.org/TR/prov-o/#wasAttributedTo[prov:wasAttributedTo] or https://www.w3.org/TR/prov-o/#qualifiedAttribution[prov:qualifiedAttribution], but in TERN Ontology, this information is only ever expected for https://w3id.org/tern/ontologies/tern/RDFDataset[tern:RDFDataset] objects.
+
+There are also SOSA predicate to PROV predicate mappings given in SOSA's https://www.w3.org/TR/vocab-ssn/#PROV_Alignment[PROV Alignment], for example:
+
+|===
+| From Element | Mapping Relation | To Element
+
+3+| *Predicates*
+| https://www.w3.org/TR/vocab-ssn/#SOSAisSampleOf[sosa:isSampleOf] | http://www.w3.org/2000/01/rdf-schema#subPropertyOf[rdfs:subPropertyOf] | https://www.w3.org/TR/prov-o/#wasDerivedFrom[prov:wasDerivedFrom]
+|===
+
+Using all of these mappings, the TERN Ontology data:
+
+[turtle]
+----
+ex:sample-1
+    a tern:Sample ;
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a tern:Site ;
+    sosa:isSampleOf <https://example.com/feature/ultimate-foi> ;
+.
+
+ex:obs-1
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a tern:Integer ;
+        rdf:value 42 ;
+    ] ;
+.
+----
+
+maps to the following PROV data:
+
+[turtle]
+----
+ex:sample-1
+    a prov:Entity ;
+    prov:wasDerivedFrom ex:site-1 ;
+.
+
+ex:site-1
+    a prov:Entity ;
+    prov:wasDerivedFrom <https://example.com/feature/ultimate-foi> ;
+.
+
+ex:obs-1
+    a prov:Activity ;
+    prov:used ex:sample-1 ;
+    prov:generated [
+        a prov:Entity ;
+        rdf:value 42 ;
+    ] ;
+.
+----
+
+==== Darwin Core Terms
+
+
+
+=== GBIF New Data Model
