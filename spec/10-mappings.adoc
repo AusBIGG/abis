@@ -351,7 +351,18 @@ ex:obs-1
 
 ==== Darwin Core Terms
 
-The TERN Ontology makes the following mappings to <<Darwin Core Terms, Darwin Core Terms>> elements:
+ABIS uses the following <<Darwin Core Terms, Darwin Core Terms>>  class directly:
+
+
+[width="25%"]
+|===
+| Used Directly
+
+| *Classes*
+| https://dwc.tdwg.org/list/#dwc_Occurrence[dwc:Occurence]
+|===
+
+The <<TERNOntology, TERN Ontology>> makes the following mappings to <<Darwin Core Terms, Darwin Core Terms>> elements:
 
 |===
 | From Element | Mapping Relation | To Element
@@ -422,10 +433,6 @@ All of these predicates are to be used on the class https://w3id.org/tern/ontolo
 
 The following mappings to non-deprecated Darwin Core Terms classes can be made from the TERN Ontology by following simple name similarities, shared definitions and shared higher order mappings to <<PROV, PROV>>:
 
-////
-
-
-////
 |===
 | From Element | Mapping Relation | To Element
 
@@ -443,7 +450,7 @@ The following mappings to non-deprecated Darwin Core Terms classes can be made f
 | https://dwc.tdwg.org/list/#dwc_MachineObservation[dwc:MachineObservation] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Observation[tern:Observation]
 | https://dwc.tdwg.org/list/#dwc_MaterialCitation[dwc:MaterialCitation] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://schema.org/CreativeWork[schema:CreativeWork]
 | https://dwc.tdwg.org/list/#dwc_MaterialEntity[dwc:MaterialEntity] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest]
-| https://dwc.tdwg.org/list/#dwc_MaterialSample[dwc:MaterialSample] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Sample[tern:Sample]
+| https://w3id.org/tern/ontologies/tern/MaterialSample[tern:MaterialSample] | https://www.w3.org/TR/owl2-primer/#a_EquivalentClasses[owl:equivalentClass] | https://dwc.tdwg.org/list/#dwc_MaterialSample[dwc:MaterialSample]
 | https://dwc.tdwg.org/list/#dwc_MeasurementOrFact[dwc:MeasurementOrFact] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Value[tern:Value]
 | https://w3id.org/tern/ontologies/tern/Taxon[tern:Taxon] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://dwc.tdwg.org/list/#dwc_Organism[dwc:Organism]
 | https://dwc.tdwg.org/list/#dwc_PreservedSpecimen[dwc:PreservedSpecimen] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://w3id.org/tern/ontologies/tern/Sample[tern:Sample]
@@ -451,11 +458,64 @@ The following mappings to non-deprecated Darwin Core Terms classes can be made f
 | https://dwc.tdwg.org/list/#dwc_UseWithIRI[dwc:UseWithIRI] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/shacl/#syntax-rule-nodeKind-in[sh:BlankNodeOrIRI]
 |===
 
-The following Darwin Core Terms classes have more complex mappings:
+The following Darwin Core Terms class has a more complex mappings:
 
-* https://dwc.tdwg.org/list/#dwc_Occurrence[dwc:Occurrence]
 * https://dwc.tdwg.org/list/#dwc_ResourceRelationship[dwc:ResourceRelationship]
 
+https://dwc.tdwg.org/list/#dwc_ResourceRelationship[dwc:ResourceRelationship] is a "A relationship of one rdfs:Resource to another". This means that all predicates in ABIs are `dcw:ResourceRelationship` objects.
 
+`dcw:ResourceRelationship` is a Class therefore the general relationship between ABIS elements and it is:
+
+`{ABIS-element} rdfs:subPropertyOf dcw:ResourceRelationship`... if we treat `dcw:ResourceRelationship` as an `rdfs:Property`.
+
+It is likely there is little to be gained implementing this mapping.
+
+Using all of these mappings, the ABIS data:
+
+[turtle]
+----
+ex:sample-1
+    a tern:MaterialSample ;
+    schema:additionalType <http://linked.data.gov.au/def/tern-cv/4b36a1ab-7a77-49ca-866a-e68bce2db9e5> ;  # plant matter
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a tern:Site ;
+    sosa:isSampleOf <https://example.com/feature/ultimate-foi> ;
+.
+
+ex:obs-1
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a tern:Taxon ;
+        rdf:value <https://id.biodiversity.org.au/455721> ;
+    ] ;
+.
+----
+
+maps to the following Darwin Core Terms data:
+
+[turtle]
+----
+ex:sample-1
+    a dwc:LivingSpecimen ;
+    prov:wasDerivedFrom ex:site-1 ;
+.
+
+ex:site-1
+    a dwc:Location ;
+    prov:wasDerivedFrom <https://example.com/feature/ultimate-foi> ;
+.
+
+ex:obs-1
+    a dcw:Identification ;
+    dwc:materialSampleID ex:sample-1 ;
+    dwc:identificationID <https://id.biodiversity.org.au/455721> ;
+.
+----
 
 === GBIF New Data Model
+
+_Coming in July, 2024_
