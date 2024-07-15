@@ -575,7 +575,7 @@ So when we see a _site_ in ABIS, we know that it is the focus of the activity of
 
 Additionally, a TERN/ABIS _site_ is also a form of _sample_ in that the activity at the ecological monitoring is designed to characterise biodiversity at the site where it is representative of an ultimate _feature of interest_ - perhaps a certain kind of habitat. The _site_ might be the entire ultimate _feature of interest_ too in cases where a _site_ is the entire area of concern such as a proposed mine location.
 
-ABIS _site_s _MUST_ have spatiality and temporality indicated as per the <<Spatially, Spatially>> & <<Temporality, Temporality>> patterns above.
+ABIS _site_ s _MUST_ have spatiality and temporality indicated as per the <<Spatially, Spatially>> & <<Temporality, Temporality>> patterns above.
 
 ABIS _site_s _MAY_ have additional information about them (such as sub areas, _transects_, _subplots_, methods used etc.) recorded for them according to particular protocols, such as the https://www.tern.org.au/emsa-protocols-manual[Ecological Monitoring System Australia (EMSA) protocols]. Adherence to such protocols _MAY_ result in addition RDF data being linked to an ANSI _site_ or additional textual or other literal information but it _MUST NOT_ conflict with the ABIS _site_ information requirements.
 
