@@ -733,7 +733,19 @@ pre.rouge {
 <li><a href="#_performing_validation">9.2. Performing Validation</a></li>
 </ul>
 </li>
-<li><a href="#_mappings">10. Mappings</a></li>
+<li><a href="#_mappings">10. Mappings</a>
+<ul class="sectlevel2">
+<li><a href="#_background_models_2">10.1. Background Models</a>
+<ul class="sectlevel3">
+<li><a href="#_sosa">10.1.1. SOSA</a></li>
+<li><a href="#_geosparql">10.1.2. GeoSPARQL</a></li>
+<li><a href="#_prov">10.1.3. PROV</a></li>
+<li><a href="#_darwin_core_terms">10.1.4. Darwin Core Terms</a></li>
+</ul>
+</li>
+<li><a href="#_gbif_new_data_model">10.2. GBIF New Data Model</a></li>
+</ul>
+</li>
 <li><a href="#_reasoning_rules">11. Reasoning Rules</a>
 <ul class="sectlevel2">
 <li><a href="#_how_rules_work">11.1. How Rules Work</a></li>
@@ -2423,10 +2435,10 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>Additionally, a TERN/ABIS <em>site</em> is also a form of <em>sample</em> in that the activity at the ecological monitoring is designed to characterise biodiversity at the site where it is representative of an ultimate <em>feature of interest</em> - perhaps a certain kind of habitat. The <em>site</em> might be the entire ultimate <em>feature of interest</em> too in cases where a <em>site</em> is the entire area of concern such as a proposed mine location.</p>
 </div>
 <div class="paragraph">
-<p>ABIS <em>site_s _MUST</em> have spatiality and temporality indicated as per the <a href="#_spatially">Spatially</a> &amp; <a href="#_temporality">Temporality</a> patterns above.</p>
+<p>ABIS <em>site</em> s <em>MUST</em> have spatiality and temporality indicated as per the <a href="#_spatially">Spatially</a> &amp; <a href="#_temporality">Temporality</a> patterns above.</p>
 </div>
 <div class="paragraph">
-<p>ABIS <em>site_s _MAY</em> have additional information about them (such as sub areas, <em>transects</em>, <em>subplots</em>, methods used etc.) recorded for them according to particular protocols, such as the <a href="https://www.tern.org.au/emsa-protocols-manual">Ecological Monitoring System Australia (EMSA) protocols</a>. Adherence to such protocols <em>MAY</em> result in addition RDF data being linked to an ANSI <em>site</em> or additional textual or other literal information but it <em>MUST NOT</em> conflict with the ABIS <em>site</em> information requirements.</p>
+<p>ABIS <em>site</em> s <em>MAY</em> have additional information about them (such as sub areas, <em>transects</em>, <em>subplots</em>, methods used etc.) recorded for them according to particular protocols, such as the <a href="https://www.tern.org.au/emsa-protocols-manual">Ecological Monitoring System Australia (EMSA) protocols</a>. Adherence to such protocols <em>MAY</em> result in addition RDF data being linked to an ANSI <em>site</em> or additional textual or other literal information but it <em>MUST NOT</em> conflict with the ABIS <em>site</em> information requirements.</p>
 </div>
 <div class="paragraph">
 <p>Detailed <em>site</em> modelling according to EMSA or similar protocols should result in extension models to ABIS, just as the <a href="#_projects_model">Projects Model</a> is an extension.</p>
@@ -3123,7 +3135,1127 @@ Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.
 <h2 id="_mappings"><a class="anchor" href="#_mappings"></a>10. Mappings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><mark>TODO: write this section</mark></p>
+<p>This section lists mappings between ABIS and related models. These are conceptual mappings that either show model element equivalence - ABIS Class X is equivalent to Other Model Class Y - or transformations for equivalence - or calculations that lead to equivalence.</p>
+</div>
+<div class="paragraph">
+<p>For each mapping given here, an RDF mapping file is also provided when the target of the mapping is also a Semantic Web model. The files are linked to in each section.</p>
+</div>
+<div class="sect2">
+<h3 id="_background_models_2"><a class="anchor" href="#_background_models_2"></a>10.1. Background Models</h3>
+<div class="paragraph">
+<p>ABIS background models such as <a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> and <a href="#GSP">GeoSPARQL</a> are mapped to from ABIS foreground data in a simple manner: since all TERN Ontology/ABIS class objects are specialised versions of the background model&#8217;s classes, if a background model export is needed, ABIS data can either be sent as-is and the receiver can then infer generic objects from specialised ones, or we could perform the inference and export objects according to that model only.</p>
+</div>
+<div class="paragraph">
+<p>The following methodology for export of ABIS data according to a SOSA will work with all background models.</p>
+</div>
+<div class="sect3">
+<h4 id="_sosa"><a class="anchor" href="#_sosa"></a>10.1.1. SOSA</h4>
+<div class="paragraph">
+<p>ABIS foreground model&#8217;s mappings to the <a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> and also SOSA&#8217;s parent, the <a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a> are established by following defined relations between elements such as subclass and subproperty relations. The following mapping table to SOSA/SSN from the TERN ontology can be produced by querying the TERN Ontology with this query:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT ?from ?relation ?to
+WHERE {
+    VALUES ?relation {
+        rdfs:subClassOf
+        rdfs:subPropertyOf
+    }
+    ?from ?relation ?to .
+
+    FILTER REGEX(STR(?to), "ssn|sosa")
+} ORDER BY ?c</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The query above produces the following results:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">From Element</th>
+<th class="tableblock halign-left valign-top">Mapping Relation</th>
+<th class="tableblock halign-left valign-top">To Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Classes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Attribute">tern:Attribute</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SSNProperty">ssn:Property</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Deployment">tern:Deployment</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SSNDeployment">ssn:Deployment</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/FeatureOfInterest">tern:FeatureOfInterest</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAFeatureOfInterest">ssn:FeatureOfInterest</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Input">tern:Input</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SSNInput">ssn:Input</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/ObservableProperty">tern:ObservableProperty</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty">sosa:ObservableProperty</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Observation">tern:Observation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAObservation">sosa:Observation</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/ObservationCollection">tern:ObservationCollection</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAObservationCollection">sosa:ObservationCollection</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Platform">tern:Platform</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform">sosa:Platform</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Procedure">tern:Procedure</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAProcedure">sosa:Procedure</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Result">tern:Result</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAResult">sosa:Result</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sample">tern:Sample</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSASample">sosa:Sample</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sampler">tern:Sampler</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSASampler">sosa:Sampler</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sampling">tern:Sampling</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSASampling">sosa:Sampling</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sensor">tern:Sensor</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/System">tern:System</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SSNSystem">ssn:System</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Predicates</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/hasAttribute">tern:hasAttribute</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SSNhasProperty">ssn:hasProperty</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The TERN Ontology uses many SOSA predicated directly too:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even" style="width: 25%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Used Directly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Predicates</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAhasFeatureOfInterest">sosa:hasFeatureOfInterest</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAhasMember">sosa:hasMember</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAhasResult">sosa:hasResult</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAhasSample">sosa:hasSample</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAhasSimpleResult">sosa:hasSimpleResult</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAhasUltimateFeatureOfInterest">sosa:hasUltimateFeatureOfInterest</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAisFeatureOfInterestOf">sosa:isFeatureOfInterestOf</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAisHostedBy">sosa:isHostedBy</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAisResultOf">sosa:isResultOf</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAisSampleOf">sosa:isSampleOf</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAmadeBySampler">sosa:madeBySampler</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAmadeBySensor">sosa:madeBySensor</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAmadeObservation">sosa:madeObservation</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAmadeSampling">sosa:madeSampling</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAobservedProperty">sosa:observedProperty</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAobserves">sosa:observes</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAphenomenonTime">sosa:phenomenonTime</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAusedProcedure">sosa:usedProcedure</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In addition to the above tables, many TERN Ontology Classes are subclasses of other TERN Ontology Classes, for example <code>tern:Site subclass of tern:Sample</code> and given <code>tern:Sample subclass of sosa:Sample</code>, then <code>tern:Site subclass of sosa:Sample</code>.</p>
+</div>
+<div class="paragraph">
+<p>Using the tables and logic above, much TERN Ontology data can be converted to purely SOSA/SSN terms. for the following TERN Ontology data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:sample-1
+    a tern:Sample ;
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a tern:Site ;
+    sosa:isSampleOf &lt;https://example.com/feature/ultimate-foi&gt; ;
+.
+
+ex:obs-1
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a tern:Integer ;
+        rdf:value 42 ;
+    ] ;
+.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>the pure SOSA/SSN data is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:sample-1
+    a sosa:Sample ;
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a sosa:Sample , sosa:Platform ;
+    sosa:isSampleOf &lt;https://example.com/feature/ultimate-foi&gt; ;
+.
+
+ex:obs-1
+    a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a sosa:Result ;
+        rdf:value 42 ;
+    ] ;
+.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_geosparql"><a class="anchor" href="#_geosparql"></a>10.1.2. GeoSPARQL</h4>
+<div class="paragraph">
+<p>Conversion of ABIS data to pure GeoSPARQL may be needed to understand how SOSA data can be spatially indexed, given that most spatially-enabled triplestores only spatially index GoSPARQL values.</p>
+</div>
+<div class="paragraph">
+<p>The following SPARQL query applied to the TERN Ontology produces the table that follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT ?from ?relation ?to
+WHERE {
+    VALUES ?relation {
+        rdfs:subClassOf
+        rdfs:subPropertyOf
+    }
+    ?from ?relation ?to .
+
+    FILTER REGEX(STR(?to), "geosparql")
+} ORDER BY ?c</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">From Element</th>
+<th class="tableblock halign-left valign-top">Mapping Relation</th>
+<th class="tableblock halign-left valign-top">To Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Predicates</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/centroidPoint">tern:centroidPoint</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_property_geohasgeometry">geo:hasGeometry</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/sampleStorageLocation">tern:sampleStorageLocation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_property_geohasgeometry">geo:hasGeometry</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/swPoint">tern:swPoint</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_property_geohasgeometry">geo:hasGeometry</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Additionally, the SHACL constraints of the TERN Ontology (see <a href="#_validation">Validation</a>) require that a number of TERN Ontology classes be allowed to indicate a <a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geogeometry">geo:Geometry</a> which, by GeoSPARQL reasoning, makes them subclasses of <a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature">geo:Feature</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">From Element</th>
+<th class="tableblock halign-left valign-top">Mapping Relation</th>
+<th class="tableblock halign-left valign-top">To Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Classes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/FeatureOfInterest">tern:FeatureOfInterest</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature">geo:Feature</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/MaterialSample">tern:MaterialSample</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature">geo:Feature</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Observation">tern:Observation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature">geo:Feature</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sample">tern:Sample</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature">geo:Feature</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sampling">tern:Sampling</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature">geo:Feature</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Site">tern:Site</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature">geo:Feature</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Transect">tern:Transect</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_class_geofeature">geo:Feature</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Further, by the nature of sample, we can make the following SOSA &rarr; GeoSPARQL predicate mappings:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">From Element</th>
+<th class="tableblock halign-left valign-top">Mapping Relation</th>
+<th class="tableblock halign-left valign-top">To Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Predicates</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SSNhasFeatureOfInterest">ssn:hasFeatureOfInterest</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_simple_features_relation_family">geo:sfWithin</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SSNisSampleOf">ssn:isSampleOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_simple_features_relation_family">geo:sfWithin</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Here is the same dummy TERN Ontology data used in the SOSA mapping above:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:sample-1
+    a tern:Sample ;
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a tern:Site ;
+    sosa:isSampleOf &lt;https://example.com/feature/ultimate-foi&gt; ;
+.
+
+ex:obs-1
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a tern:Integer ;
+        rdf:value 42 ;
+    ] ;
+.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above, now rendered in purely GeoSPARQL terms from the 3 above mapping tables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:sample-1
+    a geo:Feature ;
+    geo:sfWithin ex:site-1 ;
+.
+
+ex:site-1
+    a geo:Feature ;
+    geo:sfWithin &lt;https://example.com/feature/ultimate-foi&gt; ;
+.
+
+ex:obs-1
+    a geo:Feature ;
+    geo:sfWithin ex:sample-1 ;
+.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prov"><a class="anchor" href="#_prov"></a>10.1.3. PROV</h4>
+<div class="paragraph">
+<p>The TERN Ontology uses some PROV classes directly:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even" style="width: 25%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Used Directly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Classes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Association">prov:Association</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Attribution">prov:Attribution</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>It required that these classes indicate <a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a> &amp; <a href="https://www.w3.org/TR/prov-o/#Role">prov:Role</a> instances and that Association may also indicate a <a href="https://www.w3.org/TR/prov-o/#Plan">prov:Plan</a>.</p>
+</div>
+<div class="paragraph">
+<p>It also defines the following relations to <a href="#PROV">PROV</a>:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">From Element</th>
+<th class="tableblock halign-left valign-top">Mapping Relation</th>
+<th class="tableblock halign-left valign-top">To Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Classes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Intervention">tern:Intervention</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Activity">prov:Activity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Observation">tern:Observation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Activity">prov:Activity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sampling">tern:Sampling</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Activity">prov:Activity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/SiteVisit">tern:SiteVisit</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Activity">prov:Activity</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Each of these classes <em>MAY</em> indicate an <a href="https://www.w3.org/TR/prov-o/#Association">prov:Association</a> (to an <a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a>) via either <a href="https://www.w3.org/TR/prov-o/#wasAssociatedWith">prov:wasAssociatedWith</a> or <a href="https://www.w3.org/TR/prov-o/#qualifiedAssociation">prov:qualifiedAssociation</a>.</p>
+</div>
+<div class="paragraph">
+<p>The TERN Ontology does not define any mappings to PROV&#8217;s <code>Agent</code> or <code>Entity</code> classes directly, however the TERN Validator does use <a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a> and we can infer the following class relations from SOSA&#8217;s <a href="https://www.w3.org/TR/vocab-ssn/#PROV_Alignment">PROV Alignment</a>:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">From Element</th>
+<th class="tableblock halign-left valign-top">Mapping Relation</th>
+<th class="tableblock halign-left valign-top">To Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Classes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/FeatureOfInterest">tern:FeatureOfInterest</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/MaterialSample">tern:MaterialSample</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Result">tern:Result</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sample">tern:Sample</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Site">tern:Site</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Transect">tern:Transect</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Attribute">tern:Attribute</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/FeatureOfInterest">tern:FeatureOfInterest</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Input">tern:Input</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/ObservableProperty">tern:ObservableProperty</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Platform">tern:Platform</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Procedure">tern:Procedure</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Plan">prov:Plan</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Result">tern:Result</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sampler">tern:Sampler</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sensor">tern:Sensor</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/System">tern:System</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Subclasses of <a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a> <em>MAY</em> always, according to PROV, indicate an <a href="https://www.w3.org/TR/prov-o/#Attribution">prov:Attribution</a> (to an <a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a>) via either <a href="https://www.w3.org/TR/prov-o/#wasAttributedTo">prov:wasAttributedTo</a> or <a href="https://www.w3.org/TR/prov-o/#qualifiedAttribution">prov:qualifiedAttribution</a>, but in TERN Ontology, this information is only ever expected for <a href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</a> objects.</p>
+</div>
+<div class="paragraph">
+<p>There are also SOSA predicate to PROV predicate mappings given in SOSA&#8217;s <a href="https://www.w3.org/TR/vocab-ssn/#PROV_Alignment">PROV Alignment</a>, for example:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">From Element</th>
+<th class="tableblock halign-left valign-top">Mapping Relation</th>
+<th class="tableblock halign-left valign-top">To Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Predicates</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-ssn/#SOSAisSampleOf">sosa:isSampleOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#wasDerivedFrom">prov:wasDerivedFrom</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Using all of these mappings, the TERN Ontology data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:sample-1
+    a tern:Sample ;
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a tern:Site ;
+    sosa:isSampleOf &lt;https://example.com/feature/ultimate-foi&gt; ;
+.
+
+ex:obs-1
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a tern:Integer ;
+        rdf:value 42 ;
+    ] ;
+.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>maps to the following PROV data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:sample-1
+    a prov:Entity ;
+    prov:wasDerivedFrom ex:site-1 ;
+.
+
+ex:site-1
+    a prov:Entity ;
+    prov:wasDerivedFrom &lt;https://example.com/feature/ultimate-foi&gt; ;
+.
+
+ex:obs-1
+    a prov:Activity ;
+    prov:used ex:sample-1 ;
+    prov:generated [
+        a prov:Entity ;
+        rdf:value 42 ;
+    ] ;
+.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_darwin_core_terms"><a class="anchor" href="#_darwin_core_terms"></a>10.1.4. Darwin Core Terms</h4>
+<div class="paragraph">
+<p>ABIS uses the following <a href="#_darwin_core_terms">Darwin Core Terms</a>  class directly:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even" style="width: 25%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Used Directly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Classes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_Occurrence">dwc:Occurence</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The <a href="#TERNOntology">TERN Ontology</a> makes the following mappings to <a href="#_darwin_core_terms">Darwin Core Terms</a> elements:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">From Element</th>
+<th class="tableblock halign-left valign-top">Mapping Relation</th>
+<th class="tableblock halign-left valign-top">To Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Classes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/MaterialSample">tern:MaterialSample</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_MaterialSample">dwc:MaterialSample</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>and</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even" style="width: 25%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Used Directly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Predicates</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_materialSampleID">dwc:materialSampleID</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This predicate is to be used on the class <a href="https://w3id.org/tern/ontologies/tern/MaterialSample">tern:MaterialSample</a>.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, the TERN Ontology validator indicates use of the following predicates:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even" style="width: 50%;">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Used Directly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Predicates</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/acceptedNameUsage">dwc:acceptedNameUsage</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/acceptedNameUsageID">dwc:acceptedNameUsageID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/class">dwc:class</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/cultivarEpithet">dwc:cultivarEpithet</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/family">dwc:family</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/genericName">dwc:genericName</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/genus">dwc:genus</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/higherClassification">dwc:higherClassification</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/infragenericEpithet">dwc:infragenericEpithet</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/infraspecificEpithet">dwc:infraspecificEpithet</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/kingdom">dwc:kingdom</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/nameAccordingTo">dwc:nameAccordingTo</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/nameAccordingToID">dwc:nameAccordingToID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/namePublishedIn">dwc:namePublishedIn</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/namePublishedInID">dwc:namePublishedInID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/namePublishedInYear">dwc:namePublishedInYear</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/nomenclaturalCode">dwc:nomenclaturalCode</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/nomenclaturalStatus">dwc:nomenclaturalStatus</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/order">dwc:order</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/originalNameUsage">dwc:originalNameUsage</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/originalNameUsageID">dwc:originalNameUsageID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/parentNameUsage">dwc:parentNameUsage</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/parentNameUsageID">dwc:parentNameUsageID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/phylum">dwc:phylum</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/scientificName">dwc:scientificName</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/scientificNameAuthorship">dwc:scientificNameAuthorship</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/scientificNameID">dwc:scientificNameID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/specificEpithet">dwc:specificEpithet</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/subfamily">dwc:subfamily</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/subgenus">dwc:subgenus</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/taxonConceptID">dwc:taxonConceptID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/taxonID">dwc:taxonID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/taxonRank">dwc:taxonRank</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/taxonRemarks">dwc:taxonRemarks</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/taxonomicStatus">dwc:taxonomicStatus</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/verbatimTaxonRank">dwc:verbatimTaxonRank</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rs.tdwg.org/dwc/terms/vernacularName">dwc:vernacularName</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>All of these predicates are to be used on the class <a href="https://w3id.org/tern/ontologies/tern/Taxon">tern:Taxon</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following mappings to non-deprecated Darwin Core Terms classes can be made from the TERN Ontology by following simple name similarities, shared definitions and shared higher order mappings to <a href="#PROV">PROV</a>:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">From Element</th>
+<th class="tableblock halign-left valign-top">Mapping Relation</th>
+<th class="tableblock halign-left valign-top">To Element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Classes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Intervention">tern:Intervention</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_Event">dwc:Event</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Observation">tern:Observation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_Event">dwc:Event</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sampling">tern:Sampling</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_Event">dwc:Event</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/SiteVisit">tern:SiteVisit</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_Event">dwc:Event</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_FossilSpecimen">dwc:FossilSpecimen</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sample">tern:Sample</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_GeologicalContext">dwc:GeologicalContext</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/FeatureOfInterest">tern:FeatureOfInterest</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_HumanObservation">dwc:HumanObservation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Observation">tern:Observation</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_Identification">dwc:Identification</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Observation">tern:Observation</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_LivingSpecimen">dwc:LivingSpecimen</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sample">tern:Sample</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_Location">dwc:Location</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/FeatureOfInterest">tern:FeatureOfInterest</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_MachineObservation">dwc:MachineObservation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Observation">tern:Observation</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_MaterialCitation">dwc:MaterialCitation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://schema.org/CreativeWork">schema:CreativeWork</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_MaterialEntity">dwc:MaterialEntity</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/FeatureOfInterest">tern:FeatureOfInterest</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/MaterialSample">tern:MaterialSample</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl2-primer/#a_EquivalentClasses">owl:equivalentClass</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_MaterialSample">dwc:MaterialSample</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_MeasurementOrFact">dwc:MeasurementOrFact</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Value">tern:Value</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Taxon">tern:Taxon</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_Organism">dwc:Organism</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_PreservedSpecimen">dwc:PreservedSpecimen</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Sample">tern:Sample</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Taxon">tern:Taxon</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/owl2-primer/#a_EquivalentClasses">owl:equivalentClass</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_Taxon">dwc:Taxon</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://dwc.tdwg.org/list/#dwc_UseWithIRI">dwc:UseWithIRI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/shacl/#syntax-rule-nodeKind-in">sh:BlankNodeOrIRI</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following Darwin Core Terms class has a more complex mappings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dwc.tdwg.org/list/#dwc_ResourceRelationship">dwc:ResourceRelationship</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://dwc.tdwg.org/list/#dwc_ResourceRelationship">dwc:ResourceRelationship</a> is a "A relationship of one rdfs:Resource to another". This means that all predicates in ABIs are <code>dcw:ResourceRelationship</code> objects.</p>
+</div>
+<div class="paragraph">
+<p><code>dcw:ResourceRelationship</code> is a Class therefore the general relationship between ABIS elements and it is:</p>
+</div>
+<div class="paragraph">
+<p><code>{ABIS-element} rdfs:subPropertyOf dcw:ResourceRelationship</code>&#8230;&#8203; if we treat <code>dcw:ResourceRelationship</code> as an <code>rdfs:Property</code>.</p>
+</div>
+<div class="paragraph">
+<p>It is likely there is little to be gained implementing this mapping.</p>
+</div>
+<div class="paragraph">
+<p>Using all of these mappings, the ABIS data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:sample-1
+    a tern:MaterialSample ;
+    schema:additionalType &lt;http://linked.data.gov.au/def/tern-cv/4b36a1ab-7a77-49ca-866a-e68bce2db9e5&gt; ;  # plant matter
+    sosa:isSampleOf ex:site-1 ;
+.
+
+ex:site-1
+    a tern:Site ;
+    sosa:isSampleOf &lt;https://example.com/feature/ultimate-foi&gt; ;
+.
+
+ex:obs-1
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest ex:sample-1 ;
+    sosa:hasResult [
+        a tern:Taxon ;
+        rdf:value &lt;https://id.biodiversity.org.au/455721&gt; ;
+    ] ;
+.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>maps to the following Darwin Core Terms data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ex:sample-1
+    a dwc:LivingSpecimen ;
+    prov:wasDerivedFrom ex:site-1 ;
+.
+
+ex:site-1
+    a dwc:Location ;
+    prov:wasDerivedFrom &lt;https://example.com/feature/ultimate-foi&gt; ;
+.
+
+ex:obs-1
+    a dcw:Identification ;
+    dwc:materialSampleID ex:sample-1 ;
+    dwc:identificationID &lt;https://id.biodiversity.org.au/455721&gt; ;
+.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gbif_new_data_model"><a class="anchor" href="#_gbif_new_data_model"></a>10.2. GBIF New Data Model</h3>
+<div class="paragraph">
+<p><em>Coming in July, 2024</em></p>
+</div>
 </div>
 </div>
 </div>
@@ -4958,7 +6090,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-07-11 05:44:26 UTC
+Last updated 2024-07-15 05:08:13 UTC
 </div>
 </div>
 </body>
