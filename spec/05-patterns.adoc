@@ -577,6 +577,6 @@ Additionally, a TERN/ABIS _site_ is also a form of _sample_ in that the activity
 
 ABIS _site_ s _MUST_ have spatiality and temporality indicated as per the <<Spatially, Spatially>> & <<Temporality, Temporality>> patterns above.
 
-ABIS _site_s _MAY_ have additional information about them (such as sub areas, _transects_, _subplots_, methods used etc.) recorded for them according to particular protocols, such as the https://www.tern.org.au/emsa-protocols-manual[Ecological Monitoring System Australia (EMSA) protocols]. Adherence to such protocols _MAY_ result in addition RDF data being linked to an ANSI _site_ or additional textual or other literal information but it _MUST NOT_ conflict with the ABIS _site_ information requirements.
+ABIS _site_ s _MAY_ have additional information about them (such as sub areas, _transects_, _subplots_, methods used etc.) recorded for them according to particular protocols, such as the https://www.tern.org.au/emsa-protocols-manual[Ecological Monitoring System Australia (EMSA) protocols]. Adherence to such protocols _MAY_ result in addition RDF data being linked to an ANSI _site_ or additional textual or other literal information but it _MUST NOT_ conflict with the ABIS _site_ information requirements.
 
 Detailed _site_ modelling according to EMSA or similar protocols should result in extension models to ABIS, just as the <<Projects Model, Projects Model>> is an extension.
