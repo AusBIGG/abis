@@ -43,8 +43,9 @@ jobs:
         cp context.json docs/
         #
         echo "Add Component Models to docs/"
-        cp models/components/data-release.ttl docs/
-        cp models/components/projects.ttl docs/
+        cp schemas/components/data-release.ttl docs/
+        cp schemas/components/projects.ttl docs/
+        cp schemas/components/tern-ont.ttl docs/
         #
         echo "Add profiles of ABIS to docs/"
         cp profiles/bdr/profile.ttl docs/bdr.ttl
