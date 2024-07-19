@@ -707,8 +707,9 @@ pre.rouge {
 <ul class="sectlevel3">
 <li><a href="#tern-ontology">6.4.1. TERN Ontology</a></li>
 <li><a href="#_nsl_model">6.4.2. NSL Model</a></li>
-<li><a href="#_projects_model">6.4.3. Projects Model</a></li>
-<li><a href="#_data_release_model">6.4.4. Data Release Model</a></li>
+<li><a href="#_abis_catalogue_model">6.4.3. ABIS Catalogue Model</a></li>
+<li><a href="#_projects_model">6.4.4. Projects Model</a></li>
+<li><a href="#_data_release_model">6.4.5. Data Release Model</a></li>
 </ul>
 </li>
 <li><a href="#_background_models">6.5. Background Models</a></li>
@@ -753,24 +754,33 @@ pre.rouge {
 </ul>
 </li>
 <li><a href="#_references">12. References</a></li>
-<li><a href="#annex-a">Annex A: Projects Model</a>
+<li><a href="#annex-a">Annex A: ABIS Catalogue Model</a>
 <ul class="sectlevel2">
-<li><a href="#projects-metadata">Metadata</a></li>
-<li><a href="#_supporting_assets">Supporting Assets</a></li>
-<li><a href="#_classes">Classes</a></li>
-<li><a href="#_predicates">Predicates</a></li>
-<li><a href="#_shapes">Shapes</a></li>
+<li><a href="#catalogue-metadata">A.1. Metadata</a></li>
+<li><a href="#_a_2_supporting_assets">A.2. Supporting Assets</a></li>
+<li><a href="#_a_3_classes">A.3. Classes</a></li>
+<li><a href="#_a_4_predicates">A.4. Predicates</a></li>
+<li><a href="#_a_5_shapes">A.5. Shapes</a></li>
 </ul>
 </li>
-<li><a href="#annex-b">Annex B: Data Release Model</a>
+<li><a href="#annex-b">Annex B: Projects Model</a>
 <ul class="sectlevel2">
-<li><a href="#data-release-metadata">Metadata</a></li>
-<li><a href="#_supporting_assets_2">Supporting Assets</a></li>
-<li><a href="#_classes_2">Classes</a></li>
-<li><a href="#_predicates_2">Predicates</a></li>
+<li><a href="#projects-metadata">B.1. Metadata</a></li>
+<li><a href="#_b_2_supporting_assets">B.2. Supporting Assets</a></li>
+<li><a href="#_b_3_classes">B.3. Classes</a></li>
+<li><a href="#_b_4_predicates">B.4. Predicates</a></li>
 </ul>
 </li>
-<li><a href="#annex-c">Annex C: TERN Ontology Examples</a>
+<li><a href="#annex-c">Annex C: Data Release Model</a>
+<ul class="sectlevel2">
+<li><a href="#data-release-metadata">C.1. Metadata</a></li>
+<li><a href="#_c_2_supporting_assets">C.2. Supporting Assets</a></li>
+<li><a href="#_c_3_classes">C.3. Classes</a></li>
+<li><a href="#_c_4_predicates">C.4. Predicates</a></li>
+<li><a href="#_c_5_validators">C.5. Validators</a></li>
+</ul>
+</li>
+<li><a href="#annex-d">Annex D: TERN Ontology Examples</a>
 <ul class="sectlevel2">
 <li><a href="#_c1_validating">C1. Validating</a></li>
 <li><a href="#_c2_example_01_valid">C2. Example 01 - valid</a></li>
@@ -818,7 +828,7 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateModified">Modified Date</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2024-07-09</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2024-07-19</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateIssued">Issued Date</a></strong></p></td>
@@ -826,16 +836,17 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/version">Version</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI">Version IRI</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/2.1">abis:2.2</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/2.3">abis:2.3</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#historyNote"><strong>History Note</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.2</strong> - 2024 Jul - More Patterns, improved Mappings &amp; comprehensive Validators
-<strong>2.1</strong> - 2024 Jan - Implementation of <a href="#annex-a">ABIS Projects Model</a> and <a href="#annex-b">ABIS Data Release Model</a> within ABIS<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.3</strong> - 2024 Jul - Record and Occurrence classes added in new foreground model - ABIS Catalogue<br>
+<strong>2.2</strong> - 2024 Jul - More Patterns, improved Mappings &amp; comprehensive Validators<br>
+<strong>2.1</strong> - 2024 Jan - Implementation of <a href="#annex-b">ABIS Projects Model</a> and <a href="#annex-c">ABIS Data Release Model</a> within ABIS<br>
 <strong>2.0</strong> - 2023 Nov - Produced by <a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a> for initial <a href="#BDR">BDR</a> operations. Includes handling of systematic surveys and project information.<br>
 <strong>1.0</strong> - 2022 Jun - Initial version of ABIS. Tested with SURROUND Australia Pty Ltd and used for an initial national data acquisition survey for the <a href="#BDR">BDR</a></p></td>
 </tr>
@@ -1030,7 +1041,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abisp:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/projects/" class="bare">https://linked.data.gov.au/def/abis/projects/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-a">ABIS Projects Model</a> namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-b">ABIS Projects Model</a> namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bdr:</code></p></td>
@@ -1045,7 +1056,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dr:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/data-release/" class="bare">https://linked.data.gov.au/def/abis/data-release/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-a">ABIS Data Release Model</a> namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#annex-b">ABIS Data Release Model</a> namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dt:</code></p></td>
@@ -1323,7 +1334,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </ul>
 </div>
 <div class="paragraph">
-<p>Each of these "background models" are shown in <a href="#overview">Figure 1</a>.</p>
+<p>Each of these "background models" are shown in <a href="#overview">Figure 1</a> and listed in the <a href="#_background_models">Background Models</a> section below.</p>
 </div>
 <div class="paragraph">
 <p>In addition to the TERN Ontology and the background models it uses, ABIS also use other "background models":</p>
@@ -1551,15 +1562,15 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#annex-a">Annex A: Projects Model</a></p>
+<p><a href="#annex-b">Annex A: Projects Model</a></p>
 </li>
 <li>
-<p><a href="#annex-b">Annex B: Data Release Model</a></p>
+<p><a href="#annex-c">Annex B: Data Release Model</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Extended examples <a href="#TERNOntology">TERN Ontology</a> data, in use within ABIS, are given in <a href="#annex-c">Annex C</a>.</p>
+<p>Extended examples <a href="#TERNOntology">TERN Ontology</a> data, in use within ABIS, are given in <a href="#annex-d">Annex C</a>.</p>
 </div>
 </div>
 </div>
@@ -2346,7 +2357,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>The figures in the <a href="#_observations_results">Observations &amp; Results</a> and the <a href="#_feature_of_interest">Feature of Interest</a> patterns use this colouring.</p>
 </div>
 <div class="paragraph">
-<p>PROV&#8217;s provenance reasoning is also applicable to parts of ABIS. For example, the <a href="#annex-a">Projects Model</a> indicates that instances of its <a href="#abis:Project"><code>Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>, and may have been associated with an <a href="https://www.w3.org/TR/prov-o/#Agent"><code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>tern:RDFDataset</code> instances will be able to have an attributional relationship to the <code>Agent</code> instance calculated. This is shown in the figure below.</p>
+<p>PROV&#8217;s provenance reasoning is also applicable to parts of ABIS. For example, the <a href="#annex-b">Projects Model</a> indicates that instances of its <a href="#abis:Project"><code>Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>, and may have been associated with an <a href="https://www.w3.org/TR/prov-o/#Agent"><code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>tern:RDFDataset</code> instances will be able to have an attributional relationship to the <code>Agent</code> instance calculated. This is shown in the figure below.</p>
 </div>
 <div id="pattern-prov-reasoning" class="imageblock text-center">
 <div class="content">
@@ -2361,7 +2372,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>Things with agency to do work such as Organisations, People, Groups (of orgs and people) and perhaps software systems - are modelled as <em>Agents</em> in many Semantic Web and Knowledge Graph systems. In ABIS, we follow the general pattern for Agents outlined in the <a href="#PROV">Provenance Ontology (PROV)</a>, see the section above.</p>
 </div>
 <div class="paragraph">
-<p>In addition to the simple and direct kind of relationship between <code>Agents</code> and data (<code>Entities</code>) show above in Figure 8 where an <code>Entity</code> can be attributed to an <code>Agent</code>, we use a nuanced version of that <code>was attributed to</code> relationship, <code>qualified attribution</code>, which is also defined in PROV. <code>qualified attribution</code> is a type of <em>qualified relation</em> which means it related two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the <code>Agent</code> plays with respect to the <code>Entity</code>. For example, for a dataset, one <code>Agent</code> might be the <em>author</em> of the data, another the <em>publisher</em>. This could be modelled as in Figure 10, below.</p>
+<p>In addition to the simple and direct kind of relationship between <code>Agents</code> and data (<code>Entities</code>) show above in <a href="#pattern-prov-reasoning">Figure 9</a> where an <code>Entity</code> can be attributed to an <code>Agent</code>, we use a nuanced version of that <code>was attributed to</code> relationship, <code>qualified attribution</code>, which is also defined in PROV. <code>qualified attribution</code> is a type of <em>qualified relation</em> which means it related two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the <code>Agent</code> plays with respect to the <code>Entity</code>. For example, for a dataset, one <code>Agent</code> might be the <em>author</em> of the data, another the <em>publisher</em>. This could be modelled as in <a href="#pattern-prov-qualatt">Figure 10</a>, below.</p>
 </div>
 <div id="pattern-prov-qualatt" class="imageblock text-center">
 <div class="content">
@@ -2519,10 +2530,10 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect2">
 <h3 id="_foreground_model"><a class="anchor" href="#_foreground_model"></a>6.3. Foreground Model</h3>
 <div class="paragraph">
-<p>The ABIS Foreground Model is the union of the NSL Model, the TERN Ontology and the ABIS Component Models, as shown in <a href="#hierarchy">Figure 7</a>, above.</p>
+<p>The ABIS Foreground Model is the union of the four Component Models listed in the next section. The dependencies of these models are shown in <a href="#hierarchy">Figure 13</a>, above.</p>
 </div>
 <div class="paragraph">
-<p>When modelling biodiversity observations - ABIS' main concern - ABIS uses the <a href="#TERNOntology">TERN Ontology</a>. When modelling taxonomic name objects, ABIS uses the <a href="#NSLM">NSL Model</a>. When project information and data release details are modelled, the <a href="#_projects_model">ABIS Projects</a> &amp; <a href="#_data_release_model">ABIS Data Release</a> models are used.</p>
+<p>When modelling biodiversity observations - ABIS' main concern - ABIS uses the <a href="#TERNOntology">TERN Ontology</a> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <a href="#NSLM">NSL Model</a>. When data packaging is necissary, the <a href="#_abis_catalogue_model">ABIS Catalogue Model</a> is used. Project information and data release details are modelled using the <a href="#_projects_model">ABIS Projects</a> &amp; <a href="#_data_release_model">ABIS Data Release</a> respectively.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2533,10 +2544,13 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="#TERNOntology">TERN Ontology</a></p>
+<p>The <a href="#tern-ontology">TERN Ontology</a></p>
 </li>
 <li>
 <p>The <a href="#NSLM">NSL Model</a></p>
+</li>
+<li>
+<p><a href="#annex-a">ABIS Catalogue Model</a></p>
 </li>
 <li>
 <p><a href="#_projects_model">Projects Model</a></p>
@@ -2608,7 +2622,7 @@ ex:obs-z
 <div class="sect4">
 <h5 id="_examples"><a class="anchor" href="#_examples"></a>6.4.1.1. Examples</h5>
 <div class="paragraph">
-<p>See <a href="#annex-c">Annex C: TERN Ontology Examples</a> for a full example of TERN Ontology data with explanations for each part.</p>
+<p>See <a href="#annex-d">Annex C: TERN Ontology Examples</a> for a full example of TERN Ontology data with explanations for each part.</p>
 </div>
 <div class="paragraph">
 <p>Also see the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> for multiple examples that can be loaded and validated using the online validators also there.</p>
@@ -2667,12 +2681,35 @@ ex:obs-z
 </div>
 </div>
 <div class="sect3">
-<h4 id="_projects_model"><a class="anchor" href="#_projects_model"></a>6.4.3. Projects Model</h4>
+<h4 id="_abis_catalogue_model"><a class="anchor" href="#_abis_catalogue_model"></a>6.4.3. ABIS Catalogue Model</h4>
 <div class="paragraph">
-<p>ABIS contains a simple model of Projects where a <a href="#Project"><code>Project</code></a> is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective". The Model is fully described in <a href="#annex-a">Annex A: Projects Model</a>.</p>
+<p>Model location: <a href="#annex-a">Annex A</a></p>
 </div>
 <div class="paragraph">
-<p>The following figure illustrates the basic relationships of the class <a href="#Project"><code>Project</code></a> and <a href="#Program"><code>Program</code></a>, the only other class defined by the model.</p>
+<p>ABIS implements a small catalogue model</p>
+</div>
+<div class="paragraph">
+<p><a href="#DCAT">DCAT</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#SDO">schema.org</a></p>
+</div>
+<div class="paragraph">
+<p>DataCatalog - A collection of datasets.
+Dataset - A body of structured information describing some topic(s) of interest.
+Record</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_projects_model"><a class="anchor" href="#_projects_model"></a>6.4.4. Projects Model</h4>
+<div class="paragraph">
+<p>Model location: <a href="#annex-b">Annex B</a></p>
+</div>
+<div class="paragraph">
+<p>ABIS contains a simple model of Projects where a <a href="#abis:Project"><code>Project</code></a> is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective". The Model is fully described in <a href="#annex-b">Annex A: Projects Model</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following figure illustrates the basic relationships of the class <a href="#abis:Project"><code>Project</code></a> and <a href="#abis:Program"><code>Program</code></a>, the only other class defined by the model.</p>
 </div>
 <div id="proj-hierarchy" class="imageblock text-center">
 <div class="content">
@@ -2681,7 +2718,7 @@ ex:obs-z
 <div class="title">Figure 19. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
 </div>
 <div class="paragraph">
-<p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class - are produced by instances of <a href="#Project"><code>Project</code></a> as per the figure below.</p>
+<p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class - are produced by instances of <a href="#abis:Project"><code>Project</code></a> as per the figure below.</p>
 </div>
 <div id="proj-join" class="imageblock text-center">
 <div class="content">
@@ -2690,13 +2727,16 @@ ex:obs-z
 <div class="title">Figure 20. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> instances.</div>
 </div>
 <div class="paragraph">
-<p>See <a href="#annex-a">Annex A</a> for more details about the Project Model.</p>
+<p>See <a href="#annex-b">Annex A</a> for more details about the Project Model.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_data_release_model"><a class="anchor" href="#_data_release_model"></a>6.4.4. Data Release Model</h4>
+<h4 id="_data_release_model"><a class="anchor" href="#_data_release_model"></a>6.4.5. Data Release Model</h4>
 <div class="paragraph">
-<p>ABIS contains a simple model for describing aspects of data release: to whom, under what circumstances and when data may be released. The Model is fully described in <a href="#annex-b">Annex B: Data Release Model</a>.</p>
+<p>Model location: <a href="#annex-c">Annex C</a></p>
+</div>
+<div class="paragraph">
+<p>ABIS contains a simple model for describing aspects of data release: to whom, under what circumstances and when data may be released. The Model is fully described in <a href="#annex-c">Annex B: Data Release Model</a>.</p>
 </div>
 <div class="paragraph">
 <p>The following figure illustrates the basic elements of this model.</p>
@@ -2783,7 +2823,7 @@ ex:obs-z
 <p>Some uses of ABIS, such as for the submission of data to the <a href="#BDR">BDR</a>, require the use of particular vocabularies that aren&#8217;t mandated for general ABIS use, for example the use of the <a href="https://linked.data.gov.au/dataset/bdr/datatypes/"><em>BDR Datatypes</em></a> vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <a href="#_profiles">Profiles</a>.</p>
 </div>
 <div class="paragraph">
-<p>Some <a href="#_component_models">Component Models</a> of ABIS also require the use of particular vocabularies, for example, the <a href="#annex-a">Projects Model</a> mandates that roles chosen for an attribution&#8217;s <code>hadRole</code> predicate, when used for an instances of the <code>abis:Project</code> class, must come from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p>
+<p>Some <a href="#_component_models">Component Models</a> of ABIS also require the use of particular vocabularies, for example, the <a href="#annex-b">Projects Model</a> mandates that roles chosen for an attribution&#8217;s <code>hadRole</code> predicate, when used for an instances of the <code>abis:Project</code> class, must come from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p>
 </div>
 <div class="paragraph">
 <p>All the vocabularies required for use with ABIS and any known profile of ABIS are listed at the <em>BDR Vocabulary Register</em>:</p>
@@ -4469,19 +4509,10 @@ ex:obs-1
 </div>
 </div>
 <div class="sect1">
-<h2 id="annex-a"><a class="anchor" href="#annex-a"></a>Annex A: Projects Model</h2>
+<h2 id="annex-a"><a class="anchor" href="#annex-a"></a>Annex A: ABIS Catalogue Model</h2>
 <div class="sectionbody">
-<div id="proj-overview" class="imageblock text-center">
-<div class="content">
-<a class="image" href="img/proj-hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/proj-hierarchy.svg" alt="Projects Model Class Hierarchy" width="400"></a>
-</div>
-<div class="title">Figure 22. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
-</div>
-<div class="paragraph">
-<p><a href="#abis:Project"><code>Project</code></a>s are part of <a href="#abis:Program"><code>Program</code></a>s and both are specialised forms of <a href="#PROV">PROV</a>'s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> class. An <code>Activity</code> is "something that occurs over a period of time and acts upon or with entities" which means <code>Project`s &amp; `Program`s can have all the properties that `Activities</code> can have, such as temporal extents, <code>Agents</code> that have causal relationships to them and so on.</p>
-</div>
 <div class="sect2">
-<h3 id="projects-metadata"><a class="anchor" href="#projects-metadata"></a>Metadata</h3>
+<h3 id="catalogue-metadata"><a class="anchor" href="#catalogue-metadata"></a>A.1. Metadata</h3>
 <table class="tableblock frame-none grid-none stripes-even stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -4553,7 +4584,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_supporting_assets"><a class="anchor" href="#_supporting_assets"></a>Supporting Assets</h3>
+<h3 id="_a_2_supporting_assets"><a class="anchor" href="#_a_2_supporting_assets"></a>A.2. Supporting Assets</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4580,8 +4611,309 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect2">
-<h3 id="_classes"><a class="anchor" href="#_classes"></a>Classes</h3>
+<h3 id="_a_3_classes"><a class="anchor" href="#_a_3_classes"></a>A.3. Classes</h3>
 <h4 id="_class_index" class="discrete">Class Index</h4>
+<div class="paragraph">
+<p>Classes defined here:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Classes defined elsewhere:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div>
+<h4 id="xxxx" class="discrete">Class 1</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 23.0769%;">
+<col style="width: 76.9231%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abis:Project</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_subclassof">Subclass of</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby">Is Defined By</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An Activity that requires concerted effort following a Plan in pursuit of an objective</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">History Note</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined by BDR Team in 2023 in response to BDR usage needs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#schema:isPartOf">is part of</a>, <a href="#time:hasTime">has time</a>, <a href="#geo:hasGeometry">has geometry</a>, <a href="#prov:generated">generated</a>,</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>:project-m
+    a abis:Project ;
+    schema:name "Project M" ;
+    schema:description "South Australian government Project M-23" ;
+    abis:purpose "To determine extent of koala populations in NE SA" ;
+    schema:keywords
+        ex:koala ,
+        &lt;https://linked.data.gov.au/dataset/asgsed3/STE/4&gt; ;   # S.A.
+    schema:isPartOf :program-n ;
+    # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
+    # Note temporal range within that of containing Program
+    prov:startedAtTime "2023-12-01"^^xsd:date ;
+    prov:endedAtTime "2023-12-15"^^xsd:date ;
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "POLYGON ((138.010254 -26.007424, 140.976563 -25.99755, ..., 138.010254 -26.007424))"
+    ] ;
+    prov:qualifiedAttribution [
+        prov:agent ex:dewr ;  # SA Dept Env, e.g. only
+        prov:hadRole role:principalInvestigator ;
+    ] ;
+    prov:generated ex:dataset-x ;
+.
+
+:program-n
+    a abis:Program ;
+    schema:name "Program N" ;
+    schema:hasPart :project-m ;
+    # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
+    time:hasTime [
+        time:hasBeginning [
+            time:inXSDDateTime "2023-12-01"^^xsd:date ;
+        ] ;
+        time:hasEnd [
+            time:inXSDDateTime "2023-12-28"^^xsd:date ;
+        ] ;
+    ] ;
+    # ... other properties
+.</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_a_4_predicates"><a class="anchor" href="#_a_4_predicates"></a>A.4. Predicates</h3>
+<h4 id="_predicate_index" class="discrete">Predicate Index</h4>
+<div class="paragraph">
+<p>Predicates defined here:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Predicates defined elsewhere:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div>
+<h4 id="yyyy" class="discrete">Predicate 1</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 23.0769%;">
+<col style="width: 76.9231%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abis:purpose</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">purpose</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The intent of the Activity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#scopeNote">Scope Note</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this predicate to indicate a textual intent for a Project or a Program</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby">Is Defined By</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>See the example for <a href="#abis:Project">Project</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_a_5_shapes"><a class="anchor" href="#_a_5_shapes"></a>A.5. Shapes</h3>
+<div class="paragraph">
+<p>The following <a href="#SHACL">SHACL</a> shapes are graph patterns mandated by this model.</p>
+</div>
+<h4 id="_shapes_index" class="discrete">Shapes Index</h4>
+<div class="paragraph">
+<p><mark>INCOMPLETE</mark></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="annex-b"><a class="anchor" href="#annex-b"></a>Annex B: Projects Model</h2>
+<div class="sectionbody">
+<div id="proj-overview" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/proj-hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/proj-hierarchy.svg" alt="Projects Model Class Hierarchy" width="400"></a>
+</div>
+<div class="title">Figure 22. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
+</div>
+<div class="paragraph">
+<p><a href="#abis:Project"><code>Project</code></a>s are part of <a href="#abis:Program"><code>Program</code></a>s and both are specialised forms of <a href="#PROV">PROV</a>'s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> class. An <code>Activity</code> is "something that occurs over a period of time and acts upon or with entities" which means <code>Project`s &amp; `Program`s can have all the properties that `Activities</code> can have, such as temporal extents, <code>Agents</code> that have causal relationships to them and so on.</p>
+</div>
+<div class="sect2">
+<h3 id="projects-metadata"><a class="anchor" href="#projects-metadata"></a>B.1. Metadata</h3>
+<table class="tableblock frame-none grid-none stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="#IRI">IRI</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/projects" class="bare">https://linked.data.gov.au/def/abis/projects</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/name">Name</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Data Release Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model is for describing Projects where Project is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateCreated">Created Date</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023-10-15</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateModified">Modified Date</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023-12-28</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateIssued">Issued Date</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2023-12-28</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/version">Version</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI">Version IRI</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/projects/1.0">abisp:1.0</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version History</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.0</strong> - 2023 Dec - First release (v2.0 to match ABIS)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/creator">Creator</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment (DCCEEW)</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/owner">Owner</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/ausbigg">Australian Biodiversity Information Governance Group (AUSBIGG)</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/publisher">Publisher</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment (DCCEEW)</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/license">License</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/vocab-dcat/#Property:resource_contact_point">Contacts</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AusBIGG is supported by DCCEEW&#8217;s' Biodiversity Data Repository (BDR) Team. Contact the BDR Team on <a href="mailto:bdr@dcceew.gov.au">bdr@dcceew.gov.au</a><br>
+Issue tracking of the ABIS standard is managed online at <a href="https://github.com/AusBIGG/abis/issues" class="bare">https://github.com/AusBIGG/abis/issues</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/codeRepository">Code Repository</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/AusBIGG/abis" class="bare">https://github.com/AusBIGG/abis</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_b_2_supporting_assets"><a class="anchor" href="#_b_2_supporting_assets"></a>B.2. Supporting Assets</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>RDF schema:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linked.data.gov.au/def/abis/projects.ttl" class="bare">https://linked.data.gov.au/def/abis/projects.ttl</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#SHACL">SHACL</a> validation file:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linked.data.gov.au/def/abis/projects/validator.ttl" class="bare">https://linked.data.gov.au/def/abis/projects/validator.ttl</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_b_3_classes"><a class="anchor" href="#_b_3_classes"></a>B.3. Classes</h3>
+<h4 id="_b_3_1_class_index" class="discrete">B.3.1. Class Index</h4>
 <div class="paragraph">
 <p>Classes defined here:</p>
 </div>
@@ -4614,7 +4946,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </li>
 </ul>
 </div>
-<h4 id="abis:Project" class="discrete">Project</h4>
+<h4 id="abis:Project" class="discrete">B.3.2. Project</h4>
 <div id="proj-project" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/proj-project.svg"><img src="https://ausbigg.github.io/abis/img/proj-project.svg" alt="Projects Model Project Class" width="650"></a>
@@ -4709,7 +5041,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="abis:Program" class="discrete">Program</h4>
+<h4 id="abis:Program" class="discrete">B.3.3. Program</h4>
 <div id="proj-program" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/proj-program.svg"><img src="https://ausbigg.github.io/abis/img/proj-program.svg" alt="Projects Model Program Class" width="650"></a>
@@ -4764,7 +5096,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="prov:Attribution" class="discrete">Attribution</h4>
+<h4 id="prov:Attribution" class="discrete">B.3.4 Attribution</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -4809,7 +5141,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="prov:Agent" class="discrete">Agent</h4>
+<h4 id="prov:Agent" class="discrete">B.3.5. Agent</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -4854,7 +5186,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="schema:Organization" class="discrete">Organization</h4>
+<h4 id="schema:Organization" class="discrete">B.3.6. Organization</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -4901,7 +5233,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="schema:Person" class="discrete">Person</h4>
+<h4 id="schema:Person" class="discrete">B.3.7. Person</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -4946,7 +5278,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="skos:Concept" class="discrete">Concept</h4>
+<h4 id="skos:Concept" class="discrete">B.3.8. Concept</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -4987,11 +5319,11 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_predicates"><a class="anchor" href="#_predicates"></a>Predicates</h3>
+<h3 id="_b_4_predicates"><a class="anchor" href="#_b_4_predicates"></a>B.4. Predicates</h3>
 <div class="paragraph">
 <p>This model defines only one predicate - <a href="#abis:purpose">purpose</a> - but also requires the use of others defined elsewhere. Definitions for all predicates are copied from source and given here.</p>
 </div>
-<h4 id="_predicate_index" class="discrete">Predicate Index</h4>
+<h4 id="_predicate_index_2" class="discrete">Predicate Index</h4>
 <div class="paragraph">
 <p>Predicates defined here:</p>
 </div>
@@ -5546,13 +5878,13 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect2">
-<h3 id="_shapes"><a class="anchor" href="#_shapes"></a>Shapes</h3>
 <div class="paragraph">
-<p>The following <a href="#SHACL">SHACL</a> shapes are graph patterns mandated by this model.</p>
+<p>_=== B.5. Validators</p>
 </div>
-<h4 id="_shapes_index" class="discrete">Shapes Index</h4>
+<div class="paragraph">
+<p><mark>TODO: list and define validators fro this model</mark></p>
+</div>
+<h4 id="_shapes_index_2" class="discrete">Shapes Index</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -5616,7 +5948,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect1">
-<h2 id="annex-b"><a class="anchor" href="#annex-b"></a>Annex B: Data Release Model</h2>
+<h2 id="annex-c"><a class="anchor" href="#annex-c"></a>Annex C: Data Release Model</h2>
 <div class="sectionbody">
 <div id="data-realse" class="imageblock text-center">
 <div class="content">
@@ -5642,7 +5974,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="data-release-metadata"><a class="anchor" href="#data-release-metadata"></a>Metadata</h3>
+<h3 id="data-release-metadata"><a class="anchor" href="#data-release-metadata"></a>C.1. Metadata</h3>
 <table class="tableblock frame-none grid-none stripes-even stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -5714,7 +6046,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_supporting_assets_2"><a class="anchor" href="#_supporting_assets_2"></a>Supporting Assets</h3>
+<h3 id="_c_2_supporting_assets"><a class="anchor" href="#_c_2_supporting_assets"></a>C.2. Supporting Assets</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5741,13 +6073,13 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect2">
-<h3 id="_classes_2"><a class="anchor" href="#_classes_2"></a>Classes</h3>
+<h3 id="_c_3_classes"><a class="anchor" href="#_c_3_classes"></a>C.3. Classes</h3>
 <div class="paragraph">
 <p>This model defines none of its own classes and only indicates the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class for use with the predicates it does define.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_predicates_2"><a class="anchor" href="#_predicates_2"></a>Predicates</h3>
+<h3 id="_c_4_predicates"><a class="anchor" href="#_c_4_predicates"></a>C.4. Predicates</h3>
 <h4 id="embargoedUntil" class="discrete">embargoed until</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -5881,10 +6213,16 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_c_5_validators"><a class="anchor" href="#_c_5_validators"></a>C.5. Validators</h3>
+<div class="paragraph">
+<p><mark>TODO: list and define validators fro this model</mark></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="annex-c"><a class="anchor" href="#annex-c"></a>Annex C: TERN Ontology Examples</h2>
+<h2 id="annex-d"><a class="anchor" href="#annex-d"></a>Annex D: TERN Ontology Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This following examples are all <a href="#RDF">RDF</a> data in the <a href="#TURTLE">Turtle</a> format.</p>
@@ -6090,7 +6428,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-07-15 05:14:34 UTC
+Last updated 2024-07-19 05:19:18 UTC
 </div>
 </div>
 </body>
