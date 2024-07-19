@@ -677,25 +677,27 @@ pre.rouge {
 <ul class="sectlevel2">
 <li><a href="#_set_modelling">5.1. Set Modelling</a></li>
 <li><a href="#_identifiers">5.2. Identifiers</a></li>
-<li><a href="#_spatially">5.3. Spatially</a>
+<li><a href="#_data_cataloguing">5.3. Data Cataloguing</a></li>
+<li><a href="#_records_occurrences">5.4. Records &amp; Occurrences</a></li>
+<li><a href="#_spatially">5.5. Spatially</a>
 <ul class="sectlevel3">
-<li><a href="#_feature_centric">5.3.1. Feature-centric</a></li>
-<li><a href="#_abis_spatial_objects">5.3.2. ABIS spatial objects</a></li>
-<li><a href="#_qualified_geometries">5.3.3. Qualified Geometries</a></li>
-<li><a href="#_centroid_bounding_box">5.3.4. Centroid &amp; Bounding Box</a></li>
-<li><a href="#_geometry_literals">5.3.5. Geometry Literals</a></li>
-<li><a href="#_coordinate_system">5.3.6. Coordinate System</a></li>
-<li><a href="#_aggregation_reasoning">5.3.7. Aggregation Reasoning</a></li>
-<li><a href="#_feature_relations">5.3.8. Feature relations</a></li>
-<li><a href="#_elevation_depth">5.3.9. Elevation &amp; Depth</a></li>
+<li><a href="#_feature_centric">5.5.1. Feature-centric</a></li>
+<li><a href="#_abis_spatial_objects">5.5.2. ABIS spatial objects</a></li>
+<li><a href="#_qualified_geometries">5.5.3. Qualified Geometries</a></li>
+<li><a href="#_centroid_bounding_box">5.5.4. Centroid &amp; Bounding Box</a></li>
+<li><a href="#_geometry_literals">5.5.5. Geometry Literals</a></li>
+<li><a href="#_coordinate_system">5.5.6. Coordinate System</a></li>
+<li><a href="#_aggregation_reasoning">5.5.7. Aggregation Reasoning</a></li>
+<li><a href="#_feature_relations">5.5.8. Feature relations</a></li>
+<li><a href="#_elevation_depth">5.5.9. Elevation &amp; Depth</a></li>
 </ul>
 </li>
-<li><a href="#_temporality">5.4. Temporality</a></li>
-<li><a href="#_provenance">5.5. Provenance</a></li>
-<li><a href="#_agents">5.6. Agents</a></li>
-<li><a href="#_observations_results">5.7. Observations &amp; Results</a></li>
-<li><a href="#_feature_of_interest">5.8. Feature of Interest</a></li>
-<li><a href="#_sites">5.9. Sites</a></li>
+<li><a href="#_temporality">5.6. Temporality</a></li>
+<li><a href="#_provenance">5.7. Provenance</a></li>
+<li><a href="#_agents">5.8. Agents</a></li>
+<li><a href="#_observations_results">5.9. Observations &amp; Results</a></li>
+<li><a href="#_feature_of_interest">5.10. Feature of Interest</a></li>
+<li><a href="#_sites">5.11. Sites</a></li>
 </ul>
 </li>
 <li><a href="#_models">6. Models</a>
@@ -705,7 +707,7 @@ pre.rouge {
 <li><a href="#_foreground_model">6.3. Foreground Model</a></li>
 <li><a href="#_component_models">6.4. Component Models</a>
 <ul class="sectlevel3">
-<li><a href="#tern-ontology">6.4.1. TERN Ontology</a></li>
+<li><a href="#_tern_ontology">6.4.1. TERN Ontology</a></li>
 <li><a href="#_nsl_model">6.4.2. NSL Model</a></li>
 <li><a href="#_abis_catalogue_model">6.4.3. ABIS Catalogue Model</a></li>
 <li><a href="#_projects_model">6.4.4. Projects Model</a></li>
@@ -723,7 +725,7 @@ pre.rouge {
 <ul class="sectlevel3">
 <li><a href="#_resources">8.2.1. Resources</a></li>
 <li><a href="#_specification">8.2.2. Specification</a></li>
-<li><a href="#_examples_2">8.2.3. Examples</a></li>
+<li><a href="#_examples_4">8.2.3. Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -780,11 +782,15 @@ pre.rouge {
 <li><a href="#_c_5_validators">C.5. Validators</a></li>
 </ul>
 </li>
-<li><a href="#annex-d">Annex D: TERN Ontology Examples</a>
+<li><a href="#annex-d">Annex D: Extended Examples</a>
 <ul class="sectlevel2">
-<li><a href="#_c1_validating">C1. Validating</a></li>
-<li><a href="#_c2_example_01_valid">C2. Example 01 - valid</a></li>
-<li><a href="#_c3_example_02_invalid">C3. Example 02 - invalid</a></li>
+<li><a href="#_d_1_tern_ontology">D.1. TERN Ontology</a>
+<ul class="sectlevel3">
+<li><a href="#_d_1_1_validating">D.1.1. Validating</a></li>
+<li><a href="#_d_1_2_example_01_valid">D.1.2. Example 01 - valid</a></li>
+<li><a href="#_d_1_3_example_02_invalid">D.1.3. Example 02 - invalid</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1829,7 +1835,19 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_spatially"><a class="anchor" href="#_spatially"></a>5.3. Spatially</h3>
+<h3 id="_data_cataloguing"><a class="anchor" href="#_data_cataloguing"></a>5.3. Data Cataloguing</h3>
+<div class="paragraph">
+<p><mark>TODO</mark></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_records_occurrences"><a class="anchor" href="#_records_occurrences"></a>5.4. Records &amp; Occurrences</h3>
+<div class="paragraph">
+<p><mark>TODO</mark></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spatially"><a class="anchor" href="#_spatially"></a>5.5. Spatially</h3>
 <div class="paragraph">
 <p><em>ABIS inherits its spatial modelling from <a href="#GSP">GeoSPARQL</a>, as does the <a href="#TERNOntology">TERN Ontology</a>.</em></p>
 </div>
@@ -1865,7 +1883,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_feature_centric"><a class="anchor" href="#_feature_centric"></a>5.3.1. Feature-centric</h4>
+<h4 id="_feature_centric"><a class="anchor" href="#_feature_centric"></a>5.5.1. Feature-centric</h4>
 <div class="paragraph">
 <p>GeoSPARQL uses a "feature-centric" method of spatial modelling which means spatial things are represented as conceptual things first - spatial <em>features</em> - and then a spatial projection or representation - <em>geometry</em> - is linked to it. This is different to some GIS systems that model spatial things as geometries first and then apply properties to them.</p>
 </div>
@@ -1898,7 +1916,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_abis_spatial_objects"><a class="anchor" href="#_abis_spatial_objects"></a>5.3.2. ABIS spatial objects</h4>
+<h4 id="_abis_spatial_objects"><a class="anchor" href="#_abis_spatial_objects"></a>5.5.2. ABIS spatial objects</h4>
 <div class="paragraph">
 <p>There are multiple classes of spatial objects in ABIS. The following are always spatial, even when their spatial values - their geometries - are unknown:</p>
 </div>
@@ -1936,7 +1954,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_qualified_geometries"><a class="anchor" href="#_qualified_geometries"></a>5.3.3. Qualified Geometries</h4>
+<h4 id="_qualified_geometries"><a class="anchor" href="#_qualified_geometries"></a>5.5.3. Qualified Geometries</h4>
 <div class="paragraph">
 <p>This feature-centric model allows for multiple or no geometries per spatial object which can be very powerful. The figure below gives several examples of a spatial Feature with multiple Geometries that differ different ways. The pattern here is "qualification": when a Feature is assigned multiple Geometries, they must be differentiable in some way, either by having different geometry types (point, polygon etc.) or by having different roles with respect to the Feature or by each Geometry indicating a different temporal footprint. These differentiations qualify the Geometries with respect to the Feature.</p>
 </div>
@@ -1948,7 +1966,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_centroid_bounding_box"><a class="anchor" href="#_centroid_bounding_box"></a>5.3.4. Centroid &amp; Bounding Box</h4>
+<h4 id="_centroid_bounding_box"><a class="anchor" href="#_centroid_bounding_box"></a>5.5.4. Centroid &amp; Bounding Box</h4>
 <div id="pattern-spatiality-pomingalarna" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/pattern-spatiality-pomingalarna.png"><img src="https://ausbigg.github.io/abis/img/pattern-spatiality-pomingalarna.png" alt="Pomingolarna site example" width="850"></a>
@@ -1985,7 +2003,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_geometry_literals"><a class="anchor" href="#_geometry_literals"></a>5.3.5. Geometry Literals</h4>
+<h4 id="_geometry_literals"><a class="anchor" href="#_geometry_literals"></a>5.5.5. Geometry Literals</h4>
 <div class="paragraph">
 <p>ABIS only allows for <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text representations of geometries</a> indicated by the <code>geo:asWKT</code> predicate. No other forms of geometry literal, e.g. GeoJSON, may be used.</p>
 </div>
@@ -2003,7 +2021,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_coordinate_system"><a class="anchor" href="#_coordinate_system"></a>5.3.6. Coordinate System</h4>
+<h4 id="_coordinate_system"><a class="anchor" href="#_coordinate_system"></a>5.5.6. Coordinate System</h4>
 <div class="paragraph">
 <p>All spatial data supplied according to ABIS <em>MUST</em> ues the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others <em>MUST NOT</em> be used.</p>
 </div>
@@ -2017,7 +2035,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_aggregation_reasoning"><a class="anchor" href="#_aggregation_reasoning"></a>5.3.7. Aggregation Reasoning</h4>
+<h4 id="_aggregation_reasoning"><a class="anchor" href="#_aggregation_reasoning"></a>5.5.7. Aggregation Reasoning</h4>
 <div class="paragraph">
 <p>ABIS contains rules that will perform spatial reasoning on data. For example, if a dataset is presented that contains a <a href="https://w3id.org/tern/ontologies/tern/Survey"><code>Survey</code></a> which, in turn, contains a series of <a href="https://w3id.org/tern/ontologies/tern/Observation"><code>Observation</code></a> instances with their spatial locations indicated, the spatial extent of the <code>Survey</code> will be taken to be at least the area containing the <code>Observation</code> locations. The dataset&#8217;s extent will be at least the boundary of all contained <code>Survey</code> instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <a href="#_reasoning_rules">Reasoning Rules</a> section.</p>
 </div>
@@ -2032,7 +2050,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_feature_relations"><a class="anchor" href="#_feature_relations"></a>5.3.8. Feature relations</h4>
+<h4 id="_feature_relations"><a class="anchor" href="#_feature_relations"></a>5.5.8. Feature relations</h4>
 <div class="paragraph">
 <p>In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#" class="bare">https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#</a><em>simple_features_relation_family[_Simple Features</em> relations] which are summarised as follows:</p>
 </div>
@@ -2140,7 +2158,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_elevation_depth"><a class="anchor" href="#_elevation_depth"></a>5.3.9. Elevation &amp; Depth</h4>
+<h4 id="_elevation_depth"><a class="anchor" href="#_elevation_depth"></a>5.5.9. Elevation &amp; Depth</h4>
 <h5 id="_absolute" class="discrete">Absolute</h5>
 <div class="paragraph">
 <p>If the absolute elevation or depth of an object needs representation, the 2D + Z forms of <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text representation of a geometry</a> should be used: <code>POINTZ</code>, <code>LINESTRINGZ</code> &amp; <code>POLYGONZ</code>.</p>
@@ -2203,7 +2221,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_temporality"><a class="anchor" href="#_temporality"></a>5.4. Temporality</h3>
+<h3 id="_temporality"><a class="anchor" href="#_temporality"></a>5.6. Temporality</h3>
 <h4 id="_feature_centric_2" class="discrete">Feature-centric</h4>
 <div class="paragraph">
 <p><em>ABIS inherits its temporal modelling from the <a href="#TIME">Time Ontology</a>. The <a href="#TERNOntology">TERN Ontology</a> uses the Time Ontology in places and used direct time representations elsewhere. This may be harmonised in the future.</em></p>
@@ -2337,7 +2355,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_provenance"><a class="anchor" href="#_provenance"></a>5.5. Provenance</h3>
+<h3 id="_provenance"><a class="anchor" href="#_provenance"></a>5.7. Provenance</h3>
 <div class="paragraph">
 <p>How things derive from other things, when and where this occurs and who may be responsible for actions is the domain of the <a href="#PROV">Provenance Ontology (PROV)</a> which is one of ABIS&#8217;s Background Models.</p>
 </div>
@@ -2367,7 +2385,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_agents"><a class="anchor" href="#_agents"></a>5.6. Agents</h3>
+<h3 id="_agents"><a class="anchor" href="#_agents"></a>5.8. Agents</h3>
 <div class="paragraph">
 <p>Things with agency to do work such as Organisations, People, Groups (of orgs and people) and perhaps software systems - are modelled as <em>Agents</em> in many Semantic Web and Knowledge Graph systems. In ABIS, we follow the general pattern for Agents outlined in the <a href="#PROV">Provenance Ontology (PROV)</a>, see the section above.</p>
 </div>
@@ -2385,7 +2403,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_observations_results"><a class="anchor" href="#_observations_results"></a>5.7. Observations &amp; Results</h3>
+<h3 id="_observations_results"><a class="anchor" href="#_observations_results"></a>5.9. Observations &amp; Results</h3>
 <div class="paragraph">
 <p><em>This pattern is inherited from the <a href="#TERNOntology">TERN Ontology</a>, which, in turn, inherits it from <a href="#SOSA">SOSA</a>.</em></p>
 </div>
@@ -2417,7 +2435,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_feature_of_interest"><a class="anchor" href="#_feature_of_interest"></a>5.8. Feature of Interest</h3>
+<h3 id="_feature_of_interest"><a class="anchor" href="#_feature_of_interest"></a>5.10. Feature of Interest</h3>
 <div class="paragraph">
 <p>A <em>feature of interest</em> is the object of some activity&#8217;s focus. This is a relative term: when an <em>observation</em> considers the property of something - perhaps the colour of a part of a leaf - then the part leaf only - a sample of it - is the <em>feature of interest</em>. If the <em>observation</em> were to consider the colour of the whole leaf, then the leaf is the <em>feature of interest</em>. If the colour of the whole bush from which the leaf came was considered, then the whole bush is the <em>feature of interest</em>.</p>
 </div>
@@ -2432,7 +2450,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sites"><a class="anchor" href="#_sites"></a>5.9. Sites</h3>
+<h3 id="_sites"><a class="anchor" href="#_sites"></a>5.11. Sites</h3>
 <div class="paragraph">
 <p>A <em>site</em> is a special kind of <em>feature of interest</em> with a particular definition in the domain of biodiversity science. As per the TERN Ontology, a <code>Site</code> in ABIS is:</p>
 </div>
@@ -2530,7 +2548,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect2">
 <h3 id="_foreground_model"><a class="anchor" href="#_foreground_model"></a>6.3. Foreground Model</h3>
 <div class="paragraph">
-<p>The ABIS Foreground Model is the union of the four Component Models listed in the next section. The dependencies of these models are shown in <a href="#hierarchy">Figure 13</a>, above.</p>
+<p>The ABIS Foreground Model is the union of the Component Models listed in the next section. The dependencies of these models are shown in <a href="#hierarchy">Figure 13</a>, above.</p>
 </div>
 <div class="paragraph">
 <p>When modelling biodiversity observations - ABIS' main concern - ABIS uses the <a href="#TERNOntology">TERN Ontology</a> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <a href="#NSLM">NSL Model</a>. When data packaging is necissary, the <a href="#_abis_catalogue_model">ABIS Catalogue Model</a> is used. Project information and data release details are modelled using the <a href="#_projects_model">ABIS Projects</a> &amp; <a href="#_data_release_model">ABIS Data Release</a> respectively.</p>
@@ -2541,16 +2559,16 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="paragraph">
 <p>The Component Models of ABIS are:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>The <a href="#tern-ontology">TERN Ontology</a></p>
+<p><a href="#_tern_ontology">TERN Ontology</a></p>
 </li>
 <li>
-<p>The <a href="#NSLM">NSL Model</a></p>
+<p><a href="#_nsl_model">NSL Model</a></p>
 </li>
 <li>
-<p><a href="#annex-a">ABIS Catalogue Model</a></p>
+<p><a href="#_abis_catalogue_model">ABIS Catalogue Model</a></p>
 </li>
 <li>
 <p><a href="#_projects_model">Projects Model</a></p>
@@ -2558,24 +2576,35 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <li>
 <p><a href="#_data_release_model">Data Release Model</a></p>
 </li>
-</ul>
+</ol>
+</div>
+<div class="paragraph">
+<p>The TERN Ontology and the NSL Model are defined externally to ABIS whereas the other 3 are defined here, within the ABIS Specification. A short overview of each of these models follows.</p>
 </div>
 <div class="sect3">
-<h4 id="tern-ontology"><a class="anchor" href="#tern-ontology"></a>6.4.1. TERN Ontology</h4>
+<h4 id="_tern_ontology"><a class="anchor" href="#_tern_ontology"></a>6.4.1. TERN Ontology</h4>
 <div class="paragraph">
-<p>The <a href="#TERNOntology">TERN Ontology</a> is a re-skinned, and slightly extended, version of the <a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> to better cater for the biodiversity community.</p>
+<p>Model location: see <a href="#TERNOntology">TERN Ontology</a> reference</p>
+</div>
+<div class="sect4">
+<h5 id="_overview"><a class="anchor" href="#_overview"></a>6.4.1.1. Overview</h5>
+<div class="paragraph">
+<p>The <a href="#TERNOntology">TERN Ontology</a> is a re-skinned, and slightly extended, version of the <a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> aiming to better cater for the biodiversity community. It is maintained by <a href="https://www.tern.org.au">TERN</a> and used beyond just ABIS.</p>
 </div>
 <div class="paragraph">
-<p>The main patterns within the TERN Ontology are for <em>observation</em> and <em>sampling</em>. The <em>observation</em> patterns are inherited directly from SOSA and are essentially as per the following figure.</p>
+<p>The main patterns within the TERN Ontology are for <em>observations</em> and <em>sampling</em>.</p>
+</div>
+<div class="paragraph">
+<p>The <em>observations</em> pattern is inherited directly from SOSA with some small extensions to indicate biodiversity and field observation objects, such as <code>Site</code>, and is essentially as per the following figure.</p>
 </div>
 <div id="tern-sosa" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/tern-sosa.svg"><img src="https://ausbigg.github.io/abis/img/tern-sosa.svg" alt="TERN&#8217;s Observation pattern" width="650"></a>
 </div>
-<div class="title">Figure 14. Classes and predicates from the <a href="#SOSA">SOSA ontology</a> used directly within the <a href="#TERNOntology">TERN Ontology</a>.</div>
+<div class="title">Figure 14. Classes and predicates from the <a href="#SOSA">SOSA ontology</a> used directly or subclassed with the same names by the <a href="#TERNOntology">TERN Ontology</a>.</div>
 </div>
 <div class="paragraph">
-<p>This pattern sees instances of the class <code>Observation</code> - individual acts of a person or a sensor observing something - following procedures to observe properties of a <code>Feature Of Interest</code> which could be a surveyed site, a material sample or even a satellite images (which would, in turn, be a sample of the land imaged). <code>Observation</code> instances produce <code>Result</code> instances which contain categorisations, numerical values, units of measure and so on, as necessary to well characterise the observed property quantity or category.</p>
+<p>This pattern sees instances of the class <code>Observation</code> - individual acts of a person or a sensor observing something - following procedures to quantify properties of a <code>Feature Of Interest</code> which could be a surveyed site, a material sample or even a satellite image (which would, in turn, be a sample of the land imaged). <code>Observation</code> instances produce <code>Result</code> instances which contain categorisations, numerical values, units of measure and so on, as necessary to well characterise the observed property quantity or category.</p>
 </div>
 <div class="paragraph">
 <p>The <a href="#PROV">Provenance Ontology</a> offers a generic perspective on <em>observation</em> and <em>sampling</em> with its take on the <em>observation</em> pattern above given in the figure below. This is as per the <a href="#_provenance">Provenance Pattern</a> described in the <a href="#_patterns">Patterns Section</a>.</p>
@@ -2596,40 +2625,40 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 16. Classes and predicates within the <a href="#TERNOntology">TERN Ontology</a> used to characterise sampling. The <code>is sample of</code> predicate can be derived from relations between a <code>Sample</code>, the <code>Sampling</code> and the <code>Site</code>. Note the similarity of structure to the <a href="#tern-sosa">SOSA Observation pattern</a>.</div>
 </div>
 <div class="paragraph">
-<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class like this:</p>
+<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class which is analogous to the <a href="#_abis_catalogue_model">ABIS Catalogue Model</a>'s <code>Dataset</code> class.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>ex:dataset-x
-    a tern:RDFDataset ;
-    # ... dataset metadata
-.
-
-ex:sample-y
-    a tern:Sample ;
-    # ...
-    void:inDataset ex:dataset-x ;
-.
-
-ex:obs-z
-    a tern:Observation ;
-    # ...
-    void:inDataset ex:dataset-x ;
-    sosa:hasFeatureOfInterest ex:sample-y ;
-.</pre>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>While the TERN Ontology provides some handling of data packaging, the ABIS Catalogue Model provides a more extended form of packaging with catalogues of datasets of records. See the <a href="#_data_cataloguing">Data Cataloguing</a> pattern for more information.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_examples"><a class="anchor" href="#_examples"></a>6.4.1.1. Examples</h5>
+<h5 id="_use_in_abis"><a class="anchor" href="#_use_in_abis"></a>6.4.1.2. Use in ABIS</h5>
 <div class="paragraph">
-<p>See <a href="#annex-d">Annex C: TERN Ontology Examples</a> for a full example of TERN Ontology data with explanations for each part.</p>
-</div>
-<div class="paragraph">
-<p>Also see the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> for multiple examples that can be loaded and validated using the online validators also there.</p>
+<p>The TERN Ontology provides the main model elements for ABIS observation-centric data. The other ABIS foreground models support this, covering off on aspects of ABIS data beyond the TERN Ontology&#8217;s scope.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_further_information"><a class="anchor" href="#_further_information"></a>6.4.1.2. Further Information</h5>
+<h5 id="_examples"><a class="anchor" href="#_examples"></a>6.4.1.3. Examples</h5>
+<div class="paragraph">
+<p>See <a href="#_d_1_tern_ontology">Annex D: Extended Examples &gt; TERN Ontology</a> for a full example of TERN Ontology data with explanations for each part.</p>
+</div>
+<div class="paragraph">
+<p>Also see the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> for multiple examples that can be loaded and validated using the online validators available there.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_further_information"><a class="anchor" href="#_further_information"></a>6.4.1.4. Further Information</h5>
 <div class="paragraph">
 <p>Further details of the TERN Ontology&#8217;s classes, predicates and patterns of expected use are documented at:</p>
 </div>
@@ -2644,6 +2673,14 @@ ex:obs-z
 </div>
 <div class="sect3">
 <h4 id="_nsl_model"><a class="anchor" href="#_nsl_model"></a>6.4.2. NSL Model</h4>
+<div class="paragraph">
+<p>Model location: see <a href="#NSLM">NSL Model</a> reference</p>
+</div>
+<div class="sect4">
+<h5 id="_overview_2"><a class="anchor" href="#_overview_2"></a>6.4.2.1. Overview</h5>
+<div class="paragraph">
+<p>The NSL Model is the <a href="https://biodiversity.org.au/nsl/">Australian National Species List</a> model for the identifying and referencing of species names.</p>
+</div>
 <div class="paragraph">
 <p>An overview of the main classes and predicates of the NSL Model is given in the figure below.</p>
 </div>
@@ -2680,24 +2717,118 @@ ex:obs-z
 </table>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_use_in_abis_2"><a class="anchor" href="#_use_in_abis_2"></a>6.4.2.2. Use in ABIS</h5>
+<div class="paragraph">
+<p>The NSL Model is used to link names for species to actual taxa and references to names and taxa in scientific literature.</p>
+</div>
+<div class="paragraph">
+<p>ABIS data need only reference NSL data modelled according to the NSL Model and <em>SHOULD NOT</em> re-characterise taxonomic name / taxon relations.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_examples_2"><a class="anchor" href="#_examples_2"></a>6.4.2.3. Examples</h5>
+<div class="paragraph">
+<p>The entire NSL dataset, modelled according to the NSL Model, should be available for public access in the latter half of 2024. Additionally, the BDR will contain a copy of the NSL data, so access to the BDR should provide access to that.</p>
+</div>
+<div class="paragraph">
+<p>Examples of NSL Model data can also be found throughout the <a href="https://linked.data.gov.au/def/nsl">NSL Model Specification</a>.</p>
+</div>
+<div class="paragraph">
+<p>References to NSL objects - instances of the <code>TaxonName</code> class - are also present within example data files in the <a href="https://abis.dev.kurrawong.ai">ABIS Portal</a>.</p>
+</div>
+</div>
+</div>
 <div class="sect3">
 <h4 id="_abis_catalogue_model"><a class="anchor" href="#_abis_catalogue_model"></a>6.4.3. ABIS Catalogue Model</h4>
 <div class="paragraph">
 <p>Model location: <a href="#annex-a">Annex A</a></p>
 </div>
+<div class="sect4">
+<h5 id="_overview_3"><a class="anchor" href="#_overview_3"></a>6.4.3.1. Overview</h5>
 <div class="paragraph">
-<p>ABIS implements a small catalogue model</p>
+<p>ABIS implements a simple catalogue model that reuses a class from the TERN Ontology, a class from <a href="#SDO">schema.org</a> and introduces a class of its own, specific to biodiversity observations.</p>
 </div>
 <div class="paragraph">
-<p><a href="#DCAT">DCAT</a></p>
+<p>From <a href="#SDO">schema.org</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://schema.org/DataCatalog">DataCatalog</a> - A collection of datasets</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><a href="#SDO">schema.org</a></p>
+<p>From the <a href="#_tern_ontology">TERN Ontology</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://w3id.org/tern/ontologies/tern/Dataset">Dataset</a> - A collection of data, published or curated by a single agent, and available for access or download in one or more representation</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>DataCatalog - A collection of datasets.
-Dataset - A body of structured information describing some topic(s) of interest.
-Record</p>
+<p>Introduced:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#abis:BiodiversityOccurrenceRecord">(Biodiversity Occurrence) Record</a> - A unit of information that records the observation of a biodiversity occurrence</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The use of the existing classes is as per <a href="#SDO">schema.org</a>'s basic data cataloguing, which is based on the <a href="#DCAT">Data Catalog Vocabulary (DCAT)</a> standard, where <code>DataCatalog</code> instances contain <code>Dataset</code> instances. This model&#8217;s extension with the definition of the (Biodiversity Occurrence) Record class - <code>Record</code> - is to define data elements within datasets that are specifically about biodiversity occurrences.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>Record</code> instances can be calculated from puer TERN ontology data if not directly stated, according to the <a href="#_record_rule">Record Rule</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>See the patterns of <a href="#_data_cataloguing">Data Cataloguing</a> and <a href="#_records_occurrences">Section 5.4</a> for more information and <a href="#annex-a">this model&#8217;s definition in Annex A</a> for further information.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_use_in_abis_3"><a class="anchor" href="#_use_in_abis_3"></a>6.4.3.2. Use in ABIS</h5>
+<div class="paragraph">
+<p>This model is to be used to group 'chunks' of ABIS data together in <code>Dataset</code> instances and to list those 'chunks' in catalogues. Further, this model is to be used to identify records of biodiversity occurrences.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_examples_3"><a class="anchor" href="#_examples_3"></a>6.4.3.3. Examples</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">dataset-x
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="c1"># ... dataset metadata</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">sample-y
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="c1"># ...</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">obs-z
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="c1"># ...</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nn">ex:</span><span class="n">sample-y</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -3106,7 +3237,7 @@ Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_examples_2"><a class="anchor" href="#_examples_2"></a>8.2.3. Examples</h4>
+<h4 id="_examples_4"><a class="anchor" href="#_examples_4"></a>8.2.3. Examples</h4>
 <div class="paragraph">
 <p><em>Coming Soon</em></p>
 </div>
@@ -4311,6 +4442,10 @@ ex:obs-1
 </div>
 <div class="sect2">
 <h3 id="_rule_list"><a class="anchor" href="#_rule_list"></a>11.2. Rule List</h3>
+<h4 id="_record_rule" class="discrete">Record Rule</h4>
+<div class="paragraph">
+<p>This rule allows for the creation of <a href="#abis:BiodiversityOccurrenceRecord">Record</a> instances from <a href="#_tern_ontology">TERN Ontology</a> data that doesn&#8217;t directly indicate such as class of object.</p>
+</div>
 <h4 id="_spatial_reasoning" class="discrete">Spatial Reasoning</h4>
 <div class="paragraph">
 <p>The following spatial reasoning rules will be applied to ABIS data.</p>
@@ -4619,7 +4754,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="ulist">
 <ul>
 <li>
-<p>None</p>
+<p><a href="#abis:BiodiversityOccurrenceRecord">Record</a></p>
 </li>
 </ul>
 </div>
@@ -4633,7 +4768,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </li>
 </ul>
 </div>
-<h4 id="xxxx" class="discrete">Class 1</h4>
+<h4 id="abis:BiodiversityOccurrenceRecord" class="discrete">BiodiversityOccurrenceRecord (Record)</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -6222,13 +6357,18 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect1">
-<h2 id="annex-d"><a class="anchor" href="#annex-d"></a>Annex D: TERN Ontology Examples</h2>
+<h2 id="annex-d"><a class="anchor" href="#annex-d"></a>Annex D: Extended Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This following examples are all <a href="#RDF">RDF</a> data in the <a href="#TURTLE">Turtle</a> format.</p>
 </div>
 <div class="sect2">
-<h3 id="_c1_validating"><a class="anchor" href="#_c1_validating"></a>C1. Validating</h3>
+<h3 id="_d_1_tern_ontology"><a class="anchor" href="#_d_1_tern_ontology"></a>D.1. TERN Ontology</h3>
+<div class="paragraph">
+<p>These examples use <a href="#TERNOntology">TERN Ontology</a> elements only.</p>
+</div>
+<div class="sect3">
+<h4 id="_d_1_1_validating"><a class="anchor" href="#_d_1_1_validating"></a>D.1.1. Validating</h4>
 <div class="paragraph">
 <p>All these examples are loaded into the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> and may be validated online using the TERN Ontology validator which is also loaded there.</p>
 </div>
@@ -6280,8 +6420,8 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_c2_example_01_valid"><a class="anchor" href="#_c2_example_01_valid"></a>C2. Example 01 - valid</h3>
+<div class="sect3">
+<h4 id="_d_1_2_example_01_valid"><a class="anchor" href="#_d_1_2_example_01_valid"></a>D.1.2. Example 01 - valid</h4>
 <div class="paragraph">
 <p>This example is valid according to the TERN Ontology validator.</p>
 </div>
@@ -6340,8 +6480,8 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_c3_example_02_invalid"><a class="anchor" href="#_c3_example_02_invalid"></a>C3. Example 02 - invalid</h3>
+<div class="sect3">
+<h4 id="_d_1_3_example_02_invalid"><a class="anchor" href="#_d_1_3_example_02_invalid"></a>D.1.3. Example 02 - invalid</h4>
 <div class="paragraph">
 <p>This example is the same data as the above but with several lines commented out (starting with <code>#</code>) which makes it invalid according to the TERN Ontology validator.</p>
 </div>
@@ -6426,9 +6566,10 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-07-19 05:19:18 UTC
+Last updated 2024-07-19 12:38:04 UTC
 </div>
 </div>
 </body>
