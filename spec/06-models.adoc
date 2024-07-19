@@ -30,16 +30,17 @@ image::img/hierarchy.svg[ABIS Parts,align="center"]
 
 === Foreground Model
 
-The ABIS Foreground Model is the union of the NSL Model, the TERN Ontology and the ABIS Component Models, as shown in <<#hierarchy, Figure 7>>, above.
+The ABIS Foreground Model is the union of the four Component Models listed in the next section. The dependencies of these models are shown in <<#hierarchy, Figure 13>>, above.
 
-When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>>. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When project information and data release details are modelled, the <<Projects Model, ABIS Projects>> & <<Data Release Model, ABIS Data Release>> models are used.
+When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necissary, the <<ABIS Catalogue Model, ABIS Catalogue Model>> is used. Project information and data release details are modelled using the <<Projects Model, ABIS Projects>> & <<Data Release Model, ABIS Data Release>> respectively.
 
 === Component Models
 
 The Component Models of ABIS are:
 
-* The <<TERNOntology, TERN Ontology>>
+* The <<#tern-ontology, TERN Ontology>>
 * The <<NSLM, NSL Model>>
+* <<#annex-a, ABIS Catalogue Model>>
 * <<Projects Model, Projects Model>>
 * <<Data Release Model, Data Release Model>>
 
@@ -92,7 +93,7 @@ ex:obs-z
 
 ===== Examples
 
-See <<#annex-c, Annex C: TERN Ontology Examples>> for a full example of TERN Ontology data with explanations for each part.
+See <<#annex-d, Annex C: TERN Ontology Examples>> for a full example of TERN Ontology data with explanations for each part.
 
 Also see the https://abis.dev.kurrawong.net[ABIS Portal] for multiple examples that can be loaded and validated using the online validators also there.
 
@@ -122,27 +123,49 @@ image::img/nsl-join.svg[NSL Model Overview,align="center",width=550]
 The NSL Model stated that a `Taxon`, rather than a `Taxon Name`, _MAY_ be assigned to a `Feature of Interest`, but it sets criteria for this in its https://linked.data.gov.au/def/nsl#mapping-abis[ABIS Mapping] section.
 ====
 
+==== ABIS Catalogue Model
+
+Model location: <<#annex-a, Annex A>>
+
+ABIS implements a small catalogue model
+
+<<DCAT, DCAT>>
+
+<<SDO, schema.org>>
+
+
+
+DataCatalog - A collection of datasets.
+Dataset - A body of structured information describing some topic(s) of interest.
+Record
+
+
+
 ==== Projects Model
 
-ABIS contains a simple model of Projects where a <<#Project, `Project`>> is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective". The Model is fully described in <<#annex-a, Annex A: Projects Model>>.
+Model location: <<#annex-b, Annex B>>
 
-The following figure illustrates the basic relationships of the class <<#Project, `Project`>> and <<#Program, `Program`>>, the only other class defined by the model.
+ABIS contains a simple model of Projects where a <<#abis:Project, `Project`>> is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective". The Model is fully described in <<#annex-b, Annex A: Projects Model>>.
+
+The following figure illustrates the basic relationships of the class <<#abis:Project, `Project`>> and <<#abis:Program, `Program`>>, the only other class defined by the model.
 
 [#proj-hierarchy,link="img/proj-hierarchy.svg"]
 .The two classes defined by the Projects Model - Project & Program - and their main relationships.
 image::img/proj-hierarchy.svg[Projects Model Class Hierarchy,align="center",width=400]
 
-The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class - are produced by instances of <<#Project, `Project`>> as per the figure below.
+The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class - are produced by instances of <<#abis:Project, `Project`>> as per the figure below.
 
 [#proj-join,link="img/proj-join.svg"]
 .The Projects Model joins the rest of ABIS by Project instances producing https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] instances.
 image::img/proj-join.svg[Projects Model Join Poin,align="center",width=400]
 
-See <<#annex-a, Annex A>> for more details about the Project Model.
+See <<#annex-b, Annex A>> for more details about the Project Model.
 
 ==== Data Release Model
 
-ABIS contains a simple model for describing aspects of data release: to whom, under what circumstances and when data may be released. The Model is fully described in <<#annex-b, Annex B: Data Release Model>>.
+Model location: <<#annex-c, Annex C>>
+
+ABIS contains a simple model for describing aspects of data release: to whom, under what circumstances and when data may be released. The Model is fully described in <<#annex-c, Annex B: Data Release Model>>.
 
 The following figure illustrates the basic elements of this model.
 

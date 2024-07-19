@@ -1,5 +1,5 @@
-[[annex-c]]
-== Annex C: TERN Ontology Examples
+[[annex-d]]
+== Annex D: TERN Ontology Examples
 
 This following examples are all <<RDF, RDF>> data in the <<TURTLE, Turtle>> format.
 

@@ -4,7 +4,7 @@ ABIS use depends on the use of many vocabularies. For example, the observed _gro
 
 Some uses of ABIS, such as for the submission of data to the <<BDR, BDR>>, require the use of particular vocabularies that aren't mandated for general ABIS use, for example the use of the https://linked.data.gov.au/dataset/bdr/datatypes/[_BDR Datatypes_] vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <<Profiles, Profiles>>.
 
-Some <<Component Models, Component Models>> of ABIS also require the use of particular vocabularies, for example, the <<#annex-a, Projects Model>> mandates that roles chosen for an attribution's `hadRole` predicate, when used for an instances of the `abis:Project` class, must come from the https://data.idnau.org/pid/vocab/idn-role-codes[IDN Role Codes Vocabulary]
+Some <<Component Models, Component Models>> of ABIS also require the use of particular vocabularies, for example, the <<#annex-b, Projects Model>> mandates that roles chosen for an attribution's `hadRole` predicate, when used for an instances of the `abis:Project` class, must come from the https://data.idnau.org/pid/vocab/idn-role-codes[IDN Role Codes Vocabulary]
 
 All the vocabularies required for use with ABIS and any known profile of ABIS are listed at the _BDR Vocabulary Register_:
 

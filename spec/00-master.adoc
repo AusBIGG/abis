@@ -49,8 +49,10 @@ include::99-references.adoc[]
 
 :sectnums!:
 
-include::51_annex_a.adoc[]
+include::50_annex_a.adoc[]
 
-include::52_annex_b.adoc[]
+include::51_annex_b.adoc[]
 
-include::53_annex_c.adoc[]
+include::52_annex_c.adoc[]
+
+include::53_annex_d.adoc[]

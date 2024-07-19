@@ -1,5 +1,5 @@
-[[annex-a]]
-== Annex A: Projects Model
+[[annex-b]]
+== Annex B: Projects Model
 
 [#proj-overview,link="img/proj-hierarchy.svg"]
 .The two classes defined by the Projects Model - Project & Program - and their main relationships.
@@ -8,7 +8,7 @@ image::img/proj-hierarchy.svg[Projects Model Class Hierarchy,align="center",widt
 <<abis:Project, `Project`>>s are part of <<abis:Program, `Program`>>s and both are specialised forms of <<PROV, PROV>>'s https://www.w3.org/TR/prov-o/#Activity[`Activity`] class. An `Activity` is "something that occurs over a period of time and acts upon or with entities" which means `Project`s & `Program`s can have all the properties that `Activities` can have, such as temporal extents, `Agents` that have causal relationships to them and so on.
 
 [[projects-metadata]]
-=== Metadata
+=== B.1. Metadata
 
 [frame=none, grid=none, cols="1,5"]
 |===
@@ -30,17 +30,17 @@ Issue tracking of the ABIS standard is managed online at https://github.com/AusB
 |*https://schema.org/codeRepository[Code Repository]* | https://github.com/AusBIGG/abis
 |===
 
-=== Supporting Assets
+=== B.2. Supporting Assets
 
 * RDF schema:
 ** https://linked.data.gov.au/def/abis/projects.ttl
 * <<SHACL, SHACL>> validation file:
 ** https://linked.data.gov.au/def/abis/projects/validator.ttl
 
-=== Classes
+=== B.3. Classes
 
 [discrete]
-==== Class Index
+==== B.3.1. Class Index
 
 Classes defined here:
 
@@ -56,7 +56,7 @@ Classes defined elsewhere:
 
 [discrete]
 [[abis:Project]]
-==== Project
+==== B.3.2. Project
 
 [#proj-project,link="img/proj-project.svg"]
 .The Projects Model `Project` Class and its expected predicates
@@ -120,7 +120,7 @@ a|
 
 [discrete]
 [[abis:Program]]
-==== Program
+==== B.3.3. Program
 
 [#proj-program,link="img/proj-program.svg"]
 .The Projects Model `Program` Class and its expected predicates
@@ -143,7 +143,7 @@ image::img/proj-program.svg[Projects Model Program Class,align="center",width=65
 
 [discrete]
 [[prov:Attribution]]
-==== Attribution
+==== B.3.4 Attribution
 
 [cols="3,10"]
 |===
@@ -160,7 +160,7 @@ image::img/proj-program.svg[Projects Model Program Class,align="center",width=65
 
 [discrete]
 [[prov:Agent]]
-==== Agent
+==== B.3.5. Agent
 
 [cols="3,10"]
 |===
@@ -177,7 +177,7 @@ image::img/proj-program.svg[Projects Model Program Class,align="center",width=65
 
 [discrete]
 [[schema:Organization]]
-==== Organization
+==== B.3.6. Organization
 
 [cols="3,10"]
 |===
@@ -196,7 +196,7 @@ image::img/proj-program.svg[Projects Model Program Class,align="center",width=65
 [discrete]
 [discrete]
 [[schema:Person]]
-==== Person
+==== B.3.7. Person
 
 [cols="3,10"]
 |===
@@ -213,7 +213,7 @@ image::img/proj-program.svg[Projects Model Program Class,align="center",width=65
 
 [discrete]
 [[skos:Concept]]
-==== Concept
+==== B.3.8. Concept
 
 [cols="3,10"]
 |===
@@ -227,7 +227,7 @@ image::img/proj-program.svg[Projects Model Program Class,align="center",width=65
 | Expected Properties | None
 |===
 
-=== Predicates
+=== B.4. Predicates
 
 This model defines only one predicate - <<abis:purpose, purpose>> - but also requires the use of others defined elsewhere. Definitions for all predicates are copied from source and given here.
 
@@ -448,9 +448,9 @@ Predicates defined elsewhere:
 | https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:Project, Project>>
 |===
 
-=== Shapes
+_=== B.5. Validators
 
-The following <<SHACL, SHACL>> shapes are graph patterns mandated by this model.
+#TODO: list and define validators fro this model#
 
 [discrete]
 ==== Shapes Index

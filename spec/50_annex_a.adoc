@@ -1,0 +1,155 @@
+[[annex-a]]
+== Annex A: ABIS Catalogue Model
+
+// [#proj-overview,link="img/proj-hierarchy.svg"]
+// .The two classes defined by the Projects Model - Project & Program - and their main relationships.
+// image::img/proj-hierarchy.svg[Projects Model Class Hierarchy,align="center",width=400]
+//
+// <<abis:Project, `Project`>>s are part of <<abis:Program, `Program`>>s and both are specialised forms of <<PROV, PROV>>'s https://www.w3.org/TR/prov-o/#Activity[`Activity`] class. An `Activity` is "something that occurs over a period of time and acts upon or with entities" which means `Project`s & `Program`s can have all the properties that `Activities` can have, such as temporal extents, `Agents` that have causal relationships to them and so on.
+
+[[catalogue-metadata]]
+=== A.1. Metadata
+
+[frame=none, grid=none, cols="1,5"]
+|===
+|*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis/projects
+|*https://schema.org/name[Name]* | ABIS Data Release Model
+|*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This model is for describing Projects where Project is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective".
+|*https://schema.org/dateCreated[Created Date]* | 2023-10-15
+|*https://schema.org/dateModified[Modified Date]* | 2023-12-28
+|*https://schema.org/dateIssued[Issued Date]* | 2023-12-28
+|*https://schema.org/version[Version]* | 1.0
+|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/projects/1.0[abisp:1.0]
+|*Version History*| *2.0* - 2023 Dec - First release (v2.0 to match ABIS)
+|*https://schema.org/creator[Creator]* | the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
+|*https://schema.org/owner[Owner]* | https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AUSBIGG)]
+|*https://schema.org/publisher[Publisher]* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
+|*https://schema.org/license[License]* | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|*https://www.w3.org/TR/vocab-dcat/#Property:resource_contact_point[Contacts]* | AusBIGG is supported by DCCEEW's' Biodiversity Data Repository (BDR) Team. Contact the BDR Team on bdr@dcceew.gov.au +
+Issue tracking of the ABIS standard is managed online at https://github.com/AusBIGG/abis/issues
+|*https://schema.org/codeRepository[Code Repository]* | https://github.com/AusBIGG/abis
+|===
+
+=== A.2. Supporting Assets
+
+* RDF schema:
+** https://linked.data.gov.au/def/abis/projects.ttl
+* <<SHACL, SHACL>> validation file:
+** https://linked.data.gov.au/def/abis/projects/validator.ttl
+
+=== A.3. Classes
+
+[discrete]
+==== Class Index
+
+Classes defined here:
+
+* None
+
+Classes defined elsewhere:
+
+* None
+
+[discrete]
+[[xxxx]]
+==== Class 1
+
+// [#proj-project,link="img/proj-project.svg"]
+// .The Projects Model `Project` Class and its expected predicates
+// image::img/proj-project.svg[Projects Model Project Class,align="center",width=650]
+
+[cols="3,10"]
+|===
+| Property | Value
+
+| <<IRI, IRI>> | `abis:Project`
+| https://www.w3.org/TR/rdf12-schema/#ch_subclassof[Subclass of] | https://www.w3.org/TR/prov-o/#Activity[`Activity`]
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | Project
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | An Activity that requires concerted effort following a Plan in pursuit of an objective
+| https://www.w3.org/TR/skos-reference/#definition[History Note] | Defined by BDR Team in 2023 in response to BDR usage needs
+| Expected Properties | <<schema:isPartOf, is part of>>, <<time:hasTime, has time>>, <<geo:hasGeometry, has geometry>>, <<prov:generated, generated>>,
+| https://www.w3.org/TR/skos-reference/#example[Example]
+a|
+----
+:project-m
+    a abis:Project ;
+    schema:name "Project M" ;
+    schema:description "South Australian government Project M-23" ;
+    abis:purpose "To determine extent of koala populations in NE SA" ;
+    schema:keywords
+        ex:koala ,
+        <https://linked.data.gov.au/dataset/asgsed3/STE/4> ;   # S.A.
+    schema:isPartOf :program-n ;
+    # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
+    # Note temporal range within that of containing Program
+    prov:startedAtTime "2023-12-01"^^xsd:date ;
+    prov:endedAtTime "2023-12-15"^^xsd:date ;
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "POLYGON ((138.010254 -26.007424, 140.976563 -25.99755, ..., 138.010254 -26.007424))"
+    ] ;
+    prov:qualifiedAttribution [
+        prov:agent ex:dewr ;  # SA Dept Env, e.g. only
+        prov:hadRole role:principalInvestigator ;
+    ] ;
+    prov:generated ex:dataset-x ;
+.
+
+:program-n
+    a abis:Program ;
+    schema:name "Program N" ;
+    schema:hasPart :project-m ;
+    # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
+    time:hasTime [
+        time:hasBeginning [
+            time:inXSDDateTime "2023-12-01"^^xsd:date ;
+        ] ;
+        time:hasEnd [
+            time:inXSDDateTime "2023-12-28"^^xsd:date ;
+        ] ;
+    ] ;
+    # ... other properties
+.
+----
+|===
+
+=== A.4. Predicates
+
+// This model defines only one predicate - <<abis:purpose, purpose>> - but also requires the use of others defined elsewhere. Definitions for all predicates are copied from source and given here.
+
+[discrete]
+==== Predicate Index
+
+Predicates defined here:
+
+* None
+
+Predicates defined elsewhere:
+
+* None
+
+[discrete]
+[[yyyy]]
+==== Predicate 1
+
+[cols="3,10"]
+|===
+| Property | Value
+
+| <<IRI, IRI>> | `abis:purpose`
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | purpose
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | The intent of the Activity
+| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate a textual intent for a Project or a Program
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
+| https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:Project, Project>>
+|===
+
+=== A.5. Shapes
+
+The following <<SHACL, SHACL>> shapes are graph patterns mandated by this model.
+
+[discrete]
+==== Shapes Index
+
+#INCOMPLETE#
