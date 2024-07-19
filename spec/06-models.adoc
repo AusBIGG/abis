@@ -30,7 +30,7 @@ image::img/hierarchy.svg[ABIS Parts,align="center"]
 
 === Foreground Model
 
-The ABIS Foreground Model is the union of the four Component Models listed in the next section. The dependencies of these models are shown in <<#hierarchy, Figure 13>>, above.
+The ABIS Foreground Model is the union of the Component Models listed in the next section. The dependencies of these models are shown in <<#hierarchy, Figure 13>>, above.
 
 When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necissary, the <<ABIS Catalogue Model, ABIS Catalogue Model>> is used. Project information and data release details are modelled using the <<Projects Model, ABIS Projects>> & <<Data Release Model, ABIS Data Release>> respectively.
 
@@ -38,24 +38,31 @@ When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<
 
 The Component Models of ABIS are:
 
-* The <<#tern-ontology, TERN Ontology>>
-* The <<NSLM, NSL Model>>
-* <<#annex-a, ABIS Catalogue Model>>
-* <<Projects Model, Projects Model>>
-* <<Data Release Model, Data Release Model>>
+. <<TERN Ontology, TERN Ontology>>
+. <<NSL Model, NSL Model>>
+. <<ABIS Catalogue Model, ABIS Catalogue Model>>
+. <<Projects Model, Projects Model>>
+. <<Data Release Model, Data Release Model>>
 
-[[tern-ontology]]
+The TERN Ontology and the NSL Model are defined externally to ABIS whereas the other 3 are defined here, within the ABIS Specification. A short overview of each of these models follows.
+
 ==== TERN Ontology
 
-The <<TERNOntology, TERN Ontology>> is a re-skinned, and slightly extended, version of the <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> to better cater for the biodiversity community.
+Model location: see <<TERNOntology, TERN Ontology>> reference
 
-The main patterns within the TERN Ontology are for _observation_ and _sampling_. The _observation_ patterns are inherited directly from SOSA and are essentially as per the following figure.
+===== Overview
+
+The <<TERNOntology, TERN Ontology>> is a re-skinned, and slightly extended, version of the <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> aiming to better cater for the biodiversity community. It is maintained by https://www.tern.org.au[TERN] and used beyond just ABIS.
+
+The main patterns within the TERN Ontology are for _observations_ and _sampling_.
+
+The _observations_ pattern is inherited directly from SOSA with some small extensions to indicate biodiversity and field observation objects, such as `Site`, and is essentially as per the following figure.
 
 [#tern-sosa,link="img/tern-sosa.svg"]
-.Classes and predicates from the <<SOSA, SOSA ontology>> used directly within the <<TERNOntology, TERN Ontology>>.
+.Classes and predicates from the <<SOSA, SOSA ontology>> used directly or subclassed with the same names by the <<TERNOntology, TERN Ontology>>.
 image::img/tern-sosa.svg[TERN's Observation pattern,align="center",width=650]
 
-This pattern sees instances of the class `Observation` - individual acts of a person or a sensor observing something - following procedures to observe properties of a `Feature Of Interest` which could be a surveyed site, a material sample or even a satellite images (which would, in turn, be a sample of the land imaged). `Observation` instances produce `Result` instances which contain categorisations, numerical values, units of measure and so on, as necessary to well characterise the observed property quantity or category.
+This pattern sees instances of the class `Observation` - individual acts of a person or a sensor observing something - following procedures to quantify properties of a `Feature Of Interest` which could be a surveyed site, a material sample or even a satellite image (which would, in turn, be a sample of the land imaged). `Observation` instances produce `Result` instances which contain categorisations, numerical values, units of measure and so on, as necessary to well characterise the observed property quantity or category.
 
 The <<PROV, Provenance Ontology>> offers a generic perspective on _observation_ and _sampling_ with its take on the _observation_ pattern above given in the figure below. This is as per the <<Provenance, Provenance Pattern>> described in the <<Patterns, Patterns Section>>.
 
@@ -69,33 +76,22 @@ The TERN Ontology's _sampling_ pattern follows SOSA too but uses specialised cla
 .Classes and predicates within the <<TERNOntology, TERN Ontology>> used to characterise sampling. The `is sample of` predicate can be derived from relations between a `Sample`, the `Sampling` and the `Site`. Note the similarity of structure to the <<#tern-sosa, SOSA Observation pattern>>.
 image::img/tern-sampling.svg[TERN's Observation pattern,align="center",width=650]
 
-TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class like this:
+TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class which is analogous to the <<ABIS Catalogue Model, ABIS Catalogue Model>>'s `Dataset` class.
 
-----
-ex:dataset-x
-    a tern:RDFDataset ;
-    # ... dataset metadata
-.
+[NOTE]
+====
+While the TERN Ontology provides some handling of data packaging, the ABIS Catalogue Model provides a more extended form of packaging with catalogues of datasets of records. See the <<Data Cataloguing, Data Cataloguing>> pattern for more information.
+====
 
-ex:sample-y
-    a tern:Sample ;
-    # ...
-    void:inDataset ex:dataset-x ;
-.
+===== Use in ABIS
 
-ex:obs-z
-    a tern:Observation ;
-    # ...
-    void:inDataset ex:dataset-x ;
-    sosa:hasFeatureOfInterest ex:sample-y ;
-.
-----
+The TERN Ontology provides the main model elements for ABIS observation-centric data. The other ABIS foreground models support this, covering off on aspects of ABIS data beyond the TERN Ontology's scope.
 
 ===== Examples
 
-See <<#annex-d, Annex C: TERN Ontology Examples>> for a full example of TERN Ontology data with explanations for each part.
+See <<D.1. TERN Ontology, Annex D: Extended Examples > TERN Ontology>> for a full example of TERN Ontology data with explanations for each part.
 
-Also see the https://abis.dev.kurrawong.net[ABIS Portal] for multiple examples that can be loaded and validated using the online validators also there.
+Also see the https://abis.dev.kurrawong.net[ABIS Portal] for multiple examples that can be loaded and validated using the online validators available there.
 
 ===== Further Information
 Further details of the TERN Ontology's classes, predicates and patterns of expected use are documented at:
@@ -103,6 +99,12 @@ Further details of the TERN Ontology's classes, predicates and patterns of expec
 * https://linkeddata.tern.org.au/information-models/overview
 
 ==== NSL Model
+
+Model location: see <<NSLM, NSL Model>> reference
+
+===== Overview
+
+The NSL Model is the https://biodiversity.org.au/nsl/[Australian National Species List] model for the identifying and referencing of species names.
 
 An overview of the main classes and predicates of the NSL Model is given in the figure below.
 
@@ -123,22 +125,75 @@ image::img/nsl-join.svg[NSL Model Overview,align="center",width=550]
 The NSL Model stated that a `Taxon`, rather than a `Taxon Name`, _MAY_ be assigned to a `Feature of Interest`, but it sets criteria for this in its https://linked.data.gov.au/def/nsl#mapping-abis[ABIS Mapping] section.
 ====
 
+===== Use in ABIS
+
+The NSL Model is used to link names for species to actual taxa and references to names and taxa in scientific literature.
+
+ABIS data need only reference NSL data modelled according to the NSL Model and _SHOULD NOT_ re-characterise taxonomic name / taxon relations.
+
+===== Examples
+
+The entire NSL dataset, modelled according to the NSL Model, should be available for public access in the latter half of 2024. Additionally, the BDR will contain a copy of the NSL data, so access to the BDR should provide access to that.
+
+Examples of NSL Model data can also be found throughout the https://linked.data.gov.au/def/nsl[NSL Model Specification].
+
+References to NSL objects - instances of the `TaxonName` class - are also present within example data files in the https://abis.dev.kurrawong.ai[ABIS Portal].
+
 ==== ABIS Catalogue Model
 
 Model location: <<#annex-a, Annex A>>
 
-ABIS implements a small catalogue model
+===== Overview
 
-<<DCAT, DCAT>>
+ABIS implements a simple catalogue model that reuses a class from the TERN Ontology, a class from <<SDO, schema.org>> and introduces a class of its own, specific to biodiversity observations.
 
-<<SDO, schema.org>>
+From <<SDO, schema.org>>:
 
+* https://schema.org/DataCatalog[DataCatalog] - A collection of datasets
 
+From the <<TERN Ontology, TERN Ontology>>:
 
-DataCatalog - A collection of datasets.
-Dataset - A body of structured information describing some topic(s) of interest.
-Record
+* https://w3id.org/tern/ontologies/tern/Dataset[Dataset] - A collection of data, published or curated by a single agent, and available for access or download in one or more representation
 
+Introduced:
+
+* <<abis:BiodiversityOccurrenceRecord, (Biodiversity Occurrence) Record>> - A unit of information that records the observation of a biodiversity occurrence
+
+The use of the existing classes is as per <<SDO, schema.org>>'s basic data cataloguing, which is based on the <<DCAT, Data Catalog Vocabulary (DCAT)>> standard, where `DataCatalog` instances contain `Dataset` instances. This model's extension with the definition of the (Biodiversity Occurrence) Record class - `Record` - is to define data elements within datasets that are specifically about biodiversity occurrences.
+
+[NOTE]
+====
+`Record` instances can be calculated from puer TERN ontology data if not directly stated, according to the <<Record Rule, Record Rule>>.
+====
+
+See the patterns of <<Data Cataloguing, Data Cataloguing>> and <<Records & Occurrences>> for more information and <<#annex-a, this model's definition in Annex A>> for further information.
+
+===== Use in ABIS
+
+This model is to be used to group 'chunks' of ABIS data together in `Dataset` instances and to list those 'chunks' in catalogues. Further, this model is to be used to identify records of biodiversity occurrences.
+
+===== Examples
+
+[source,turtle]
+----
+ex:dataset-x
+    a tern:RDFDataset ;
+    # ... dataset metadata
+.
+
+ex:sample-y
+    a tern:Sample ;
+    # ...
+    void:inDataset ex:dataset-x ;
+.
+
+ex:obs-z
+    a tern:Observation ;
+    # ...
+    void:inDataset ex:dataset-x ;
+    sosa:hasFeatureOfInterest ex:sample-y ;
+.
+----
 
 
 ==== Projects Model

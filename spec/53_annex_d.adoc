@@ -1,9 +1,13 @@
 [[annex-d]]
-== Annex D: TERN Ontology Examples
+== Annex D: Extended Examples
 
 This following examples are all <<RDF, RDF>> data in the <<TURTLE, Turtle>> format.
 
-=== C1. Validating
+=== D.1. TERN Ontology
+
+These examples use <<TERNOntology, TERN Ontology>> elements only.
+
+==== D.1.1. Validating
 
 All these examples are loaded into the https://abis.dev.kurrawong.net[ABIS Portal] and may be validated online using the TERN Ontology validator which is also loaded there.
 
@@ -24,7 +28,7 @@ If using the https://github.com/RDFLib/pySHACL[pySHACL] tool, the following comm
 pyshaclz -s tern-validator.ttl -e tern-ont.ttl tern-eg-01.ttl -f table
 ----
 
-=== C2. Example 01 - valid
+==== D.1.2. Example 01 - valid
 
 This example is valid according to the TERN Ontology validator.
 
@@ -82,7 +86,7 @@ ex:foi-01
 .
 ----
 
-=== C3. Example 02 - invalid
+==== D.1.3. Example 02 - invalid
 
 This example is the same data as the above but with several lines commented out (starting with `#`) which makes it invalid according to the TERN Ontology validator.
 

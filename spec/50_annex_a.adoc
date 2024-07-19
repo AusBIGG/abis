@@ -44,15 +44,15 @@ Issue tracking of the ABIS standard is managed online at https://github.com/AusB
 
 Classes defined here:
 
-* None
+* <<abis:BiodiversityOccurrenceRecord, Record>>
 
 Classes defined elsewhere:
 
 * None
 
 [discrete]
-[[xxxx]]
-==== Class 1
+[[abis:BiodiversityOccurrenceRecord]]
+==== BiodiversityOccurrenceRecord (Record)
 
 // [#proj-project,link="img/proj-project.svg"]
 // .The Projects Model `Project` Class and its expected predicates

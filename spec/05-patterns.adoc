@@ -179,6 +179,14 @@ Multiple alternate identifiers may be given, as long as their datatypes are uniq
 .
 ----
 
+=== Data Cataloguing
+
+#TODO#
+
+=== Records & Occurrences
+
+#TODO#
+
 === Spatially
 
 _ABIS inherits its spatial modelling from <<GSP, GeoSPARQL>>, as does the <<TERNOntology, TERN Ontology>>._

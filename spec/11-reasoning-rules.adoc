@@ -8,6 +8,11 @@ This section contains rules that ABIS-compliant systems must implement. The rule
 === Rule List
 
 [discrete]
+==== Record Rule
+
+This rule allows for the creation of <<abis:BiodiversityOccurrenceRecord, Record>> instances from <<TERN Ontology, TERN Ontology>> data that doesn't directly indicate such as class of object.
+
+[discrete]
 ==== Spatial Reasoning
 
 The following spatial reasoning rules will be applied to ABIS data.
