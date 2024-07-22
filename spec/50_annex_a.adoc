@@ -1,11 +1,20 @@
 [[annex-a]]
 == Annex A: ABIS Catalogue Model
 
-// [#proj-overview,link="img/proj-hierarchy.svg"]
-// .The two classes defined by the Projects Model - Project & Program - and their main relationships.
-// image::img/proj-hierarchy.svg[Projects Model Class Hierarchy,align="center",width=400]
-//
-// <<abis:Project, `Project`>>s are part of <<abis:Program, `Program`>>s and both are specialised forms of <<PROV, PROV>>'s https://www.w3.org/TR/prov-o/#Activity[`Activity`] class. An `Activity` is "something that occurs over a period of time and acts upon or with entities" which means `Project`s & `Program`s can have all the properties that `Activities` can have, such as temporal extents, `Agents` that have causal relationships to them and so on.
+[#cat-model-overview,link="img/cat-model.svg"]
+.An overview of the ABIS Catalogue Model's classes and their relationships
+image::img/cat-model.svg[ABIS Catalogue Model overview,align="center",width=150]
+
+<<schema:DataCatalog, DataCatalog>>s are curated lists of <<tern:Dataset, Dataset>>s that contain <<abis:BiodiversityOccurrenceRecord, Biodiversity Occurrence Record>>s (just 'Records').
+
+The Dataset class is taken from the <<TERN Ontology, TERN Ontology>> and normal <<SDO, schema.org>> data catalogue modelling (informed by <<DCAT, DCAT>>) is used so that datasets are _creative work_ objects and may be described with metadata such as _creator_, _issued date_, etc.
+
+The validator for this model, given in this model's <<A.5. Validator, Validator>> section, only check for minimal conformance to this model - correct use of the classes in relation to one another - and does not mandate any other properties for catalogues, datasets or records. Such validation is the role of _profiles_ of this model or of ABIS as a whole.
+
+[[NOTE]]
+====
+See the <<BDR Profile, BDR Profile>> for the requirements of ABIS Catalogue Model data bound for the BDR.
+====
 
 [[catalogue-metadata]]
 === A.1. Metadata
@@ -14,14 +23,14 @@
 |===
 |*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis/projects
 |*https://schema.org/name[Name]* | ABIS Data Release Model
-|*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This model is for describing Projects where Project is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective".
-|*https://schema.org/dateCreated[Created Date]* | 2023-10-15
-|*https://schema.org/dateModified[Modified Date]* | 2023-12-28
-|*https://schema.org/dateIssued[Issued Date]* | 2023-12-28
-|*https://schema.org/version[Version]* | 1.0
-|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/projects/1.0[abisp:1.0]
-|*Version History*| *2.0* - 2023 Dec - First release (v2.0 to match ABIS)
-|*https://schema.org/creator[Creator]* | the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
+|*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This model is for curated lists - catalogues - of data resources - datasets - that contains information about biodiversity occurrences - biodiversity occurrence records.
+|*https://schema.org/dateCreated[Created Date]* | 2024-07-15
+|*https://schema.org/dateModified[Modified Date]* | 2024-07-22
+|*https://schema.org/dateIssued[Issued Date]* | 2023-07-30
+|*https://schema.org/version[Version]* | 2.0
+|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/catalogue/1.0[abisc:1.0]
+|*Version History*| *2.0* - 2024 July - First release (v2.0 to match ABIS)
+|*https://schema.org/creator[Creator]* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
 |*https://schema.org/owner[Owner]* | https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AUSBIGG)]
 |*https://schema.org/publisher[Publisher]* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
 |*https://schema.org/license[License]* | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
@@ -33,11 +42,16 @@ Issue tracking of the ABIS standard is managed online at https://github.com/AusB
 === A.2. Supporting Assets
 
 * RDF schema:
-** https://linked.data.gov.au/def/abis/projects.ttl
+** https://linked.data.gov.au/def/abis/catalogue.ttl
 * <<SHACL, SHACL>> validation file:
-** https://linked.data.gov.au/def/abis/projects/validator.ttl
+** https://linked.data.gov.au/def/abis/catalogue/validator.ttl
 
 === A.3. Classes
+
+[#cat-model-equivalences,link="img/cat-model-equivalences.svg"]
+.Class equivalences between this ABIS Catalogue Model, <<SDO, schema.org>> and <<DCAT, DCAT>>
+image::img/cat-model-equivalences.svg[ABIS Catalogue Model class equivalences,align="center",width=60%]
+
 
 [discrete]
 ==== Class Index
@@ -48,7 +62,8 @@ Classes defined here:
 
 Classes defined elsewhere:
 
-* None
+* <<schema:DataCatalog, DataCatalog>>
+* <<tern:Dataset, Dataset>>
 
 [discrete]
 [[abis:BiodiversityOccurrenceRecord]]
@@ -62,57 +77,59 @@ Classes defined elsewhere:
 |===
 | Property | Value
 
-| <<IRI, IRI>> | `abis:Project`
-| https://www.w3.org/TR/rdf12-schema/#ch_subclassof[Subclass of] | https://www.w3.org/TR/prov-o/#Activity[`Activity`]
-| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
-| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | Project
-| https://www.w3.org/TR/skos-reference/#definition[Definition] | An Activity that requires concerted effort following a Plan in pursuit of an objective
-| https://www.w3.org/TR/skos-reference/#definition[History Note] | Defined by BDR Team in 2023 in response to BDR usage needs
-| Expected Properties | <<schema:isPartOf, is part of>>, <<time:hasTime, has time>>, <<geo:hasGeometry, has geometry>>, <<prov:generated, generated>>,
+| <<IRI, IRI>> | `abis:BiodiversityOccurrenceRecord`
+| https://www.w3.org/TR/rdf12-schema/#ch_subclassof[Subclass of] | https://www.w3.org/TR/prov-o/#Entity[`Entity`]
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<TERN Ontology, TERN Ontology>>
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | Dataset
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | A collection of data, published or curated by a single agent, and available for access or download in one or more representations.
+// | https://www.w3.org/TR/skos-reference/#definition[History Note] | Defined by BDR Team in 2023 in response to BDR usage needs
+| Expected Properties | <<schema:hasPart, has part>>
 | https://www.w3.org/TR/skos-reference/#example[Example]
 a|
 ----
-:project-m
-    a abis:Project ;
-    schema:name "Project M" ;
-    schema:description "South Australian government Project M-23" ;
-    abis:purpose "To determine extent of koala populations in NE SA" ;
+:dataset-x
+    a tern:Dataset ;
+    schema:name "Dataset X" ;
+    schema:description "A dummy dataset of biodiversity records - koalas in South Australia" ;
     schema:keywords
         ex:koala ,
         <https://linked.data.gov.au/dataset/asgsed3/STE/4> ;   # S.A.
-    schema:isPartOf :program-n ;
-    # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
-    # Note temporal range within that of containing Program
-    prov:startedAtTime "2023-12-01"^^xsd:date ;
-    prov:endedAtTime "2023-12-15"^^xsd:date ;
-    geo:hasGeometry [
+    schema:contentLocation [
         a geo:Geometry ;
         geo:asWKT "POLYGON ((138.010254 -26.007424, 140.976563 -25.99755, ..., 138.010254 -26.007424))"
     ] ;
     prov:qualifiedAttribution [
-        prov:agent ex:dewr ;  # SA Dept Env, e.g. only
-        prov:hadRole role:principalInvestigator ;
+        prov:agent ex:dewr ;  # SA Department for Environment & Water
+        prov:hadRole role:author ;
     ] ;
-    prov:generated ex:dataset-x ;
+    schema:isPartOf :catalogue-y ;
+    schema:hasPart
+        :record-001 ,
+        :record-002 ,
+        # many other records
+        :record-NNN ;
 .
 
-:program-n
-    a abis:Program ;
-    schema:name "Program N" ;
-    schema:hasPart :project-m ;
-    # Note TIME/PROV at https://www.w3.org/TR/owl-time/#time-prov
-    time:hasTime [
-        time:hasBeginning [
-            time:inXSDDateTime "2023-12-01"^^xsd:date ;
-        ] ;
-        time:hasEnd [
-            time:inXSDDateTime "2023-12-28"^^xsd:date ;
-        ] ;
-    ] ;
+:catalogue-y
+    a schema:DataCatalog ;
+    schema:name "Catalogue Y" ;
+    schema:hasPart :dataset-x ;
     # ... other properties
 .
+
+:record-001
+    a abis:BiodiversityOccurrenceRecord ;
+    time:hasTime [
+        time:inXSDDate "2024-07-15" ;
+    ]
 ----
 |===
+
+[[schema:DataCatalog]]
+==== Data Catalog
+
+[[tern:Dataset]]
+==== Dataset
 
 === A.4. Predicates
 
@@ -145,7 +162,7 @@ Predicates defined elsewhere:
 | https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:Project, Project>>
 |===
 
-=== A.5. Shapes
+=== A.5. Validator
 
 The following <<SHACL, SHACL>> shapes are graph patterns mandated by this model.
 

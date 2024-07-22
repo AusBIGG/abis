@@ -120,6 +120,6 @@ This model defines none of its own classes and only indicates the <<TERNOntology
 ----
 |===
 
-=== C.5. Validators
+=== C.5. Validator
 
 #TODO: list and define validators fro this model#

@@ -69,7 +69,7 @@ Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.
 
 ===== Model Element Mandates
 
-The following table lists the requirements for the presence of classes and predicates assigned to data supplied according to this Profile. These requirements are in addition to those imposed by <<Component Models, ABIS Component models>>, such as the <<#tern-ontology, TERN Ontology>>.
+The following table lists the requirements for the presence of classes and predicates assigned to data supplied according to this Profile. These requirements are in addition to those imposed by <<Component Models, ABIS Component models>>, such as the <<TERN Ontology, TERN Ontology>>.
 
 A cardinality of `1` means mandatory. `0+` means zero or more, `1+` one more, etc. `0-1` means zero or one only.
 
