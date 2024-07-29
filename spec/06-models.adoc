@@ -195,7 +195,6 @@ ex:obs-z
 .
 ----
 
-
 ==== Projects Model
 
 Model location: <<#annex-b, Annex B>>

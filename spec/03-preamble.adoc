@@ -38,11 +38,12 @@ Namespaces are used in shortened form in documents and data by assigning them a 
 |===
 |Prefix | Namespace | Description
 |`abis:` | `https://linked.data.gov.au/def/abis/` | *ABIS namespace* - for this Standard
-|`abisp:` | `https://linked.data.gov.au/def/abis/projects/` | <<#annex-b, ABIS Projects Model>> namespace
+|`proj:` | `https://linked.data.gov.au/def/abis/projects/` | <<#annex-b, ABIS Projects Model>> namespace
 |`bdr:` | `https://linked.data.gov.au/dataset/bdr/` | BDR Dataset Namespace
 |`dcat:`| `http://www.w3.org/ns/dcat#` | <<DCAT, Data Catalogue Vocabulary>> namespace
 |`dr:` | `https://linked.data.gov.au/def/abis/data-release/` | <<#annex-b, ABIS Data Release Model>> namespace
 |`dt:` | `https://linked.data.gov.au/def/abis/datatypes/` | ABIS Datatype Register namespace
+|`dwc:` | `	http://rs.tdwg.org/dwc/terms/` | <<DWC, Darwin Core Terms>> namespace
 |`ego:` | `https://w3id.org/idn/def/ego/` | Extended Geometries Ontology
 |`ex:` | `+http://example.com/+` | Generic examples namespace - _does not resolve_
 |`geo:` | `http://www.opengis.net/ont/geosparql#` | <<GSP, GeoSPARQL Ontology>> namespace
@@ -127,20 +128,22 @@ Where examples of ABIS data are given in this document, <<RDFSPEC, RDF>> data se
 
 [source,turtle]
 ----
-PREFIX : <https://example.om/dataset/>
+PREFIX ex: <https://example.com/dataset/>
 PREFIX schema: <https://schema.org/>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 
-:x
-    a tern:RDFDataset ;
+ex:x
+    a tern:Dataset ;
     schema:name "Dataset X" ;
-    schema:hasPart <https://example.om/dataset/sample/y> ;
+    schema:hasPart <https://example.com/dataset/sample/y> ;
 .
 
-<https://example.om/dataset/sample/y>
+<https://example.com/dataset/sample/y>
     a tern:Sample ;
     schema:name "Sample Y" ;
 .
 ----
 
 The above example data, while invalid according to the ABIS <<Validation, Validator>>, provides a simple example of a _dataset_ and a _sample_ and a relationship between them, encoded in Turtle.
+
+If prefixes - `ex:`, `schema:` and `tern:` in the example above - are not declared within the example, as they are here - lines starting `PREFIX` - then they will be found in the <<Namespaces, Namespaces>> table above.

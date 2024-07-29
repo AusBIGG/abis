@@ -19,7 +19,7 @@ image::img/proj-hierarchy.svg[Projects Model Class Hierarchy,align="center",widt
 |*https://schema.org/dateModified[Modified Date]* | 2023-12-28
 |*https://schema.org/dateIssued[Issued Date]* | 2023-12-28
 |*https://schema.org/version[Version]* | 2.0
-|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/projects/2.0[abisp:2.0]
+|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/projects/2.0[proj:2.0]
 |*Version History*| *2.0* - 2023 Dec - First release (v2.0 to match ABIS)
 |*https://schema.org/creator[Creator]* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
 |*https://schema.org/owner[Owner]* | https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AUSBIGG)]

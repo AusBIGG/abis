@@ -11,7 +11,7 @@ The Dataset class is taken from the <<TERN Ontology, TERN Ontology>> and normal 
 
 The validator for this model, given in this model's <<A.5. Validator, Validator>> section, only check for minimal conformance to this model - correct use of the classes in relation to one another - and does not mandate any other properties for catalogues, datasets or records. Such validation is the role of _profiles_ of this model or of ABIS as a whole.
 
-[[NOTE]]
+[NOTE]
 ====
 See the <<BDR Profile, BDR Profile>> for the requirements of ABIS Catalogue Model data bound for the BDR.
 ====
@@ -52,7 +52,6 @@ Issue tracking of the ABIS standard is managed online at https://github.com/AusB
 .Class equivalences between this ABIS Catalogue Model, <<SDO, schema.org>> and <<DCAT, DCAT>>
 image::img/cat-model-equivalences.svg[ABIS Catalogue Model class equivalences,align="center",width=60%]
 
-
 [discrete]
 ==== Class Index
 
@@ -64,6 +63,7 @@ Classes defined elsewhere:
 
 * <<schema:DataCatalog, DataCatalog>>
 * <<tern:Dataset, Dataset>>
+* <<dwc:Occurrence, Occurrence>>
 
 [discrete]
 [[abis:BiodiversityOccurrenceRecord]]
@@ -131,6 +131,9 @@ a|
 [[tern:Dataset]]
 ==== Dataset
 
+[[dwc:Occurrence]]
+==== Occurrence
+
 === A.4. Predicates
 
 // This model defines only one predicate - <<abis:purpose, purpose>> - but also requires the use of others defined elsewhere. Definitions for all predicates are copied from source and given here.
@@ -144,11 +147,11 @@ Predicates defined here:
 
 Predicates defined elsewhere:
 
-* None
+* <<schema:about, schema:about>>
 
 [discrete]
-[[yyyy]]
-==== Predicate 1
+[[schema:about]]
+==== about
 
 [cols="3,10"]
 |===

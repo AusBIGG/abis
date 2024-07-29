@@ -181,11 +181,55 @@ Multiple alternate identifiers may be given, as long as their datatypes are uniq
 
 === Data Cataloguing
 
-#TODO#
+ABIS provides representations of chunks of data for management - cataloguing, data governance and so on. It does this by implementing a very simple, and common, catalogue model which consists of _catalogues_ (or _catalogs_, for Americans) that contain _datasets_ or other kinds of _resources_  such as _vocabularies_. ABIS then insists that _datasets_ must, in turn, contain _biodiversity occurrence records_ for records of such as what ABIS is all about.
+
+This models is as per <<#cat-model-overview-pattern, Figure 4>>, below, which is taken from the <<Annex A: ABIS Catalogue Model, ABIS Catalogue Model>>, detailed in full in Annex A.
+
+Since this model is used for data management, it places requirements on ABIS datasets, above and beyond those imposed by the models it profiles, such as the <<TERN Ontology, TERN Ontology>>, to ensure all ABIS data has a minimum level of metadata present. See the <<#profile-bdr, BDR Profile>> of ABIS' <<#profile-bdr-mandates, Model Element Mandates>> for specifics.
+
+
+[#cat-model-overview-pattern,link="img/cat-model.svg"]
+.An overview of the ABIS Catalogue Model's classes and their relationships
+image::img/cat-model.svg[ABIS Catalogue Model overview,align="center",width=150]
+
+implemented by <<SDO, schema.org>> and <<DCAT, the Data Catalog Vocabulary (DCAT)>> which consists of
 
 === Records & Occurrences
 
-#TODO#
+ABIS is fundamentally about records of the occurrence of biodiversity. For this reason, ABIS contains representations of chunks of data, as per the <<Data Cataloguing, Data Cataloguing>> pattern above, a  representation of an _occurrence_ and a mechanism to link them.
+
+The ABIS class <<abis:BiodiversityOccurrenceRecord, Biodiversity Occurrence Record>> represents a single recording of an occurrence. This is usually a single row in a spreadsheet of biodiversity observations, or a single point of a map of occurrences. It is linked to the representation of actual occurrence itself, represented by the <<DWC, Darwin Core Terms>>'s <<dwc:Occurrence, Occurrence>> class.
+
+The reason for this distinction between representations of the _record of the occurrence_ and the _occurrence_ itself is because some data models record metadata about the recording itself - who did it, where it is stored and managed, what ID the recording has etc. - and some don't, choosing to focus only on the where/what/when of the occurrence.
+
+[NOTE]
+====
+For data in the ABIS format being submitted to systems such as the <<BDR, Biodiversity Data Repository>> where the data origin has a "Record ID" or similar, this ID should be preserved as a property of instances of the <<abis:BiodiversityOccurrenceRecord, Biodiversity Occurrence Record>> class as a non-IRI alternate identifier, as per the <<Alternate IDs - non-IRIs, Alternate IDs - non-IRIs>> pattern.
+====
+
+The relationship between a <<abis:BiodiversityOccurrenceRecord, Biodiversity Occurrence Record>> and the <<dwc:Occurrence, Occurrence>> it is about is given with the <<schema:about, schema:about>> predicate, like this:
+
+[source,turtle]
+----
+ex:record-1234
+    a abis:BiodiversityOccurrenceRecord
+    # ... other info
+    schema:about ex:occurrence-9876 ;  # <-- this is the link
+.
+
+ex:occurrence-9876
+    a dwc:Occurrence ;
+    schema:spatial [
+        geo:hasGeometry [
+            a geo:Geometry ;
+            goe:asWKT "POINT (...)" ;
+        ] ;
+    schema:temporal [
+        time:hasTime "2024-07-29" ;
+    ] ;
+    # ... other info
+.
+----
 
 === Spatially
 

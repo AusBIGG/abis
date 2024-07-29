@@ -67,6 +67,7 @@ Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.
 | https://schema.org/[`schema:Datatype`], as used with the https://schema.org/identifier[`schema:identifier`] predicate | BDR Team | Fixed, as registered  | Datatypes indicated for literal values by the https://schema.org/identifier[`schema:identifier`] predicate _MUST_ be identified by IRIs as registered in the https://linked.data.gov.au/dataset/bdr/datatypes[BDR Datatypes] vocabulary
 |===
 
+[[profile-bdr-mandates]]
 ===== Model Element Mandates
 
 The following table lists the requirements for the presence of classes and predicates assigned to data supplied according to this Profile. These requirements are in addition to those imposed by <<Component Models, ABIS Component models>>, such as the <<TERN Ontology, TERN Ontology>>.
