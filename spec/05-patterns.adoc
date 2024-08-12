@@ -222,7 +222,7 @@ ex:occurrence-9876
     schema:spatial [
         geo:hasGeometry [
             a geo:Geometry ;
-            goe:asWKT "POINT (...)" ;
+            geo:asWKT "POINT (...)" ;
         ] ;
     schema:temporal [
         time:hasTime "2024-07-29" ;
@@ -344,7 +344,7 @@ This is as per a rule in the <<Spatial Reasoning, Spatial Reasoning>> part of th
 
 ==== Coordinate System
 
-All spatial data supplied according to ABIS _MUST_ ues the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others _MUST NOT_ be used.
+All spatial data supplied according to ABIS _MUST_ use the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others _MUST NOT_ be used.
 
 Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <<Geometry Literals, Geometry Literals>> section above - and that format defaults to WGS84, the use of GDA2020 must be indicated in the WKT, as per the https://docs.ogc.org/is/22-047r1/22-047r1.html#_rdfs_datatype_geowktliteral[GeoSPARQL WKT guidance] using the IRI `https://epsg.io/7843` for the CRS. For example, a `POINT` at `(123, -45) would have WKT like this:
 
@@ -491,7 +491,7 @@ _ABIS inherits its temporal modelling from the <<TIME, Time Ontology>>. The <<TE
 
 ABIS uses a feature-centric approach for temporality, just as it does with spatiality. Just as per <GSP, GeoSPARQL>> where spatial objects are conceptual things with associated geometries, following <<TIME, OWL TIME>>, temporal objects are conceptual things with associated temporal "geometries" or temporal footprint.
 
-Where for spatial objects we link a `Feature` to a `Geometry` which in turn links to a literal representation of the spatial footprint, say a Well-Known Text polygon, for temporal objects we link the temporal feature to a https://www.w3.org/TR/owl-time/#time:TemporalEntity[`time:TemporalEntity`], the equivlane of a temporal geometry, which is either an https://www.w3.org/TR/owl-time/#time:Instant[`time:Instant`] or a https://www.w3.org/TR/owl-time/#time:Interval[time:Interval`] which then contains dates, date/times etc.
+Where for spatial objects we link a `Feature` to a `Geometry` which in turn links to a literal representation of the spatial footprint, say a Well-Known Text polygon, for temporal objects we link the temporal feature to a https://www.w3.org/TR/owl-time/#time:TemporalEntity[`time:TemporalEntity`], the equivalent of a temporal geometry, which is either a https://www.w3.org/TR/owl-time/#time:Instant[`time:Instant`] or a https://www.w3.org/TR/owl-time/#time:Interval[time:Interval`] which then contains dates, date/times etc.
 
 The following code shows several example `Survey` instances, which are temporal features, linked to different temporal entities. The selection of particular temporal entities will come down to what is known about the `Survey`.
 
@@ -581,7 +581,7 @@ image::img/pattern-prov-reasoning.svg[PROV-style reasoning,width=400,align="cent
 
 Things with agency to do work such as Organisations, People, Groups (of orgs and people) and perhaps software systems - are modelled as _Agents_ in many Semantic Web and Knowledge Graph systems. In ABIS, we follow the general pattern for Agents outlined in the <<PROV, Provenance Ontology (PROV)>>, see the section above.
 
-In addition to the simple and direct kind of relationship between `Agents` and data (`Entities`) show above in <<#pattern-prov-reasoning, Figure 9>> where an `Entity` can be attributed to an `Agent`, we use a nuanced version of that `was attributed to` relationship, `qualified attribution`, which is also defined in PROV. `qualified attribution` is a type of _qualified relation_ which means it related two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the `Agent` plays with respect to the `Entity`. For example, for a dataset, one `Agent` might be the _author_ of the data, another the _publisher_. This could be modelled as in <<#pattern-prov-qualatt, Figure 10>>, below.
+In addition to the simple and direct kind of relationship between `Agents` and data (`Entities`) show above in <<#pattern-prov-reasoning, Figure 9>> where an `Entity` can be attributed to an `Agent`, we use a nuanced version of that `was attributed to` relationship, `qualified attribution`, which is also defined in PROV. `qualified attribution` is a type of _qualified relation_ which means it relates two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the `Agent` plays with respect to the `Entity`. For example, for a dataset, one `Agent` might be the _author_ of the data, another the _publisher_. This could be modelled as in <<#pattern-prov-qualatt, Figure 10>>, below.
 
 [#pattern-prov-qualatt,link="img/pattern-agent-multi.svg"]
 .Two `Agents`, `Y` & `Z`, related to a single dataset `X` with different roles using the `qualified attribution` predicate from <<PROV, PROV>>
