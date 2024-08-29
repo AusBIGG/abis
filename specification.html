@@ -763,6 +763,7 @@ pre.rouge {
 <li><a href="#_a_2_supporting_assets">A.2. Supporting Assets</a></li>
 <li><a href="#_a_3_classes">A.3. Classes</a>
 <ul class="sectlevel3">
+<li><a href="#abis:BiodiversityOccurrenceRecord">BiodiversityOccurrenceRecord (Record)</a></li>
 <li><a href="#schema:DataCatalog">Data Catalog</a></li>
 <li><a href="#tern:Dataset">Dataset</a></li>
 <li><a href="#dwc:Occurrence">Occurrence</a></li>
@@ -1686,7 +1687,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="listingblock">
 <div class="content">
 <pre>&lt;http://example.com/dataset/x&gt;
-    a tern:RDFDataset ;
+    a tern:Dataset ;
     schema:hasPart
         &lt;http://example.com/dataset/x/sample/y&gt; ,
         &lt;http://example.com/dataset/x/obs/z&gt; ;
@@ -2019,7 +2020,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><code>tern:RDFDataset</code></p>
+<p><code>tern:Dataset</code></p>
 </li>
 <li>
 <p><code>Survey</code></p>
@@ -2027,7 +2028,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>A <code>Survey</code> might have its spatial extent recorded directly or taken to be the envelope of the locations of the <code>Observations</code> it contains. Similarly, an <code>tern:RDFDataset</code> will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be <code>Sites</code>, <code>Sample</code>, <code>Survey</code> or <code>Observation</code> instances, or all of them.</p>
+<p>A <code>Survey</code> might have its spatial extent recorded directly or taken to be the envelope of the locations of the <code>Observations</code> it contains. Similarly, an <code>tern:Dataset</code> will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be <code>Sites</code>, <code>Sample</code>, <code>Survey</code> or <code>Observation</code> instances, or all of them.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2452,7 +2453,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>The figures in the <a href="#_observations_results">Observations &amp; Results</a> and the <a href="#_feature_of_interest">Feature of Interest</a> patterns use this colouring.</p>
 </div>
 <div class="paragraph">
-<p>PROV&#8217;s provenance reasoning is also applicable to parts of ABIS. For example, the <a href="#annex-b">Projects Model</a> indicates that instances of its <a href="#abis:Project"><code>Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>, and may have been associated with an <a href="https://www.w3.org/TR/prov-o/#Agent"><code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>tern:RDFDataset</code> instances will be able to have an attributional relationship to the <code>Agent</code> instance calculated. This is shown in the figure below.</p>
+<p>PROV&#8217;s provenance reasoning is also applicable to parts of ABIS. For example, the <a href="#annex-b">Projects Model</a> indicates that instances of its <a href="#abis:Project"><code>Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>, and may have been associated with an <a href="https://www.w3.org/TR/prov-o/#Agent"><code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>tern:Dataset</code> instances will be able to have an attributional relationship to the <code>Agent</code> instance calculated. This is shown in the figure below.</p>
 </div>
 <div id="pattern-prov-reasoning" class="imageblock text-center">
 <div class="content">
@@ -2702,7 +2703,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 17. Classes and predicates within the <a href="#TERNOntology">TERN Ontology</a> used to characterise sampling. The <code>is sample of</code> predicate can be derived from relations between a <code>Sample</code>, the <code>Sampling</code> and the <code>Site</code>. Note the similarity of structure to the <a href="#tern-sosa">SOSA Observation pattern</a>.</div>
 </div>
 <div class="paragraph">
-<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class which is analogous to the <a href="#_abis_catalogue_model">ABIS Catalogue Model</a>'s <code>Dataset</code> class.</p>
+<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class which is analogous to the <a href="#_abis_catalogue_model">ABIS Catalogue Model</a>'s <code>Dataset</code> class.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2888,7 +2889,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">dataset-x
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="c1"># ... dataset metadata</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
@@ -2926,13 +2927,13 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 20. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
 </div>
 <div class="paragraph">
-<p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class - are produced by instances of <a href="#abis:Project"><code>Project</code></a> as per the figure below.</p>
+<p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class - are produced by instances of <a href="#abis:Project"><code>Project</code></a> as per the figure below.</p>
 </div>
 <div id="proj-join" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/proj-join.svg"><img src="https://ausbigg.github.io/abis/img/proj-join.svg" alt="Projects Model Join Poin" width="400"></a>
 </div>
-<div class="title">Figure 21. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> instances.</div>
+<div class="title">Figure 21. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> instances.</div>
 </div>
 <div class="paragraph">
 <p>See <a href="#annex-b">Annex A</a> for more details about the Project Model.</p>
@@ -2956,7 +2957,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 22. An overview of the Data Release Model</div>
 </div>
 <div class="paragraph">
-<p>The Data Release Model defines predicates - <a href="#embargoedUntil">embargoed until</a> &amp; <a href="#embargoPeriod">embargo period</a> - which can be applied to instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class which set absolute or relative embargo release times. The model details the relations between these predicates.</p>
+<p>The Data Release Model defines predicates - <a href="#embargoedUntil">embargoed until</a> &amp; <a href="#embargoPeriod">embargo period</a> - which can be applied to instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class which set absolute or relative embargo release times. The model details the relations between these predicates.</p>
 </div>
 </div>
 </div>
@@ -3205,7 +3206,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Data Submitter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/dataset/bdr/{UUID}" class="bare">https://linked.data.gov.au/dataset/bdr/{UUID}</a></code> where <code>{UUID}</code> is a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)">UUIDv4</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Most software libraries can generate this e.g. Python can call <code>import uuid</code> and then <code>uuid.uuid4()</code><br>
@@ -3280,42 +3281,42 @@ Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:title</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:description</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">May use simple formatting such as linebreaks</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:created</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">not <code>xsd:dateTime</code> or other date variant</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:modified</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">not <code>xsd:dateTime</code> or other date variant</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:creator</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1+</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">the IRI of the Agent(s) must be listed in the <a href="https://linked.data.gov.au/dataset/bdr/orgs">BDR Submitting Organisations</a> vocabulary</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:publisher</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
@@ -3956,7 +3957,7 @@ ex:obs-1
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Classes</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Dataset">tern:Dataset</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
 </tr>
@@ -4043,7 +4044,7 @@ ex:obs-1
 </tbody>
 </table>
 <div class="paragraph">
-<p>Subclasses of <a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a> <em>MAY</em> always, according to PROV, indicate an <a href="https://www.w3.org/TR/prov-o/#Attribution">prov:Attribution</a> (to an <a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a>) via either <a href="https://www.w3.org/TR/prov-o/#wasAttributedTo">prov:wasAttributedTo</a> or <a href="https://www.w3.org/TR/prov-o/#qualifiedAttribution">prov:qualifiedAttribution</a>, but in TERN Ontology, this information is only ever expected for <a href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</a> objects.</p>
+<p>Subclasses of <a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a> <em>MAY</em> always, according to PROV, indicate an <a href="https://www.w3.org/TR/prov-o/#Attribution">prov:Attribution</a> (to an <a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a>) via either <a href="https://www.w3.org/TR/prov-o/#wasAttributedTo">prov:wasAttributedTo</a> or <a href="https://www.w3.org/TR/prov-o/#qualifiedAttribution">prov:qualifiedAttribution</a>, but in TERN Ontology, this information is only ever expected for <a href="https://w3id.org/tern/ontologies/tern/Dataset">tern:Dataset</a> objects.</p>
 </div>
 <div class="paragraph">
 <p>There are also SOSA predicate to PROV predicate mappings given in SOSA&#8217;s <a href="https://www.w3.org/TR/vocab-ssn/#PROV_Alignment">PROV Alignment</a>, for example:</p>
@@ -4905,7 +4906,8 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </li>
 </ul>
 </div>
-<h4 id="abis:BiodiversityOccurrenceRecord" class="discrete">BiodiversityOccurrenceRecord (Record)</h4>
+<div class="sect3">
+<h4 id="abis:BiodiversityOccurrenceRecord"><a class="anchor" href="#abis:BiodiversityOccurrenceRecord"></a>BiodiversityOccurrenceRecord (Record)</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -4989,6 +4991,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect3">
 <h4 id="schema:DataCatalog"><a class="anchor" href="#schema:DataCatalog"></a>Data Catalog</h4>
 
@@ -6143,7 +6146,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#scopeNote">Scope Note</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use this predicate to link a <a href="#abis:Project">Project</a> or a <a href="#abis:Program">Program</a> to data that it produced, in the form of an <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> containing ABIS data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this predicate to link a <a href="#abis:Project">Project</a> or a <a href="#abis:Program">Program</a> to data that it produced, in the form of an <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> containing ABIS data</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby">Is Defined By</a></p></td>
@@ -6354,7 +6357,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="sect2">
 <h3 id="_c_3_classes"><a class="anchor" href="#_c_3_classes"></a>C.3. Classes</h3>
 <div class="paragraph">
-<p>This model defines none of its own classes and only indicates the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class for use with the predicates it does define.</p>
+<p>This model defines none of its own classes and only indicates the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class for use with the predicates it does define.</p>
 </div>
 </div>
 <div class="sect2">
@@ -6390,7 +6393,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_domain">Domain</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_range">Range</a></p></td>
@@ -6407,7 +6410,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <pre># Dataset X is embargoed until the 5th of May, 2024
 
 :dataset-x
-    a tern:RDFDataset ;
+    a tern:Dataset ;
     schema:name "Dataset X" ;
     dcterms:embargoedUntil "2024-05-11"^^xsd:date ;
     # ... other dataset properties
@@ -6416,7 +6419,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 # Dataset Y is embargoed until 2025
 
 :dataset-y
-    a tern:RDFDataset ;
+    a tern:Dataset ;
     schema:name "Dataset Y" ;
     dcterms:embargoedUntil "2025-01-01"^^xsd:date ;
     # ... other dataset properties
@@ -6457,7 +6460,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_domain">Domain</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_range">Range</a></p></td>
@@ -6477,7 +6480,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 # expressable in RDF
 
 :dataset-x
-    a tern:RDFDataset ;
+    a tern:Dataset ;
     schema:name "Dataset X" ;
     dcterms:issued "2023-12-25"^^xsd:date ;
     abis:embargoPeriod [
@@ -6584,10 +6587,10 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">dataset-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:Dataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN RDFDataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN Dataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">obs-01
@@ -6644,10 +6647,10 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">dataset-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:Dataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN RDFDataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN Dataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">obs-01
@@ -6713,7 +6716,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-08-29 23:07:20 UTC
+Last updated 2024-08-29 23:10:57 UTC
 </div>
 </div>
 </body>
