@@ -720,12 +720,13 @@ pre.rouge {
 <li><a href="#_vocabularies">7. Vocabularies</a></li>
 <li><a href="#_profiles">8. Profiles</a>
 <ul class="sectlevel2">
-<li><a href="#_profiles_of_abis">8.1. Profiles of ABIS</a></li>
-<li><a href="#profile-bdr">8.2. BDR Profile</a>
+<li><a href="#_abis_is_a_profile">8.1. ABIS is a Profile</a></li>
+<li><a href="#_profiles_of_abis">8.2. Profiles of ABIS</a></li>
+<li><a href="#profile-bdr">8.3. BDR Profile</a>
 <ul class="sectlevel3">
-<li><a href="#_resources">8.2.1. Resources</a></li>
-<li><a href="#_specification">8.2.2. Specification</a></li>
-<li><a href="#_examples_4">8.2.3. Examples</a></li>
+<li><a href="#_resources">8.3.1. Resources</a></li>
+<li><a href="#_specification">8.3.2. Specification</a></li>
+<li><a href="#_examples_4">8.3.3. Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -3051,16 +3052,35 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <h2 id="_profiles"><a class="anchor" href="#_profiles"></a>8. Profiles</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ABIS is a multi-part model that profiles many other models - see the <a href="#_model_dependency_hierarchy">Model Dependency Hierarchy</a> section for details.</p>
+<p>A "profile" is a:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A specification that constrains, extends, combines, or provides guidance or explanation about the usage of other specifications.</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
-<p>Likewise, profiles of ABIS are made to constrain and/or extend its use.</p>
+<p>Profiles may comprise multiple parts: their own specification rules, validation contraints, controlled vocabularies and so on.</p>
+</div>
+<div class="sect2">
+<h3 id="_abis_is_a_profile"><a class="anchor" href="#_abis_is_a_profile"></a>8.1. ABIS is a Profile</h3>
+<div class="paragraph">
+<p>ABIS is a profile of many other specifications, as per the <a href="#_model_dependency_hierarchy">Model Dependency Hierarchy</a>.</p>
+</div>
+<div class="paragraph">
+<p>ABIS is made of multiple parts, as per the Section <a href="#_parts_of_abis">Parts of ABIS</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_profiles_of_abis"><a class="anchor" href="#_profiles_of_abis"></a>8.2. Profiles of ABIS</h3>
+<div class="paragraph">
+<p>Further profiles of ABIS may be made to constrain and/or extend its use.</p>
 </div>
 <div class="paragraph">
 <p>Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on. Profile rules are entirely a matter for profile defines however data validated according to a profile of a standard, must always be valid according to the standard itself.</p>
 </div>
-<div class="sect2">
-<h3 id="_profiles_of_abis"><a class="anchor" href="#_profiles_of_abis"></a>8.1. Profiles of ABIS</h3>
 <div class="paragraph">
 <p>Profiles of ABIS may be defined anywhere however profile creators are encouraged to list their profiles here by <a href="#_metadata">contacting ABIS' maintainers</a>.</p>
 </div>
@@ -3076,12 +3096,12 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile-bdr"><a class="anchor" href="#profile-bdr"></a>8.2. BDR Profile</h3>
+<h3 id="profile-bdr"><a class="anchor" href="#profile-bdr"></a>8.3. BDR Profile</h3>
 <div class="paragraph">
 <p>This profile defines the requirements for data to be absorbed into the <a href="https://www.dcceew.gov.au/environment/epbc/publications/biodiversity-data-repository">Biodiversity Data Repository</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="_resources"><a class="anchor" href="#_resources"></a>8.2.1. Resources</h4>
+<h4 id="_resources"><a class="anchor" href="#_resources"></a>8.3.1. Resources</h4>
 <div class="paragraph">
 <p>The resources within this profile are listed below. The roles given for each are taken from <em>The Profiles Vocabulary</em> <a href="#PROF">[PROF]</a>.</p>
 </div>
@@ -3149,7 +3169,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_specification"><a class="anchor" href="#_specification"></a>8.2.2. Specification</h4>
+<h4 id="_specification"><a class="anchor" href="#_specification"></a>8.3.2. Specification</h4>
 <div class="paragraph">
 <p>The following subsections contain the rules of this Profile that go above and beyond those specified for ABIS generally. They form this Profile’s normative specification.</p>
 </div>
@@ -3164,7 +3184,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="_required_identifiers"><a class="anchor" href="#_required_identifiers"></a>8.2.2.1. Required Identifiers</h5>
+<h5 id="_required_identifiers"><a class="anchor" href="#_required_identifiers"></a>8.3.2.1. Required Identifiers</h5>
 <div class="paragraph">
 <p>The BDR requires that certain classes of ABIS object use identifiers from particular systems. Some classes of identifier are able to be generated by a data submitter, based on a patter, others must be pre-allocated by the BDR Team.</p>
 </div>
@@ -3234,7 +3254,7 @@ Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.
 </table>
 </div>
 <div class="sect4">
-<h5 id="profile-bdr-mandates"><a class="anchor" href="#profile-bdr-mandates"></a>8.2.2.2. Model Element Mandates</h5>
+<h5 id="profile-bdr-mandates"><a class="anchor" href="#profile-bdr-mandates"></a>8.3.2.2. Model Element Mandates</h5>
 <div class="paragraph">
 <p>The following table lists the requirements for the presence of classes and predicates assigned to data supplied according to this Profile. These requirements are in addition to those imposed by <a href="#_component_models">ABIS Component models</a>, such as the <a href="#_tern_ontology">TERN Ontology</a>.</p>
 </div>
@@ -3313,7 +3333,7 @@ Any system may be used to ensure uniqueness, e.g. UUIDs, systematic numbers etc.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_examples_4"><a class="anchor" href="#_examples_4"></a>8.2.3. Examples</h4>
+<h4 id="_examples_4"><a class="anchor" href="#_examples_4"></a>8.3.3. Examples</h4>
 <div class="paragraph">
 <p><em>Coming Soon</em></p>
 </div>
@@ -6693,7 +6713,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-08-29 23:06:40 UTC
+Last updated 2024-08-29 23:07:20 UTC
 </div>
 </div>
 </body>
