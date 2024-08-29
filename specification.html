@@ -4945,8 +4945,12 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <td class="tableblock halign-left valign-top"><p class="tableblock">The recording of an Occurrence.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">History Note</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined by the BDR Team in 2024 to better facilitate the management of ABIS data such as linking BDR data to original non-ABIS records in Submitting Organisations' data holdings</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#schema:hasPart">has part</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#schema:identifier">identifier</a>, <a href="#schema:about">about</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
@@ -4973,8 +4977,13 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 
 :record-001
     a abis:BiodiversityOccurrenceRecord ;
-    schema:isPartOf :dataset-y ;  # inverse of :dataset-y schema:hasPart :record-001
-    schema:about :occurrence-aaa ;  # the thing the Record is about
+    # a non-IRI identifier for this Record, as found in the original
+    # data held by the Submitting Organisation
+    schema:identifier "R1234"^^bdr-dt:OrgMRecordId ;
+    # inverse of :dataset-y schema:hasPart :record-001
+    schema:isPartOf :dataset-y ;
+    # the thing the Record is about
+    schema:about :occurrence-aaa ;
 .
 
 :occurrence-aaa
@@ -5024,10 +5033,54 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="ulist">
 <ul>
 <li>
+<p><a href="#schema:identifier">schema:identifier</a></p>
+</li>
+<li>
 <p><a href="#schema:about">schema:about</a></p>
 </li>
 </ul>
 </div>
+<h4 id="schema:identifier" class="discrete">about</h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 23.0769%;">
+<col style="width: 76.9231%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schema:identifier</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#scopeNote">Scope Note</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this predicate to indicate a non-IRI identifier for an ABIS object identified, with ABIS use, by an IRI. A datatype MUST be assigned to the non-IRI identifier value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby">Is Defined By</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">schema.org</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>See the example for <a href="#abis:BiodiversityOccurrenceRecord">Record</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <h4 id="schema:about" class="discrete">about</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -5043,28 +5096,28 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abis:purpose</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schema:about</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">purpose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">about</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The intent of the Activity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The subject matter of the content.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#scopeNote">Scope Note</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use this predicate to indicate a textual intent for a Project or a Program</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use this predicate to indicate the Occurrence that this Record is about</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby">Is Defined By</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SDO">schema.org</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>See the example for <a href="#abis:Project">Project</a></p>
+<p>See the example for <a href="#abis:BiodiversityOccurrenceRecord">Record</a></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -6716,7 +6769,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-08-29 23:10:57 UTC
+Last updated 2024-08-29 23:19:58 UTC
 </div>
 </div>
 </body>
