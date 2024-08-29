@@ -80,48 +80,48 @@ Classes defined elsewhere:
 | <<IRI, IRI>> | `abis:BiodiversityOccurrenceRecord`
 | https://www.w3.org/TR/rdf12-schema/#ch_subclassof[Subclass of] | https://www.w3.org/TR/prov-o/#Entity[`Entity`]
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<TERN Ontology, TERN Ontology>>
-| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | Dataset
-| https://www.w3.org/TR/skos-reference/#definition[Definition] | A collection of data, published or curated by a single agent, and available for access or download in one or more representations.
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | Record
+| https://www.w3.org/TR/skos-reference/#altLabel[Alternate Label Label] | Biodiversity Occurrence Record
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | The recording of an Occurrence.
 // | https://www.w3.org/TR/skos-reference/#definition[History Note] | Defined by BDR Team in 2023 in response to BDR usage needs
 | Expected Properties | <<schema:hasPart, has part>>
 | https://www.w3.org/TR/skos-reference/#example[Example]
 a|
 ----
-:dataset-x
+:catalogue-x
+    a schema:DataCatalog ;
+    schema:name "Catalogue X" ;
+    schema:hasPart :dataset-y ;
+    # ... other catalogue metadata
+.
+
+:dataset-y
     a tern:Dataset ;
-    schema:name "Dataset X" ;
-    schema:description "A dummy dataset of biodiversity records - koalas in South Australia" ;
-    schema:keywords
-        ex:koala ,
-        <https://linked.data.gov.au/dataset/asgsed3/STE/4> ;   # S.A.
-    schema:contentLocation [
-        a geo:Geometry ;
-        geo:asWKT "POLYGON ((138.010254 -26.007424, 140.976563 -25.99755, ..., 138.010254 -26.007424))"
-    ] ;
-    prov:qualifiedAttribution [
-        prov:agent ex:dewr ;  # SA Department for Environment & Water
-        prov:hadRole role:author ;
-    ] ;
+    schema:name "Dataset Y" ;
+    # ... ther dataset metadata
     schema:isPartOf :catalogue-y ;
     schema:hasPart
         :record-001 ,
         :record-002 ,
-        # many other records
+        # ... many other records
         :record-NNN ;
-.
-
-:catalogue-y
-    a schema:DataCatalog ;
-    schema:name "Catalogue Y" ;
-    schema:hasPart :dataset-x ;
-    # ... other properties
 .
 
 :record-001
     a abis:BiodiversityOccurrenceRecord ;
-    time:hasTime [
-        time:inXSDDate "2024-07-15" ;
-    ]
+    schema:isPartOf :dataset-y ;  # inverse of :dataset-y schema:hasPart :record-001
+    schema:about :occurrence-aaa ;  # the thing the Record is about
+.
+
+:occurrence-aaa
+    a dwc:Occurrence ;
+    schmea:name "Occurrence AAA" ;
+    schema:additionalType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> ;  # animal specimen
+    sosa:isSampleOf :foi-h ;  # linke a field site
+    sosa:usedProcedure :procedure-i ;  # a controlled method
+    schema:spatial [ geo:asWKT "POINT (120.244 -32.959)"^^geo:wktLiteral ] ;
+    schema:temporal "2014-07-23"^^xsd:date ;
+.
 ----
 |===
 
