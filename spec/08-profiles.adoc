@@ -64,7 +64,7 @@ The BDR requires that certain classes of ABIS object use identifiers from partic
 |===
 | Class | Authority | Pattern / Logic | Description
 
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | Data Submitter | `https://linked.data.gov.au/dataset/bdr/{UUID}` where `{UUID}` is a https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)[UUIDv4] | Most software libraries can generate this e.g. Python can call `import uuid` and then `uuid.uuid4()` +
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] | Data Submitter | `https://linked.data.gov.au/dataset/bdr/{UUID}` where `{UUID}` is a https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)[UUIDv4] | Most software libraries can generate this e.g. Python can call `import uuid` and then `uuid.uuid4()` +
  +
 Alternate IRIs _MAY_ be able to be used, for example for pre-existing datasets, if arranged with the BDR Team
 | https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Site[`tern:Site`] | Submitter or original Site creator | `{Dataset-IRI}/` + supplier pattern or original IRI | If created by a supplier, the IRI must be based on the IRI of the Dataset that it is part of and must be unique within the Dataset. +
@@ -88,12 +88,12 @@ A cardinality of `1` means mandatory. `0+` means zero or more, `1+` one more, et
 |===
 | Class | Predicate | Cardinality | Datatype | Notes
 
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:title` | 1 | `xsd:string` |
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:description` | 1 | `xsd:string` | May use simple formatting such as linebreaks
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:created` | 1 | `xsd:date` | not `xsd:dateTime` or other date variant
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:modified` | 1 | `xsd:date` | not `xsd:dateTime` or other date variant
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:creator` | 1+ | IRI | the IRI of the Agent(s) must be listed in the https://linked.data.gov.au/dataset/bdr/orgs[BDR Submitting Organisations] vocabulary
-| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] | `dcterms:publisher` | 1 | IRI | the IRI of the Agent(s) must be listed in the https://linked.data.gov.au/dataset/bdr/orgs[BDR Submitting Organisations] vocabulary
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] | `dcterms:title` | 1 | `xsd:string` |
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] | `dcterms:description` | 1 | `xsd:string` | May use simple formatting such as linebreaks
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] | `dcterms:created` | 1 | `xsd:date` | not `xsd:dateTime` or other date variant
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] | `dcterms:modified` | 1 | `xsd:date` | not `xsd:dateTime` or other date variant
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] | `dcterms:creator` | 1+ | IRI | the IRI of the Agent(s) must be listed in the https://linked.data.gov.au/dataset/bdr/orgs[BDR Submitting Organisations] vocabulary
+| https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] | `dcterms:publisher` | 1 | IRI | the IRI of the Agent(s) must be listed in the https://linked.data.gov.au/dataset/bdr/orgs[BDR Submitting Organisations] vocabulary
 | | | | |
 
 

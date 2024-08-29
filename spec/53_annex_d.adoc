@@ -47,10 +47,10 @@ PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ex:dataset-01
-    a tern:RDFDataset ;
-    dcterms:description "A minimally valid tern:RDFDataset instance" ;
+    a tern:Dataset ;
+    dcterms:description "A minimally valid tern:Dataset instance" ;
     dcterms:issued "2021-11-18"^^xsd:date ;
-    dcterms:title "TERN RDFDataset 01" ;
+    dcterms:title "TERN Dataset 01" ;
 .
 
 ex:obs-01
@@ -105,10 +105,10 @@ PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ex:dataset-01
-    a tern:RDFDataset ;
-    dcterms:description "A minimally valid tern:RDFDataset instance" ;
+    a tern:Dataset ;
+    dcterms:description "A minimally valid tern:Dataset instance" ;
     dcterms:issued "2021-11-18"^^xsd:date ;
-    dcterms:title "TERN RDFDataset 01" ;
+    dcterms:title "TERN Dataset 01" ;
 .
 
 ex:obs-01

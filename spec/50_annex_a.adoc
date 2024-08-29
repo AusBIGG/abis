@@ -65,7 +65,6 @@ Classes defined elsewhere:
 * <<tern:Dataset, Dataset>>
 * <<dwc:Occurrence, Occurrence>>
 
-[discrete]
 [[abis:BiodiversityOccurrenceRecord]]
 ==== BiodiversityOccurrenceRecord (Record)
 

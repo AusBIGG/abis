@@ -66,7 +66,7 @@ All complex objects in OWL modelling - classes, predicates and instances of clas
 
 ----
 <http://example.com/dataset/x>
-    a tern:RDFDataset ;
+    a tern:Dataset ;
     schema:hasPart
         <http://example.com/dataset/x/sample/y> ,
         <http://example.com/dataset/x/obs/z> ;
@@ -286,10 +286,10 @@ For these classes of object, we expect to see instances of them to be associated
 
 The following classes of object are either given as spatial - a geometry is provided - or for their spatial values to be inferred from child object geometries - see <<Aggregation Reasoning, Aggregation Reasoning>> below:
 
-* `tern:RDFDataset`
+* `tern:Dataset`
 * `Survey`
 
-A `Survey` might have its spatial extent recorded directly or taken to be the envelope of the locations of the `Observations` it contains. Similarly, an `tern:RDFDataset` will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be `Sites`, `Sample`, `Survey` or `Observation` instances, or all of them.
+A `Survey` might have its spatial extent recorded directly or taken to be the envelope of the locations of the `Observations` it contains. Similarly, an `tern:Dataset` will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be `Sites`, `Sample`, `Survey` or `Observation` instances, or all of them.
 
 ==== Qualified Geometries
 
@@ -571,7 +571,7 @@ Many of ABIS' models follow on from the pattern in the figure above and many fig
 
 The figures in the <<Observations & Results, Observations & Results>> and the <<Feature of Interest, Feature of Interest>> patterns use this colouring.
 
-PROV's provenance reasoning is also applicable to parts of ABIS. For example, the <<#annex-b, Projects Model>> indicates that instances of its <<abis:Project, `Project`>> class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Entity[`Entity`], and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `tern:RDFDataset` instances will be able to have an attributional relationship to the `Agent` instance calculated. This is shown in the figure below.
+PROV's provenance reasoning is also applicable to parts of ABIS. For example, the <<#annex-b, Projects Model>> indicates that instances of its <<abis:Project, `Project`>> class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Entity[`Entity`], and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `tern:Dataset` instances will be able to have an attributional relationship to the `Agent` instance calculated. This is shown in the figure below.
 
 [#pattern-prov-reasoning,link="img/pattern-prov-reasoning.svg"]
 .PROV-style reasoning using facts given in the <<Projects Model, Projects Model>>
