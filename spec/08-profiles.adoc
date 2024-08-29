@@ -1,12 +1,22 @@
 == Profiles
 
-ABIS is a multi-part model that profiles many other models - see the <<Model Dependency Hierarchy, Model Dependency Hierarchy>> section for details.
+A "profile" is a:
 
-Likewise, profiles of ABIS are made to constrain and/or extend its use.
+> A specification that constrains, extends, combines, or provides guidance or explanation about the usage of other specifications.
 
-Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on. Profile rules are entirely a matter for profile defines however data validated according to a profile of a standard, must always be valid according to the standard itself.
+Profiles may comprise multiple parts: their own specification rules, validation contraints, controlled vocabularies and so on.
+
+=== ABIS is a Profile
+
+ABIS is a profile of many other specifications, as per the <<Model Dependency Hierarchy, Model Dependency Hierarchy>>.
+
+ABIS is made of multiple parts, as per the Section <<Parts of ABIS, Parts of ABIS>>.
 
 === Profiles of ABIS
+
+Further profiles of ABIS may be made to constrain and/or extend its use.
+
+Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on. Profile rules are entirely a matter for profile defines however data validated according to a profile of a standard, must always be valid according to the standard itself.
 
 Profiles of ABIS may be defined anywhere however profile creators are encouraged to list their profiles here by <<Metadata, contacting ABIS' maintainers>>.
 
