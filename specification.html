@@ -841,7 +841,7 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateModified">Modified Date</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2024-07-19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2024-08-12</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateIssued">Issued Date</a></strong></p></td>
@@ -849,15 +849,16 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/version">Version</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.4</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI">Version IRI</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/2.3">abis:2.3</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/2.3">abis:2.4</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#historyNote"><strong>History Note</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.3</strong> - 2024 Jul - Record and Occurrence classes added in new foreground model - ABIS Catalogue<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.4</strong> - 2024 Aug - All validators completed<br>
+<strong>2.3</strong> - 2024 Jul - Record and Occurrence classes added in new foreground model - ABIS Catalogue<br>
 <strong>2.2</strong> - 2024 Jul - More Patterns, improved Mappings &amp; comprehensive Validators<br>
 <strong>2.1</strong> - 2024 Jan - Implementation of <a href="#annex-b">ABIS Projects Model</a> and <a href="#annex-c">ABIS Data Release Model</a> within ABIS<br>
 <strong>2.0</strong> - 2023 Nov - Produced by <a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a> for initial <a href="#BDR">BDR</a> operations. Includes handling of systematic surveys and project information.<br>
@@ -1911,7 +1912,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
     </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">goe:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (...)"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (...)"</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="nn">time:</span><span class="n">hasTime</span><span class="w"> </span><span class="s">"2024-07-29"</span><span class="w"> </span><span class="p">;</span><span class="w">
@@ -2098,7 +2099,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect3">
 <h4 id="_coordinate_system"><a class="anchor" href="#_coordinate_system"></a>5.5.6. Coordinate System</h4>
 <div class="paragraph">
-<p>All spatial data supplied according to ABIS <em>MUST</em> ues the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others <em>MUST NOT</em> be used.</p>
+<p>All spatial data supplied according to ABIS <em>MUST</em> use the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others <em>MUST NOT</em> be used.</p>
 </div>
 <div class="paragraph">
 <p>Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <a href="#_geometry_literals">Geometry Literals</a> section above - and that format defaults to WGS84, the use of GDA2020 must be indicated in the WKT, as per the <a href="https://docs.ogc.org/is/22-047r1/22-047r1.html#_rdfs_datatype_geowktliteral">GeoSPARQL WKT guidance</a> using the IRI <code><a href="https://epsg.io/7843" class="bare">https://epsg.io/7843</a></code> for the CRS. For example, a <code>POINT</code> at `(123, -45) would have WKT like this:</p>
@@ -2305,7 +2306,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>ABIS uses a feature-centric approach for temporality, just as it does with spatiality. Just as per &lt;GSP, GeoSPARQL&gt;&gt; where spatial objects are conceptual things with associated geometries, following <a href="#TIME">OWL TIME</a>, temporal objects are conceptual things with associated temporal "geometries" or temporal footprint.</p>
 </div>
 <div class="paragraph">
-<p>Where for spatial objects we link a <code>Feature</code> to a <code>Geometry</code> which in turn links to a literal representation of the spatial footprint, say a Well-Known Text polygon, for temporal objects we link the temporal feature to a <a href="https://www.w3.org/TR/owl-time/#time:TemporalEntity"><code>time:TemporalEntity</code></a>, the equivlane of a temporal geometry, which is either an <a href="https://www.w3.org/TR/owl-time/#time:Instant"><code>time:Instant</code></a> or a <a href="https://www.w3.org/TR/owl-time/#time:Interval">time:Interval`</a> which then contains dates, date/times etc.</p>
+<p>Where for spatial objects we link a <code>Feature</code> to a <code>Geometry</code> which in turn links to a literal representation of the spatial footprint, say a Well-Known Text polygon, for temporal objects we link the temporal feature to a <a href="https://www.w3.org/TR/owl-time/#time:TemporalEntity"><code>time:TemporalEntity</code></a>, the equivalent of a temporal geometry, which is either a <a href="https://www.w3.org/TR/owl-time/#time:Instant"><code>time:Instant</code></a> or a <a href="https://www.w3.org/TR/owl-time/#time:Interval">time:Interval`</a> which then contains dates, date/times etc.</p>
 </div>
 <div class="paragraph">
 <p>The following code shows several example <code>Survey</code> instances, which are temporal features, linked to different temporal entities. The selection of particular temporal entities will come down to what is known about the <code>Survey</code>.</p>
@@ -2465,7 +2466,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>Things with agency to do work such as Organisations, People, Groups (of orgs and people) and perhaps software systems - are modelled as <em>Agents</em> in many Semantic Web and Knowledge Graph systems. In ABIS, we follow the general pattern for Agents outlined in the <a href="#PROV">Provenance Ontology (PROV)</a>, see the section above.</p>
 </div>
 <div class="paragraph">
-<p>In addition to the simple and direct kind of relationship between <code>Agents</code> and data (<code>Entities</code>) show above in <a href="#pattern-prov-reasoning">Figure 9</a> where an <code>Entity</code> can be attributed to an <code>Agent</code>, we use a nuanced version of that <code>was attributed to</code> relationship, <code>qualified attribution</code>, which is also defined in PROV. <code>qualified attribution</code> is a type of <em>qualified relation</em> which means it related two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the <code>Agent</code> plays with respect to the <code>Entity</code>. For example, for a dataset, one <code>Agent</code> might be the <em>author</em> of the data, another the <em>publisher</em>. This could be modelled as in <a href="#pattern-prov-qualatt">Figure 10</a>, below.</p>
+<p>In addition to the simple and direct kind of relationship between <code>Agents</code> and data (<code>Entities</code>) show above in <a href="#pattern-prov-reasoning">Figure 9</a> where an <code>Entity</code> can be attributed to an <code>Agent</code>, we use a nuanced version of that <code>was attributed to</code> relationship, <code>qualified attribution</code>, which is also defined in PROV. <code>qualified attribution</code> is a type of <em>qualified relation</em> which means it relates two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the <code>Agent</code> plays with respect to the <code>Entity</code>. For example, for a dataset, one <code>Agent</code> might be the <em>author</em> of the data, another the <em>publisher</em>. This could be modelled as in <a href="#pattern-prov-qualatt">Figure 10</a>, below.</p>
 </div>
 <div id="pattern-prov-qualatt" class="imageblock text-center">
 <div class="content">
@@ -4911,11 +4912,15 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#prefLabel">Preferred Label</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dataset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Record</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#altLabel">Alternate Label Label</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Biodiversity Occurrence Record</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A collection of data, published or curated by a single agent, and available for access or download in one or more representations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The recording of an Occurrence.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
@@ -4925,41 +4930,40 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre>:dataset-x
+<pre>:catalogue-x
+    a schema:DataCatalog ;
+    schema:name "Catalogue X" ;
+    schema:hasPart :dataset-y ;
+    # ... other catalogue metadata
+.
+
+:dataset-y
     a tern:Dataset ;
-    schema:name "Dataset X" ;
-    schema:description "A dummy dataset of biodiversity records - koalas in South Australia" ;
-    schema:keywords
-        ex:koala ,
-        &lt;https://linked.data.gov.au/dataset/asgsed3/STE/4&gt; ;   # S.A.
-    schema:contentLocation [
-        a geo:Geometry ;
-        geo:asWKT "POLYGON ((138.010254 -26.007424, 140.976563 -25.99755, ..., 138.010254 -26.007424))"
-    ] ;
-    prov:qualifiedAttribution [
-        prov:agent ex:dewr ;  # SA Department for Environment &amp; Water
-        prov:hadRole role:author ;
-    ] ;
+    schema:name "Dataset Y" ;
+    # ... ther dataset metadata
     schema:isPartOf :catalogue-y ;
     schema:hasPart
         :record-001 ,
         :record-002 ,
-        # many other records
+        # ... many other records
         :record-NNN ;
-.
-
-:catalogue-y
-    a schema:DataCatalog ;
-    schema:name "Catalogue Y" ;
-    schema:hasPart :dataset-x ;
-    # ... other properties
 .
 
 :record-001
     a abis:BiodiversityOccurrenceRecord ;
-    time:hasTime [
-        time:inXSDDate "2024-07-15" ;
-    ]</pre>
+    schema:isPartOf :dataset-y ;  # inverse of :dataset-y schema:hasPart :record-001
+    schema:about :occurrence-aaa ;  # the thing the Record is about
+.
+
+:occurrence-aaa
+    a dwc:Occurrence ;
+    schmea:name "Occurrence AAA" ;
+    schema:additionalType &lt;http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6&gt; ;  # animal specimen
+    sosa:isSampleOf :foi-h ;  # linke a field site
+    sosa:usedProcedure :procedure-i ;  # a controlled method
+    schema:spatial [ geo:asWKT "POINT (120.244 -32.959)"^^geo:wktLiteral ] ;
+    schema:temporal "2014-07-23"^^xsd:date ;
+.</pre>
 </div>
 </div></div></td>
 </tr>
@@ -6689,7 +6693,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-07-29 07:37:36 UTC
+Last updated 2024-08-29 23:06:40 UTC
 </div>
 </div>
 </body>
