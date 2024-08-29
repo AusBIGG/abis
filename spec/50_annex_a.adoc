@@ -82,8 +82,8 @@ Classes defined elsewhere:
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | Record
 | https://www.w3.org/TR/skos-reference/#altLabel[Alternate Label Label] | Biodiversity Occurrence Record
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | The recording of an Occurrence.
-// | https://www.w3.org/TR/skos-reference/#definition[History Note] | Defined by BDR Team in 2023 in response to BDR usage needs
-| Expected Properties | <<schema:hasPart, has part>>
+| https://www.w3.org/TR/skos-reference/#definition[History Note] | Defined by the BDR Team in 2024 to better facilitate the management of ABIS data such as linking BDR data to original non-ABIS records in Submitting Organisations' data holdings
+| Expected Properties | <<schema:identifier, identifier>>, <<schema:about, about>>
 | https://www.w3.org/TR/skos-reference/#example[Example]
 a|
 ----
@@ -108,8 +108,13 @@ a|
 
 :record-001
     a abis:BiodiversityOccurrenceRecord ;
-    schema:isPartOf :dataset-y ;  # inverse of :dataset-y schema:hasPart :record-001
-    schema:about :occurrence-aaa ;  # the thing the Record is about
+    # a non-IRI identifier for this Record, as found in the original
+    # data held by the Submitting Organisation
+    schema:identifier "R1234"^^bdr-dt:OrgMRecordId ;
+    # inverse of :dataset-y schema:hasPart :record-001
+    schema:isPartOf :dataset-y ;
+    # the thing the Record is about
+    schema:about :occurrence-aaa ;
 .
 
 :occurrence-aaa
@@ -146,7 +151,25 @@ Predicates defined here:
 
 Predicates defined elsewhere:
 
+* <<schema:identifier, schema:identifier>>
 * <<schema:about, schema:about>>
+
+
+[discrete]
+[[schema:identifier]]
+==== about
+
+[cols="3,10"]
+|===
+| Property | Value
+
+| <<IRI, IRI>> | `schema:identifier`
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | identifier
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc.
+| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate a non-IRI identifier for an ABIS object identified, with ABIS use, by an IRI. A datatype MUST be assigned to the non-IRI identifier value
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<SDO, schema.org>>
+| https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:BiodiversityOccurrenceRecord, Record>>
+|===
 
 [discrete]
 [[schema:about]]
@@ -156,12 +179,12 @@ Predicates defined elsewhere:
 |===
 | Property | Value
 
-| <<IRI, IRI>> | `abis:purpose`
-| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | purpose
-| https://www.w3.org/TR/skos-reference/#definition[Definition] | The intent of the Activity
-| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate a textual intent for a Project or a Program
-| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
-| https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:Project, Project>>
+| <<IRI, IRI>> | `schema:about`
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | about
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | The subject matter of the content.
+| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate the Occurrence that this Record is about
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<SDO, schema.org>>
+| https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:BiodiversityOccurrenceRecord, Record>>
 |===
 
 === A.5. Validator
