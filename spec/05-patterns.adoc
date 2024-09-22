@@ -346,10 +346,10 @@ This is as per a rule in the <<Spatial Reasoning, Spatial Reasoning>> part of th
 
 All spatial data supplied according to ABIS _MUST_ use the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others _MUST NOT_ be used.
 
-Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <<Geometry Literals, Geometry Literals>> section above - and that format defaults to WGS84, the use of GDA2020 must be indicated in the WKT, as per the https://docs.ogc.org/is/22-047r1/22-047r1.html#_rdfs_datatype_geowktliteral[GeoSPARQL WKT guidance] using the IRI `https://epsg.io/7843` for the CRS. For example, a `POINT` at `(123, -45) would have WKT like this:
+Since spatial data formulated according to GeoSPARQL only use the Well-Known Text format - see the <<Geometry Literals, Geometry Literals>> section above - and that format defaults to OGC:CRS84, the use of GDA2020 must be indicated in the WKT, as per the https://docs.ogc.org/is/22-047r1/22-047r1.html#_rdfs_datatype_geowktliteral[GeoSPARQL WKT guidance] using the IRI `http://www.opengis.net/def/crs/EPSG/0/7844` or `https://epsg.io/7844` for the CRS. Remember when converting from OGC CRS84 (the default WKT crs) to GDA2020 the axis order must also be reversed. For example, a `POINT` at `(123.0 -45.0)` would have WKT like this:
 
 ----
-<https://epsg.io/7843> POINT (123, -45)
+"<https://epsg.io/7844> POINT (-45.0 123.0)"geo:wktLiteral
 ----
 
 ==== Aggregation Reasoning
