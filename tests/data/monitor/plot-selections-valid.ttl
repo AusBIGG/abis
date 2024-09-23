@@ -1,0 +1,144 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f/plot-selection/05a8725a-8988-48e4-b526-4056c29ffe34> a tern:Sampling ;
+    rdfs:label "plot selection CTMAUA5544" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f> ;
+    prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/dabc7e5d-81ce-40bf-8f74-8ecf3c7ce055> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f/procedure/14d2e8ea-3a0b-4171-b629-51ae202c2eb8> ;
+    tern:hasAttribute [ rdfs:label "plot-location-point" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/4123f0a1-2189-48e6-bd69-b9007812433c> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/afa07308-191b-5daf-a106-c3208a477155> ;
+            tern:hasValue [ a tern:IRI,
+                        tern:Value ;
+                    rdfs:label "South West" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/afa07308-191b-5daf-a106-c3208a477155> ] ],
+        [ rdfs:label "plot-selection-comments" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/3a6367ab-ad31-431d-890d-31db6a1c7bed> ;
+            tern:hasSimpleValue "Test" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "Test" ] ],
+        [ rdfs:label "plot-name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+            tern:hasAttribute [ rdfs:label "state" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/79e66285-9396-4b8f-a5ba-f957319bce9a> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "Australian Capital Territory" ;
+                            rdf:value <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ] ],
+                [ rdfs:label "program" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/13f7d5bb-ac64-4f1e-b07c-68f8823a85ea> ;
+                    tern:hasSimpleValue <https://uri-not-found> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "MERIT" ;
+                            rdf:value <https://uri-not-found> ] ],
+                [ rdfs:label "bioregion" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
+                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/AUA> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "Australian Alps" ;
+                            rdf:value <http://linked.data.gov.au/dataset/bioregion/AUA> ] ],
+                [ rdfs:label "unique-digits" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/e2396b81-e7cd-4ff4-adc4-d06e9643f592> ;
+                    tern:hasSimpleValue "5544" ;
+                    tern:hasValue [ a tern:Text,
+                                tern:Value ;
+                            rdf:value "5544" ] ] ;
+            tern:hasSimpleValue "CTMAUA5544" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "CTMAUA5544" ] ] ;
+    tern:resultDateTime "2024-08-15T04:39:13.547000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f/plot-selection/f7e166d8-3597-4438-a630-0e49c1047989> a tern:Sampling ;
+    rdfs:label "plot selection CTMAUA5555" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f> ;
+    prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/dabc7e5d-81ce-40bf-8f74-8ecf3c7ce055> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f/procedure/14d2e8ea-3a0b-4171-b629-51ae202c2eb8> ;
+    tern:hasAttribute [ rdfs:label "plot-name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+            tern:hasAttribute [ rdfs:label "unique-digits" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/e2396b81-e7cd-4ff4-adc4-d06e9643f592> ;
+                    tern:hasSimpleValue "5555" ;
+                    tern:hasValue [ a tern:Text,
+                                tern:Value ;
+                            rdf:value "5555" ] ],
+                [ rdfs:label "program" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/13f7d5bb-ac64-4f1e-b07c-68f8823a85ea> ;
+                    tern:hasSimpleValue <https://uri-not-found> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "MERIT" ;
+                            rdf:value <https://uri-not-found> ] ],
+                [ rdfs:label "state" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/79e66285-9396-4b8f-a5ba-f957319bce9a> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "Australian Capital Territory" ;
+                            rdf:value <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ] ],
+                [ rdfs:label "bioregion" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
+                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/AUA> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "Australian Alps" ;
+                            rdf:value <http://linked.data.gov.au/dataset/bioregion/AUA> ] ] ;
+            tern:hasSimpleValue "CTMAUA5555" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "CTMAUA5555" ] ],
+        [ rdfs:label "plot-location-point" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/4123f0a1-2189-48e6-bd69-b9007812433c> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/df58bcc5-34d9-5020-a519-bc83b18824db> ;
+            tern:hasValue [ a tern:IRI,
+                        tern:Value ;
+                    rdfs:label "Centre" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/df58bcc5-34d9-5020-a519-bc83b18824db> ] ] ;
+    tern:resultDateTime "2024-08-15T04:39:13.656000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f/creator/e89d3c06-879e-30c1-d709-c155bd6bf96e> a sdo:Person ;
+    sdo:identifier "56780"^^<https://linked.data.gov.au/def/abis/datatypes/MERITCreatorID> .
+
+<https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f/procedure/14d2e8ea-3a0b-4171-b629-51ae202c2eb8> a tern:Procedure ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f> ;
+    prov:startedAtTime "2024-08-15T04:37:29.611000+00:00"^^xsd:dateTime ;
+    ssn:hasInput [ a tern:Input ;
+            rdfs:label "plot selection survey id" ;
+            xsd:string "14d2e8ea-3a0b-4171-b629-51ae202c2eb8" ] ;
+    tern:methodType <https://linked.data.gov.au/def/nrm/67e84ed4-fefa-4c75-afe4-8afdfdf0b2a0> .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/dabc7e5d-81ce-40bf-8f74-8ecf3c7ce055> a <https://linked.data.gov.au/def/abis/Project> ;
+    rdfs:label "Relevant project" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f> ;
+    sdo:identifier "dabc7e5d-81ce-40bf-8f74-8ecf3c7ce055"^^<https://linked.data.gov.au/def/abis/datatypes/meritProjectID> ;
+    tern:hasAttribute [ rdfs:label "project code" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/00df82dc-6851-57d3-9e25-9a8a1b3d5245> ;
+            tern:hasSimpleValue "dabc7e5d-81ce-40bf-8f74-8ecf3c7ce055" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "dabc7e5d-81ce-40bf-8f74-8ecf3c7ce055" ] ] .
+
+<https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f> a tern:Dataset ;
+    dcterms:description "Record of plot selection survey protocol" ;
+    dcterms:identifier "e3a01c65-ff1a-40f1-86f9-54afeefa374f" ;
+    dcterms:issued "2024-08-15"^^xsd:date ;
+    dcterms:title "Record e3a01c65-ff1a-40f1-86f9-54afeefa374f" ;
+    prov:qualifiedAttribution [ prov:agent <https://linked.data.gov.au/org/dcceew> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/sponsor> ],
+        [ prov:agent <https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f/creator/e89d3c06-879e-30c1-d709-c155bd6bf96e> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/creator> ] ;
+    prov:wasGeneratedBy <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/dabc7e5d-81ce-40bf-8f74-8ecf3c7ce055> .
+

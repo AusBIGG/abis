@@ -14,7 +14,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     schema:description "This resource describes the structure and multiple parts of the ABIS Standard as well as the formalisms used in their definitions, in machine-readable form." ;
     schema:encodingFormat "text/html" ;
     schema:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-    schema:dateModified "2024-07-10"^^xsd:date ;
+    schema:dateModified "2024-09-24"^^xsd:date ;
     schema:publisher <https://linked.data.gov.au/org/dawe> ;
     schema:copyrightNotice "(c) Commonwealth of Australian (Department of Agriculture, Water and the Environment), 2021" ;
     schema:name "ABIS Standard Definition" ;

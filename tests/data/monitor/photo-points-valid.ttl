@@ -1,0 +1,121 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/59d8d504-b9ae-f6f0-f1e5-db3106adb871> a tern:SiteVisit ;
+    rdfs:label "site visit Chris test 2024-03-26" ;
+    dcterms:identifier "59d8d504-b9ae-f6f0-f1e5-db3106adb871" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f> ;
+    prov:startedAtTime "2024-03-26T03:03:26.025000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> ;
+    tern:hasAttribute [ rdfs:label "visit field name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/f7d494fa-9309-5956-b7a8-27152fb005f3> ;
+            tern:hasSimpleValue "Chris test 2024-03-26" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "Chris test 2024-03-26" ] ] ;
+    tern:hasSite <https://linked.data.gov.au/dataset/bdr/sites/cf23aacf-1f02-43fb-8a78-559d3261838b> .
+
+<https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f/creator/525d8023-e67c-957a-62b0-18b361ff075e> a sdo:Person ;
+    sdo:identifier "452fd306-0797-4158-8ae3-fe30d0942f2f"^^<https://linked.data.gov.au/def/abis/datatypes/MERITCreatorID> .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/5be17000-b79b-2fa0-e19c-fbf72b7d0bbc> a tern:FeatureOfInterest ;
+    rdfs:label "Australia Land CTMSEH4221" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f> ;
+    tern:featureType <http://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/5be17000-b79b-2fa0-e19c-fbf72b7d0bbc> .
+
+<https://linked.data.gov.au/dataset/bdr/sites/cf23aacf-1f02-43fb-8a78-559d3261838b> a tern:FeatureOfInterest,
+        tern:Sample,
+        tern:Site ;
+    rdfs:label "site CTMSEH4221" ;
+    dcterms:identifier "cf23aacf-1f02-43fb-8a78-559d3261838b" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f> ;
+    geo:hasGeometry [ a geo:Geometry ;
+            geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-35.2592561 149.0651502)"^^geo:wktLiteral ] ;
+    prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> ;
+    sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/5be17000-b79b-2fa0-e19c-fbf72b7d0bbc> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
+    tern:hasAttribute [ rdfs:label "plot location point" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/4123f0a1-2189-48e6-bd69-b9007812433c> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/df58bcc5-34d9-5020-a519-bc83b18824db> ;
+            tern:hasValue [ a tern:IRI,
+                        tern:Value ;
+                    rdfs:label "Centre" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/df58bcc5-34d9-5020-a519-bc83b18824db> ] ],
+        [ rdfs:label "plot dimension" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/1b1c91ed-4a25-4ba6-9351-4048a308f936> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/d16cfca2-ac22-58f8-9142-8703bd45931e> ;
+            tern:hasValue [ a tern:IRI,
+                        tern:Value ;
+                    rdfs:label "100 x 100" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/d16cfca2-ac22-58f8-9142-8703bd45931e> ] ],
+        [ rdfs:label "plot type" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/39b4421f-d610-5202-8ab6-42618837717d> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/7c9b5cec-5dcc-5c9c-b785-4980abfb9fe7> ;
+            tern:hasValue [ a tern:IRI,
+                        tern:Value ;
+                    rdfs:label "Control" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/7c9b5cec-5dcc-5c9c-b785-4980abfb9fe7> ] ],
+        [ rdfs:label "plot name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+            tern:hasAttribute [ rdfs:label "bioregion" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
+                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/SEH> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "South Eastern Highlands" ;
+                            rdf:value <http://linked.data.gov.au/dataset/bioregion/SEH> ] ],
+                [ rdfs:label "program" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/13f7d5bb-ac64-4f1e-b07c-68f8823a85ea> ;
+                    tern:hasSimpleValue <https://uri-not-found> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "MERIT" ;
+                            rdf:value <https://uri-not-found> ] ],
+                [ rdfs:label "state" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/79e66285-9396-4b8f-a5ba-f957319bce9a> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "Australian Capital Territory" ;
+                            rdf:value <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ] ],
+                [ rdfs:label "unique digits" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/e2396b81-e7cd-4ff4-adc4-d06e9643f592> ;
+                    tern:hasSimpleValue "4221" ;
+                    tern:hasValue [ a tern:Text,
+                                tern:Value ;
+                            rdf:value "4221" ] ] ;
+            tern:hasSimpleValue "CTMSEH4221" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "CTMSEH4221" ] ] .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> a <https://linked.data.gov.au/def/abis/Project> ;
+    rdfs:label "Relevant project" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f> ;
+    sdo:identifier "99248292-6b12-4fef-a05d-4fb094c037ae"^^<https://linked.data.gov.au/def/abis/datatypes/meritProjectID> ;
+    tern:hasAttribute [ rdfs:label "project code" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/00df82dc-6851-57d3-9e25-9a8a1b3d5245> ;
+            tern:hasSimpleValue "99248292-6b12-4fef-a05d-4fb094c037ae" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "99248292-6b12-4fef-a05d-4fb094c037ae" ] ] .
+
+<https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f> a tern:Dataset ;
+    dcterms:description "Record of photopoints survey protocol" ;
+    dcterms:identifier "452fd306-0797-4158-8ae3-fe30d0942f2f" ;
+    dcterms:issued "2024-05-08"^^xsd:date ;
+    dcterms:title "Record 452fd306-0797-4158-8ae3-fe30d0942f2f" ;
+    prov:qualifiedAttribution [ prov:agent <https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f/creator/525d8023-e67c-957a-62b0-18b361ff075e> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/creator> ],
+        [ prov:agent <https://linked.data.gov.au/org/dcceew> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/sponsor> ] ;
+    prov:wasGeneratedBy <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> .
+

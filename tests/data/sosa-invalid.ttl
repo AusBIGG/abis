@@ -1,0 +1,8 @@
+PREFIX : <http://example.com/this/>
+PREFIX ex: <http://example.com/>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+
+:obs-01
+    a sosa:Observation ;
+    sosa:usedProcedure "A literal, non-IRI value" ;  # invalid as usedProcedure's range node kind is an IRI
+.

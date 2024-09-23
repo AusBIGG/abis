@@ -1,0 +1,444 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX sf: <http://www.opengis.net/ont/sf#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/observation-collection/land-surface/9beea030-9129-4a13-8216-8a3cd8445837>
+    a tern:ObservationCollection ;
+    rdfs:label "Observation collection of land-surface 4" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/land-surface/42787aba-d772-41ec-a00d-dc28651eb01e> ;
+    sosa:hasMember
+        <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/observation/height/86179591-e2e7-4981-82b7-a83db4da29fe> ,
+        <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/observation/in-canopy-sky/97d9af91-0f0b-4ec8-9818-04a9508668cb> ;
+    sosa:phenomenonTime
+        [
+            a time:Instant ;
+            time:inXSDDateTimeStamp "2024-05-01T03:25:54.000027+00:00"^^xsd:dateTimeStamp ;
+        ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/procedure/208c036e-0e52-4377-b746-9232cde54f6b> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/c4ff559b-8bbc-34eb-9bb1-65c8686441bd> ;
+    tern:resultDateTime "2024-05-01T03:25:54.027000+00:00"^^xsd:dateTime ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/0576b822-d1bb-4934-8915-ee3ce2ac2cc6>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97629370541477 138.63267392655408)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97629370541477 138.6315776)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/0fde8672-c348-455c-bcbf-ae536b31f51a>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.975934379301115 138.6315776)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.975934379301115 138.63267392655408)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/1171c6b4-acaa-433e-a2c6-5d5a66e0f20f>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97629370541477 138.63267392655408)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97629370541477 138.6315776)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/13efc94a-8201-494b-8bbd-2723a87a34bd>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97629370541477 138.63267392655408)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97629370541477 138.6315776)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/1d3d8ab4-ce9e-4bd5-8c27-3bb4c52a8378>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97566488471588 138.63190649796624)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.9765632 138.63190649796624)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/2334126f-0e6c-4759-a90c-46a8f1fb38b3>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.9765632 138.63234502858785)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97566488471588 138.63234502858785)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/2d40b880-3a95-4178-9147-a40607710aba>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.9765632 138.63234502858785)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97566488471588 138.63234502858785)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/78dbf3b3-aa85-4f9a-a37b-25438eac49b7>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97566488471588 138.63190649796624)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.9765632 138.63190649796624)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/7929bdad-e04c-4e62-a573-40e525ed07db>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97566488471588 138.63190649796624)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.9765632 138.63190649796624)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/a03b293e-d9b1-41ca-ae99-2be2ab4407ee>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.9765632 138.63234502858785)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97566488471588 138.63234502858785)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/a828c87b-d44c-46d7-b3fa-29e1c959fe09>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.975934379301115 138.6315776)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.975934379301115 138.63267392655408)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/c807abdd-4db2-46cb-b4dd-d88e4fe097e2>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.9765632 138.63234502858785)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97566488471588 138.63234502858785)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/cbb7df91-8dc7-462e-873a-af2af7edf7dd>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.9765632 138.63234502858785)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97566488471588 138.63234502858785)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/d5065002-dbe3-4894-8bfc-62de98bc6cbd>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97629370541477 138.63267392655408)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97629370541477 138.6315776)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/dab19382-f787-465a-ba15-d00c5adcee59>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.975934379301115 138.6315776)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.975934379301115 138.63267392655408)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/dd013c78-c565-4029-bbef-79f63ace5cc2>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97566488471588 138.63190649796624)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.9765632 138.63190649796624)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/df8315bc-0f7b-48d2-8793-916e6642731e>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97629370541477 138.63267392655408)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.97629370541477 138.6315776)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/e3688f90-a09d-441b-a150-b346be3553e5>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.97566488471588 138.63190649796624)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.9765632 138.63190649796624)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/e4930fb0-e0b6-4003-954f-e2347c44bdf3>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.975934379301115 138.6315776)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.975934379301115 138.63267392655408)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/transect/ffb9ccfb-29b7-48ea-847d-3107f0774431>
+    a tern:Transect ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:transectEndPoint "POINT (-34.975934379301115 138.6315776)"^^sf:Point ;
+    tern:transectStartPoint "POINT (-34.975934379301115 138.63267392655408)"^^sf:Point ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/creator/78813273-d0c9-94ea-6880-bfd306d51813>
+    a schema:Person ;
+    schema:identifier "b90040ec-a63b-4301-ac8e-420c6a3b3654"^^<https://linked.data.gov.au/def/abis/datatypes/MERITCreatorID> ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/observation/height/86179591-e2e7-4981-82b7-a83db4da29fe>
+    a tern:Observation ;
+    rdfs:label "height" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/location/c80b8d2f-0fe7-4287-a7db-563c77696433> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/land-surface/42787aba-d772-41ec-a00d-dc28651eb01e> ;
+    sosa:hasResult
+        [
+            a
+                tern:Float ,
+                tern:Value ;
+            rdf:value "1.0"^^xsd:float ;
+            tern:unit unit:M ;
+        ] ;
+    sosa:hasSimpleResult 1 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/0e9da717-6c8e-4194-9385-c995d54702e4> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/phenomenon-time/ca7c213e-9ba4-4863-99d1-9f7a053f7437> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/procedure/208c036e-0e52-4377-b746-9232cde54f6b> ;
+    tern:hasAttribute
+        [
+            rdfs:label "point intercept number" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
+            tern:hasSimpleValue 0 ;
+            tern:hasValue
+                [
+                    a
+                        tern:Integer ,
+                        tern:Value ;
+                    rdf:value 0 ;
+                ] ;
+        ] ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/c4ff559b-8bbc-34eb-9bb1-65c8686441bd> ;
+    tern:resultDateTime "2024-05-01T03:25:54.027000+00:00"^^xsd:dateTime ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/observation/in-canopy-sky/97d9af91-0f0b-4ec8-9818-04a9508668cb>
+    a tern:Observation ;
+    rdfs:label "in-canopy-sky" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/location/c80b8d2f-0fe7-4287-a7db-563c77696433> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/land-surface/42787aba-d772-41ec-a00d-dc28651eb01e> ;
+    sosa:hasResult
+        [
+            a
+                tern:Boolean ,
+                tern:Value ;
+            rdf:value false ;
+        ] ;
+    sosa:hasSimpleResult false ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/85bdd25a-fa08-49de-9f0b-98895cb79aa6> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/phenomenon-time/ca7c213e-9ba4-4863-99d1-9f7a053f7437> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/procedure/208c036e-0e52-4377-b746-9232cde54f6b> ;
+    tern:hasAttribute
+        [
+            rdfs:label "point intercept number" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/1080a165-ebfe-42d0-bae5-2acf90d59eb3> ;
+            tern:hasSimpleValue 0 ;
+            tern:hasValue
+                [
+                    a
+                        tern:Integer ,
+                        tern:Value ;
+                    rdf:value 0 ;
+                ] ;
+        ] ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/c4ff559b-8bbc-34eb-9bb1-65c8686441bd> ;
+    tern:resultDateTime "2024-05-01T03:25:54.027000+00:00"^^xsd:dateTime ;
+.
+
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/f28f5c0b-a488-2d48-432c-859002db534b>
+    a tern:FeatureOfInterest ;
+    rdfs:label "Australia Land SATFLB0004" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    tern:featureType <http://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/f28f5c0b-a488-2d48-432c-859002db534b> ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/sites/42787aba-d772-41ec-a00d-dc28651eb01e>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ,
+        tern:Site ;
+    rdfs:label "site SATFLB0004" ;
+    dcterms:identifier "42787aba-d772-41ec-a00d-dc28651eb01e" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    schema:spatial "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-34.9721 138.6401)"^^geo:wktLiteral ;
+    sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/f28f5c0b-a488-2d48-432c-859002db534b> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
+    tern:hasAttribute
+        [
+            rdfs:label "plot name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+            tern:hasAttribute
+                [
+                    rdfs:label "state" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/79e66285-9396-4b8f-a5ba-f957319bce9a> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/5648c02d-6120-5cb1-858a-d92e970c1da0> ;
+                    tern:hasValue
+                        [
+                            a
+                                tern:IRI ,
+                                tern:Value ;
+                            rdfs:label "South Australia" ;
+                            rdf:value <https://linked.data.gov.au/def/nrm/5648c02d-6120-5cb1-858a-d92e970c1da0> ;
+                        ] ;
+                ] ,
+                [
+                    rdfs:label "program" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/13f7d5bb-ac64-4f1e-b07c-68f8823a85ea> ;
+                    tern:hasSimpleValue <https://uri-not-found> ;
+                    tern:hasValue
+                        [
+                            a
+                                tern:IRI ,
+                                tern:Value ;
+                            rdfs:label "Super Sites" ;
+                            rdf:value <https://uri-not-found> ;
+                        ] ;
+                ] ,
+                [
+                    rdfs:label "bioregion" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
+                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/FLB> ;
+                    tern:hasValue
+                        [
+                            a
+                                tern:IRI ,
+                                tern:Value ;
+                            rdfs:label "Flinders Lofty Block" ;
+                            rdf:value <http://linked.data.gov.au/dataset/bioregion/FLB> ;
+                        ] ;
+                ] ,
+                [
+                    rdfs:label "unique digits" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/e2396b81-e7cd-4ff4-adc4-d06e9643f592> ;
+                    tern:hasSimpleValue "0004" ;
+                    tern:hasValue
+                        [
+                            a
+                                tern:Text ,
+                                tern:Value ;
+                            rdf:value "0004" ;
+                        ] ;
+                ] ;
+            tern:hasSimpleValue "SATFLB0004" ;
+            tern:hasValue
+                [
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "SATFLB0004" ;
+                ] ;
+        ] ,
+        [
+            rdfs:label "plot location point" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/4123f0a1-2189-48e6-bd69-b9007812433c> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/d14dc71e-156d-5e64-95eb-d28dd774ed5d> ;
+            tern:hasValue
+                [
+                    a
+                        tern:IRI ,
+                        tern:Value ;
+                    rdfs:label "North West" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/d14dc71e-156d-5e64-95eb-d28dd774ed5d> ;
+                ] ;
+        ] ,
+        [
+            rdfs:label "plot type" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/39b4421f-d610-5202-8ab6-42618837717d> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/7c9b5cec-5dcc-5c9c-b785-4980abfb9fe7> ;
+            tern:hasValue
+                [
+                    a
+                        tern:IRI ,
+                        tern:Value ;
+                    rdfs:label "Control" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/7c9b5cec-5dcc-5c9c-b785-4980abfb9fe7> ;
+                ] ;
+        ] ,
+        [
+            rdfs:label "plot dimension" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/1b1c91ed-4a25-4ba6-9351-4048a308f936> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/d16cfca2-ac22-58f8-9142-8703bd45931e> ;
+            tern:hasValue
+                [
+                    a
+                        tern:IRI ,
+                        tern:Value ;
+                    rdfs:label "100 x 100" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/d16cfca2-ac22-58f8-9142-8703bd45931e> ;
+                ] ;
+        ] ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/location/c80b8d2f-0fe7-4287-a7db-563c77696433>
+    a geo:Geometry ;
+    geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-34.9721 138.6401)"^^geo:wktLiteral ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/phenomenon-time/ca7c213e-9ba4-4863-99d1-9f7a053f7437>
+    a time:Instant ;
+    time:inXSDDateTimeStamp "2024-05-01T03:25:54.000027+00:00"^^xsd:dateTimeStamp ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/procedure/208c036e-0e52-4377-b746-9232cde54f6b>
+    a tern:Procedure ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    prov:endedAtTime "2024-05-01T03:26:46.302000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2024-05-01T03:25:53.192000+00:00"^^xsd:dateTime ;
+    ssn:hasInput
+        [
+            a tern:Input ;
+            rdfs:label "cover point intercept survey id" ;
+            xsd:string "208c036e-0e52-4377-b746-9232cde54f6b" ;
+        ] ;
+    tern:methodType <https://linked.data.gov.au/def/nrm/aa1525f9-c3f2-4f7d-98cc-6a7d3aec9d8a> ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/land-surface/42787aba-d772-41ec-a00d-dc28651eb01e>
+    a
+        tern:FeatureOfInterest ,
+        tern:Sample ;
+    rdfs:label "land surface" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/42787aba-d772-41ec-a00d-dc28651eb01e> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/8282fb22-4135-415c-8ca2-317860d102fb> ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/c4ff559b-8bbc-34eb-9bb1-65c8686441bd>
+    a tern:SiteVisit ;
+    rdfs:label "site visit SA autumn survey" ;
+    dcterms:identifier "c4ff559b-8bbc-34eb-9bb1-65c8686441bd" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
+    prov:startedAtTime "2020-03-29T18:05:06.421000+00:00"^^xsd:dateTime ;
+    tern:hasAttribute
+        [
+            rdfs:label "visit field name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/f7d494fa-9309-5956-b7a8-27152fb005f3> ;
+            tern:hasSimpleValue "SA autumn survey" ;
+            tern:hasValue
+                [
+                    a
+                        tern:Text ,
+                        tern:Value ;
+                    rdf:value "SA autumn survey" ;
+                ] ;
+        ] ;
+    tern:hasSite <https://linked.data.gov.au/dataset/bdr/sites/42787aba-d772-41ec-a00d-dc28651eb01e> ;
+.
+
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654>
+    a tern:Dataset ;
+    prov:qualifiedAttribution
+        [
+            prov:agent <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/creator/78813273-d0c9-94ea-6880-bfd306d51813> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/creator> ;
+        ] ,
+        [
+            prov:agent <https://linked.data.gov.au/org/dcceew> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/sponsor> ;
+        ] ;
+    prov:wasGeneratedBy <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/0d02b422-5bf7-495f-b9f2-fa0a3046937f> ;
+    schema:dateCreated "2024-05-01"^^xsd:date ;
+    schema:description "Record of cover point intercept survey protocol" ;
+    schema:name "Record b90040ec-a63b-4301-ac8e-420c6a3b3654" ;
+.

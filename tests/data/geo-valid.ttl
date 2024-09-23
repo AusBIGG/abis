@@ -1,0 +1,10 @@
+PREFIX : <http://example.com/this/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+:f1
+    a geo:Feature ;
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "POINT (132 -27)"^^geo:wktLiteral ;
+    ] ;
+.

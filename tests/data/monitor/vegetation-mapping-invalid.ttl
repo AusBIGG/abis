@@ -1,0 +1,280 @@
+# Observation <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/cover-percentage/f672b0fe-93d8-4b30-96da-718be98b01ff> has no hasResult value
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation-collection/disturbance/a72ded28-af99-493c-8d4e-ae9d13e1d283> a tern:ObservationCollection ;
+    rdfs:label "Observation collection of disturbance 8" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry [ a geo:Geometry ;
+            geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-34.9442285 138.6213574)"^^geo:wktLiteral ] ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/disturbance/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
+    sosa:hasMember <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/disturbance/904501db-2937-47a6-a94a-6631b5698bfa>,
+        <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/fire-history/8827a709-1929-41c3-9d63-e35b9566999b> ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-09-18T04:31:38.000859+00:00"^^xsd:dateTimeStamp ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute _:n25c160e066c441f89f0fb7217c62dcd8b3 ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation-collection/plant-community/a83b6ad2-e8db-4525-a923-8a96ed206c61> a tern:ObservationCollection ;
+    rdfs:label "Observation collection of plant-community 8" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry [ a geo:Geometry ;
+            geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-34.9442285 138.6213574)"^^geo:wktLiteral ] ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
+    sosa:hasMember <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/homogeneity-measure/0319ffd0-e677-44de-a7de-d501e6bf1423>,
+        <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/vegetation-growth-stage/24620d2a-6156-40fe-9a73-5975f171821d> ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-09-18T04:31:38.000859+00:00"^^xsd:dateTimeStamp ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute _:n25c160e066c441f89f0fb7217c62dcd8b3 ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation-collection/vegetation-stratum/019ea8c8-9bc5-44d7-a8c2-c1e5342d616b> a tern:ObservationCollection ;
+    rdfs:label "Observation collection of vegetation-stratum 8" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry [ a geo:Geometry ;
+            geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-34.9442285 138.6213574)"^^geo:wktLiteral ] ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/vegetation-stratum/32834f36-a478-45be-97f4-ff2ff51e9f5c> ;
+    sosa:hasMember <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/cover-percentage/f672b0fe-93d8-4b30-96da-718be98b01ff>,
+        <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/growth-form/eff82572-5344-482a-9d5d-4a6bfbd8aeba>,
+        <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/height-range/83f0fbe2-2a0e-41ac-bfd8-c96b6c24ae68>,
+        <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/vegetation-species/b4a9b726-86ab-43e0-9c2c-aa030690f4cb> ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-09-18T04:31:38.000859+00:00"^^xsd:dateTimeStamp ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute _:n25c160e066c441f89f0fb7217c62dcd8b3 ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/creator/76209019-7ac1-175b-bebc-8fb22d88748b> a sdo:Person ;
+    sdo:identifier "56787"^^<https://linked.data.gov.au/def/abis/datatypes/MERITCreatorID> .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/cover-percentage/f672b0fe-93d8-4b30-96da-718be98b01ff> a tern:Observation ;
+    rdfs:label "cover-percentage" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/vegetation-stratum/32834f36-a478-45be-97f4-ff2ff51e9f5c> ;
+    # sosa:hasResult [ a tern:Integer,
+    #             tern:Value ;
+    #        rdf:value 1 ;
+    #        tern:unit unit:PERCENT ] ;
+    sosa:hasSimpleResult 1 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/0378976a-0018-4604-826d-1886ca5f38c3> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/phenomenon-time/e4647ebf-7e4a-4ec3-8ce4-6f87e0f2d387> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute [ rdfs:label "vegetation mapping point ID" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/26cd531a-8fa1-4bd5-8402-ddb4d41c484e> ;
+            tern:hasSimpleValue "VMP001-20240501131954" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "VMP001-20240501131954" ] ] ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/disturbance/904501db-2937-47a6-a94a-6631b5698bfa> a tern:Observation ;
+    rdfs:label "disturbance" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/disturbance/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
+    sosa:hasResult [ a tern:IRI,
+                tern:Value ;
+            rdfs:label "Highly disturbed" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f125acdb-8cf9-53f6-b02f-38afd3cb2155> ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f125acdb-8cf9-53f6-b02f-38afd3cb2155> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/632e4c3c-0e73-4b3d-b1d6-7b38897da5e8> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/phenomenon-time/e4647ebf-7e4a-4ec3-8ce4-6f87e0f2d387> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute [ rdfs:label "vegetation mapping point ID" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/26cd531a-8fa1-4bd5-8402-ddb4d41c484e> ;
+            tern:hasSimpleValue "VMP001-20240501131954" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "VMP001-20240501131954" ] ] ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/fire-history/8827a709-1929-41c3-9d63-e35b9566999b> a tern:Observation ;
+    rdfs:label "fire-history" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/disturbance/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> ;
+    sosa:hasResult [ a tern:IRI,
+                tern:Value ;
+            rdfs:label "Unknown" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f> ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f6b0f6d8-16d8-5dd7-b1b7-66b0c020b96f> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/cf1aef8a-a782-4480-9c41-a7f6d170d7fc> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/phenomenon-time/e4647ebf-7e4a-4ec3-8ce4-6f87e0f2d387> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute [ rdfs:label "vegetation mapping point ID" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/26cd531a-8fa1-4bd5-8402-ddb4d41c484e> ;
+            tern:hasSimpleValue "VMP001-20240501131954" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "VMP001-20240501131954" ] ] ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/growth-form/eff82572-5344-482a-9d5d-4a6bfbd8aeba> a tern:Observation ;
+    rdfs:label "growth-form" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/vegetation-stratum/32834f36-a478-45be-97f4-ff2ff51e9f5c> ;
+    sosa:hasResult [ a tern:IRI,
+                tern:Value ;
+            rdfs:label "Tree" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/9b841f72-4903-5d65-818f-d386a6eca15f> ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/9b841f72-4903-5d65-818f-d386a6eca15f> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/4a550407-5158-497c-982a-9f1b662b73e9> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/phenomenon-time/e4647ebf-7e4a-4ec3-8ce4-6f87e0f2d387> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute [ rdfs:label "vegetation mapping point ID" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/26cd531a-8fa1-4bd5-8402-ddb4d41c484e> ;
+            tern:hasSimpleValue "VMP001-20240501131954" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "VMP001-20240501131954" ] ] ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/height-range/83f0fbe2-2a0e-41ac-bfd8-c96b6c24ae68> a tern:Observation ;
+    rdfs:label "height-range" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/vegetation-stratum/32834f36-a478-45be-97f4-ff2ff51e9f5c> ;
+    sosa:hasResult [ a tern:Float,
+                tern:Value ;
+            rdf:value "1.0"^^xsd:float ;
+            tern:unit unit:M ] ;
+    sosa:hasSimpleResult 1 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/cea92774-6d4b-4880-8d07-1fe23c4a5e16> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/phenomenon-time/e4647ebf-7e4a-4ec3-8ce4-6f87e0f2d387> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute [ rdfs:label "vegetation mapping point ID" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/26cd531a-8fa1-4bd5-8402-ddb4d41c484e> ;
+            tern:hasSimpleValue "VMP001-20240501131954" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "VMP001-20240501131954" ] ] ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/homogeneity-measure/0319ffd0-e677-44de-a7de-d501e6bf1423> a tern:Observation ;
+    rdfs:label "homogeneity-measure" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
+    sosa:hasResult [ a tern:Integer,
+                tern:Value ;
+            rdf:value 1 ;
+            tern:unit unit:M ] ;
+    sosa:hasSimpleResult 1 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/325d5ff2-8c81-484a-a422-c13ff29666a9> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/phenomenon-time/e4647ebf-7e4a-4ec3-8ce4-6f87e0f2d387> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute [ rdfs:label "vegetation mapping point ID" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/26cd531a-8fa1-4bd5-8402-ddb4d41c484e> ;
+            tern:hasSimpleValue "VMP001-20240501131954" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "VMP001-20240501131954" ] ] ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/vegetation-growth-stage/24620d2a-6156-40fe-9a73-5975f171821d> a tern:Observation ;
+    rdfs:label "vegetation-growth-stage" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/ea3a4c64-dac3-4660-809a-8ad5ced8997b> ;
+    sosa:hasResult [ a tern:IRI,
+                tern:Value ;
+            rdfs:label "Early Regeneration" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f3875738-25f3-5d54-8877-afebc97fd891> ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f3875738-25f3-5d54-8877-afebc97fd891> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/a2c2f997-46c0-5c64-aca0-a43e624cf8d5> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/phenomenon-time/e4647ebf-7e4a-4ec3-8ce4-6f87e0f2d387> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute [ rdfs:label "vegetation mapping point ID" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/26cd531a-8fa1-4bd5-8402-ddb4d41c484e> ;
+            tern:hasSimpleValue "VMP001-20240501131954" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "VMP001-20240501131954" ] ] ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/observation/vegetation-species/b4a9b726-86ab-43e0-9c2c-aa030690f4cb> a tern:Observation ;
+    rdfs:label "vegetation-species" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/vegetation-stratum/32834f36-a478-45be-97f4-ff2ff51e9f5c> ;
+    sosa:hasResult [ a tern:Text,
+                tern:Value ;
+            rdf:value "Anthoceros adscendens [Species] (scientific: Anthoceros adscendens Lehm. & Lindenb.)" ] ;
+    sosa:hasSimpleResult "Anthoceros adscendens [Species] (scientific: Anthoceros adscendens Lehm. & Lindenb.)" ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/26f843a5-e1ed-46da-b22b-053e567e3227> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/phenomenon-time/e4647ebf-7e4a-4ec3-8ce4-6f87e0f2d387> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> ;
+    tern:hasAttribute [ rdfs:label "vegetation mapping point ID" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/26cd531a-8fa1-4bd5-8402-ddb4d41c484e> ;
+            tern:hasSimpleValue "VMP001-20240501131954" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "VMP001-20240501131954" ] ] ;
+    tern:resultDateTime "2024-09-18T04:31:38.859000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/disturbance/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> a tern:FeatureOfInterest ;
+    rdfs:label "disturbance" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/ea3a4c64-dac3-4660-809a-8ad5ced8997b> a tern:FeatureOfInterest ;
+    rdfs:label "plant community" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/vegetation-stratum/32834f36-a478-45be-97f4-ff2ff51e9f5c> a tern:FeatureOfInterest ;
+    rdfs:label "vegetation stratum" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/32834f36-a478-45be-97f4-ff2ff51e9f5c> .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> a geo:Geometry ;
+    geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-34.9442285 138.6213574)"^^geo:wktLiteral .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/phenomenon-time/e4647ebf-7e4a-4ec3-8ce4-6f87e0f2d387> a time:Instant ;
+    time:inXSDDateTimeStamp "2024-09-18T04:31:38.000859+00:00"^^xsd:dateTimeStamp .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/procedure/59c6c42e-f5ea-44e9-b227-e9c4c4156ae2> a tern:Procedure ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
+    prov:endedAtTime "2024-09-18T04:31:37.728000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2024-09-18T04:30:53.390000+00:00"^^xsd:dateTime ;
+    ssn:hasInput [ a tern:Input ;
+            rdfs:label "vegetation mapping survey id" ;
+            xsd:string "59c6c42e-f5ea-44e9-b227-e9c4c4156ae2" ] ;
+    tern:methodType <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> .
+
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> a tern:Dataset ;
+    dcterms:description "Record of vegetation mapping survey protocol" ;
+    dcterms:identifier "e28f8365-4bcd-4036-8f9f-9a8bd5832998" ;
+    dcterms:issued "2024-09-18"^^xsd:date ;
+    dcterms:title "Record e28f8365-4bcd-4036-8f9f-9a8bd5832998" ;
+    prov:qualifiedAttribution [ prov:agent <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/creator/76209019-7ac1-175b-bebc-8fb22d88748b> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/creator> ],
+        [ prov:agent <https://linked.data.gov.au/org/dcceew> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/sponsor> ] ;
+    prov:wasGeneratedBy <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/0d02b422-5bf7-495f-b9f2-fa0a3046937f> .
+
+_:n25c160e066c441f89f0fb7217c62dcd8b35 a tern:Text,
+        tern:Value ;
+    rdf:value "12321" .
+
+_:n25c160e066c441f89f0fb7217c62dcd8b3 rdfs:label "vegetation mapping field ID" ;
+    tern:attribute <https://linked.data.gov.au/def/nrm/c6baeb59-0434-4619-ae0f-154caa65b9bf> ;
+    tern:hasSimpleValue "12321" ;
+    tern:hasValue _:n25c160e066c441f89f0fb7217c62dcd8b35 .
+

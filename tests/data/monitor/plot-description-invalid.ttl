@@ -1,0 +1,309 @@
+# Person identified with unknown custom Datatype: https://linked.data.gov.au/def/abis/datatypes/MERITCreatorIDx
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation-collection/disturbance/376e2c6b-f625-487b-9526-fbedfdd5c41c> a tern:ObservationCollection ;
+    rdfs:label "Observation collection of disturbance 2" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/disturbance/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasMember <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/site-disturbance/afdf878f-6e22-432a-9a1f-61f2030c500a> ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-05-23T03:21:05.000678+00:00"^^xsd:dateTimeStamp ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation-collection/plant-community/279a00d4-e51e-4c60-a6d6-c3dfe0cae1e3> a tern:ObservationCollection ;
+    rdfs:label "Observation collection of plant-community 2" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasMember <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/homogeneity-measure/1ce5f377-929c-4b44-a63f-a4eeceb63e51>,
+        <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/structural-formation/89369d7e-a87c-4bce-961b-fe7186963157>,
+        <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/veg-growth-stage/cce106cc-ccaf-4933-98b5-b382688de1a4> ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-05-23T03:21:05.000678+00:00"^^xsd:dateTimeStamp ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation-collection/plant-occurrence/be9c3926-6bd2-4291-b7f2-03e2348d0424> a tern:ObservationCollection ;
+    rdfs:label "Observation collection of plant-occurrence 2" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-occurrence/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasMember <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/life-stage/ad3c318e-8862-4edd-92ff-0385032b73e6>,
+        <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/mass-flowering-event/646141c7-7f6e-446d-b7b5-f586ecda8681>,
+        <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/species/74feb7dc-ffd6-45f2-b836-3fec4c9ce0a5> ;
+    sosa:phenomenonTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-05-23T03:21:05.000678+00:00"^^xsd:dateTimeStamp ] ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/creator/80c93760-9a42-c624-b9ae-974200feca87> a sdo:Person ;
+    sdo:identifier "df85a371-de7a-45f3-9a15-e442f8ce2627"^^<https://linked.data.gov.au/def/abis/datatypes/MERITCreatorIDx> .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/homogeneity-measure/1ce5f377-929c-4b44-a63f-a4eeceb63e51> a tern:Observation ;
+    rdfs:label "homogeneity-measure" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/location/b71c9bb8-afc7-4486-8037-d9e62d156180> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasResult [ a tern:Integer,
+                tern:Value ;
+            rdf:value 67 ;
+            tern:unit unit:M ] ;
+    sosa:hasSimpleResult 67 ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/325d5ff2-8c81-484a-a422-c13ff29666a9> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/phenomenon-time/1389383d-a2e9-4e71-8486-c05219175903> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/life-stage/ad3c318e-8862-4edd-92ff-0385032b73e6> a tern:Observation ;
+    rdfs:label "life-stage" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/location/b71c9bb8-afc7-4486-8037-d9e62d156180> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-occurrence/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasResult [ a tern:IRI,
+                tern:Value ;
+            rdfs:label "Dead/dormant" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/96fbe728-dfe2-42d2-872e-778e7c95cc76> ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/96fbe728-dfe2-42d2-872e-778e7c95cc76> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/ce3fd96d-e68d-4b14-b3fd-27690c566440> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/phenomenon-time/1389383d-a2e9-4e71-8486-c05219175903> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/mass-flowering-event/646141c7-7f6e-446d-b7b5-f586ecda8681> a tern:Observation ;
+    rdfs:label "mass-flowering-event" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/location/b71c9bb8-afc7-4486-8037-d9e62d156180> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-occurrence/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasResult [ a tern:Boolean,
+                tern:Value ;
+            rdf:value false ] ;
+    sosa:hasSimpleResult false ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/88c2fec1-d37a-5f5c-8850-3cc052c192f7> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/phenomenon-time/1389383d-a2e9-4e71-8486-c05219175903> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/site-disturbance/afdf878f-6e22-432a-9a1f-61f2030c500a> a tern:Observation ;
+    rdfs:label "site-disturbance" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/location/b71c9bb8-afc7-4486-8037-d9e62d156180> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/disturbance/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasResult [ a tern:IRI,
+                tern:Value ;
+            rdfs:label "Highly disturbed" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f125acdb-8cf9-53f6-b02f-38afd3cb2155> ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f125acdb-8cf9-53f6-b02f-38afd3cb2155> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/632e4c3c-0e73-4b3d-b1d6-7b38897da5e8> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/phenomenon-time/1389383d-a2e9-4e71-8486-c05219175903> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/species/74feb7dc-ffd6-45f2-b836-3fec4c9ce0a5> a tern:Observation ;
+    rdfs:label "species" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/location/b71c9bb8-afc7-4486-8037-d9e62d156180> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-occurrence/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasResult [ a tern:Text,
+                tern:Value ;
+            rdf:value "Acacia baileyana" ] ;
+    sosa:hasSimpleResult "Acacia baileyana" ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/26f843a5-e1ed-46da-b22b-053e567e3227> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/phenomenon-time/1389383d-a2e9-4e71-8486-c05219175903> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/structural-formation/89369d7e-a87c-4bce-961b-fe7186963157> a tern:Observation ;
+    rdfs:label "structural-formation" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/location/b71c9bb8-afc7-4486-8037-d9e62d156180> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasResult [ a tern:IRI,
+                tern:Value ;
+            rdfs:label "Isolated clumps of trees" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f9f75088-5788-5af5-9398-2f24f411ec6b> ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f9f75088-5788-5af5-9398-2f24f411ec6b> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/103f26cb-0194-45d2-8b1a-e18e1da6df2b> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/phenomenon-time/1389383d-a2e9-4e71-8486-c05219175903> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/observation/veg-growth-stage/cce106cc-ccaf-4933-98b5-b382688de1a4> a tern:Observation ;
+    rdfs:label "veg-growth-stage" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    geo:hasGeometry <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/location/b71c9bb8-afc7-4486-8037-d9e62d156180> ;
+    sosa:hasFeatureOfInterest <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    sosa:hasResult [ a tern:IRI,
+                tern:Value ;
+            rdfs:label "Early Regeneration" ;
+            rdf:value <https://linked.data.gov.au/def/nrm/f3875738-25f3-5d54-8877-afebc97fd891> ] ;
+    sosa:hasSimpleResult <https://linked.data.gov.au/def/nrm/f3875738-25f3-5d54-8877-afebc97fd891> ;
+    sosa:observedProperty <https://linked.data.gov.au/def/nrm/a2c2f997-46c0-5c64-aca0-a43e624cf8d5> ;
+    sosa:phenomenonTime <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/phenomenon-time/1389383d-a2e9-4e71-8486-c05219175903> ;
+    sosa:usedProcedure <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> ;
+    tern:hasSiteVisit <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> ;
+    tern:resultDateTime "2024-05-23T03:21:05.678000+00:00"^^xsd:dateTime .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/d9753cbc-8de0-f2c2-d863-9e8399f7d7e1> a tern:FeatureOfInterest ;
+    rdfs:label "Australia Land CTMAUA1122" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    tern:featureType <http://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/d9753cbc-8de0-f2c2-d863-9e8399f7d7e1> .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/disturbance/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> a tern:FeatureOfInterest,
+        tern:Sample ;
+    rdfs:label "disturbance" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> a <https://linked.data.gov.au/def/abis/Project> ;
+    rdfs:label "Relevant project" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    sdo:identifier "99248292-6b12-4fef-a05d-4fb094c037ae"^^<https://linked.data.gov.au/def/abis/datatypes/meritProjectID> ;
+    tern:hasAttribute [ rdfs:label "project code" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/00df82dc-6851-57d3-9e25-9a8a1b3d5245> ;
+            tern:hasSimpleValue "99248292-6b12-4fef-a05d-4fb094c037ae" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "99248292-6b12-4fef-a05d-4fb094c037ae" ] ] .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> a tern:FeatureOfInterest,
+        tern:Sample ;
+    rdfs:label "plant community" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-occurrence/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> a tern:FeatureOfInterest,
+        tern:Sample ;
+    rdfs:label "plant occurrence" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> .
+
+<https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> a tern:FeatureOfInterest,
+        tern:Sample,
+        tern:Site ;
+    rdfs:label "site CTMAUA1122" ;
+    dcterms:identifier "a91eac5c-94e4-4591-bcb5-fd79ec5aa695" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    geo:hasGeometry [ a geo:Geometry ;
+            geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-35.250736959204275 149.07134077137528)"^^geo:wktLiteral ] ;
+    prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> ;
+    sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/d9753cbc-8de0-f2c2-d863-9e8399f7d7e1> ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
+    tern:hasAttribute [ rdfs:label "plot type" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/39b4421f-d610-5202-8ab6-42618837717d> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/5488c9ea-e3a2-5348-887b-065d29b848ab> ;
+            tern:hasValue [ a tern:IRI,
+                        tern:Value ;
+                    rdfs:label "Not applicable" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/5488c9ea-e3a2-5348-887b-065d29b848ab> ] ],
+        [ rdfs:label "plot name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
+            tern:hasAttribute [ rdfs:label "program" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/13f7d5bb-ac64-4f1e-b07c-68f8823a85ea> ;
+                    tern:hasSimpleValue <https://uri-not-found> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "MERIT" ;
+                            rdf:value <https://uri-not-found> ] ],
+                [ rdfs:label "unique digits" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/e2396b81-e7cd-4ff4-adc4-d06e9643f592> ;
+                    tern:hasSimpleValue "1122" ;
+                    tern:hasValue [ a tern:Text,
+                                tern:Value ;
+                            rdf:value "1122" ] ],
+                [ rdfs:label "state" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/79e66285-9396-4b8f-a5ba-f957319bce9a> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "Australian Capital Territory" ;
+                            rdf:value <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ] ],
+                [ rdfs:label "bioregion" ;
+                    tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
+                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/AUA> ;
+                    tern:hasValue [ a tern:IRI,
+                                tern:Value ;
+                            rdfs:label "Australian Alps" ;
+                            rdf:value <http://linked.data.gov.au/dataset/bioregion/AUA> ] ] ;
+            tern:hasSimpleValue "CTMAUA1122" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "CTMAUA1122" ] ],
+        [ rdfs:label "plot location point" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/4123f0a1-2189-48e6-bd69-b9007812433c> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/df58bcc5-34d9-5020-a519-bc83b18824db> ;
+            tern:hasValue [ a tern:IRI,
+                        tern:Value ;
+                    rdfs:label "Centre" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/df58bcc5-34d9-5020-a519-bc83b18824db> ] ],
+        [ rdfs:label "plot dimension" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/1b1c91ed-4a25-4ba6-9351-4048a308f936> ;
+            tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/d16cfca2-ac22-58f8-9142-8703bd45931e> ;
+            tern:hasValue [ a tern:IRI,
+                        tern:Value ;
+                    rdfs:label "100 x 100" ;
+                    rdf:value <https://linked.data.gov.au/def/nrm/d16cfca2-ac22-58f8-9142-8703bd45931e> ] ] .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/location/b71c9bb8-afc7-4486-8037-d9e62d156180> a geo:Geometry ;
+    geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-35.250736959204275 149.07134077137528)"^^geo:wktLiteral .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/phenomenon-time/1389383d-a2e9-4e71-8486-c05219175903> a time:Instant ;
+    time:inXSDDateTimeStamp "2024-05-23T03:21:05.000678+00:00"^^xsd:dateTimeStamp .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/procedure/957a4f50-54c2-4163-9504-b7a8668da763> a tern:Procedure ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    prov:endedAtTime "2024-05-23T03:21:03.643000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2024-05-23T03:18:48.732000+00:00"^^xsd:dateTime ;
+    ssn:hasInput [ a tern:Input ;
+            rdfs:label "plot description standard id" ;
+            xsd:string "957a4f50-54c2-4163-9504-b7a8668da763" ] ;
+    tern:methodType <https://linked.data.gov.au/def/nrm/615edd85-ea58-4d3c-b737-d31d8447ad49> .
+
+<https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/da1362a9-26de-9cdc-a2e3-0a0a1b7df38d> a tern:SiteVisit ;
+    rdfs:label "site visit ACtestvisit23" ;
+    dcterms:identifier "da1362a9-26de-9cdc-a2e3-0a0a1b7df38d" ;
+    void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
+    prov:startedAtTime "2024-05-23T03:05:56.733000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> ;
+    tern:hasAttribute [ rdfs:label "visit field name" ;
+            tern:attribute <https://linked.data.gov.au/def/nrm/f7d494fa-9309-5956-b7a8-27152fb005f3> ;
+            tern:hasSimpleValue "ACtestvisit23" ;
+            tern:hasValue [ a tern:Text,
+                        tern:Value ;
+                    rdf:value "ACtestvisit23" ] ] ;
+    tern:hasSite <https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> .
+
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> a tern:Dataset ;
+    dcterms:description "Record of plot description standard protocol" ;
+    dcterms:identifier "df85a371-de7a-45f3-9a15-e442f8ce2627" ;
+    dcterms:issued "2024-05-23"^^xsd:date ;
+    dcterms:title "Record df85a371-de7a-45f3-9a15-e442f8ce2627" ;
+    prov:qualifiedAttribution [ prov:agent <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627/creator/80c93760-9a42-c624-b9ae-974200feca87> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/creator> ],
+        [ prov:agent <https://linked.data.gov.au/org/dcceew> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/sponsor> ] ;
+    prov:wasGeneratedBy <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> .
+
