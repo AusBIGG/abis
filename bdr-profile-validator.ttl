@@ -1,0 +1,92 @@
+PREFIX : <https://linked.data.gov.au/def/bdr-profile/validator/>
+PREFIX ds: <https://linked.data.gov.au/def/bdr-profile/validator>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+ds:
+    a owl:Ontology ;
+    schema:name "BDR Profile of ABIS Validator" ;
+    schema:description "SHACL validator for the Biodiversity Data Repository (BDR)'s profile of Australian Biodiversity Information Standard (ABIS)" ;
+    schema:creator <https://linked.data.gov.au/org/bdr-team> ;
+    schema:publisher <https://linked.data.gov.au/org/ausbigg> ;
+    schema:dateCreated "2022-05-11"^^xsd:date ;
+    schema:dateModified "2024-09-23"^^xsd:date ;
+    schema:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    schema:copyrightNotice "(c) 2024 AusBIGG" ;
+    owl:versionIRI :1.0 ;
+    owl:versionInfo """1.0 First version""" ;
+    schema:hasPart
+        :shape-01 ,
+        :shape-02 ,
+        :shape-03 ,
+        :shape-04 ,
+        :shape-05 ,
+        :shape-06 ,
+        :shape-07 ;
+.
+
+<https://linked.data.gov.au/org/ausbigg>
+    a schema:Organization ;
+    schema:name "Australian Biodiversity Information Governance Group" ;
+    schema:url "https://github.com/AusBIGG/" ;
+.
+
+<https://linked.data.gov.au/org/bdr-team>
+    a schema:Organization ;
+    schema:name "BDR Team" ;
+    schema:url "https://bdr.gov.au/" ;
+.
+
+:shape-01
+    a sh:NodeShape ;
+    sh:targetClass tern:Dataset ;
+    sh:pattern "https://linked.data.gov.au/dataset/bdr/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}" ;
+    sh:message "Dataset IRIs must match the BDR Profile of ABIS' proscribed pattern of https://linked.data.gov.au/dataset/bdr/{UUID}" ;
+.
+
+:shape-02
+    a sh:NodeShape ;
+    sh:targetClass tern:Site ;
+    sh:pattern "linked.data.gov.au" ;
+    sh:message "Site IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
+.
+
+:shape-03
+    a sh:NodeShape ;
+    sh:targetClass tern:Survey ;
+    sh:pattern "linked.data.gov.au" ;
+    sh:message "Survey IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
+.
+
+:shape-04
+    a sh:NodeShape ;
+    sh:targetClass tern:SiteVisit ;
+    sh:pattern "linked.data.gov.au" ;
+    sh:message "SiteVisit IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
+.
+
+:shape-05
+    a sh:NodeShape ;
+    sh:targetClass tern:Sample ;
+    sh:pattern "linked.data.gov.au" ;
+    sh:message "Sample IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
+.
+
+:shape-06
+    a sh:NodeShape ;
+    sh:targetClass tern:Observation ;
+    sh:pattern "https://linked.data.gov.au/dataset/bdr/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}" ;
+    sh:message "Observation IRIs must match the BDR Profile of ABIS' proscribed pattern pattern of https://linked.data.gov.au/dataset/bdr/{UUID}/ + supplier pattern" ;
+.
+
+:shape-07
+    a sh:NodeShape ;
+    sh:targetClass schema:Person , schema:Organization ;
+    sh:pattern "linked.data.gov.au" ;
+    sh:message "Agent (Person and Organization) IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
+.

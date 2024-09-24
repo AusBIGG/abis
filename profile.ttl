@@ -7,7 +7,7 @@
     dcterms:title "ABIS Standard Definition" ;
     dcterms:description "This resource describes the structure and multiple parts of the ABIS Standard as well as the formalisms used in their definitions, in machine-readable form." ;
     dcterms:created "2021-12-13"^^xsd:date ;
-    dcterms:modified "2024-07-10"^^xsd:date ;
+    dcterms:modified "2024-09-24"^^xsd:date ;
     # dcterms:issued "2023-12-04"^^xsd:date ;
     dcterms:creator
         <https://linked.data.gov.au/org/surround> ,
@@ -15,7 +15,7 @@
         <https://linked.data.gov.au/org/dawe> ;
     dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
     dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-    dcterms:rights "(c) Commonwealth of Australian (Department of Agriculture, Water and the Environment), 2021" ;
+    schema:copyrightNotice "(c) 2024 AusBIGG" ;
     prof:isProfileOf 
         <https://linkeddata.tern.org.au/information-models/tern-ontology> ;
 .
