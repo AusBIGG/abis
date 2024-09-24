@@ -51,8 +51,7 @@ jobs:
         cp profiles/bdr/profile.ttl docs/bdr.ttl
         #
         echo "Add validator to docs/"
-        cp validators/validator.ttl docs/validator.ttl
-        echo "TODO: add creation of compounded vocalidator here"
+        cp validators/*.ttl docs/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
