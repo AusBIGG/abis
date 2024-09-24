@@ -52,6 +52,7 @@ jobs:
         #
         echo "Add validator to docs/"
         cp validators/*.ttl docs/
+        mv docs/abis-validator.ttl docs/validator.ttl
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
