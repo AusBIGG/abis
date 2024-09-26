@@ -843,7 +843,7 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateModified">Modified Date</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2024-08-12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2024-09-26</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateIssued">Issued Date</a></strong></p></td>
@@ -4500,21 +4500,21 @@ ex:obs-1
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>ex:sample-1
-    a dwc:LivingSpecimen ;
-    prov:wasDerivedFrom ex:site-1 ;
-.
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">sample-1
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">LivingSpecimen</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">prov:</span><span class="n">wasDerivedFrom</span><span class="w"> </span><span class="nn">ex:</span><span class="n">site-1</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
 
-ex:site-1
-    a dwc:Location ;
-    prov:wasDerivedFrom &lt;https://example.com/feature/ultimate-foi&gt; ;
-.
+</span><span class="nn">ex:</span><span class="n">site-1
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Location</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">prov:</span><span class="n">wasDerivedFrom</span><span class="w"> </span><span class="nl">&lt;https://example.com/feature/ultimate-foi&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
 
-ex:obs-1
-    a dcw:Identification ;
-    dwc:materialSampleID ex:sample-1 ;
-    dwc:identificationID &lt;https://id.biodiversity.org.au/455721&gt; ;
-.</pre>
+</span><span class="nn">ex:</span><span class="n">obs-1
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dcw:</span><span class="n">Identification</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dwc:</span><span class="n">materialSampleID</span><span class="w"> </span><span class="nn">ex:</span><span class="n">sample-1</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dwc:</span><span class="n">identificationID</span><span class="w"> </span><span class="nl">&lt;https://id.biodiversity.org.au/455721&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
 </div>
 </div>
 </div>
@@ -4531,14 +4531,220 @@ ex:obs-1
 <h2 id="_reasoning_rules"><a class="anchor" href="#_reasoning_rules"></a>11. Reasoning Rules</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section contains rules that ABIS-compliant systems must implement. The rules are machine executable rules that create new information from ABIS data based on logical, ontological, spatial and other reasoning.</p>
+<p>This section contains rules that MUST be able to be executed on ABIS data. The rules are machine executable and create new information from ABIS data based on logical, ontological, spatial and other reasoning.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of these rules are to create convenient forms of base ABIS data, such as bounding boxes for datasets when only Occurrence locations are initially provided. This enables efficient use of ABIS data - dataset discovery can search spatially across the fewer datasets, not just across the more numerous occurrences - and also fleshes out certain data patterns where base ABIS data might have provided multiple forms of content which do not meet the pattern directly but can be used to calculate it.</p>
 </div>
 <div class="sect2">
 <h3 id="_how_rules_work"><a class="anchor" href="#_how_rules_work"></a>11.1. How Rules Work</h3>
-
+<div class="paragraph">
+<p>On receipt of ABIS data, ABIS-compliant systems MAY make available data that has been expended, based on the rules in the Rule List below. How a system does this is a matter for the system but the general approaches are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>forward chaining</p>
+</li>
+<li>
+<p>backwards chaining</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Forwards chaining involves expanding received data in accordance with the rules and materialising all the extension elements. Backwards chaining involves applying the reasoning rules to queries of the data such that the query can be answered as if the data had been expanded.</p>
+</div>
+<div class="paragraph">
+<p>The rules are identified below, described in English and then defined in <a href="#SPARQL">SPARQL</a> queries. Implementing systems do not have to expand the data using SPARQL queries - they may use any system they like, such as application code - but the SPARQL queries serve as the canonical definition of the rule.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_rule_list"><a class="anchor" href="#_rule_list"></a>11.2. Rule List</h3>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 7.1428%;">
+<col style="width: 28.5714%;">
+<col style="width: 7.1428%;">
+<col style="width: 57.143%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Dependencies</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calculate <code>abis:Occurrence</code> instances from Observations with XXX properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
+PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
+
+CONSTRUCT {
+    ?occ a abis:Occurrence .
+}
+WHERE {
+    # ...
+}</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R02</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calculate <code>abis:BiodiversityOccurrenceRecord</code> instances from &#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
+PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
+
+CONSTRUCT {
+    ?boc a abis:BiodiversityOccurrenceRecord .
+}
+WHERE {
+    # ...
+}</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R03</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Centroids must be calculated for polygons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX geof: &lt;http://www.opengis.net/def/function/geosparql/&gt;
+
+CONSTRUCT {
+    ?feature geo:hasCentroid ?centroid
+}
+WHERE {
+    ?feature geo:hasGeometry/geo:asWKT ?wkt .
+
+    BIND geof:centroid(?wkt) AS ?centroid .
+
+    FILTER REGEX(?wkt, "POLYGON")
+}</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If a Dataset does not have a geometry supplied, it must have it calculated as the convex hull of its spatial object members</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX geof: &lt;http://www.opengis.net/def/function/geosparql/&gt;
+PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
+
+CONSTRUCT {
+    ?dataset geo:hasGeometry ?geom .
+    ?geom geo:asWKT ?wkt .
+}
+WHERE {
+    {
+        VALUES ?spatialFeature {
+            abis:Ocurrence
+            tern:Site
+            tern:Survey
+            tern:SiteVisit
+        }
+
+        SELECT ?wkt
+        WHERE {
+            ?feature
+                void:inDataset ?dataset ;
+                a ?spatialFeature ;
+            .
+        }
+    }
+
+    BIND BNODE() AS ?geom .
+    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+
+    MINUS {
+        ?dataset geo:hasGeometry ?geom .
+    }
+}</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bounding Boxes must be calculated for Datasets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R04</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX geof: &lt;http://www.opengis.net/def/function/geosparql/&gt;
+
+CONSTRUCT {
+    ?dataset geo:hasBoundingBox ?boundingbox
+}
+WHERE {
+    ?dataset geo:hasGeometry/geo:asWKT ?wkt .
+
+    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+}</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R06</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If a Dataset does not have a temporal range supplied, it must have it calculated as the containing interval containing all of its temporal object members</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
+PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
+
+
+CONSTRUCT {
+    ?dataset schema:temporality ?boundingbox
+}
+WHERE {
+    {
+        VALUES ?temporalFeature {
+            abis:Ocurrence
+        }
+
+        SELECT ?wkt
+        WHERE {
+            ?feature
+                void:inDataset ?dataset ;
+                a ?temporalFeature
+            .
+
+            ?feature time:hasTime ?time .
+        }
+    }
+
+    ?dataset geo:hasGeometry/geo:asWKT ?wkt .
+
+    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+
+    MINUS {
+        ?dataset schema:temporality ?temporal .
+    }
+}</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <h4 id="_record_rule" class="discrete">Record Rule</h4>
 <div class="paragraph">
 <p>This rule allows for the creation of <a href="#abis:BiodiversityOccurrenceRecord">Record</a> instances from <a href="#_tern_ontology">TERN Ontology</a> data that doesn&#8217;t directly indicate such as class of object.</p>
@@ -6769,7 +6975,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-24 06:57:36 UTC
+Last updated 2024-09-26 07:22:36 UTC
 </div>
 </div>
 </body>
