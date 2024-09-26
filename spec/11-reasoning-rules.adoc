@@ -1,11 +1,166 @@
 == Reasoning Rules
 
-This section contains rules that ABIS-compliant systems must implement. The rules are machine executable rules that create new information from ABIS data based on logical, ontological, spatial and other reasoning.
+This section contains rules that MUST be able to be executed on ABIS data. The rules are machine executable and create new information from ABIS data based on logical, ontological, spatial and other reasoning.
+
+The purpose of these rules are to create convenient forms of base ABIS data, such as bounding boxes for datasets when only Occurrence locations are initially provided. This enables efficient use of ABIS data - dataset discovery can search spatially across the fewer datasets, not just across the more numerous occurrences - and also fleshes out certain data patterns where base ABIS data might have provided multiple forms of content which do not meet the pattern directly but can be used to calculate it.
 
 === How Rules Work
 
+On receipt of ABIS data, ABIS-compliant systems MAY make available data that has been expended, based on the rules in the Rule List below. How a system does this is a matter for the system but the general approaches are:
+
+1. forward chaining
+2. backwards chaining
+
+Forwards chaining involves expanding received data in accordance with the rules and materialising all the extension elements. Backwards chaining involves applying the reasoning rules to queries of the data such that the query can be answered as if the data had been expanded.
+
+The rules are identified below, described in English and then defined in <<SPARQL, SPARQL>> queries. Implementing systems do not have to expand the data using SPARQL queries - they may use any system they like, such as application code - but the SPARQL queries serve as the canonical definition of the rule.
 
 === Rule List
+
+[cols="1,4,1,8"]
+|===
+| ID | Description | Dependencies | Definition
+
+| R01 | Calculate `abis:Occurrence` instances from Observations with XXX properties | - a|
+[sources,sparql]
+----
+PREFIX abis: <https://linked.data.gov.au/def/abis/>
+PREFIX tern <https://w3id.org/tern/ontologies/tern/>
+PREFIX void: <http://rdfs.org/ns/void#>
+
+CONSTRUCT {
+    ?occ a abis:Occurrence .
+}
+WHERE {
+    # ...
+}
+----
+| R02 | Calculate `abis:BiodiversityOccurrenceRecord` instances from ... | - a|
+[sources,sparql]
+----
+PREFIX abis: <https://linked.data.gov.au/def/abis/>
+PREFIX tern <https://w3id.org/tern/ontologies/tern/>
+PREFIX void: <http://rdfs.org/ns/void#>
+
+CONSTRUCT {
+    ?boc a abis:BiodiversityOccurrenceRecord .
+}
+WHERE {
+    # ...
+}
+----
+| R03 | Centroids must be calculated for polygons | - a|
+[sources,sparql]
+----
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+
+CONSTRUCT {
+    ?feature geo:hasCentroid ?centroid
+}
+WHERE {
+    ?feature geo:hasGeometry/geo:asWKT ?wkt .
+
+    BIND geof:centroid(?wkt) AS ?centroid .
+
+    FILTER REGEX(?wkt, "POLYGON")
+}
+----
+| R04 | If a Dataset does not have a geometry supplied, it must have it calculated as the convex hull of its spatial object members | R01 a|
+[sources,sparql]
+----
+PREFIX abis: <https://linked.data.gov.au/def/abis/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX tern <https://w3id.org/tern/ontologies/tern/>
+PREFIX void: <http://rdfs.org/ns/void#>
+
+CONSTRUCT {
+    ?dataset geo:hasGeometry ?geom .
+    ?geom geo:asWKT ?wkt .
+}
+WHERE {
+    {
+        VALUES ?spatialFeature {
+            abis:Ocurrence
+            tern:Site
+            tern:Survey
+            tern:SiteVisit
+        }
+
+        SELECT ?wkt
+        WHERE {
+            ?feature
+                void:inDataset ?dataset ;
+                a ?spatialFeature ;
+            .
+        }
+    }
+
+    BIND BNODE() AS ?geom .
+    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+
+    MINUS {
+        ?dataset geo:hasGeometry ?geom .
+    }
+}
+----
+| R05 | Bounding Boxes must be calculated for Datasets | R04 a|
+[sources,sparql]
+----
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+
+CONSTRUCT {
+    ?dataset geo:hasBoundingBox ?boundingbox
+}
+WHERE {
+    ?dataset geo:hasGeometry/geo:asWKT ?wkt .
+
+    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+}
+----
+| R06 | If a Dataset does not have a temporal range supplied, it must have it calculated as the containing interval containing all of its temporal object members | R01 a|
+[sources,sparql]
+----
+PREFIX abis: <https://linked.data.gov.au/def/abis/>
+PREFIX schema: <https://schema.org/>
+PREFIX tern <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+
+
+CONSTRUCT {
+    ?dataset schema:temporality ?boundingbox
+}
+WHERE {
+    {
+        VALUES ?temporalFeature {
+            abis:Ocurrence
+        }
+
+        SELECT ?wkt
+        WHERE {
+            ?feature
+                void:inDataset ?dataset ;
+                a ?temporalFeature
+            .
+
+            ?feature time:hasTime ?time .
+        }
+    }
+
+    ?dataset geo:hasGeometry/geo:asWKT ?wkt .
+
+    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+
+    MINUS {
+        ?dataset schema:temporality ?temporal .
+    }
+}
+----
+
+|===
+
 
 [discrete]
 ==== Record Rule

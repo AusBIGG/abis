@@ -497,7 +497,7 @@ ex:obs-1
 
 maps to the following Darwin Core Terms data:
 
-[turtle]
+[source, turtle]
 ----
 ex:sample-1
     a dwc:LivingSpecimen ;
