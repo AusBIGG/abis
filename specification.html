@@ -709,7 +709,7 @@ pre.rouge {
 <ul class="sectlevel3">
 <li><a href="#_tern_ontology">6.4.1. TERN Ontology</a></li>
 <li><a href="#_nsl_model">6.4.2. NSL Model</a></li>
-<li><a href="#_abis_catalogue_model">6.4.3. ABIS Catalogue Model</a></li>
+<li><a href="#_biodiversity_record_model">6.4.3. Biodiversity Record Model</a></li>
 <li><a href="#_projects_model">6.4.4. Projects Model</a></li>
 <li><a href="#_data_release_model">6.4.5. Data Release Model</a></li>
 </ul>
@@ -757,7 +757,7 @@ pre.rouge {
 </ul>
 </li>
 <li><a href="#_references">12. References</a></li>
-<li><a href="#annex-a">Annex A: ABIS Catalogue Model</a>
+<li><a href="#annex-a">Annex A: Biodiversity Record Model</a>
 <ul class="sectlevel2">
 <li><a href="#catalogue-metadata">A.1. Metadata</a></li>
 <li><a href="#_a_2_supporting_assets">A.2. Supporting Assets</a></li>
@@ -773,7 +773,12 @@ pre.rouge {
 <li><a href="#_a_5_validator">A.5. Validator</a></li>
 </ul>
 </li>
-<li><a href="#annex-b">Annex B: Projects Model</a>
+<li><a href="#annex-b">Annex B: Protocol-based Models</a>
+<ul class="sectlevel2">
+<li><a href="#_emsa_protocol">EMSA Protocol</a></li>
+</ul>
+</li>
+<li><a href="#annex-c">Annex C: Projects Model</a>
 <ul class="sectlevel2">
 <li><a href="#projects-metadata">B.1. Metadata</a></li>
 <li><a href="#_b_2_supporting_assets">B.2. Supporting Assets</a></li>
@@ -782,7 +787,7 @@ pre.rouge {
 <li><a href="#_b_5_validator">B.5. Validator</a></li>
 </ul>
 </li>
-<li><a href="#annex-c">Annex C: Data Release Model</a>
+<li><a href="#annex-d">Annex D: Data Release Model</a>
 <ul class="sectlevel2">
 <li><a href="#data-release-metadata">C.1. Metadata</a></li>
 <li><a href="#_c_2_supporting_assets">C.2. Supporting Assets</a></li>
@@ -791,7 +796,7 @@ pre.rouge {
 <li><a href="#_c_5_validator">C.5. Validator</a></li>
 </ul>
 </li>
-<li><a href="#annex-d">Annex D: Extended Examples</a>
+<li><a href="#annex-e">Annex E: Extended Examples</a>
 <ul class="sectlevel2">
 <li><a href="#_d_1_tern_ontology">D.1. TERN Ontology</a>
 <ul class="sectlevel3">
@@ -810,7 +815,7 @@ pre.rouge {
 <div class="sectionbody">
 <div id="overview" class="imageblock text-center">
 <div class="content">
-<a class="image" href="img/overview.svg"><img src="https://ausbigg.github.io/abis/img/overview.svg" alt="ABIS Parts" width="650"></a>
+<a class="image" href="img/models.svg"><img src="https://ausbigg.github.io/abis/img/models.svg" alt="ABIS Parts" width="650"></a>
 </div>
 <div class="title">Figure 1. An overview of the major model parts of ABIS. The models shown here are detailed in the <a href="#_multiple_models">Multiple Models</a> section. Overlaps indicated shared model elements.</div>
 </div>
@@ -843,7 +848,7 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateModified">Modified Date</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2024-09-26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2024-10-10</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateIssued">Issued Date</a></strong></p></td>
@@ -851,15 +856,16 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/version">Version</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.5</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI">Version IRI</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/2.3">abis:2.4</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/2.3">abis:2.5</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#historyNote"><strong>History Note</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.4</strong> - 2024 Aug - All validators completed<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.5</strong> - 2024 Oct - Multiple Protocol-based models allowed<br>
+<strong>2.4</strong> - 2024 Aug - All validators completed<br>
 <strong>2.3</strong> - 2024 Jul - Record and Occurrence classes added in new foreground model - ABIS Catalogue<br>
 <strong>2.2</strong> - 2024 Jul - More Patterns, improved Mappings &amp; comprehensive Validators<br>
 <strong>2.1</strong> - 2024 Jan - Implementation of <a href="#annex-b">ABIS Projects Model</a> and <a href="#annex-c">ABIS Data Release Model</a> within ABIS<br>
@@ -1858,16 +1864,16 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>ABIS provides representations of chunks of data for management - cataloguing, data governance and so on. It does this by implementing a very simple, and common, catalogue model which consists of <em>catalogues</em> (or <em>catalogs</em>, for Americans) that contain <em>datasets</em> or other kinds of <em>resources</em>  such as <em>vocabularies</em>. ABIS then insists that <em>datasets</em> must, in turn, contain <em>biodiversity records</em> for records of such as what ABIS is all about.</p>
 </div>
 <div class="paragraph">
-<p>This models is as per <a href="#cat-model-overview-pattern">Figure 4</a>, below, which is taken from the <a href="#annex-a">ABIS Catalogue Model</a>, detailed in full in Annex A.</p>
+<p>This models is as per <a href="#cat-model-overview-pattern">Figure 4</a>, below, which is taken from the <a href="#annex-a">Biodiversity Record Model</a>, detailed in full in Annex A.</p>
 </div>
 <div class="paragraph">
 <p>Since this model is used for data management, it places requirements on ABIS datasets, above and beyond those imposed by the models it profiles, such as the <a href="#_tern_ontology">TERN Ontology</a>, to ensure all ABIS data has a minimum level of metadata present. See the <a href="#profile-bdr">BDR Profile</a> of ABIS' <a href="#profile-bdr-mandates">Model Element Mandates</a> for specifics.</p>
 </div>
 <div id="cat-model-overview-pattern" class="imageblock text-center">
 <div class="content">
-<a class="image" href="img/cat-model.svg"><img src="https://ausbigg.github.io/abis/img/cat-model.svg" alt="ABIS Catalogue Model overview" width="150"></a>
+<a class="image" href="img/cat-model.svg"><img src="https://ausbigg.github.io/abis/img/cat-model.svg" alt="Biodiversity Record Model overview" width="150"></a>
 </div>
-<div class="title">Figure 4. An overview of the ABIS Catalogue Model&#8217;s classes and their relationships</div>
+<div class="title">Figure 4. An overview of the Biodiversity Record Model&#8217;s classes and their relationships</div>
 </div>
 <div class="paragraph">
 <p>implemented by <a href="#SDO">schema.org</a> and <a href="#DCAT">the Data Catalog Vocabulary (DCAT)</a> which consists of</p>
@@ -2629,7 +2635,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>The ABIS Foreground Model is the union of the Component Models listed in the next section. The dependencies of these models are shown in <a href="#hierarchy">Figure 13</a>, above.</p>
 </div>
 <div class="paragraph">
-<p>When modelling biodiversity observations - ABIS' main concern - ABIS uses the <a href="#TERNOntology">TERN Ontology</a> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <a href="#NSLM">NSL Model</a>. When data packaging is necissary, the <a href="#_abis_catalogue_model">ABIS Catalogue Model</a> is used. Project information and data release details are modelled using the <a href="#_projects_model">ABIS Projects</a> &amp; <a href="#_data_release_model">ABIS Data Release</a> respectively.</p>
+<p>When modelling biodiversity observations - ABIS' main concern - ABIS uses the <a href="#TERNOntology">TERN Ontology</a> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <a href="#NSLM">NSL Model</a>. When data packaging is necissary, the <a href="#_biodiversity_record_model">Biodiversity Record Model</a> is used. Project information and data release details are modelled using the <a href="#_projects_model">ABIS Projects</a> &amp; <a href="#_data_release_model">ABIS Data Release</a> respectively.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2646,7 +2652,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p><a href="#_nsl_model">NSL Model</a></p>
 </li>
 <li>
-<p><a href="#_abis_catalogue_model">ABIS Catalogue Model</a></p>
+<p><a href="#_biodiversity_record_model">Biodiversity Record Model</a></p>
 </li>
 <li>
 <p><a href="#_projects_model">Projects Model</a></p>
@@ -2703,7 +2709,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 17. Classes and predicates within the <a href="#TERNOntology">TERN Ontology</a> used to characterise sampling. The <code>is sample of</code> predicate can be derived from relations between a <code>Sample</code>, the <code>Sampling</code> and the <code>Site</code>. Note the similarity of structure to the <a href="#tern-sosa">SOSA Observation pattern</a>.</div>
 </div>
 <div class="paragraph">
-<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class which is analogous to the <a href="#_abis_catalogue_model">ABIS Catalogue Model</a>'s <code>Dataset</code> class.</p>
+<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class which is analogous to the <a href="#_biodiversity_record_model">Biodiversity Record Model</a>'s <code>Dataset</code> class.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2713,7 +2719,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>While the TERN Ontology provides some handling of data packaging, the ABIS Catalogue Model provides a more extended form of packaging with catalogues of datasets of records. See the <a href="#_data_cataloguing">Data Cataloguing</a> pattern for more information.</p>
+<p>While the TERN Ontology provides some handling of data packaging, the Biodiversity Record Model provides a more extended form of packaging with catalogues of datasets of records. See the <a href="#_data_cataloguing">Data Cataloguing</a> pattern for more information.</p>
 </div>
 </td>
 </tr>
@@ -2818,7 +2824,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_abis_catalogue_model"><a class="anchor" href="#_abis_catalogue_model"></a>6.4.3. ABIS Catalogue Model</h4>
+<h4 id="_biodiversity_record_model"><a class="anchor" href="#_biodiversity_record_model"></a>6.4.3. Biodiversity Record Model</h4>
 <div class="paragraph">
 <p>Model location: <a href="#annex-a">Annex A</a></p>
 </div>
@@ -4947,13 +4953,13 @@ WHERE {
 </div>
 </div>
 <div class="sect1">
-<h2 id="annex-a"><a class="anchor" href="#annex-a"></a>Annex A: ABIS Catalogue Model</h2>
+<h2 id="annex-a"><a class="anchor" href="#annex-a"></a>Annex A: Biodiversity Record Model</h2>
 <div class="sectionbody">
-<div id="cat-model-overview" class="imageblock text-center">
+<div id="brd-overview" class="imageblock text-center">
 <div class="content">
-<a class="image" href="img/cat-model.svg"><img src="https://ausbigg.github.io/abis/img/cat-model.svg" alt="ABIS Catalogue Model overview" width="150"></a>
+<a class="image" href="img/brm-overview.svg"><img src="https://ausbigg.github.io/abis/img/brm-overview.svg" alt="Biodiversity Record Model overview" width="150"></a>
 </div>
-<div class="title">Figure 23. An overview of the ABIS Catalogue Model&#8217;s classes and their relationships</div>
+<div class="title">Figure 23. An overview of the Biodiversity Record Model&#8217;s classes and their relationships</div>
 </div>
 <div class="paragraph">
 <p><a href="#schema:DataCatalog">DataCatalog</a>s are curated lists of <a href="#tern:Dataset">Dataset</a>s that contain <a href="#abis:BiodiversityRecord">Biodiversity Record</a>s (just 'Records').</p>
@@ -4972,11 +4978,23 @@ WHERE {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>See the <a href="#profile-bdr">BDR Profile</a> for the requirements of ABIS Catalogue Model data bound for the BDR.</p>
+<p>See the <a href="#profile-bdr">BDR Profile</a> for the requirements of Biodiversity Record Model data bound for the BDR.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+<div id="brm-join" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/brm-join.svg"><img src="https://ausbigg.github.io/abis/img/brm-join.svg" alt="Biodiversity Record Model class equivalences" width="60%"></a>
+</div>
+<div class="title">Figure 24. Class equivalences between this Biodiversity Record Model, <a href="#SDO">schema.org</a> and <a href="#DCAT">DCAT</a></div>
+</div>
+<div id="brm-occurrence" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/brm-occurrence.svg"><img src="https://ausbigg.github.io/abis/img/brm-occurrence.svg" alt="Biodiversity Record Model occurrence modelling" width="60%"></a>
+</div>
+<div class="title">Figure 25. Biodiversity Record Model occurrence modelling</div>
 </div>
 <div class="sect2">
 <h3 id="catalogue-metadata"><a class="anchor" href="#catalogue-metadata"></a>A.1. Metadata</h3>
@@ -5079,12 +5097,6 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div class="sect2">
 <h3 id="_a_3_classes"><a class="anchor" href="#_a_3_classes"></a>A.3. Classes</h3>
-<div id="cat-model-equivalences" class="imageblock text-center">
-<div class="content">
-<a class="image" href="img/cat-model-equivalences.svg"><img src="https://ausbigg.github.io/abis/img/cat-model-equivalences.svg" alt="ABIS Catalogue Model class equivalences" width="60%"></a>
-</div>
-<div class="title">Figure 24. Class equivalences between this ABIS Catalogue Model, <a href="#SDO">schema.org</a> and <a href="#DCAT">DCAT</a></div>
-</div>
 <h4 id="_class_index" class="discrete">Class Index</h4>
 <div class="paragraph">
 <p>Classes defined here:</p>
@@ -5342,13 +5354,24 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect1">
-<h2 id="annex-b"><a class="anchor" href="#annex-b"></a>Annex B: Projects Model</h2>
+<h2 id="annex-b"><a class="anchor" href="#annex-b"></a>Annex B: Protocol-based Models</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_emsa_protocol"><a class="anchor" href="#_emsa_protocol"></a>EMSA Protocol</h3>
+<div class="paragraph">
+<p>#TODO: add details of the EMSA Protocol Model(s) from <a href="https://emsa.tern.org.au/" class="bare">https://emsa.tern.org.au/</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="annex-c"><a class="anchor" href="#annex-c"></a>Annex C: Projects Model</h2>
 <div class="sectionbody">
 <div id="proj-overview" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/proj-hierarchy.svg"><img src="https://ausbigg.github.io/abis/img/proj-hierarchy.svg" alt="Projects Model Class Hierarchy" width="400"></a>
 </div>
-<div class="title">Figure 25. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
+<div class="title">Figure 26. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
 </div>
 <div class="paragraph">
 <p><a href="#abis:Project"><code>Project</code></a>s are part of <a href="#abis:Program"><code>Program</code></a>s and both are specialised forms of <a href="#PROV">PROV</a>'s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> class. An <code>Activity</code> is "something that occurs over a period of time and acts upon or with entities" which means <code>Project</code> &amp; <code>Program</code> instances can have all the properties that <code>Activities</code> can have, such as temporal extents, <code>Agents</code> that have causal relationships to them and so on.</p>
@@ -5492,7 +5515,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <a class="image" href="img/proj-project.svg"><img src="https://ausbigg.github.io/abis/img/proj-project.svg" alt="Projects Model Project Class" width="650"></a>
 </div>
-<div class="title">Figure 26. The Projects Model <code>Project</code> Class and its expected predicates</div>
+<div class="title">Figure 27. The Projects Model <code>Project</code> Class and its expected predicates</div>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -5587,7 +5610,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="content">
 <a class="image" href="img/proj-program.svg"><img src="https://ausbigg.github.io/abis/img/proj-program.svg" alt="Projects Model Program Class" width="650"></a>
 </div>
-<div class="title">Figure 27. The Projects Model <code>Program</code> Class and its expected predicates</div>
+<div class="title">Figure 28. The Projects Model <code>Program</code> Class and its expected predicates</div>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -6489,13 +6512,13 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect1">
-<h2 id="annex-c"><a class="anchor" href="#annex-c"></a>Annex C: Data Release Model</h2>
+<h2 id="annex-d"><a class="anchor" href="#annex-d"></a>Annex D: Data Release Model</h2>
 <div class="sectionbody">
 <div id="data-realse" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/data-release.svg"><img src="https://ausbigg.github.io/abis/img/data-release.svg" alt="Overview of the Data Release Model" width="350"></a>
 </div>
-<div class="title">Figure 28. An overview of the Data Release Model</div>
+<div class="title">Figure 29. An overview of the Data Release Model</div>
 </div>
 <div class="paragraph">
 <p>This model is for describing aspects of data release: to whom, under what circumstances and when data may be released.</p>
@@ -6763,7 +6786,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect1">
-<h2 id="annex-d"><a class="anchor" href="#annex-d"></a>Annex D: Extended Examples</h2>
+<h2 id="annex-e"><a class="anchor" href="#annex-e"></a>Annex E: Extended Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This following examples are all <a href="#RDF">RDF</a> data in the <a href="#TURTLE">Turtle</a> format.</p>
@@ -6975,7 +6998,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-10 01:28:13 UTC
+Last updated 2024-10-10 05:19:03 UTC
 </div>
 </div>
 </body>
