@@ -1,152 +1,125 @@
 [[annex-d]]
-== Annex D: Extended Examples
+== Annex D: Data Release Model
 
-This following examples are all <<RDF, RDF>> data in the <<TURTLE, Turtle>> format.
+[#data-realse,link="img/data-release.svg"]
+.An overview of the Data Release Model
+image::img/data-release.svg[Overview of the Data Release Model,align="center",width=350]
 
-=== D.1. TERN Ontology
+This model is for describing aspects of data release: to whom, under what circumstances and when data may be released.
 
-These examples use <<TERNOntology, TERN Ontology>> elements only.
+[NOTE]
+====
+Currently, the Data Release model only handles data embargos, but it is likely to be expanded as data release/restriction concerns are found to be important within the ABIS community. Please communicate any data release modelling issues to the BDR Team using the <<#data-release-metadata, "Contacts">> details.
+====
 
-==== D.1.1. Validating
+[[data-release-metadata]]
+=== C.1. Metadata
 
-All these examples are loaded into the https://abis.dev.kurrawong.net[ABIS Portal] and may be validated online using the TERN Ontology validator which is also loaded there.
-
-To validate these examples locally - on your own computer - you will need a validation tool installed - see the <<Validation, Validation Section>>, the example data file, the TERN Ontology validator and the TERN Ontology itself. These files are all available from this ABIS repository:
-
+[frame=none, grid=none, cols="1,5"]
 |===
-| File | Location | Validity
-
-| TERN Ontology Validator | https://github.com/AusBIGG/abis/tree/master/validators/tern-validator.ttl | -
-| TERN Ontology Model | https://github.com/AusBIGG/abis/tree/master/models/components/tern-model.ttl | -
-| Example 01 data | https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-01.ttl | valid
-| Example 02 data | https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-02.ttl | invalid
+|*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis/data-release
+|*https://schema.org/name[Name]* | ABIS Data Release Model
+|*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This model is for describing aspects of data release: to whom, under what circumstances and when data may be released.
+|*https://schema.org/dateCreated[Created Date]* | 2023-10-15
+|*https://schema.org/dateModified[Modified Date]* | 2023-12-28
+|*https://schema.org/dateIssued[Issued Date]* | 2023-12-28
+|*https://schema.org/version[Version]* | 1.0
+|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/data-release/2.0[abisdr:2.0]
+|*Version History*| *2.0* - 2023 Dec - First release (v2.0 to match ABIS)
+|*https://schema.org/creator[Creator]* | the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
+|*https://schema.org/owner[Owner]* | https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AUSBIGG)]
+|*https://schema.org/publisher[Publisher]* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
+|*https://schema.org/license[License]* | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|*https://www.w3.org/TR/vocab-dcat/#Property:resource_contact_point[Contacts]* | AusBIGG is supported by DCCEEW's' Biodiversity Data Repository (BDR) Team. Contact the BDR Team on bdr@dcceew.gov.au +
+Issue tracking of the ABIS standard is managed online at https://github.com/AusBIGG/abis/issues
+|*https://schema.org/codeRepository[Code Repository]* | https://github.com/AusBIGG/abis
 |===
 
-If using the https://github.com/RDFLib/pySHACL[pySHACL] tool, the following command will validate the data using the files above:
+=== C.2. Supporting Assets
 
+* RDF schema:
+** https://linked.data.gov.au/def/abis/data-release.ttl
+* <<SHACL, SHACL>> validation file:
+** https://linked.data.gov.au/def/abis/data-release/validator.ttl
+
+=== C.3. Classes
+
+This model defines none of its own classes and only indicates the <<TERNOntology, TERN Ontology>>'s https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class for use with the predicates it does define.
+
+=== C.4. Predicates
+
+[discrete]
+[[embargoedUntil]]
+==== embargoed until
+
+[cols="1,5"]
+|===
+| Property | Value
+
+| <<IRI, IRI>> | `abis:embargoedUntil`
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | embargoed until
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | A date after which the is no longer embargoed
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
+| https://www.w3.org/TR/rdf12-schema/#ch_domain[Domain] | https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`]
+| https://www.w3.org/TR/rdf12-schema/#ch_range[Range] | https://www.w3.org/TR/xmlschema11-2/#date[`xsd:date`], https://www.w3.org/TR/xmlschema11-2/#dateTime[`xsd:dateTime`] or https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp[`xsd:dateTimeStamp`]
+| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | The embargo period is understood to cease on the time instance of the start of the object value, e.g. at 00:00:00 (midnight) of a given date, or midnight of the first day of a given month.
+| https://www.w3.org/TR/skos-reference/#example[Example] a|
 ----
-pyshaclz -s tern-validator.ttl -e tern-ont.ttl tern-eg-01.ttl -f table
-----
+# Dataset X is embargoed until the 5th of May, 2024
 
-==== D.1.2. Example 01 - valid
-
-This example is valid according to the TERN Ontology validator.
-
-[source,turtle]
-.TERN Ontology example 01 - valid
-----
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX ex: <http://example.com/thing/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sosa: <http://www.w3.org/ns/sosa/>
-PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
-PREFIX time: <http://www.w3.org/2006/time#>
-PREFIX void: <http://rdfs.org/ns/void#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-ex:dataset-01
+:dataset-x
     a tern:Dataset ;
-    dcterms:description "A minimally valid tern:Dataset instance" ;
-    dcterms:issued "2021-11-18"^^xsd:date ;
-    dcterms:title "TERN Dataset 01" ;
+    schema:name "Dataset X" ;
+    dcterms:embargoedUntil "2024-05-11"^^xsd:date ;
+    # ... other dataset properties
 .
 
-ex:obs-01
-    a tern:Observation ;
-    rdfs:label "TERN Observation 01" ;
-    void:inDataset ex:dataset-01 ;
-    geo:hasGeometry [
-        a geo:Geometry ;
-        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral
-    ] ;
-    rdfs:comment "A minimally valid tern:Observation instance" ;
-    sosa:hasFeatureOfInterest ex:foi-01 ;
-    sosa:hasResult [
-        a tern:Float ;
-        rdf:value "42"^^xsd:double ;
-        tern:uncertainty "0.5"^^xsd:double ;
-    ] ;
-    sosa:hasSimpleResult "42"@en ;
-    sosa:observedProperty <https://example.org/op/1> ;
-    sosa:phenomenonTime [
-        a time:Instant ;
-        time:inXSDDateTimeStamp "2021-11-18T14:35+10:00"^^xsd:dateTimeStamp ;
-    ] ;
-    sosa:usedProcedure <https://example.org/proc/1> ;
-    tern:resultDateTime "2021-11-18T14:35:00"^^xsd:dateTime ;
-.
+# Dataset Y is embargoed until 2025
 
-ex:foi-01
-    a tern:FeatureOfInterest ;
-    rdfs:label "TERN FeatureOfInterest 01" ;
-    void:inDataset ex:dataset-01 ;
-    tern:featureType <https://example.org/ft/1> ;
-.
-----
-
-==== D.1.3. Example 02 - invalid
-
-This example is the same data as the above but with several lines commented out (starting with `#`) which makes it invalid according to the TERN Ontology validator.
-
-[source,turtle]
-.TERN Ontology example 02 - invalid
-----
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX ex: <http://example.com/thing/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sosa: <http://www.w3.org/ns/sosa/>
-PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
-PREFIX time: <http://www.w3.org/2006/time#>
-PREFIX void: <http://rdfs.org/ns/void#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-ex:dataset-01
+:dataset-y
     a tern:Dataset ;
-    dcterms:description "A minimally valid tern:Dataset instance" ;
-    dcterms:issued "2021-11-18"^^xsd:date ;
-    dcterms:title "TERN Dataset 01" ;
-.
-
-ex:obs-01
-    a tern:Observation ;
-    rdfs:label "TERN Observation 01" ;
-    void:inDataset ex:dataset-01 ;
-#    geo:hasGeometry [
-#        a geo:Geometry ;
-#        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral
-#    ] ;
-    rdfs:comment "A minimally valid tern:Observation instance" ;
-    sosa:hasFeatureOfInterest ex:foi-01 ;
-    sosa:hasResult [
-        a tern:Float ;
-        rdf:value "42"^^xsd:double ;
-        tern:uncertainty "0.5"^^xsd:double ;
-    ] ;
-    sosa:hasSimpleResult "42" ;
-    sosa:observedProperty <https://example.org/op/1> ;
-    sosa:phenomenonTime [
-        a time:Instant ;
-        time:inXSDDateTimeStamp "2021-11-18T14:35+10:00"^^xsd:dateTimeStamp ;
-    ] ;
-    sosa:usedProcedure <https://example.org/proc/1> ;
-    tern:resultDateTime "2021-11-18T14:35:00" ;  # ^^xsd:dateTime ;
-.
-
-ex:foi-01
-    a tern:FeatureOfInterest ;
-    rdfs:label "TERN FeatureOfInterest 01" ;
-#    void:inDataset ex:dataset-01 ;
-    tern:featureType <https://example.org/ft/1> ;
+    schema:name "Dataset Y" ;
+    dcterms:embargoedUntil "2025-01-01"^^xsd:date ;
+    # ... other dataset properties
 .
 ----
+|===
 
-Results from validating this example should indicate two Violations:
+[discrete]
+[[embargoPeriod]]
+==== embargo period
 
-. The datatype for the value indicated by the `tern:resultDateTime` predicate on the object `ex:obs-01` is of an invalid datatype
-* no datatype is given, so a string (`xsd:string`) is presumed but it should be an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`
-. `ex:obs-01` is missing a `geo:hasGeometry` predicate
-. `ex:foi-01` is missing a `void:inDataset` predicate
+[cols="1,5"]
+|===
+| Property | Value
+
+| <<IRI, IRI>> | `abis:embargoPeriod`
+| https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | embargo period
+| https://www.w3.org/TR/skos-reference/#definition[Definition] | A temporal duration within which the object is embargoed
+| https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | This model
+| https://www.w3.org/TR/rdf12-schema/#ch_domain[Domain] | https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`]
+| https://www.w3.org/TR/rdf12-schema/#ch_range[Range] | https://www.w3.org/TR/owl-time/#time:TemporalDuration[`time:TemporalDuration`]
+| https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | This predicate can only be used if the start of the embargo period's duration can be established by a business or system rule. If it cannot, use <<#embargoedUntil, embargoed until>> instead, with a fixed date.
+| https://www.w3.org/TR/skos-reference/#example[Example] a|
+----
+# Dataset X is embargoed for a period of 3 months, calculated to start
+# from the issued date.
+# The calculation is defined by a business rule which is not
+# expressable in RDF
+
+:dataset-x
+    a tern:Dataset ;
+    schema:name "Dataset X" ;
+    dcterms:issued "2023-12-25"^^xsd:date ;
+    abis:embargoPeriod [
+        a time:DurationDescription ;
+        time:months 3 ;
+    ] ;
+    # ... other dataset properties
+.
+----
+|===
+
+=== C.5. Validator
+
+#TODO: list and define validators fro this model#

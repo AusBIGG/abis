@@ -19,9 +19,9 @@
 :xrefstyle: short
 :source-highlighter: rouge
 
-[#overview,link="img/overview.svg"]
+[#overview,link="img/models.svg"]
 .An overview of the major model parts of ABIS. The models shown here are detailed in the <<Multiple Models, Multiple Models>> section. Overlaps indicated shared model elements.
-image::img/overview.svg[ABIS Parts,650,align="center"]
+image::img/models.svg[ABIS Parts,650,align="center"]
 
 include::01-metadata.adoc[]
 
@@ -56,3 +56,5 @@ include::51_annex_b.adoc[]
 include::52_annex_c.adoc[]
 
 include::53_annex_d.adoc[]
+
+include::54_annex_e.adoc[]

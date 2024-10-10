@@ -1,9 +1,9 @@
 [[annex-a]]
-== Annex A: ABIS Catalogue Model
+== Annex A: Biodiversity Record Model
 
-[#cat-model-overview,link="img/cat-model.svg"]
-.An overview of the ABIS Catalogue Model's classes and their relationships
-image::img/cat-model.svg[ABIS Catalogue Model overview,align="center",width=150]
+[#brd-overview,link="img/brm-overview.svg"]
+.An overview of the Biodiversity Record Model's classes and their relationships
+image::img/brm-overview.svg[Biodiversity Record Model overview,align="center",width=150]
 
 <<schema:DataCatalog, DataCatalog>>s are curated lists of <<tern:Dataset, Dataset>>s that contain <<abis:BiodiversityRecord, Biodiversity Record>>s (just 'Records').
 
@@ -13,8 +13,17 @@ The validator for this model, given in this model's <<A.5. Validator, Validator>
 
 [NOTE]
 ====
-See the <<BDR Profile, BDR Profile>> for the requirements of ABIS Catalogue Model data bound for the BDR.
+See the <<BDR Profile, BDR Profile>> for the requirements of Biodiversity Record Model data bound for the BDR.
 ====
+
+[#brm-join,link="img/brm-join.svg"]
+.Class equivalences between this Biodiversity Record Model, <<SDO, schema.org>> and <<DCAT, DCAT>>
+image::img/brm-join.svg[Biodiversity Record Model class equivalences,align="center",width=60%]
+
+
+[#brm-occurrence,link="img/brm-occurrence.svg"]
+.Biodiversity Record Model occurrence modelling
+image::img/brm-occurrence.svg[Biodiversity Record Model occurrence modelling,align="center",width=60%]
 
 [[catalogue-metadata]]
 === A.1. Metadata
@@ -48,9 +57,7 @@ Issue tracking of the ABIS standard is managed online at https://github.com/AusB
 
 === A.3. Classes
 
-[#cat-model-equivalences,link="img/cat-model-equivalences.svg"]
-.Class equivalences between this ABIS Catalogue Model, <<SDO, schema.org>> and <<DCAT, DCAT>>
-image::img/cat-model-equivalences.svg[ABIS Catalogue Model class equivalences,align="center",width=60%]
+
 
 [discrete]
 ==== Class Index

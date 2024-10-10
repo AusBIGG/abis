@@ -32,7 +32,7 @@ image::img/hierarchy.svg[ABIS Parts,align="center"]
 
 The ABIS Foreground Model is the union of the Component Models listed in the next section. The dependencies of these models are shown in <<#hierarchy, Figure 13>>, above.
 
-When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necissary, the <<ABIS Catalogue Model, ABIS Catalogue Model>> is used. Project information and data release details are modelled using the <<Projects Model, ABIS Projects>> & <<Data Release Model, ABIS Data Release>> respectively.
+When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necissary, the <<Biodiversity Record Model, Biodiversity Record Model>> is used. Project information and data release details are modelled using the <<Projects Model, ABIS Projects>> & <<Data Release Model, ABIS Data Release>> respectively.
 
 === Component Models
 
@@ -40,7 +40,7 @@ The Component Models of ABIS are:
 
 . <<TERN Ontology, TERN Ontology>>
 . <<NSL Model, NSL Model>>
-. <<ABIS Catalogue Model, ABIS Catalogue Model>>
+. <<Biodiversity Record Model, Biodiversity Record Model>>
 . <<Projects Model, Projects Model>>
 . <<Data Release Model, Data Release Model>>
 
@@ -76,11 +76,11 @@ The TERN Ontology's _sampling_ pattern follows SOSA too but uses specialised cla
 .Classes and predicates within the <<TERNOntology, TERN Ontology>> used to characterise sampling. The `is sample of` predicate can be derived from relations between a `Sample`, the `Sampling` and the `Site`. Note the similarity of structure to the <<#tern-sosa, SOSA Observation pattern>>.
 image::img/tern-sampling.svg[TERN's Observation pattern,align="center",width=650]
 
-TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class which is analogous to the <<ABIS Catalogue Model, ABIS Catalogue Model>>'s `Dataset` class.
+TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class which is analogous to the <<Biodiversity Record Model, Biodiversity Record Model>>'s `Dataset` class.
 
 [NOTE]
 ====
-While the TERN Ontology provides some handling of data packaging, the ABIS Catalogue Model provides a more extended form of packaging with catalogues of datasets of records. See the <<Data Cataloguing, Data Cataloguing>> pattern for more information.
+While the TERN Ontology provides some handling of data packaging, the Biodiversity Record Model provides a more extended form of packaging with catalogues of datasets of records. See the <<Data Cataloguing, Data Cataloguing>> pattern for more information.
 ====
 
 ===== Use in ABIS
@@ -139,7 +139,7 @@ Examples of NSL Model data can also be found throughout the https://linked.data.
 
 References to NSL objects - instances of the `TaxonName` class - are also present within example data files in the https://abis.dev.kurrawong.ai[ABIS Portal].
 
-==== ABIS Catalogue Model
+==== Biodiversity Record Model
 
 Model location: <<#annex-a, Annex A>>
 

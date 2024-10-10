@@ -183,14 +183,14 @@ Multiple alternate identifiers may be given, as long as their datatypes are uniq
 
 ABIS provides representations of chunks of data for management - cataloguing, data governance and so on. It does this by implementing a very simple, and common, catalogue model which consists of _catalogues_ (or _catalogs_, for Americans) that contain _datasets_ or other kinds of _resources_  such as _vocabularies_. ABIS then insists that _datasets_ must, in turn, contain _biodiversity records_ for records of such as what ABIS is all about.
 
-This models is as per <<#cat-model-overview-pattern, Figure 4>>, below, which is taken from the <<Annex A: ABIS Catalogue Model, ABIS Catalogue Model>>, detailed in full in Annex A.
+This models is as per <<#cat-model-overview-pattern, Figure 4>>, below, which is taken from the <<Annex A: Biodiversity Record Model, Biodiversity Record Model>>, detailed in full in Annex A.
 
 Since this model is used for data management, it places requirements on ABIS datasets, above and beyond those imposed by the models it profiles, such as the <<TERN Ontology, TERN Ontology>>, to ensure all ABIS data has a minimum level of metadata present. See the <<#profile-bdr, BDR Profile>> of ABIS' <<#profile-bdr-mandates, Model Element Mandates>> for specifics.
 
 
 [#cat-model-overview-pattern,link="img/cat-model.svg"]
-.An overview of the ABIS Catalogue Model's classes and their relationships
-image::img/cat-model.svg[ABIS Catalogue Model overview,align="center",width=150]
+.An overview of the Biodiversity Record Model's classes and their relationships
+image::img/cat-model.svg[Biodiversity Record Model overview,align="center",width=150]
 
 implemented by <<SDO, schema.org>> and <<DCAT, the Data Catalog Vocabulary (DCAT)>> which consists of
 
