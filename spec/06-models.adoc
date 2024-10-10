@@ -157,9 +157,9 @@ From the <<TERN Ontology, TERN Ontology>>:
 
 Introduced:
 
-* <<abis:BiodiversityOccurrenceRecord, (Biodiversity Occurrence) Record>> - A unit of information that records the observation of a biodiversity occurrence
+* <<abis:BiodiversityRecord, (Biodiversity) Record>> - A unit of information that represents the record of a biodiversity occurrence or a biodiversity survey
 
-The use of the existing classes is as per <<SDO, schema.org>>'s basic data cataloguing, which is based on the <<DCAT, Data Catalog Vocabulary (DCAT)>> standard, where `DataCatalog` instances contain `Dataset` instances. This model's extension with the definition of the (Biodiversity Occurrence) Record class - `Record` - is to define data elements within datasets that are specifically about biodiversity occurrences.
+The use of the existing classes is as per <<SDO, schema.org>>'s basic data cataloguing, which is based on the <<DCAT, Data Catalog Vocabulary (DCAT)>> standard, where `DataCatalog` instances contain `Dataset` instances. This model's extension with the definition of the (Biodiversity) Record class - `Record` - is to define data elements within datasets that are specifically about biodiversity occurrences or about biodiversity surveys.
 
 [NOTE]
 ====

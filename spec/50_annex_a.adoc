@@ -5,7 +5,7 @@
 .An overview of the ABIS Catalogue Model's classes and their relationships
 image::img/cat-model.svg[ABIS Catalogue Model overview,align="center",width=150]
 
-<<schema:DataCatalog, DataCatalog>>s are curated lists of <<tern:Dataset, Dataset>>s that contain <<abis:BiodiversityOccurrenceRecord, Biodiversity Occurrence Record>>s (just 'Records').
+<<schema:DataCatalog, DataCatalog>>s are curated lists of <<tern:Dataset, Dataset>>s that contain <<abis:BiodiversityRecord, Biodiversity Record>>s (just 'Records').
 
 The Dataset class is taken from the <<TERN Ontology, TERN Ontology>> and normal <<SDO, schema.org>> data catalogue modelling (informed by <<DCAT, DCAT>>) is used so that datasets are _creative work_ objects and may be described with metadata such as _creator_, _issued date_, etc.
 
@@ -23,7 +23,7 @@ See the <<BDR Profile, BDR Profile>> for the requirements of ABIS Catalogue Mode
 |===
 |*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis/projects
 |*https://schema.org/name[Name]* | ABIS Data Release Model
-|*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This model is for curated lists - catalogues - of data resources - datasets - that contains information about biodiversity occurrences - biodiversity occurrence records.
+|*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This model is for curated lists - catalogues - of data resources - datasets - that contains information about biodiversity occurrences and surveys - biodiversity records.
 |*https://schema.org/dateCreated[Created Date]* | 2024-07-15
 |*https://schema.org/dateModified[Modified Date]* | 2024-07-22
 |*https://schema.org/dateIssued[Issued Date]* | 2023-07-30
@@ -57,7 +57,7 @@ image::img/cat-model-equivalences.svg[ABIS Catalogue Model class equivalences,al
 
 Classes defined here:
 
-* <<abis:BiodiversityOccurrenceRecord, Record>>
+* <<abis:BiodiversityRecord, Record>>
 
 Classes defined elsewhere:
 
@@ -65,8 +65,8 @@ Classes defined elsewhere:
 * <<tern:Dataset, Dataset>>
 * <<dwc:Occurrence, Occurrence>>
 
-[[abis:BiodiversityOccurrenceRecord]]
-==== BiodiversityOccurrenceRecord (Record)
+[[abis:BiodiversityRecord]]
+==== BiodiversityRecord (Record)
 
 // [#proj-project,link="img/proj-project.svg"]
 // .The Projects Model `Project` Class and its expected predicates
@@ -76,11 +76,11 @@ Classes defined elsewhere:
 |===
 | Property | Value
 
-| <<IRI, IRI>> | `abis:BiodiversityOccurrenceRecord`
+| <<IRI, IRI>> | `abis:BiodiversityRecord`
 | https://www.w3.org/TR/rdf12-schema/#ch_subclassof[Subclass of] | https://www.w3.org/TR/prov-o/#Entity[`Entity`]
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<TERN Ontology, TERN Ontology>>
 | https://www.w3.org/TR/skos-reference/#prefLabel[Preferred Label] | Record
-| https://www.w3.org/TR/skos-reference/#altLabel[Alternate Label Label] | Biodiversity Occurrence Record
+| https://www.w3.org/TR/skos-reference/#altLabel[Alternate Label Label] | Biodiversity Record
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | The recording of an Occurrence.
 | https://www.w3.org/TR/skos-reference/#definition[History Note] | Defined by the BDR Team in 2024 to better facilitate the management of ABIS data such as linking BDR data to original non-ABIS records in Submitting Organisations' data holdings
 | Expected Properties | <<schema:identifier, identifier>>, <<schema:about, about>>
@@ -107,7 +107,7 @@ a|
 .
 
 :record-001
-    a abis:BiodiversityOccurrenceRecord ;
+    a abis:BiodiversityRecord ;
     # a non-IRI identifier for this Record, as found in the original
     # data held by the Submitting Organisation
     schema:identifier "R1234"^^bdr-dt:OrgMRecordId ;
@@ -168,7 +168,7 @@ Predicates defined elsewhere:
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc.
 | https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate a non-IRI identifier for an ABIS object identified, with ABIS use, by an IRI. A datatype MUST be assigned to the non-IRI identifier value
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<SDO, schema.org>>
-| https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:BiodiversityOccurrenceRecord, Record>>
+| https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:BiodiversityRecord, Record>>
 |===
 
 [discrete]
@@ -184,7 +184,7 @@ Predicates defined elsewhere:
 | https://www.w3.org/TR/skos-reference/#definition[Definition] | The subject matter of the content.
 | https://www.w3.org/TR/skos-reference/#scopeNote[Scope Note] | Use this predicate to indicate the Occurrence that this Record is about
 | https://www.w3.org/TR/rdf12-schema/#ch_isdefinedby[Is Defined By] | <<SDO, schema.org>>
-| https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:BiodiversityOccurrenceRecord, Record>>
+| https://www.w3.org/TR/skos-reference/#example[Example] a| See the example for <<abis:BiodiversityRecord, Record>>
 |===
 
 === A.5. Validator
