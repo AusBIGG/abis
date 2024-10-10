@@ -763,7 +763,7 @@ pre.rouge {
 <li><a href="#_a_2_supporting_assets">A.2. Supporting Assets</a></li>
 <li><a href="#_a_3_classes">A.3. Classes</a>
 <ul class="sectlevel3">
-<li><a href="#abis:BiodiversityOccurrenceRecord">BiodiversityOccurrenceRecord (Record)</a></li>
+<li><a href="#abis:BiodiversityRecord">BiodiversityRecord (Record)</a></li>
 <li><a href="#schema:DataCatalog">Data Catalog</a></li>
 <li><a href="#tern:Dataset">Dataset</a></li>
 <li><a href="#dwc:Occurrence">Occurrence</a></li>
@@ -1855,7 +1855,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect2">
 <h3 id="_data_cataloguing"><a class="anchor" href="#_data_cataloguing"></a>5.3. Data Cataloguing</h3>
 <div class="paragraph">
-<p>ABIS provides representations of chunks of data for management - cataloguing, data governance and so on. It does this by implementing a very simple, and common, catalogue model which consists of <em>catalogues</em> (or <em>catalogs</em>, for Americans) that contain <em>datasets</em> or other kinds of <em>resources</em>  such as <em>vocabularies</em>. ABIS then insists that <em>datasets</em> must, in turn, contain <em>biodiversity occurrence records</em> for records of such as what ABIS is all about.</p>
+<p>ABIS provides representations of chunks of data for management - cataloguing, data governance and so on. It does this by implementing a very simple, and common, catalogue model which consists of <em>catalogues</em> (or <em>catalogs</em>, for Americans) that contain <em>datasets</em> or other kinds of <em>resources</em>  such as <em>vocabularies</em>. ABIS then insists that <em>datasets</em> must, in turn, contain <em>biodiversity records</em> for records of such as what ABIS is all about.</p>
 </div>
 <div class="paragraph">
 <p>This models is as per <a href="#cat-model-overview-pattern">Figure 4</a>, below, which is taken from the <a href="#annex-a">ABIS Catalogue Model</a>, detailed in full in Annex A.</p>
@@ -1879,7 +1879,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>ABIS is fundamentally about records of the occurrence of biodiversity. For this reason, ABIS contains representations of chunks of data, as per the <a href="#_data_cataloguing">Data Cataloguing</a> pattern above, a  representation of an <em>occurrence</em> and a mechanism to link them.</p>
 </div>
 <div class="paragraph">
-<p>The ABIS class <a href="#abis:BiodiversityOccurrenceRecord">Biodiversity Occurrence Record</a> represents a single recording of an occurrence. This is usually a single row in a spreadsheet of biodiversity observations, or a single point of a map of occurrences. It is linked to the representation of actual occurrence itself, represented by the <a href="#DWC">Darwin Core Terms</a>'s <a href="#dwc:Occurrence">Occurrence</a> class.</p>
+<p>The ABIS class <a href="#abis:BiodiversityRecord">BiodiversityRecord</a> represents a single recording of an occurrence or recording of the results of a survey. This is usually a single row in a spreadsheet of biodiversity observations, or a single point of a map of occurrences. It is linked to the representation of actual occurrence itself, represented by the <a href="#DWC">Darwin Core Terms</a>'s <a href="#dwc:Occurrence">Occurrence</a> class.</p>
 </div>
 <div class="paragraph">
 <p>The reason for this distinction between representations of the <em>record of the occurrence</em> and the <em>occurrence</em> itself is because some data models record metadata about the recording itself - who did it, where it is stored and managed, what ID the recording has etc. - and some don&#8217;t, choosing to focus only on the where/what/when of the occurrence.</p>
@@ -1892,19 +1892,19 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For data in the ABIS format being submitted to systems such as the <a href="#BDR">Biodiversity Data Repository</a> where the data origin has a "Record ID" or similar, this ID should be preserved as a property of instances of the <a href="#abis:BiodiversityOccurrenceRecord">Biodiversity Occurrence Record</a> class as a non-IRI alternate identifier, as per the <a href="#_alternate_ids_non_iris">Alternate IDs - non-IRIs</a> pattern.</p>
+<p>For data in the ABIS format being submitted to systems such as the <a href="#BDR">Biodiversity Data Repository</a> where the data origin has a "Record ID" or similar, this ID should be preserved as a property of instances of the <a href="#abis:BiodiversityRecord">Biodiversity Record</a> class as a non-IRI alternate identifier, as per the <a href="#_alternate_ids_non_iris">Alternate IDs - non-IRIs</a> pattern.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The relationship between a <a href="#abis:BiodiversityOccurrenceRecord">Biodiversity Occurrence Record</a> and the <a href="#dwc:Occurrence">Occurrence</a> it is about is given with the <a href="#schema:about">schema:about</a> predicate, like this:</p>
+<p>The relationship between a <a href="#abis:BiodiversityRecord">Biodiversity Record</a> and the <a href="#dwc:Occurrence">Occurrence</a> it is about is given with the <a href="#schema:about">schema:about</a> predicate, like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">record-1234
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">abis:</span><span class="n">BiodiversityOccurrenceRecord
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">abis:</span><span class="n">BiodiversityRecord
 </span><span class="w">    </span><span class="c1"># ... other info</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">about</span><span class="w"> </span><span class="nn">ex:</span><span class="n">occurrence-9876</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># &lt;-- this is the link</span><span class="w">
 </span><span class="p">.</span><span class="w">
@@ -2853,12 +2853,12 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#abis:BiodiversityOccurrenceRecord">(Biodiversity Occurrence) Record</a> - A unit of information that records the observation of a biodiversity occurrence</p>
+<p><a href="#abis:BiodiversityRecord">(Biodiversity) Record</a> - A unit of information that represents the record of a biodiversity occurrence or a biodiversity survey</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The use of the existing classes is as per <a href="#SDO">schema.org</a>'s basic data cataloguing, which is based on the <a href="#DCAT">Data Catalog Vocabulary (DCAT)</a> standard, where <code>DataCatalog</code> instances contain <code>Dataset</code> instances. This model&#8217;s extension with the definition of the (Biodiversity Occurrence) Record class - <code>Record</code> - is to define data elements within datasets that are specifically about biodiversity occurrences.</p>
+<p>The use of the existing classes is as per <a href="#SDO">schema.org</a>'s basic data cataloguing, which is based on the <a href="#DCAT">Data Catalog Vocabulary (DCAT)</a> standard, where <code>DataCatalog</code> instances contain <code>Dataset</code> instances. This model&#8217;s extension with the definition of the (Biodiversity) Record class - <code>Record</code> - is to define data elements within datasets that are specifically about biodiversity occurrences or about biodiversity surveys.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4597,7 +4597,7 @@ WHERE {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R02</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Calculate <code>abis:BiodiversityOccurrenceRecord</code> instances from &#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calculate <code>abis:BiodiversityRecord</code> instances from &#8230;&#8203;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
@@ -4606,7 +4606,7 @@ PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
 PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
 
 CONSTRUCT {
-    ?boc a abis:BiodiversityOccurrenceRecord .
+    ?boc a abis:BiodiversityRecord .
 }
 WHERE {
     # ...
@@ -4747,7 +4747,7 @@ WHERE {
 </table>
 <h4 id="_record_rule" class="discrete">Record Rule</h4>
 <div class="paragraph">
-<p>This rule allows for the creation of <a href="#abis:BiodiversityOccurrenceRecord">Record</a> instances from <a href="#_tern_ontology">TERN Ontology</a> data that doesn&#8217;t directly indicate such as class of object.</p>
+<p>This rule allows for the creation of <a href="#abis:BiodiversityRecord">Record</a> instances from <a href="#_tern_ontology">TERN Ontology</a> data that doesn&#8217;t directly indicate such as class of object.</p>
 </div>
 <h4 id="_spatial_reasoning" class="discrete">Spatial Reasoning</h4>
 <div class="paragraph">
@@ -4956,7 +4956,7 @@ WHERE {
 <div class="title">Figure 23. An overview of the ABIS Catalogue Model&#8217;s classes and their relationships</div>
 </div>
 <div class="paragraph">
-<p><a href="#schema:DataCatalog">DataCatalog</a>s are curated lists of <a href="#tern:Dataset">Dataset</a>s that contain <a href="#abis:BiodiversityOccurrenceRecord">Biodiversity Occurrence Record</a>s (just 'Records').</p>
+<p><a href="#schema:DataCatalog">DataCatalog</a>s are curated lists of <a href="#tern:Dataset">Dataset</a>s that contain <a href="#abis:BiodiversityRecord">Biodiversity Record</a>s (just 'Records').</p>
 </div>
 <div class="paragraph">
 <p>The Dataset class is taken from the <a href="#_tern_ontology">TERN Ontology</a> and normal <a href="#SDO">schema.org</a> data catalogue modelling (informed by <a href="#DCAT">DCAT</a>) is used so that datasets are <em>creative work</em> objects and may be described with metadata such as <em>creator</em>, <em>issued date</em>, etc.</p>
@@ -4996,7 +4996,7 @@ WHERE {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This model is for curated lists - catalogues - of data resources - datasets - that contains information about biodiversity occurrences - biodiversity occurrence records.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This model is for curated lists - catalogues - of data resources - datasets - that contains information about biodiversity occurrences and surveys - biodiversity records.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateCreated">Created Date</a></strong></p></td>
@@ -5092,7 +5092,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#abis:BiodiversityOccurrenceRecord">Record</a></p>
+<p><a href="#abis:BiodiversityRecord">Record</a></p>
 </li>
 </ul>
 </div>
@@ -5113,7 +5113,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </ul>
 </div>
 <div class="sect3">
-<h4 id="abis:BiodiversityOccurrenceRecord"><a class="anchor" href="#abis:BiodiversityOccurrenceRecord"></a>BiodiversityOccurrenceRecord (Record)</h4>
+<h4 id="abis:BiodiversityRecord"><a class="anchor" href="#abis:BiodiversityRecord"></a>BiodiversityRecord (Record)</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -5128,7 +5128,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IRI">IRI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abis:BiodiversityOccurrenceRecord</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abis:BiodiversityRecord</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/rdf12-schema/#ch_subclassof">Subclass of</a></p></td>
@@ -5144,7 +5144,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#altLabel">Alternate Label Label</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Biodiversity Occurrence Record</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Biodiversity Record</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></p></td>
@@ -5182,7 +5182,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 .
 
 :record-001
-    a abis:BiodiversityOccurrenceRecord ;
+    a abis:BiodiversityRecord ;
     # a non-IRI identifier for this Record, as found in the original
     # data held by the Submitting Organisation
     schema:identifier "R1234"^^bdr-dt:OrgMRecordId ;
@@ -5282,7 +5282,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>See the example for <a href="#abis:BiodiversityOccurrenceRecord">Record</a></p>
+<p>See the example for <a href="#abis:BiodiversityRecord">Record</a></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -5323,7 +5323,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#example">Example</a></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>See the example for <a href="#abis:BiodiversityOccurrenceRecord">Record</a></p>
+<p>See the example for <a href="#abis:BiodiversityRecord">Record</a></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -6975,7 +6975,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-26 07:22:36 UTC
+Last updated 2024-10-10 01:28:13 UTC
 </div>
 </div>
 </body>
