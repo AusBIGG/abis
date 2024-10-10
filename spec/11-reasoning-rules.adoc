@@ -35,7 +35,7 @@ WHERE {
     # ...
 }
 ----
-| R02 | Calculate `abis:BiodiversityOccurrenceRecord` instances from ... | - a|
+| R02 | Calculate `abis:BiodiversityRecord` instances from ... | - a|
 [sources,sparql]
 ----
 PREFIX abis: <https://linked.data.gov.au/def/abis/>
@@ -43,7 +43,7 @@ PREFIX tern <https://w3id.org/tern/ontologies/tern/>
 PREFIX void: <http://rdfs.org/ns/void#>
 
 CONSTRUCT {
-    ?boc a abis:BiodiversityOccurrenceRecord .
+    ?boc a abis:BiodiversityRecord .
 }
 WHERE {
     # ...
@@ -165,7 +165,7 @@ WHERE {
 [discrete]
 ==== Record Rule
 
-This rule allows for the creation of <<abis:BiodiversityOccurrenceRecord, Record>> instances from <<TERN Ontology, TERN Ontology>> data that doesn't directly indicate such as class of object.
+This rule allows for the creation of <<abis:BiodiversityRecord, Record>> instances from <<TERN Ontology, TERN Ontology>> data that doesn't directly indicate such as class of object.
 
 [discrete]
 ==== Spatial Reasoning
