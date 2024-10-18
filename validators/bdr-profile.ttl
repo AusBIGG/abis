@@ -28,6 +28,14 @@ ds:
         :shape-05 ,
         :shape-06 ,
         :shape-07 ;
+    owl:imports
+        [
+            schema:name "GeoSPARQL" ;
+            schema:url
+                "file:///abis.ttl" ,
+                "https://linked.data.gov.au/def/abis/validator" ;
+            schema:identifier "https://linked.data.gov.au/def/abis/validator" ;
+        ] ,
 .
 
 <https://linked.data.gov.au/org/ausbigg>
