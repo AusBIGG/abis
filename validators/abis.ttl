@@ -23,11 +23,31 @@ ds:
         :shape-01 ,
         :shape-02 ,
         :shape-03 ;
-    owl:imports [
-        schema:url
-            "file:///geo-validator.ttl" ,
-            "http://www.opengis.net/def/geosparql/validator" ;
-    ] ;
+    owl:imports
+        [
+            schema:name "GeoSPARQL" ;
+            schema:url
+                "file:///geo.ttl" ,
+                "http://www.opengis.net/def/geosparql/validator" ;
+        ] ,
+        [
+            schema:name "SOSA" ;
+            schema:url
+                "file:///sosa.ttl" ;
+                # "https://linked.data.gov.au/def/sosa-validator"
+        ] ,
+        [
+            schema:name "TERN Ontology" ;
+            schema:url
+                "file:///tern.ttl" ;
+                # "https://w3id.org/tern/shapes/tern/" ;
+        ] ,
+        [
+            schema:name "VocPub" ;
+            schema:url
+                "file:///vocpub.ttl" ,
+                "https://w3id.org/profile/vocpub/validator" ;
+        ] ;
 .
 
 <https://linked.data.gov.au/org/ausbigg>
