@@ -1,5 +1,5 @@
-PREFIX : <https://linked.data.gov.au/def/abis/sosa-validator/>
-PREFIX ds: <https://linked.data.gov.au/def/abis/sosa-validator>
+PREFIX : <https://linked.data.gov.au/def/sosa-validator/>
+PREFIX ont: <https://linked.data.gov.au/def/sosa-validator>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <https://schema.org/>
@@ -9,7 +9,7 @@ PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
-ds:
+ont:
 	a owl:Ontology ;
   	schema:name "BDR SOSA Validator" ;
 	schema:description """This is a [Shapes Constraint Language (SHACL)](https://www.w3.org/TR/shacl/) file that specifies validation rules for testing RDF data claiming conformance to the W3C's Sensor, Observation, Sample, and Actuator (SOSA) ontology, as needed by the Biodiversity Data Repository (BDR)

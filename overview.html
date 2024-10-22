@@ -445,7 +445,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_what_is_abis">1. What is ABIS?</a></li>
 <li><a href="#_who_owns_it">2. Who owns it?</a></li>
-<li><a href="#_how_do_i_use_it">3. How do I use it?</a></li>
+<li><a href="#_how_do_i_use_it">3. How do I use it?</a>
+<ul class="sectlevel2">
+<li><a href="#_submitting_data_to_the_biodiversity_data_repository_bdr_using_abis">3.1. Submitting data to the Biodiversity Data Repository (BDR) using ABIS</a></li>
+</ul>
+</li>
 <li><a href="#_more_help">4. More help</a></li>
 </ul>
 </div>
@@ -454,10 +458,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By Nicholas Car (<a href="mailto:nicholas.car@dcceew.gov.au">nicholas.car@dcceew.gov.au</a>) at DCCEEW, updated 16th Feb, 2024</p>
-</div>
-<div class="paragraph">
-<p>This document will soon be a short overview of the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard (ABIS)</a>. It is only one of many parts of ABIS and <a href="https://linked.data.gov.au/def/abis#_structure">all the parts are listed in ABIS</a>.</p>
+<p>This document contains a short overview of the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard (ABIS)</a>. For more information, see the full <a href="https://linked.data.gov.au/def/abis#_structure">ABIS specification</a> documentation.</p>
 </div>
 </div>
 </div>
@@ -465,16 +466,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_what_is_abis">1. What is ABIS?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ABIS is a data standard that specifies how information about biodiversity is to be represented for exchange and use in Australia.</p>
+<p>ABIS is primarily a data standard that specifies how information about biodiversity is to be represented for exchange and use in Australia. It is a flexible data model for the biodiversity domain that allows the capture of richer and more detailed information than alternative models of biodiversity data.</p>
 </div>
 <div class="paragraph">
-<p>It is a technical data standard and mandates a specific form of machine-readable information representation for data exchange: RDF (Resource Description Framework). RDF is "a standard model for data interchange on the Web"<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+<p>The standard is structured using Resource Description Framework (RDF), which is "a standard model for data on the web"<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 <div class="paragraph">
-<p>Use of the ABIS results in biodiversity information being formulated into data that can be validated against ABIS requirements in an automated way and the standard provides validators to verify data, see the <a href="https://linked.data.gov.au/def/abis#_validation">standard&#8217;s Validation section</a>.</p>
+<p>Use of the ABIS results in biodiversity information being formulated into data that can be validated against ABIS requirements in an automated way and the standard provides validators to verify data, see the <a href="https://linked.data.gov.au/def/abis#_validation">standard&#8217;s Validation section</a>. RDF has greater flexibility than other models, which is why it is powerful for the exchange of data. Many biodiversity systems organise data in a relational structure. If you have not worked with RDF before, we recommend taking the time to learn about it and reviewing the full <a href="https://linked.data.gov.au/def/abis#_structure">ABIS specification</a> documentation.</p>
 </div>
 <div class="paragraph">
-<p>ABIS implements a few domain-specific concepts itself but mostly re-uses existing models <a href="https://linked.data.gov.au/def/abis#_multiple_models">which it lists here</a>.</p>
+<p>ABIS implements a few domain-specific concepts itself but mostly re-uses existing general and domain Semantic Web models, such as the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology">TERN ontology</a>, <a href="https://www.w3.org/TR/prov-o/">PROV</a> and <a href="https://schema.org/">schema.org</a>.</p>
 </div>
 </div>
 </div>
@@ -482,7 +483,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_who_owns_it">2. Who owns it?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>coming soon!</em></p>
+<p>ABIS was built by <a href="https://www.tern.org.au/">Australia&#8217;s Terrestrial Ecosystem Research Network (TERN)</a> with funding from DCCEEW’s <a href="https://www.dcceew.gov.au/environment/land/landcare/current-programs/regional-land-partnerships">Regional Land Partnership (RLP)</a> program. It is maintained and governed by a standing Working Group of the <a href="https://linked.data.gov.au/org/ausbigg">Australian Biodiversity Information Governance Group (AusBIGG)</a>.</p>
 </div>
 </div>
 </div>
@@ -490,7 +491,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_how_do_i_use_it">3. How do I use it?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>coming soon!</em></p>
+<p>As described above, ABIS is primarily for the exchange of biodiversity information. The <a href="https://linked.data.gov.au/def/abis/spec">technical specification</a> documentation is the primary source of information and is currently being updated.</p>
+</div>
+<div class="paragraph">
+<p>To exchange information using ABIS, you need to:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Map your data to concepts and vocabularies recognised in ABIS, and</p>
+</li>
+<li>
+<p>Format your data into the RDF structure of ABIS.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Data formatted to the ABIS specification can be validated using the <a href="https://linked.data.gov.au/def/abis#_validation">ABIS validator</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_submitting_data_to_the_biodiversity_data_repository_bdr_using_abis">3.1. Submitting data to the Biodiversity Data Repository (BDR) using ABIS</h3>
+<div class="paragraph">
+<p>Biodiversity data submitted to the BDR must be conformant with the BDR’s profile of ABIS. Data can be submitted to the BDR in directly as ABIS-compliant RDF, or as CSV files that can be processed into ABIS format. Controlled vocabularies used in the BDR are available from the <a href="https://vocabs.bdr.gov.au/">BDR Vocabularies Portal</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -498,10 +521,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_more_help">4. More help</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ABIS is governed by <a href="https://linked.data.gov.au/org/ausbigg">Australian Biodiversity Information Governance Group (AusBIGG)</a> who is supported with technical management and data modelling by the Biodiversity Data Repository (BDR) Team within <a href="https://linked.data.gov.au/org/dcceew">the Department of Climate Change, Energy, the Environment and Water (DCCEEW)</a>.</p>
-</div>
-<div class="paragraph">
-<p>The BDR Team can be contacted on <a href="mailto:bdr@dcceew.gov.au">bdr@dcceew.gov.au</a>.</p>
+<p>ABIS is governed by <a href="https://linked.data.gov.au/org/ausbigg">Australian Biodiversity Information Governance Group (AusBIGG)</a> and its ABIS technical working group. Technical management and data modelling support is provided by the BDR team in the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy, the Environment and Water (DCCEEW)</a>. The BDR team can be contacted on <a href="mailto:bdr@dcceew.gov.au">bdr@dcceew.gov.au</a>.</p>
 </div>
 <div class="paragraph">
 <p>Issue tracking of the ABIS standard is managed online at <a href="https://github.com/AusBIGG/abis/issues" class="bare">https://github.com/AusBIGG/abis/issues</a></p>
@@ -517,7 +537,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-10 05:19:03 UTC
+Last updated 2024-10-22 22:53:58 UTC
 </div>
 </div>
 </body>
