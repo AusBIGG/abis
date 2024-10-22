@@ -60,8 +60,11 @@ TIME:: World Wide Web Consortium, _Time Ontology in OWL_, W3C Candidate Recommen
 [[TURTLE]]
 TURTLE:: World Wide Web Consortium, _RDF 1.1 Turtle - Terse RDF Triple Language_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/turtle/
 
+[[VOCPUB]]
+VocPub:: Australian Government Linked Data Working Group, _VocPub Profile_, Profiles Vocabulary profile of SKOS (2020). https://w3id.org/profile/vocpub
+
 [[VOID]]
-[VOID]:: DERI, _Vocabulary of Interlinked Datasets (VoID)_, OWL vocabulary (2010). http://vocab.deri.ie/void
+VOID:: DERI, _Vocabulary of Interlinked Datasets (VoID)_, OWL vocabulary (2010). http://vocab.deri.ie/void
 
 [[XSD2]]
 XSD2:: World Wide Web Consortium, _XML Schema Part 2: Datatypes (Second Edition)_, W3C Recommendation (28 October 2004). https://www.w3.org/TR/xmlschema-2/

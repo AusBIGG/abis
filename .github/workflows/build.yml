@@ -51,8 +51,8 @@ jobs:
         cp profiles/bdr/profile.ttl docs/bdr.ttl
         #
         echo "Add validator to docs/"
-        cp validators/*.ttl docs/
-        mv docs/abis-validator.ttl docs/validator.ttl
+        mkdir docs/validators
+        cp validators/*.ttl docs/validators
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

@@ -1,5 +1,5 @@
-PREFIX : <https://linked.data.gov.au/def/bdr-profile/validator/>
-PREFIX ds: <https://linked.data.gov.au/def/bdr-profile/validator>
+PREFIX : <https://linked.data.gov.au/def/abis/bdr-profile/validator/>
+PREFIX ds: <https://linked.data.gov.au/def/abis/bdr-profile/validator>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX schema: <https://schema.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
