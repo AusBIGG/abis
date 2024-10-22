@@ -27,28 +27,28 @@ ont:
         [
             schema:name "GeoSPARQL" ;
             schema:url
-                "file:///geo.ttl" ,
+                "file://geo.ttl" ,
                 "http://www.opengis.net/def/geosparql/validator" ;
             schema:identifier "http://www.opengis.net/def/geosparql/validator" ;
         ] ,
         [
             schema:name "SOSA" ;
             schema:url
-                "file:///sosa.ttl" ;
+                "file://sosa.ttl" ;
                 # "https://linked.data.gov.au/def/sosa-validator" ;
             schema:identifier "https://linked.data.gov.au/def/sosa-validator" ;
         ] ,
         [
             schema:name "TERN Ontology" ;
             schema:url
-                "file:///tern.ttl" ;
+                "file://tern.ttl" ;
                 # "https://w3id.org/tern/shapes/tern/" ;
             schema:identifier "https://w3id.org/tern/shapes/tern/" ;
         ] ,
         [
             schema:name "VocPub" ;
             schema:url
-                "file:///vocpub.ttl" ,
+                "file://vocpub.ttl" ,
                 "https://w3id.org/profile/vocpub/validator" ;
             schema:identifier "https://w3id.org/profile/vocpub/validator" ;
         ] ;

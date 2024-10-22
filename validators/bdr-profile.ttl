@@ -19,7 +19,7 @@ ds:
     schema:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
     schema:copyrightNotice "(c) 2024 AusBIGG" ;
     owl:versionIRI :1.0 ;
-    owl:versionInfo """1.0 First version""" ;
+    owl:versionInfo "1.0 First version" ;
     schema:hasPart
         :shape-01 ,
         :shape-02 ,
@@ -30,9 +30,9 @@ ds:
         :shape-07 ;
     owl:imports
         [
-            schema:name "GeoSPARQL" ;
+            schema:name "ABIS" ;
             schema:url
-                "file:///abis.ttl" ,
+                "file://abis.ttl" ,
                 "https://linked.data.gov.au/def/abis/validator" ;
             schema:identifier "https://linked.data.gov.au/def/abis/validator" ;
         ] ;
@@ -53,48 +53,48 @@ ds:
 :shape-01
     a sh:NodeShape ;
     sh:targetClass tern:Dataset ;
-    sh:pattern "https://linked.data.gov.au/dataset/bdr/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}" ;
+    sh:pattern "^https://linked\\.data\\.gov\\.au/dataset/bdr/[0-9a-f]{8}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{12}$" ;
     sh:message "Dataset IRIs must match the BDR Profile of ABIS' proscribed pattern of https://linked.data.gov.au/dataset/bdr/{UUID}" ;
 .
 
 :shape-02
     a sh:NodeShape ;
     sh:targetClass tern:Site ;
-    sh:pattern "linked.data.gov.au" ;
+    sh:pattern "linked\\.data\\.gov\\.au" ;
     sh:message "Site IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
 .
 
 :shape-03
     a sh:NodeShape ;
     sh:targetClass tern:Survey ;
-    sh:pattern "linked.data.gov.au" ;
+    sh:pattern "linked\\.data\\.gov\\.au" ;
     sh:message "Survey IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
 .
 
 :shape-04
     a sh:NodeShape ;
     sh:targetClass tern:SiteVisit ;
-    sh:pattern "linked.data.gov.au" ;
+    sh:pattern "linked\\.data\\.gov\\.au" ;
     sh:message "SiteVisit IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
 .
 
 :shape-05
     a sh:NodeShape ;
     sh:targetClass tern:Sample ;
-    sh:pattern "linked.data.gov.au" ;
+    sh:pattern "linked\\.data\\.gov\\.au" ;
     sh:message "Sample IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
 .
 
 :shape-06
     a sh:NodeShape ;
     sh:targetClass tern:Observation ;
-    sh:pattern "https://linked.data.gov.au/dataset/bdr/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}" ;
+    sh:pattern "^https://linked\\.data\\.gov\\.au/dataset/bdr/[0-9a-f]{8}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{12}/.+" ;
     sh:message "Observation IRIs must match the BDR Profile of ABIS' proscribed pattern pattern of https://linked.data.gov.au/dataset/bdr/{UUID}/ + supplier pattern" ;
 .
 
 :shape-07
     a sh:NodeShape ;
     sh:targetClass schema:Person , schema:Organization ;
-    sh:pattern "linked.data.gov.au" ;
+    sh:pattern "linked\\.data\\.gov\\.au" ;
     sh:message "Agent (Person and Organization) IRIs must match the BDR Profile of ABIS' proscribed pattern which includes linked.data.gov.au" ;
 .
