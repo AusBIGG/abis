@@ -16,7 +16,7 @@ The following table lists all the validators relevant to ABIS and describes thei
 | https://ausbigg.github.io/abis/validators/bdr-profile.ttl[BDR Profile of ABIS] | For data intended for storage in the BDR | <<BDR Profile, BDR Profile>> | Imports the ABIS validator
 | https://ausbigg.github.io/abis/validators/geo.ttl[GeoSPARQL] | For spatial data | <<GeoSPARQL, GeoSPARQL>> | Presented by the GeoSPARQL standard
 | https://ausbigg.github.io/abis/validators/sosa.ttl[SOSA] | For sampling/observations data | <<SOSA, SOSA>> | Derived from the SOSA standard
-| https://ausbigg.github.io/abis/validators/tern.ttl[SOSA] | For TERN Ontology data | <<TERN Ontology, TERN Ontology>> | The TERN Ontology validator, as presented by TERN
+| https://ausbigg.github.io/abis/validators/tern.ttl[TERN Ontology] | For TERN Ontology data | ABIS/BDR | The TERN Ontology validator, as presented by TERN
 | https://ausbigg.github.io/abis/validators/abis-tern.ttl[ABIS Profile of TERN Ontology] | For data created according to the <<TERN Ontology, TERN Ontology>>, but for use in ABIS-based systems | <<TERN Ontology, TERN Ontology>> | Imports parts of the TERN validator but not all
 | https://ausbigg.github.io/abis/validators/vocpub.ttl[VocPub] | For data vocabularies | <<VOCPUB, VocPub>> | Presented by VocPub
 | https://ausbigg.github.io/abis/validators/bdrm.ttl[Biodiversity Records Model] | For data created according to the <<Biodiversity Record Model, Biodiversity Records Model>> | ABIS/BDR |
