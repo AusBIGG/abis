@@ -58,3 +58,5 @@ include::52_annex_c.adoc[]
 include::53_annex_d.adoc[]
 
 include::54_annex_e.adoc[]
+
+include::55_annex_f.adoc[]

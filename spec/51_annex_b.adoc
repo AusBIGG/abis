@@ -1,6 +1,6 @@
 [[annex-b]]
 == Annex B: Protocol-based Models
 
-=== EMSA Protocol
+=== EMSA Protocols
 
 #TODO: add details of the EMSA Protocol Model(s) from https://emsa.tern.org.au/
