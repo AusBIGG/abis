@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.20">
 <title>Australian Biodiversity Information Standard</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -84,10 +84,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -193,7 +193,8 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
 details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
 details{margin-left:1.25rem}
-details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
 details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
 details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
 details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
@@ -207,13 +208,10 @@ table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
-.exampleblock>.content>:first-child{margin-top:0}
-.exampleblock>.content>:last-child{margin-bottom:0}
 .sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
-.sidebarblock>:first-child{margin-top:0}
-.sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
-.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
 .literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
@@ -235,9 +233,8 @@ pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
 table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
 table.linenotable td.code{padding-left:.75em}
-table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
-pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
-pre.pygments .lineno::before{content:"";margin-right:-.125em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
 .quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
@@ -274,7 +271,7 @@ table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-c
 table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
 table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
 table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
-table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
 th.halign-center,td.halign-center{text-align:center}
@@ -290,10 +287,11 @@ ol{margin-left:1.75em}
 ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
-ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
 ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
 ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
 ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
 ul.checklist>li>p:first-child{margin-left:-1em}
 ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
 ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
@@ -336,8 +334,6 @@ sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
-.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
-.gist .file-data>table td.line-data{width:99%}
 div.unbreakable{page-break-inside:avoid}
 .big{font-size:larger}
 .small{font-size:smaller}
@@ -394,7 +390,7 @@ b.conum *{color:inherit!important}
 dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
 h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
 p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
-p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
 p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
@@ -456,7 +452,7 @@ pre.rouge .cs {
   font-weight: bold;
   font-style: italic;
 }
-pre.rouge .c, pre.rouge .cd {
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
   color: #999988;
   font-style: italic;
 }
@@ -543,6 +539,10 @@ pre.rouge .mo {
 pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
   color: #009999;
 }
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
 pre.rouge .sb {
   color: #d14;
 }
@@ -576,7 +576,7 @@ pre.rouge .s1 {
 pre.rouge .ss {
   color: #990073;
 }
-pre.rouge .s {
+pre.rouge .s, pre.rouge .dl {
   color: #d14;
 }
 pre.rouge .na {
@@ -606,7 +606,7 @@ pre.rouge .ne {
   color: #990000;
   font-weight: bold;
 }
-pre.rouge .nf {
+pre.rouge .nf, pre.rouge .fm {
   color: #990000;
   font-weight: bold;
 }
@@ -629,7 +629,7 @@ pre.rouge .vg {
 pre.rouge .vi {
   color: #008080;
 }
-pre.rouge .nv {
+pre.rouge .nv, pre.rouge .vm {
   color: #008080;
 }
 pre.rouge .ow {
@@ -775,34 +775,55 @@ pre.rouge {
 </li>
 <li><a href="#annex-b">Annex B: Protocol-based Models</a>
 <ul class="sectlevel2">
-<li><a href="#_emsa_protocol">EMSA Protocol</a></li>
+<li><a href="#_emsa_protocols">EMSA Protocols</a></li>
 </ul>
 </li>
 <li><a href="#annex-c">Annex C: Projects Model</a>
 <ul class="sectlevel2">
-<li><a href="#projects-metadata">B.1. Metadata</a></li>
-<li><a href="#_b_2_supporting_assets">B.2. Supporting Assets</a></li>
-<li><a href="#_b_3_classes">B.3. Classes</a></li>
-<li><a href="#_b_4_predicates">B.4. Predicates</a></li>
-<li><a href="#_b_5_validator">B.5. Validator</a></li>
-</ul>
-</li>
-<li><a href="#annex-d">Annex D: Data Release Model</a>
-<ul class="sectlevel2">
-<li><a href="#data-release-metadata">C.1. Metadata</a></li>
+<li><a href="#projects-metadata">C.1. Metadata</a></li>
 <li><a href="#_c_2_supporting_assets">C.2. Supporting Assets</a></li>
 <li><a href="#_c_3_classes">C.3. Classes</a></li>
 <li><a href="#_c_4_predicates">C.4. Predicates</a></li>
 <li><a href="#_c_5_validator">C.5. Validator</a></li>
 </ul>
 </li>
-<li><a href="#annex-e">Annex E: Extended Examples</a>
+<li><a href="#annex-d">Annex D: Data Release Model</a>
 <ul class="sectlevel2">
-<li><a href="#_d_1_tern_ontology">D.1. TERN Ontology</a>
+<li><a href="#data-release-metadata">D.1. Metadata</a></li>
+<li><a href="#_d_2_supporting_assets">D.2. Supporting Assets</a></li>
+<li><a href="#_d_3_classes">D.3. Classes</a></li>
+<li><a href="#_d_4_predicates">D.4. Predicates</a></li>
+<li><a href="#_d_5_validator">D.5. Validator</a></li>
+</ul>
+</li>
+<li><a href="#annex-e">Annex E: BDR Submissions Manifest Model</a>
+<ul class="sectlevel2">
+<li><a href="#_e_1_metadata">E.1 Metadata</a></li>
+<li><a href="#_e_2_supporting_assets">E.2 Supporting Assets</a></li>
+<li><a href="#_e_3_classes">E.3 Classes</a></li>
+<li><a href="#_e_4_predicates">E.4 Predicates</a></li>
+<li><a href="#_e_5_validator">E.5 Validator</a></li>
+<li><a href="#_e_6_vocabularies">E.6 Vocabularies</a>
 <ul class="sectlevel3">
-<li><a href="#_d_1_1_validating">D.1.1. Validating</a></li>
-<li><a href="#_d_1_2_example_01_valid">D.1.2. Example 01 - valid</a></li>
-<li><a href="#_d_1_3_example_02_invalid">D.1.3. Example 02 - invalid</a></li>
+<li><a href="#_bdr_submission_manifest_resource_roles">BDR Submission Manifest Resource Roles</a></li>
+</ul>
+</li>
+<li><a href="#_e_7_examples">E.7 Examples</a>
+<ul class="sectlevel3">
+<li><a href="#_e_7_1_monitor_single">E.7.1 MONITOR single</a></li>
+<li><a href="#_e_7_2_monitor_multi">E.7.2 MONITOR multi</a></li>
+<li><a href="#_e_7_3_gaia_archival">E.7.3 Gaia archival</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#annex-f">Annex F: Extended Examples</a>
+<ul class="sectlevel2">
+<li><a href="#_f_1_tern_ontology">F.1. TERN Ontology</a>
+<ul class="sectlevel3">
+<li><a href="#_f_1_1_validating">F.1.1. Validating</a></li>
+<li><a href="#_f_1_2_example_01_valid">F.1.2. Example 01 - valid</a></li>
+<li><a href="#_f_1_3_example_02_invalid">F.1.3. Example 02 - invalid</a></li>
 </ul>
 </li>
 </ul>
@@ -2136,7 +2157,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect3">
 <h4 id="_feature_relations"><a class="anchor" href="#_feature_relations"></a>5.5.8. Feature relations</h4>
 <div class="paragraph">
-<p>In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#" class="bare">https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#</a><em>simple_features_relation_family[_Simple Features</em> relations] which are summarised as follows:</p>
+<p>In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#<em>simple_features_relation_family">_Simple Features</em> relations</a> which are summarised as follows:</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -2735,7 +2756,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect4">
 <h5 id="_examples"><a class="anchor" href="#_examples"></a>6.4.1.3. Examples</h5>
 <div class="paragraph">
-<p>See <a href="#_d_1_tern_ontology">Annex D: Extended Examples &gt; TERN Ontology</a> for a full example of TERN Ontology data with explanations for each part.</p>
+<p>See <a href="#D.1. TERN Ontology">Annex D: Extended Examples &gt; TERN Ontology</a> for a full example of TERN Ontology data with explanations for each part.</p>
 </div>
 <div class="paragraph">
 <p>Also see the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> for multiple examples that can be loaded and validated using the online validators available there.</p>
@@ -5455,7 +5476,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <h2 id="annex-b"><a class="anchor" href="#annex-b"></a>Annex B: Protocol-based Models</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_emsa_protocol"><a class="anchor" href="#_emsa_protocol"></a>EMSA Protocol</h3>
+<h3 id="_emsa_protocols"><a class="anchor" href="#_emsa_protocols"></a>EMSA Protocols</h3>
 <div class="paragraph">
 <p>#TODO: add details of the EMSA Protocol Model(s) from <a href="https://emsa.tern.org.au/" class="bare">https://emsa.tern.org.au/</a></p>
 </div>
@@ -5475,7 +5496,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <p><a href="#abis:Project"><code>Project</code></a>s are part of <a href="#abis:Program"><code>Program</code></a>s and both are specialised forms of <a href="#PROV">PROV</a>'s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a> class. An <code>Activity</code> is "something that occurs over a period of time and acts upon or with entities" which means <code>Project</code> &amp; <code>Program</code> instances can have all the properties that <code>Activities</code> can have, such as temporal extents, <code>Agents</code> that have causal relationships to them and so on.</p>
 </div>
 <div class="sect2">
-<h3 id="projects-metadata"><a class="anchor" href="#projects-metadata"></a>B.1. Metadata</h3>
+<h3 id="projects-metadata"><a class="anchor" href="#projects-metadata"></a>C.1. Metadata</h3>
 <table class="tableblock frame-none grid-none stripes-even stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -5547,7 +5568,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_b_2_supporting_assets"><a class="anchor" href="#_b_2_supporting_assets"></a>B.2. Supporting Assets</h3>
+<h3 id="_c_2_supporting_assets"><a class="anchor" href="#_c_2_supporting_assets"></a>C.2. Supporting Assets</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5574,8 +5595,8 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect2">
-<h3 id="_b_3_classes"><a class="anchor" href="#_b_3_classes"></a>B.3. Classes</h3>
-<h4 id="_b_3_1_class_index" class="discrete">B.3.1. Class Index</h4>
+<h3 id="_c_3_classes"><a class="anchor" href="#_c_3_classes"></a>C.3. Classes</h3>
+<h4 id="_c_3_1_class_index" class="discrete">C.3.1. Class Index</h4>
 <div class="paragraph">
 <p>Classes defined here:</p>
 </div>
@@ -5608,7 +5629,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </li>
 </ul>
 </div>
-<h4 id="abis:Project" class="discrete">B.3.2. Project</h4>
+<h4 id="abis:Project" class="discrete">C.3.2. Project</h4>
 <div id="proj-project" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/proj-project.svg"><img src="https://ausbigg.github.io/abis/img/proj-project.svg" alt="Projects Model Project Class" width="650"></a>
@@ -5703,7 +5724,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="abis:Program" class="discrete">B.3.3. Program</h4>
+<h4 id="abis:Program" class="discrete">C.3.3. Program</h4>
 <div id="proj-program" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/proj-program.svg"><img src="https://ausbigg.github.io/abis/img/proj-program.svg" alt="Projects Model Program Class" width="650"></a>
@@ -5758,7 +5779,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="prov:Attribution" class="discrete">B.3.4 Attribution</h4>
+<h4 id="prov:Attribution" class="discrete">C.3.4 Attribution</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -5803,7 +5824,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="prov:Agent" class="discrete">B.3.5. Agent</h4>
+<h4 id="prov:Agent" class="discrete">C.3.5. Agent</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -5848,7 +5869,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="schema:Organization" class="discrete">B.3.6. Organization</h4>
+<h4 id="schema:Organization" class="discrete">C.3.6. Organization</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -5895,7 +5916,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="schema:Person" class="discrete">B.3.7. Person</h4>
+<h4 id="schema:Person" class="discrete">C.3.7. Person</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -5940,7 +5961,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
-<h4 id="skos:Concept" class="discrete">B.3.8. Concept</h4>
+<h4 id="skos:Concept" class="discrete">C.3.8. Concept</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 23.0769%;">
@@ -5981,7 +6002,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_b_4_predicates"><a class="anchor" href="#_b_4_predicates"></a>B.4. Predicates</h3>
+<h3 id="_c_4_predicates"><a class="anchor" href="#_c_4_predicates"></a>C.4. Predicates</h3>
 <div class="paragraph">
 <p>This model defines only one predicate - <a href="#abis:purpose">purpose</a> - but also requires the use of others defined elsewhere. Definitions for all predicates are copied from source and given here.</p>
 </div>
@@ -6542,7 +6563,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_b_5_validator"><a class="anchor" href="#_b_5_validator"></a>B.5. Validator</h3>
+<h3 id="_c_5_validator"><a class="anchor" href="#_c_5_validator"></a>C.5. Validator</h3>
 <div class="paragraph">
 <p><mark>TODO: list and define validators fro this model</mark></p>
 </div>
@@ -6612,7 +6633,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="sect1">
 <h2 id="annex-d"><a class="anchor" href="#annex-d"></a>Annex D: Data Release Model</h2>
 <div class="sectionbody">
-<div id="data-realse" class="imageblock text-center">
+<div id="data-release" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/data-release.svg"><img src="https://ausbigg.github.io/abis/img/data-release.svg" alt="Overview of the Data Release Model" width="350"></a>
 </div>
@@ -6636,7 +6657,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="data-release-metadata"><a class="anchor" href="#data-release-metadata"></a>C.1. Metadata</h3>
+<h3 id="data-release-metadata"><a class="anchor" href="#data-release-metadata"></a>D.1. Metadata</h3>
 <table class="tableblock frame-none grid-none stripes-even stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -6708,7 +6729,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_c_2_supporting_assets"><a class="anchor" href="#_c_2_supporting_assets"></a>C.2. Supporting Assets</h3>
+<h3 id="_d_2_supporting_assets"><a class="anchor" href="#_d_2_supporting_assets"></a>D.2. Supporting Assets</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -6735,13 +6756,13 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect2">
-<h3 id="_c_3_classes"><a class="anchor" href="#_c_3_classes"></a>C.3. Classes</h3>
+<h3 id="_d_3_classes"><a class="anchor" href="#_d_3_classes"></a>D.3. Classes</h3>
 <div class="paragraph">
 <p>This model defines none of its own classes and only indicates the <a href="#TERNOntology">TERN Ontology</a>'s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class for use with the predicates it does define.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_c_4_predicates"><a class="anchor" href="#_c_4_predicates"></a>C.4. Predicates</h3>
+<h3 id="_d_4_predicates"><a class="anchor" href="#_d_4_predicates"></a>D.4. Predicates</h3>
 <h4 id="embargoedUntil" class="discrete">embargoed until</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -6876,7 +6897,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </table>
 </div>
 <div class="sect2">
-<h3 id="_c_5_validator"><a class="anchor" href="#_c_5_validator"></a>C.5. Validator</h3>
+<h3 id="_d_5_validator"><a class="anchor" href="#_d_5_validator"></a>D.5. Validator</h3>
 <div class="paragraph">
 <p><mark>TODO: list and define validators fro this model</mark></p>
 </div>
@@ -6884,18 +6905,180 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect1">
-<h2 id="annex-e"><a class="anchor" href="#annex-e"></a>Annex E: Extended Examples</h2>
+<h2 id="annex-e"><a class="anchor" href="#annex-e"></a>Annex E: BDR Submissions Manifest Model</h2>
+<div class="sectionbody">
+<div id="sub-man-model" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/sub-main-model.svg"><img src="https://ausbigg.github.io/abis/img/sub-main-model.svg" alt="Overview of the BDR Submissions Manifest Modelverview of the Data Release Model"></a>
+</div>
+<div class="title">Figure 30. An overview of the BDR Submissions Manifest Model</div>
+</div>
+<div class="paragraph">
+<p>This model is for a <em>manifest</em> - a listing of contents - of data submissions to the <a href="#BDR">[BDR]</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_e_1_metadata"><a class="anchor" href="#_e_1_metadata"></a>E.1 Metadata</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_e_2_supporting_assets"><a class="anchor" href="#_e_2_supporting_assets"></a>E.2 Supporting Assets</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_e_3_classes"><a class="anchor" href="#_e_3_classes"></a>E.3 Classes</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_e_4_predicates"><a class="anchor" href="#_e_4_predicates"></a>E.4 Predicates</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_e_5_validator"><a class="anchor" href="#_e_5_validator"></a>E.5 Validator</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_e_6_vocabularies"><a class="anchor" href="#_e_6_vocabularies"></a>E.6 Vocabularies</h3>
+<div class="sect3">
+<h4 id="_bdr_submission_manifest_resource_roles"><a class="anchor" href="#_bdr_submission_manifest_resource_roles"></a>BDR Submission Manifest Resource Roles</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_e_7_examples"><a class="anchor" href="#_e_7_examples"></a>E.7 Examples</h3>
+<div class="sect3">
+<h4 id="_e_7_1_monitor_single"><a class="anchor" href="#_e_7_1_monitor_single"></a>E.7.1 MONITOR single</h4>
+<div class="paragraph">
+<p>A single RDF file submission from the TERN MONITOR application.</p>
+</div>
+<div class="paragraph">
+<p>This is a single RDF file - <code>plant-tissue-lite-protocol-org-uuid-0fb52b7b-29f1-4797-920a-9c88f2180c5e-start-date-2024-12-11T06_53_43.879Z.ttl</code> - sent from the MONITOR system to the BDR with no additional submission resources, such as image files.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">bdr:</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/def/bdr/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">prof:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dx/prof/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">smrr:</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/bdr/smrr/&gt;</span><span class="w">
+
+</span><span class="p">[]</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdr:</span><span class="n">SubmissionManifest</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">prof:</span><span class="n">hasResource
+</span><span class="w">        </span><span class="p">[</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasArtifact</span><span class="w"> </span><span class="s">"plant-tissue-lite-protocol-org-uuid-0fb52b7b-29f1-4797-920a-9c88f2180c5e-start-date-2024-12-11T06_53_43.879Z.ttl"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasRole</span><span class="w"> </span><span class="nn">smrr:</span><span class="n">SufficientForValidation</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">schema:</span><span class="n">description</span><span class="w"> </span><span class="s">"A single file MONITOR submission"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Submission Data"</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The manifest above points to the single data file and indicates that its Submission Manifest Resource Role is <code>SufficientForValidation</code> meaning this single data file can be validated as-is.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_e_7_2_monitor_multi"><a class="anchor" href="#_e_7_2_monitor_multi"></a>E.7.2 MONITOR multi</h4>
+<div class="paragraph">
+<p>A multiple file submission from the TERN MONITOR application that includes both an RDF data file and also a number of image files.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">bdr:</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/def/bdr/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">prof:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dx/prof/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">smrr:</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/bdr/smrr/&gt;</span><span class="w">
+
+</span><span class="p">[]</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdr:</span><span class="n">SubmissionManifest</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">prof:</span><span class="n">hasResource
+</span><span class="w">        </span><span class="p">[</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasArtifact</span><span class="w"> </span><span class="s">"plant-tissue-lite-protocol-org-uuid-0fb52b7b-29f1-4797-920a-9c88f2180c5e-start-date-2024-12-11T06_53_43.879Z.ttl"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasRole</span><span class="w"> </span><span class="nn">smrr:</span><span class="n">SufficientForValidation</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">schema:</span><span class="n">description</span><span class="w"> </span><span class="s">"A single file MONITOR submission"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Submission Data"</span><span class="w">
+        </span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="c1"># every reference (path) to an image in a Submission's RDF data</span><span class="w">
+            </span><span class="c1"># must match a reference here. The DIP will replace local path</span><span class="w">
+            </span><span class="c1"># with paths to the BDR's image store locations</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasArtifact
+</span><span class="w">                </span><span class="s">"images/image-001.jpg"</span><span class="w"> </span><span class="p">,</span><span class="w">
+                </span><span class="s">"images/image-002.jpg"</span><span class="w"> </span><span class="p">,</span><span class="w">
+                </span><span class="s">"images/image-003.jpg"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasRole</span><span class="w"> </span><span class="nn">smrr:</span><span class="n">SupplimentaryData</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">schema:</span><span class="n">description</span><span class="w"> </span><span class="s">"Images linked to from this submission's RDF data"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Submission Images"</span><span class="w">
+        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The images are indicated as having a role of <code>SupplimentaryData</code> meaning they will be handled in some way (stored) but not validated using ABIS validators. These image files must be linked to from within the submitted data.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_e_7_3_gaia_archival"><a class="anchor" href="#_e_7_3_gaia_archival"></a>E.7.3 Gaia archival</h4>
+<div class="paragraph">
+<p>A submission from Gaia Resources with multiple RDF files and archival content.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">bdr:</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/def/bdr/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">prof:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dx/prof/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
+</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">smrr:</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/bdr/smrr/&gt;</span><span class="w">
+
+</span><span class="p">[]</span><span class="w">
+    </span><span class="k">a</span><span class="w"> </span><span class="nn">bdr:</span><span class="n">SubmissionManifest</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">prof:</span><span class="n">hasResource
+</span><span class="w">        </span><span class="p">[</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasArtifact
+</span><span class="w">                </span><span class="s">"outputs/dataset.ttl"</span><span class="w"> </span><span class="p">,</span><span class="w">
+                </span><span class="s">"outputs/survey-metadata.ttl"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasRole</span><span class="w"> </span><span class="nn">smrr:</span><span class="n">NecessaryForValidation</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasArtifact</span><span class="w"> </span><span class="s">"outputs/chunk_*.ttl"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasRole</span><span class="w"> </span><span class="nn">smrr:</span><span class="n">IsolatedContent</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="c1"># there must be a reference to this content in the RDF:</span><span class="w">
+            </span><span class="c1"># {DATASET-IRI} prov:wasDerivedFrom "inputs/"</span><span class="w">
+            </span><span class="c1"># which we will replace "input/" with an actual BDR archival</span><span class="w">
+            </span><span class="c1"># location, when created</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasArtifact</span><span class="w"> </span><span class="s">"inputs/"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">prof:</span><span class="n">hasRole</span><span class="w"> </span><span class="nn">smrr:</span><span class="n">SubmissionSourceArchive</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The survey- and dataset-level metadata stored in the files <code>dataset.ttl</code> and <code>survey-metadata.ttl</code> has the role <code>NecessaryForValidation</code> meaning it must be loaded for other resources to be validated but it is not itself directly validates. This is because it will likely be invalid: it&#8217;s metadata only and docesn&#8217;t include the actual core TERN Ontology observations data.</p>
+</div>
+<div class="paragraph">
+<p>The second resource indicates a number of "chunk" files in a directory, each with the role <code>IsolatedContent</code> which means each can be validated in isolation from any other, but must have had the resource with role <code>NecessaryForValidation</code> loaded first - the required Dataset &amp; Survey metadata.</p>
+</div>
+<div class="paragraph">
+<p>The last resource is a set of files in a directory with the role <code>SubmissionSourceArchive</code> meaning it&#8217;s all to be archived - stored in the BDR&#8217;s provisioned archival storage unit - and not validated. These resources must be linked to from within the submitted data.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="annex-f"><a class="anchor" href="#annex-f"></a>Annex F: Extended Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This following examples are all <a href="#RDF">RDF</a> data in the <a href="#TURTLE">Turtle</a> format.</p>
 </div>
 <div class="sect2">
-<h3 id="_d_1_tern_ontology"><a class="anchor" href="#_d_1_tern_ontology"></a>D.1. TERN Ontology</h3>
+<h3 id="_f_1_tern_ontology"><a class="anchor" href="#_f_1_tern_ontology"></a>F.1. TERN Ontology</h3>
 <div class="paragraph">
 <p>These examples use <a href="#TERNOntology">TERN Ontology</a> elements only.</p>
 </div>
 <div class="sect3">
-<h4 id="_d_1_1_validating"><a class="anchor" href="#_d_1_1_validating"></a>D.1.1. Validating</h4>
+<h4 id="_f_1_1_validating"><a class="anchor" href="#_f_1_1_validating"></a>F.1.1. Validating</h4>
 <div class="paragraph">
 <p>All these examples are loaded into the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> and may be validated online using the TERN Ontology validator which is also loaded there.</p>
 </div>
@@ -6948,7 +7131,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect3">
-<h4 id="_d_1_2_example_01_valid"><a class="anchor" href="#_d_1_2_example_01_valid"></a>D.1.2. Example 01 - valid</h4>
+<h4 id="_f_1_2_example_01_valid"><a class="anchor" href="#_f_1_2_example_01_valid"></a>F.1.2. Example 01 - valid</h4>
 <div class="paragraph">
 <p>This example is valid according to the TERN Ontology validator.</p>
 </div>
@@ -7008,7 +7191,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 </div>
 <div class="sect3">
-<h4 id="_d_1_3_example_02_invalid"><a class="anchor" href="#_d_1_3_example_02_invalid"></a>D.1.3. Example 02 - invalid</h4>
+<h4 id="_f_1_3_example_02_invalid"><a class="anchor" href="#_f_1_3_example_02_invalid"></a>F.1.3. Example 02 - invalid</h4>
 <div class="paragraph">
 <p>This example is the same data as the above but with several lines commented out (starting with <code>#</code>) which makes it invalid according to the TERN Ontology validator.</p>
 </div>
@@ -7096,7 +7279,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-11-28 04:10:14 UTC
+Last updated 2025-02-14 02:46:16 UTC
 </div>
 </div>
 </body>
