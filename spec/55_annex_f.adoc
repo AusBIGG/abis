@@ -1,0 +1,152 @@
+[[annex-f]]
+== Annex F: Extended Examples
+
+This following examples are all <<RDF, RDF>> data in the <<TURTLE, Turtle>> format.
+
+=== F.1. TERN Ontology
+
+These examples use <<TERNOntology, TERN Ontology>> elements only.
+
+==== F.1.1. Validating
+
+All these examples are loaded into the https://abis.dev.kurrawong.net[ABIS Portal] and may be validated online using the TERN Ontology validator which is also loaded there.
+
+To validate these examples locally - on your own computer - you will need a validation tool installed - see the <<Validation, Validation Section>>, the example data file, the TERN Ontology validator and the TERN Ontology itself. These files are all available from this ABIS repository:
+
+|===
+| File | Location | Validity
+
+| TERN Ontology Validator | https://github.com/AusBIGG/abis/tree/master/validators/tern-validator.ttl | -
+| TERN Ontology Model | https://github.com/AusBIGG/abis/tree/master/models/components/tern-model.ttl | -
+| Example 01 data | https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-01.ttl | valid
+| Example 02 data | https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-02.ttl | invalid
+|===
+
+If using the https://github.com/RDFLib/pySHACL[pySHACL] tool, the following command will validate the data using the files above:
+
+----
+pyshaclz -s tern-validator.ttl -e tern-ont.ttl tern-eg-01.ttl -f table
+----
+
+==== F.1.2. Example 01 - valid
+
+This example is valid according to the TERN Ontology validator.
+
+[source,turtle]
+.TERN Ontology example 01 - valid
+----
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <http://example.com/thing/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ex:dataset-01
+    a tern:Dataset ;
+    dcterms:description "A minimally valid tern:Dataset instance" ;
+    dcterms:issued "2021-11-18"^^xsd:date ;
+    dcterms:title "TERN Dataset 01" ;
+.
+
+ex:obs-01
+    a tern:Observation ;
+    rdfs:label "TERN Observation 01" ;
+    void:inDataset ex:dataset-01 ;
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral
+    ] ;
+    rdfs:comment "A minimally valid tern:Observation instance" ;
+    sosa:hasFeatureOfInterest ex:foi-01 ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value "42"^^xsd:double ;
+        tern:uncertainty "0.5"^^xsd:double ;
+    ] ;
+    sosa:hasSimpleResult "42"@en ;
+    sosa:observedProperty <https://example.org/op/1> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2021-11-18T14:35+10:00"^^xsd:dateTimeStamp ;
+    ] ;
+    sosa:usedProcedure <https://example.org/proc/1> ;
+    tern:resultDateTime "2021-11-18T14:35:00"^^xsd:dateTime ;
+.
+
+ex:foi-01
+    a tern:FeatureOfInterest ;
+    rdfs:label "TERN FeatureOfInterest 01" ;
+    void:inDataset ex:dataset-01 ;
+    tern:featureType <https://example.org/ft/1> ;
+.
+----
+
+==== F.1.3. Example 02 - invalid
+
+This example is the same data as the above but with several lines commented out (starting with `#`) which makes it invalid according to the TERN Ontology validator.
+
+[source,turtle]
+.TERN Ontology example 02 - invalid
+----
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <http://example.com/thing/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ex:dataset-01
+    a tern:Dataset ;
+    dcterms:description "A minimally valid tern:Dataset instance" ;
+    dcterms:issued "2021-11-18"^^xsd:date ;
+    dcterms:title "TERN Dataset 01" ;
+.
+
+ex:obs-01
+    a tern:Observation ;
+    rdfs:label "TERN Observation 01" ;
+    void:inDataset ex:dataset-01 ;
+#    geo:hasGeometry [
+#        a geo:Geometry ;
+#        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral
+#    ] ;
+    rdfs:comment "A minimally valid tern:Observation instance" ;
+    sosa:hasFeatureOfInterest ex:foi-01 ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value "42"^^xsd:double ;
+        tern:uncertainty "0.5"^^xsd:double ;
+    ] ;
+    sosa:hasSimpleResult "42" ;
+    sosa:observedProperty <https://example.org/op/1> ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2021-11-18T14:35+10:00"^^xsd:dateTimeStamp ;
+    ] ;
+    sosa:usedProcedure <https://example.org/proc/1> ;
+    tern:resultDateTime "2021-11-18T14:35:00" ;  # ^^xsd:dateTime ;
+.
+
+ex:foi-01
+    a tern:FeatureOfInterest ;
+    rdfs:label "TERN FeatureOfInterest 01" ;
+#    void:inDataset ex:dataset-01 ;
+    tern:featureType <https://example.org/ft/1> ;
+.
+----
+
+Results from validating this example should indicate two Violations:
+
+. The datatype for the value indicated by the `tern:resultDateTime` predicate on the object `ex:obs-01` is of an invalid datatype
+* no datatype is given, so a string (`xsd:string`) is presumed but it should be an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`
+. `ex:obs-01` is missing a `geo:hasGeometry` predicate
+. `ex:foi-01` is missing a `void:inDataset` predicate

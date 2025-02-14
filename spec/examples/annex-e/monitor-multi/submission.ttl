@@ -1,0 +1,28 @@
+PREFIX bdr: <https://linked.data.gov.au/def/bdr/>
+PREFIX prof: <http://www.w3.org/ns/dx/prof/>
+PREFIX schema: <https://schema.org/>
+PREFIX smrr: <https://linked.data.gov.au/dataset/bdr/smrr/>
+
+[]
+    a bdr:SubmissionManifest ;
+    prof:hasResource
+        [
+            prof:hasArtifact "plant-tissue-lite-protocol-org-uuid-0fb52b7b-29f1-4797-920a-9c88f2180c5e-start-date-2024-12-11T06_53_43.879Z.ttl" ;
+            prof:hasRole smrr:SufficientForValidation ;
+            schema:description "A single file MONITOR submission" ;
+            schema:name "Submission Data"
+        ] ,
+        [
+            # every reference (path) to an image in a Submission's RDF data
+            # must match a reference here. The DIP will replace local path
+            # with paths to the BDR's image store locations
+            prof:hasArtifact
+                "images/image-001.jpg" ,
+                "images/image-002.jpg" ,
+                "images/image-003.jpg" ;
+            prof:hasRole smrr:SupplimentaryData ;
+            schema:description "Images linked to from this submission's RDF data" ;
+            schema:name "Submission Images"
+        ] ;
+.
+
