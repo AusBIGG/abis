@@ -47,9 +47,6 @@ jobs:
         cp schemas/components/projects.ttl docs/
         cp schemas/components/tern-ont.ttl docs/
         #
-        echo "Add profiles of ABIS to docs/"
-        cp profiles/bdr/profile.ttl docs/bdr.ttl
-        #
         echo "Add validator to docs/"
         mkdir docs/validators
         cp validators/*.ttl docs/validators
