@@ -636,7 +636,7 @@
 <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/f28f5c0b-a488-2d48-432c-859002db534b> a tern:FeatureOfInterest ;
     rdfs:label "Australia Land SATFLB0004" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
-    tern:featureType <http://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/f28f5c0b-a488-2d48-432c-859002db534b> .
+    tern:featureType <https://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/f28f5c0b-a488-2d48-432c-859002db534b> .
 
 <https://linked.data.gov.au/dataset/bdr/sites/42787aba-d772-41ec-a00d-dc28651eb01e> a tern:FeatureOfInterest,
         tern:Sample,
@@ -648,7 +648,7 @@
             geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-34.9721 138.6401)"^^geo:wktLiteral ] ;
     prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/0d02b422-5bf7-495f-b9f2-fa0a3046937f> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/f28f5c0b-a488-2d48-432c-859002db534b> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
     tern:hasAttribute [ rdfs:label "plot name" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
             tern:hasAttribute [ rdfs:label "state" ;
@@ -667,11 +667,11 @@
                             rdf:value <https://uri-not-found> ] ],
                 [ rdfs:label "bioregion" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
-                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/FLB> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/dataset/bioregion/FLB> ;
                     tern:hasValue [ a tern:IRI,
                                 tern:Value ;
                             rdfs:label "Flinders Lofty Block" ;
-                            rdf:value <http://linked.data.gov.au/dataset/bioregion/FLB> ] ],
+                            rdf:value <https://linked.data.gov.au/dataset/bioregion/FLB> ] ],
                 [ rdfs:label "unique digits" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/e2396b81-e7cd-4ff4-adc4-d06e9643f592> ;
                     tern:hasSimpleValue "0004" ;
@@ -735,7 +735,7 @@
     rdfs:label "land surface" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/42787aba-d772-41ec-a00d-dc28651eb01e> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/8282fb22-4135-415c-8ca2-317860d102fb> .
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/8282fb22-4135-415c-8ca2-317860d102fb> .
 
 <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/c4ff559b-8bbc-34eb-9bb1-65c8686441bd> a tern:SiteVisit ;
     rdfs:label "site visit SA autumn survey" ;

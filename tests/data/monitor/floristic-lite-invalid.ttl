@@ -91,7 +91,7 @@
     dcterms:identifier "barcode-MERI-30-000000" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/700a6a95-b5e7-4e39-9d51-49a5c28fd521> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-population/49c791a2-4730-44be-a4cc-9c6059694970> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
     tern:hasAttribute [ rdfs:label "Voucher Barcode" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/67c49fda-6ec2-4ec5-b84e-d04c3db2fd96> ;
             tern:hasSimpleValue "MERI-30-000000" ;
@@ -102,7 +102,7 @@
 <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/41513deb-c476-3ae2-9915-966cac038ab1> a tern:FeatureOfInterest ;
     rdfs:label "Australia Land CTMAUA4200" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/700a6a95-b5e7-4e39-9d51-49a5c28fd521> ;
-    tern:featureType <http://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/41513deb-c476-3ae2-9915-966cac038ab1> .
+    tern:featureType <https://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/41513deb-c476-3ae2-9915-966cac038ab1> .
 
 <https://linked.data.gov.au/dataset/bdr/700a6a95-b5e7-4e39-9d51-49a5c28fd521/phenomenon-time/f950fbdd-8e5b-4c0a-95cf-ef69e5ac2b1b> a time:Instant ;
     time:inXSDDateTimeStamp "2024-05-24T03:02:12.000642+00:00"^^xsd:dateTimeStamp .
@@ -117,7 +117,7 @@
             geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-35.202761171343035 149.10898612187535)"^^geo:wktLiteral ] ;
     prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/7da85db3-b9e4-4647-a880-48f948f7c725> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/41513deb-c476-3ae2-9915-966cac038ab1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
     tern:hasAttribute [ rdfs:label "plot name" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
             tern:hasSimpleValue "CTMAUA4200" ;
@@ -188,7 +188,7 @@
     rdfs:label "plant population" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/700a6a95-b5e7-4e39-9d51-49a5c28fd521> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/49c791a2-4730-44be-a4cc-9c6059694970> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/ae71c3f6-d430-400f-a1d4-97a333b4ee02> .
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/ae71c3f6-d430-400f-a1d4-97a333b4ee02> .
 
 <https://linked.data.gov.au/dataset/bdr/700a6a95-b5e7-4e39-9d51-49a5c28fd521> a tern:Dataset ;
     dcterms:description "Record of floristics veg survey lite protocol" ;

@@ -231,17 +231,17 @@
 <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/disturbance/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> a tern:FeatureOfInterest ;
     rdfs:label "disturbance" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> .
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> .
 
 <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-community/ea3a4c64-dac3-4660-809a-8ad5ced8997b> a tern:FeatureOfInterest ;
     rdfs:label "plant community" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> .
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> .
 
 <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/vegetation-stratum/32834f36-a478-45be-97f4-ff2ff51e9f5c> a tern:FeatureOfInterest ;
     rdfs:label "vegetation stratum" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/32834f36-a478-45be-97f4-ff2ff51e9f5c> .
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/32834f36-a478-45be-97f4-ff2ff51e9f5c> .
 
 <https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998/location/e18cf2ff-e283-478c-bedd-fa9acbe62771> a geo:Geometry ;
     geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-34.9442285 138.6213574)"^^geo:wktLiteral .

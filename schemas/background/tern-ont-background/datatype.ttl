@@ -1,6 +1,6 @@
 # baseURI: https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
 
-@prefix data: <http://linked.data.gov.au/def/datatype/> .
+@prefix data: <https://linked.data.gov.au/def/datatype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -11,7 +11,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://linked.data.gov.au/def/datatype>
+<https://linked.data.gov.au/def/datatype>
   a owl:Ontology ;
   dct:created "2019-03-25"^^xsd:date ;
   dct:creator [

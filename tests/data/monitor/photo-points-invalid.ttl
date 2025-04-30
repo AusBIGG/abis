@@ -31,7 +31,7 @@
 <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/5be17000-b79b-2fa0-e19c-fbf72b7d0bbc> a tern:FeatureOfInterest ;
     rdfs:label "Australia Land CTMSEH4221" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f> ;
-    tern:featureType <http://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/5be17000-b79b-2fa0-e19c-fbf72b7d0bbc> .
+    tern:featureType <https://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/5be17000-b79b-2fa0-e19c-fbf72b7d0bbc> .
 
 <https://linked.data.gov.au/dataset/bdr/sites/cf23aacf-1f02-43fb-8a78-559d3261838b> a tern:FeatureOfInterest,
         tern:Sample,
@@ -43,7 +43,7 @@
             geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-35.2592561 149.0651502)"^^geo:wktLiteral ] ;
     prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/5be17000-b79b-2fa0-e19c-fbf72b7d0bbc> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
     tern:hasAttribute [ rdfs:label "plot location point" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/4123f0a1-2189-48e6-bd69-b9007812433c> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/df58bcc5-34d9-5020-a519-bc83b18824db> ;
@@ -69,11 +69,11 @@
             tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
             tern:hasAttribute [ rdfs:label "bioregion" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
-                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/SEH> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/dataset/bioregion/SEH> ;
                     tern:hasValue [ a tern:IRI,
                                 tern:Value ;
                             rdfs:label "South Eastern Highlands" ;
-                            rdf:value <http://linked.data.gov.au/dataset/bioregion/SEH> ] ],
+                            rdf:value <https://linked.data.gov.au/dataset/bioregion/SEH> ] ],
                 [ rdfs:label "program" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/13f7d5bb-ac64-4f1e-b07c-68f8823a85ea> ;
                     tern:hasSimpleValue <https://uri-not-found> ;

@@ -476,7 +476,7 @@ Using all of these mappings, the ABIS data:
 ----
 ex:sample-1
     a tern:MaterialSample ;
-    schema:additionalType <http://linked.data.gov.au/def/tern-cv/4b36a1ab-7a77-49ca-866a-e68bce2db9e5> ;  # plant matter
+    schema:additionalType <https://linked.data.gov.au/def/tern-cv/4b36a1ab-7a77-49ca-866a-e68bce2db9e5> ;  # plant matter
     sosa:isSampleOf ex:site-1 ;
 .
 

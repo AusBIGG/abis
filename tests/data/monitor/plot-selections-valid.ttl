@@ -45,11 +45,11 @@
                             rdf:value <https://uri-not-found> ] ],
                 [ rdfs:label "bioregion" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
-                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/AUA> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/dataset/bioregion/AUA> ;
                     tern:hasValue [ a tern:IRI,
                                 tern:Value ;
                             rdfs:label "Australian Alps" ;
-                            rdf:value <http://linked.data.gov.au/dataset/bioregion/AUA> ] ],
+                            rdf:value <https://linked.data.gov.au/dataset/bioregion/AUA> ] ],
                 [ rdfs:label "unique-digits" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/e2396b81-e7cd-4ff4-adc4-d06e9643f592> ;
                     tern:hasSimpleValue "5544" ;
@@ -91,11 +91,11 @@
                             rdf:value <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ] ],
                 [ rdfs:label "bioregion" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
-                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/AUA> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/dataset/bioregion/AUA> ;
                     tern:hasValue [ a tern:IRI,
                                 tern:Value ;
                             rdfs:label "Australian Alps" ;
-                            rdf:value <http://linked.data.gov.au/dataset/bioregion/AUA> ] ] ;
+                            rdf:value <https://linked.data.gov.au/dataset/bioregion/AUA> ] ] ;
             tern:hasSimpleValue "CTMAUA5555" ;
             tern:hasValue [ a tern:Text,
                         tern:Value ;

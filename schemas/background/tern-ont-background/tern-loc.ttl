@@ -9,7 +9,7 @@
 # prefix: tern-loc
 
 @prefix : <https://w3id.org/tern/ontologies/loc/> .
-@prefix data: <http://linked.data.gov.au/def/datatype/> .
+@prefix data: <https://linked.data.gov.au/def/datatype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .

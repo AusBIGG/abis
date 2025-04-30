@@ -39,10 +39,10 @@ PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 #
 <https://linked.data.gov.au/dataset/bdr/sampling/x>
 	sosa:resultTime "2021-12-09"^^xsd:dateTime ; 
-	geo:sfWithin <http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010> ;
+	geo:sfWithin <https://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010> ;
 .
 
-<http://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010>
+<https://linked.data.gov.au/dataset/asgs2016/localgovernmentarea/35010>
 	a asgs:LocalGovernmentArea ;
 	geo:hasGeometry [
 		geo:asWKT "POINT (153, -57)"

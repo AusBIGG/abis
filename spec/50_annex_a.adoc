@@ -127,7 +127,7 @@ a|
 :occurrence-aaa
     a dwc:Occurrence ;
     schmea:name "Occurrence AAA" ;
-    schema:additionalType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> ;  # animal specimen
+    schema:additionalType <https://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> ;  # animal specimen
     sosa:isSampleOf :foi-h ;  # linke a field site
     sosa:usedProcedure :procedure-i ;  # a controlled method
     schema:spatial [ geo:asWKT "POINT (120.244 -32.959)"^^geo:wktLiteral ] ;

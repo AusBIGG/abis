@@ -252,7 +252,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a tern:FeatureOfInterest ;
     rdfs:label "Australia Land SATFLB0004" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
-    tern:featureType <http://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/f28f5c0b-a488-2d48-432c-859002db534b> ;
+    tern:featureType <https://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/f28f5c0b-a488-2d48-432c-859002db534b> ;
 .
 
 <https://linked.data.gov.au/dataset/bdr/sites/42787aba-d772-41ec-a00d-dc28651eb01e>
@@ -265,7 +265,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
     schema:spatial "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-34.9721 138.6401)"^^geo:wktLiteral ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/f28f5c0b-a488-2d48-432c-859002db534b> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
     tern:hasAttribute
         [
             rdfs:label "plot name" ;
@@ -300,14 +300,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 [
                     rdfs:label "bioregion" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
-                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/FLB> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/dataset/bioregion/FLB> ;
                     tern:hasValue
                         [
                             a
                                 tern:IRI ,
                                 tern:Value ;
                             rdfs:label "Flinders Lofty Block" ;
-                            rdf:value <http://linked.data.gov.au/dataset/bioregion/FLB> ;
+                            rdf:value <https://linked.data.gov.au/dataset/bioregion/FLB> ;
                         ] ;
                 ] ,
                 [
@@ -403,7 +403,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "land surface" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/42787aba-d772-41ec-a00d-dc28651eb01e> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/8282fb22-4135-415c-8ca2-317860d102fb> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/8282fb22-4135-415c-8ca2-317860d102fb> ;
 .
 
 <https://linked.data.gov.au/dataset/bdr/org/merit/sites-visit/c4ff559b-8bbc-34eb-9bb1-65c8686441bd>

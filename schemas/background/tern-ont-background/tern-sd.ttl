@@ -2,7 +2,7 @@
 # imports: https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
 # prefix: tern-sd
 
-@prefix data: <http://linked.data.gov.au/def/datatype/> .
+@prefix data: <https://linked.data.gov.au/def/datatype/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix onm: <https://w3id.org/tern/ontologies/onm/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .

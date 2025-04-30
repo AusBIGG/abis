@@ -165,14 +165,14 @@
 <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/d9753cbc-8de0-f2c2-d863-9e8399f7d7e1> a tern:FeatureOfInterest ;
     rdfs:label "Australia Land CTMAUA1122" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
-    tern:featureType <http://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/d9753cbc-8de0-f2c2-d863-9e8399f7d7e1> .
+    tern:featureType <https://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/d9753cbc-8de0-f2c2-d863-9e8399f7d7e1> .
 
 <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/disturbance/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> a tern:FeatureOfInterest,
         tern:Sample ;
     rdfs:label "disturbance" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> .
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/7e256d28-e686-4b6a-b64a-ac1b1a8f164d> .
 
 <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> a <https://linked.data.gov.au/def/abis/Project> ;
     rdfs:label "Relevant project" ;
@@ -190,14 +190,14 @@
     rdfs:label "plant community" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> .
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/ea3a4c64-dac3-4660-809a-8ad5ced8997b> .
 
 <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant-occurrence/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> a tern:FeatureOfInterest,
         tern:Sample ;
     rdfs:label "plant occurrence" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> .
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> .
 
 <https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> a tern:FeatureOfInterest,
         tern:Sample,
@@ -209,7 +209,7 @@
             geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-35.250736959204275 149.07134077137528)"^^geo:wktLiteral ] ;
     prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/d9753cbc-8de0-f2c2-d863-9e8399f7d7e1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
     tern:hasAttribute [ rdfs:label "plot type" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/39b4421f-d610-5202-8ab6-42618837717d> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/5488c9ea-e3a2-5348-887b-065d29b848ab> ;
@@ -241,11 +241,11 @@
                             rdf:value <https://linked.data.gov.au/def/nrm/4253c9af-b390-5b69-aaf3-ce5cda0c36bf> ] ],
                 [ rdfs:label "bioregion" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
-                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/AUA> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/dataset/bioregion/AUA> ;
                     tern:hasValue [ a tern:IRI,
                                 tern:Value ;
                             rdfs:label "Australian Alps" ;
-                            rdf:value <http://linked.data.gov.au/dataset/bioregion/AUA> ] ] ;
+                            rdf:value <https://linked.data.gov.au/dataset/bioregion/AUA> ] ] ;
             tern:hasSimpleValue "CTMAUA1122" ;
             tern:hasValue [ a tern:Text,
                         tern:Value ;

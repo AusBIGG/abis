@@ -4,7 +4,7 @@ This model both inherits existing and implements new validators for data claimin
 
 === Multiple Validators
 
-Just as the ABIS model is a collection of models and also inherits model elements from other models (see <<Multiple Models, Multiple Models>>), so too is the ABIS validator a collection of ABIS-created validators and inherited validation rules. For data to validly conform ABIS, it must also be valid according all these validators. Part use of ABIS may choose to be valid according to only some ABIS validators.
+Just as the ABIS model is a collection of models and also inherits model elements from other models (see <<Multiple Models, Multiple Models>>), so too is the ABIS validator a collection of ABIS-created validators and inherited validation rules. For data to validly conform ABIS, it must also be valid according all these validators. Part use of ABIS may choose to be valid according to only some validators.
 
 The following table lists all the validators relevant to ABIS and describes their roles.
 
@@ -13,31 +13,35 @@ The following table lists all the validators relevant to ABIS and describes thei
 | Validator | Description | Source | Notes
 
 | https://ausbigg.github.io/abis/validators/abis.ttl[ABIS] | Validation rules implemented by ABIS only | ABIS | Imports many other validators
-| https://ausbigg.github.io/abis/validators/bdr-profile.ttl[BDR Profile of ABIS] | For data intended for storage in the BDR | <<BDR Profile, BDR Profile>> | Imports the ABIS validator
+| https://linked.data.gov.au/def/bdr-pr/validator[BDR Profile of ABIS combined validator] | For data intended for storage in the BDR | <<BDR Profile, BDR Profile>> | Imports the ABIS validator
 | https://ausbigg.github.io/abis/validators/geo.ttl[GeoSPARQL] | For spatial data | <<GeoSPARQL, GeoSPARQL>> | Presented by the GeoSPARQL standard
 | https://ausbigg.github.io/abis/validators/sosa.ttl[SOSA] | For sampling/observations data | <<SOSA, SOSA>> | Derived from the SOSA standard
 | https://ausbigg.github.io/abis/validators/tern.ttl[TERN Ontology] | For TERN Ontology data | ABIS/BDR | The TERN Ontology validator, as presented by TERN
 | https://ausbigg.github.io/abis/validators/abis-tern.ttl[ABIS Profile of TERN Ontology] | For data created according to the <<TERN Ontology, TERN Ontology>>, but for use in ABIS-based systems | <<TERN Ontology, TERN Ontology>> | Imports parts of the TERN validator but not all
 | https://ausbigg.github.io/abis/validators/vocpub.ttl[VocPub] | For data vocabularies | <<VOCPUB, VocPub>> | Presented by VocPub
 | https://ausbigg.github.io/abis/validators/bdrm.ttl[Biodiversity Records Model] | For data created according to the <<Biodiversity Record Model, Biodiversity Records Model>> | ABIS/BDR |
-| https://ausbigg.github.io/abis/validators/bdr-profile.ttl[Project Model] | Validation rules implemented by the <<Projects Model, Projects Model>> only | ABIS |
-| https://ausbigg.github.io/abis/validators/bdr-profile.ttl[Data Release Model] | Validation rules implemented by the <<Data Release Model, Data Release Model>> only | ABIS |
 |===
-
 
 === Performing Validation
 
-The preferred way to validate RDF data using the validators above is to use the https://portal.bdr.gov.au[ABIS Portal] which contains all the validators pre-loaded for use.
+The preferred way to validate RDF data using the validators above is to use the https://bdr.gov.au[BDR Portal] which contains all the validators preloaded for use.
 
-However, any one of a number of tools designed for <<SHACL, SHACL>> validation may be used and some may be more useful than the ABIS Portal for certain scenarios. Some such tools are:
+However, any one of a number of tools designed for <<SHACL, SHACL>> validation may be used and some may be more useful than the BDR Portal for certain scenarios. Such tools are:
 
 * https://pypi.org/project/pyshacl/[pySHACL]
 ** free and open source Python SHACL validator
 ** can be used as a command line application or within Python scripting as a library
 * https://shacl.org/playground/[SHACL Playground]
-** online Javascript-based validator
+** free, online Javascript-based validator
 ** can be used in a browser
 * http://tools.dev.kurrawong.ai/validator[KurrawongAI SHACL Validator]
-** online pySHACL-based validator
+** free, online pySHACL-based validator
 ** preloaded with the validators above and many others
-
+* https://github.com/zazuko/rdf-validate-shacl[rdf-validate-shacl]
+** free, open source Javascript SHACL validation code library
+* https://graphdb.ontotext.com/documentation/10.8/shacl-validation.html[GraphDB's SHACL Validation capability]
+** SHACL validation of data within GraphDB RDF database instances
+** both commercial and free versions of GraphDB exist
+* https://jena.apache.org/documentation/shacl/[Apache Jena's SHACL too]
+** free, open source, Java RDF toolkit validation
+** code library, command line, within database options

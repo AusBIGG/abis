@@ -1,17 +1,17 @@
-# baseURI: http://linked.data.gov.au/def/loci
-# imports: http://linked.data.gov.au/def/geox
+# baseURI: https://linked.data.gov.au/def/loci
+# imports: https://linked.data.gov.au/def/geox
 # imports: http://schema.org/
 # imports: http://vocab.deri.ie/void
 # prefix: loci
 
-@prefix asgs: <http://linked.data.gov.au/def/asgs#> .
+@prefix asgs: <https://linked.data.gov.au/def/asgs#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix geox: <http://linked.data.gov.au/def/geox#> .
-@prefix loci: <http://linked.data.gov.au/def/loci#> .
+@prefix geox: <https://linked.data.gov.au/def/geox#> .
+@prefix loci: <https://linked.data.gov.au/def/loci#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
@@ -35,7 +35,7 @@ asgs:isComposedOf
 asgs:within
   rdfs:subPropertyOf loci:isPartOf ;
 .
-<http://linked.data.gov.au/def/loci>
+<https://linked.data.gov.au/def/loci>
   a owl:Ontology ;
   a prof:Profile ;
   dcterms:created "2018-10-29"^^xsd:date ;
@@ -46,37 +46,37 @@ asgs:within
 
 The primary focus is on (a) datasets composed of multiple geospatial features (objects); (b) recording relationships between features, with metadata attached to reified rdf:Statements. """ ;
   rdfs:label "Loc-I Ontology" ;
-  owl:imports <http://linked.data.gov.au/def/geox> ;
+  owl:imports <https://linked.data.gov.au/def/geox> ;
   owl:imports schema: ;
   owl:imports <http://vocab.deri.ie/void> ;
-  owl:versionIRI <http://linked.data.gov.au/def/loci/1.1> ;
+  owl:versionIRI <https://linked.data.gov.au/def/loci/1.1> ;
   owl:versionInfo "Beta version"@en ;
   prof:hasResource [
       a prof:ResourceDescriptor ;
       dcterms:format <https://w3id.org/mediatype/image/svg> ;
       dcterms:title "Ontology overview diagram"@en ;
-      prof:hasArtifact <http://linked.data.gov.au/def/loci/images/loci.png> ;
+      prof:hasArtifact <https://linked.data.gov.au/def/loci/images/loci.png> ;
       prof:hasRole <http://www.w3.org/ns/dx/prof/role/guidance> ;
     ] ;
   prof:hasResource [
       a prof:ResourceDescriptor ;
       dcterms:format <https://w3id.org/mediatype/text/html> ;
       dcterms:title "Guidance document"@en ;
-      prof:hasArtifact <http://linked.data.gov.au/def/loci/loci.html> ;
+      prof:hasArtifact <https://linked.data.gov.au/def/loci/loci.html> ;
       prof:hasRole <http://www.w3.org/ns/dx/prof/role/guidance> ;
     ] ;
   prof:hasResource [
       a prof:ResourceDescriptor ;
       dcterms:format <https://w3id.org/mediatype/text/turtle> ;
       dcterms:title "Profile Specification"@en ;
-      prof:hasArtifact <http://linked.data.gov.au/def/loci/loci.ttl> ;
+      prof:hasArtifact <https://linked.data.gov.au/def/loci/loci.ttl> ;
       prof:hasRole <http://www.w3.org/ns/dx/prof/role/specification> ;
     ] ;
   prof:hasResource [
       a prof:ResourceDescriptor ;
       dcterms:format <https://w3id.org/mediatype/text/turtle> ;
       dcterms:title "Validator Shapes graph"@en ;
-      prof:hasArtifact <http://linked.data.gov.au/def/loci/constraints.ttl> ;
+      prof:hasArtifact <https://linked.data.gov.au/def/loci/constraints.ttl> ;
       prof:hasRole <http://www.w3.org/ns/dx/prof/role/constraints> ;
     ] ;
   prof:hasToken "loci"^^xsd:token ;

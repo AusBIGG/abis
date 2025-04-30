@@ -50,7 +50,7 @@
     void:inDataset <https://linked.data.gov.au/dataset/bdr/ef469da2-be82-480c-ab74-d38214a2c523> ;
     dwc:materialSampleID "dev_foo_barcode_1717568981785" ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/ef469da2-be82-480c-ab74-d38214a2c523/plant-specimen/e6a68dc6-0264-4318-ba88-acde6fc58cd2> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
     tern:hasAttribute [ rdfs:label "Plant tissue ID" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/67c49fda-6ec2-4ec5-b84e-d04c3db2fd96> ;
             tern:hasSimpleValue "dev_foo_barcode_1717568981785" ;
@@ -61,7 +61,7 @@
 <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/de78abc6-0314-057d-2205-e798ccbdb8d1> a tern:FeatureOfInterest ;
     rdfs:label "Australia Land CTFSEH0001" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/ef469da2-be82-480c-ab74-d38214a2c523> ;
-    tern:featureType <http://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/de78abc6-0314-057d-2205-e798ccbdb8d1> .
+    tern:featureType <https://linked.data.gov.au/def/noncreated-feature-type/Australia-Land/de78abc6-0314-057d-2205-e798ccbdb8d1> .
 
 <https://linked.data.gov.au/dataset/bdr/sites/44b030e4-e3cc-4a55-ab8a-4508c71298ad> a tern:FeatureOfInterest,
         tern:Sample,
@@ -73,7 +73,7 @@
             geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/7844> POINT (-35.2878592 149.1337216)"^^geo:wktLiteral ] ;
     prov:wasAssociatedWith <https://linked.data.gov.au/dataset/bdr/org/merit/relevant-project/99248292-6b12-4fef-a05d-4fb094c037ae> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/australia-land/de78abc6-0314-057d-2205-e798ccbdb8d1> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4> ;
     tern:hasAttribute [ rdfs:label "plot dimension" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/1b1c91ed-4a25-4ba6-9351-4048a308f936> ;
             tern:hasSimpleValue <https://linked.data.gov.au/def/nrm/d16cfca2-ac22-58f8-9142-8703bd45931e> ;
@@ -99,11 +99,11 @@
             tern:attribute <https://linked.data.gov.au/def/nrm/8a4f71cc-7572-4b97-a3ef-c8061551b1fe> ;
             tern:hasAttribute [ rdfs:label "bioregion" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/507d7e56-8e1a-4c9e-af03-5ba3b2b03374> ;
-                    tern:hasSimpleValue <http://linked.data.gov.au/dataset/bioregion/SEH> ;
+                    tern:hasSimpleValue <https://linked.data.gov.au/dataset/bioregion/SEH> ;
                     tern:hasValue [ a tern:IRI,
                                 tern:Value ;
                             rdfs:label "South Eastern Highlands" ;
-                            rdf:value <http://linked.data.gov.au/dataset/bioregion/SEH> ] ],
+                            rdf:value <https://linked.data.gov.au/dataset/bioregion/SEH> ] ],
                 [ rdfs:label "unique digits" ;
                     tern:attribute <https://linked.data.gov.au/def/nrm/e2396b81-e7cd-4ff4-adc4-d06e9643f592> ;
                     tern:hasSimpleValue "0001" ;
@@ -144,7 +144,7 @@
 <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant/44b030e4-e3cc-4a55-ab8a-4508c71298ad> a tern:FeatureOfInterest ;
     rdfs:label "plant occurrence" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/ef469da2-be82-480c-ab74-d38214a2c523> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> .
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> .
 
 <https://linked.data.gov.au/dataset/bdr/ef469da2-be82-480c-ab74-d38214a2c523/plant-specimen/e6a68dc6-0264-4318-ba88-acde6fc58cd2> a tern:FeatureOfInterest,
         tern:MaterialSample,
@@ -153,7 +153,7 @@
     dcterms:identifier "barcode-dev_foo_barcode_1717568988673" ;
     void:inDataset <https://linked.data.gov.au/dataset/bdr/ef469da2-be82-480c-ab74-d38214a2c523> ;
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/org/merit/feature-of-interest/plant/44b030e4-e3cc-4a55-ab8a-4508c71298ad> ;
-    tern:featureType <http://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
+    tern:featureType <https://linked.data.gov.au/def/tern-cv/2e122e23-881c-43fa-a921-a8745f016ceb> ;
     tern:hasAttribute [ rdfs:label "Voucher Barcode" ;
             tern:attribute <https://linked.data.gov.au/def/nrm/67c49fda-6ec2-4ec5-b84e-d04c3db2fd96> ;
             tern:hasSimpleValue "dev_foo_barcode_1717568988673" ;

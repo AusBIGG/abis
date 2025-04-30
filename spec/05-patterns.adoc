@@ -54,9 +54,9 @@ ex:nicholasCar
 
 The figure below shows Nicholas Car, the individual, declared as a `Person`, and `Engineer` and understood to be an `Australian`.
 
-[#pattern-sets,link="img/pattern-sets.svg"]
+[#pattern-sets,link="img/patterns/sets.svg"]
 .Set Modelling using OWL: The Named Individual `Nicholas Car` and three Classes he is a member of and which are subclasses of others.
-image::img/pattern-sets.svg[Set Modelling,width=650,align="center"]
+image::img/patterns/sets.svg[Set Modelling,width=650,align="center"]
 
 In the domain of ABIS, all animals living in the sea constitute the class marine animals and there are intersecting classes of terrestrial animals for things like crabs and penguins that live both in the sea and on land.
 
@@ -114,7 +114,7 @@ Many objects represented using ABIS will usefully have external identifiers reco
 
 If an object already has an IRI identifier, and that identifier responds to <<LinkedData, Linked Data>> operations, it _SHOULD_ be used as the primary identifier of the object.
 
-* If Dataset X contains a representation of Site Y and Site Y has the IRI of `http://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002` assigned to it by TERN, then that IRI _SHOULD_ be used as the IRI for the site as it is resolvable online, linking to RDF data (and human-readable data)
+* If Dataset X contains a representation of Site Y and Site Y has the IRI of `https://linked.data.gov.au/dataset/ausplots-forest/site-nsfnnc0002` assigned to it by TERN, then that IRI _SHOULD_ be used as the IRI for the site as it is resolvable online, linking to RDF data (and human-readable data)
 * If Dataset X contains a representation of Sample Z and Sample Z has an https://ev.igsn.org/[International GeoSample Identifier (IGSN)] or https://www.doi.org/[DOI] IRI of `https://doi.org/10.58052/IECUR00N9` then that IRI _MAY NOT_ be used as the IRI for the sample for, while it resolves online to a web page, it does not link to RDF data
 
 If an object has a Linked Data IRI assigned to it AND another assigned to it within an ABIS data generation process, perhaps automatically, the two IRIs should be linked like this:
@@ -181,18 +181,15 @@ Multiple alternate identifiers may be given, as long as their datatypes are uniq
 
 === Data Cataloguing
 
-ABIS provides representations of chunks of data for management - cataloguing, data governance and so on. It does this by implementing a very simple, and common, catalogue model which consists of _catalogues_ (or _catalogs_, for Americans) that contain _datasets_ or other kinds of _resources_  such as _vocabularies_. ABIS then insists that _datasets_ must, in turn, contain _biodiversity records_ for records of such as what ABIS is all about.
+ABIS provides representations of chunks of data for management - cataloguing, data governance and so on. It does this by implementing a very simple, and common, catalogue model which consists of _catalogues_ (or _catalogs_, for Americans) that contain _datasets_ or other kinds of _resources_  such as _vocabularies_. ABIS then allows some _datasets_ to indicate they, contain _biodiversity records_ about occurrences and so on.
 
 This models is as per <<#cat-model-overview-pattern, Figure 4>>, below, which is taken from the <<Annex A: Biodiversity Record Model, Biodiversity Record Model>>, detailed in full in Annex A.
 
-Since this model is used for data management, it places requirements on ABIS datasets, above and beyond those imposed by the models it profiles, such as the <<TERN Ontology, TERN Ontology>>, to ensure all ABIS data has a minimum level of metadata present. See the <<#profile-bdr, BDR Profile>> of ABIS' <<#profile-bdr-mandates, Model Element Mandates>> for specifics.
+Since this model is used for data management, it places requirements on ABIS datasets, above and beyond those imposed by the models it profiles, such as the <<TERNOntology, TERN Ontology>>, to data management metadata requirements are met.
 
-
-[#cat-model-overview-pattern,link="img/cat-model.svg"]
+[#cat-model-overview-pattern,link="img/annex-a/brm-overview.svg"]
 .An overview of the Biodiversity Record Model's classes and their relationships
-image::img/cat-model.svg[Biodiversity Record Model overview,align="center",width=150]
-
-implemented by <<SDO, schema.org>> and <<DCAT, the Data Catalog Vocabulary (DCAT)>> which consists of
+image::img/annex-a/brm-overview.svg[Biodiversity Record Model overview,align="center",width=150]
 
 === Records & Occurrences
 
@@ -246,13 +243,14 @@ Patterns:
 * <<Coordinate System, Coordinate System>>
 * <<Elevation & Depth, Elevation & Depth>>
 
+[discrete]
 ==== Feature-centric
 
 GeoSPARQL uses a "feature-centric" method of spatial modelling which means spatial things are represented as conceptual things first - spatial _features_ - and then a spatial projection or representation - _geometry_ - is linked to it. This is different to some GIS systems that model spatial things as geometries first and then apply properties to them.
 
-[#pattern-spatiality-basic,link="img/pattern-spatiality-basic.svg"]
+[#pattern-spatiality-basic,link="img/patterns/spatiality-basic.svg"]
 .A `Feature`, such as a `Site`, can be assigned a `Geometry` with any one of a number of representations. ABIS prefers the https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-Known Text] representation of coordinates.
-image::img/pattern-spatiality-basic.svg[Basic GeoSPARQL,width=650,align="center"]
+image::img/patterns/spatiality-basic.svg[Basic GeoSPARQL,width=650,align="center"]
 
 The RDF data for the example above is:
 
@@ -274,6 +272,7 @@ ex:site-x
 .
 ----
 
+[discrete]
 ==== ABIS spatial objects
 
 There are multiple classes of spatial objects in ABIS. The following are always spatial, even when their spatial values - their geometries - are unknown:
@@ -291,19 +290,21 @@ The following classes of object are either given as spatial - a geometry is prov
 
 A `Survey` might have its spatial extent recorded directly or taken to be the envelope of the locations of the `Observations` it contains. Similarly, an `tern:Dataset` will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be `Sites`, `Sample`, `Survey` or `Observation` instances, or all of them.
 
+[discrete]
 ==== Qualified Geometries
 
 This feature-centric model allows for multiple or no geometries per spatial object which can be very powerful. The figure below gives several examples of a spatial Feature with multiple Geometries that differ different ways. The pattern here is "qualification": when a Feature is assigned multiple Geometries, they must be differentiable in some way, either by having different geometry types (point, polygon etc.) or by having different roles with respect to the Feature or by each Geometry indicating a different temporal footprint. These differentiations qualify the Geometries with respect to the Feature.
 
-[#pattern-spatiality,link="img/pattern-spatiality-qual.svg"]
+[#pattern-spatiality,link="img/patterns/spatiality-qual.svg"]
 .Spatial `Features` and `Geometries` as modelled in the <<GSP, GeoSPARQL>> ontology with subfigure *A.* showing a `Site` feature that has two geometries provided for it: a Point and a Polygon. These could respectively represent the site's centroid and is boundary and are differentiable by geometry type. Subfigure *B.* shows a feature - Saint Helena Island - with two boundary polygonal geometries differentiated by _role_. Subfigure *C.* shows a time-varying feature, a cyclone, with multiple geometries differentiated by time. Data for *B.* is given in the ABIS repository at https://github.com/AusBIGG/abis/tree/master/examples - see the file `pattern-spatiality-saint-helena-island`.
-image::img/pattern-spatiality-qual.svg[Basic PROV classes and predicates,width=850,align="center"]
+image::img/patterns/spatiality-qual.svg[Basic PROV classes and predicates,width=850,align="center"]
 
+[discrete]
 ==== Centroid & Bounding Box
 
-[#pattern-spatiality-pomingalarna,link="img/pattern-spatiality-pomingalarna.png"]
+[#pattern-spatiality-pomingalarna,link="img/patterns/spatiality-pomingalarna.png"]
 .The field site 'Pomingolarna' with bounding box, boundary and centroid geometries indicated
-image::img/pattern-spatiality-pomingalarna.png[Pomingolarna site example,width=850,align="center"]
+image::img/patterns/spatiality-pomingalarna.png[Pomingolarna site example,width=850,align="center"]
 
 While it is possible to supply point and polygon geometries for a spatial object's centroid, boundary and bounding box, a centroid and a bounding box are calculable from a boundary and should not be supplied if the boundary is known: ABIS data users, such as the <<BDR, BDR>>, will calculate them as needed. This rule is listed in ABIS' <<Reasoning Rules, Reasoning Rules>> section. In the image above, the bounding box and centroid have been calculated from the boundary.
 
@@ -331,6 +332,7 @@ ex:pomingolarna
 .
 ----
 
+[discrete]
 ==== Geometry Literals
 ABIS only allows for https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry[Well-Known Text representations of geometries] indicated by the `geo:asWKT` predicate. No other forms of geometry literal, e.g. GeoJSON, may be used.
 
@@ -342,6 +344,7 @@ ABIS will infer that any literal object indicated with the `geo:asWKT` predicate
 
 This is as per a rule in the <<Spatial Reasoning, Spatial Reasoning>> part of the rules section.
 
+[discrete]
 ==== Coordinate System
 
 All spatial data supplied according to ABIS _MUST_ use the GDA2020 Coordinate Reference System. Systems such as WGS84, GDA94 or others _MUST NOT_ be used.
@@ -352,16 +355,18 @@ Since spatial data formulated according to GeoSPARQL only use the Well-Known Tex
 "<https://epsg.io/7844> POINT (-45.0 123.0)"geo:wktLiteral
 ----
 
+[discrete]
 ==== Aggregation Reasoning
 
 ABIS contains rules that will perform spatial reasoning on data. For example, if a dataset is presented that contains a https://w3id.org/tern/ontologies/tern/Survey[`Survey`] which, in turn, contains a series of https://w3id.org/tern/ontologies/tern/Observation[`Observation`] instances with their spatial locations indicated, the spatial extent of the `Survey` will be taken to be at least the area containing the `Observation` locations. The dataset's extent will be at least the boundary of all contained `Survey` instances areas. Spatial reasoning like this and other reasoning are related in ABIS' <<Reasoning Rules, Reasoning Rules>> section.
 
 The figure below shows a boundary calculated for a series of point locations. The boundary could be the extent of a `Survey` for `Observation` point locations and this type of boundary - a convex hull - is the minimum non-concave area containing all points.
 
-[#pattern-spatiality-hull,link="img/pattern-spatiality-hull.png"]
+[#pattern-spatiality-hull,link="img/patterns/spatiality-hull.png"]
 .A convex hull boundary - in green - calculated for a series of point locations - in yellow.
-image::img/pattern-spatiality-hull.png[Convex hull for points,width=650,align="center"]
+image::img/patterns/spatiality-hull.png[Convex hull for points,width=650,align="center"]
 
+[discrete]
 ==== Feature relations
 
 In addition to associating spatial Features with one or more Geometries, GeoSPARQL, and thus ABIS, allows for Feature-to-Feature (topological) spatial relations between pairs of Features to be recorded. There are multiple allowed relation families in GeoSPARQL but ABIS prefers use of the https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_simple_features_relation_family[_Simple Features_ relations] which are summarised as follows:
@@ -424,6 +429,7 @@ ex:site-x
 
 GeoSPARQL provides function definitions for the calculation of Feature-to-Feature relations from geometry data and all compliant implementations of GeoSPARQL allow these calculations to result in declarations of equivalent predicates. So if object A is calculated as being _within_ object B, then the RDF triple `<A> geo:sfWithin <B>` may be recorded.
 
+[discrete]
 ==== Elevation & Depth
 
 [discrete]
@@ -563,19 +569,19 @@ How things derive from other things, when and where this occurs and who may be r
 
 PROV's basic classes and the predicates that relate them to one another are given below.
 
-[#pattern-prov-basic,link="img/pattern-prov-basic.svg"]
+[#pattern-prov-basic,link="img/patterns/prov-basic.svg"]
 .Basic PROV classes and predicates
-image::img/pattern-prov-basic.svg[Basic PROV classes and predicates,width=550,align="center"]
+image::img/patterns/prov-basic.svg[Basic PROV classes and predicates,width=550,align="center"]
 
 Many of ABIS' models follow on from the pattern in the figure above and many figures further down in this document are coloured according to PROV's basic classes. For example, the <<TERNOntology, TERN Ontology>>'s https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sampling[`Sampling`] class is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`] class and instances of it may have https://www.w3.org/TR/prov-o/#used[`used`] an instance of a https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Site[`Site`], which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Entity`], to have https://www.w3.org/TR/prov-o/#generated[`generated`] an instance of the class https://linkeddata.tern.org.au/viewers/tern-ontology?uri=https://w3id.org/tern/ontologies/tern/Sample[`Sample`] which is another subclass of https://www.w3.org/TR/prov-o/#Entity[`Entity`].
 
 The figures in the <<Observations & Results, Observations & Results>> and the <<Feature of Interest, Feature of Interest>> patterns use this colouring.
 
-PROV's provenance reasoning is also applicable to parts of ABIS. For example, the <<#annex-b, Projects Model>> indicates that instances of its <<abis:Project, `Project`>> class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Entity[`Entity`], and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `tern:Dataset` instances will be able to have an attributional relationship to the `Agent` instance calculated. This is shown in the figure below.
+PROV's provenance reasoning is also applicable to parts of ABIS. For example, the https://linked.data.gov.au/def/bdr-pr[BDR Profile]'s https://linked.data.gov.au/def/bdr-pr/proj[Project Model] indicates that instances of the https://schema.org/Project[`schema:Project`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Entity[`Entity`], and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `tern:Dataset` instances will be understood, by inferencing, to have an attribution relationship to the `Agent` instance. This is shown in the figure below.
 
-[#pattern-prov-reasoning,link="img/pattern-prov-reasoning.svg"]
-.PROV-style reasoning using facts given in the <<Projects Model, Projects Model>>
-image::img/pattern-prov-reasoning.svg[PROV-style reasoning,width=400,align="center"]
+[#pattern-prov-reasoning,link="img/patterns/prov-reasoning.svg"]
+.PROV-style reasoning using facts given in the https://linked.data.gov.au/def/bdr-pr[BDR Profile]'s https://linked.data.gov.au/def/bdr-pr/proj[Project Model]
+image::img/patterns/prov-reasoning.svg[PROV-style reasoning,width=350,align="center"]
 
 === Agents
 
@@ -583,9 +589,9 @@ Things with agency to do work such as Organisations, People, Groups (of orgs and
 
 In addition to the simple and direct kind of relationship between `Agents` and data (`Entities`) show above in <<#pattern-prov-reasoning, Figure 9>> where an `Entity` can be attributed to an `Agent`, we use a nuanced version of that `was attributed to` relationship, `qualified attribution`, which is also defined in PROV. `qualified attribution` is a type of _qualified relation_ which means it relates two things together with qualifying facts. While these qualifying facts can be anything, in ABIS, the expected qualifier is a role: a role that the `Agent` plays with respect to the `Entity`. For example, for a dataset, one `Agent` might be the _author_ of the data, another the _publisher_. This could be modelled as in <<#pattern-prov-qualatt, Figure 10>>, below.
 
-[#pattern-prov-qualatt,link="img/pattern-agent-multi.svg"]
+[#pattern-prov-qualatt,link="img/patterns/agent-multi.svg"]
 .Two `Agents`, `Y` & `Z`, related to a single dataset `X` with different roles using the `qualified attribution` predicate from <<PROV, PROV>>
-image::img/pattern-agent-multi.svg[PROV-style reasoning,width=700,align="center"]
+image::img/patterns/agent-multi.svg[PROV-style reasoning,width=700,align="center"]
 
 The roles that can be used for the qualification of attribution in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the _IDN Role Codes vocabulary_ - see the <<Vocabularies, Vocabularies>>. It contains concepts such as _author_, _publisher_, _collaborator_ and _funder_.
 
@@ -599,9 +605,9 @@ The _observation_ act is a temporal activity which, recorded or not, follows som
 
 The _value_ may be qualified with units of measure and uncertainty.
 
-[#pattern-obs-result,link="img/pattern-obs-result.svg"]
+[#pattern-obs-result,link="img/patterns/obs-result.svg"]
 .Two styles of Result: a numerical and a classification
-image::img/pattern-obs-result.svg[ABIS Parts,align="center",width=650]
+image::img/patterns/obs-result.svg[ABIS Parts,align="center",width=650]
 
 Using this pattern, the thing that ties the result value to the property of the thing observed is the _observation_.
 
@@ -613,9 +619,9 @@ A _feature of interest_ is the object of some activity's focus. This is a relati
 
 If the average colour of a whole area of bushland was considered, the _feature of interest_ would be the whole area, not any single bush or plant within it.
 
-[#pattern-foi,link="img/pattern-foi.svg"]
+[#pattern-foi,link="img/patterns/foi.svg"]
 .Three Features if Interest indicated with respect to the Observation that is observing properties of them. Whether something is a sample of something else doesn't affect its status as a Feature of Interest with respect to an Observation.
-image::img/pattern-foi.svg[ABIS Parts,width=650,align="center"]
+image::img/patterns/foi.svg[ABIS Parts,width=650,align="center"]
 
 === Sites
 

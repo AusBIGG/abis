@@ -470,7 +470,7 @@ tern-org:Role
 
 <Site1> a tern:Site ;
 	tern-org:hasRef <Role1> .""" ;
-  skos:scopeNote "Use the [dcterms:type](http://purl.org/dc/terms/type) property to link the type of [Role](#Role) to a controlled vocabulary term. E.g. One of the values from [TERN's Roles](http://linked.data.gov.au/def/tern-cv/67feb077-32da-4044-8e89-bddc21ef58ed)." ;
+  skos:scopeNote "Use the [dcterms:type](http://purl.org/dc/terms/type) property to link the type of [Role](#Role) to a controlled vocabulary term. E.g. One of the values from [TERN's Roles](https://linked.data.gov.au/def/tern-cv/67feb077-32da-4044-8e89-bddc21ef58ed)." ;
 .
 tern-org:Site
   a owl:Class ;

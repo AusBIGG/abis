@@ -1,6 +1,6 @@
 == Vocabularies
 
-ABIS use depends on the use of many vocabularies. For example, the observed _growth stage_ of a plant may be indicated by use of http://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f[Dead], http://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb[Regrowth] or https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15[Senescence] taken from https://www.tern.org.au/[TERN]'s http://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6[Growth Stage vocabulary].
+ABIS use depends on the use of many vocabularies. For example, the observed _growth stage_ of a plant may be indicated by use of https://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f[Dead], https://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb[Regrowth] or https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15[Senescence] taken from https://www.tern.org.au/[TERN]'s https://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6[Growth Stage vocabulary].
 
 Some uses of ABIS, such as for the submission of data to the <<BDR, BDR>>, require the use of particular vocabularies that aren't mandated for general ABIS use, for example the use of the https://linked.data.gov.au/dataset/bdr/datatypes/[_BDR Datatypes_] vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <<Profiles, Profiles>>.
 
