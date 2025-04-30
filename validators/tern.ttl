@@ -1773,9 +1773,9 @@ tern-shapes:Transect-featureType
     reg:status reg:statusStable ;
     skos:prefLabel "feature type" ;
     sh:description "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
-    sh:hasValue <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> ;
+    sh:hasValue <https://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Transect` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI with the value `http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1`." ;
+    sh:message "A `tern:Transect` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI with the value `https://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1`." ;
     sh:minCount 1 ;
     sh:name "tern:featureType" ;
     sh:nodeKind sh:IRI ;
@@ -2023,7 +2023,7 @@ tern-shapes:tern-attribute
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "attribute" ;
-    sh:description "The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of link:http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924[attributes]." ;
+    sh:description "The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of link:https://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924[attributes]." ;
     sh:maxCount 1 ;
     sh:message "A `tern:Attribute` _MUST_ have exactly 1 `tern:attribute` predicate where the value node is an IRI." ;
     sh:minCount 1 ;

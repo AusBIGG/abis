@@ -635,10 +635,10 @@ tern:globalValue
     rdfs:label "global value" ;
     skos:definition "A property that links a concept from a vocabulary to another concept in an authoritative/endorsed vocabulary." ;
     skos:example """The concept dry soil colour is defined in two vocabularies,
-[CORVEG](http://linked.data.gov.au/def/corveg-cv/1842b772-72a4-430f-a264-dcfd6c2c23b4) and
-[Ausplots](http://linked.data.gov.au/def/ausplots-cv/aa11e5f7-aec2-4e92-95b8-6332911f0c4e).
+[CORVEG](https://linked.data.gov.au/def/corveg-cv/1842b772-72a4-430f-a264-dcfd6c2c23b4) and
+[Ausplots](https://linked.data.gov.au/def/ausplots-cv/aa11e5f7-aec2-4e92-95b8-6332911f0c4e).
 The property global value is used to map the concept from the two vocabularies to the relevant
-[concept](http://linked.data.gov.au/def/tern-cv/beceaa5a-a296-4385-a55a-3b8c8d5b2369)
+[concept](https://linked.data.gov.au/def/tern-cv/beceaa5a-a296-4385-a55a-3b8c8d5b2369)
 specified in the main vocabulary, i.e., TERN Vocabularies.""" ;
 .
 
