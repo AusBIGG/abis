@@ -66,7 +66,7 @@ All complex objects in OWL modelling - classes, predicates and instances of clas
 
 ----
 <http://example.com/dataset/x>
-    a tern:Dataset ;
+    a schema:Dataset ;
     schema:hasPart
         <http://example.com/dataset/x/sample/y> ,
         <http://example.com/dataset/x/obs/z> ;
@@ -217,13 +217,10 @@ ex:record-1234
 ex:occurrence-9876
     a dwc:Occurrence ;
     schema:spatial [
-        geo:hasGeometry [
-            a geo:Geometry ;
-            geo:asWKT "POINT (...)" ;
-        ] ;
-    schema:temporal [
-        time:hasTime "2024-07-29" ;
+        a geo:Geometry ;
+        geo:asWKT "POINT (...)" ;
     ] ;
+    schema:temporal "2024-07-29"^^xsd:date ;
     # ... other info
 .
 ----
@@ -264,7 +261,7 @@ PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 ex:site-x
     a tern:Site ;
     schema:name "Site X" ;
-    geo:hasGeometry [
+    schema:spatial [
         a geo:Geometry ;
         schema:name "Geometry X1" ;
         geo:asWKT "POLYGON ((...))"^^geo:wktLiteral ;
@@ -285,10 +282,10 @@ For these classes of object, we expect to see instances of them to be associated
 
 The following classes of object are either given as spatial - a geometry is provided - or for their spatial values to be inferred from child object geometries - see <<Aggregation Reasoning, Aggregation Reasoning>> below:
 
-* `tern:Dataset`
-* `Survey`
+* `schema:Dataset`
+* `tern:Survey`
 
-A `Survey` might have its spatial extent recorded directly or taken to be the envelope of the locations of the `Observations` it contains. Similarly, an `tern:Dataset` will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be `Sites`, `Sample`, `Survey` or `Observation` instances, or all of them.
+A `Survey` might have its spatial extent recorded directly or taken to be the envelope of the locations of the `Observations` it contains. Similarly, an ABIS `schema:Dataset` will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be `Sites`, `Sample`, `Survey` or `Observation` instances, or all of them.
 
 [discrete]
 ==== Qualified Geometries
@@ -323,7 +320,9 @@ ex:pomingolarna
     geo:hasCentroid [
         geo:asWKT "POINT (147.300797 -35.113046)" ;
     ] ;
-    geo:hasGeometry [
+    schema:spatial [
+        a geo:Geometry ;
+        schema:name "Boundary" ;
         geo:asWKT "POLYGON ((147.294576 -35.101881, 147.299386 -35.102425, 147.303469 -35.106577, 147.302879 -35.109889, 147.305057 -35.111953, 147.307076 -35.113405, 147.311296 -35.113541, 147.310887 -35.115810, 147.311772 -35.115991, 147.310093 -35.117738, 147.310071 -35.117398, 147.309118 -35.116967, 147.308460 -35.117262, 147.308006 -35.118147, 147.307938 -35.120438, 147.308120 -35.120869, 147.308278 -35.122434, 147.308324 -35.123387, 147.306849 -35.123569, 147.306350 -35.123387, 147.304558 -35.123092, 147.302743 -35.122548, 147.301473 -35.121844, 147.300293 -35.121073, 147.292240 -35.113042, 147.294576 -35.101881))" ;
     ] ;
     geo:hasBoundingBox [
@@ -449,7 +448,7 @@ PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 ex:obs-n
     a tern:Observation ;
     schema:name "Observation N" ;
-    geo:hasGeometry [
+    schema:spatial [
         geo:asWKT "POINTZ(147.308040 -35.121824 234)" ;
     ] ;
 .
@@ -474,7 +473,7 @@ PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 ex:obs-n
     a tern:Observation ;
     schema:name "Observation N" ;
-    geo:hasGeometry [
+    schema:spatial [
         geo:asWKT "POINT(147.308040 -35.121824)" ;
     ] ;
     schema:depth [
@@ -513,7 +512,7 @@ PREFIX time: <http://www.w3.org/2006/time#>
 ex:survey-x
     a tern:Survey ;
     schema:name "Survey X" ;
-    time:hasTime [
+    schema:temporal [
         time:hasBeginning [ time:inXSDDate "1987-03-15" ] ;
         time:hasEnd [ time:inXSDDate "1987-03-23" ] ;
     ] ;
@@ -523,7 +522,7 @@ ex:survey-x
 ex:survey-y
     a tern:Survey ;
     schema:name "Survey Y" ;
-    time:hasTime [
+    schema:temporal [
         time:inXSDgYearMonth "2020-04"
     ] ;
 .
@@ -534,7 +533,7 @@ ex:survey-y
 ex:survey-z
     a tern:Survey ;
     schema:name "Survey Z" ;
-    time:hasTime [
+    schema:temporal [
         time:hasBeginning [ time:inXSDDateTime "2023-12-10T14:30:00" ] ;
     ] ;
 .
@@ -577,7 +576,7 @@ Many of ABIS' models follow on from the pattern in the figure above and many fig
 
 The figures in the <<Observations & Results, Observations & Results>> and the <<Feature of Interest, Feature of Interest>> patterns use this colouring.
 
-PROV's provenance reasoning is also applicable to parts of ABIS. For example, the https://linked.data.gov.au/def/bdr-pr[BDR Profile]'s https://linked.data.gov.au/def/bdr-pr/proj[Project Model] indicates that instances of the https://schema.org/Project[`schema:Project`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of the <<TERNOntology, TERN Ontology>>'s  https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Entity[`Entity`], and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `tern:Dataset` instances will be understood, by inferencing, to have an attribution relationship to the `Agent` instance. This is shown in the figure below.
+PROV's provenance reasoning is also applicable to parts of ABIS. For example, the https://linked.data.gov.au/def/bdr-pr[BDR Profile]'s https://linked.data.gov.au/def/bdr-pr/proj[Project Model] indicates that instances of the https://schema.org/Project[`schema:Project`] class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Activity[`Activity`], can have https://www.w3.org/TR/prov-o/#generated[`generated`] instances of `schema:dataset` class, which is a subclass of PROV's https://www.w3.org/TR/prov-o/#Entity[`Entity`], and may have been associated with an https://www.w3.org/TR/prov-o/#Agent[`Agent`] - an Organisation or Person. If so, then the resulting `schema:Dataset` instances will be understood, by inferencing, to have an attribution relationship to the `Agent` instance. This is shown in the figure below.
 
 [#pattern-prov-reasoning,link="img/patterns/prov-reasoning.svg"]
 .PROV-style reasoning using facts given in the https://linked.data.gov.au/def/bdr-pr[BDR Profile]'s https://linked.data.gov.au/def/bdr-pr/proj[Project Model]
