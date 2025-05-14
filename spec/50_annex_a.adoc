@@ -5,7 +5,7 @@
 .An overview of the Biodiversity Record Model's classes and their relationships
 image::img/brm-overview.svg[Biodiversity Record Model overview,align="center",width=150]
 
-<<schema:DataCatalog, DataCatalog>>s are curated lists of <<tern:Dataset, Dataset>>s that contain <<abis:BiodiversityRecord, Biodiversity Record>>s (just 'Records').
+<<schema:DataCatalog, DataCatalog>>s are curated lists of <<schema:Dataset, Dataset>>s that contain <<abis:BiodiversityRecord, Biodiversity Record>>s (just 'Records').
 
 The Dataset class is taken from the <<TERN Ontology, TERN Ontology>> and normal <<SDO, schema.org>> data catalogue modelling (informed by <<DCAT, DCAT>>) is used so that datasets are _creative work_ objects and may be described with metadata such as _creator_, _issued date_, etc.
 
@@ -69,7 +69,7 @@ Classes defined here:
 Classes defined elsewhere:
 
 * <<schema:DataCatalog, DataCatalog>>
-* <<tern:Dataset, Dataset>>
+* <<schema:Dataset, Dataset>>
 * <<dwc:Occurrence, Occurrence>>
 
 [[abis:BiodiversityRecord]]
@@ -102,7 +102,7 @@ a|
 .
 
 :dataset-y
-    a tern:Dataset ;
+    a schema:Dataset ;
     schema:name "Dataset Y" ;
     # ... ther dataset metadata
     schema:isPartOf :catalogue-y ;
@@ -139,7 +139,7 @@ a|
 [[schema:DataCatalog]]
 ==== Data Catalog
 
-[[tern:Dataset]]
+[[schema:Dataset]]
 ==== Dataset
 
 [[dwc:Occurrence]]

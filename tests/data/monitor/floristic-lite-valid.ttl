@@ -188,7 +188,7 @@
     sosa:isSampleOf <https://linked.data.gov.au/dataset/bdr/sites/49c791a2-4730-44be-a4cc-9c6059694970> ;
     tern:featureType <https://linked.data.gov.au/def/tern-cv/ae71c3f6-d430-400f-a1d4-97a333b4ee02> .
 
-<https://linked.data.gov.au/dataset/bdr/700a6a95-b5e7-4e39-9d51-49a5c28fd521> a tern:Dataset ;
+<https://linked.data.gov.au/dataset/bdr/700a6a95-b5e7-4e39-9d51-49a5c28fd521> a tern:RDFDataset ;
     dcterms:description "Record of floristics veg survey lite protocol" ;
     dcterms:identifier "700a6a95-b5e7-4e39-9d51-49a5c28fd521" ;
     dcterms:issued "2024-05-24"^^xsd:date ;

@@ -133,7 +133,7 @@
                         tern:Value ;
                     rdf:value "dabc7e5d-81ce-40bf-8f74-8ecf3c7ce055" ] ] .
 
-<https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f> a tern:Dataset ;
+<https://linked.data.gov.au/dataset/bdr/e3a01c65-ff1a-40f1-86f9-54afeefa374f> a tern:RDFDataset ;
     dcterms:description "Record of plot selection survey protocol" ;
     dcterms:identifier "e3a01c65-ff1a-40f1-86f9-54afeefa374f" ;
     dcterms:issued "2024-08-15"^^xsd:date ;

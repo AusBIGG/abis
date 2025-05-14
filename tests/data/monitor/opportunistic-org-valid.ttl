@@ -194,7 +194,7 @@
     void:inDataset <https://linked.data.gov.au/dataset/bdr/f0b854a0-eeb5-447d-8b77-40fe013c9d22> ;
     tern:featureType <https://linked.data.gov.au/def/tern-cv/b311c0d3-4a1a-4932-a39c-f5cdc1afa611> .
 
-<https://linked.data.gov.au/dataset/bdr/f0b854a0-eeb5-447d-8b77-40fe013c9d22> a tern:Dataset ;
+<https://linked.data.gov.au/dataset/bdr/f0b854a0-eeb5-447d-8b77-40fe013c9d22> a tern:RDFDataset ;
     dcterms:description "Record of opportunistic survey protocol" ;
     dcterms:identifier "f0b854a0-eeb5-447d-8b77-40fe013c9d22" ;
     dcterms:issued "2024-06-03"^^xsd:date ;

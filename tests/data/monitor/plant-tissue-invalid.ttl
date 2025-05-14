@@ -174,7 +174,7 @@
                         tern:Value ;
                     rdf:value "99248292-6b12-4fef-a05d-4fb094c037ae" ] ] .
 
-<https://linked.data.gov.au/dataset/bdr/ef469da2-be82-480c-ab74-d38214a2c523> a tern:Dataset ;
+<https://linked.data.gov.au/dataset/bdr/ef469da2-be82-480c-ab74-d38214a2c523> a tern:RDFDataset ;
     dcterms:description "Record of floristics veg genetic voucher survey protocol" ;
     dcterms:identifier "ef469da2-be82-480c-ab74-d38214a2c523" ;
     dcterms:issued "2024-06-05"^^xsd:date ;

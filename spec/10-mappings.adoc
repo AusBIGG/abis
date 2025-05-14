@@ -269,7 +269,7 @@ The TERN Ontology does not define any mappings to PROV's `Agent` or `Entity` cla
 | From Element | Mapping Relation | To Element
 
 3+| *Classes*
-| https://w3id.org/tern/ontologies/tern/Dataset[tern:Dataset] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
+| https://w3id.org/tern/ontologies/tern/RDFDataset[tern:RDFDataset] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
 | https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
 | https://w3id.org/tern/ontologies/tern/MaterialSample[tern:MaterialSample] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
 | https://w3id.org/tern/ontologies/tern/Result[tern:Result] | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf] | https://www.w3.org/TR/prov-o/#Entity[prov:Entity]
@@ -290,7 +290,7 @@ The TERN Ontology does not define any mappings to PROV's `Agent` or `Entity` cla
 | https://w3id.org/tern/ontologies/tern/System[tern:System]                | http://www.w3.org/2000/01/rdf-schema#subClassOf[rdfs:subClassOf]    | https://www.w3.org/TR/prov-o/#Agent[prov:Agent]
 |===
 
-Subclasses of https://www.w3.org/TR/prov-o/#Entity[prov:Entity] _MAY_ always, according to PROV, indicate an https://www.w3.org/TR/prov-o/#Attribution[prov:Attribution] (to an https://www.w3.org/TR/prov-o/#Agent[prov:Agent]) via either https://www.w3.org/TR/prov-o/#wasAttributedTo[prov:wasAttributedTo] or https://www.w3.org/TR/prov-o/#qualifiedAttribution[prov:qualifiedAttribution], but in TERN Ontology, this information is only ever expected for https://w3id.org/tern/ontologies/tern/Dataset[tern:Dataset] objects.
+Subclasses of https://www.w3.org/TR/prov-o/#Entity[prov:Entity] _MAY_ always, according to PROV, indicate an https://www.w3.org/TR/prov-o/#Attribution[prov:Attribution] (to an https://www.w3.org/TR/prov-o/#Agent[prov:Agent]) via either https://www.w3.org/TR/prov-o/#wasAttributedTo[prov:wasAttributedTo] or https://www.w3.org/TR/prov-o/#qualifiedAttribution[prov:qualifiedAttribution], but in TERN Ontology, this information is only ever expected for https://w3id.org/tern/ontologies/tern/RDFDataset[tern:RDFDataset] objects.
 
 There are also SOSA predicate to PROV predicate mappings given in SOSA's https://www.w3.org/TR/vocab-ssn/#PROV_Alignment[PROV Alignment], for example:
 

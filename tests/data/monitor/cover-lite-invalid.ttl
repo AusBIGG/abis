@@ -751,7 +751,7 @@
                     rdf:value "SA autumn survey" ] ] ;
     tern:hasSite <https://linked.data.gov.au/dataset/bdr/sites/42787aba-d772-41ec-a00d-dc28651eb01e> .
 
-<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> a tern:Dataset ;
+<https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654> a tern:RDFDataset ;
     dcterms:description "Record of cover point intercept survey protocol" ;
     dcterms:identifier "b90040ec-a63b-4301-ac8e-420c6a3b3654" ;
     dcterms:issued "2024-05-01"^^xsd:date ;

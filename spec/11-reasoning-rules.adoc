@@ -21,15 +21,16 @@ The rules are identified below, described in English and then defined in <<SPARQ
 |===
 | ID | Description | Dependencies | Definition
 
-| R01 | Calculate `abis:Occurrence` instances from Observations with XXX properties | - a|
+| R01 | Calculate `dwc:Occurrence` instances from Observations with XXX properties | - a|
 [sources,sparql]
 ----
 PREFIX abis: <https://linked.data.gov.au/def/abis/>
 PREFIX tern <https://w3id.org/tern/ontologies/tern/>
 PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 
 CONSTRUCT {
-    ?occ a abis:Occurrence .
+    ?occ a dwc:Occurrence .
 }
 WHERE {
     # ...
@@ -59,7 +60,7 @@ CONSTRUCT {
     ?feature geo:hasCentroid ?centroid
 }
 WHERE {
-    ?feature geo:hasGeometry/geo:asWKT ?wkt .
+    ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
 
     BIND geof:centroid(?wkt) AS ?centroid .
 
@@ -76,32 +77,35 @@ PREFIX tern <https://w3id.org/tern/ontologies/tern/>
 PREFIX void: <http://rdfs.org/ns/void#>
 
 CONSTRUCT {
-    ?dataset geo:hasGeometry ?geom .
-    ?geom geo:asWKT ?wkt .
+    ?dataset schema:spatial ?geom .
+    ?geom geo:asWKT ?hull .
 }
 WHERE {
     {
         VALUES ?spatialFeature {
-            abis:Ocurrence
+            abis:BiodiversityOcurrence
+            tern:FeatureOfInterest
             tern:Site
             tern:Survey
             tern:SiteVisit
         }
 
-        SELECT ?wkt
+        SELECT ?dataset ?wkt
         WHERE {
             ?feature
-                void:inDataset ?dataset ;
-                a ?spatialFeature ;
+              schema:isPartOf ?dataset ;
+              a ?spatialFeature ;
             .
-        }
+            ?dataset a schema:Dataset .
+            ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
+        } GROUP BY ?dataset
     }
-
+    
     BIND BNODE() AS ?geom .
-    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+    BIND geof:aggConvexHull(?wkt) AS ?hull .
 
     MINUS {
-        ?dataset geo:hasGeometry ?geom .
+        ?dataset schema:spatial ?geom .
     }
 }
 ----
@@ -115,7 +119,7 @@ CONSTRUCT {
     ?dataset geo:hasBoundingBox ?boundingbox
 }
 WHERE {
-    ?dataset geo:hasGeometry/geo:asWKT ?wkt .
+    ?dataset (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
 
     BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
 }
@@ -127,34 +131,33 @@ PREFIX abis: <https://linked.data.gov.au/def/abis/>
 PREFIX schema: <https://schema.org/>
 PREFIX tern <https://w3id.org/tern/ontologies/tern/>
 PREFIX time: <http://www.w3.org/2006/time#>
-
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 
 CONSTRUCT {
-    ?dataset schema:temporality ?boundingbox
+    ?dataset schema:temporal ?interval
 }
 WHERE {
     {
         VALUES ?temporalFeature {
-            abis:Ocurrence
+            dwc:Occurrence
         }
 
-        SELECT ?wkt
+        SELECT ?dataset ?time
         WHERE {
             ?feature
-                void:inDataset ?dataset ;
+                schema:isPartOf ?dataset ;
                 a ?temporalFeature
             .
+            ?dataset a schema:Dataset .
 
-            ?feature time:hasTime ?time .
-        }
+            ?feature schema:temporal|time:hasTime ?time .
+        } GROUP BY ?dataset
     }
 
-    ?dataset geo:hasGeometry/geo:asWKT ?wkt .
-
-    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+    BIND function:aggInterval(?time) AS ?interval .
 
     MINUS {
-        ?dataset schema:temporality ?temporal .
+        ?dataset schema:temporal ?temporal .
     }
 }
 ----

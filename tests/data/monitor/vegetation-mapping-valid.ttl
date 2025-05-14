@@ -256,7 +256,7 @@
             xsd:string "59c6c42e-f5ea-44e9-b227-e9c4c4156ae2" ] ;
     tern:methodType <https://linked.data.gov.au/def/nrm/15361f98-7669-410e-9b04-e9be069c7508> .
 
-<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> a tern:Dataset ;
+<https://linked.data.gov.au/dataset/bdr/e28f8365-4bcd-4036-8f9f-9a8bd5832998> a tern:RDFDataset ;
     dcterms:description "Record of vegetation mapping survey protocol" ;
     dcterms:identifier "e28f8365-4bcd-4036-8f9f-9a8bd5832998" ;
     dcterms:issued "2024-09-18"^^xsd:date ;
