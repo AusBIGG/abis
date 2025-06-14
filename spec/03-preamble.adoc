@@ -42,8 +42,7 @@ Namespaces are used in shortened form in documents and data by assigning them a 
 |`bdr:` | `https://linked.data.gov.au/dataset/bdr/` | BDR Dataset Namespace
 |`dcat:`| `http://www.w3.org/ns/dcat#` | <<DCAT, Data Catalogue Vocabulary>> namespace
 |`dr:` | `https://linked.data.gov.au/def/abis/data-release/` | <<#annex-b, ABIS Data Release Model>> namespace
-|`dt:` | `https://linked.data.gov.au/def/abis/datatypes/` | ABIS Datatype Register namespace
-|`dwc:` | `	http://rs.tdwg.org/dwc/terms/` | <<DWC, Darwin Core Terms>> namespace
+|`dwc:` | `http://rs.tdwg.org/dwc/terms/` | <<DWC, Darwin Core Terms>> namespace
 |`ego:` | `https://w3id.org/idn/def/ego/` | Extended Geometries Ontology
 |`ex:` | `+http://example.com/+` | Generic examples namespace - _does not resolve_
 |`geo:` | `http://www.opengis.net/ont/geosparql#` | <<GSP, GeoSPARQL Ontology>> namespace

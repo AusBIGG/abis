@@ -117,7 +117,7 @@ a|
     a abis:BiodiversityRecord ;
     # a non-IRI identifier for this Record, as found in the original
     # data held by the Submitting Organisation
-    schema:identifier "R1234"^^bdr-dt:OrgMRecordId ;
+    schema:identifier "R1234"^^ex:OrgMRecordId ;
     # inverse of :dataset-y schema:hasPart :record-001
     schema:isPartOf :dataset-y ;
     # the thing the Record is about
