@@ -296,7 +296,7 @@
                     rdf:value "ACtestvisit23" ] ] ;
     tern:hasSite <https://linked.data.gov.au/dataset/bdr/sites/a91eac5c-94e4-4591-bcb5-fd79ec5aa695> .
 
-<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> a tern:Dataset ;
+<https://linked.data.gov.au/dataset/bdr/df85a371-de7a-45f3-9a15-e442f8ce2627> a tern:RDFDataset ;
     dcterms:description "Record of plot description standard protocol" ;
     dcterms:identifier "df85a371-de7a-45f3-9a15-e442f8ce2627" ;
     dcterms:issued "2024-05-23"^^xsd:date ;
