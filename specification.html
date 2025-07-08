@@ -747,7 +747,7 @@ pre.rouge {
 <ul class="sectlevel3">
 <li><a href="#abis:BiodiversityRecord">BiodiversityRecord (Record)</a></li>
 <li><a href="#schema:DataCatalog">Data Catalog</a></li>
-<li><a href="#tern:Dataset">Dataset</a></li>
+<li><a href="#schema:Dataset">Dataset</a></li>
 <li><a href="#dwc:Occurrence">Occurrence</a></li>
 </ul>
 </li>
@@ -1264,7 +1264,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">x
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Dataset X"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">hasPart</span><span class="w"> </span><span class="nl">&lt;https://example.com/dataset/sample/y&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
@@ -1653,7 +1653,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="listingblock">
 <div class="content">
 <pre>&lt;http://example.com/dataset/x&gt;
-    a tern:Dataset ;
+    a schema:Dataset ;
     schema:hasPart
         &lt;http://example.com/dataset/x/sample/y&gt; ,
         &lt;http://example.com/dataset/x/obs/z&gt; ;
@@ -1875,13 +1875,10 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="nn">ex:</span><span class="n">occurrence-9876
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Occurrence</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (...)"</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">time:</span><span class="n">hasTime</span><span class="w"> </span><span class="s">"2024-07-29"</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (...)"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="s">"2024-07-29"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="c1"># ... other info</span><span class="w">
 </span><span class="p">.</span></code></pre>
 </div>
@@ -1946,7 +1943,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="nn">ex:</span><span class="n">site-x
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Site</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Site X"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Geometry X1"</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((...))"</span><span class="p">^^</span><span class="nn">geo:</span><span class="n">wktLiteral</span><span class="w"> </span><span class="p">;</span><span class="w">
@@ -1980,15 +1977,15 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><code>tern:Dataset</code></p>
+<p><code>schema:Dataset</code></p>
 </li>
 <li>
-<p><code>Survey</code></p>
+<p><code>tern:Survey</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A <code>Survey</code> might have its spatial extent recorded directly or taken to be the envelope of the locations of the <code>Observations</code> it contains. Similarly, an <code>tern:Dataset</code> will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be <code>Sites</code>, <code>Sample</code>, <code>Survey</code> or <code>Observation</code> instances, or all of them.</p>
+<p>A <code>Survey</code> might have its spatial extent recorded directly or taken to be the envelope of the locations of the <code>Observations</code> it contains. Similarly, an ABIS <code>schema:Dataset</code> will either have an extent - the extent of all the data within it - given or calculated from its contained objects, which may be <code>Sites</code>, <code>Sample</code>, <code>Survey</code> or <code>Observation</code> instances, or all of them.</p>
 </div>
 <h4 id="_qualified_geometries" class="discrete">Qualified Geometries</h4>
 <div class="paragraph">
@@ -2026,7 +2023,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
     </span><span class="nn">geo:</span><span class="n">hasCentroid</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (147.300797 -35.113046)"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
+        </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Boundary"</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.294576 -35.101881, 147.299386 -35.102425, 147.303469 -35.106577, 147.302879 -35.109889, 147.305057 -35.111953, 147.307076 -35.113405, 147.311296 -35.113541, 147.310887 -35.115810, 147.311772 -35.115991, 147.310093 -35.117738, 147.310071 -35.117398, 147.309118 -35.116967, 147.308460 -35.117262, 147.308006 -35.118147, 147.307938 -35.120438, 147.308120 -35.120869, 147.308278 -35.122434, 147.308324 -35.123387, 147.306849 -35.123569, 147.306350 -35.123387, 147.304558 -35.123092, 147.302743 -35.122548, 147.301473 -35.121844, 147.300293 -35.121073, 147.292240 -35.113042, 147.294576 -35.101881))"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geo:</span><span class="n">hasBoundingBox</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -2200,7 +2199,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="nn">ex:</span><span class="n">obs-n
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Observation N"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINTZ(147.308040 -35.121824 234)"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
@@ -2226,7 +2225,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="nn">ex:</span><span class="n">obs-n
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Observation N"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT(147.308040 -35.121824)"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">depth</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -2270,7 +2269,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="nn">ex:</span><span class="n">survey-x
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Survey</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Survey X"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">time:</span><span class="n">hasTime</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="nn">time:</span><span class="n">hasBeginning</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">inXSDDate</span><span class="w"> </span><span class="s">"1987-03-15"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">time:</span><span class="n">hasEnd</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">inXSDDate</span><span class="w"> </span><span class="s">"1987-03-23"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
@@ -2280,7 +2279,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="nn">ex:</span><span class="n">survey-y
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Survey</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Survey Y"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">time:</span><span class="n">hasTime</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="nn">time:</span><span class="n">inXSDgYearMonth</span><span class="w"> </span><span class="s">"2020-04"</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
@@ -2291,7 +2290,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </span><span class="nn">ex:</span><span class="n">survey-z
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Survey</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Survey Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">time:</span><span class="n">hasTime</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="nn">time:</span><span class="n">hasBeginning</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">inXSDDateTime</span><span class="w"> </span><span class="s">"2023-12-10T14:30:00"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
@@ -2398,7 +2397,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>The figures in the <a href="#_observations_results">Observations &amp; Results</a> and the <a href="#_feature_of_interest">Feature of Interest</a> patterns use this colouring.</p>
 </div>
 <div class="paragraph">
-<p>PROV&#8217;s provenance reasoning is also applicable to parts of ABIS. For example, the <a href="https://linked.data.gov.au/def/bdr-pr">BDR Profile</a>'s <a href="https://linked.data.gov.au/def/bdr-pr/proj">Project Model</a> indicates that instances of the <a href="https://schema.org/Project"><code>schema:Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of the <a href="#TERNOntology">TERN Ontology</a>'s  <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>, and may have been associated with an <a href="https://www.w3.org/TR/prov-o/#Agent"><code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>tern:Dataset</code> instances will be understood, by inferencing, to have an attribution relationship to the <code>Agent</code> instance. This is shown in the figure below.</p>
+<p>PROV&#8217;s provenance reasoning is also applicable to parts of ABIS. For example, the <a href="https://linked.data.gov.au/def/bdr-pr">BDR Profile</a>'s <a href="https://linked.data.gov.au/def/bdr-pr/proj">Project Model</a> indicates that instances of the <a href="https://schema.org/Project"><code>schema:Project</code></a> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Activity"><code>Activity</code></a>, can have <a href="https://www.w3.org/TR/prov-o/#generated"><code>generated</code></a> instances of <code>schema:dataset</code> class, which is a subclass of PROV&#8217;s <a href="https://www.w3.org/TR/prov-o/#Entity"><code>Entity</code></a>, and may have been associated with an <a href="https://www.w3.org/TR/prov-o/#Agent"><code>Agent</code></a> - an Organisation or Person. If so, then the resulting <code>schema:Dataset</code> instances will be understood, by inferencing, to have an attribution relationship to the <code>Agent</code> instance. This is shown in the figure below.</p>
 </div>
 <div id="pattern-prov-reasoning" class="imageblock text-center">
 <div class="content">
@@ -2648,7 +2647,10 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 17. Classes and predicates within the <a href="#TERNOntology">TERN Ontology</a> used to characterise sampling. The <code>is sample of</code> predicate can be derived from relations between a <code>Sample</code>, the <code>Sampling</code> and the <code>Site</code>. Note the similarity of structure to the <a href="#tern-sosa">SOSA Observation pattern</a>.</div>
 </div>
 <div class="paragraph">
-<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class which is analogous to the <a href="#_biodiversity_record_model">Biodiversity Record Model</a>'s <code>Dataset</code> class.</p>
+<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class which is analogous to the <a href="#_biodiversity_record_model">Biodiversity Record Model</a>'s <code>Dataset</code> class.</p>
+</div>
+<div class="paragraph">
+<p>TERN Ontology data is logically grouped into instances of the Schema.org&#8217;s <a href="https://schema.org/Dataset"><code>schema:Dataset</code></a> class which is analogous to the <a href="#_biodiversity_record_model">Biodiversity Record Model</a>'s <code>Dataset</code> class.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2780,6 +2782,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <li>
 <p><a href="https://schema.org/DataCatalog">DataCatalog</a> - A collection of datasets</p>
 </li>
+<li>
+<p><a href="https://schema.org/Dataset">Dataset</a> - A body of structured information describing some topic(s) of interest.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -2788,7 +2793,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://w3id.org/tern/ontologies/tern/Dataset">Dataset</a> - A collection of data, published or curated by a single agent, and available for access or download in one or more representation</p>
+<p><a href="https://w3id.org/tern/ontologies/tern/RDFDataset">RDFDataset</a> - A collection of data, published or curated by a single agent, and available for access or download in one or more representation</p>
 </li>
 </ul>
 </div>
@@ -2813,7 +2818,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>Record</code> instances can be calculated from puer TERN ontology data if not directly stated, according to the <a href="#_record_rule">Record Rule</a>.</p>
+<p><code>Record</code> instances can be calculated from pure TERN ontology data if not directly stated, according to the <a href="#_record_rule">Record Rule</a>.</p>
 </div>
 </td>
 </tr>
@@ -2826,7 +2831,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect4">
 <h5 id="_use_in_abis_3"><a class="anchor" href="#_use_in_abis_3"></a>6.4.3.2. Use in ABIS</h5>
 <div class="paragraph">
-<p>This model is to be used to group 'chunks' of ABIS data together in <code>Dataset</code> instances and to list those 'chunks' in catalogues. Further, this model is to be used to identify records of biodiversity occurrences.</p>
+<p>This model is to be used to group logical 'collections' of ABIS data together in <code>Dataset</code> instances and to list those 'collections' in catalogues. Further, this model is to be used to identify records of Biodiversity Occurrences.</p>
 </div>
 </div>
 <div class="sect4">
@@ -2834,20 +2839,28 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">dataset-x
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="c1"># ... dataset metadata</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">submission-y
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="c1"># ... submission metadata</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">sample-y
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="c1"># ...</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-x</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">obs-z
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="c1"># ...</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-x</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nn">ex:</span><span class="n">sample-y</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
 </div>
@@ -2872,13 +2885,13 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 20. The two classes defined by the Projects Model - Project &amp; Program - and their main relationships.</div>
 </div>
 <div class="paragraph">
-<p>The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class - are produced by instances of <a href="#abis:Project"><code>Project</code></a> as per the figure below.</p>
+<p>The join point between the Projects Model and the rest of ABIS is that submissions of ABIS data - instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class - are produced by instances of <a href="#abis:Project"><code>Project</code></a> as per the figure below.</p>
 </div>
 <div id="proj-join" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/proj-join.svg"><img src="https://ausbigg.github.io/abis/img/proj-join.svg" alt="Projects Model Join Poin" width="400"></a>
 </div>
-<div class="title">Figure 21. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> instances.</div>
+<div class="title">Figure 21. The Projects Model joins the rest of ABIS by Project instances producing <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> instances.</div>
 </div>
 <div class="paragraph">
 <p>See <a href="#annex-b">Annex A</a> for more details about the Project Model.</p>
@@ -2902,7 +2915,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 22. An overview of the Data Release Model</div>
 </div>
 <div class="paragraph">
-<p>The Data Release Model defines predicates - <a href="#embargoedUntil">embargoed until</a> &amp; <a href="#embargoPeriod">embargo period</a> - which can be applied to instances of the <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset"><code>tern:Dataset</code></a> class which set absolute or relative embargo release times. The model details the relations between these predicates.</p>
+<p>The Data Release Model defines predicates - <a href="#embargoedUntil">embargoed until</a> &amp; <a href="#embargoPeriod">embargo period</a> - which can be applied to instances of the <a href="https://schema.org/Dataset"><code>schema:Dataset</code></a> class which set absolute or relative embargo release times. The model details the relations between these predicates.</p>
 </div>
 </div>
 </div>
@@ -3787,7 +3800,7 @@ ex:obs-1
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Classes</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Dataset">tern:Dataset</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a></p></td>
 </tr>
@@ -3874,7 +3887,7 @@ ex:obs-1
 </tbody>
 </table>
 <div class="paragraph">
-<p>Subclasses of <a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a> <em>MAY</em> always, according to PROV, indicate an <a href="https://www.w3.org/TR/prov-o/#Attribution">prov:Attribution</a> (to an <a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a>) via either <a href="https://www.w3.org/TR/prov-o/#wasAttributedTo">prov:wasAttributedTo</a> or <a href="https://www.w3.org/TR/prov-o/#qualifiedAttribution">prov:qualifiedAttribution</a>, but in TERN Ontology, this information is only ever expected for <a href="https://w3id.org/tern/ontologies/tern/Dataset">tern:Dataset</a> objects.</p>
+<p>Subclasses of <a href="https://www.w3.org/TR/prov-o/#Entity">prov:Entity</a> <em>MAY</em> always, according to PROV, indicate an <a href="https://www.w3.org/TR/prov-o/#Attribution">prov:Attribution</a> (to an <a href="https://www.w3.org/TR/prov-o/#Agent">prov:Agent</a>) via either <a href="https://www.w3.org/TR/prov-o/#wasAttributedTo">prov:wasAttributedTo</a> or <a href="https://www.w3.org/TR/prov-o/#qualifiedAttribution">prov:qualifiedAttribution</a>, but in TERN Ontology, this information is only ever expected for <a href="https://w3id.org/tern/ontologies/tern/RDFDataset">tern:RDFDataset</a> objects.</p>
 </div>
 <div class="paragraph">
 <p>There are also SOSA predicate to PROV predicate mappings given in SOSA&#8217;s <a href="https://www.w3.org/TR/vocab-ssn/#PROV_Alignment">PROV Alignment</a>, for example:</p>
@@ -4408,16 +4421,17 @@ ex:obs-1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Calculate <code>abis:Occurrence</code> instances from Observations with XXX properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calculate <code>dwc:Occurrence</code> instances from Observations with XXX properties</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
 PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
 PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
+PREFIX dwc: &lt;http://rs.tdwg.org/dwc/terms/&gt;
 
 CONSTRUCT {
-    ?occ a abis:Occurrence .
+    ?occ a dwc:Occurrence .
 }
 WHERE {
     # ...
@@ -4457,19 +4471,21 @@ CONSTRUCT {
     ?feature geo:hasCentroid ?centroid
 }
 WHERE {
-    ?feature geo:hasGeometry/geo:asWKT ?wkt .
-
-    BIND geof:centroid(?wkt) AS ?centroid .
-
-    FILTER REGEX(?wkt, "POLYGON")
-}</pre>
+    ?feature (schema:spatial</pre>
 </div>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geo:hasGeometry)/geo:asWKT ?wkt .</p>
+<p class="tableblock">    BIND geof:centroid(?wkt) AS ?centroid .</p>
+<p class="tableblock">    FILTER REGEX(?wkt, "POLYGON")
+}
+----</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R04</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If a Dataset does not have a geometry supplied, it must have it calculated as the convex hull of its spatial object members</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
@@ -4479,40 +4495,43 @@ PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
 PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
 
 CONSTRUCT {
-    ?dataset geo:hasGeometry ?geom .
-    ?geom geo:asWKT ?wkt .
+    ?dataset schema:spatial ?geom .
+    ?geom geo:asWKT ?hull .
 }
 WHERE {
     {
         VALUES ?spatialFeature {
-            abis:Ocurrence
+            abis:BiodiversityOcurrence
+            tern:FeatureOfInterest
             tern:Site
             tern:Survey
             tern:SiteVisit
         }
 
-        SELECT ?wkt
+        SELECT ?dataset ?wkt
         WHERE {
             ?feature
-                void:inDataset ?dataset ;
-                a ?spatialFeature ;
+              schema:isPartOf ?dataset ;
+              a ?spatialFeature ;
             .
-        }
-    }
-
-    BIND BNODE() AS ?geom .
-    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
-
-    MINUS {
-        ?dataset geo:hasGeometry ?geom .
-    }
-}</pre>
+            ?dataset a schema:Dataset .
+            ?feature (schema:spatial</pre>
 </div>
 </div></div></td>
-</tr>
-<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geo:hasGeometry)/geo:asWKT ?wkt .
+        } GROUP BY ?dataset
+    }</p>
+<p class="tableblock">    BIND BNODE() AS ?geom .
+    BIND geof:aggConvexHull(?wkt) AS ?hull .</p>
+<p class="tableblock">    MINUS {
+        ?dataset schema:spatial ?geom .
+    }
+}
+----</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R05</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bounding Boxes must be calculated for Datasets</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R04</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
@@ -4523,15 +4542,16 @@ CONSTRUCT {
     ?dataset geo:hasBoundingBox ?boundingbox
 }
 WHERE {
-    ?dataset geo:hasGeometry/geo:asWKT ?wkt .
-
-    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
-}</pre>
+    ?dataset (schema:spatial</pre>
 </div>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geo:hasGeometry)/geo:asWKT ?wkt .</p>
+<p class="tableblock">    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+}
+----</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R06</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R06</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If a Dataset does not have a temporal range supplied, it must have it calculated as the containing interval containing all of its temporal object members</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
@@ -4540,38 +4560,37 @@ WHERE {
 PREFIX schema: &lt;https://schema.org/&gt;
 PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
 PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
-
+PREFIX dwc: &lt;http://rs.tdwg.org/dwc/terms/&gt;
 
 CONSTRUCT {
-    ?dataset schema:temporality ?boundingbox
+    ?dataset schema:temporal ?interval
 }
 WHERE {
     {
         VALUES ?temporalFeature {
-            abis:Ocurrence
+            dwc:Occurrence
         }
 
-        SELECT ?wkt
+        SELECT ?dataset ?time
         WHERE {
             ?feature
-                void:inDataset ?dataset ;
+                schema:isPartOf ?dataset ;
                 a ?temporalFeature
             .
+            ?dataset a schema:Dataset .
 
-            ?feature time:hasTime ?time .
-        }
-    }
-
-    ?dataset geo:hasGeometry/geo:asWKT ?wkt .
-
-    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
-
-    MINUS {
-        ?dataset schema:temporality ?temporal .
-    }
-}</pre>
+            ?feature schema:temporal</pre>
 </div>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">time:hasTime ?time .
+        } GROUP BY ?dataset
+    }</p>
+<p class="tableblock">    BIND function:aggInterval(?time) AS ?interval .</p>
+<p class="tableblock">    MINUS {
+        ?dataset schema:temporal ?temporal .
+    }
+}
+----</p></td>
 </tr>
 </tbody>
 </table>
@@ -4794,7 +4813,7 @@ WHERE {
 <div class="title">Figure 23. An overview of the Biodiversity Record Model&#8217;s classes and their relationships</div>
 </div>
 <div class="paragraph">
-<p><a href="#schema:DataCatalog">DataCatalog</a>s are curated lists of <a href="#tern:Dataset">Dataset</a>s that contain <a href="#abis:BiodiversityRecord">Biodiversity Record</a>s (just 'Records').</p>
+<p><a href="#schema:DataCatalog">DataCatalog</a>s are curated lists of <a href="#schema:Dataset">Dataset</a>s that contain <a href="#abis:BiodiversityRecord">Biodiversity Record</a>s (just 'Records').</p>
 </div>
 <div class="paragraph">
 <p>The Dataset class is taken from the <a href="#_tern_ontology">TERN Ontology</a> and normal <a href="#SDO">schema.org</a> data catalogue modelling (informed by <a href="#DCAT">DCAT</a>) is used so that datasets are <em>creative work</em> objects and may be described with metadata such as <em>creator</em>, <em>issued date</em>, etc.</p>
@@ -4949,7 +4968,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <p><a href="#schema:DataCatalog">DataCatalog</a></p>
 </li>
 <li>
-<p><a href="#tern:Dataset">Dataset</a></p>
+<p><a href="#schema:Dataset">Dataset</a></p>
 </li>
 <li>
 <p><a href="#dwc:Occurrence">Occurrence</a></p>
@@ -5014,7 +5033,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 .
 
 :dataset-y
-    a tern:Dataset ;
+    a schema:Dataset ;
     schema:name "Dataset Y" ;
     # ... ther dataset metadata
     schema:isPartOf :catalogue-y ;
@@ -5056,7 +5075,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 
 </div>
 <div class="sect3">
-<h4 id="tern:Dataset"><a class="anchor" href="#tern:Dataset"></a>Dataset</h4>
+<h4 id="schema:Dataset"><a class="anchor" href="#schema:Dataset"></a>Dataset</h4>
 
 </div>
 <div class="sect3">
@@ -5280,16 +5299,22 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">dataset-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:Dataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">description</span><span class="w"> </span><span class="s">"A schema:Dataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">title</span><span class="w"> </span><span class="s">"BDR Dataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+</span><span class="nn">ex:</span><span class="n">submission-01
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">ternRDF:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN Dataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN Submission 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">obs-01
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN Observation 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT(143, -27)"</span><span class="p">^^</span><span class="nn">geo:</span><span class="n">wktLiteral
@@ -5314,7 +5339,8 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </span><span class="nn">ex:</span><span class="n">foi-01
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">FeatureOfInterest</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN FeatureOfInterest 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">tern:</span><span class="n">featureType</span><span class="w"> </span><span class="nl">&lt;https://example.org/ft/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
 </div>
@@ -5340,16 +5366,22 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">dataset-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:Dataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">description</span><span class="w"> </span><span class="s">"A schema:Dataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">title</span><span class="w"> </span><span class="s">"BDR Dataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+</span><span class="nn">ex:</span><span class="n">submission-01
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">ternRDF:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN Dataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN Submission 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">obs-01
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN Observation 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="c1">#    geo:hasGeometry [</span><span class="w">
 </span><span class="c1">#        a geo:Geometry ;</span><span class="w">
 </span><span class="c1">#        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral</span><span class="w">
@@ -5361,20 +5393,21 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
         </span><span class="nn">rdf:</span><span class="n">value</span><span class="w"> </span><span class="s">"42"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">tern:</span><span class="n">uncertainty</span><span class="w"> </span><span class="s">"0.5"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;https://example.org/op/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">phenomenonTime</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="k">a</span><span class="w"> </span><span class="nn">time:</span><span class="n">Instant</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">time:</span><span class="n">inXSDDateTimeStamp</span><span class="w"> </span><span class="s">"2021-11-18T14:35+10:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTimeStamp</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">usedProcedure</span><span class="w"> </span><span class="nl">&lt;https://example.org/proc/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">tern:</span><span class="n">resultDateTime</span><span class="w"> </span><span class="s">"2021-11-18T14:35:00"</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># ^^xsd:dateTime ;</span><span class="w">
+    </span><span class="nn">tern:</span><span class="n">resultDateTime</span><span class="w"> </span><span class="s">"2021-11-18T14:35:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">foi-01
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">FeatureOfInterest</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN FeatureOfInterest 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="c1">#    void:inDataset ex:dataset-01 ;</span><span class="w">
+</span><span class="c1">#    void:inDataset ex:submission-01 ;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">tern:</span><span class="n">featureType</span><span class="w"> </span><span class="nl">&lt;https://example.org/ft/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
 </div>
@@ -5409,7 +5442,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-06-14 06:47:40 UTC
+Last updated 2025-07-08 01:51:15 UTC
 </div>
 </div>
 </body>
