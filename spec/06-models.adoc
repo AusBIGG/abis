@@ -76,7 +76,9 @@ The TERN Ontology's _sampling_ pattern follows SOSA too but uses specialised cla
 .Classes and predicates within the <<TERNOntology, TERN Ontology>> used to characterise sampling. The `is sample of` predicate can be derived from relations between a `Sample`, the `Sampling` and the `Site`. Note the similarity of structure to the <<#tern-sosa, SOSA Observation pattern>>.
 image::img/tern-sampling.svg[TERN's Observation pattern,align="center",width=650]
 
-TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class which is analogous to the <<Biodiversity Record Model, Biodiversity Record Model>>'s `Dataset` class.
+TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class which is analogous to the <<Biodiversity Record Model, Biodiversity Record Model>>'s `Dataset` class.
+
+TERN Ontology data is logically grouped into instances of the Schema.org's https://schema.org/Dataset[`schema:Dataset`] class which is analogous to the <<Biodiversity Record Model, Biodiversity Record Model>>'s `Dataset` class.
 
 [NOTE]
 ====
@@ -150,10 +152,11 @@ ABIS implements a simple catalogue model that reuses a class from the TERN Ontol
 From <<SDO, schema.org>>:
 
 * https://schema.org/DataCatalog[DataCatalog] - A collection of datasets
+* https://schema.org/Dataset[Dataset] - A body of structured information describing some topic(s) of interest.
 
 From the <<TERN Ontology, TERN Ontology>>:
 
-* https://w3id.org/tern/ontologies/tern/Dataset[Dataset] - A collection of data, published or curated by a single agent, and available for access or download in one or more representation
+* https://w3id.org/tern/ontologies/tern/RDFDataset[RDFDataset] - A collection of data, published or curated by a single agent, and available for access or download in one or more representation
 
 Introduced:
 
@@ -163,34 +166,42 @@ The use of the existing classes is as per <<SDO, schema.org>>'s basic data catal
 
 [NOTE]
 ====
-`Record` instances can be calculated from puer TERN ontology data if not directly stated, according to the <<Record Rule, Record Rule>>.
+`Record` instances can be calculated from pure TERN ontology data if not directly stated, according to the <<Record Rule, Record Rule>>.
 ====
 
 See the patterns of <<Data Cataloguing, Data Cataloguing>> and <<Records & Occurrences>> for more information and <<#annex-a, this model's definition in Annex A>> for further information.
 
 ===== Use in ABIS
 
-This model is to be used to group 'chunks' of ABIS data together in `Dataset` instances and to list those 'chunks' in catalogues. Further, this model is to be used to identify records of biodiversity occurrences.
+This model is to be used to group logical 'collections' of ABIS data together in `Dataset` instances and to list those 'collections' in catalogues. Further, this model is to be used to identify records of Biodiversity Occurrences.
 
 ===== Examples
 
 [source,turtle]
 ----
 ex:dataset-x
-    a tern:Dataset ;
+    a schema:Dataset ;
     # ... dataset metadata
+.
+
+ex:submission-y
+    a tern:RDFDataset ;
+    schema:isPartOf ex:dataset-x ;
+    # ... submission metadata
 .
 
 ex:sample-y
     a tern:Sample ;
     # ...
-    void:inDataset ex:dataset-x ;
+    schema:isPartOf ex:dataset-x ;
+    void:inDataset ex:submission-x .
 .
 
 ex:obs-z
     a tern:Observation ;
     # ...
-    void:inDataset ex:dataset-x ;
+    schema:isPartOf ex:dataset-x ;
+    void:inDataset ex:submission-x ;
     sosa:hasFeatureOfInterest ex:sample-y ;
 .
 ----
@@ -207,10 +218,10 @@ The following figure illustrates the basic relationships of the class <<#abis:Pr
 .The two classes defined by the Projects Model - Project & Program - and their main relationships.
 image::img/proj-hierarchy.svg[Projects Model Class Hierarchy,align="center",width=400]
 
-The join point between the Projects Model and the rest of ABIS is that datasets of ABIS data - instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class - are produced by instances of <<#abis:Project, `Project`>> as per the figure below.
+The join point between the Projects Model and the rest of ABIS is that submissions of ABIS data - instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class - are produced by instances of <<#abis:Project, `Project`>> as per the figure below.
 
 [#proj-join,link="img/proj-join.svg"]
-.The Projects Model joins the rest of ABIS by Project instances producing https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] instances.
+.The Projects Model joins the rest of ABIS by Project instances producing https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] instances.
 image::img/proj-join.svg[Projects Model Join Poin,align="center",width=400]
 
 See <<#annex-b, Annex A>> for more details about the Project Model.
@@ -227,7 +238,7 @@ The following figure illustrates the basic elements of this model.
 .An overview of the Data Release Model
 image::img/data-release.svg[Overview of the Data Release Model,align="center",width=350]
 
-The Data Release Model defines predicates - <<#embargoedUntil, embargoed until>> & <<#embargoPeriod, embargo period>> - which can be applied to instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/Dataset[`tern:Dataset`] class which set absolute or relative embargo release times. The model details the relations between these predicates.
+The Data Release Model defines predicates - <<#embargoedUntil, embargoed until>> & <<#embargoPeriod, embargo period>> - which can be applied to instances of the https://schema.org/Dataset[`schema:Dataset`] class which set absolute or relative embargo release times. The model details the relations between these predicates.
 
 === Background Models
 

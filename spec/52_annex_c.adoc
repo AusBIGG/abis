@@ -47,16 +47,22 @@ PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ex:dataset-01
-    a tern:Dataset ;
-    dcterms:description "A minimally valid tern:Dataset instance" ;
+    a schema:Dataset ;
+    schema:description "A schema:Dataset instance" ;
+    schema:title "BDR Dataset 01" ;
+.
+ex:submission-01
+    a ternRDF:Dataset ;
+    dcterms:description "A minimally valid tern:RDFDataset instance" ;
     dcterms:issued "2021-11-18"^^xsd:date ;
-    dcterms:title "TERN Dataset 01" ;
+    dcterms:title "TERN Submission 01" ;
 .
 
 ex:obs-01
     a tern:Observation ;
     rdfs:label "TERN Observation 01" ;
-    void:inDataset ex:dataset-01 ;
+    void:inDataset ex:submission-01 ;
+    schema:isPartOf ex:dataset-01 ;
     geo:hasGeometry [
         a geo:Geometry ;
         geo:asWKT "POINT(143, -27)"^^geo:wktLiteral
@@ -81,7 +87,8 @@ ex:obs-01
 ex:foi-01
     a tern:FeatureOfInterest ;
     rdfs:label "TERN FeatureOfInterest 01" ;
-    void:inDataset ex:dataset-01 ;
+    void:inDataset ex:submission-01 ;
+    schema:isPartOf ex:dataset-01 ;
     tern:featureType <https://example.org/ft/1> ;
 .
 ----
@@ -105,16 +112,22 @@ PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ex:dataset-01
-    a tern:Dataset ;
-    dcterms:description "A minimally valid tern:Dataset instance" ;
+    a schema:Dataset ;
+    schema:description "A schema:Dataset instance" ;
+    schema:title "BDR Dataset 01" ;
+.
+ex:submission-01
+    a ternRDF:Dataset ;
+    dcterms:description "A minimally valid tern:RDFDataset instance" ;
     dcterms:issued "2021-11-18"^^xsd:date ;
-    dcterms:title "TERN Dataset 01" ;
+    dcterms:title "TERN Submission 01" ;
 .
 
 ex:obs-01
     a tern:Observation ;
     rdfs:label "TERN Observation 01" ;
-    void:inDataset ex:dataset-01 ;
+    void:inDataset ex:submission-01 ;
+    schema:isPartOf ex:dataset-01 ;
 #    geo:hasGeometry [
 #        a geo:Geometry ;
 #        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral
@@ -126,20 +139,21 @@ ex:obs-01
         rdf:value "42"^^xsd:double ;
         tern:uncertainty "0.5"^^xsd:double ;
     ] ;
-    sosa:hasSimpleResult "42" ;
+    sosa:hasSimpleResult "42"@en ;
     sosa:observedProperty <https://example.org/op/1> ;
     sosa:phenomenonTime [
         a time:Instant ;
         time:inXSDDateTimeStamp "2021-11-18T14:35+10:00"^^xsd:dateTimeStamp ;
     ] ;
     sosa:usedProcedure <https://example.org/proc/1> ;
-    tern:resultDateTime "2021-11-18T14:35:00" ;  # ^^xsd:dateTime ;
+    tern:resultDateTime "2021-11-18T14:35:00"^^xsd:dateTime ;
 .
 
 ex:foi-01
     a tern:FeatureOfInterest ;
     rdfs:label "TERN FeatureOfInterest 01" ;
-#    void:inDataset ex:dataset-01 ;
+#    void:inDataset ex:submission-01 ;
+    schema:isPartOf ex:dataset-01 ;
     tern:featureType <https://example.org/ft/1> ;
 .
 ----

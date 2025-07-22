@@ -132,7 +132,7 @@ PREFIX schema: <https://schema.org/>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 
 ex:x
-    a tern:Dataset ;
+    a schema:Dataset ;
     schema:name "Dataset X" ;
     schema:hasPart <https://example.com/dataset/sample/y> ;
 .

@@ -429,7 +429,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 
 <https://linked.data.gov.au/dataset/bdr/1234>
-    a tern:Dataset ;
+    a tern:RDFDataset ;
     prov:qualifiedAttribution
         [
             prov:agent <https://linked.data.gov.au/dataset/bdr/b90040ec-a63b-4301-ac8e-420c6a3b3654/creator/78813273-d0c9-94ea-6880-bfd306d51813> ;

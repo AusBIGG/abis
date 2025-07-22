@@ -108,7 +108,7 @@
                         tern:Value ;
                     rdf:value "99248292-6b12-4fef-a05d-4fb094c037ae" ] ] .
 
-<https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f> a tern:Dataset ;
+<https://linked.data.gov.au/dataset/bdr/452fd306-0797-4158-8ae3-fe30d0942f2f> a tern:RDFDataset ;
     dcterms:description "Record of photopoints survey protocol" ;
     dcterms:identifier "452fd306-0797-4158-8ae3-fe30d0942f2f" ;
     dcterms:issued "2024-05-08"^^xsd:date ;
