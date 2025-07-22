@@ -3,38 +3,45 @@
 :table-stripes: even
 :sectnums:
 
+[#overview,link="img/models.svg"]
+image::img/models.svg[ABIS Parts,650,align="center"]
+
 This document contains a short overview of the https://linked.data.gov.au/def/abis[Australian Biodiversity Information Standard (ABIS)]. For more information, see the full https://linked.data.gov.au/def/abis#_structure[ABIS specification].
 
 == What is ABIS?
 
-ABIS is primarily a data standard that specifies how information about biodiversity is to be represented for exchange and use in Australia. It is a flexible data model for the biodiversity domain that allows the capture of richer and more detailed information than alternative models of biodiversity data. 
+ABIS is an Australian standard that specifies how information about biodiversity is to be represented for exchange and use. It is a flexible data model for the biodiversity domain that allows the capture of richer and more detailed information than alternative models.
 
-The standard is structured using Resource Description Framework (RDF), a World Wide Web Consortium (W3C) "standard model for data on the web"footnote:[https://www.w3.org/RDF/].
+The standard is structured using Resource Description Framework (RDF), a World Wide Web Consortium (W3C) "standard model for data on the web" https://www.w3.org/RDF/[W3C's RDF note]. RDF maked _graphs_ of data, which have a node-edge-node structure connecting bits of information using defined relationships.
 
-RDF has greater flexibility than other models, which is why it is powerful for the exchange of data. Many biodiversity systems organise data in a relational structure. If you have not worked with RDF before, we recommend taking the time to learn about it. A good starting point is the https://www.w3.org/TR/rdf11-concepts/[W3C's RDF Primer].
+If you have not worked with RDF before, we recommend taking the time to learn about it. A good starting point is the https://www.w3.org/TR/rdf11-concepts/[W3C's RDF Primer].
 
-ABIS implements a few domain-specific concepts itself but mostly re-uses existing general and domain Semantic Web models, such as the https://linkeddata.tern.org.au/information-models/tern-ontology[TERN ontology], https://www.w3.org/TR/prov-o/[PROV] and https://schema.org/[schema.org]. 
+Where many biodiversity data regimes use a relational (databae) structure, ABIS data can be stored as text data in files, or within databases. ABIS data can be "flattened" into tables or CSV data too.
+
+ABIS implements a few domain-specific concepts itself but mostly re-uses existing general and domain models, such as the https://linkeddata.tern.org.au/information-models/tern-ontology[TERN ontology], for core biodiversity data, https://www.w3.org/TR/prov-o/[PROV], for provenance information, and https://schema.org/[schema.org], for general data annotations.
 
 == Who owns it?
 
-ABIS is maintained and governed by a Standing Working Group of the https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AusBIGG)]. 
+ABIS is maintained and governed by a Standing Working Group, the https://github.com/AusBIGG/[Australian Biodiversity Information Governance Group (AusBIGG)].
+
+AusBIGG meets regularly and involvement in AusBIGG can be obtained by contacting the _BDR Team_, see <<More Help, More Help>> below.
 
 == How do I use it?
 
-As described above, ABIS is primarily for the exchange of biodiversity information. The https://linked.data.gov.au/def/abis/spec[technical specification] documentation is the primary source of information and is currently being updated. 
+Since ABIS is primarily for the exchange of biodiversity information, you are likely going to use ABIS to formulate data for sending to some other party. Perhaps you need to send jurisdictional biodiversity data to the https://bdr.gov.au/[Biodiversity Data Repository (BDR)] at https://www.dcceew.gov.au/[DCCEEW]. It will only accept ABIS data.
+
+The https://linked.data.gov.au/def/abis/spec[ABIS technical specification] is the primary source of information about ABIS but there are other resources too, such as the https://linked.data.gov.au/def/bdr-pr[_BDR's profile of ABIS_] too which give more details about ABIS' use with the BDR.
 
 To exchange information using ABIS, you need to:
 
 1.	Map your data to concepts and vocabularies recognised in ABIS, and
 2.	Format your data into the RDF structure of ABIS.
 
-Data formatted to the ABIS specification can be validated using the https://linked.data.gov.au/def/abis#_validation[ABIS validator].
+The first task is a conceptual exercise that you will need both detailed information about your own model and ABIS for and the second is a technical task that will likely need to be undertaken by IT developers.
 
-=== Submitting data to the Biodiversity Data Repository (BDR) using ABIS ===
+The _BDR Team_ can assist with both of these tasks, see <<More Help, More Help>>, below.
 
-Biodiversity data submitted to the BDR must be conformant with the BDR’s profile of ABIS. Data can be submitted to the BDR directly as ABIS-compliant RDF, or as templated CSV files that can be processed into ABIS format. Controlled vocabularies used in the BDR are available from the https://vocabs.bdr.gov.au/[BDR Vocabularies Portal].
-
-== More help
+== More Help
 
 Technical management and data modelling support for ABIS is provided by the BDR team in the https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy, the Environment and Water (DCCEEW)]. The BDR team can be contacted on bdr@dcceew.gov.au.
 
