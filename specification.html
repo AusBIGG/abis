@@ -3023,9 +3023,12 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>A specification that constrains, extends, combines, or provides guidance or explanation about the usage of other specifications.</p>
 </div>
 </blockquote>
+<div class="attribution">
+&#8212; <a href="https://www.w3.org/TR/dx-prof/#dfn-profile">ref</a>
+</div>
 </div>
 <div class="paragraph">
-<p>Profiles may comprise multiple parts: their own specification rules, validation constraints, controlled vocabularies, and so on.</p>
+<p>Profiles may comprise multiple parts such as their own specification rules, validation constraints, controlled vocabularies, and so on.</p>
 </div>
 <div class="sect2">
 <h3 id="_abis_is_a_profile"><a class="anchor" href="#_abis_is_a_profile"></a>8.1. ABIS is a Profile</h3>
@@ -3033,7 +3036,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>ABIS, itself, is a profile of many other specifications, as per the <a href="#_model_dependency_hierarchy">Model Dependency Hierarchy</a>.</p>
 </div>
 <div class="paragraph">
-<p>ABIS is made of multiple parts, as per the Section <a href="#_parts_of_abis">Parts of ABIS</a>.</p>
+<p>ABIS is also made of multiple parts, as per the Section <a href="#_parts_of_abis">Parts of ABIS</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3042,10 +3045,10 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>Further profiles of ABIS may be made to constrain and/or extend its use.</p>
 </div>
 <div class="paragraph">
-<p>Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on. Profile rules are entirely a matter for profile defines however data validated according to a profile of a standard, must always be valid according to the standard itself.</p>
+<p>Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on. Profile rules are entirely a matter for profile definers, however profiles must always ensure that any data valida according to them is also valid according to the standard being profiled.</p>
 </div>
 <div class="paragraph">
-<p>Profiles of ABIS may be defined anywhere however profile creators are encouraged to list their profiles here by <a href="#_metadata">contacting ABIS' maintainers</a>.</p>
+<p>Profiles of ABIS may be defined anywhere but profile creators are encouraged to list their profiles here by <a href="#_metadata">contacting ABIS' maintainers</a>.</p>
 </div>
 <div class="paragraph">
 <p>The following profiles of ABIS are known to exist:</p>
@@ -3067,10 +3070,21 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>This profile defines the requirements for data to be absorbed into the <a href="https://www.dcceew.gov.au/environment/epbc/publications/biodiversity-data-repository">Biodiversity Data Repository</a>.</p>
 </div>
 <div class="paragraph">
-<p>It contains a number of part models - for Project, Data Release etc. - as well as its own vocabularies and requirements relating to allowed identifiers.</p>
+<p>It contains a number of component models - for Project, Data Release etc. - not required for general ABIS use as well as its own vocabularies and requirements relating to identifiers for certain classes of object.</p>
 </div>
-<div id="NOTE" class="paragraph">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
 <p>Previously this document contained all the information about the BDR Profile here. This information is now all contained within the BDR Profile of ABIS' own document, linked to above.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -3079,12 +3093,12 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <h2 id="_validation"><a class="anchor" href="#_validation"></a>9. Validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model both inherits existing and implements new validators for data claiming conformance to ABIS to allow testing of that claim. Since ABIS data <em>MUST</em> be provided in RDF, only an RDF validator is available and other forms of validation are non-normative.</p>
+<p>This model both inherits existing validators for its component models and implements its own validators too. Since ABIS data <em>MUST</em> be provided in RDF, only an RDF validator, using <a href="#SHACL">SHACL, the Shapes Constraint Language</a>, is available and other forms of validation are non-normative.</p>
 </div>
 <div class="sect2">
 <h3 id="_multiple_validators"><a class="anchor" href="#_multiple_validators"></a>9.1. Multiple Validators</h3>
 <div class="paragraph">
-<p>Just as the ABIS model is a collection of models and also inherits model elements from other models (see <a href="#_multiple_models">Multiple Models</a>), so too is the ABIS validator a collection of ABIS-created validators and inherited validation rules. For data to validly conform ABIS, it must also be valid according all these validators. Part use of ABIS may choose to be valid according to only some validators.</p>
+<p>Just as the ABIS model is a collection of models and also inherits model elements from other models (see <a href="#_multiple_models">Multiple Models</a>), so too is the ABIS validator a collection of inherited and ABIS-created validators. For data to conform ABIS, it must be valid according all these validators. Part use of ABIS may choose to be valid according to only some of these validators.</p>
 </div>
 <div class="paragraph">
 <p>The following table lists all the validators relevant to ABIS and describes their roles.</p>
@@ -3099,7 +3113,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Validator</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Role</th>
 <th class="tableblock halign-left valign-top">Source</th>
 <th class="tableblock halign-left valign-top">Notes</th>
 </tr>
@@ -3107,9 +3121,9 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ausbigg.github.io/abis/validators/abis.ttl">ABIS</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validation rules implemented by ABIS only</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Imports many other validators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validation rules implemented by ABIS and all other the other validators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ABIS">ABIS</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">May be used without importing other validators</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/bdr-pr/validator">BDR Profile of ABIS combined validator</a></p></td>
@@ -3121,37 +3135,25 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ausbigg.github.io/abis/validators/geo.ttl">GeoSPARQL</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For spatial data</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_geosparql">GeoSPARQL</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Presented by the GeoSPARQL standard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Presented within the GeoSPARQL standard</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ausbigg.github.io/abis/validators/sosa.ttl">SOSA</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For sampling/observations data</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#SOSA">SOSA</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from the SOSA standard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from the SOSA standard by the <em>BDR Team</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ausbigg.github.io/abis/validators/tern.ttl">TERN Ontology</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For TERN Ontology data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS/BDR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://tern.org.au">TERN</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The TERN Ontology validator, as presented by TERN</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ausbigg.github.io/abis/validators/abis-tern.ttl">ABIS Profile of TERN Ontology</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For data created according to the <a href="#_tern_ontology">TERN Ontology</a>, but for use in ABIS-based systems</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_tern_ontology">TERN Ontology</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Imports parts of the TERN validator but not all</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ausbigg.github.io/abis/validators/vocpub.ttl">VocPub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For data vocabularies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For vocabularies</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#VOCPUB">VocPub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Presented by VocPub</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ausbigg.github.io/abis/validators/bdrm.ttl">Biodiversity Records Model</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For data created according to the <a href="#_biodiversity_record_model">Biodiversity Records Model</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS/BDR</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As presented in VocPub</p></td>
 </tr>
 </tbody>
 </table>
@@ -3159,10 +3161,10 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect2">
 <h3 id="_performing_validation"><a class="anchor" href="#_performing_validation"></a>9.2. Performing Validation</h3>
 <div class="paragraph">
-<p>The preferred way to validate RDF data using the validators above is to use the <a href="https://bdr.gov.au">BDR Portal</a> which contains all the validators preloaded for use.</p>
+<p>The preferred way to validate RDF data using the validators above is to use the <a href="https://bdr.gov.au">BDR Resources</a> which contains all the validators preloaded for use.</p>
 </div>
 <div class="paragraph">
-<p>However, any one of a number of tools designed for <a href="#SHACL">SHACL</a> validation may be used and some may be more useful than the BDR Portal for certain scenarios. Such tools are:</p>
+<p>However, any one of a number of tools designed for <a href="#SHACL">SHACL</a> validation may be used and some may be more useful than the BDR Resources web page for certain scenarios, such as validation within automated processes. Such tools are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3180,7 +3182,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </li>
 <li>
-<p><a href="https://shacl.org/playground/">SHACL Playground</a></p>
+<p><a href="https://shacl-playground.zazuko.com/">Zazuko SHACL Playground</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -3193,7 +3195,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </li>
 <li>
-<p><a href="http://tools.dev.kurrawong.ai/validator">KurrawongAI SHACL Validator</a></p>
+<p><a href="https://tools.kurrawong.ai/tools/validate">KurrawongAI SHACL Validator</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -3206,17 +3208,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </li>
 <li>
-<p><a href="https://github.com/zazuko/rdf-validate-shacl">rdf-validate-shacl</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>free, open source Javascript SHACL validation code library</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="https://graphdb.ontotext.com/documentation/10.8/shacl-validation.html">GraphDB&#8217;s SHACL Validation capability</a></p>
+<p><a href="https://graphdb.ontotext.com/documentation/11.0/shacl-validation.html">GraphDB&#8217;s SHACL Validation capability</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -5446,7 +5438,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-07-23 00:11:22 UTC
+Last updated 2025-07-23 00:36:20 UTC
 </div>
 </div>
 </body>
