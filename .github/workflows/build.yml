@@ -36,7 +36,6 @@ jobs:
         #
         echo "Add Overview to docs/"   
         asciidoctor overview/_overview.adoc -o docs/overview.html
-        cp -r overview/*.png docs/
         sed -i 's#img src="#img src="https://ausbigg.github.io/abis/#' docs/overview.html        
         #
         echo "Add JSON-LD Context to docs/"

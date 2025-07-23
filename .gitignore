@@ -2,3 +2,4 @@
 *.html
 settings.json
 .vscode
+.idea
