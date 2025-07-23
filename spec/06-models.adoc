@@ -93,7 +93,7 @@ The TERN Ontology provides the main model elements for ABIS observation-centric 
 
 See <<D.1. TERN Ontology, Annex D: Extended Examples > TERN Ontology>> for a full example of TERN Ontology data with explanations for each part.
 
-Also see the https://abis.dev.kurrawong.net[ABIS Portal] for multiple examples that can be loaded and validated using the online validators available there.
+Also see the https://resources.bdr.gov.au/[BDR ABIS Resources] for multiple examples that can be loaded and validated using the online validators available there.
 
 ===== Further Information
 Further details of the TERN Ontology's classes, predicates and patterns of expected use are documented at:
@@ -139,7 +139,7 @@ The entire NSL dataset, modelled according to the NSL Model, should be available
 
 Examples of NSL Model data can also be found throughout the https://linked.data.gov.au/def/nsl[NSL Model Specification].
 
-References to NSL objects - instances of the `TaxonName` class - are also present within example data files in the https://abis.dev.kurrawong.ai[ABIS Portal].
+References to NSL objects - instances of the `TaxonName` class - are also present within example data files in the https://abis.dev.kurrawong.ai[BDR ABIS Resources].
 
 ==== Biodiversity Record Model
 

@@ -3,4 +3,6 @@
 
 === EMSA Protocols
 
-#TODO: add details of the EMSA Protocol Model(s) from https://emsa.tern.org.au/
+The EMSA Protocol Model(s) are defined at https://emsa.tern.org.au/ and that site also provides documentation on how to use the protocols.
+
+This annex will be expended to include further information on how to use those protocols within the context of ABIS, likely in late 2025 as the BDR starts to accept EMSA protocol data.

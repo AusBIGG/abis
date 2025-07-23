@@ -13,7 +13,7 @@ On receipt of ABIS data, ABIS-compliant systems MAY make available data that has
 
 Forwards chaining involves expanding received data in accordance with the rules and materialising all the extension elements. Backwards chaining involves applying the reasoning rules to queries of the data such that the query can be answered as if the data had been expanded.
 
-The rules are identified below, described in English and then defined in <<SPARQL, SPARQL>> queries. Implementing systems do not have to expand the data using SPARQL queries - they may use any system they like, such as application code - but the SPARQL queries serve as the canonical definition of the rule.
+The rules are identified below, described in English and then defined as <<SPARQL, SPARQL>> queries. Implementing systems do not have to expand the data using SPARQL queries - they may use any system they like, such as application code - but the SPARQL queries serve as the canonical definition of the rule.
 
 === Rule List
 
@@ -60,7 +60,7 @@ CONSTRUCT {
     ?feature geo:hasCentroid ?centroid
 }
 WHERE {
-    ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
+    ?feature (schema:spatial\|geo:hasGeometry)/geo:asWKT ?wkt .
 
     BIND geof:centroid(?wkt) AS ?centroid .
 
@@ -97,7 +97,7 @@ WHERE {
               a ?spatialFeature ;
             .
             ?dataset a schema:Dataset .
-            ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
+            ?feature (schema:spatial\|geo:hasGeometry)/geo:asWKT ?wkt .
         } GROUP BY ?dataset
     }
     
@@ -119,7 +119,7 @@ CONSTRUCT {
     ?dataset geo:hasBoundingBox ?boundingbox
 }
 WHERE {
-    ?dataset (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
+    ?dataset (schema:spatial\|geo:hasGeometry)/geo:asWKT ?wkt .
 
     BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
 }
@@ -150,7 +150,7 @@ WHERE {
             .
             ?dataset a schema:Dataset .
 
-            ?feature schema:temporal|time:hasTime ?time .
+            ?feature schema:temporal\|time:hasTime ?time .
         } GROUP BY ?dataset
     }
 
@@ -163,35 +163,3 @@ WHERE {
 ----
 
 |===
-
-
-[discrete]
-==== Record Rule
-
-This rule allows for the creation of <<abis:BiodiversityRecord, Record>> instances from <<TERN Ontology, TERN Ontology>> data that doesn't directly indicate such as class of object.
-
-[discrete]
-==== Spatial Reasoning
-
-The following spatial reasoning rules will be applied to ABIS data.
-
-[discrete]
-===== Centroids and Bounding Boxes from Boundaries
-
-[discrete]
-===== `Datasets` containment of `Surveys`
-
-[discrete]
-===== `Surveys` containment of `Observations`
-
-[discrete]
-===== Inference of geometry literal datatypes from GeoSPARQL predicates
-
-[discrete]
-==== Temporal Reasoning
-
-[discrete]
-===== Inference of date/time literal datatypes from TIME predicates
-
-
-#TODO: complete this section#
