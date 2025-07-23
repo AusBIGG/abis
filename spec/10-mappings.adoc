@@ -1,18 +1,18 @@
 == Mappings
 
-This section lists mappings between ABIS and related models. These are conceptual mappings that either show model element equivalence - ABIS Class X is equivalent to Other Model Class Y - or transformations for equivalence - or calculations that lead to equivalence.
+This section lists mappings between ABIS and related models. These are conceptual mappings that either show model element equivalence, e.g. that ABIS Class X is equivalent to Other Model Class Y, or provide transformations/calculations that lead to equivalence.
 
 For each mapping given here, an RDF mapping file is also provided when the target of the mapping is also a Semantic Web model. The files are linked to in each section.
 
 === Background Models
 
-ABIS background models such as <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> and <<GSP, GeoSPARQL>> are mapped to from ABIS foreground data in a simple manner: since all TERN Ontology/ABIS class objects are specialised versions of the background model's classes, if a background model export is needed, ABIS data can either be sent as-is and the receiver can then infer generic objects from specialised ones, or we could perform the inference and export objects according to that model only.
+ABIS background models such as <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> and <<GSP, GeoSPARQL>> are mapped to from ABIS foreground data in a simple manner: since all TERN Ontology/ABIS class objects are specialised versions of the background model's classes, if a background model export is needed, ABIS data can either be sent as-is and the receiver can then infer generic objects from specialised ones, or you could perform the inference and export objects according to that model only.
 
 The following methodology for export of ABIS data according to a SOSA will work with all background models.
 
 ==== SOSA
 
-ABIS foreground model's mappings to the <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> and also SOSA's parent, the https://www.w3.org/TR/vocab-ssn/[Semantic Sensor Network Ontology] are established by following defined relations between elements such as subclass and subproperty relations. The following mapping table to SOSA/SSN from the TERN ontology can be produced by querying the TERN Ontology with this query:
+ABIS foreground model's mappings to the <<SOSA, Sensor, Observations, Sampling & Actuation (SOSA) ontology>> and also SOSA's parent, the https://www.w3.org/TR/vocab-ssn/[Semantic Sensor Network Ontology], are established by following defined relations between elements such as subclass and subproperty relations. The following mapping table to SOSA/SSN from the TERN ontology can be produced by querying the TERN Ontology with this query:
 
 [sparql]
 ----
@@ -56,7 +56,7 @@ The query above produces the following results:
 | https://w3id.org/tern/ontologies/tern/hasAttribute[tern:hasAttribute]          | http://www.w3.org/2000/01/rdf-schema#subPropertyOf[rdfs:subPropertyOf] | https://www.w3.org/TR/vocab-ssn/#SSNhasProperty[ssn:hasProperty]
 |===
 
-The TERN Ontology uses many SOSA predicated directly too:
+The TERN Ontology uses many SOSA predicates directly too:
 
 [width="25%"]
 |===
@@ -85,7 +85,7 @@ The TERN Ontology uses many SOSA predicated directly too:
 
 In addition to the above tables, many TERN Ontology Classes are subclasses of other TERN Ontology Classes, for example `tern:Site subclass of tern:Sample` and given `tern:Sample subclass of sosa:Sample`, then `tern:Site subclass of sosa:Sample`.
 
-Using the tables and logic above, much TERN Ontology data can be converted to purely SOSA/SSN terms. for the following TERN Ontology data:
+Using the tables and logic above, much TERN Ontology data can be converted to purely SOSA/SSN terms. For the following TERN Ontology data:
 
 [turtle]
 ----
@@ -135,7 +135,7 @@ ex:obs-1
 
 ==== GeoSPARQL
 
-Conversion of ABIS data to pure GeoSPARQL may be needed to understand how SOSA data can be spatially indexed, given that most spatially-enabled triplestores only spatially index GoSPARQL values.
+Conversion of ABIS data to pure GeoSPARQL may be needed to spatially index ABIS data, given that most spatially-enabled triplestores only recognise GoSPARQL values.
 
 The following SPARQL query applied to the TERN Ontology produces the table that follows:
 
@@ -516,6 +516,6 @@ ex:obs-1
 .
 ----
 
-=== GBIF New Data Model
+==== GBIF New Data Model
 
-_Coming in July, 2024_
+_The ABIS authors intend to map ABIS <--> https://www.gbif.org/new-data-model[GBIF New Data Model] at some stage, when the BDR is in stable operations (July 2025+). This will allow ABIS data to conform to the major international biodiversity data standard._
