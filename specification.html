@@ -705,7 +705,11 @@ pre.rouge {
 <li><a href="#_background_models">6.5. Background Models</a></li>
 </ul>
 </li>
-<li><a href="#_vocabularies">7. Vocabularies</a></li>
+<li><a href="#_vocabularies">7. Vocabularies</a>
+<ul class="sectlevel2">
+<li><a href="#_vocab_listing">7.1. Vocab Listing</a></li>
+</ul>
+</li>
 <li><a href="#_profiles">8. Profiles</a>
 <ul class="sectlevel2">
 <li><a href="#_abis_is_a_profile">8.1. ABIS is a Profile</a></li>
@@ -2984,26 +2988,26 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>7. Vocabularies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ABIS use depends on the use of many vocabularies. For example, the observed <em>growth stage</em> of a plant may be indicated by use of <a href="https://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f">Dead</a>, <a href="https://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb">Regrowth</a> or <a href="https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15">Senescence</a> taken from <a href="https://www.tern.org.au/">TERN</a>'s <a href="https://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6">Growth Stage vocabulary</a>.</p>
+<p>Use of ABIS depends on many vocabularies from many different places. For example, the observed <em>growth stage</em> of a plant may be indicated by use of <a href="https://linked.data.gov.au/def/tern-cv/79818c43-e58c-4725-bd3c-070aa683416f">Dead</a>, <a href="https://linked.data.gov.au/def/tern-cv/1419ef01-161f-4265-8cb1-e340726311cb">Regrowth</a> or <a href="https://linked.data.gov.au/def/tern-cv/28cfe080-2bd5-4449-8fe4-cbfa71c3ad15">Senescence</a> taken from <a href="https://www.tern.org.au/">TERN</a>'s <a href="https://linked.data.gov.au/def/tern-cv/d2915c8b-bf46-4a85-ba6d-cbe88c03fce6">Growth Stage vocabulary</a>.</p>
 </div>
 <div class="paragraph">
-<p>Some uses of ABIS, such as for the submission of data to the <a href="#BDR">BDR</a>, require the use of particular vocabularies that aren&#8217;t mandated for general ABIS use, for example the use of the <a href="https://linked.data.gov.au/dataset/bdr/datatypes/"><em>BDR Datatypes</em></a> vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <a href="#_profiles">Profiles</a>.</p>
+<p>Some uses of ABIS, such as for the submission of data to the <a href="#BDR">BDR</a>, require the use of particular vocabularies that aren&#8217;t mandated for general ABIS use, for example the use of the <a href="https://linked.data.gov.au/dataset/bdr/datatypes"><em>BDR Datatypes</em></a> vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <a href="#_profiles">Profiles</a>.</p>
 </div>
 <div class="paragraph">
-<p>Some <a href="#_component_models">Component Models</a> of ABIS also require the use of particular vocabularies, for example, the <a href="#annex-b">Projects Model</a> mandates that roles chosen for an attribution&#8217;s <code>hadRole</code> predicate, when used for an instances of the <code>abis:Project</code> class, must come from the <a href="https://data.idnau.org/pid/vocab/idn-role-codes">IDN Role Codes Vocabulary</a></p>
+<p>Some <a href="#_component_models">Component Models</a> within ABIS require the use of particular vocabularies, for example, the <a href="#TERNOntology">TERN Ontology</a> mandates that types of environmental monitoring site be indicated with the <a href="http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159">TERN Site Type vocabulary</a>.</p>
 </div>
+<div class="sect2">
+<h3 id="_vocab_listing"><a class="anchor" href="#_vocab_listing"></a>7.1. Vocab Listing</h3>
 <div class="paragraph">
-<p>All the vocabularies required for use with ABIS and any known profile of ABIS are listed at the <em>BDR Vocabulary Register</em>:</p>
+<p>While profiles of ABIS and its Component Model will list the vocabs they require for use, the BDR attempts to list all vocabularies known to be used by these at the:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://vocabs.bdr.gov.au/v/vocab">https://vocabs.bdr.gov.au</a></p>
+<p><a href="https://resources.bdr.gov.au/catalogues">BDR Catalogues home</a></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>The profile or Component Model that requires each vocab&#8217;s use is indicated there, along with other metadata to assist with the discovery of vocabs. This register is live and continuously updated with use and vocab updates.</p>
 </div>
 </div>
 </div>
@@ -5442,7 +5446,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-07-23 00:03:21 UTC
+Last updated 2025-07-23 00:11:22 UTC
 </div>
 </div>
 </body>
