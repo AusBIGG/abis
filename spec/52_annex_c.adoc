@@ -17,7 +17,7 @@ To validate these examples locally - on your own computer - you will need a vali
 | File | Location | Validity
 
 | TERN Ontology Validator | https://github.com/AusBIGG/abis/blob/master/models/tern.ttl | -
-| TERN Ontology Model | https://github.com/AusBIGG/abis/tree/master/models/components/tern-model.ttl | -
+| TERN Ontology Model | https://github.com/AusBIGG/abis/tree/master/models/models/tern.ttl | -
 | Example 01 data | https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-01.ttl | valid
 | Example 02 data | https://github.com/AusBIGG/abis/tree/master/examples/tern-eg-02.ttl | invalid
 |===
@@ -25,7 +25,7 @@ To validate these examples locally - on your own computer - you will need a vali
 If using the https://github.com/RDFLib/pySHACL[pySHACL] tool, the following command will validate the data using the files above:
 
 ----
-pyshaclz -s tern-validator.ttl -e tern-ont.ttl tern-eg-01.ttl -f table
+pyshacl -s tern-validator.ttl -e tern-ont.ttl tern-eg-01.ttl -f table
 ----
 
 ==== C.1.2 Example 01 - valid
