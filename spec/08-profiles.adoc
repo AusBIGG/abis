@@ -3,22 +3,23 @@
 A "profile" is a:
 
 > A specification that constrains, extends, combines, or provides guidance or explanation about the usage of other specifications.
+-- https://www.w3.org/TR/dx-prof/#dfn-profile[ref]
 
-Profiles may comprise multiple parts: their own specification rules, validation constraints, controlled vocabularies, and so on.
+Profiles may comprise multiple parts such as their own specification rules, validation constraints, controlled vocabularies, and so on.
 
 === ABIS is a Profile
 
 ABIS, itself, is a profile of many other specifications, as per the <<Model Dependency Hierarchy, Model Dependency Hierarchy>>.
 
-ABIS is made of multiple parts, as per the Section <<Parts of ABIS, Parts of ABIS>>.
+ABIS is also made of multiple parts, as per the Section <<Parts of ABIS, Parts of ABIS>>.
 
 === Profiles of ABIS
 
 Further profiles of ABIS may be made to constrain and/or extend its use.
 
-Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on. Profile rules are entirely a matter for profile defines however data validated according to a profile of a standard, must always be valid according to the standard itself.
+Profile makers are able to define extended constraints on the use of ABIS to meet particular business needs. This can include constraining value ranges, vocabularies used and so on. Profile rules are entirely a matter for profile definers, however profiles must always ensure that any data valida according to them is also valid according to the standard being profiled.
 
-Profiles of ABIS may be defined anywhere however profile creators are encouraged to list their profiles here by <<Metadata, contacting ABIS' maintainers>>.
+Profiles of ABIS may be defined anywhere but profile creators are encouraged to list their profiles here by <<Metadata, contacting ABIS' maintainers>>.
 
 The following profiles of ABIS are known to exist:
 
@@ -31,7 +32,9 @@ The BDR Profile of ABIS is presented in a stand-alone document, see **https://li
 
 This profile defines the requirements for data to be absorbed into the https://www.dcceew.gov.au/environment/epbc/publications/biodiversity-data-repository[Biodiversity Data Repository].
 
-It contains a number of part models - for Project, Data Release etc. - as well as its own vocabularies and requirements relating to allowed identifiers.
+It contains a number of component models - for Project, Data Release etc. - not required for general ABIS use as well as its own vocabularies and requirements relating to identifiers for certain classes of object.
 
-[[NOTE]]
+[NOTE]
+====
 Previously this document contained all the information about the BDR Profile here. This information is now all contained within the BDR Profile of ABIS' own document, linked to above.
+====
