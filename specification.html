@@ -731,9 +731,9 @@ pre.rouge {
 <li><a href="#_geosparql">10.1.2. GeoSPARQL</a></li>
 <li><a href="#_prov">10.1.3. PROV</a></li>
 <li><a href="#_darwin_core_terms">10.1.4. Darwin Core Terms</a></li>
+<li><a href="#_gbif_new_data_model">10.1.5. GBIF New Data Model</a></li>
 </ul>
 </li>
-<li><a href="#_gbif_new_data_model">10.2. GBIF New Data Model</a></li>
 </ul>
 </li>
 <li><a href="#_reasoning_rules">11. Reasoning Rules</a>
@@ -885,7 +885,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The one-stop-shop for ABIS is the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a>. It contains example data, vocabularies and validators that you can play with online, without needing to install anything. Go there if you are new to ABIS.</p>
+<p>The one-stop-shop for ABIS is the <a href="https://resources.bdr.gov.au/">BDR ABIS Resources</a>. It contains example data, vocabularies and validators that you can play with online, without needing to install anything. Go there if you are new to ABIS.</p>
 </div>
 </td>
 </tr>
@@ -2052,7 +2052,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p><code>geo:asWKT "POINT (147.300797 -35.113046)"geo:wktLiteral ;</code></p>
 </div>
 <div class="paragraph">
-<p>This is as per a rule in the <a href="#_spatial_reasoning">Spatial Reasoning</a> part of the rules section.</p>
+<p>This is as per a rule in the <a href="#Spatial Reasoning">Spatial Reasoning</a> part of the rules section.</p>
 </div>
 <h4 id="_coordinate_system" class="discrete">Coordinate System</h4>
 <div class="paragraph">
@@ -2683,7 +2683,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>See <a href="#D.1. TERN Ontology">Annex D: Extended Examples &gt; TERN Ontology</a> for a full example of TERN Ontology data with explanations for each part.</p>
 </div>
 <div class="paragraph">
-<p>Also see the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> for multiple examples that can be loaded and validated using the online validators available there.</p>
+<p>Also see the <a href="https://resources.bdr.gov.au/">BDR ABIS Resources</a> for multiple examples that can be loaded and validated using the online validators available there.</p>
 </div>
 </div>
 <div class="sect4">
@@ -2764,7 +2764,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>Examples of NSL Model data can also be found throughout the <a href="https://linked.data.gov.au/def/nsl">NSL Model Specification</a>.</p>
 </div>
 <div class="paragraph">
-<p>References to NSL objects - instances of the <code>TaxonName</code> class - are also present within example data files in the <a href="https://abis.dev.kurrawong.ai">ABIS Portal</a>.</p>
+<p>References to NSL objects - instances of the <code>TaxonName</code> class - are also present within example data files in the <a href="https://abis.dev.kurrawong.ai">BDR ABIS Resources</a>.</p>
 </div>
 </div>
 </div>
@@ -2822,7 +2822,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>Record</code> instances can be calculated from pure TERN ontology data if not directly stated, according to the <a href="#_record_rule">Record Rule</a>.</p>
+<p><code>Record</code> instances can be calculated from pure TERN ontology data if not directly stated, according to the <a href="#Record Rule">Record Rule</a>.</p>
 </div>
 </td>
 </tr>
@@ -3242,7 +3242,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <h2 id="_mappings"><a class="anchor" href="#_mappings"></a>10. Mappings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section lists mappings between ABIS and related models. These are conceptual mappings that either show model element equivalence - ABIS Class X is equivalent to Other Model Class Y - or transformations for equivalence - or calculations that lead to equivalence.</p>
+<p>This section lists mappings between ABIS and related models. These are conceptual mappings that either show model element equivalence, e.g. that ABIS Class X is equivalent to Other Model Class Y, or provide transformations/calculations that lead to equivalence.</p>
 </div>
 <div class="paragraph">
 <p>For each mapping given here, an RDF mapping file is also provided when the target of the mapping is also a Semantic Web model. The files are linked to in each section.</p>
@@ -3250,7 +3250,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect2">
 <h3 id="_background_models_2"><a class="anchor" href="#_background_models_2"></a>10.1. Background Models</h3>
 <div class="paragraph">
-<p>ABIS background models such as <a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> and <a href="#GSP">GeoSPARQL</a> are mapped to from ABIS foreground data in a simple manner: since all TERN Ontology/ABIS class objects are specialised versions of the background model&#8217;s classes, if a background model export is needed, ABIS data can either be sent as-is and the receiver can then infer generic objects from specialised ones, or we could perform the inference and export objects according to that model only.</p>
+<p>ABIS background models such as <a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> and <a href="#GSP">GeoSPARQL</a> are mapped to from ABIS foreground data in a simple manner: since all TERN Ontology/ABIS class objects are specialised versions of the background model&#8217;s classes, if a background model export is needed, ABIS data can either be sent as-is and the receiver can then infer generic objects from specialised ones, or you could perform the inference and export objects according to that model only.</p>
 </div>
 <div class="paragraph">
 <p>The following methodology for export of ABIS data according to a SOSA will work with all background models.</p>
@@ -3258,7 +3258,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="sect3">
 <h4 id="_sosa"><a class="anchor" href="#_sosa"></a>10.1.1. SOSA</h4>
 <div class="paragraph">
-<p>ABIS foreground model&#8217;s mappings to the <a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> and also SOSA&#8217;s parent, the <a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a> are established by following defined relations between elements such as subclass and subproperty relations. The following mapping table to SOSA/SSN from the TERN ontology can be produced by querying the TERN Ontology with this query:</p>
+<p>ABIS foreground model&#8217;s mappings to the <a href="#SOSA">Sensor, Observations, Sampling &amp; Actuation (SOSA) ontology</a> and also SOSA&#8217;s parent, the <a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a>, are established by following defined relations between elements such as subclass and subproperty relations. The following mapping table to SOSA/SSN from the TERN ontology can be produced by querying the TERN Ontology with this query:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3382,7 +3382,7 @@ WHERE {
 </tbody>
 </table>
 <div class="paragraph">
-<p>The TERN Ontology uses many SOSA predicated directly too:</p>
+<p>The TERN Ontology uses many SOSA predicates directly too:</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even" style="width: 25%;">
 <colgroup>
@@ -3457,7 +3457,7 @@ WHERE {
 <p>In addition to the above tables, many TERN Ontology Classes are subclasses of other TERN Ontology Classes, for example <code>tern:Site subclass of tern:Sample</code> and given <code>tern:Sample subclass of sosa:Sample</code>, then <code>tern:Site subclass of sosa:Sample</code>.</p>
 </div>
 <div class="paragraph">
-<p>Using the tables and logic above, much TERN Ontology data can be converted to purely SOSA/SSN terms. for the following TERN Ontology data:</p>
+<p>Using the tables and logic above, much TERN Ontology data can be converted to purely SOSA/SSN terms. For the following TERN Ontology data:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3510,7 +3510,7 @@ ex:obs-1
 <div class="sect3">
 <h4 id="_geosparql"><a class="anchor" href="#_geosparql"></a>10.1.2. GeoSPARQL</h4>
 <div class="paragraph">
-<p>Conversion of ABIS data to pure GeoSPARQL may be needed to understand how SOSA data can be spatially indexed, given that most spatially-enabled triplestores only spatially index GoSPARQL values.</p>
+<p>Conversion of ABIS data to pure GeoSPARQL may be needed to spatially index ABIS data, given that most spatially-enabled triplestores only recognise GoSPARQL values.</p>
 </div>
 <div class="paragraph">
 <p>The following SPARQL query applied to the TERN Ontology produces the table that follows:</p>
@@ -4357,11 +4357,11 @@ ex:obs-1
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_gbif_new_data_model"><a class="anchor" href="#_gbif_new_data_model"></a>10.2. GBIF New Data Model</h3>
+<div class="sect3">
+<h4 id="_gbif_new_data_model"><a class="anchor" href="#_gbif_new_data_model"></a>10.1.5. GBIF New Data Model</h4>
 <div class="paragraph">
-<p><em>Coming in July, 2024</em></p>
+<p><em>The ABIS authors intend to map ABIS &#8592;&#8594; <a href="https://www.gbif.org/new-data-model">GBIF New Data Model</a> at some stage, when the BDR is in stable operations (July 2025+). This will allow ABIS data to conform to the major international biodiversity data standard.</em></p>
+</div>
 </div>
 </div>
 </div>
@@ -4394,7 +4394,7 @@ ex:obs-1
 <p>Forwards chaining involves expanding received data in accordance with the rules and materialising all the extension elements. Backwards chaining involves applying the reasoning rules to queries of the data such that the query can be answered as if the data had been expanded.</p>
 </div>
 <div class="paragraph">
-<p>The rules are identified below, described in English and then defined in <a href="#SPARQL">SPARQL</a> queries. Implementing systems do not have to expand the data using SPARQL queries - they may use any system they like, such as application code - but the SPARQL queries serve as the canonical definition of the rule.</p>
+<p>The rules are identified below, described in English and then defined as <a href="#SPARQL">SPARQL</a> queries. Implementing systems do not have to expand the data using SPARQL queries - they may use any system they like, such as application code - but the SPARQL queries serve as the canonical definition of the rule.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4467,21 +4467,19 @@ CONSTRUCT {
     ?feature geo:hasCentroid ?centroid
 }
 WHERE {
-    ?feature (schema:spatial</pre>
+    ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
+
+    BIND geof:centroid(?wkt) AS ?centroid .
+
+    FILTER REGEX(?wkt, "POLYGON")
+}</pre>
 </div>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geo:hasGeometry)/geo:asWKT ?wkt .</p>
-<p class="tableblock">    BIND geof:centroid(?wkt) AS ?centroid .</p>
-<p class="tableblock">    FILTER REGEX(?wkt, "POLYGON")
-}
-----</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R04</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If a Dataset does not have a geometry supplied, it must have it calculated as the convex hull of its spatial object members</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
@@ -4511,23 +4509,23 @@ WHERE {
               a ?spatialFeature ;
             .
             ?dataset a schema:Dataset .
-            ?feature (schema:spatial</pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geo:hasGeometry)/geo:asWKT ?wkt .
+            ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
         } GROUP BY ?dataset
-    }</p>
-<p class="tableblock">    BIND BNODE() AS ?geom .
-    BIND geof:aggConvexHull(?wkt) AS ?hull .</p>
-<p class="tableblock">    MINUS {
+    }
+
+    BIND BNODE() AS ?geom .
+    BIND geof:aggConvexHull(?wkt) AS ?hull .
+
+    MINUS {
         ?dataset schema:spatial ?geom .
     }
-}
-----</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R05</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bounding Boxes must be calculated for Datasets</p></td>
+}</pre>
+</div>
+</div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bounding Boxes must be calculated for Datasets</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R04</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
@@ -4538,16 +4536,15 @@ CONSTRUCT {
     ?dataset geo:hasBoundingBox ?boundingbox
 }
 WHERE {
-    ?dataset (schema:spatial</pre>
+    ?dataset (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
+
+    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+}</pre>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geo:hasGeometry)/geo:asWKT ?wkt .</p>
-<p class="tableblock">    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
-}
-----</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R06</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R06</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If a Dataset does not have a temporal range supplied, it must have it calculated as the containing interval containing all of its temporal object members</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
@@ -4575,38 +4572,21 @@ WHERE {
             .
             ?dataset a schema:Dataset .
 
-            ?feature schema:temporal</pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">time:hasTime ?time .
+            ?feature schema:temporal|time:hasTime ?time .
         } GROUP BY ?dataset
-    }</p>
-<p class="tableblock">    BIND function:aggInterval(?time) AS ?interval .</p>
-<p class="tableblock">    MINUS {
+    }
+
+    BIND function:aggInterval(?time) AS ?interval .
+
+    MINUS {
         ?dataset schema:temporal ?temporal .
     }
-}
-----</p></td>
+}</pre>
+</div>
+</div></div></td>
 </tr>
 </tbody>
 </table>
-<h4 id="_record_rule" class="discrete">Record Rule</h4>
-<div class="paragraph">
-<p>This rule allows for the creation of <a href="#abis:BiodiversityRecord">Record</a> instances from <a href="#_tern_ontology">TERN Ontology</a> data that doesn&#8217;t directly indicate such as class of object.</p>
-</div>
-<h4 id="_spatial_reasoning" class="discrete">Spatial Reasoning</h4>
-<div class="paragraph">
-<p>The following spatial reasoning rules will be applied to ABIS data.</p>
-</div>
-<h5 id="_centroids_and_bounding_boxes_from_boundaries" class="discrete">Centroids and Bounding Boxes from Boundaries</h5>
-<h5 id="_datasets_containment_of_surveys" class="discrete"><code>Datasets</code> containment of <code>Surveys</code></h5>
-<h5 id="_surveys_containment_of_observations" class="discrete"><code>Surveys</code> containment of <code>Observations</code></h5>
-<h5 id="_inference_of_geometry_literal_datatypes_from_geosparql_predicates" class="discrete">Inference of geometry literal datatypes from GeoSPARQL predicates</h5>
-<h4 id="_temporal_reasoning" class="discrete">Temporal Reasoning</h4>
-<h5 id="_inference_of_datetime_literal_datatypes_from_time_predicates" class="discrete">Inference of date/time literal datatypes from TIME predicates</h5>
-<div class="paragraph">
-<p><mark>TODO: complete this section</mark></p>
-</div>
 </div>
 </div>
 </div>
@@ -5206,7 +5186,10 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="sect2">
 <h3 id="_emsa_protocols"><a class="anchor" href="#_emsa_protocols"></a>EMSA Protocols</h3>
 <div class="paragraph">
-<p>#TODO: add details of the EMSA Protocol Model(s) from <a href="https://emsa.tern.org.au/" class="bare">https://emsa.tern.org.au/</a></p>
+<p>The EMSA Protocol Model(s) are defined at <a href="https://emsa.tern.org.au/" class="bare">https://emsa.tern.org.au/</a> and that site also provides documentation on how to use the protocols.</p>
+</div>
+<div class="paragraph">
+<p>This annex will be expended to include further information on how to use those protocols within the context of ABIS, likely in late 2025 as the BDR starts to accept EMSA protocol data.</p>
 </div>
 </div>
 </div>
@@ -5225,10 +5208,10 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="sect3">
 <h4 id="_c_1_1_validating"><a class="anchor" href="#_c_1_1_validating"></a>C.1.1 Validating</h4>
 <div class="paragraph">
-<p>All these examples are loaded into the <a href="https://abis.dev.kurrawong.net">ABIS Portal</a> and may be validated online using the TERN Ontology validator which is also loaded there.</p>
+<p>All these examples are loaded into the <a href="https://resources.bdr.gov.au/">BDR ABIS Resources</a> and may be validated online using the TERN Ontology validator which is also loaded there.</p>
 </div>
 <div class="paragraph">
-<p>To validate these examples locally - on your own computer - you will need a validation tool installed - see the <a href="#_validation">Validation Section</a>, the example data file, the TERN Ontology validator and the TERN Ontology itself. These files are all available from this ABIS repository:</p>
+<p>To validate these examples locally - on your own computer - you will need a validation tool installed. See the <a href="#_validation">Validation Section</a> for details. The example data file, the TERN Ontology validator and the TERN Ontology itself are all available from the ABIS repository:</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -5246,7 +5229,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TERN Ontology Validator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/AusBIGG/abis/tree/master/validators/tern-validator.ttl" class="bare">https://github.com/AusBIGG/abis/tree/master/validators/tern-validator.ttl</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/AusBIGG/abis/blob/master/models/tern.ttl" class="bare">https://github.com/AusBIGG/abis/blob/master/models/tern.ttl</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
@@ -5295,22 +5278,16 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">dataset-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">description</span><span class="w"> </span><span class="s">"A schema:Dataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">title</span><span class="w"> </span><span class="s">"BDR Dataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
-</span><span class="nn">ex:</span><span class="n">submission-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">ternRDF:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN Submission 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN RDFDataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">obs-01
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN Observation 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-01</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT(143, -27)"</span><span class="p">^^</span><span class="nn">geo:</span><span class="n">wktLiteral
@@ -5322,7 +5299,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
         </span><span class="nn">rdf:</span><span class="n">value</span><span class="w"> </span><span class="s">"42"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">tern:</span><span class="n">uncertainty</span><span class="w"> </span><span class="s">"0.5"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;https://example.org/op/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">phenomenonTime</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="k">a</span><span class="w"> </span><span class="nn">time:</span><span class="n">Instant</span><span class="w"> </span><span class="p">;</span><span class="w">
@@ -5335,8 +5312,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </span><span class="nn">ex:</span><span class="n">foi-01
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">FeatureOfInterest</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN FeatureOfInterest 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-01</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">tern:</span><span class="n">featureType</span><span class="w"> </span><span class="nl">&lt;https://example.org/ft/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
 </div>
@@ -5362,22 +5338,16 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">dataset-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">description</span><span class="w"> </span><span class="s">"A schema:Dataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">title</span><span class="w"> </span><span class="s">"BDR Dataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
-</span><span class="nn">ex:</span><span class="n">submission-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">ternRDF:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN Submission 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN RDFDataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">obs-01
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN Observation 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-01</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="c1">#    geo:hasGeometry [</span><span class="w">
 </span><span class="c1">#        a geo:Geometry ;</span><span class="w">
 </span><span class="c1">#        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral</span><span class="w">
@@ -5389,21 +5359,20 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
         </span><span class="nn">rdf:</span><span class="n">value</span><span class="w"> </span><span class="s">"42"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">tern:</span><span class="n">uncertainty</span><span class="w"> </span><span class="s">"0.5"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;https://example.org/op/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">phenomenonTime</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="k">a</span><span class="w"> </span><span class="nn">time:</span><span class="n">Instant</span><span class="w"> </span><span class="p">;</span><span class="w">
         </span><span class="nn">time:</span><span class="n">inXSDDateTimeStamp</span><span class="w"> </span><span class="s">"2021-11-18T14:35+10:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTimeStamp</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">sosa:</span><span class="n">usedProcedure</span><span class="w"> </span><span class="nl">&lt;https://example.org/proc/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">tern:</span><span class="n">resultDateTime</span><span class="w"> </span><span class="s">"2021-11-18T14:35:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">tern:</span><span class="n">resultDateTime</span><span class="w"> </span><span class="s">"2021-11-18T14:35:00"</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># ^^xsd:dateTime ;</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
 </span><span class="nn">ex:</span><span class="n">foi-01
 </span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">FeatureOfInterest</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN FeatureOfInterest 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="c1">#    void:inDataset ex:submission-01 ;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="c1">#    void:inDataset ex:dataset-01 ;</span><span class="w">
     </span><span class="nn">tern:</span><span class="n">featureType</span><span class="w"> </span><span class="nl">&lt;https://example.org/ft/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
 </div>
@@ -5438,7 +5407,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-07-23 00:36:20 UTC
+Last updated 2025-07-23 02:18:21 UTC
 </div>
 </div>
 </body>
