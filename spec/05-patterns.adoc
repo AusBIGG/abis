@@ -70,12 +70,12 @@ All complex objects in OWL modelling - classes, predicates and instances of clas
     schema:hasPart
         <http://example.com/dataset/x/sample/y> ,
         <http://example.com/dataset/x/obs/z> ;
-    dcterms:title "Dataset X" ;
+    schema:name "Dataset X" ;
 .
 
 <http://example.com/dataset/x/sample/y>
     a tern:Sample ;
-    dcterms:title "Sample Y" ;
+    schema:name "Sample Y" ;
 .
 
 <http://example.com/dataset/x/obs/z>
@@ -86,7 +86,7 @@ All complex objects in OWL modelling - classes, predicates and instances of clas
         schema:value 42 ;
         schema:unitCode unit:PPM ;
     ] ;
-    dcterms:title "Observation Z" ;
+    schema:name "Observation Z" ;
 .
 ----
 
@@ -636,4 +636,4 @@ ABIS _site_ s _MUST_ have spatiality and temporality indicated as per the <<Spat
 
 ABIS _site_ s _MAY_ have additional information about them (such as sub areas, _transects_, _subplots_, methods used etc.) recorded for them according to particular protocols, such as the https://www.tern.org.au/emsa-protocols-manual[Ecological Monitoring System Australia (EMSA) protocols]. Adherence to such protocols _MAY_ result in addition RDF data being linked to an ANSI _site_ or additional textual or other literal information but it _MUST NOT_ conflict with the ABIS _site_ information requirements.
 
-Detailed _site_ modelling according to EMSA or similar protocols should result in extension models to ABIS, just as the <<Projects Model, Projects Model>> is an extension.
+Detailed _site_ modelling according to EMSA or similar protocols should result in extension models to ABIS.

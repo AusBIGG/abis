@@ -26,15 +26,13 @@ In addition to the TERN Ontology and the background models it uses, ABIS also us
 ** A model for the description of reference lists and bibliographic references themselves
 * The <<PROF, Profiles Vocabulary>>
 ** A model that relates models to other models
-* <<OLIS, Olis Ontology>>
-** A model used to manage graphs of data with within a <<KnowledgeGraph, Knowledge Graph>>
 
 ABIS also includes additional "component models" that extend the range of things ABIS can cover:
 
-* <<Projects Model, Projects Model>>
-** A basic model of projects that generate data
-* <<Data Release Model, Data Release Model>>
-** A model for data embargoes, withholding times and so on
+* <<NSLM, National Species List Model>>
+** A model for the taxa and taxon names within the https://biodiversity.org.au/nsl/[NSL]
+* <<Biodiversity Record Model, Biodiversity Record Model>>
+** A model for curated lists - catalogues - of data resources - datasets - that contain information about biodiversity occurrences and surveys - biodiversity records.
 
 Details of all these models are given in the <<Models, Models>> section.
 
@@ -108,9 +106,4 @@ This specification aims to cover all the information needed to understand ABIS a
 . <<Reasoning Rules, Reasoning Rules>>
 ** Machine-executable rules that can be applied to ABIS data to infer further information
 
-Two additional models - extensions to ABIS - are defined in this document:
-
-* <<annex-b, Annex A: Projects Model>>
-* <<annex-c, Annex B: Data Release Model>>
-
-Extended examples <<TERNOntology, TERN Ontology>> data, in use within ABIS, are given in <<annex-d, Annex C>>.
+Extended examples <<TERNOntology, TERN Ontology>> data, in use within ABIS, are given in <<annex-c, Annex C>>.

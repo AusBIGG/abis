@@ -32,7 +32,7 @@ image::img/hierarchy.svg[ABIS Parts,align="center"]
 
 The ABIS Foreground Model is the union of the Component Models listed in the next section. The dependencies of these models are shown in <<#hierarchy, Figure 13>>, above.
 
-When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necissary, the <<Biodiversity Record Model, Biodiversity Record Model>> is used. Project information and data release details are modelled using the <<Projects Model, ABIS Projects>> & <<Data Release Model, ABIS Data Release>> respectively.
+When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necissary, the <<Biodiversity Record Model, Biodiversity Record Model>> is used.
 
 === Component Models
 
@@ -41,8 +41,6 @@ The Component Models of ABIS are:
 . <<TERN Ontology, TERN Ontology>>
 . <<NSL Model, NSL Model>>
 . <<Biodiversity Record Model, Biodiversity Record Model>>
-. <<Projects Model, Projects Model>>
-. <<Data Release Model, Data Release Model>>
 
 The TERN Ontology and the NSL Model are defined externally to ABIS whereas the other 3 are defined here, within the ABIS Specification. A short overview of each of these models follows.
 
@@ -91,7 +89,7 @@ The TERN Ontology provides the main model elements for ABIS observation-centric 
 
 ===== Examples
 
-See <<D.1. TERN Ontology, Annex D: Extended Examples > TERN Ontology>> for a full example of TERN Ontology data with explanations for each part.
+See <<C.1. TERN Ontology, Annex D: Extended Examples > TERN Ontology>> for a full example of TERN Ontology data with explanations for each part.
 
 Also see the https://resources.bdr.gov.au/[BDR ABIS Resources] for multiple examples that can be loaded and validated using the online validators available there.
 
@@ -166,7 +164,7 @@ The use of the existing classes is as per <<SDO, schema.org>>'s basic data catal
 
 [NOTE]
 ====
-`Record` instances can be calculated from pure TERN ontology data if not directly stated, according to the <<Record Rule, Record Rule>>.
+`Record` instances can be calculated from pure TERN ontology data if not directly stated, according to the Record Rule - see the <<Rule List, Rule List>>
 ====
 
 See the patterns of <<Data Cataloguing, Data Cataloguing>> and <<Records & Occurrences>> for more information and <<#annex-a, this model's definition in Annex A>> for further information.
@@ -205,40 +203,6 @@ ex:obs-z
     sosa:hasFeatureOfInterest ex:sample-y ;
 .
 ----
-
-==== Projects Model
-
-Model location: <<#annex-b, Annex B>>
-
-ABIS contains a simple model of Projects where a <<#abis:Project, `Project`>> is defined as "An Activity that requires concerted effort following a Plan in pursuit of an objective". The Model is fully described in <<#annex-b, Annex A: Projects Model>>.
-
-The following figure illustrates the basic relationships of the class <<#abis:Project, `Project`>> and <<#abis:Program, `Program`>>, the only other class defined by the model.
-
-[#proj-hierarchy,link="img/proj-hierarchy.svg"]
-.The two classes defined by the Projects Model - Project & Program - and their main relationships.
-image::img/proj-hierarchy.svg[Projects Model Class Hierarchy,align="center",width=400]
-
-The join point between the Projects Model and the rest of ABIS is that submissions of ABIS data - instances of the https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class - are produced by instances of <<#abis:Project, `Project`>> as per the figure below.
-
-[#proj-join,link="img/proj-join.svg"]
-.The Projects Model joins the rest of ABIS by Project instances producing https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] instances.
-image::img/proj-join.svg[Projects Model Join Poin,align="center",width=400]
-
-See <<#annex-b, Annex A>> for more details about the Project Model.
-
-==== Data Release Model
-
-Model location: <<#annex-c, Annex C>>
-
-ABIS contains a simple model for describing aspects of data release: to whom, under what circumstances and when data may be released. The Model is fully described in <<#annex-c, Annex B: Data Release Model>>.
-
-The following figure illustrates the basic elements of this model.
-
-[#data-realse-overview,link="img/data-release.svg"]
-.An overview of the Data Release Model
-image::img/data-release.svg[Overview of the Data Release Model,align="center",width=350]
-
-The Data Release Model defines predicates - <<#embargoedUntil, embargoed until>> & <<#embargoPeriod, embargo period>> - which can be applied to instances of the https://schema.org/Dataset[`schema:Dataset`] class which set absolute or relative embargo release times. The model details the relations between these predicates.
 
 === Background Models
 

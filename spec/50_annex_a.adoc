@@ -1,9 +1,9 @@
 [[annex-a]]
 == Annex A: Biodiversity Record Model
 
-[#brd-overview,link="img/brm-overview.svg"]
+[#brd-overview,link="img/annex-a/brm-overview.svg"]
 .An overview of the Biodiversity Record Model's classes and their relationships
-image::img/brm-overview.svg[Biodiversity Record Model overview,align="center",width=150]
+image::img/annex-a/brm-overview.svg[Biodiversity Record Model overview,align="center",width=150]
 
 <<schema:DataCatalog, DataCatalog>>s are curated lists of <<schema:Dataset, Dataset>>s that contain <<abis:BiodiversityRecord, Biodiversity Record>>s (just 'Records').
 
@@ -16,26 +16,25 @@ The validator for this model, given in this model's <<A.5. Validator, Validator>
 See the <<BDR Profile, BDR Profile>> for the requirements of Biodiversity Record Model data bound for the BDR.
 ====
 
-[#brm-join,link="img/brm-join.svg"]
+[#brm-join,link="img/annex-a/brm-join.svg"]
 .Class equivalences between this Biodiversity Record Model, <<SDO, schema.org>> and <<DCAT, DCAT>>
-image::img/brm-join.svg[Biodiversity Record Model class equivalences,align="center",width=60%]
+image::img/annex-a/brm-join.svg[Biodiversity Record Model class equivalences,align="center",width=60%]
 
-
-[#brm-occurrence,link="img/brm-occurrence.svg"]
+[#brm-occurrence,link="img/annex-a/brm-occurrence.svg"]
 .Biodiversity Record Model occurrence modelling
-image::img/brm-occurrence.svg[Biodiversity Record Model occurrence modelling,align="center",width=60%]
+image::img/annex-a/brm-occurrence.svg[Biodiversity Record Model occurrence modelling,align="center",width=60%]
 
 [[catalogue-metadata]]
 === A.1. Metadata
 
 [frame=none, grid=none, cols="1,5"]
 |===
-|*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis/projects
-|*https://schema.org/name[Name]* | ABIS Data Release Model
+|*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis/brm
+|*https://schema.org/name[Name]* | ABIS Biodiversity Record Model
 |*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This model is for curated lists - catalogues - of data resources - datasets - that contains information about biodiversity occurrences and surveys - biodiversity records.
 |*https://schema.org/dateCreated[Created Date]* | 2024-07-15
-|*https://schema.org/dateModified[Modified Date]* | 2024-07-22
-|*https://schema.org/dateIssued[Issued Date]* | 2023-07-30
+|*https://schema.org/dateModified[Modified Date]* | 2025-07-24
+|*https://schema.org/dateIssued[Issued Date]* | 2024-07-30
 |*https://schema.org/version[Version]* | 2.0
 |*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/catalogue/1.0[abisc:1.0]
 |*Version History*| *2.0* - 2024 July - First release (v2.0 to match ABIS)
@@ -57,8 +56,6 @@ Issue tracking of the ABIS standard is managed online at https://github.com/AusB
 
 === A.3. Classes
 
-
-
 [discrete]
 ==== Class Index
 
@@ -74,10 +71,6 @@ Classes defined elsewhere:
 
 [[abis:BiodiversityRecord]]
 ==== BiodiversityRecord (Record)
-
-// [#proj-project,link="img/proj-project.svg"]
-// .The Projects Model `Project` Class and its expected predicates
-// image::img/proj-project.svg[Projects Model Project Class,align="center",width=650]
 
 [cols="3,10"]
 |===
