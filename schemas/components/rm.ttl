@@ -1,0 +1,133 @@
+PREFIX abis: <https://linked.data.gov.au/def/abis/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://linked.data.gov.au/def/abis/rm/1> schema:name "1" .
+
+abis:rm
+    a owl:Ontology ;
+    owl:versionIRI <https://linked.data.gov.au/def/abis/rm/1> ;
+    prov:qualifiedAttribution [
+        prov:agent <https://linked.data.gov.au/org/ausbigg> ;
+        prov:role <http://def.isotc211.org/CI/RoleCode/owner> ;
+    ] ;
+    schema:codeRepository "https://github.com/ausbigg/abis/"^^xsd:anyURI ;
+    schema:copyrightHolder <https://linked.data.gov.au/org/dcceew> ;
+    schema:creator <https://linked.data.gov.au/org/dcceew> ;
+    schema:dateCreated "2024-07-15"^^xsd:date ;
+    schema:dateModified "2025-07-26"^^xsd:date ;
+    schema:dateIssued "2024-07-30"^^xsd:date ;
+    schema:description """The Records Model links objects represented in Semantic Web data to records about them that preserve identifiers from their original non-Semantic Web form. This allows easy association of Semantic Web and non-Semantic Web forms and facilitates good provenance for data conversions to Semantic Web form""" ;
+    schema:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    schema:name "Records Model"@en ;
+    schema:publisher <https://linked.data.gov.au/org/dcceew> ;
+    schema:version 2 ;
+    skos:historyNote "Created by the BDR Team in 204 with the establishment of the operation Biodiversity Data Repository" ;
+.
+
+schema:DataCatalogue
+     a owl:Class ;
+     rdfs:isDefinedBy <https://schema.org> ;
+     schema:description "A collection of datasets" ;
+     schema:name "Data Catalog" ;
+     skos:example "See example for schema:Statement" ;
+     skos:historyNote "Taken unchanged from schema.org" ;
+     skos:scopeNote "" ;
+.
+
+schema:Dataset
+     a owl:Class ;
+     rdfs:isDefinedBy <https://schema.org> ;
+     schema:description "A body of structured information describing some topic(s) of interest" ;
+     schema:name "Dataset" ;
+     skos:example "See example for schema:Statement" ;
+     skos:historyNote "Taken unchanged from schema.org" ;
+.
+
+schema:Statement
+     a owl:Class ;
+     rdfs:subClassOf prov:Entity ;
+     rdfs:isDefinedBy <https://linked.data.gov.au/def/abis> ;
+     schema:alternateName "Record" ;
+     schema:description "The recording of an Occurrence" ;
+     schema:name "Statement" ;
+     skos:historyNote "Taken unchanged from schema.org" ;
+.
+
+schema:Statement
+    skos:example """
+:catalogue-x
+    a schema:DataCatalog ;
+    schema:name "Catalogue X" ;
+    schema:hasPart :dataset-y ;
+    # ... other catalogue metadata
+.
+
+:dataset-y
+    a schema:Dataset ;
+    schema:name "Dataset Y" ;
+    # ... the dataset metadata
+    schema:isPartOf :catalogue-y ;
+    schema:hasPart
+        :statement-001 ,
+        :statement-002 ,
+        # ... many other statements
+        :statement-NNN ;
+.
+
+:statement-001
+    a schema:Statement ;
+    # a non-IRI identifier for this Record, as found in the original
+    # data held by the Submitting Organisation
+    schema:identifier "R1234"^^ex:OrgMRecordId ;
+    # inverse of :dataset-y schema:hasPart :statement-001
+    schema:isPartOf :dataset-y ;
+    # the thing the Record is about
+    schema:about :occurrence-aaa ;
+.
+
+# A dwc:Occurrence is type of rdfs:Resource
+:occurrence-aaa
+    a dwc:Occurrence ;
+    schema:name "Occurrence AAA" ;
+    schema:additionalType <https://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> ;  # animal specimen
+    sosa:isSampleOf :foi-h ;  # link a field site
+    sosa:usedProcedure :procedure-i ;  # a controlled method
+    schema:spatial [ geo:asWKT "POINT (120.244 -32.959)"^^geo:wktLiteral ] ;
+    schema:temporal "2014-07-23"^^xsd:date ;
+.
+""" .
+
+rdfs:Resource
+     a owl:Class ;
+     rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+     schema:description "The class resource, everything" ;
+     schema:name "Resource" ;
+     skos:example "See example for schema:Statement" ;
+     skos:historyNote "Taken unchanged from RDFS" ;
+     skos:scopeNote "This class is not expected to be used directly, instead, classes that best model the objects that the Statements are about should be used" ;
+.
+
+schema:about
+    a owl:ObjectProperty ;
+     rdfs:isDefinedBy <https://schema.org> ;
+     schema:description "The subject matter of the content" ;
+     schema:name "about" ;
+     skos:example "See example for schema:Statement" ;
+     skos:historyNote "Taken unchanged from schema.org" ;
+     skos:scopeNote "To be used to associate Statement instances with the Semantic Web Objects (Resource) they are about" ;
+.
+
+schema:hasPart
+    a owl:ObjectProperty ;
+     rdfs:isDefinedBy <https://schema.org> ;
+     schema:description "Indicates an item is part of this item" ;
+     schema:name "has part" ;
+     skos:example "See example for schema:Statement" ;
+     skos:historyNote "Taken unchanged from schema.org" ;
+     skos:scopeNote "To be used to associate Data Catalogue instances with Dataset instances and Datasets instances with Statement instances" ;
+.

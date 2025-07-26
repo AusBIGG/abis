@@ -8,9 +8,10 @@
 |*https://schema.org/dateCreated[Created Date]* | 2021-10-24
 |*https://schema.org/dateModified[Modified Date]* | 2025-04-30
 |*https://schema.org/dateIssued[Issued Date]* | 2023-12-04
-|*https://schema.org/version[Version]* | 2.6
-|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/2.3[abis:2.6]
+|*https://schema.org/version[Version]* | 2.7
+|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/2.3[abis:2.7]
 |https://www.w3.org/TR/skos-reference/#historyNote[*History Note*]|
+*2.7* - 2025 Jul - Biodiversity Records Models generalised to just Records model; multiple typos fixed
 *2.6* - 2025 Apr - Removed BDR profile info and linked to it; removed BDR Profile Models for Project, Data Release & Submission Manifest +
 *2.5* - 2024 Oct - Multiple Protocol-based models allowed +
 *2.4* - 2024 Aug - All validators completed +
