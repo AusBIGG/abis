@@ -1388,26 +1388,26 @@ tern-shapes:Association-hadRole
     skos:prefLabel "had role" ;
     sh:description "`prov:hadRole` references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end." ;
     sh:in (
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/collaborator>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/contributor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/custodian>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/distributor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/editor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/funder>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/mediator>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/originator>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/owner>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/pointOfContact>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/principalInvestigator>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/processor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/publisher>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/resourceProvider>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/rightsHolder>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/sponsor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/stakeholder>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/user>
+            <http://def.isotc211.org/CI/RoleCode/author>
+            <http://def.isotc211.org/CI/RoleCode/coAuthor>
+            <http://def.isotc211.org/CI/RoleCode/collaborator>
+            <http://def.isotc211.org/CI/RoleCode/contributor>
+            <http://def.isotc211.org/CI/RoleCode/custodian>
+            <http://def.isotc211.org/CI/RoleCode/distributor>
+            <http://def.isotc211.org/CI/RoleCode/editor>
+            <http://def.isotc211.org/CI/RoleCode/funder>
+            <http://def.isotc211.org/CI/RoleCode/mediator>
+            <http://def.isotc211.org/CI/RoleCode/originator>
+            <http://def.isotc211.org/CI/RoleCode/owner>
+            <http://def.isotc211.org/CI/RoleCode/pointOfContact>
+            <http://def.isotc211.org/CI/RoleCode/principalInvestigator>
+            <http://def.isotc211.org/CI/RoleCode/processor>
+            <http://def.isotc211.org/CI/RoleCode/publisher>
+            <http://def.isotc211.org/CI/RoleCode/resourceProvider>
+            <http://def.isotc211.org/CI/RoleCode/rightsHolder>
+            <http://def.isotc211.org/CI/RoleCode/sponsor>
+            <http://def.isotc211.org/CI/RoleCode/stakeholder>
+            <http://def.isotc211.org/CI/RoleCode/user>
         ) ;
     sh:maxCount 1 ;
     sh:message "A `prov:Association` _MUST_ have exactly 1 `prov:hadRole` predicate where the value node is an IRI of a controlled concept from link:http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode[ISO 19115-1's CI Role Code]." ;
@@ -1437,26 +1437,26 @@ tern-shapes:Attribution-hadRole
     skos:prefLabel "had role" ;
     sh:description "`prov:hadRole` references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end." ;
     sh:in (
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/collaborator>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/contributor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/custodian>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/distributor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/editor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/funder>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/mediator>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/originator>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/owner>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/pointOfContact>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/principalInvestigator>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/processor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/publisher>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/resourceProvider>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/rightsHolder>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/sponsor>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/stakeholder>
-            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/user>
+            <http://def.isotc211.org/CI/RoleCode/author>
+            <http://def.isotc211.org/CI/RoleCode/coAuthor>
+            <http://def.isotc211.org/CI/RoleCode/collaborator>
+            <http://def.isotc211.org/CI/RoleCode/contributor>
+            <http://def.isotc211.org/CI/RoleCode/custodian>
+            <http://def.isotc211.org/CI/RoleCode/distributor>
+            <http://def.isotc211.org/CI/RoleCode/editor>
+            <http://def.isotc211.org/CI/RoleCode/funder>
+            <http://def.isotc211.org/CI/RoleCode/mediator>
+            <http://def.isotc211.org/CI/RoleCode/originator>
+            <http://def.isotc211.org/CI/RoleCode/owner>
+            <http://def.isotc211.org/CI/RoleCode/pointOfContact>
+            <http://def.isotc211.org/CI/RoleCode/principalInvestigator>
+            <http://def.isotc211.org/CI/RoleCode/processor>
+            <http://def.isotc211.org/CI/RoleCode/publisher>
+            <http://def.isotc211.org/CI/RoleCode/resourceProvider>
+            <http://def.isotc211.org/CI/RoleCode/rightsHolder>
+            <http://def.isotc211.org/CI/RoleCode/sponsor>
+            <http://def.isotc211.org/CI/RoleCode/stakeholder>
+            <http://def.isotc211.org/CI/RoleCode/user>
         ) ;
     sh:maxCount 1 ;
     sh:message "A `prov:Attribution` _MUST_ have exactly 1 `prov:hadRole` predicate where the value node is an IRI of a controlled concept from link:http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode[ISO 19115-1's CI Role Code]." ;

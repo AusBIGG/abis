@@ -42,8 +42,7 @@ jobs:
         cp context.json docs/
         #
         echo "Add Component Models to docs/"
-        cp schemas/components/data-release.ttl docs/
-        cp schemas/components/projects.ttl docs/
+        cp schemas/components/rm.ttl docs/
         cp schemas/components/tern-ont.ttl docs/
         #
         echo "Add validator to docs/"
