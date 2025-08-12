@@ -11,7 +11,7 @@ This is an entirely generic model that can be used with any types of Semantic We
 
 [NOTE]
 ====
-No validators are supplied with this model so it is to be used as a pattern. Profiles of ABIS many and should supply validators that restrict the types of object that records should be allowed to be for.
+No validators are supplied with this model so it is to be used as a pattern. Profiles of ABIS _SHOULD_ supply validators that restrict the types of object that records should be allowed to be for.
 
 See the <<BDR Profile, BDR Profile>> for the requirements of Record Model data bound for the Biodiversity Data Repository.
 ====
@@ -164,9 +164,9 @@ See <<SDO, schema.org>>'s `Dataset` predicate: https://schema.org/hasPart
 === A.5. Alignmentls
 
 [#brm-join,link="img/annex-a/rm-join.svg"]
-.Class equivalences between this Biodiversity Record Model, <<SDO, schema.org>> and <<DCAT, DCAT>>
-image::img/annex-a/rm-join.svg[Biodiversity Record Model class equivalences,align="center",width=60%]
+.Class equivalences between this Record Model, <<SDO, schema.org>> and <<DCAT, DCAT>>
+image::img/annex-a/rm-join.svg[Record Model class equivalences,align="center",width=60%]
 
 [#brm-occurrence,link="img/annex-a/rm-occurrence.svg"]
-.Biodiversity Record Model occurrence modelling
-image::img/annex-a/rm-occurrence.svg[Biodiversity Record Model occurrence modelling,align="center",width=80%]
+.Record Model occurrence modelling
+image::img/annex-a/rm-occurrence.svg[Record Model occurrence modelling,align="center",width=80%]

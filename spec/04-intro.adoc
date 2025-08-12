@@ -31,7 +31,7 @@ ABIS also includes additional "component models" that extend the range of things
 
 * <<NSLM, National Species List Model>>
 ** A model for the taxa and taxon names within the https://biodiversity.org.au/nsl/[NSL]
-* <<Biodiversity Record Model, Biodiversity Record Model>>
+* <<Record Model, Record Model>>
 ** A model for curated lists - catalogues - of data resources - datasets - that contain information about biodiversity occurrences and surveys - biodiversity records.
 
 Details of all these models are given in the <<Models, Models>> section.

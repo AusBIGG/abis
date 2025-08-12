@@ -32,7 +32,7 @@ image::img/hierarchy.svg[ABIS Parts,align="center"]
 
 The ABIS Foreground Model is the union of the Component Models listed in the next section. The dependencies of these models are shown in <<#hierarchy, Figure 13>>, above.
 
-When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necissary, the <<Biodiversity Record Model, Biodiversity Record Model>> is used.
+When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necissary, the <<Record Model, Record Model>> is used.
 
 === Component Models
 
@@ -40,7 +40,7 @@ The Component Models of ABIS are:
 
 . <<TERN Ontology, TERN Ontology>>
 . <<NSL Model, NSL Model>>
-. <<Biodiversity Record Model, Biodiversity Record Model>>
+. <<Record Model, Record Model>>
 
 The TERN Ontology and the NSL Model are defined externally to ABIS whereas the other 3 are defined here, within the ABIS Specification. A short overview of each of these models follows.
 
@@ -74,13 +74,13 @@ The TERN Ontology's _sampling_ pattern follows SOSA too but uses specialised cla
 .Classes and predicates within the <<TERNOntology, TERN Ontology>> used to characterise sampling. The `is sample of` predicate can be derived from relations between a `Sample`, the `Sampling` and the `Site`. Note the similarity of structure to the <<#tern-sosa, SOSA Observation pattern>>.
 image::img/tern-sampling.svg[TERN's Observation pattern,align="center",width=650]
 
-TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class which is analogous to the <<Biodiversity Record Model, Biodiversity Record Model>>'s `Dataset` class.
+TERN Ontology data is packaged into instances of the TERN Ontology's https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`] class which is analogous to the <<Record Model, Record Model>>'s `Dataset` class.
 
-TERN Ontology data is logically grouped into instances of the Schema.org's https://schema.org/Dataset[`schema:Dataset`] class which is analogous to the <<Biodiversity Record Model, Biodiversity Record Model>>'s `Dataset` class.
+TERN Ontology data is logically grouped into instances of the Schema.org's https://schema.org/Dataset[`schema:Dataset`] class which is analogous to the <<Record Model, Record Model>>'s `Dataset` class.
 
 [NOTE]
 ====
-While the TERN Ontology provides some handling of data packaging, the Biodiversity Record Model provides a more extended form of packaging with catalogues of datasets of records. See the <<Data Cataloguing, Data Cataloguing>> pattern for more information.
+While the TERN Ontology provides some handling of data packaging, the Record Model provides a more extended form of packaging with catalogues of datasets of records. See the <<Data Cataloguing, Data Cataloguing>> pattern for more information.
 ====
 
 ===== Use in ABIS
@@ -139,41 +139,37 @@ Examples of NSL Model data can also be found throughout the https://linked.data.
 
 References to NSL objects - instances of the `TaxonName` class - are also present within example data files in the https://abis.dev.kurrawong.ai[BDR ABIS Resources].
 
-==== Biodiversity Record Model
+==== Record Model
 
 Model location: <<#annex-a, Annex A>>
 
 ===== Overview
 
-ABIS implements a simple catalogue model that reuses a class from the TERN Ontology, a class from <<SDO, schema.org>> and introduces a class of its own, specific to biodiversity observations.
+ABIS implements a simple and generic model for grouping Semantic Web that are the results of observations into catalogued objects and for linking data to records about them in non-Semantic Web form. This cataloguing model implements no novel classes or predicates and takes all of its elements from the widely used <<SDO, schema.org>> and the fundamental Semantic Web model <<RDFSPEC, RDFS>>.
 
-From <<SDO, schema.org>>:
-
-* https://schema.org/DataCatalog[DataCatalog] - A collection of datasets
-* https://schema.org/Dataset[Dataset] - A body of structured information describing some topic(s) of interest.
-
-From the <<TERN Ontology, TERN Ontology>>:
-
-* https://w3id.org/tern/ontologies/tern/RDFDataset[RDFDataset] - A collection of data, published or curated by a single agent, and available for access or download in one or more representation
-
-Introduced:
-
-* <<abis:BiodiversityRecord, (Biodiversity) Record>> - A unit of information that represents the record of a biodiversity occurrence or a biodiversity survey
-
-The use of the existing classes is as per <<SDO, schema.org>>'s basic data cataloguing, which is based on the <<DCAT, Data Catalog Vocabulary (DCAT)>> standard, where `DataCatalog` instances contain `Dataset` instances. This model's extension with the definition of the (Biodiversity) Record class - `Record` - is to define data elements within datasets that are specifically about biodiversity occurrences or about biodiversity surveys.
-
-[NOTE]
-====
-`Record` instances can be calculated from pure TERN ontology data if not directly stated, according to the Record Rule - see the <<Rule List, Rule List>>
-====
+[#brd-overview2,link="img/annex-a/rm-overview.svg"]
+.An overview of ABIS' Record Model's classes and their relationships
+image::img/annex-a/rm-overview.svg[Record Model overview,align="center",width=275]
 
 See the patterns of <<Data Cataloguing, Data Cataloguing>> and <<Records & Occurrences>> for more information and <<#annex-a, this model's definition in Annex A>> for further information.
 
 ===== Use in ABIS
 
-This model is to be used to group logical 'collections' of ABIS data together in `Dataset` instances and to list those 'collections' in catalogues. Further, this model is to be used to identify records of Biodiversity Occurrences.
+This model is the primary cataloguing model used in ABIS and also the model which connects ABIS objects to their non-Semantic Web, likely original, form. Thus it is a data model that assists with data management and provenance.
+
+[NOTE]
+====
+<<schema:Statement, schema:Statement>> instances - the 'records' of this model - can often be inferred from ABIS data about things such as `<<#_darwin_core_terms, dwc:Occurrence>>` that do not directly state them according to the Record Rule - see the <<Rule List, Rule List>>, but the inference may be trivial in that the record may not contain useful information about it's non-ABIS form, such as original catalogue IDs.
+====
+
+[NOTE]
+====
+If an object is catalogues in more than one place, this model's mechanism for associating an ABIS representation of it with those non-Semantic Web representations may be use to record all the cataloguings, see the examples below.
+====
 
 ===== Examples
+
+====== Simple Example
 
 [source,turtle]
 ----
@@ -182,27 +178,57 @@ ex:dataset-x
     # ... dataset metadata
 .
 
-ex:submission-y
-    a tern:RDFDataset ;
+ex:occurrence-y
+    a dwc:Occurrence ;
     schema:isPartOf ex:dataset-x ;
-    # ... submission metadata
+    # ... other occurrence info
 .
 
-ex:sample-y
-    a tern:Sample ;
-    # ...
+ex:occurrence-z
+    a dwc:Occurrence ;
     schema:isPartOf ex:dataset-x ;
-    void:inDataset ex:submission-x .
+    # ... other occurrence info
 .
 
-ex:obs-z
-    a tern:Observation ;
-    # ...
-    schema:isPartOf ex:dataset-x ;
-    void:inDataset ex:submission-x ;
-    sosa:hasFeatureOfInterest ex:sample-y ;
+ex:record-m
+    a schema:Statement ;
+    schema:about ex:occurrence-y ;
+    schema:identifier "CR-1234"^^datatypes:acmeCatId ;
+.
+
+ex:record-n
+    a schema:Statement ;
+    schema:about ex:occurrence-z ;
+    schema:identifier "CR-5678"^^datatypes:acmeCatId ;
 .
 ----
+
+In the example above, we have `<<_darwin_core_terms, dwc:Occurrence>>` instances, `ex:occurrence-y` & `ex:occurrence-z` which are part of a dataset, `ex:dataset-x`, and for which we have a <<schema:Statement, schema:Statement>> each that contains an _ACME Catalogue ID_, `datatypes:acmeCatId` for each one, linking them to a system that uses such IDs.
+
+====== Multiple Cataloguings
+
+[source,turtle]
+----
+ex:sample-x
+    a dwc:Occurrence ;
+    schema:isPartOf ex:dataset-x ;
+    # ... other occurrence info
+.
+
+ex:record-m
+    a schema:Statement ;
+    schema:about ex:occurrence-y ;
+    schema:identifier
+        "SS-1234"^^datatypes:acmeCatId ,
+        "fa801030-56d4-4d6d-8452-2696929bdea9"^^datatypes:museumZId ;
+.
+----
+
+In the example above, the sample `ex:sample-x` is listed in two catalogues, once with an identifier of `SS-1234` and another with identifier `fa801030-56d4-4d6d-8452-2696929bdea9`.
+
+To know which catalogues used these identifiers, the objects `datatypes:acmeCatId` & `datatypes:museumZId` will need to be resolved. See the <<#_identifiers, Identifiers Pattern Section>> for more on how identifiers of this form work, in particular the _Alternate IDs - non-IRIs_ subsection.
+
+See <<#_a_3_classes, Annex A's Class Listing>> for mode examples, per Record Model class.
 
 === Background Models
 

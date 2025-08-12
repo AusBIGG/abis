@@ -36,7 +36,7 @@ WHERE {
     # ...
 }
 ----
-| R02 | Calculate `abis:BiodiversityRecord` instances from ... | - a|
+| R02 | Calculate `schema:Statement` instances from ... | - a|
 [sources,sparql]
 ----
 PREFIX abis: <https://linked.data.gov.au/def/abis/>
@@ -44,7 +44,7 @@ PREFIX tern <https://w3id.org/tern/ontologies/tern/>
 PREFIX void: <http://rdfs.org/ns/void#>
 
 CONSTRUCT {
-    ?boc a abis:BiodiversityRecord .
+    ?boc a schema:Statement .
 }
 WHERE {
     # ...
