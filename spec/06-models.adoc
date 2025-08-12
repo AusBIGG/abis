@@ -226,7 +226,7 @@ ex:record-m
 
 In the example above, the sample `ex:sample-x` is listed in two catalogues, once with an identifier of `SS-1234` and another with identifier `fa801030-56d4-4d6d-8452-2696929bdea9`.
 
-To know which catalogues used these identifiers, the objects `datatypes:acmeCatId` & `datatypes:museumZId` will need to be resolved. See the <<#_identifiers, Identifiers Pattern Section>> for more on how identifiers of this form work, in particular the _Alternate IDs - non-IRIs_ subsection.
+To know which catalogues used these identifiers, the objects `datatypes:acmeCatId` & `datatypes:museumZId` will need to be resolved. See the <<#_identifiers, Identifiers Pattern Section>> for more on how identifiers of this form work, in particular the Alternate IDs - non-IRIs subsection.
 
 See <<#_a_3_classes, Annex A's Class Listing>> for mode examples, per Record Model class.
 
