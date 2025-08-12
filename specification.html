@@ -697,7 +697,7 @@ pre.rouge {
 <ul class="sectlevel3">
 <li><a href="#_tern_ontology">6.4.1. TERN Ontology</a></li>
 <li><a href="#_nsl_model">6.4.2. NSL Model</a></li>
-<li><a href="#_biodiversity_record_model">6.4.3. Biodiversity Record Model</a></li>
+<li><a href="#_record_model">6.4.3. Record Model</a></li>
 </ul>
 </li>
 <li><a href="#_background_models">6.5. Background Models</a></li>
@@ -1350,7 +1350,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </div>
 </li>
 <li>
-<p><a href="#_biodiversity_record_model">Biodiversity Record Model</a></p>
+<p><a href="#_record_model">Record Model</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1782,16 +1782,16 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>ABIS provides representations of chunks of data for management - cataloguing, data governance and so on. It does this by implementing a very simple, and common, catalogue model which consists of <em>catalogues</em> (or <em>catalogs</em>, for Americans) that contain <em>datasets</em> or other kinds of <em>resources</em>  such as <em>vocabularies</em>. ABIS then allows some <em>datasets</em> to indicate they, contain <em>biodiversity records</em> about occurrences and so on.</p>
 </div>
 <div class="paragraph">
-<p>This models is as per <a href="#cat-model-overview-pattern">Figure 4</a>, below, which is taken from the <a href="#Annex A: Biodiversity Record Model">Biodiversity Record Model</a>, detailed in full in Annex A.</p>
+<p>This models is as per <a href="#cat-model-overview-pattern">Figure 4</a>, below, which is taken from the <a href="#annex-a">Record Model</a>, detailed in full in Annex A.</p>
 </div>
 <div class="paragraph">
 <p>Since this model is used for data management, it places requirements on ABIS datasets, above and beyond those imposed by the models it profiles, such as the <a href="#TERNOntology">TERN Ontology</a>, to data management metadata requirements are met.</p>
 </div>
 <div id="cat-model-overview-pattern" class="imageblock text-center">
 <div class="content">
-<a class="image" href="img/annex-a/brm-overview.svg"><img src="https://ausbigg.github.io/abis/img/annex-a/brm-overview.svg" alt="Biodiversity Record Model overview" width="150"></a>
+<a class="image" href="img/annex-a/brm-overview.svg"><img src="https://ausbigg.github.io/abis/img/annex-a/brm-overview.svg" alt="Record Model overview" width="150"></a>
 </div>
-<div class="title">Figure 4. An overview of the Biodiversity Record Model&#8217;s classes and their relationships</div>
+<div class="title">Figure 4. An overview of the Record Model&#8217;s classes and their relationships</div>
 </div>
 </div>
 <div class="sect2">
@@ -1800,7 +1800,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>ABIS is fundamentally about records of the occurrence of biodiversity. For this reason, ABIS contains representations of chunks of data, as per the <a href="#_data_cataloguing">Data Cataloguing</a> pattern above, a  representation of an <em>occurrence</em> and a mechanism to link them.</p>
 </div>
 <div class="paragraph">
-<p>The ABIS class <a href="#abis:BiodiversityRecord">BiodiversityRecord</a> represents a single recording of an occurrence or recording of the results of a survey. This is usually a single row in a spreadsheet of biodiversity observations, or a single point of a map of occurrences. It is linked to the representation of actual occurrence itself, represented by the <a href="#DWC">Darwin Core Terms</a>'s <a href="#dwc:Occurrence">Occurrence</a> class.</p>
+<p>The ABIS class <a href="#schema:Statement">BiodiversityRecord</a> represents a single recording of an occurrence or recording of the results of a survey. This is usually a single row in a spreadsheet of biodiversity observations, or a single point of a map of occurrences. It is linked to the representation of actual occurrence itself, represented by the <a href="#DWC">Darwin Core Terms</a>'s <a href="#dwc:Occurrence">Occurrence</a> class.</p>
 </div>
 <div class="paragraph">
 <p>The reason for this distinction between representations of the <em>record of the occurrence</em> and the <em>occurrence</em> itself is because some data models record metadata about the recording itself - who did it, where it is stored and managed, what ID the recording has etc. - and some don&#8217;t, choosing to focus only on the where/what/when of the occurrence.</p>
@@ -1813,19 +1813,19 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For data in the ABIS format being submitted to systems such as the <a href="#BDR">Biodiversity Data Repository</a> where the data origin has a "Record ID" or similar, this ID should be preserved as a property of instances of the <a href="#abis:BiodiversityRecord">Biodiversity Record</a> class as a non-IRI alternate identifier, as per the <a href="#_alternate_ids_non_iris">Alternate IDs - non-IRIs</a> pattern.</p>
+<p>For data in the ABIS format being submitted to systems such as the <a href="#BDR">Biodiversity Data Repository</a> where the data origin has a "Record ID" or similar, this ID should be preserved as a property of instances of the <a href="#schema:Statement">Biodiversity Record</a> class as a non-IRI alternate identifier, as per the <a href="#_alternate_ids_non_iris">Alternate IDs - non-IRIs</a> pattern.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The relationship between a <a href="#abis:BiodiversityRecord">Biodiversity Record</a> and the <a href="#dwc:Occurrence">Occurrence</a> it is about is given with the <a href="#schema:about">schema:about</a> predicate, like this:</p>
+<p>The relationship between a <a href="#schema:Statement">Biodiversity Record</a> and the <a href="#dwc:Occurrence">Occurrence</a> it is about is given with the <a href="#schema:about">schema:about</a> predicate, like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">record-1234
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">abis:</span><span class="n">BiodiversityRecord
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Statement
 </span><span class="w">    </span><span class="c1"># ... other info</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">about</span><span class="w"> </span><span class="nn">ex:</span><span class="n">occurrence-9876</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># &lt;-- this is the link</span><span class="w">
 </span><span class="p">.</span><span class="w">
@@ -2531,7 +2531,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>The ABIS Foreground Model is the union of the Component Models listed in the next section. The dependencies of these models are shown in <a href="#hierarchy">Figure 13</a>, above.</p>
 </div>
 <div class="paragraph">
-<p>When modelling biodiversity observations - ABIS' main concern - ABIS uses the <a href="#TERNOntology">TERN Ontology</a> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <a href="#NSLM">NSL Model</a>. When data packaging is necissary, the <a href="#_biodiversity_record_model">Biodiversity Record Model</a> is used.</p>
+<p>When modelling biodiversity observations - ABIS' main concern - ABIS uses the <a href="#TERNOntology">TERN Ontology</a> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <a href="#NSLM">NSL Model</a>. When data packaging is necissary, the <a href="#_record_model">Record Model</a> is used.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2548,7 +2548,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p><a href="#_nsl_model">NSL Model</a></p>
 </li>
 <li>
-<p><a href="#_biodiversity_record_model">Biodiversity Record Model</a></p>
+<p><a href="#_record_model">Record Model</a></p>
 </li>
 </ol>
 </div>
@@ -2599,10 +2599,10 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 17. Classes and predicates within the <a href="#TERNOntology">TERN Ontology</a> used to characterise sampling. The <code>is sample of</code> predicate can be derived from relations between a <code>Sample</code>, the <code>Sampling</code> and the <code>Site</code>. Note the similarity of structure to the <a href="#tern-sosa">SOSA Observation pattern</a>.</div>
 </div>
 <div class="paragraph">
-<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class which is analogous to the <a href="#_biodiversity_record_model">Biodiversity Record Model</a>'s <code>Dataset</code> class.</p>
+<p>TERN Ontology data is packaged into instances of the TERN Ontology&#8217;s <a href="https://linkeddata.tern.org.au/viewers/tern-ontology?resource=https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a> class which is analogous to the <a href="#_record_model">Record Model</a>'s <code>Dataset</code> class.</p>
 </div>
 <div class="paragraph">
-<p>TERN Ontology data is logically grouped into instances of the Schema.org&#8217;s <a href="https://schema.org/Dataset"><code>schema:Dataset</code></a> class which is analogous to the <a href="#_biodiversity_record_model">Biodiversity Record Model</a>'s <code>Dataset</code> class.</p>
+<p>TERN Ontology data is logically grouped into instances of the Schema.org&#8217;s <a href="https://schema.org/Dataset"><code>schema:Dataset</code></a> class which is analogous to the <a href="#_record_model">Record Model</a>'s <code>Dataset</code> class.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2612,7 +2612,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>While the TERN Ontology provides some handling of data packaging, the Biodiversity Record Model provides a more extended form of packaging with catalogues of datasets of records. See the <a href="#_data_cataloguing">Data Cataloguing</a> pattern for more information.</p>
+<p>While the TERN Ontology provides some handling of data packaging, the Record Model provides a more extended form of packaging with catalogues of datasets of records. See the <a href="#_data_cataloguing">Data Cataloguing</a> pattern for more information.</p>
 </div>
 </td>
 </tr>
@@ -2717,50 +2717,29 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_biodiversity_record_model"><a class="anchor" href="#_biodiversity_record_model"></a>6.4.3. Biodiversity Record Model</h4>
+<h4 id="_record_model"><a class="anchor" href="#_record_model"></a>6.4.3. Record Model</h4>
 <div class="paragraph">
 <p>Model location: <a href="#annex-a">Annex A</a></p>
 </div>
 <div class="sect4">
 <h5 id="_overview_3"><a class="anchor" href="#_overview_3"></a>6.4.3.1. Overview</h5>
 <div class="paragraph">
-<p>ABIS implements a simple catalogue model that reuses a class from the TERN Ontology, a class from <a href="#SDO">schema.org</a> and introduces a class of its own, specific to biodiversity observations.</p>
+<p>ABIS implements a simple and generic model for grouping Semantic Web that are the results of observations into catalogued objects and for linking data to records about them in non-Semantic Web form. This cataloguing model implements no novel classes or predicates and takes all of its elements from the widely used <a href="#SDO">schema.org</a> and the fundamental Semantic Web model <a href="#RDFSPEC">RDFS</a>.</p>
+</div>
+<div id="brd-overview2" class="imageblock text-center">
+<div class="content">
+<a class="image" href="img/annex-a/rm-overview.svg"><img src="https://ausbigg.github.io/abis/img/annex-a/rm-overview.svg" alt="Record Model overview" width="275"></a>
+</div>
+<div class="title">Figure 20. An overview of ABIS' Record Model&#8217;s classes and their relationships</div>
 </div>
 <div class="paragraph">
-<p>From <a href="#SDO">schema.org</a>:</p>
+<p>See the patterns of <a href="#_data_cataloguing">Data Cataloguing</a> and <a href="#_records_occurrences">Section 5.4</a> for more information and <a href="#annex-a">this model&#8217;s definition in Annex A</a> for further information.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://schema.org/DataCatalog">DataCatalog</a> - A collection of datasets</p>
-</li>
-<li>
-<p><a href="https://schema.org/Dataset">Dataset</a> - A body of structured information describing some topic(s) of interest.</p>
-</li>
-</ul>
 </div>
+<div class="sect4">
+<h5 id="_use_in_abis_3"><a class="anchor" href="#_use_in_abis_3"></a>6.4.3.2. Use in ABIS</h5>
 <div class="paragraph">
-<p>From the <a href="#_tern_ontology">TERN Ontology</a>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://w3id.org/tern/ontologies/tern/RDFDataset">RDFDataset</a> - A collection of data, published or curated by a single agent, and available for access or download in one or more representation</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Introduced:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#abis:BiodiversityRecord">(Biodiversity) Record</a> - A unit of information that represents the record of a biodiversity occurrence or a biodiversity survey</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The use of the existing classes is as per <a href="#SDO">schema.org</a>'s basic data cataloguing, which is based on the <a href="#DCAT">Data Catalog Vocabulary (DCAT)</a> standard, where <code>DataCatalog</code> instances contain <code>Dataset</code> instances. This model&#8217;s extension with the definition of the (Biodiversity) Record class - <code>Record</code> - is to define data elements within datasets that are specifically about biodiversity occurrences or about biodiversity surveys.</p>
+<p>This model is the primary cataloguing model used in ABIS and also the model which connects ABIS objects to their non-Semantic Web, likely original, form. Thus it is a data model that assists with data management and provenance.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2770,24 +2749,31 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>Record</code> instances can be calculated from pure TERN ontology data if not directly stated, according to the Record Rule - see the <a href="#_rule_list">Rule List</a></p>
+<p><a href="#schema:Statement">schema:Statement</a> instances - the 'records' of this model - can often be inferred from ABIS data about things such as <code><a href="#_darwin_core_terms">dwc:Occurrence</a></code> that do not directly state them according to the Record Rule - see the <a href="#_rule_list">Rule List</a>, but the inference may be trivial in that the record may not contain useful information about it&#8217;s non-ABIS form, such as original catalogue IDs.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>See the patterns of <a href="#_data_cataloguing">Data Cataloguing</a> and <a href="#_records_occurrences">Section 5.4</a> for more information and <a href="#annex-a">this model&#8217;s definition in Annex A</a> for further information.</p>
+<p>If an object is catalogues in more than one place, this model&#8217;s mechanism for associating an ABIS representation of it with those non-Semantic Web representations may be use to record all the cataloguings, see the examples below.</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_use_in_abis_3"><a class="anchor" href="#_use_in_abis_3"></a>6.4.3.2. Use in ABIS</h5>
-<div class="paragraph">
-<p>This model is to be used to group logical 'collections' of ABIS data together in <code>Dataset</code> instances and to list those 'collections' in catalogues. Further, this model is to be used to identify records of Biodiversity Occurrences.</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_examples_3"><a class="anchor" href="#_examples_3"></a>6.4.3.3. Examples</h5>
+<div class="sect5">
+<h6 id="_simple_example"><a class="anchor" href="#_simple_example"></a>Simple Example</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">dataset-x
@@ -2795,26 +2781,62 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
     </span><span class="c1"># ... dataset metadata</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
-</span><span class="nn">ex:</span><span class="n">submission-y
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="nn">ex:</span><span class="n">occurrence-y
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Occurrence</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="c1"># ... submission metadata</span><span class="w">
+    </span><span class="c1"># ... other occurrence info</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
-</span><span class="nn">ex:</span><span class="n">sample-y
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="c1"># ...</span><span class="w">
+</span><span class="nn">ex:</span><span class="n">occurrence-z
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Occurrence</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-x</span><span class="w"> </span><span class="p">.</span><span class="w">
+    </span><span class="c1"># ... other occurrence info</span><span class="w">
 </span><span class="p">.</span><span class="w">
 
-</span><span class="nn">ex:</span><span class="n">obs-z
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="c1"># ...</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">submission-x</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nn">ex:</span><span class="n">sample-y</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="nn">ex:</span><span class="n">record-m
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Statement</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">about</span><span class="w"> </span><span class="nn">ex:</span><span class="n">occurrence-y</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"CR-1234"</span><span class="p">^^</span><span class="nn">datatypes:</span><span class="n">acmeCatId</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">record-n
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Statement</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">about</span><span class="w"> </span><span class="nn">ex:</span><span class="n">occurrence-z</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"CR-5678"</span><span class="p">^^</span><span class="nn">datatypes:</span><span class="n">acmeCatId</span><span class="w"> </span><span class="p">;</span><span class="w">
 </span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the example above, we have <code><a href="#_darwin_core_terms">dwc:Occurrence</a></code> instances, <code>ex:occurrence-y</code> &amp; <code>ex:occurrence-z</code> which are part of a dataset, <code>ex:dataset-x</code>, and for which we have a <a href="#schema:Statement">schema:Statement</a> each that contains an <em>ACME Catalogue ID</em>, <code>datatypes:acmeCatId</code> for each one, linking them to a system that uses such IDs.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_multiple_cataloguings"><a class="anchor" href="#_multiple_cataloguings"></a>Multiple Cataloguings</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">sample-x
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Occurrence</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="c1"># ... other occurrence info</span><span class="w">
+</span><span class="p">.</span><span class="w">
+
+</span><span class="nn">ex:</span><span class="n">record-m
+</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Statement</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">about</span><span class="w"> </span><span class="nn">ex:</span><span class="n">occurrence-y</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">schema:</span><span class="n">identifier
+</span><span class="w">        </span><span class="s">"SS-1234"</span><span class="p">^^</span><span class="nn">datatypes:</span><span class="n">acmeCatId</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="s">"fa801030-56d4-4d6d-8452-2696929bdea9"</span><span class="p">^^</span><span class="nn">datatypes:</span><span class="n">museumZId</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="p">.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the example above, the sample <code>ex:sample-x</code> is listed in two catalogues, once with an identifier of <code>SS-1234</code> and another with identifier <code>fa801030-56d4-4d6d-8452-2696929bdea9</code>.</p>
+</div>
+<div class="paragraph">
+<p>To know which catalogues used these identifiers, the objects <code>datatypes:acmeCatId</code> &amp; <code>datatypes:museumZId</code> will need to be resolved. See the <a href="#<em>identifiers">Identifiers Pattern Section</a> for more on how identifiers of this form work, in particular the _Alternate IDs - non-IRIs</em> subsection.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#_a_3_classes">Annex A&#8217;s Class Listing</a> for mode examples, per Record Model class.</p>
 </div>
 </div>
 </div>
@@ -4334,7 +4356,7 @@ WHERE {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R02</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Calculate <code>abis:BiodiversityRecord</code> instances from &#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calculate <code>schema:Statement</code> instances from &#8230;&#8203;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
@@ -4343,7 +4365,7 @@ PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
 PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
 
 CONSTRUCT {
-    ?boc a abis:BiodiversityRecord .
+    ?boc a schema:Statement .
 }
 WHERE {
     # ...
@@ -4683,7 +4705,7 @@ WHERE {
 <div class="content">
 <a class="image" href="img/annex-a/rm-overview.svg"><img src="https://ausbigg.github.io/abis/img/annex-a/rm-overview.svg" alt="Record Model overview" width="275"></a>
 </div>
-<div class="title">Figure 20. An overview of ABIS' Record Model&#8217;s classes and their relationships</div>
+<div class="title">Figure 21. An overview of ABIS' Record Model&#8217;s classes and their relationships</div>
 </div>
 <div class="paragraph">
 <p>This model links objects represented in Semantic Web data to records about them that preserve identifiers from their original non-Semantic Web form. This allows easy association of Semantic Web and non-Semantic Web forms and facilitates good provenance for data conversions to Semantic Web form.</p>
@@ -4699,7 +4721,7 @@ WHERE {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>No validators are supplied with this model so it is to be used as a pattern. Profiles of ABIS many and should supply validators that restrict the types of object that records should be allowed to be for.</p>
+<p>No validators are supplied with this model so it is to be used as a pattern. Profiles of ABIS <em>SHOULD</em> supply validators that restrict the types of object that records should be allowed to be for.</p>
 </div>
 <div class="paragraph">
 <p>See the <a href="#profile-bdr">BDR Profile</a> for the requirements of Record Model data bound for the Biodiversity Data Repository.</p>
@@ -4945,15 +4967,15 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <h3 id="_a_5_alignmentls"><a class="anchor" href="#_a_5_alignmentls"></a>A.5. Alignmentls</h3>
 <div id="brm-join" class="imageblock text-center">
 <div class="content">
-<a class="image" href="img/annex-a/rm-join.svg"><img src="https://ausbigg.github.io/abis/img/annex-a/rm-join.svg" alt="Biodiversity Record Model class equivalences" width="60%"></a>
+<a class="image" href="img/annex-a/rm-join.svg"><img src="https://ausbigg.github.io/abis/img/annex-a/rm-join.svg" alt="Record Model class equivalences" width="60%"></a>
 </div>
-<div class="title">Figure 21. Class equivalences between this Biodiversity Record Model, <a href="#SDO">schema.org</a> and <a href="#DCAT">DCAT</a></div>
+<div class="title">Figure 22. Class equivalences between this Record Model, <a href="#SDO">schema.org</a> and <a href="#DCAT">DCAT</a></div>
 </div>
 <div id="brm-occurrence" class="imageblock text-center">
 <div class="content">
-<a class="image" href="img/annex-a/rm-occurrence.svg"><img src="https://ausbigg.github.io/abis/img/annex-a/rm-occurrence.svg" alt="Biodiversity Record Model occurrence modelling" width="80%"></a>
+<a class="image" href="img/annex-a/rm-occurrence.svg"><img src="https://ausbigg.github.io/abis/img/annex-a/rm-occurrence.svg" alt="Record Model occurrence modelling" width="80%"></a>
 </div>
-<div class="title">Figure 22. Biodiversity Record Model occurrence modelling</div>
+<div class="title">Figure 23. Record Model occurrence modelling</div>
 </div>
 </div>
 </div>
@@ -5185,7 +5207,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-07-27 22:54:27 UTC
+Last updated 2025-08-12 06:53:04 UTC
 </div>
 </div>
 </body>
