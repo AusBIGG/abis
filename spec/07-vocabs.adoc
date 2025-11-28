@@ -4,7 +4,7 @@ Use of ABIS depends on many vocabularies from many different places. For example
 
 Some uses of ABIS, such as for the submission of data to the <<BDR, BDR>>, require the use of particular vocabularies that aren't mandated for general ABIS use, for example the use of the https://linked.data.gov.au/dataset/bdr/datatypes[_BDR Datatypes_] vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <<Profiles, Profiles>>.
 
-Some <<Component Models, Component Models>> within ABIS require the use of particular vocabularies, for example, the <<#TERNOntology, TERN Ontology>> mandates that types of environmental monitoring site be indicated with the http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159[TERN Site Type vocabulary].
+Some <<Foreground Models>> within ABIS require the use of particular vocabularies, for example, the <<#TERNOntology, TERN Ontology>> mandates that types of environmental monitoring site be indicated with the http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159[TERN Site Type vocabulary].
 
 === Vocab Listing
 

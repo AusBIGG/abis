@@ -27,7 +27,7 @@ In addition to the TERN Ontology and the background models it uses, ABIS also us
 * The <<PROF, Profiles Vocabulary>>
 ** A model that relates models to other models
 
-ABIS also includes additional "component models" that extend the range of things ABIS can cover:
+ABIS also includes additional "foreground models" that extend the range of things ABIS can cover:
 
 * <<NSLM, National Species List Model>>
 ** A model for the taxa and taxon names within the https://biodiversity.org.au/nsl/[NSL]

@@ -1,6 +1,6 @@
 == Validation
 
-This model both inherits existing validators for its component models and implements its own validators too. Since ABIS data _MUST_ be provided in RDF, only an RDF validator, using <<SHACL, SHACL, the Shapes Constraint Language>>, is available and other forms of validation are non-normative.
+This model both inherits existing validators for its foreground models and implements its own validators too. Since ABIS data _MUST_ be provided in RDF, only an RDF validator, using <<SHACL, SHACL, the Shapes Constraint Language>>, is available and other forms of validation are non-normative.
 
 === Multiple Validators
 

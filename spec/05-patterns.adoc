@@ -592,7 +592,7 @@ In addition to the simple and direct kind of relationship between `Agents` and d
 .Two `Agents`, `Y` & `Z`, related to a single dataset `X` with different roles using the `qualified attribution` predicate from <<PROV, PROV>>
 image::img/patterns/agent-multi.svg[PROV-style reasoning,width=700,align="center"]
 
-The roles that can be used for the qualification of attribution in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the _IDN Role Codes vocabulary_ - see the <<Vocabularies, Vocabularies>>. It contains concepts such as _author_, _publisher_, _collaborator_ and _funder_.
+The roles that can be used for the qualification of attribution in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the _Role Codes vocabulary_ - see the <<Vocabularies, Vocabularies>>. It contains concepts such as _author_, _publisher_, _collaborator_ and _funder_.
 
 === Observations & Results
 

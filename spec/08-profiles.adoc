@@ -32,7 +32,7 @@ The BDR Profile of ABIS is presented in a stand-alone document, see **https://li
 
 This profile defines the requirements for data to be absorbed into the https://www.dcceew.gov.au/environment/epbc/publications/biodiversity-data-repository[Biodiversity Data Repository].
 
-It contains a number of component models - for Project, Data Release etc. - not required for general ABIS use as well as its own vocabularies and requirements relating to identifiers for certain classes of object.
+It contains a number of foreground models - for Project, Data Release etc. - not required for general ABIS use as well as its own vocabularies and requirements relating to identifiers for certain classes of object.
 
 [NOTE]
 ====
