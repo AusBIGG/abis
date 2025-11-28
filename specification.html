@@ -807,7 +807,7 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateModified">Modified Date</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2025-08-12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-11-28</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateIssued">Issued Date</a></strong></p></td>
@@ -823,7 +823,8 @@ pre.rouge {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/skos-reference/#historyNote"><strong>History Note</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.7</strong> - 2025 Jul - Biodiversity Records Models generalised to just Records model; multiple typos fixed
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.8</strong> - 2025 Nov - Wording and Role adjustments to better align with the <a href="https://linked.data.gov.au/def/supermodel">Supermodel Model</a>
+<strong>2.7</strong> - 2025 Jul - Biodiversity Records Models generalised to just Records model; multiple typos fixed
 <strong>2.6</strong> - 2025 Apr - Removed BDR profile info and linked to it; removed BDR Profile Models for Project, Data Release &amp; Submission Manifest<br>
 <strong>2.5</strong> - 2024 Oct - Multiple Protocol-based models allowed<br>
 <strong>2.4</strong> - 2024 Aug - All validators completed<br>
@@ -1335,7 +1336,7 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </ul>
 </div>
 <div class="paragraph">
-<p>ABIS also includes additional "component models" that extend the range of things ABIS can cover:</p>
+<p>ABIS also includes additional "foreground models" that extend the range of things ABIS can cover:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2379,7 +2380,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <div class="title">Figure 11. Two <code>Agents</code>, <code>Y</code> &amp; <code>Z</code>, related to a single dataset <code>X</code> with different roles using the <code>qualified attribution</code> predicate from <a href="#PROV">PROV</a></div>
 </div>
 <div class="paragraph">
-<p>The roles that can be used for the qualification of attribution in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the <em>IDN Role Codes vocabulary</em> - see the <a href="#_vocabularies">Vocabularies</a>. It contains concepts such as <em>author</em>, <em>publisher</em>, <em>collaborator</em> and <em>funder</em>.</p>
+<p>The roles that can be used for the qualification of attribution in ABIS are open-ended - new ones can be defined - but they are controlled - they must be proposed and accepted into a vocab to be legitimate. The vocab ABIS uses for these roles is the <em>Role Codes vocabulary</em> - see the <a href="#_vocabularies">Vocabularies</a>. It contains concepts such as <em>author</em>, <em>publisher</em>, <em>collaborator</em> and <em>funder</em>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2913,7 +2914,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>Some uses of ABIS, such as for the submission of data to the <a href="#BDR">BDR</a>, require the use of particular vocabularies that aren&#8217;t mandated for general ABIS use, for example the use of the <a href="https://linked.data.gov.au/dataset/bdr/datatypes"><em>BDR Datatypes</em></a> vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <a href="#_profiles">Profiles</a>.</p>
 </div>
 <div class="paragraph">
-<p>Some <a href="#Component Models">Component Models</a> within ABIS require the use of particular vocabularies, for example, the <a href="#TERNOntology">TERN Ontology</a> mandates that types of environmental monitoring site be indicated with the <a href="http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159">TERN Site Type vocabulary</a>.</p>
+<p>Some <a href="#_foreground_models">Section 6.4</a> within ABIS require the use of particular vocabularies, for example, the <a href="#TERNOntology">TERN Ontology</a> mandates that types of environmental monitoring site be indicated with the <a href="http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159">TERN Site Type vocabulary</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_vocab_listing"><a class="anchor" href="#_vocab_listing"></a>7.1. Vocab Listing</h3>
@@ -2989,7 +2990,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>This profile defines the requirements for data to be absorbed into the <a href="https://www.dcceew.gov.au/environment/epbc/publications/biodiversity-data-repository">Biodiversity Data Repository</a>.</p>
 </div>
 <div class="paragraph">
-<p>It contains a number of component models - for Project, Data Release etc. - not required for general ABIS use as well as its own vocabularies and requirements relating to identifiers for certain classes of object.</p>
+<p>It contains a number of foreground models - for Project, Data Release etc. - not required for general ABIS use as well as its own vocabularies and requirements relating to identifiers for certain classes of object.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3012,7 +3013,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <h2 id="_validation"><a class="anchor" href="#_validation"></a>9. Validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model both inherits existing validators for its component models and implements its own validators too. Since ABIS data <em>MUST</em> be provided in RDF, only an RDF validator, using <a href="#SHACL">SHACL, the Shapes Constraint Language</a>, is available and other forms of validation are non-normative.</p>
+<p>This model both inherits existing validators for its foreground models and implements its own validators too. Since ABIS data <em>MUST</em> be provided in RDF, only an RDF validator, using <a href="#SHACL">SHACL, the Shapes Constraint Language</a>, is available and other forms of validation are non-normative.</p>
 </div>
 <div class="sect2">
 <h3 id="_multiple_validators"><a class="anchor" href="#_multiple_validators"></a>9.1. Multiple Validators</h3>
@@ -5207,7 +5208,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-11-28 09:24:27 UTC
+Last updated 2025-11-28 09:30:29 UTC
 </div>
 </div>
 </body>
