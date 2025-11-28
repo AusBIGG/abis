@@ -6,8 +6,8 @@ As per the <<Multiple Models, Multiple Models>> section within the <<Introductio
 
 The roles played by the various models within ABIS are:
 
-* <<Foreground Model, Foreground Model>>
-** The main model that is the union of its Foreground Models
+* <<Union Foreground Model>>
+** The total model that is the union of its Foreground Models
 * <<Foreground Models, Foreground Models>>
 ** Parts of the Foreground Model that may be used independently
 * <<Background Models, Background Models>>
@@ -28,11 +28,11 @@ The following figure depicts the profiling relationships between the various mod
 .The profile hierarchy of the models within ABIS. All the arrows indicate dependency or, formally, https://www.w3.org/TR/dx-prof/#Property:isProfileOf[`prof:isProfileOf`] relationships between the models, shown as rectangles. The ABIS model itself is the union of the NSL Model, the TERN Ontology and the ABIS Foreground Models.
 image::img/hierarchy.svg[ABIS Parts,align="center"]
 
-=== Foreground Model
+=== Union Foreground Model
 
-The ABIS Foreground Model is the union of the Foreground Models listed in the next section. The dependencies of these models are shown in <<#hierarchy, Figure 13>>, above.
+The ABIS Union Foreground Model is the union of the Foreground Models listed in the next section. The dependencies of these models are shown in <<#hierarchy, Figure 13>>, above.
 
-When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necissary, the <<Record Model, Record Model>> is used.
+When modelling biodiversity observations - ABIS' main concern - ABIS uses the <<TERNOntology, TERN Ontology>> for the scientific domain information. When modelling taxonomic name objects, ABIS uses the <<NSLM, NSL Model>>. When data packaging is necessary, the <<Record Model, Record Model>> is used.
 
 === Foreground Models
 
