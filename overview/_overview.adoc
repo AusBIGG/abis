@@ -12,11 +12,11 @@ This document contains a short overview of the https://linked.data.gov.au/def/ab
 
 ABIS is an Australian standard that specifies how information about biodiversity is to be represented for exchange and use. It is a flexible data model for the biodiversity domain that allows the capture of richer and more detailed information than alternative models.
 
-The standard is structured using Resource Description Framework (RDF), a World Wide Web Consortium (W3C) "standard model for data on the web" https://www.w3.org/RDF/[W3C's RDF note]. RDF maked _graphs_ of data, which have a node-edge-node structure connecting bits of information using defined relationships.
+The standard is structured using Resource Description Framework (RDF), a World Wide Web Consortium (W3C) "standard model for data on the web" https://www.w3.org/RDF/[W3C's RDF note]. RDF makes _graphs_ of data, which have a node-edge-node structure connecting bits of information using defined relationships.
 
 If you have not worked with RDF before, we recommend taking the time to learn about it. A good starting point is the https://www.w3.org/TR/rdf11-concepts/[W3C's RDF Primer].
 
-Where many biodiversity data regimes use a relational (databae) structure, ABIS data can be stored as text data in files, or within databases. ABIS data can be "flattened" into tables or CSV data too.
+Where many biodiversity data regimes use a relational (database) structure, ABIS data can be stored as text data in files, or within databases. ABIS data can be "flattened" into tables or CSV data too.
 
 ABIS implements a few domain-specific concepts itself but mostly re-uses existing general and domain models, such as the https://linkeddata.tern.org.au/information-models/tern-ontology[TERN ontology], for core biodiversity data, https://www.w3.org/TR/prov-o/[PROV], for provenance information, and https://schema.org/[schema.org], for general data annotations.
 
