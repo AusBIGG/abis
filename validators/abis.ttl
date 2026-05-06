@@ -68,18 +68,13 @@ ont:
 
 :shape-01
     a sh:NodeShape ;
+    sh:property
+        [
+            sh:class tern:Observation ;
+            sh:minCount 1 ;
+            sh:path sosa:hasMember ;
+        ] ;
     sh:targetClass tern:ObservationCollection ;
-    sh:property [
-        sh:path sosa:hasMember ;
-        sh:minCount 1 ;
-        sh:class tern:Observation ;
-    ] ;
-.
-
-:shape-02
-    a sh:NodeShape ;
-.
-
-:shape-03
-    a sh:NodeShape ;
+    sh:message "The Observation Collection has less than one member Observation" ;
+    schema:name "Observation Collection members" ; 
 .
