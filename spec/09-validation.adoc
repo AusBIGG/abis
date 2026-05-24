@@ -22,7 +22,7 @@ The following table lists all the validators relevant to ABIS and describes thei
 
 === Performing Validation
 
-The preferred way to validate RDF data using the validators above is to use the https://bdr.gov.au[BDR Resources] which contains all the validators preloaded for use.
+The preferred way to validate RDF data using the validators above is to use the https://resources.bdr.gov.au[BDR Resources] which contains all the validators preloaded for use.
 
 However, any one of a number of tools designed for <<SHACL, SHACL>> validation may be used and some may be more useful than the BDR Resources web page for certain scenarios, such as validation within automated processes. Such tools are:
 
