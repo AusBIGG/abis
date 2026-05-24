@@ -32,7 +32,7 @@ However, any one of a number of tools designed for <<SHACL, SHACL>> validation m
 * https://shacl-playground.zazuko.com/[Zazuko SHACL Playground]
 ** free, online Javascript-based validator
 ** can be used in a browser
-* https://tools.kurrawong.ai/tools/validate[KurrawongAI SHACL Validator]
+* https://tools.kurrawong.ai/validate[KurrawongAI SHACL Validator]
 ** free, online pySHACL-based validator
 ** preloaded with the validators above and many others
 * https://graphdb.ontotext.com/documentation/11.3/shacl-validation.html[GraphDB's SHACL Validation capability]
