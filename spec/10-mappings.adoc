@@ -359,7 +359,7 @@ ABIS uses the following <<Darwin Core Terms, Darwin Core Terms>>  class directly
 | Used Directly
 
 | *Classes*
-| https://dwc.tdwg.org/list/#dwc_Occurrence[dwc:Occurence]
+| https://dwc.tdwg.org/list/#dwc_Occurrence[dwc:Occurrence]
 |===
 
 The <<TERNOntology, TERN Ontology>> makes the following mappings to <<Darwin Core Terms, Darwin Core Terms>> elements:
