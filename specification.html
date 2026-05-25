@@ -1447,7 +1447,7 @@ Department of Climate Change, Energy, the Environment and Water<br>
 </div>
 </li>
 <li>
-<p><a href="#_patterns">Patterns</a></p>
+<p><a href="#Patterns">Patterns</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1529,6 +1529,10 @@ Department of Climate Change, Energy, the Environment and Water<br>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.</p>
+</div>
+<div class="paragraph">
+<p>In ABIS, a <em>pattern</em> is a reusable approach for modelling a recurring type of biodiversity information in RDF and Linked Data. Rather than prescribing a single rigid schema, patterns describe modelling approaches that can be consistently applied across datasets and organisations, improving interoperability while still allowing extension for local needs.
+This usage follows the broader idea of Linked Data modelling patterns described in <a href="#Patterns">Linked Data Patterns</a> - Modelling Patterns chapter.</p>
 </div>
 <div class="sect2">
 <h3 id="_set_modelling"><a class="anchor" href="#_set_modelling"></a>5.1. Set Modelling</h3>
@@ -2582,7 +2586,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>This pattern sees instances of the class <code>Observation</code> - individual acts of a person or a sensor observing something - following procedures to quantify properties of a <code>Feature Of Interest</code> which could be a surveyed site, a material sample or even a satellite image (which would, in turn, be a sample of the land imaged). <code>Observation</code> instances produce <code>Result</code> instances which contain categorisations, numerical values, units of measure and so on, as necessary to well characterise the observed property quantity or category.</p>
 </div>
 <div class="paragraph">
-<p>The <a href="#PROV">Provenance Ontology</a> offers a generic perspective on <em>observation</em> and <em>sampling</em> with its take on the <em>observation</em> pattern above given in the figure below. This is as per the <a href="#_provenance">Provenance Pattern</a> described in the <a href="#_patterns">Patterns Section</a>.</p>
+<p>The <a href="#PROV">Provenance Ontology</a> offers a generic perspective on <em>observation</em> and <em>sampling</em> with its take on the <em>observation</em> pattern above given in the figure below. This is as per the <a href="#_provenance">Provenance Pattern</a> described in the <a href="#Patterns">Patterns Section</a>.</p>
 </div>
 <div id="tern-prov" class="imageblock text-center">
 <div class="content">
@@ -2899,7 +2903,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>Additional Background Models - <a href="#PROF">the Profiles Vocabulary</a> &amp; <a href="#OLIS">Olis</a> - are used to describe the relationships between ABIS models and between units of ABIS data within datasets, respectively, and do not need to be directly considered by users of ABIS: their impact is felt within the descriptions of this specification document itself.</p>
 </div>
 <div class="paragraph">
-<p>Specific details of all these Background Models are not directly given here, other than certain patterns they impose and these are presented in the <a href="#_patterns">Patterns Section</a>.</p>
+<p>Specific details of all these Background Models are not directly given here, other than certain patterns they impose and these are presented in the <a href="#Patterns">Patterns Section</a>.</p>
 </div>
 </div>
 </div>
@@ -4561,6 +4565,14 @@ WHERE {
 </dd>
 </dl>
 </div>
+<div id="Patterns" class="dlist">
+<dl>
+<dt class="hdlist1">Patterns</dt>
+<dd>
+<p>Linked Data Patterns - Modelling Patterns chapter, Leigh Dodds and Ian Davis, <a href="https://patterns.dataincubator.org/book/modelling-patterns.html" class="bare">https://patterns.dataincubator.org/book/modelling-patterns.html</a></p>
+</dd>
+</dl>
+</div>
 <div id="NSLM" class="dlist">
 <dl>
 <dt class="hdlist1">NSLM</dt>
@@ -5208,7 +5220,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-25 02:04:04 UTC
+Last updated 2026-05-25 03:42:28 UTC
 </div>
 </div>
 </body>
