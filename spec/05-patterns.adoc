@@ -2,6 +2,9 @@
 
 This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.
 
+In ABIS, a _pattern_ is a reusable approach for modelling a recurring type of biodiversity information in RDF and Linked Data. Rather than prescribing a single rigid schema, patterns describe modelling approaches that can be consistently applied across datasets and organisations, improving interoperability while still allowing extension for local needs.
+This usage follows the broader idea of Linked Data modelling patterns described in <<Patterns, Linked Data Patterns>> - Modelling Patterns chapter.
+
 === Set Modelling
 
 The most basic pattern used by this model and all the <<OWL2, OWL>>-based models it profiles is that of https://en.wikipedia.org/wiki/Set_theory[Set Theory] modelling, that is, modelling according to the mathematical notion of sets.
