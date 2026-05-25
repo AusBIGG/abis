@@ -8,7 +8,7 @@ TEST_DIR_PATH = Path(__file__).parent.resolve()
 
 @pytest.fixture
 def sosa_shapes_graph():
-    return Graph().parse(TEST_DIR_PATH.parent / "validators" / "sosa-validator.ttl")
+    return Graph().parse(TEST_DIR_PATH.parent / "validators" / "sosa.ttl")
 
 
 def test_sosa_validator_01(sosa_shapes_graph):
@@ -25,5 +25,4 @@ def test_sosa_validator_02(sosa_shapes_graph):
 
     conforms, results_graph, results_text = validate(g_data, shacl_graph=g_sh)
     assert not conforms
-
 
