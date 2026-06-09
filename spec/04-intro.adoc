@@ -4,6 +4,8 @@ This document is the specification of the parts, requirements and patterns of th
 
 The goal of ABIS is to simplify the exchange of standardised biodiversity data in Australia between data holders - States & Territories, the Commonwealth, educational and research organisations, private companies and the public - by providing a scientific observations data model and a series of additions to it that cater for institution details, data management and mappings to other information models.
 
+Biodiversity data in ABIS primarily refers to species occurrence data: observations of organisms at a place and time. This includes records relating to common and rare species, and native, introduced, naturalised and feral species. ABIS also supports associated information required for the management and exchange of biodiversity data, including sampling methods, taxonomic identification, provenance, institutional information and related metadata.
+
 ABIS uses rigorous and formal data models which means that data wanting to be compliant with it can be automatically validated using machine-readable forms of the models and validation tools. This specification indicates where the validators are and how to use them in the <<Validation, Validation Section>>.
 
 === Multiple Models

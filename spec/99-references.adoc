@@ -18,6 +18,9 @@ ISO19156:: International Organization for Standardization, ISO 19156: Geographic
 [[JSON-LD]]
 JSON-LD:: World Wide Web Consortium, _JSON-LD 1.1: A JSON-based Serialization for Linked Data_, W3C Recommendation (16 July 2020). https://www.w3.org/TR/json-ld11/
 
+[[Patterns]]
+Patterns:: Linked Data Patterns - Modelling Patterns chapter, Leigh Dodds and Ian Davis, https://patterns.dataincubator.org/book/modelling-patterns.html
+
 [[NSLM]]
 NSLM:: Centre for Australian National Biodiversity Research (CANBR), _National Species List - Semantic Web Model_ (2023). https://linked.data.gov.au/def/nsl
 

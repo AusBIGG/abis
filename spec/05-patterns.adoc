@@ -2,6 +2,9 @@
 
 This section describes some modelling patterns implemented in ABIS. Most of these patterns are inherited from the models that ABIS profiles.
 
+In ABIS, a _pattern_ is a reusable approach for modelling a recurring type of biodiversity information in RDF and Linked Data. Rather than prescribing a single rigid schema, patterns describe modelling approaches that can be consistently applied across datasets and organisations, improving interoperability while still allowing extension for local needs.
+This usage follows the broader idea of Linked Data modelling patterns described in <<Patterns, Linked Data Patterns>> - Modelling Patterns chapter.
+
 === Set Modelling
 
 The most basic pattern used by this model and all the <<OWL2, OWL>>-based models it profiles is that of https://en.wikipedia.org/wiki/Set_theory[Set Theory] modelling, that is, modelling according to the mathematical notion of sets.
@@ -136,7 +139,7 @@ If an object has an IRI assigned to it that does not link to RDF data, it should
 
 Here the `{ORIGINAL-IRI}`, since it does not act as a Linked Data IRI, is indicated as being a literal of a specialised data type - `{CUSTOM-DATATYPE}`.
 
-If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGSN, then that type might be found in the _BDR Datatypes_ vocabulary at https://vocabs.bdr.gov.au/v/vocab[https://vocabs.bdr.gov.au], and it should be used. If its type is not known or is a generic URL, the type `xsd:anyURI` should be used like this:
+If the datatype of the `{ORIGINAL-IRI}` is of a known form, such as a DOI or IGSN, then that type might be found in the _BDR Datatypes_ vocabulary at https://linked.data.gov.au/dataset/bdr/datatypes[https://linked.data.gov.au/dataset/bdr/datatypes], and it should be used. If its type is not known or is a generic URL, the type `xsd:anyURI` should be used like this:
 
 ----
 <{NEW-IRI]}>
