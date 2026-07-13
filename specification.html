@@ -1808,7 +1808,7 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <p>ABIS is fundamentally about records of the occurrence of biodiversity. For this reason, ABIS contains representations of chunks of data, as per the <a href="#_data_cataloguing">Data Cataloguing</a> pattern above, a  representation of an <em>occurrence</em> and a mechanism to link them.</p>
 </div>
 <div class="paragraph">
-<p>The ABIS class <a href="#schema:Statement">BiodiversityRecord</a> represents a single recording of an occurrence or recording of the results of a survey. This is usually a single row in a spreadsheet of biodiversity observations, or a single point of a map of occurrences. It is linked to the representation of actual occurrence itself, represented by the <a href="#DWC">Darwin Core Terms</a>'s <a href="#dwc:Occurrence">Occurrence</a> class.</p>
+<p>A <a href="#schema:Statement">biodiversity record</a> represents a single recording of an occurrence or recording of the results of a survey. This is usually a single row in a spreadsheet of biodiversity observations, or a single point of a map of occurrences. It is linked to the representation of actual occurrence itself, represented by the <a href="#DWC">Darwin Core Terms</a>'s <a href="#dwc:Occurrence">Occurrence</a> class.</p>
 </div>
 <div class="paragraph">
 <p>The reason for this distinction between representations of the <em>record of the occurrence</em> and the <em>occurrence</em> itself is because some data models record metadata about the recording itself - who did it, where it is stored and managed, what ID the recording has etc. - and some don&#8217;t, choosing to focus only on the where/what/when of the occurrence.</p>
@@ -1821,14 +1821,14 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For data in the ABIS format being submitted to systems such as the <a href="#BDR">Biodiversity Data Repository</a> where the data origin has a "Record ID" or similar, this ID should be preserved as a property of instances of the <a href="#schema:Statement">Biodiversity Record</a> class as a non-IRI alternate identifier, as per the <a href="#_alternate_ids_non_iris">Alternate IDs - non-IRIs</a> pattern.</p>
+<p>For data in the ABIS format being submitted to systems such as the <a href="#BDR">Biodiversity Data Repository</a> where the data origin has a "Record ID" or similar, this ID should be preserved as a property of the <a href="#schema:Statement">biodiversity record</a> as a non-IRI alternate identifier, as per the <a href="#_alternate_ids_non_iris">Alternate IDs - non-IRIs</a> pattern.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The relationship between a <a href="#schema:Statement">Biodiversity Record</a> and the <a href="#dwc:Occurrence">Occurrence</a> it is about is given with the <a href="#schema:about">schema:about</a> predicate, like this:</p>
+<p>The relationship between a <a href="#schema:Statement">biodiversity record</a> and the <a href="#dwc:Occurrence">Occurrence</a> it is about is given with the <a href="#schema:about">schema:about</a> predicate, like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5223,7 +5223,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-08 01:46:06 UTC
+Last updated 2026-07-13 04:35:10 UTC
 </div>
 </div>
 </body>
