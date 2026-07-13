@@ -198,16 +198,16 @@ image::img/annex-a/brm-overview.svg[Record Model overview,align="center",width=1
 
 ABIS is fundamentally about records of the occurrence of biodiversity. For this reason, ABIS contains representations of chunks of data, as per the <<Data Cataloguing, Data Cataloguing>> pattern above, a  representation of an _occurrence_ and a mechanism to link them.
 
-The ABIS class <<schema:Statement, BiodiversityRecord>> represents a single recording of an occurrence or recording of the results of a survey. This is usually a single row in a spreadsheet of biodiversity observations, or a single point of a map of occurrences. It is linked to the representation of actual occurrence itself, represented by the <<DWC, Darwin Core Terms>>'s <<dwc:Occurrence, Occurrence>> class.
+A <<schema:Statement, biodiversity record>> represents a single recording of an occurrence or recording of the results of a survey. This is usually a single row in a spreadsheet of biodiversity observations, or a single point of a map of occurrences. It is linked to the representation of actual occurrence itself, represented by the <<DWC, Darwin Core Terms>>'s <<dwc:Occurrence, Occurrence>> class.
 
 The reason for this distinction between representations of the _record of the occurrence_ and the _occurrence_ itself is because some data models record metadata about the recording itself - who did it, where it is stored and managed, what ID the recording has etc. - and some don't, choosing to focus only on the where/what/when of the occurrence.
 
 [NOTE]
 ====
-For data in the ABIS format being submitted to systems such as the <<BDR, Biodiversity Data Repository>> where the data origin has a "Record ID" or similar, this ID should be preserved as a property of instances of the <<schema:Statement, Biodiversity Record>> class as a non-IRI alternate identifier, as per the <<Alternate IDs - non-IRIs, Alternate IDs - non-IRIs>> pattern.
+For data in the ABIS format being submitted to systems such as the <<BDR, Biodiversity Data Repository>> where the data origin has a "Record ID" or similar, this ID should be preserved as a property of the <<schema:Statement, biodiversity record>> as a non-IRI alternate identifier, as per the <<Alternate IDs - non-IRIs, Alternate IDs - non-IRIs>> pattern.
 ====
 
-The relationship between a <<schema:Statement, Biodiversity Record>> and the <<dwc:Occurrence, Occurrence>> it is about is given with the <<schema:about, schema:about>> predicate, like this:
+The relationship between a <<schema:Statement, biodiversity record>> and the <<dwc:Occurrence, Occurrence>> it is about is given with the <<schema:about, schema:about>> predicate, like this:
 
 [source,turtle]
 ----
