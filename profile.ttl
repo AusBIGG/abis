@@ -17,10 +17,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcterms:description "This resource describes the structure and multiple parts of the ABIS Standard as well as the formalisms used in their definitions, in machine-readable form." ;
     dcterms:format "text/html" ;
     dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-    dcterms:modified "2025-11-28"^^xsd:date ;
+    dcterms:modified "2026-08-10"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
     dcterms:title "ABIS Profile Definition"@en ;
     prof:hasArtifact "https://linked.data.gov.au/def/abis"^^xsd:anyURI ;
+    prof:hasResource <https://linked.data.gov.au/def/abis/vocabularies/feature-types> ;
     prof:hasRole <http://www.w3.org/ns/dx/prof/role/profile-definition> ;
     prof:isProfileOf <https://linkeddata.tern.org.au/information-models/tern-ontology> ;
     schema:copyrightNotice "(c) 2024 AusBIGG" ;
@@ -53,6 +54,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcterms:format "application/ld+json" ;
     dcterms:title "ABIS JSON-LD Context"@en ;
     prof:hasArtifact "https://linked.data.gov.au/def/abis/context.json"^^xsd:anyURI ;
+    prof:hasRole <http://www.w3.org/ns/dx/prof/role/vocabulary> ;
+.
+
+<https://linked.data.gov.au/def/abis/vocabularies/feature-types>
+    a prof:ResourceDescriptor ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Feature Type vocabulary"@en ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d"^^xsd:anyURI ;
     prof:hasRole <http://www.w3.org/ns/dx/prof/role/vocabulary> ;
 .
 
