@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <title>Australian Biodiversity Information Standard</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -116,7 +116,6 @@ h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title str
 :not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
 pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
-pre>code{display:block}
 pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
 em em{font-style:normal}
 strong strong{font-weight:400}
@@ -140,7 +139,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #content::before{content:none}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
-#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
 #header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
@@ -162,6 +161,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
 #toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
@@ -218,6 +218,7 @@ table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
 .literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
 .listingblock>.content{position:relative}
+.listingblock pre>code{display:block}
 .listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
 .listingblock:hover code[data-lang]::before{display:block}
 .listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
@@ -327,7 +328,7 @@ a.image{text-decoration:none;display:inline-block}
 a.image object{pointer-events:none}
 sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
 sup.footnote a,sup.footnoteref a{text-decoration:none}
-sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
 #footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
@@ -431,221 +432,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<style>
-pre.rouge table td { padding: 5px; }
-pre.rouge table pre { margin: 0; }
-pre.rouge .cm {
-  color: #999988;
-  font-style: italic;
-}
-pre.rouge .cp {
-  color: #999999;
-  font-weight: bold;
-}
-pre.rouge .c1 {
-  color: #999988;
-  font-style: italic;
-}
-pre.rouge .cs {
-  color: #999999;
-  font-weight: bold;
-  font-style: italic;
-}
-pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
-  color: #999988;
-  font-style: italic;
-}
-pre.rouge .err {
-  color: #a61717;
-  background-color: #e3d2d2;
-}
-pre.rouge .gd {
-  color: #000000;
-  background-color: #ffdddd;
-}
-pre.rouge .ge {
-  color: #000000;
-  font-style: italic;
-}
-pre.rouge .gr {
-  color: #aa0000;
-}
-pre.rouge .gh {
-  color: #999999;
-}
-pre.rouge .gi {
-  color: #000000;
-  background-color: #ddffdd;
-}
-pre.rouge .go {
-  color: #888888;
-}
-pre.rouge .gp {
-  color: #555555;
-}
-pre.rouge .gs {
-  font-weight: bold;
-}
-pre.rouge .gu {
-  color: #aaaaaa;
-}
-pre.rouge .gt {
-  color: #aa0000;
-}
-pre.rouge .kc {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kd {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kn {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kp {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kr {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kt {
-  color: #445588;
-  font-weight: bold;
-}
-pre.rouge .k, pre.rouge .kv {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .mf {
-  color: #009999;
-}
-pre.rouge .mh {
-  color: #009999;
-}
-pre.rouge .il {
-  color: #009999;
-}
-pre.rouge .mi {
-  color: #009999;
-}
-pre.rouge .mo {
-  color: #009999;
-}
-pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
-  color: #009999;
-}
-pre.rouge .sa {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .sb {
-  color: #d14;
-}
-pre.rouge .sc {
-  color: #d14;
-}
-pre.rouge .sd {
-  color: #d14;
-}
-pre.rouge .s2 {
-  color: #d14;
-}
-pre.rouge .se {
-  color: #d14;
-}
-pre.rouge .sh {
-  color: #d14;
-}
-pre.rouge .si {
-  color: #d14;
-}
-pre.rouge .sx {
-  color: #d14;
-}
-pre.rouge .sr {
-  color: #009926;
-}
-pre.rouge .s1 {
-  color: #d14;
-}
-pre.rouge .ss {
-  color: #990073;
-}
-pre.rouge .s, pre.rouge .dl {
-  color: #d14;
-}
-pre.rouge .na {
-  color: #008080;
-}
-pre.rouge .bp {
-  color: #999999;
-}
-pre.rouge .nb {
-  color: #0086B3;
-}
-pre.rouge .nc {
-  color: #445588;
-  font-weight: bold;
-}
-pre.rouge .no {
-  color: #008080;
-}
-pre.rouge .nd {
-  color: #3c5d5d;
-  font-weight: bold;
-}
-pre.rouge .ni {
-  color: #800080;
-}
-pre.rouge .ne {
-  color: #990000;
-  font-weight: bold;
-}
-pre.rouge .nf, pre.rouge .fm {
-  color: #990000;
-  font-weight: bold;
-}
-pre.rouge .nl {
-  color: #990000;
-  font-weight: bold;
-}
-pre.rouge .nn {
-  color: #555555;
-}
-pre.rouge .nt {
-  color: #000080;
-}
-pre.rouge .vc {
-  color: #008080;
-}
-pre.rouge .vg {
-  color: #008080;
-}
-pre.rouge .vi {
-  color: #008080;
-}
-pre.rouge .nv, pre.rouge .vm {
-  color: #008080;
-}
-pre.rouge .ow {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .o {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .w {
-  color: #bbbbbb;
-}
-pre.rouge {
-  background-color: #f8f8f8;
-}
 </style>
 </head>
 <body class="book toc2 toc-left">
@@ -1241,20 +1027,20 @@ now the <a href="https://linked.data.gov.au/org/dcceew">Department of Climate Ch
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;https://example.com/dataset/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">PREFIX ex: &lt;https://example.com/dataset/&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
 
-</span><span class="nn">ex:</span><span class="n">x
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Dataset X"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">hasPart</span><span class="w"> </span><span class="nl">&lt;https://example.com/dataset/sample/y&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+ex:x
+    a schema:Dataset ;
+    schema:name "Dataset X" ;
+    schema:hasPart &lt;https://example.com/dataset/sample/y&gt; ;
+.
 
-</span><span class="nl">&lt;https://example.com/dataset/sample/y&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Sample</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Sample Y"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+&lt;https://example.com/dataset/sample/y&gt;
+    a tern:Sample ;
+    schema:name "Sample Y" ;
+.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1832,21 +1618,21 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">record-1234
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Statement
-</span><span class="w">    </span><span class="c1"># ... other info</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">about</span><span class="w"> </span><span class="nn">ex:</span><span class="n">occurrence-9876</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># &lt;-- this is the link</span><span class="w">
-</span><span class="p">.</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">ex:record-1234
+    a schema:Statement
+    # ... other info
+    schema:about ex:occurrence-9876 ;  # &lt;-- this is the link
+.
 
-</span><span class="nn">ex:</span><span class="n">occurrence-9876
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Occurrence</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (...)"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="s">"2024-07-29"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="c1"># ... other info</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:occurrence-9876
+    a dwc:Occurrence ;
+    schema:spatial [
+        a geo:Geometry ;
+        geo:asWKT "POINT (...)" ;
+    ] ;
+    schema:temporal "2024-07-29"^^xsd:date ;
+    # ... other info
+.</code></pre>
 </div>
 </div>
 </div>
@@ -1901,20 +1687,20 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">PREFIX ex: &lt;http://example.com/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
 
-</span><span class="nn">ex:</span><span class="n">site-x
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Site</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Site X"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Geometry X1"</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((...))"</span><span class="p">^^</span><span class="nn">geo:</span><span class="n">wktLiteral</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:site-x
+    a tern:Site ;
+    schema:name "Site X" ;
+    schema:spatial [
+        a geo:Geometry ;
+        schema:name "Geometry X1" ;
+        geo:asWKT "POLYGON ((...))"^^geo:wktLiteral ;
+    ] ;
+.</code></pre>
 </div>
 </div>
 <h4 id="_abis_spatial_objects" class="discrete">ABIS spatial objects</h4>
@@ -1978,26 +1764,26 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">PREFIX ex: &lt;http://example.com/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
 
-</span><span class="nn">ex:</span><span class="n">pomingolarna
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Site</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Pomingalarna Bushland Site"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">hasCentroid</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT (147.300797 -35.113046)"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Boundary"</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.294576 -35.101881, 147.299386 -35.102425, 147.303469 -35.106577, 147.302879 -35.109889, 147.305057 -35.111953, 147.307076 -35.113405, 147.311296 -35.113541, 147.310887 -35.115810, 147.311772 -35.115991, 147.310093 -35.117738, 147.310071 -35.117398, 147.309118 -35.116967, 147.308460 -35.117262, 147.308006 -35.118147, 147.307938 -35.120438, 147.308120 -35.120869, 147.308278 -35.122434, 147.308324 -35.123387, 147.306849 -35.123569, 147.306350 -35.123387, 147.304558 -35.123092, 147.302743 -35.122548, 147.301473 -35.121844, 147.300293 -35.121073, 147.292240 -35.113042, 147.294576 -35.101881))"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">hasBoundingBox</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POLYGON ((147.292240 -35.123569, 147.311772 -35.123569, 147.311772 -35.101881, 147.292240 -35.101881, 147.292240 -35.123569))"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:pomingolarna
+    a tern:Site ;
+    schema:name "Pomingalarna Bushland Site" ;
+    geo:hasCentroid [
+        geo:asWKT "POINT (147.300797 -35.113046)" ;
+    ] ;
+    schema:spatial [
+        a geo:Geometry ;
+        schema:name "Boundary" ;
+        geo:asWKT "POLYGON ((147.294576 -35.101881, 147.299386 -35.102425, 147.303469 -35.106577, 147.302879 -35.109889, 147.305057 -35.111953, 147.307076 -35.113405, 147.311296 -35.113541, 147.310887 -35.115810, 147.311772 -35.115991, 147.310093 -35.117738, 147.310071 -35.117398, 147.309118 -35.116967, 147.308460 -35.117262, 147.308006 -35.118147, 147.307938 -35.120438, 147.308120 -35.120869, 147.308278 -35.122434, 147.308324 -35.123387, 147.306849 -35.123569, 147.306350 -35.123387, 147.304558 -35.123092, 147.302743 -35.122548, 147.301473 -35.121844, 147.300293 -35.121073, 147.292240 -35.113042, 147.294576 -35.101881))" ;
+    ] ;
+    geo:hasBoundingBox [
+        geo:asWKT "POLYGON ((147.292240 -35.123569, 147.311772 -35.123569, 147.311772 -35.101881, 147.292240 -35.101881, 147.292240 -35.123569))" ;
+    ] ;
+.</code></pre>
 </div>
 </div>
 <h4 id="_geometry_literals" class="discrete">Geometry Literals</h4>
@@ -2106,42 +1892,42 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">PREFIX ex: &lt;http://example.com/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
 
-</span><span class="c1"># Australia, according to the Australian Bureau of Statistics' ASGS Linked Data dataset</span><span class="w">
-</span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt;</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Feature</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Australia"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">sfContains
-</span><span class="w">        </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/8&gt;</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="c1"># ACT</span><span class="w">
-        </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="c1"># NSW</span><span class="w">
-        </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/7&gt;</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="c1"># NT</span><span class="w">
-        </span><span class="c1"># ...</span><span class="w">
-        </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/2&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># Victoria</span><span class="w">
-</span><span class="p">.</span><span class="w">
+# Australia, according to the Australian Bureau of Statistics' ASGS Linked Data dataset
+&lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt;
+    a geo:Feature ;
+    schema:name "Australia" ;
+    geo:sfContains
+        &lt;https://linked.data.gov.au/dataset/asgsed3/STE/8&gt; ,  # ACT
+        &lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt; ,  # NSW
+        &lt;https://linked.data.gov.au/dataset/asgsed3/STE/7&gt; ,  # NT
+        # ...
+        &lt;https://linked.data.gov.au/dataset/asgsed3/STE/2&gt; ;  # Victoria
+.
 
-</span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;</span><span class="w">  </span><span class="c1"># NSW</span><span class="w">
-    </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Feature</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"New South Wales"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">sfWithin</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;  # NSW
+    a geo:Feature ;
+    schema:name "New South Wales" ;
+    geo:sfWithin &lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt; ;
+.
 
-</span><span class="c1"># An example Site within NSW</span><span class="w">
-</span><span class="nn">ex:</span><span class="n">site-x
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Site</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Site X"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">sfWithin</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
-</span><span class="c1"># ex:site-x geo:sfWithin &lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt;</span><span class="w">
-</span><span class="c1"># can be inferred from the site being within NSW being within Australia</span><span class="w">
+# An example Site within NSW
+ex:site-x
+    a tern:Site ;
+    schema:name "Site X" ;
+    geo:sfWithin &lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt; ;
+.
+# ex:site-x geo:sfWithin &lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt;
+# can be inferred from the site being within NSW being within Australia
 
-</span><span class="c1"># NSW &amp; Victoria touch along their common border</span><span class="w">
-</span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">sfTouches</span><span class="w"> </span><span class="nl">&lt;https://linked.data.gov.au/dataset/asgsed3/STE/2&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+# NSW &amp; Victoria touch along their common border
+&lt;https://linked.data.gov.au/dataset/asgsed3/STE/1&gt;
+    geo:sfTouches &lt;https://linked.data.gov.au/dataset/asgsed3/STE/2&gt; ;
+.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2157,18 +1943,18 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">PREFIX ex: &lt;http://example.com/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
 
-</span><span class="nn">ex:</span><span class="n">obs-n
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Observation N"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINTZ(147.308040 -35.121824 234)"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:obs-n
+    a tern:Observation ;
+    schema:name "Observation N" ;
+    schema:spatial [
+        geo:asWKT "POINTZ(147.308040 -35.121824 234)" ;
+    ] ;
+.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2183,22 +1969,22 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">PREFIX ex: &lt;http://example.com/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
 
-</span><span class="nn">ex:</span><span class="n">obs-n
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Observation N"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT(147.308040 -35.121824)"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">depth</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">schema:</span><span class="n">value</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">schema:</span><span class="n">unitCode</span><span class="w"> </span><span class="nl">&lt;https://qudt.org/vocab/unit/M&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># QUDT's IRI for metre</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:obs-n
+    a tern:Observation ;
+    schema:name "Observation N" ;
+    schema:spatial [
+        geo:asWKT "POINT(147.308040 -35.121824)" ;
+    ] ;
+    schema:depth [
+        schema:value 3 ;
+        schema:unitCode &lt;https://qudt.org/vocab/unit/M&gt; ;  # QUDT's IRI for metre
+    ] ;
+.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2225,41 +2011,41 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nl">&lt;https://schema.org/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">time:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">PREFIX ex: &lt;http://example.com/&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
 
-</span><span class="c1"># Survey X started on the 15th of March, 1987</span><span class="w">
-</span><span class="c1"># and ended on the 23 of March, 1987</span><span class="w">
-</span><span class="nn">ex:</span><span class="n">survey-x
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Survey</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Survey X"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">time:</span><span class="n">hasBeginning</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">inXSDDate</span><span class="w"> </span><span class="s">"1987-03-15"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">time:</span><span class="n">hasEnd</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">inXSDDate</span><span class="w"> </span><span class="s">"1987-03-23"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+# Survey X started on the 15th of March, 1987
+# and ended on the 23 of March, 1987
+ex:survey-x
+    a tern:Survey ;
+    schema:name "Survey X" ;
+    schema:temporal [
+        time:hasBeginning [ time:inXSDDate "1987-03-15" ] ;
+        time:hasEnd [ time:inXSDDate "1987-03-23" ] ;
+    ] ;
+.
 
-</span><span class="c1"># We only know Survey Y occurred in April, 2010</span><span class="w">
-</span><span class="nn">ex:</span><span class="n">survey-y
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Survey</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Survey Y"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">time:</span><span class="n">inXSDgYearMonth</span><span class="w"> </span><span class="s">"2020-04"</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+# We only know Survey Y occurred in April, 2010
+ex:survey-y
+    a tern:Survey ;
+    schema:name "Survey Y" ;
+    schema:temporal [
+        time:inXSDgYearMonth "2020-04"
+    ] ;
+.
 
-</span><span class="c1"># Survey Z is on-going or at least</span><span class="w">
-</span><span class="c1"># we don't know if/when it ended as only</span><span class="w">
-</span><span class="c1"># a beginning date is given</span><span class="w">
-</span><span class="nn">ex:</span><span class="n">survey-z
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Survey</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">name</span><span class="w"> </span><span class="s">"Survey Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="nn">time:</span><span class="n">hasBeginning</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">inXSDDateTime</span><span class="w"> </span><span class="s">"2023-12-10T14:30:00"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+# Survey Z is on-going or at least
+# we don't know if/when it ended as only
+# a beginning date is given
+ex:survey-z
+    a tern:Survey ;
+    schema:name "Survey Z" ;
+    schema:temporal [
+        time:hasBeginning [ time:inXSDDateTime "2023-12-10T14:30:00" ] ;
+    ] ;
+.</code></pre>
 </div>
 </div>
 <h4 id="_date_time_representations" class="discrete">Date &amp; Time representations</h4>
@@ -2784,34 +2570,34 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <h6 id="_simple_example"><a class="anchor" href="#_simple_example"></a>Simple Example</h6>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">dataset-x
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="c1"># ... dataset metadata</span><span class="w">
-</span><span class="p">.</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">ex:dataset-x
+    a schema:Dataset ;
+    # ... dataset metadata
+.
 
-</span><span class="nn">ex:</span><span class="n">occurrence-y
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Occurrence</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="c1"># ... other occurrence info</span><span class="w">
-</span><span class="p">.</span><span class="w">
+ex:occurrence-y
+    a dwc:Occurrence ;
+    schema:isPartOf ex:dataset-x ;
+    # ... other occurrence info
+.
 
-</span><span class="nn">ex:</span><span class="n">occurrence-z
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Occurrence</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="c1"># ... other occurrence info</span><span class="w">
-</span><span class="p">.</span><span class="w">
+ex:occurrence-z
+    a dwc:Occurrence ;
+    schema:isPartOf ex:dataset-x ;
+    # ... other occurrence info
+.
 
-</span><span class="nn">ex:</span><span class="n">record-m
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Statement</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">about</span><span class="w"> </span><span class="nn">ex:</span><span class="n">occurrence-y</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"CR-1234"</span><span class="p">^^</span><span class="nn">datatypes:</span><span class="n">acmeCatId</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+ex:record-m
+    a schema:Statement ;
+    schema:about ex:occurrence-y ;
+    schema:identifier "CR-1234"^^datatypes:acmeCatId ;
+.
 
-</span><span class="nn">ex:</span><span class="n">record-n
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Statement</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">about</span><span class="w"> </span><span class="nn">ex:</span><span class="n">occurrence-z</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"CR-5678"</span><span class="p">^^</span><span class="nn">datatypes:</span><span class="n">acmeCatId</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:record-n
+    a schema:Statement ;
+    schema:about ex:occurrence-z ;
+    schema:identifier "CR-5678"^^datatypes:acmeCatId ;
+.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2822,19 +2608,19 @@ ex:Engineer rdfs:subClassOf ex:Person .</pre>
 <h6 id="_multiple_cataloguings"><a class="anchor" href="#_multiple_cataloguings"></a>Multiple Cataloguings</h6>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">sample-x
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Occurrence</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">isPartOf</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-x</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="c1"># ... other occurrence info</span><span class="w">
-</span><span class="p">.</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">ex:sample-x
+    a dwc:Occurrence ;
+    schema:isPartOf ex:dataset-x ;
+    # ... other occurrence info
+.
 
-</span><span class="nn">ex:</span><span class="n">record-m
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">schema:</span><span class="n">Statement</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">about</span><span class="w"> </span><span class="nn">ex:</span><span class="n">occurrence-y</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">schema:</span><span class="n">identifier
-</span><span class="w">        </span><span class="s">"SS-1234"</span><span class="p">^^</span><span class="nn">datatypes:</span><span class="n">acmeCatId</span><span class="w"> </span><span class="p">,</span><span class="w">
-        </span><span class="s">"fa801030-56d4-4d6d-8452-2696929bdea9"</span><span class="p">^^</span><span class="nn">datatypes:</span><span class="n">museumZId</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:record-m
+    a schema:Statement ;
+    schema:about ex:occurrence-y ;
+    schema:identifier
+        "SS-1234"^^datatypes:acmeCatId ,
+        "fa801030-56d4-4d6d-8452-2696929bdea9"^^datatypes:museumZId ;
+.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4266,21 +4052,21 @@ ex:obs-1
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="nn">ex:</span><span class="n">sample-1
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">LivingSpecimen</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">prov:</span><span class="n">wasDerivedFrom</span><span class="w"> </span><span class="nn">ex:</span><span class="n">site-1</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">ex:sample-1
+    a dwc:LivingSpecimen ;
+    prov:wasDerivedFrom ex:site-1 ;
+.
 
-</span><span class="nn">ex:</span><span class="n">site-1
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dwc:</span><span class="n">Location</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">prov:</span><span class="n">wasDerivedFrom</span><span class="w"> </span><span class="nl">&lt;https://example.com/feature/ultimate-foi&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+ex:site-1
+    a dwc:Location ;
+    prov:wasDerivedFrom &lt;https://example.com/feature/ultimate-foi&gt; ;
+.
 
-</span><span class="nn">ex:</span><span class="n">obs-1
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">dcw:</span><span class="n">Identification</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dwc:</span><span class="n">materialSampleID</span><span class="w"> </span><span class="nn">ex:</span><span class="n">sample-1</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dwc:</span><span class="n">identificationID</span><span class="w"> </span><span class="nl">&lt;https://id.biodiversity.org.au/455721&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:obs-1
+    a dcw:Identification ;
+    dwc:materialSampleID ex:sample-1 ;
+    dwc:identificationID &lt;https://id.biodiversity.org.au/455721&gt; ;
+.</code></pre>
 </div>
 </div>
 </div>
@@ -4349,7 +4135,7 @@ ex:obs-1
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
-PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
 PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
 PREFIX dwc: &lt;http://rs.tdwg.org/dwc/terms/&gt;
 
@@ -4369,7 +4155,7 @@ WHERE {
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
-PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
 PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
 
 CONSTRUCT {
@@ -4409,44 +4195,66 @@ WHERE {
 <td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
-PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
-PREFIX geof: &lt;http://www.opengis.net/def/function/geosparql/&gt;
-PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
-PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
-
-CONSTRUCT {
+<pre>[source,sparql]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>PREFIX abis: <a href="https://linked.data.gov.au/def/abis/" class="bare">https://linked.data.gov.au/def/abis/</a>
+PREFIX geo: <a href="http://www.opengis.net/ont/geosparql#" class="bare">http://www.opengis.net/ont/geosparql#</a>
+PREFIX geof: <a href="http://www.opengis.net/def/function/geosparql/" class="bare">http://www.opengis.net/def/function/geosparql/</a>
+PREFIX tern: <a href="https://w3id.org/tern/ontologies/tern/" class="bare">https://w3id.org/tern/ontologies/tern/</a>
+PREFIX void: <a href="http://rdfs.org/ns/void#" class="bare">http://rdfs.org/ns/void#</a></p>
+</div>
+<div class="paragraph">
+<p>CONSTRUCT {
     ?dataset schema:spatial ?geom .
     ?geom geo:asWKT ?hull .
 }
 WHERE {
     {
-        VALUES ?spatialFeature {
-            abis:BiodiversityOcurrence
-            tern:FeatureOfInterest
-            tern:Site
-            tern:Survey
-            tern:SiteVisit
-        }
-
         SELECT ?dataset ?wkt
         WHERE {
-            ?feature
-              schema:isPartOf ?dataset ;
-              a ?spatialFeature ;
-            .
-            ?dataset a schema:Dataset .
-            ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
-        } GROUP BY ?dataset
+            VALUES ?spatialFeature {
+                abis:BiodiversityOcurrence
+                tern:FeatureOfInterest
+                tern:Site
+                tern:Survey
+                tern:SiteVisit
+            }</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?feature
+    schema:isPartOf ?dataset ;
+    a ?spatialFeature .</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>        ?dataset a schema:Dataset .
+        ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
     }
-
-    BIND BNODE() AS ?geom .
-    BIND geof:aggConvexHull(?wkt) AS ?hull .
-
-    MINUS {
+    GROUP BY ?dataset
+}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>BIND BNODE() AS ?geom .
+BIND geof:aggConvexHull(?wkt) AS ?hull .</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>    MINUS {
         ?dataset schema:spatial ?geom .
     }
 }</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre></pre>
 </div>
 </div></div></td>
 </tr>
@@ -4456,61 +4264,34 @@ WHERE {
 <td class="tableblock halign-left valign-top"><p class="tableblock">R04</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre>PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+<pre class="rouge highlight"><code data-lang="sparql">PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
 PREFIX geof: &lt;http://www.opengis.net/def/function/geosparql/&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
 
 CONSTRUCT {
-    ?dataset geo:hasBoundingBox ?boundingbox
+    ?dataset geo:hasBoundingBox [
+        a geo:Geometry ;
+        geo:asWKT ?bboxWkt
+    ] .
 }
 WHERE {
-    ?dataset (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
-
-    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
-}</pre>
+    {
+        SELECT ?dataset (geof:aggBoundingBox(?wkt) AS ?bboxWkt)
+        WHERE {
+            ?dataset (schema:spatial</code></pre>
 </div>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geo:hasGeometry)/geo:asWKT ?wkt .
+        }
+        GROUP BY ?dataset
+    }
+}
+----</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R06</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If a Dataset does not have a temporal range supplied, it must have it calculated as the containing interval containing all of its temporal object members</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
-PREFIX schema: &lt;https://schema.org/&gt;
-PREFIX tern &lt;https://w3id.org/tern/ontologies/tern/&gt;
-PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
-PREFIX dwc: &lt;http://rs.tdwg.org/dwc/terms/&gt;
-
-CONSTRUCT {
-    ?dataset schema:temporal ?interval
-}
-WHERE {
-    {
-        VALUES ?temporalFeature {
-            dwc:Occurrence
-        }
-
-        SELECT ?dataset ?time
-        WHERE {
-            ?feature
-                schema:isPartOf ?dataset ;
-                a ?temporalFeature
-            .
-            ?dataset a schema:Dataset .
-
-            ?feature schema:temporal|time:hasTime ?time .
-        } GROUP BY ?dataset
-    }
-
-    BIND function:aggInterval(?time) AS ?interval .
-
-    MINUS {
-        ?dataset schema:temporal ?temporal .
-    }
-}</pre>
-</div>
-</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -5082,55 +4863,55 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="listingblock">
 <div class="title">TERN Ontology example 01 - valid</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/thing/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">time:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">void:</span><span class="w"> </span><span class="nl">&lt;http://rdfs.org/ns/void#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX ex: &lt;http://example.com/thing/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
+PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
 
-</span><span class="nn">ex:</span><span class="n">dataset-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN RDFDataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+ex:dataset-01
+    a tern:RDFDataset ;
+    dcterms:description "A minimally valid tern:RDFDataset instance" ;
+    dcterms:issued "2021-11-18"^^xsd:date ;
+    dcterms:title "TERN RDFDataset 01" ;
+.
 
-</span><span class="nn">ex:</span><span class="n">obs-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN Observation 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geo:</span><span class="n">hasGeometry</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="k">a</span><span class="w"> </span><span class="nn">geo:</span><span class="n">Geometry</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">geo:</span><span class="n">asWKT</span><span class="w"> </span><span class="s">"POINT(143, -27)"</span><span class="p">^^</span><span class="nn">geo:</span><span class="n">wktLiteral
-</span><span class="w">    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"A minimally valid tern:Observation instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nn">ex:</span><span class="n">foi-01</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasResult</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Float</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">rdf:</span><span class="n">value</span><span class="w"> </span><span class="s">"42"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">tern:</span><span class="n">uncertainty</span><span class="w"> </span><span class="s">"0.5"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;https://example.org/op/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">phenomenonTime</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="k">a</span><span class="w"> </span><span class="nn">time:</span><span class="n">Instant</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">time:</span><span class="n">inXSDDateTimeStamp</span><span class="w"> </span><span class="s">"2021-11-18T14:35+10:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTimeStamp</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">usedProcedure</span><span class="w"> </span><span class="nl">&lt;https://example.org/proc/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">tern:</span><span class="n">resultDateTime</span><span class="w"> </span><span class="s">"2021-11-18T14:35:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTime</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+ex:obs-01
+    a tern:Observation ;
+    rdfs:label "TERN Observation 01" ;
+    void:inDataset ex:dataset-01 ;
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral
+    ] ;
+    rdfs:comment "A minimally valid tern:Observation instance" ;
+    sosa:hasFeatureOfInterest ex:foi-01 ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value "42"^^xsd:double ;
+        tern:uncertainty "0.5"^^xsd:double ;
+    ] ;
+    sosa:hasSimpleResult "42" ;
+    sosa:observedProperty &lt;https://example.org/op/1&gt; ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2021-11-18T14:35+10:00"^^xsd:dateTimeStamp ;
+    ] ;
+    sosa:usedProcedure &lt;https://example.org/proc/1&gt; ;
+    tern:resultDateTime "2021-11-18T14:35:00"^^xsd:dateTime ;
+.
 
-</span><span class="nn">ex:</span><span class="n">foi-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">FeatureOfInterest</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN FeatureOfInterest 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">tern:</span><span class="n">featureType</span><span class="w"> </span><span class="nl">&lt;https://example.org/ft/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:foi-01
+    a tern:FeatureOfInterest ;
+    rdfs:label "TERN FeatureOfInterest 01" ;
+    void:inDataset ex:dataset-01 ;
+    tern:featureType &lt;https://example.org/ft/1&gt; ;
+.</code></pre>
 </div>
 </div>
 </div>
@@ -5142,55 +4923,55 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="listingblock">
 <div class="title">TERN Ontology example 02 - invalid</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="turtle"><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nl">&lt;http://example.com/thing/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">sosa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/sosa/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">tern:</span><span class="w"> </span><span class="nl">&lt;https://w3id.org/tern/ontologies/tern/&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">time:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">void:</span><span class="w"> </span><span class="nl">&lt;http://rdfs.org/ns/void#&gt;</span><span class="w">
-</span><span class="kd">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w">
+<pre class="rouge highlight"><code data-lang="turtle">PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX ex: &lt;http://example.com/thing/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX sosa: &lt;http://www.w3.org/ns/sosa/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX time: &lt;http://www.w3.org/2006/time#&gt;
+PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
 
-</span><span class="nn">ex:</span><span class="n">dataset-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">RDFDataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A minimally valid tern:RDFDataset instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">issued</span><span class="w"> </span><span class="s">"2021-11-18"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"TERN RDFDataset 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+ex:dataset-01
+    a tern:RDFDataset ;
+    dcterms:description "A minimally valid tern:RDFDataset instance" ;
+    dcterms:issued "2021-11-18"^^xsd:date ;
+    dcterms:title "TERN RDFDataset 01" ;
+.
 
-</span><span class="nn">ex:</span><span class="n">obs-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Observation</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN Observation 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">void:</span><span class="n">inDataset</span><span class="w"> </span><span class="nn">ex:</span><span class="n">dataset-01</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="c1">#    geo:hasGeometry [</span><span class="w">
-</span><span class="c1">#        a geo:Geometry ;</span><span class="w">
-</span><span class="c1">#        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral</span><span class="w">
-</span><span class="c1">#    ] ;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">comment</span><span class="w"> </span><span class="s">"A minimally valid tern:Observation instance"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasFeatureOfInterest</span><span class="w"> </span><span class="nn">ex:</span><span class="n">foi-01</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasResult</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">Float</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">rdf:</span><span class="n">value</span><span class="w"> </span><span class="s">"42"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">tern:</span><span class="n">uncertainty</span><span class="w"> </span><span class="s">"0.5"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">double</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">hasSimpleResult</span><span class="w"> </span><span class="s">"42"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">observedProperty</span><span class="w"> </span><span class="nl">&lt;https://example.org/op/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">phenomenonTime</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="k">a</span><span class="w"> </span><span class="nn">time:</span><span class="n">Instant</span><span class="w"> </span><span class="p">;</span><span class="w">
-        </span><span class="nn">time:</span><span class="n">inXSDDateTimeStamp</span><span class="w"> </span><span class="s">"2021-11-18T14:35+10:00"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">dateTimeStamp</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">sosa:</span><span class="n">usedProcedure</span><span class="w"> </span><span class="nl">&lt;https://example.org/proc/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">tern:</span><span class="n">resultDateTime</span><span class="w"> </span><span class="s">"2021-11-18T14:35:00"</span><span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1"># ^^xsd:dateTime ;</span><span class="w">
-</span><span class="p">.</span><span class="w">
+ex:obs-01
+    a tern:Observation ;
+    rdfs:label "TERN Observation 01" ;
+    void:inDataset ex:dataset-01 ;
+#    geo:hasGeometry [
+#        a geo:Geometry ;
+#        geo:asWKT "POINT(143, -27)"^^geo:wktLiteral
+#    ] ;
+    rdfs:comment "A minimally valid tern:Observation instance" ;
+    sosa:hasFeatureOfInterest ex:foi-01 ;
+    sosa:hasResult [
+        a tern:Float ;
+        rdf:value "42"^^xsd:double ;
+        tern:uncertainty "0.5"^^xsd:double ;
+    ] ;
+    sosa:hasSimpleResult "42" ;
+    sosa:observedProperty &lt;https://example.org/op/1&gt; ;
+    sosa:phenomenonTime [
+        a time:Instant ;
+        time:inXSDDateTimeStamp "2021-11-18T14:35+10:00"^^xsd:dateTimeStamp ;
+    ] ;
+    sosa:usedProcedure &lt;https://example.org/proc/1&gt; ;
+    tern:resultDateTime "2021-11-18T14:35:00" ;  # ^^xsd:dateTime ;
+.
 
-</span><span class="nn">ex:</span><span class="n">foi-01
-</span><span class="w">    </span><span class="k">a</span><span class="w"> </span><span class="nn">tern:</span><span class="n">FeatureOfInterest</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"TERN FeatureOfInterest 01"</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="c1">#    void:inDataset ex:dataset-01 ;</span><span class="w">
-    </span><span class="nn">tern:</span><span class="n">featureType</span><span class="w"> </span><span class="nl">&lt;https://example.org/ft/1&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span><span class="p">.</span></code></pre>
+ex:foi-01
+    a tern:FeatureOfInterest ;
+    rdfs:label "TERN FeatureOfInterest 01" ;
+#    void:inDataset ex:dataset-01 ;
+    tern:featureType &lt;https://example.org/ft/1&gt; ;
+.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5223,7 +5004,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-05 03:02:38 UTC
+Last updated 2026-11-11 13:09:59 UTC
 </div>
 </div>
 </body>
