@@ -25,7 +25,7 @@ The rules are identified below, described in English and then defined as <<SPARQ
 [sources,sparql]
 ----
 PREFIX abis: <https://linked.data.gov.au/def/abis/>
-PREFIX tern <https://w3id.org/tern/ontologies/tern/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 
@@ -40,7 +40,7 @@ WHERE {
 [sources,sparql]
 ----
 PREFIX abis: <https://linked.data.gov.au/def/abis/>
-PREFIX tern <https://w3id.org/tern/ontologies/tern/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX void: <http://rdfs.org/ns/void#>
 
 CONSTRUCT {
@@ -70,10 +70,12 @@ WHERE {
 | R04 | If a Dataset does not have a geometry supplied, it must have it calculated as the convex hull of its spatial object members | R01 a|
 [sources,sparql]
 ----
+[source,sparql]
+----
 PREFIX abis: <https://linked.data.gov.au/def/abis/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX tern <https://w3id.org/tern/ontologies/tern/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX void: <http://rdfs.org/ns/void#>
 
 CONSTRUCT {
@@ -82,25 +84,26 @@ CONSTRUCT {
 }
 WHERE {
     {
-        VALUES ?spatialFeature {
-            abis:BiodiversityOcurrence
-            tern:FeatureOfInterest
-            tern:Site
-            tern:Survey
-            tern:SiteVisit
-        }
-
         SELECT ?dataset ?wkt
         WHERE {
+            VALUES ?spatialFeature {
+                abis:BiodiversityOcurrence
+                tern:FeatureOfInterest
+                tern:Site
+                tern:Survey
+                tern:SiteVisit
+            }
+
             ?feature
-              schema:isPartOf ?dataset ;
-              a ?spatialFeature ;
-            .
+                schema:isPartOf ?dataset ;
+                a ?spatialFeature .
+
             ?dataset a schema:Dataset .
             ?feature (schema:spatial\|geo:hasGeometry)/geo:asWKT ?wkt .
-        } GROUP BY ?dataset
+        }
+        GROUP BY ?dataset
     }
-    
+
     BIND BNODE() AS ?geom .
     BIND geof:aggConvexHull(?wkt) AS ?hull .
 
@@ -109,19 +112,28 @@ WHERE {
     }
 }
 ----
+----
 | R05 | Bounding Boxes must be calculated for Datasets | R04 a|
-[sources,sparql]
+[source,sparql]
 ----
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX schema: <https://schema.org/>
 
 CONSTRUCT {
-    ?dataset geo:hasBoundingBox ?boundingbox
+    ?dataset geo:hasBoundingBox [
+        a geo:Geometry ;
+        geo:asWKT ?bboxWkt
+    ] .
 }
 WHERE {
-    ?dataset (schema:spatial\|geo:hasGeometry)/geo:asWKT ?wkt .
-
-    BIND geof:aggBoundingBox(?wkt) AS ?boundingbox .
+    {
+        SELECT ?dataset (geof:aggBoundingBox(?wkt) AS ?bboxWkt)
+        WHERE {
+            ?dataset (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
+        }
+        GROUP BY ?dataset
+    }
 }
 ----
 | R06 | If a Dataset does not have a temporal range supplied, it must have it calculated as the containing interval containing all of its temporal object members | R01 a|
@@ -129,7 +141,7 @@ WHERE {
 ----
 PREFIX abis: <https://linked.data.gov.au/def/abis/>
 PREFIX schema: <https://schema.org/>
-PREFIX tern <https://w3id.org/tern/ontologies/tern/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 
