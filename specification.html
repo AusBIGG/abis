@@ -4195,18 +4195,13 @@ WHERE {
 <td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre>[source,sparql]</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>PREFIX abis: <a href="https://linked.data.gov.au/def/abis/" class="bare">https://linked.data.gov.au/def/abis/</a>
-PREFIX geo: <a href="http://www.opengis.net/ont/geosparql#" class="bare">http://www.opengis.net/ont/geosparql#</a>
-PREFIX geof: <a href="http://www.opengis.net/def/function/geosparql/" class="bare">http://www.opengis.net/def/function/geosparql/</a>
-PREFIX tern: <a href="https://w3id.org/tern/ontologies/tern/" class="bare">https://w3id.org/tern/ontologies/tern/</a>
-PREFIX void: <a href="http://rdfs.org/ns/void#" class="bare">http://rdfs.org/ns/void#</a></p>
-</div>
-<div class="paragraph">
-<p>CONSTRUCT {
+<pre>PREFIX abis: &lt;https://linked.data.gov.au/def/abis/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX geof: &lt;http://www.opengis.net/def/function/geosparql/&gt;
+PREFIX tern: &lt;https://w3id.org/tern/ontologies/tern/&gt;
+PREFIX void: &lt;http://rdfs.org/ns/void#&gt;
+
+CONSTRUCT {
     ?dataset schema:spatial ?geom .
     ?geom geo:asWKT ?hull .
 }
@@ -4220,41 +4215,25 @@ WHERE {
                 tern:Site
                 tern:Survey
                 tern:SiteVisit
-            }</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>?feature
-    schema:isPartOf ?dataset ;
-    a ?spatialFeature .</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>        ?dataset a schema:Dataset .
-        ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
+            }
+
+            ?feature
+                schema:isPartOf ?dataset ;
+                a ?spatialFeature .
+
+            ?dataset a schema:Dataset .
+            ?feature (schema:spatial|geo:hasGeometry)/geo:asWKT ?wkt .
+        }
+        GROUP BY ?dataset
     }
-    GROUP BY ?dataset
-}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>BIND BNODE() AS ?geom .
-BIND geof:aggConvexHull(?wkt) AS ?hull .</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>    MINUS {
+
+    BIND BNODE() AS ?geom .
+    BIND geof:aggConvexHull(?wkt) AS ?hull .
+
+    MINUS {
         ?dataset schema:spatial ?geom .
     }
 }</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre></pre>
 </div>
 </div></div></td>
 </tr>
@@ -5004,7 +4983,7 @@ ex:foi-01
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-11-11 13:09:59 UTC
+Last updated 2026-11-11 13:23:03 UTC
 </div>
 </div>
 </body>
