@@ -70,8 +70,6 @@ WHERE {
 | R04 | If a Dataset does not have a geometry supplied, it must have it calculated as the convex hull of its spatial object members | R01 a|
 [sources,sparql]
 ----
-[source,sparql]
-----
 PREFIX abis: <https://linked.data.gov.au/def/abis/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
@@ -111,7 +109,6 @@ WHERE {
         ?dataset schema:spatial ?geom .
     }
 }
-----
 ----
 | R05 | Bounding Boxes must be calculated for Datasets | R04 a|
 [source,sparql]
