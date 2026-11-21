@@ -1,5 +1,6 @@
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX prof: <http://www.w3.org/ns/dx/prof/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <https://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -59,11 +60,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://linked.data.gov.au/def/abis/vocabularies/feature-types>
     a prof:ResourceDescriptor ;
-    dcterms:description "This descriptor identifies the TERN Feature Type concept scheme as a vocabulary resource used with tern:featureType in the TERN Ontology component model. It is distinct from the ABIS Vocabulary Themes 'Feature Types' concept, which classifies vocabularies. Listing a vocabulary here does not by itself require every ABIS dataset to use it; applicable component-model and profile requirements govern its use."@en ;
+    dcterms:description "This descriptor identifies the TERN Feature Type concept scheme as a vocabulary resource used with tern:featureType in the TERN Ontology component model." ;
     dcterms:format "text/html" ;
     dcterms:title "TERN Feature Type vocabulary"@en ;
     prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d"^^xsd:anyURI ;
     prof:hasRole <http://www.w3.org/ns/dx/prof/role/vocabulary> ;
+    rdfs:comment "TERN Feature Type is distinct from the ABIS Vocabulary Themes 'Feature Types' concept, which classifies vocabularies."@en ;
 .
 
 <https://linked.data.gov.au/def/abis/specification>
