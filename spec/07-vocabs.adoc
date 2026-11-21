@@ -4,7 +4,7 @@ Use of ABIS depends on many vocabularies from many different places. For example
 
 Some uses of ABIS, such as for the submission of data to the <<BDR, BDR>>, require the use of particular vocabularies that aren't mandated for general ABIS use, for example the use of the https://linked.data.gov.au/dataset/bdr/datatypes[_BDR Datatypes_] vocabulary for special forms of identifiers. Mandates for particular vocabulary use are indicated by individual profiles of ABIS - see <<Profiles, Profiles>>.
 
-Some <<Foreground Models>> within ABIS require the use of particular vocabularies, for example, the <<#TERNOntology, TERN Ontology>> mandates that a https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest] indicate a https://w3id.org/tern/ontologies/tern/featureType[tern:featureType] with the http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d[Feature Type vocabulary].
+For the <<#TERNOntology, TERN Ontology>> component model, a https://w3id.org/tern/ontologies/tern/FeatureOfInterest[tern:FeatureOfInterest] must have exactly one https://w3id.org/tern/ontologies/tern/featureType[tern:featureType] value that is an IRI. TERN's http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d[Feature Type vocabulary] supplies feature type concepts and is listed as a resource in the ABIS profile definition. The general TERN validator shape checks the IRI and cardinality; it does not require membership in that particular scheme. The https://linked.data.gov.au/def/abis/vocab-themes/feature-types[ABIS Vocabulary Themes "Feature Types" concept] classifies vocabularies and is distinct from the TERN Feature Type vocabulary.
 
 === Vocab Listing
 
