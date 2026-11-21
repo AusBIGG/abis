@@ -21,17 +21,16 @@ See the <<BDR Profile, BDR Profile>> for the requirements of Record Model data b
 
 [frame=none, grid=none, cols="1,5"]
 |===
-|*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis/brm
-|*https://schema.org/name[Name]* | ABIS Record Model
-|*https://www.w3.org/TR/skos-reference/#definition[Definition]* | This model is for curated lists - catalogues - of data resources - datasets - that contains information about biodiversity occurrences and surveys - biodiversity records.
+|*<<IRI, IRI>>* | https://linked.data.gov.au/def/abis/rm
+|*https://schema.org/name[Name]* | Records Model
+|*https://schema.org/description[Description]* | The Records Model links objects represented in Semantic Web data to records about them that preserve identifiers from their original non-Semantic Web form. This allows easy association of Semantic Web and non-Semantic Web forms and facilitates good provenance for data conversions to Semantic Web form.
 |*https://schema.org/dateCreated[Created Date]* | 2024-07-15
-|*https://schema.org/dateModified[Modified Date]* | 2025-07-26
+|*https://schema.org/dateModified[Modified Date]* | 2026-11-09
 |*https://schema.org/dateIssued[Issued Date]* | 2024-07-30
-|*https://schema.org/version[Version]* | 2.0
-|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/catalogue/1.0[abisc:1.0]
-|*Version History*| *2.0* - 2024 July - First release (v2.0 to match ABIS)
+|*https://schema.org/version[Version]* | 3
+|*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/rm/2
 |*https://schema.org/creator[Creator]* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
-|*https://schema.org/owner[Owner]* | https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AUSBIGG)]
+|*http://www.w3.org/ns/prov#qualifiedAttribution[Owner attribution]* | https://linked.data.gov.au/org/ausbigg[Australian Biodiversity Information Governance Group (AUSBIGG)], with https://def.isotc211.org/codeset/RoleCode/owner[owner] role
 |*https://schema.org/publisher[Publisher]* | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy and the Environment (DCCEEW)]
 |*https://schema.org/license[License]* | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
 |*https://www.w3.org/TR/vocab-dcat/#Property:resource_contact_point[Contacts]* | AusBIGG is supported by DCCEEW's' Biodiversity Data Repository (BDR) Team. Contact the BDR Team on bdr@dcceew.gov.au +
@@ -39,12 +38,17 @@ Issue tracking of the ABIS standard is managed online at https://github.com/AusB
 |*https://schema.org/codeRepository[Code Repository]* | https://github.com/AusBIGG/abis
 |===
 
+[NOTE]
+====
+The published RDF currently gives `schema:version` as `3` but `owl:versionIRI` as `/rm/2`. These values are recorded above as published; the version metadata needs to be reconciled at source.
+====
+
 === A.2. Supporting Assets
 
 * RDF schema:
-** https://linked.data.gov.au/def/abis/catalogue.ttl
-* <<SHACL, SHACL>> validation file:
-** https://linked.data.gov.au/def/abis/catalogue/validator.ttl
+** https://ausbigg.github.io/abis/rm.ttl
+
+No model-specific <<SHACL, SHACL>> validator is supplied; profiles of ABIS can provide their own constraints.
 
 === A.3. Classes
 
@@ -66,7 +70,7 @@ Classes defined elsewhere:
 [[schema:DataCatalog]]
 ==== Data Catalog
 
-See <<SDO, schema.org>>'s `DataCatalogue` class: https://schema.org/DataCatalogue
+See <<SDO, schema.org>>'s `DataCatalog` class: https://schema.org/DataCatalog
 
 [discrete]
 [[schema:Dataset]]
@@ -84,7 +88,7 @@ See <<SDO, schema.org>>'s `Statement` class: https://schema.org/Statement and co
 :catalogue-x
     a schema:DataCatalog ;
     schema:name "Catalogue X" ;
-    schema:hasPart :dataset-y ;
+    rdfs:member :dataset-y ;
     # ... other catalogue metadata
 .
 
@@ -93,7 +97,7 @@ See <<SDO, schema.org>>'s `Statement` class: https://schema.org/Statement and co
     schema:name "Dataset Y" ;
     # ... ther dataset metadata
     schema:isPartOf :catalogue-y ;
-    schema:hasPart
+    rdfs:member
         :record-001 ,
         :record-002 ,
         # ... many other records
@@ -105,7 +109,7 @@ See <<SDO, schema.org>>'s `Statement` class: https://schema.org/Statement and co
     # a non-IRI identifier for this Record, as found in the original
     # data held by the Submitting Organisation
     schema:identifier "R1234"^^ex:OrgMRecordId ;
-    # inverse of :dataset-y schema:hasPart :record-001
+    # :dataset-y rdfs:member :record-001 indicates dataset membership
     schema:isPartOf :dataset-y ;
     # the thing the Record is about
     schema:about :occurrence-aaa ;
@@ -113,9 +117,9 @@ See <<SDO, schema.org>>'s `Statement` class: https://schema.org/Statement and co
 
 :occurrence-aaa
     a dwc:Occurrence ;
-    schmea:name "Occurrence AAA" ;
-    schema:additionalType <https://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> ;  # animal specimen
-    sosa:isSampleOf :foi-h ;  # linke a field site
+    schema:name "Occurrence AAA" ;
+    schema:additionalType <http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6> ;  # animal specimen
+    sosa:isSampleOf :foi-h ;  # link a field site
     sosa:usedProcedure :procedure-i ;  # a controlled method
     schema:spatial [ geo:asWKT "POINT (120.244 -32.959)"^^geo:wktLiteral ] ;
     schema:temporal "2014-07-23"^^xsd:date ;
@@ -141,27 +145,27 @@ Predicates defined elsewhere:
 
 * <<schema:about, schema:about>>
 * <<schema:identifier, schema:identifier>>
-* <<schema:hasPart, schema:hasPart>>
+* <<rdfs:member, rdfs:member>>
 
 [discrete]
 [[schema:about]]
 ==== about
 
-See <<SDO, schema.org>>'s `Dataset` predicate: https://schema.org/about
+See <<SDO, schema.org>>'s `about` predicate: https://schema.org/about
 
 [discrete]
 [[schema:identifier]]
-==== about
+==== identifier
 
-See <<SDO, schema.org>>'s `Dataset` predicate: https://schema.org/identifier
+See <<SDO, schema.org>>'s `identifier` predicate: https://schema.org/identifier
 
 [discrete]
-[[schema:hasPart]]
-==== hasPart
+[[rdfs:member]]
+==== member
 
-See <<SDO, schema.org>>'s `Dataset` predicate: https://schema.org/hasPart
+See <<RDFSPEC, RDFS>>'s `member` predicate: https://www.w3.org/TR/rdf11-schema/#ch_member
 
-=== A.5. Alignmentls
+=== A.5. Alignments
 
 [#brm-join,link="img/annex-a/rm-join.svg"]
 .Class equivalences between this Record Model, <<SDO, schema.org>> and <<DCAT, DCAT>>
