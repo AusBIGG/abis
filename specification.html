@@ -533,7 +533,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_a_2_supporting_assets">A.2. Supporting Assets</a></li>
 <li><a href="#_a_3_classes">A.3. Classes</a></li>
 <li><a href="#_a_4_predicates">A.4. Predicates</a></li>
-<li><a href="#_a_5_alignmentls">A.5. Alignmentls</a></li>
+<li><a href="#_a_5_alignments">A.5. Alignments</a></li>
 </ul>
 </li>
 <li><a href="#annex-b">Annex B: Protocol-based Models</a>
@@ -4516,15 +4516,15 @@ WHERE {
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="#IRI">IRI</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/brm" class="bare">https://linked.data.gov.au/def/abis/brm</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/rm" class="bare">https://linked.data.gov.au/def/abis/rm</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/name">Name</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Record Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Records Model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/skos-reference/#definition">Definition</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This model is for curated lists - catalogues - of data resources - datasets - that contains information about biodiversity occurrences and surveys - biodiversity records.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/description">Description</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Records Model links objects represented in Semantic Web data to records about them that preserve identifiers from their original non-Semantic Web form. This allows easy association of Semantic Web and non-Semantic Web forms and facilitates good provenance for data conversions to Semantic Web form.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateCreated">Created Date</a></strong></p></td>
@@ -4532,7 +4532,7 @@ WHERE {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateModified">Modified Date</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2025-07-26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2026-11-09</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/dateIssued">Issued Date</a></strong></p></td>
@@ -4540,23 +4540,19 @@ WHERE {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/version">Version</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI">Version IRI</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/catalogue/1.0">abisc:1.0</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version History</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2.0</strong> - 2024 July - First release (v2.0 to match ABIS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/rm/2" class="bare">https://linked.data.gov.au/def/abis/rm/2</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/creator">Creator</a></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dcceew">Department of Climate Change, Energy and the Environment (DCCEEW)</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/owner">Owner</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/ausbigg">Australian Biodiversity Information Governance Group (AUSBIGG)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="http://www.w3.org/ns/prov#qualifiedAttribution">Owner attribution</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/ausbigg">Australian Biodiversity Information Governance Group (AUSBIGG)</a>, with <a href="https://def.isotc211.org/codeset/RoleCode/owner">owner</a> role</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://schema.org/publisher">Publisher</a></strong></p></td>
@@ -4577,6 +4573,20 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The published RDF currently gives <code>schema:version</code> as <code>3</code> but <code>owl:versionIRI</code> as <code>/rm/2</code>. These values are recorded above as published; the version metadata needs to be reconciled at source.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_a_2_supporting_assets"><a class="anchor" href="#_a_2_supporting_assets"></a>A.2. Supporting Assets</h3>
@@ -4587,22 +4597,15 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://linked.data.gov.au/def/abis/catalogue.ttl" class="bare">https://linked.data.gov.au/def/abis/catalogue.ttl</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="#SHACL">SHACL</a> validation file:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://linked.data.gov.au/def/abis/catalogue/validator.ttl" class="bare">https://linked.data.gov.au/def/abis/catalogue/validator.ttl</a></p>
+<p><a href="https://ausbigg.github.io/abis/rm.ttl" class="bare">https://ausbigg.github.io/abis/rm.ttl</a></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>No model-specific <a href="#SHACL">SHACL</a> validator is supplied; profiles of ABIS can provide their own constraints.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4639,7 +4642,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 </div>
 <h4 id="schema:DataCatalog" class="discrete">Data Catalog</h4>
 <div class="paragraph">
-<p>See <a href="#SDO">schema.org</a>'s <code>DataCatalogue</code> class: <a href="https://schema.org/DataCatalogue" class="bare">https://schema.org/DataCatalogue</a></p>
+<p>See <a href="#SDO">schema.org</a>'s <code>DataCatalog</code> class: <a href="https://schema.org/DataCatalog" class="bare">https://schema.org/DataCatalog</a></p>
 </div>
 <h4 id="schema:Dataset" class="discrete">Dataset</h4>
 <div class="paragraph">
@@ -4654,7 +4657,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <pre>:catalogue-x
     a schema:DataCatalog ;
     schema:name "Catalogue X" ;
-    schema:hasPart :dataset-y ;
+    rdfs:member :dataset-y ;
     # ... other catalogue metadata
 .
 
@@ -4663,7 +4666,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
     schema:name "Dataset Y" ;
     # ... ther dataset metadata
     schema:isPartOf :catalogue-y ;
-    schema:hasPart
+    rdfs:member
         :record-001 ,
         :record-002 ,
         # ... many other records
@@ -4675,7 +4678,7 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
     # a non-IRI identifier for this Record, as found in the original
     # data held by the Submitting Organisation
     schema:identifier "R1234"^^ex:OrgMRecordId ;
-    # inverse of :dataset-y schema:hasPart :record-001
+    # :dataset-y rdfs:member :record-001 indicates dataset membership
     schema:isPartOf :dataset-y ;
     # the thing the Record is about
     schema:about :occurrence-aaa ;
@@ -4683,9 +4686,9 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 
 :occurrence-aaa
     a dwc:Occurrence ;
-    schmea:name "Occurrence AAA" ;
-    schema:additionalType &lt;https://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6&gt; ;  # animal specimen
-    sosa:isSampleOf :foi-h ;  # linke a field site
+    schema:name "Occurrence AAA" ;
+    schema:additionalType &lt;http://linked.data.gov.au/def/tern-cv/cd5cbdbb-07d9-4a5b-9b11-5ab9d6015be6&gt; ;  # animal specimen
+    sosa:isSampleOf :foi-h ;  # link a field site
     sosa:usedProcedure :procedure-i ;  # a controlled method
     schema:spatial [ geo:asWKT "POINT (120.244 -32.959)"^^geo:wktLiteral ] ;
     schema:temporal "2014-07-23"^^xsd:date ;
@@ -4722,25 +4725,25 @@ Issue tracking of the ABIS standard is managed online at <a href="https://github
 <p><a href="#schema:identifier">schema:identifier</a></p>
 </li>
 <li>
-<p><a href="#schema:hasPart">schema:hasPart</a></p>
+<p><a href="#rdfs:member">rdfs:member</a></p>
 </li>
 </ul>
 </div>
 <h4 id="schema:about" class="discrete">about</h4>
 <div class="paragraph">
-<p>See <a href="#SDO">schema.org</a>'s <code>Dataset</code> predicate: <a href="https://schema.org/about" class="bare">https://schema.org/about</a></p>
+<p>See <a href="#SDO">schema.org</a>'s <code>about</code> predicate: <a href="https://schema.org/about" class="bare">https://schema.org/about</a></p>
 </div>
-<h4 id="schema:identifier" class="discrete">about</h4>
+<h4 id="schema:identifier" class="discrete">identifier</h4>
 <div class="paragraph">
-<p>See <a href="#SDO">schema.org</a>'s <code>Dataset</code> predicate: <a href="https://schema.org/identifier" class="bare">https://schema.org/identifier</a></p>
+<p>See <a href="#SDO">schema.org</a>'s <code>identifier</code> predicate: <a href="https://schema.org/identifier" class="bare">https://schema.org/identifier</a></p>
 </div>
-<h4 id="schema:hasPart" class="discrete">hasPart</h4>
+<h4 id="rdfs:member" class="discrete">member</h4>
 <div class="paragraph">
-<p>See <a href="#SDO">schema.org</a>'s <code>Dataset</code> predicate: <a href="https://schema.org/hasPart" class="bare">https://schema.org/hasPart</a></p>
+<p>See <a href="#RDFSPEC">RDFS</a>'s <code>member</code> predicate: <a href="https://www.w3.org/TR/rdf11-schema/#ch_member" class="bare">https://www.w3.org/TR/rdf11-schema/#ch_member</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_a_5_alignmentls"><a class="anchor" href="#_a_5_alignmentls"></a>A.5. Alignmentls</h3>
+<h3 id="_a_5_alignments"><a class="anchor" href="#_a_5_alignments"></a>A.5. Alignments</h3>
 <div id="brm-join" class="imageblock text-center">
 <div class="content">
 <a class="image" href="img/annex-a/rm-join.svg"><img src="https://ausbigg.github.io/abis/img/annex-a/rm-join.svg" alt="Record Model class equivalences" width="60%"></a>
@@ -4983,7 +4986,7 @@ ex:foi-01
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-11-21 01:40:11 UTC
+Last updated 2026-11-21 02:29:54 UTC
 </div>
 </div>
 </body>
