@@ -48,7 +48,7 @@ ont:
     schema:publisher <https://linked.data.gov.au/org/dcceew> ;
     schema:version 3 ;
     rdfs:member
-        schema:DataCatalogue ,
+        schema:DataCatalog ,
         schema:Dataset ,
         schema:Statement ,
         rdfs:Resource ,
@@ -61,7 +61,7 @@ ont:
     schema:name "1" ;
 .
 
-schema:DataCatalogue
+schema:DataCatalog
     a owl:Class ;
     rdfs:isDefinedBy <https://schema.org> ;
     skos:example "See example for schema:Statement" ;
