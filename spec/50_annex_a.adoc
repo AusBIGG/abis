@@ -7,6 +7,8 @@ image::img/annex-a/rm-overview.svg[Record Model overview,align="center",width=27
 
 This model links objects represented in Semantic Web data to records about them that preserve identifiers from their original non-Semantic Web form. This allows easy association of Semantic Web and non-Semantic Web forms and facilitates good provenance for data conversions to Semantic Web form.
 
+The Records Model's continuing ontology IRI is https://linked.data.gov.au/def/abis/rm. The earlier https://linked.data.gov.au/def/abis/brm IRI is deprecated and replaced by `/rm` for references to the evolving model. The two IRIs remain distinct identifiers; this change does not equate their historical versions.
+
 This is an entirely generic model that can be used with any types of Semantic Web objects for which there are records about them containing non-Semantic Web native information, however in the context of ABIS, the Semantic Web objects are expected to be relevant to ABIS, such as https://dwc.tdwg.org/terms/#occurrence[`dwc:Occurrence`] instances or https://w3id.org/tern/ontologies/tern/Site[`tern:Site`] instances.
 
 [NOTE]
@@ -25,7 +27,7 @@ See the <<BDR Profile, BDR Profile>> for the requirements of Record Model data b
 |*https://schema.org/name[Name]* | Records Model
 |*https://schema.org/description[Description]* | The Records Model links objects represented in Semantic Web data to records about them that preserve identifiers from their original non-Semantic Web form. This allows easy association of Semantic Web and non-Semantic Web forms and facilitates good provenance for data conversions to Semantic Web form.
 |*https://schema.org/dateCreated[Created Date]* | 2024-07-15
-|*https://schema.org/dateModified[Modified Date]* | 2026-11-21
+|*https://schema.org/dateModified[Modified Date]* | 2026-11-23
 |*https://schema.org/dateIssued[Issued Date]* | 2024-07-30
 |*https://schema.org/version[Version]* | 3
 |*https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#Ontology_IRI_and_Version_IRI[Version IRI]* | https://linked.data.gov.au/def/abis/rm/2
