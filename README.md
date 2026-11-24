@@ -11,6 +11,8 @@ See the following starting points:
 
 ## Status
 
+The bundled Darwin Core reference metadata has a [recorded upstream snapshot and currency-check workflow](schemas/background/dwc-metadata/README.md).
+
 This Standard is in effect, as of 2023-12-04. 
 
 ## Contact

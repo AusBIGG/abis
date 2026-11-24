@@ -1,0 +1,297 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix tdwgutility: <http://rs.tdwg.org/dwc/terms/attributes/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix dwciri: <http://rs.tdwg.org/dwc/iri/>.
+@prefix vann: <http://purl.org/vocab/vann/>.
+
+<http://rs.tdwg.org/dwc/>
+     dc:publisher "Biodiversity Information Standards (TDWG)"@en;
+     dcterms:publisher <https://www.grid.ac/institutes/grid.480498.9>;
+     rdfs:label "Darwin Core main vocabulary"@en;
+     dcterms:title "Darwin Core main vocabulary"@en;
+     rdfs:comment "This vocabulary contains Darwin Core and borrowed terms suitable for use with both literal and IRI values."@en;
+     dcterms:description "This vocabulary contains Darwin Core and borrowed terms suitable for use with both literal and IRI values."@en;
+     dcterms:created "2008-11-19"^^xsd:date;
+     dcterms:modified "2026-10-13"^^xsd:date;
+     dc:creator "TDWG Darwin Core Maintenance Group";
+     dcterms:license <https://creativecommons.org/licenses/by/4.0/>;
+     a tdwgutility:Vocabulary.
+
+<http://rs.tdwg.org/version/dwc/2008-11-19>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2008-11-19>.
+
+<http://rs.tdwg.org/version/dwc/2009-01-18>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-01-18>.
+
+<http://rs.tdwg.org/version/dwc/2009-01-21>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-01-21>.
+
+<http://rs.tdwg.org/version/dwc/2009-01-23>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-01-23>.
+
+<http://rs.tdwg.org/version/dwc/2009-04-24>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-04-24>.
+
+<http://rs.tdwg.org/version/dwc/2009-04-29>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-04-29>.
+
+<http://rs.tdwg.org/version/dwc/2009-05-18>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-05-18>.
+
+<http://rs.tdwg.org/version/dwc/2009-07-06>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-07-06>.
+
+<http://rs.tdwg.org/version/dwc/2009-08-24>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-08-24>.
+
+<http://rs.tdwg.org/version/dwc/2009-09-11>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-09-11>.
+
+<http://rs.tdwg.org/version/dwc/2009-09-17>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-09-17>.
+
+<http://rs.tdwg.org/version/dwc/2009-09-21>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-09-21>.
+
+<http://rs.tdwg.org/version/dwc/2009-12-07>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2009-12-07>.
+
+<http://rs.tdwg.org/version/dwc/2011-10-16>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2011-10-16>.
+
+<http://rs.tdwg.org/version/dwc/2013-03-28>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2013-03-28>.
+
+<http://rs.tdwg.org/version/dwc/2013-05-25>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2013-05-25>.
+
+<http://rs.tdwg.org/version/dwc/2014-10-23>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2014-10-23>.
+
+<http://rs.tdwg.org/version/dwc/2014-12-23>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2014-12-23>.
+
+<http://rs.tdwg.org/version/dwc/2015-03-27>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2015-03-27>.
+
+<http://rs.tdwg.org/version/dwc/2017-10-06>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2017-10-06>.
+
+<http://rs.tdwg.org/version/dwc/2018-09-06>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2018-09-06>.
+
+<http://rs.tdwg.org/version/dwc/2020-08-12>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2020-08-12>.
+
+<http://rs.tdwg.org/version/dwc/2020-08-20>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2020-08-20>.
+
+<http://rs.tdwg.org/version/dwc/2020-10-13>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2020-10-13>.
+
+<http://rs.tdwg.org/version/dwc/2020-10-28>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2020-10-28>.
+
+<http://rs.tdwg.org/version/dwc/2021-03-29>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2021-03-29>.
+
+<http://rs.tdwg.org/version/dwc/2021-07-15>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2021-07-15>.
+
+<http://rs.tdwg.org/version/dwc/2023-06-28>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2023-06-28>.
+
+<http://rs.tdwg.org/version/dwc/2023-07-07>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2023-07-07>.
+
+<http://rs.tdwg.org/version/dwc/2023-09-13>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2023-09-13>.
+
+<http://rs.tdwg.org/version/dwc/2023-09-18>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2023-09-18>.
+
+<http://rs.tdwg.org/version/dwc/2025-06-12>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2025-06-12>.
+
+<http://rs.tdwg.org/version/dwc/2025-07-10>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2025-07-10>.
+
+<http://rs.tdwg.org/version/dwc/2026-05-26>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2026-05-26>.
+
+<http://rs.tdwg.org/version/dwc/2026-10-13>
+     dcterms:isVersionOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasVersion <http://rs.tdwg.org/version/dwc/2026-10-13>.
+
+<http://rs.tdwg.org/dwc/terms/>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/terms/>.
+
+<http://rs.tdwg.org/dwc/dc/>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/dc/>.
+
+<http://rs.tdwg.org/dwc/dcterms/>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/dcterms/>.
+
+<http://rs.tdwg.org/dwc/iri/>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/iri/>.
+
+<http://rs.tdwg.org/dwc/ac/>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasPart <http://rs.tdwg.org/dwc/ac/>.
+
+<http://rs.tdwg.org/eco/terms/>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasPart <http://rs.tdwg.org/eco/terms/>.
+
+<http://rs.tdwg.org/eco/iri/>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasPart <http://rs.tdwg.org/eco/iri/>.
+
+<http://rs.tdwg.org/chrono/terms/>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasPart <http://rs.tdwg.org/chrono/terms/>.
+
+<http://rs.tdwg.org/chrono/iri/>
+     dcterms:isPartOf <http://rs.tdwg.org/dwc/>.
+
+<http://rs.tdwg.org/dwc/>
+     dcterms:hasPart <http://rs.tdwg.org/chrono/iri/>.
+
+<http://rs.tdwg.org/dwc.ttl>
+     dc:format "text/turtle";
+     dc:creator "Biodiversity Information Standards (TDWG)";
+     dcterms:references <http://rs.tdwg.org/dwc/>;
+     dcterms:modified "2026-10-13T00:00:00-03:00"^^xsd:dateTime;
+     a foaf:document.
+
