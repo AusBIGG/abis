@@ -1,0 +1,47 @@
+name: Darwin Core metadata currency
+
+on:
+  pull_request:
+    paths:
+      - 'schemas/background/dwc.ttl'
+      - 'schemas/background/dwc-metadata/**'
+      - 'scripts/dwc_metadata.py'
+      - 'scripts/requirements-dwc.txt'
+      - 'tests/test_dwc_metadata.py'
+      - '.github/workflows/dwc-metadata.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'schemas/background/dwc.ttl'
+      - 'schemas/background/dwc-metadata/**'
+      - 'scripts/dwc_metadata.py'
+      - 'scripts/requirements-dwc.txt'
+      - 'tests/test_dwc_metadata.py'
+      - '.github/workflows/dwc-metadata.yml'
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r scripts/requirements-dwc.txt
+      - run: python -m unittest discover -s tests -p test_dwc_metadata.py -v
+      - run: python scripts/dwc_metadata.py check
+      - name: Compare with current TDWG publication
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: python scripts/dwc_metadata.py check --online --report dwc-upstream-comparison.json
+      - uses: actions/upload-artifact@v4
+        if: always() && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+        with:
+          name: dwc-upstream-comparison
+          path: dwc-upstream-comparison.json
+          if-no-files-found: ignore

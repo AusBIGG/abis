@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "releases": {
+    "term_list": {
+      "iri": "http://rs.tdwg.org/dwc/terms/",
+      "modified": null,
+      "latest_version_date": "2026-10-13",
+      "version_iri": "http://rs.tdwg.org/dwc/version/terms/2026-10-13"
+    },
+    "vocabulary": {
+      "iri": "http://rs.tdwg.org/dwc/",
+      "modified": "2026-10-13",
+      "latest_version_date": "2026-10-13",
+      "version_iri": "http://rs.tdwg.org/version/dwc/2026-10-13"
+    }
+  },
+  "artifacts": {
+    "terms": {
+      "source_url": "https://rs.tdwg.org/dump/terms.ttl",
+      "resolved_url": "https://rs.tdwg.org/dump/terms.ttl",
+      "retrieved_at": "2026-11-24T02:08:25.746346+00:00",
+      "sha256": "c07e9aa080d3733c644d2893e41086ff033539c16e9bcc0ee7a9c8dc7922e190",
+      "bytes": 914464
+    },
+    "term_list": {
+      "source_url": "https://rs.tdwg.org/dwc/terms.ttl",
+      "resolved_url": "https://rs.tdwg.org/dwc/terms.ttl",
+      "retrieved_at": "2026-11-24T02:08:27.175139+00:00",
+      "sha256": "f68668c3e7b6e984d9e9169c610d037d67c21ec4378d084328b1ebff29d3f318",
+      "bytes": 73749
+    },
+    "vocabulary": {
+      "source_url": "https://rs.tdwg.org/dwc.ttl",
+      "resolved_url": "https://rs.tdwg.org/dwc.ttl",
+      "retrieved_at": "2026-11-24T02:08:28.061338+00:00",
+      "sha256": "cc6c483736995d409496ecd8ea1aa97ff7989d63d91d288a7366ec001693ceb4",
+      "bytes": 9862
+    }
+  }
+}

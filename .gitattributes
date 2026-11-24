@@ -1,0 +1,3 @@
+# Preserve the exact TDWG response bytes, including its trailing blank lines.
+schemas/background/dwc.ttl whitespace=-blank-at-eof
+schemas/background/dwc-metadata/*.ttl whitespace=-blank-at-eof
